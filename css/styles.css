@@ -1,0 +1,23 @@
+body {
+  background: url("/images/background.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+}
+.content-wrap {
+  opacity: 0.98;
+}
+.sidebar {
+  opacity: 0.98;
+}
+.header-inner {
+  background: rgba(255,255,255,0.98);
+}
+.popup {
+  opacity: 0.98;
+}
