@@ -14,18 +14,21 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="博主主要使用的技术路线是&#x3D;&#x3D;使用github + hexo + cloudflare + node.js + next主题&#x3D;&#x3D; 1 使用git同步github的库1.1 安装git Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。   安装git，打开官方网站git官方下载,点击下载windouws64位即可。安装时一直选择默认">
+  <meta name="description" content="使用github+hexo+cloudflare+node.js+next主题建立属于自己的个人博客网站，博客主要分7个部分分别是1 使用git同步github的库，2 安装node.js，3 创建网站（Hexo框架，4 修改主题，5 github图床搭建，6 博客基本功能，7 博客扩展内容(持续更新)。 我主要参考了知乎-从零开始搭建个人博客（超详细）这一篇博客，但是由于是2020年的教程，中间">
 <meta property="og:type" content="article">
 <meta property="og:title" content="建立个人博客网站详细教程">
 <meta property="og:url" content="http://example.com/2023/08/03/2023.08.03_blog%E7%BD%91%E7%AB%99/index.html">
 <meta property="og:site_name" content="“灵能相谈所”">
-<meta property="og:description" content="博主主要使用的技术路线是&#x3D;&#x3D;使用github + hexo + cloudflare + node.js + next主题&#x3D;&#x3D; 1 使用git同步github的库1.1 安装git Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。   安装git，打开官方网站git官方下载,点击下载windouws64位即可。安装时一直选择默认">
+<meta property="og:description" content="使用github+hexo+cloudflare+node.js+next主题建立属于自己的个人博客网站，博客主要分7个部分分别是1 使用git同步github的库，2 安装node.js，3 创建网站（Hexo框架，4 修改主题，5 github图床搭建，6 博客基本功能，7 博客扩展内容(持续更新)。 我主要参考了知乎-从零开始搭建个人博客（超详细）这一篇博客，但是由于是2020年的教程，中间">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/20230803192758.jpg">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/20230803193021.jpg">
@@ -49,7 +52,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230804200653.jpg">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230804201343.jpg">
 <meta property="article:published_time" content="2023-08-03T12:24:40.754Z">
-<meta property="article:modified_time" content="2023-08-05T08:31:25.580Z">
+<meta property="article:modified_time" content="2023-08-06T07:47:24.833Z">
 <meta property="article:author" content="mobbu">
 <meta property="article:tag" content="Github">
 <meta property="article:tag" content="hexo">
@@ -131,6 +134,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -165,11 +169,38 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -224,7 +255,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-08-05 16:31:25" itemprop="dateModified" datetime="2023-08-05T16:31:25+08:00">2023-08-05</time>
+                <time title="修改时间：2023-08-06 15:47:24" itemprop="dateModified" datetime="2023-08-06T15:47:24+08:00">2023-08-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -249,14 +280,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>11k</span>
+              <span>12k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>10 分钟</span>
+              <span>11 分钟</span>
             </span>
 
         </div>
@@ -268,7 +299,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>博主主要使用的技术路线是&#x3D;&#x3D;使用github + hexo + cloudflare + node.js + next主题&#x3D;&#x3D;</p>
+        <p>使用github+hexo+cloudflare+node.js+next主题建立属于自己的个人博客网站，博客主要分7个部分分别是1 使用git同步github的库，2 安装node.js，3 创建网站（Hexo框架，4 修改主题，5 github图床搭建，6 博客基本功能，7 博客扩展内容(持续更新)。</p>
+<p>我主要参考了<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/102592286">知乎-从零开始搭建个人博客（超详细）</a>这一篇博客，但是由于是2020年的教程，中间有一些坑，并且我在他的基础上增加了一些部分。本博客主要是记录搭建网站的过程，主要是个人记录，但是如果能够帮到其他的人就更好了，</p>
+<p>其实搭建博客并不困难，但是一直坚持写博客并且记录下来属实珍贵，在博主搭建博客搜索教程的过程中，看到有许多以前的网友搭建的博客都已经荒废，但也有很少部分坚持下来，希望我和大家都能坚持记录吧。</p>
+<span id="more"></span>
+
 <h1 id="1-使用git同步github的库"><a href="#1-使用git同步github的库" class="headerlink" title="1 使用git同步github的库"></a>1 使用git同步github的库</h1><h2 id="1-1-安装git"><a href="#1-1-安装git" class="headerlink" title="1.1 安装git"></a>1.1 安装git</h2><blockquote>
 <p>Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。</p>
 </blockquote>
@@ -348,7 +383,7 @@
 </li>
 <li><p>安装完成后输入以下命令</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init # 初始化</span><br><span class="line">hexo g # 静态部署</span><br><span class="line">hexo s # 本地预览</span><br></pre></td></tr></table></figure>
-<p>此时打开 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 网址就可查看部署的初始化的网页，按CTRL+C停止该进程。</p>
+<p>此时打开 <a target="_blank" rel="noopener" href="http://localhost:4000/">本地调试网址</a> 网址就可查看部署的初始化的网页，按CTRL+C停止该进程。</p>
 </li>
 <li><p>部署网页后，此时我们需要hexo部署到github上，打开Blog文件夹中的_config.yml文件，记事本打开就行。在文件底部填入</p>
 </li>
@@ -363,7 +398,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean   #清除缓存文件 db.json 和已生成的静态文件 public</span><br><span class="line">hexo g       #生成网站静态文件到默认设置的 public 文件夹</span><br><span class="line">hexo d       #生成网站静态文件，并部署到指定仓库</span><br></pre></td></tr></table></figure>
 <p><strong>注意：如果需要预览效果，任然可以在<code>hexo g</code>命令部署后，使用<code>hexo s</code>命令在本地进行预览网页效果再决定是否部署到github上</strong></p>
 </li>
-<li><p>完成后打开浏览器输入 <a target="_blank" rel="noopener" href="https://xxx.github.io,就可以打开网页,此时网页应该是之前部署的hexo的默认网页./">https://xxx.github.io，就可以打开网页，此时网页应该是之前部署的hexo的默认网页。</a></p>
+<li><p>完成后打开浏览器输入 <code>https://xxx.github.io</code>，就可以打开网页，此时网页应该是之前部署的hexo的默认网页。</p>
 </li>
 </ol>
 <h2 id="3-3-使用cloudflare解析域名"><a href="#3-3-使用cloudflare解析域名" class="headerlink" title="3.3 使用cloudflare解析域名"></a>3.3 使用cloudflare解析域名</h2><blockquote>
@@ -499,7 +534,7 @@
 <p>首先在Blog&#x2F;themes&#x2F;next&#x2F;_config.yml中，将 style: source&#x2F;_data&#x2F;styles.styl 取消注释：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">custom_file_path:</span><br><span class="line">  style: source/_data/styles.styl</span><br></pre></td></tr></table></figure>
 <p>然后再Blog&#x2F;source文件夹中创建_data&#x2F;styles.styl，其中填入以下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 添加背景图片</span><br><span class="line">body &#123;</span><br><span class="line">      background: url(images/background.png);//自己喜欢的图片地址</span><br><span class="line">      background-size: cover;</span><br><span class="line">      background-repeat: no-repeat;</span><br><span class="line">      background-attachment: fixed;</span><br><span class="line">      background-position: 50% 50%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">    background:url(/images/background.png);</span><br><span class="line">    background-repeat: no-repeat;</span><br><span class="line">    background-attachment:fixed;</span><br><span class="line">    background-position:50% 50%;</span><br><span class="line">    // background-size: 100% 100%;</span><br><span class="line">    background-size: cover;</span><br><span class="line">    -webkit-background-size: cover;</span><br><span class="line">    -o-background-size: cover;</span><br><span class="line">    -moz-background-size: cover;</span><br><span class="line">    -ms-background-size: cover;</span><br><span class="line">&#125;</span><br><span class="line">//博客内容透明化</span><br><span class="line">//文章内容的透明度设置</span><br><span class="line">.content-wrap &#123;</span><br><span class="line">  opacity: 0.98; //0.98为透明程度，越大越不透明</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//侧边框的透明度设置</span><br><span class="line">.sidebar &#123;</span><br><span class="line">  opacity: 0.98;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//菜单栏的透明度设置</span><br><span class="line">.header-inner &#123;</span><br><span class="line">  background: rgba(255,255,255,0.98);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//搜索框（local-search）的透明度设置</span><br><span class="line">.popup &#123;</span><br><span class="line">  opacity: 0.98;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol start="4">
 <li>设置预览摘要</li>
@@ -529,10 +564,15 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: example</span><br><span class="line">top: true</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
 <ol start="8">
-<li><p>图片可点击放大查看</p>
-</li>
-<li><p>添加社交链接</p>
-</li>
+<li>图片可点击放大查看</li>
+</ol>
+<p>Blog&#x2F;themes&#x2F;next&#x2F;_config.yml中，修改以下部分：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fancybox: true</span><br><span class="line">jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js</span><br><span class="line">fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js</span><br><span class="line">fancybox_css: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="9">
+<li>添加社交链接</li>
 </ol>
 <p>Blog&#x2F;themes&#x2F;next&#x2F;_config.yml中,social部分</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">social:</span><br><span class="line">  GitHub: https://github.com/mobbu919 || fab fa-github</span><br><span class="line">  E-Mail: mobbu777@163.com || fa fa-envelope</span><br></pre></td></tr></table></figure>
@@ -579,9 +619,14 @@
 <ol start="16">
 <li>本地搜索</li>
 </ol>
-<p>首先在Blog目录下打开Git Bash，执行<code>npm install hexo-generator-search</code></p>
-<p>然后打开Blog&#x2F;themes&#x2F;next&#x2F;_config.yml中的local_search部分</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">local_search:</span><br><span class="line">  enable: true</span><br><span class="line">  trigger: manual   #手动，按回车键或搜索按钮触发搜索</span><br></pre></td></tr></table></figure>
+<p>首先在Blog目录下打开Git Bash，执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-search --save</span><br><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+
+<p>然后在Blog&#x2F;_config.yml中添加以下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  content: true</span><br><span class="line">  format: html</span><br></pre></td></tr></table></figure>
+
+<p>最后打开Blog&#x2F;themes&#x2F;next&#x2F;_config.yml中的local_search部分，将enable修改为true</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
 
 
 
@@ -772,12 +817,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">11k</span>
+    <span title="站点总字数">12k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">10 分钟</span>
+    <span title="站点阅读时长">11 分钟</span>
 </div>
   <div class="powered-by">
    <!--由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动-->
@@ -848,6 +893,8 @@ $(document).ready(function() {
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -867,6 +914,10 @@ $(document).ready(function() {
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
