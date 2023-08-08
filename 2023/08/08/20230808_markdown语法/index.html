@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/mob.jpeg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/mob32.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/mob16.jpg">
+  <link rel="mask-icon" href="/images/mob.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mobbu.space","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="如果需要经常记录一些东西，那么markdown就是一个绕不开的东西，而习惯用markdown也会养成记录的习惯，本文主要从四个方面介绍markdown的简单用法，分别是1.markdown简介，2.markdown编译器，3.markdown语法。 当你经常用markdown记录时也会有一个烦恼就是如何实现多设备同步查看记录的文件呢，这时你可以选择在一些博客网站创建自己的账号，比如CSDN，博客园">
+<meta property="og:type" content="article">
+<meta property="og:title" content="markdown的简单用法">
+<meta property="og:url" content="http://mobbu.space/2023/08/08/20230808_markdown%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="“灵能相谈所”">
+<meta property="og:description" content="如果需要经常记录一些东西，那么markdown就是一个绕不开的东西，而习惯用markdown也会养成记录的习惯，本文主要从四个方面介绍markdown的简单用法，分别是1.markdown简介，2.markdown编译器，3.markdown语法。 当你经常用markdown记录时也会有一个烦恼就是如何实现多设备同步查看记录的文件呢，这时你可以选择在一些博客网站创建自己的账号，比如CSDN，博客园">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808193654.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808194144.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808194754.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/mob_base_2.jpg">
+<meta property="article:published_time" content="2023-08-08T13:51:33.445Z">
+<meta property="article:modified_time" content="2023-08-08T13:48:27.000Z">
+<meta property="article:author" content="mobbu">
+<meta property="article:tag" content="markdown">
+<meta property="article:tag" content="vscode">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808193654.png">
+
+<link rel="canonical" href="http://mobbu.space/2023/08/08/20230808_markdown%E8%AF%AD%E6%B3%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>markdown的简单用法 | “灵能相谈所”</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">“灵能相谈所”</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mobbu.space/2023/08/08/20230808_markdown%E8%AF%AD%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/pink_mob.jpeg">
+      <meta itemprop="name" content="mobbu">
+      <meta itemprop="description" content="道阻且长">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="“灵能相谈所”">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          markdown的简单用法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-08-08 21:51:33 / 修改时间：21:48:27" itemprop="dateCreated datePublished" datetime="2023-08-08T21:51:33+08:00">2023-08-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">技术博客</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>如果需要经常记录一些东西，那么markdown就是一个绕不开的东西，而习惯用markdown也会养成记录的习惯，本文主要从四个方面介绍markdown的简单用法，分别是1.markdown简介，2.markdown编译器，3.markdown语法。</p>
+<p>当你经常用markdown记录时也会有一个烦恼就是如何实现多设备同步查看记录的文件呢，这时你可以选择在一些博客网站创建自己的账号，比如CSDN，博客园等，又或者直接建立一个属于你自己的博客网站了，这里可以看博主的另一篇博客<a href="https://mobbu.space/2023/08/03/20230803_blog%E7%BD%91%E7%AB%99/">如何建立自己的博客网站</a>里面很详细的介绍了如何搭建自己的博客网站。</p>
+<span id="more"></span>
+
+<p>markdown官方中文网站就有在线编辑器和一些基础用法，可以在这里尝试markdown，<a target="_blank" rel="noopener" href="https://markdown.com.cn/">markdown官方网站</a></p>
+<h1 id="1-Markdown简介"><a href="#1-Markdown简介" class="headerlink" title="1 Markdown简介"></a>1 Markdown简介</h1><p>Markdown 是一种轻量级的标记语言，可用于在纯文本文档中添加格式化元素。Markdown 由 John Gruber 于 2004 年创建，如今已成为世界上最受欢迎的标记语言之一。</p>
+<h1 id="1-1-Markdown特点"><a href="#1-1-Markdown特点" class="headerlink" title="1.1 Markdown特点"></a>1.1 Markdown特点</h1><ol>
+<li>专注于文字内容；</li>
+<li>纯文本，易读易写，可以方便地纳入版本控制；</li>
+<li>语法简单，没有什么学习成本，能轻松在码字的同时做出美观大方的排版。</li>
+</ol>
+<h1 id="1-2-Markdown的优点"><a href="#1-2-Markdown的优点" class="headerlink" title="1.2 Markdown的优点"></a>1.2 Markdown的优点</h1><ol>
+<li>使用范围广，StackOverflow、CSDN、掘金、简书、GitBook、有道云笔记、V2EX、光谷社区等。主流的代码托管平台，如 GitHub、GitLab、BitBucket、Coding、Gitee 等等，都支持 Markdown 语法，很多开源项目的 README、开发文档、帮助文档、Wiki 等都用 Markdown 写作。</li>
+<li>可移植性强，可以轻松从一个平台移植到另外一个平台。</li>
+<li>可读性强，虽然markdown不是一个所见即所得的记录方式，但是在未编译的情况下可读性也很高，编译之后的格式更加工整美观。</li>
+</ol>
+<h1 id="2-Markdown编译器"><a href="#2-Markdown编译器" class="headerlink" title="2 Markdown编译器"></a>2 Markdown编译器</h1><p>markdown的编译器有很多，你甚至可以直接用记事本来进行编写(仅编写)，但是无法实时预览编译效果。一般使用最多的markdown编译器有Typora、Atom和vscode等。博主使用的是vscode，因为我喜欢这种集成到一起管理的感觉，以后或许会记录我使用到的vscode的一些功能的博客。这里简要介绍一下在vscode中编写markdown的界面和流程</p>
+<h2 id="2-1-vscode界面"><a href="#2-1-vscode界面" class="headerlink" title="2.1 vscode界面"></a>2.1 vscode界面</h2><p>下载安装后，打开vscode，界面如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808193654.png"></p>
+<p>其中1为资源管理器，2为查找，3为源代码管理，4为运行和调试，5为扩展，如果你的界面是英文，你首先可以在扩展中搜索简体中文，安装后重启即可。</p>
+<p>然后可以点击资源管理器打开文件夹或者直接在右侧界面中打开文件夹，一般我们习惯打开文件夹管理。比如我创建D盘markdown文件夹。</p>
+<h2 id="2-2-markdown编辑界面"><a href="#2-2-markdown编辑界面" class="headerlink" title="2.2 markdown编辑界面"></a>2.2 markdown编辑界面</h2><p>比如打开markdown文件夹，新建一个markdown.md文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808194144.png"></p>
+<p>此时界面如上图，可以看到大致分为三个部分，侧边栏，顶部栏和编辑区。</p>
+<ul>
+<li><p>侧边栏分为四个部分，打开的编辑区，打开的文件夹(途中为markdown文件夹)，大纲，时间线。</p>
+<ul>
+<li>打开的编辑器：也就是右侧的编辑区域的窗口</li>
+<li>打开的文件夹：文件管理区，创建的文件和文件夹都在这里</li>
+<li>大纲：我们写的md文件的大纲</li>
+<li>时间线：提供我们修改文件的记录，比如昨天修改文件，5分钟前修改文件等等。</li>
+</ul>
+</li>
+<li><p>顶部栏分为两个部分左侧为窗口，右侧有两个按钮，第一个按钮为实时解析预览md文件，第二个为向右拆分窗口，也就是打开两个编辑markdown文件的窗口。</p>
+</li>
+<li><p>编辑区：当我们点击第一个按钮时(带有放大镜的图标)比如这就是一个正常的编辑markdown文档时的状态，左侧编辑markdown文档，右侧查看实时渲染的结果</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808194754.png"></p>
+<p>并且vscode在编辑区右键可以导出PDF文件</p>
+<h1 id="3-Markdown语法"><a href="#3-Markdown语法" class="headerlink" title="3 Markdown语法"></a>3 Markdown语法</h1><h2 id="3-1-标题"><a href="#3-1-标题" class="headerlink" title="3.1 标题"></a>3.1 标题</h2><p>带有不同数量的<code>#</code>为不同标题</p>
+<table>
+<thead>
+<tr>
+<th align="center">标题</th>
+<th align="center">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">一级标题</td>
+<td align="center"><code>&quot;#&quot;+&quot;空格&quot;+&quot;标题&quot;</code></td>
+</tr>
+<tr>
+<td align="center">二级标题</td>
+<td align="center"><code>&quot;##&quot;+&quot;空格&quot;+&quot;标题&quot;</code></td>
+</tr>
+<tr>
+<td align="center">三级标题</td>
+<td align="center"><code>&quot;###&quot;+&quot;空格&quot;+&quot;标题&quot;</code></td>
+</tr>
+</tbody></table>
+<p>比如 <code># 这是一级标题</code> 效果如下</p>
+<h1 id="这是一级标题"><a href="#这是一级标题" class="headerlink" title="这是一级标题"></a>这是一级标题</h1><p>比如 <code>## 这是二级标题</code> 效果如下</p>
+<h2 id="这是二级标题"><a href="#这是二级标题" class="headerlink" title="这是二级标题"></a>这是二级标题</h2><p>比如 <code>### 这是三级标题</code> 效果如下</p>
+<h3 id="这是三级标题"><a href="#这是三级标题" class="headerlink" title="这是三级标题"></a>这是三级标题</h3><h2 id="3-2换行"><a href="#3-2换行" class="headerlink" title="3.2换行"></a>3.2换行</h2><p>推荐两种方式进行换行：</p>
+<ul>
+<li>在句子末尾添加两个空格：方便又实用</li>
+<li>在句子末尾添加<code>&lt;br&gt;</code></li>
+</ul>
+<h2 id="3-3-字体"><a href="#3-3-字体" class="headerlink" title="3.3 字体"></a>3.3 字体</h2><table>
+<thead>
+<tr>
+<th align="center">字体</th>
+<th align="center">代码</th>
+<th align="center">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">粗体</td>
+<td align="center"><code>**内容**</code></td>
+<td align="center"><strong>这个是粗体</strong></td>
+</tr>
+<tr>
+<td align="center">斜体</td>
+<td align="center"><code>*内容*</code></td>
+<td align="center"><em>这个是斜体</em></td>
+</tr>
+<tr>
+<td align="center">粗体加斜体</td>
+<td align="center"><code>***内容***</code></td>
+<td align="center"><em><strong>这个是粗体加斜体</strong></em></td>
+</tr>
+<tr>
+<td align="center">删除线</td>
+<td align="center"><code>~~内容~~</code></td>
+<td align="center"><del>这里想用删除线</del></td>
+</tr>
+</tbody></table>
+<p>如果想更改字体颜色，字体类型，或者居中显示，那么可以内嵌HTML来实现</p>
+<h2 id="3-4-无序列表"><a href="#3-4-无序列表" class="headerlink" title="3.4 无序列表"></a>3.4 无序列表</h2><p>无序列表的使用，在符号<code>-</code>后加空格使用。如下：</p>
+<ul>
+<li>无序列表 1</li>
+<li>无序列表 2</li>
+<li>无序列表 3</li>
+</ul>
+<p>如果要控制列表的层级，则需要在符号<code>-</code>前使用空格。如下：</p>
+<ul>
+<li>无序列表 1</li>
+<li>无序列表 2<ul>
+<li>无序列表 2.1</li>
+<li>无序列表 2.2</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-5-有序列表"><a href="#3-5-有序列表" class="headerlink" title="3.5 有序列表"></a>3.5 有序列表</h2><p>有序列表的使用，在数字及符号<code>.</code>后加空格后输入内容，如下：</p>
+<ol>
+<li>有序列表 1</li>
+<li>有序列表 2</li>
+<li>有序列表 3</li>
+</ol>
+<h2 id="3-6-引用"><a href="#3-6-引用" class="headerlink" title="3.6 引用"></a>3.6 引用</h2><p>引用的格式是在符号<code>&gt;</code>后面书写文字。如下：</p>
+<blockquote>
+<p>我没说过这句话。 ——鲁迅</p>
+</blockquote>
+<h2 id="3-7-超链接"><a href="#3-7-超链接" class="headerlink" title="3.7 超链接"></a>3.7 超链接</h2><ul>
+<li>比如想要链接我的博客，则输入<code>[“灵能相谈所”](mobbu.space)</code>的效果如下：<br><a href="mobbu.space">“灵能相谈所”</a><br>其中方框内为链接的名称，括号内为你的网址。</li>
+<li>其实编译器会默认将网址编译为超链接比如<a target="_blank" rel="noopener" href="http://www.google.com/">www.google.com</a><br>如果你不想网址变成超链接，那么你可以用 ` ` 将网址包含进来，比如<code>www.google.com</code></li>
+</ul>
+<h2 id="3-8-插入图片"><a href="#3-8-插入图片" class="headerlink" title="3.8 插入图片"></a>3.8 插入图片</h2><ul>
+<li><p>语法：<code>![图片名](图片链接)</code></p>
+</li>
+<li><p>图片名为你想给图片起的别名，也可为空。图片链接可以为本地链接，也可以是网上的图片链接，如果是本地链接，那么当你的md文档上传到网站或者移动到其他位置你的图片都可能失效，此时最好使用网上链接。我也有做过免费的github图床建立的教程-&gt;<a href="https://mobbu.space/2023/08/03/20230803_blog%E7%BD%91%E7%AB%99/">github图床建立</a>中的第5节就是相关教程。</p>
+</li>
+<li><p>示例：比如以下图片插入示例</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/mob_base_2.jpg"></p>
+<ul>
+<li>如果你想对图片做进一步调整，这时也可以使用html内嵌进行修改，比如想使图片居中显示，指定大小，输入如下代码<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div img align = center&gt;&lt;src = &quot;图片链接&quot; width = 500&gt;&lt;!div&gt;</span><br></pre></td></tr></table></figure>
+其中width就是调整大小，会按照比例缩放大小，大小为像素多少，以下为上述图片的修改效果。</li>
+</ul>
+<div  align = center><img src = "https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/mob_base_2.jpg" width = 500></div>
+
+<p>通过上述修改我们可以获得合适大小，合适位置的图片。</p>
+<h2 id="3-9-分割线"><a href="#3-9-分割线" class="headerlink" title="3.9 分割线"></a>3.9 分割线</h2><ul>
+<li><p>语法：<code>---</code></p>
+</li>
+<li><p>示例：</p>
+</li>
+</ul>
+<p>这是一条分割线</p>
+<hr>
+<h2 id="3-10-表格"><a href="#3-10-表格" class="headerlink" title="3.10 表格"></a>3.10 表格</h2><ul>
+<li>语法：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|属性1|属性2|属性3|</span><br><span class="line">|--:|:-:|:--|</span><br><span class="line">|属性1的值|属性2的值|属性3的值|</span><br><span class="line">|梨子梨子梨子梨子|梨子梨子梨子梨子|梨子梨子梨子梨子|</span><br></pre></td></tr></table></figure></li>
+<li>示例：比如就是刚刚的语法中显示的</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="right">属性1</th>
+<th align="center">属性2</th>
+<th align="left">属性3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">属性1的值</td>
+<td align="center">属性2的值</td>
+<td align="left">属性3的值</td>
+</tr>
+<tr>
+<td align="right">梨子梨子梨子梨子</td>
+<td align="center">梨子梨子梨子梨子</td>
+<td align="left">梨子梨子梨子梨子</td>
+</tr>
+</tbody></table>
+<p>第一行为属性名字，第二行为靠右显示<code>--:</code>，居中显示<code>:-:</code>，靠右显示<code>:--</code></p>
+<h2 id="3-11-代码"><a href="#3-11-代码" class="headerlink" title="3.11 代码"></a>3.11 代码</h2><ul>
+<li>语法：<ul>
+<li>输入` 代码` 为行中嵌入代码，</li>
+<li>使用：如下代码为单独嵌入，并且可以在第一行输入想高亮的代码比如C语言输入C即可<br>```C<br>代码<br>```</li>
+</ul>
+</li>
+<li>示例<ul>
+<li>行中嵌入：<code>printf(&quot;hello world&quot;);</code></li>
+<li>单独嵌入：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  std::cout &lt;&lt; <span class="string">&quot;hello world&quot;</span> &lt;&lt; endl;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="3-12-数学公式"><a href="#3-12-数学公式" class="headerlink" title="3.12 数学公式"></a>3.12 数学公式</h2><ul>
+<li>语法：单独嵌入<code>$$数学公式$$</code>或者行内嵌入<code>$数学公式$</code></li>
+<li>示例:<ul>
+<li>单独嵌入:<code>$$H(D_2) = -\left(\frac&#123;2&#125;&#123;4&#125;\log_2 \frac&#123;2&#125;&#123;4&#125; + \frac&#123;2&#125;&#123;4&#125;\log_2 \frac&#123;2&#125;&#123;4&#125;\right) = 1$$</code><br>$$H(D_2) &#x3D; -\left(\frac{2}{4}\log_2 \frac{2}{4} + \frac{2}{4}\log_2 \frac{2}{4}\right) &#x3D; 1$$</li>
+<li>行内嵌入：<code>$H(D_2) = -\left(\frac&#123;2&#125;&#123;4&#125;\log_2 \frac&#123;2&#125;&#123;4&#125; + \frac&#123;2&#125;&#123;4&#125;\log_2 \frac&#123;2&#125;&#123;4&#125;\right) = 1$</code>比如$H(D_2) &#x3D; -\left(\frac{2}{4}\log_2 \frac{2}{4} + \frac{2}{4}\log_2 \frac{2}{4}\right) &#x3D; 1$</li>
+</ul>
+</li>
+<li>数学公式编辑功能十分强大，运用得好在公式编辑方面十分方便。具体还有很多语法，比如各种复杂符号的写法比如累加累乘，矩阵的写法等，可以参考以下博客 <a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_37769093/article/details/107732606">markdown公式编辑</a>，总结得非常全面。</li>
+</ul>
+<h1 id="4-总结"><a href="#4-总结" class="headerlink" title="4 总结"></a>4 总结</h1><p>以上就是markdown的一些基本用法，主要还是要养成记录的习惯，如果你有制作网站或者查阅观看论文的需求的话，markdown可以说是十分有用了。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>mobbu
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://mobbu.space/2023/08/08/20230808_markdown%E8%AF%AD%E6%B3%95/" title="markdown的简单用法">http://mobbu.space/2023/08/08/20230808_markdown语法/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/markdown/" rel="tag"># markdown</a>
+              <a href="/tags/vscode/" rel="tag"># vscode</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/08/08/20230808_steam%E7%94%A8%E6%88%B7%E5%88%87%E6%8D%A2%E8%84%9A%E6%9C%ACbat/" rel="prev" title="steam一键切换用户的脚本">
+      <i class="fa fa-chevron-left"></i> steam一键切换用户的脚本
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Markdown%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">1 Markdown简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-1-Markdown%E7%89%B9%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">1.1 Markdown特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-2-Markdown%E7%9A%84%E4%BC%98%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">1.2 Markdown的优点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Markdown%E7%BC%96%E8%AF%91%E5%99%A8"><span class="nav-number">4.</span> <span class="nav-text">2 Markdown编译器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-vscode%E7%95%8C%E9%9D%A2"><span class="nav-number">4.1.</span> <span class="nav-text">2.1 vscode界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-markdown%E7%BC%96%E8%BE%91%E7%95%8C%E9%9D%A2"><span class="nav-number">4.2.</span> <span class="nav-text">2.2 markdown编辑界面</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Markdown%E8%AF%AD%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">3 Markdown语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E6%A0%87%E9%A2%98"><span class="nav-number">5.1.</span> <span class="nav-text">3.1 标题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%99%E6%98%AF%E4%B8%80%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-number">6.</span> <span class="nav-text">这是一级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%99%E6%98%AF%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-number">6.1.</span> <span class="nav-text">这是二级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%99%E6%98%AF%E4%B8%89%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-number">6.1.1.</span> <span class="nav-text">这是三级标题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2%E6%8D%A2%E8%A1%8C"><span class="nav-number">6.2.</span> <span class="nav-text">3.2换行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-%E5%AD%97%E4%BD%93"><span class="nav-number">6.3.</span> <span class="nav-text">3.3 字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">6.4.</span> <span class="nav-text">3.4 无序列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">6.5.</span> <span class="nav-text">3.5 有序列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-%E5%BC%95%E7%94%A8"><span class="nav-number">6.6.</span> <span class="nav-text">3.6 引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-7-%E8%B6%85%E9%93%BE%E6%8E%A5"><span class="nav-number">6.7.</span> <span class="nav-text">3.7 超链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-8-%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87"><span class="nav-number">6.8.</span> <span class="nav-text">3.8 插入图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-9-%E5%88%86%E5%89%B2%E7%BA%BF"><span class="nav-number">6.9.</span> <span class="nav-text">3.9 分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-10-%E8%A1%A8%E6%A0%BC"><span class="nav-number">6.10.</span> <span class="nav-text">3.10 表格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-11-%E4%BB%A3%E7%A0%81"><span class="nav-number">6.11.</span> <span class="nav-text">3.11 代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-12-%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"><span class="nav-number">6.12.</span> <span class="nav-text">3.12 数学公式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E6%80%BB%E7%BB%93"><span class="nav-number">7.</span> <span class="nav-text">4 总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="mobbu"
+      src="/images/pink_mob.jpeg">
+  <p class="site-author-name" itemprop="name">mobbu</p>
+  <div class="site-description" itemprop="description">道阻且长</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/mobbu919" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;mobbu919" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mobbu777@163.com" title="E-Mail → mobbu777@163.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links Website
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.cnblogs.com/mobbu" title="https:&#x2F;&#x2F;www.cnblogs.com&#x2F;mobbu" rel="noopener" target="_blank">mobbu的博客园</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2023-08 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">mobbu</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">20k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">18 分钟</span>
+</div>
+  <div class="powered-by">
+   <!--由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动-->
+  </div>
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客数<span id="busuanzi_value_site_uv"></span>人</span>
+    <span class="post-meta-divider">|</span>
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+$(document).ready(function() {
+
+    var int = setInterval(fixCount, 50);  // 50ms周期检测函数
+    var countOffset = 20000;  // 初始化首次数据
+
+    function fixCount() {            
+       if (document.getElementById("busuanzi_container_site_pv").style.display != "none")
+        {
+            $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + countOffset); 
+            clearInterval(int);
+        }                  
+        if ($("#busuanzi_container_site_pv").css("display") != "none")
+        {
+            $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + countOffset); // 加上初始数据 
+            clearInterval(int); // 停止检测
+        }  
+    }
+       	
+});
+</script> 
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
