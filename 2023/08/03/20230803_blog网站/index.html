@@ -54,7 +54,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230809011301.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230806161155.jpg">
 <meta property="article:published_time" content="2023-08-03T12:24:40.754Z">
-<meta property="article:modified_time" content="2023-08-08T17:15:50.751Z">
+<meta property="article:modified_time" content="2023-08-09T03:27:06.338Z">
 <meta property="article:author" content="mobbu">
 <meta property="article:tag" content="Github">
 <meta property="article:tag" content="hexo">
@@ -257,7 +257,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-08-09 01:15:50" itemprop="dateModified" datetime="2023-08-09T01:15:50+08:00">2023-08-09</time>
+                <time title="修改时间：2023-08-09 11:27:06" itemprop="dateModified" datetime="2023-08-09T11:27:06+08:00">2023-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -650,6 +650,7 @@
 <p>打开Blog&#x2F;themes&#x2F;next&#x2F;_config.yml中的mathjax部分修改代码：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mathjax:</span><br><span class="line">  enable:true</span><br><span class="line">  mhchem:false #需要化学方程式就true</span><br></pre></td></tr></table></figure>
 
+<p>在需要公式的博客最上方记得标注<code>mathjax: true</code>即可。</p>
 <ol start="18">
 <li>设置canvas nest风格</li>
 </ol>
@@ -657,9 +658,9 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/theme-next-canvas-nest source/lib/canvas-nest</span><br></pre></td></tr></table></figure>
 
 <p>打开Blog&#x2F;themes&#x2F;next&#x2F;_config.yml，找到canvas-nest，将enable：false改为true：（如果找不到canvas-nest，可能是文件修改了，试试将下面的代码复制粘贴到themes&#x2F;next中）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Canvas-nest</span><br><span class="line"># Dependencies: https://github.com/theme-next/theme-next-canvas-nest</span><br><span class="line"># For more information: https://github.com/hustcc/canvas-nest.js</span><br><span class="line">canvas_nest:</span><br><span class="line">  enable: true</span><br><span class="line">  onmobile: true # Display on mobile or not</span><br><span class="line">  color: &quot;0,0,255&quot; # RGB values, use `,` to separate</span><br><span class="line">  opacity: 0.5 # The opacity of line: 0~1</span><br><span class="line">  zIndex: -1 # z-index property of the background</span><br><span class="line">  count: 99 # The number of lines</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Canvas-nest</span><br><span class="line"># Dependencies: https://github.com/theme-next/theme-next-canvas-nest</span><br><span class="line"># For more information: https://github.com/hustcc/canvas-nest.js</span><br><span class="line">canvas_nest:</span><br><span class="line">  enable: true</span><br><span class="line">  onmobile: false # Display on mobile or not</span><br><span class="line">  color: &quot;27,27,27&quot; # RGB values, use `,` to separate</span><br><span class="line">  opacity: 0.5 # The opacity of line: 0~1</span><br><span class="line">  zIndex: -1 # z-index property of the background</span><br><span class="line">  count: 99 # The number of lines</span><br></pre></td></tr></table></figure>
 
-
+<p>不过博主觉得动态背景效果不佳，遂最终没有使用该效果。</p>
 <p><strong>持续更新中…</strong></p>
 <p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
 
@@ -926,7 +927,6 @@ $(document).ready(function() {
   </div>
 
   
-  <script color='56,56,56' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
   <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
   <script src="/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
