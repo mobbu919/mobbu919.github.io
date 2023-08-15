@@ -83,46 +83,6 @@
       </tags>
   </entry>
   <entry>
-    <title>steam一键切换用户的脚本</title>
-    <url>/2023/08/08/20230808_steam%E7%94%A8%E6%88%B7%E5%88%87%E6%8D%A2%E8%84%9A%E6%9C%ACbat/</url>
-    <content><![CDATA[<p>由于博主经常用很多不同的号玩CSGO，每一次都需要输入账号密码，并且等待令牌，十分麻烦，遂找到了一个脚本切换steam登录信息，其实steam++也可以实现这个功能，但是毕竟很多时候是借其他人的号，有泄露密码风险的还是不好。</p>
-<p>原理就是Steam的默认登录账号是写在注册表的，然后会根据注册表账号去Steam&#x2F;config&#x2F;loginusers.vdf找对应账号信息，所以切换用户的时候把注册表修改到对应的账号就可以了。</p>
-<span id="more"></span>
-
-<p>首先你需要登陆过一次你记录的账户，并且选择记住密码登录。这样你的本地就会保存对应的账号信息，此时就可以使用脚本修改到对应的账号就可以了。</p>
-<h1 id="1-创建脚本并修改"><a href="#1-创建脚本并修改" class="headerlink" title="1 创建脚本并修改"></a>1 创建脚本并修改</h1><p>新建脚本文件ChangeSteamAccount.bat，输入以下代码：</p>
-<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">taskkill</span> /f /im steam.exe</span><br><span class="line"><span class="built_in">taskkill</span> /f /im SteamService.exe</span><br><span class="line"><span class="built_in">echo</span> 请输入你要登录的账号(<span class="number">1</span>.妹妹<span class="number">1</span>；<span class="number">2</span>.妹妹<span class="number">2</span>；<span class="number">3</span>.妹妹<span class="number">3</span>)：</span><br><span class="line"><span class="built_in">set</span> /p area=</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">1</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account1 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">2</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account2 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">3</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account3 /f)</span><br><span class="line"><span class="built_in">start</span> D:\Steam\Steam.exe</span><br></pre></td></tr></table></figure>
-
-<p>接下来你需要对上述代码中的对应部分进行修改</p>
-<ol>
-<li>在上述代码中的第四行，也就是以下这一行代码进行修改，将括号中的文字修改为你想要提示的语句，比如我这里有三个妹妹的号，我就可以标记为妹妹1，妹妹2，妹妹3.</li>
-</ol>
-<p><code>echo 请输入你要登录的账号(1.妹妹1；2.妹妹2；3.妹妹3)：</code></p>
-<ol start="2">
-<li><p>在上述代码的第5，6，7行，修改if判断语句中的Account1，Account2，Account3为你想修改的账号的steam登录名，就比如上面的妹妹1的steam名字为meiyangyang，那么就把Account1修改为meiyangyang就可以了。</p>
-</li>
-<li><p>修改第8行，将路径修改为你的steam路径即可，路径可以通过<code>右键steam快捷键-&gt;快捷键方式-&gt;目标</code>找到。</p>
-</li>
-<li><p>如果想添加更多的号，直接类推上述操作即可，比如想添加妹妹4，那么代码如下：</p>
-<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">taskkill</span> /f /im steam.exe</span><br><span class="line"><span class="built_in">taskkill</span> /f /im SteamService.exe</span><br><span class="line"><span class="built_in">echo</span> 请输入你要登录的账号(<span class="number">1</span>.妹妹<span class="number">1</span>；<span class="number">2</span>.妹妹<span class="number">2</span>；<span class="number">3</span>.妹妹<span class="number">3</span>；妹妹<span class="number">4</span>)：</span><br><span class="line"><span class="built_in">set</span> /p area=</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">1</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account1 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">2</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account2 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">3</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account3 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">4</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account4 /f)</span><br><span class="line"><span class="built_in">start</span> D:\Steam\Steam.exe</span><br></pre></td></tr></table></figure>
-<p>其中修改了第四行，然后添加了一个if判断，记得将if判断中的area判断值修改为4，将Account4修改为你想要的名字。</p>
-</li>
-<li><p>可能会出现乱码情况，此时需要将你文本编辑的编码方式从UTF-8修改为ANSI，直接另存为文件，选择编码方式为ANSI即可解决问题</p>
-</li>
-</ol>
-<h1 id="2-实操演示"><a href="#2-实操演示" class="headerlink" title="2 实操演示"></a>2 实操演示</h1><p>如下图为打开后的界面，由于我此时打开的电脑没有安装steam，所以第一行第二行错误，其实这两行错误不用管，此时只需要输入你想登录的账号的序号就可以，比如我想登录妹妹1的账号，此时只需要输入1，按下回车即可登录。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808105819.png"></p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>steam</tag>
-        <tag>bat脚本</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>建立个人博客网站详细教程</title>
     <url>/2023/08/03/20230803_blog%E7%BD%91%E7%AB%99/</url>
     <content><![CDATA[<p>使用github+hexo+cloudflare+node.js+next主题建立属于自己的个人博客网站，博客主要分7个部分分别是1 使用git同步github的库，2 安装node.js，3 创建网站（Hexo框架，4 修改主题，5 github图床搭建，6 博客基本功能，7 博客扩展内容(持续更新)。</p>
@@ -501,31 +461,43 @@
       </tags>
   </entry>
   <entry>
-    <title>超好用网站汇总</title>
-    <url>/2023/08/09/20230809_%E5%A5%BD%E7%94%A8%E7%BD%91%E7%AB%99%E6%B1%87%E6%80%BB/</url>
-    <content><![CDATA[<p>总结分享自己常用的一些好用网站</p>
+    <title>steam一键切换用户的脚本</title>
+    <url>/2023/08/08/20230808_steam%E7%94%A8%E6%88%B7%E5%88%87%E6%8D%A2%E8%84%9A%E6%9C%ACbat/</url>
+    <content><![CDATA[<p>由于博主经常用很多不同的号玩CSGO，每一次都需要输入账号密码，并且等待令牌，十分麻烦，遂找到了一个脚本切换steam登录信息，其实steam++也可以实现这个功能，但是毕竟很多时候是借其他人的号，有泄露密码风险的还是不好。</p>
+<p>原理就是Steam的默认登录账号是写在注册表的，然后会根据注册表账号去Steam&#x2F;config&#x2F;loginusers.vdf找对应账号信息，所以切换用户的时候把注册表修改到对应的账号就可以了。</p>
 <span id="more"></span>
 
-<h1 id="1-比价网站"><a href="#1-比价网站" class="headerlink" title="1 比价网站"></a>1 比价网站</h1><p><a href="https://tool.manmanbuy.com/">比价网站</a></p>
-<p>这个网站可以查询过去24个月的价格波动，在网购之前都可以复制链接进来进行比价后再决定是否购买，减少背刺的概率。</p>
-<h1 id="2-mp3免费音乐资源网站"><a href="#2-mp3免费音乐资源网站" class="headerlink" title="2 mp3免费音乐资源网站"></a>2 mp3免费音乐资源网站</h1><p><a href="https://tools.liumingye.cn/music/">MyFreeMP3</a></p>
-<p>一个免费的下载高质量的mp3格式歌曲的网站，一些常见的比较热门的歌曲都有，不过新歌可能上传比较慢。</p>
-<p><a href="https://tonzhon.com/">铜钟</a></p>
-<p>也一个免费的下载高质量的mp3格式歌曲的网站，博主一般交叉使用。</p>
-<h1 id="3-图片压缩和转换分辨率网站"><a href="#3-图片压缩和转换分辨率网站" class="headerlink" title="3 图片压缩和转换分辨率网站"></a>3 图片压缩和转换分辨率网站</h1><p><a href="https://www.onlineimagetool.com/zh/resize-png-jpg-webp-gif">图片压缩和转换分辨率网站</a></p>
-<p>可以免费在线批量压缩图片，调整图片的分辨率，在需要上传一些证件照时十分有用。</p>
-<h1 id="4-学习代码算法结构网站"><a href="#4-学习代码算法结构网站" class="headerlink" title="4 学习代码算法结构网站"></a>4 学习代码算法结构网站</h1><p><a href="https://programmercarl.com/">代码随想录</a></p>
-<p>学习代码算法，主要是C++，总结的不错。</p>
-<h1 id="5-电子书网站"><a href="#5-电子书网站" class="headerlink" title="5 电子书网站"></a>5 电子书网站</h1><p><a href="http://jiumodiary.com/">鸠摩搜书</a></p>
-<p>相对资源还算比较多，自己也经常在上面搜索一些txt，pdf，当然主要是epub格式的书籍。</p>
+<p>首先你需要登陆过一次你记录的账户，并且选择记住密码登录。这样你的本地就会保存对应的账号信息，此时就可以使用脚本修改到对应的账号就可以了。</p>
+<h1 id="1-创建脚本并修改"><a href="#1-创建脚本并修改" class="headerlink" title="1 创建脚本并修改"></a>1 创建脚本并修改</h1><p>新建脚本文件ChangeSteamAccount.bat，输入以下代码：</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">taskkill</span> /f /im steam.exe</span><br><span class="line"><span class="built_in">taskkill</span> /f /im SteamService.exe</span><br><span class="line"><span class="built_in">echo</span> 请输入你要登录的账号(<span class="number">1</span>.妹妹<span class="number">1</span>；<span class="number">2</span>.妹妹<span class="number">2</span>；<span class="number">3</span>.妹妹<span class="number">3</span>)：</span><br><span class="line"><span class="built_in">set</span> /p area=</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">1</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account1 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">2</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account2 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">3</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account3 /f)</span><br><span class="line"><span class="built_in">start</span> D:\Steam\Steam.exe</span><br></pre></td></tr></table></figure>
+
+<p>接下来你需要对上述代码中的对应部分进行修改</p>
+<ol>
+<li>在上述代码中的第四行，也就是以下这一行代码进行修改，将括号中的文字修改为你想要提示的语句，比如我这里有三个妹妹的号，我就可以标记为妹妹1，妹妹2，妹妹3.</li>
+</ol>
+<p><code>echo 请输入你要登录的账号(1.妹妹1；2.妹妹2；3.妹妹3)：</code></p>
+<ol start="2">
+<li><p>在上述代码的第5，6，7行，修改if判断语句中的Account1，Account2，Account3为你想修改的账号的steam登录名，就比如上面的妹妹1的steam名字为meiyangyang，那么就把Account1修改为meiyangyang就可以了。</p>
+</li>
+<li><p>修改第8行，将路径修改为你的steam路径即可，路径可以通过<code>右键steam快捷键-&gt;快捷键方式-&gt;目标</code>找到。</p>
+</li>
+<li><p>如果想添加更多的号，直接类推上述操作即可，比如想添加妹妹4，那么代码如下：</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">taskkill</span> /f /im steam.exe</span><br><span class="line"><span class="built_in">taskkill</span> /f /im SteamService.exe</span><br><span class="line"><span class="built_in">echo</span> 请输入你要登录的账号(<span class="number">1</span>.妹妹<span class="number">1</span>；<span class="number">2</span>.妹妹<span class="number">2</span>；<span class="number">3</span>.妹妹<span class="number">3</span>；妹妹<span class="number">4</span>)：</span><br><span class="line"><span class="built_in">set</span> /p area=</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">1</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account1 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">2</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account2 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">3</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account3 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">4</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account4 /f)</span><br><span class="line"><span class="built_in">start</span> D:\Steam\Steam.exe</span><br></pre></td></tr></table></figure>
+<p>其中修改了第四行，然后添加了一个if判断，记得将if判断中的area判断值修改为4，将Account4修改为你想要的名字。</p>
+</li>
+<li><p>可能会出现乱码情况，此时需要将你文本编辑的编码方式从UTF-8修改为ANSI，直接另存为文件，选择编码方式为ANSI即可解决问题</p>
+</li>
+</ol>
+<h1 id="2-实操演示"><a href="#2-实操演示" class="headerlink" title="2 实操演示"></a>2 实操演示</h1><p>如下图为打开后的界面，由于我此时打开的电脑没有安装steam，所以第一行第二行错误，其实这两行错误不用管，此时只需要输入你想登录的账号的序号就可以，比如我想登录妹妹1的账号，此时只需要输入1，按下回车即可登录。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808105819.png"></p>
 <p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
 ]]></content>
       <categories>
-        <category>分享博客</category>
+        <category>技术博客</category>
       </categories>
       <tags>
-        <tag>实用工具</tag>
-        <tag>网站</tag>
+        <tag>steam</tag>
+        <tag>bat脚本</tag>
       </tags>
   </entry>
   <entry>
@@ -738,6 +710,34 @@
       </tags>
   </entry>
   <entry>
+    <title>超好用网站汇总</title>
+    <url>/2023/08/09/20230809_%E5%A5%BD%E7%94%A8%E7%BD%91%E7%AB%99%E6%B1%87%E6%80%BB/</url>
+    <content><![CDATA[<p>总结分享自己常用的一些好用网站</p>
+<span id="more"></span>
+
+<h1 id="1-比价网站"><a href="#1-比价网站" class="headerlink" title="1 比价网站"></a>1 比价网站</h1><p><a href="https://tool.manmanbuy.com/">比价网站</a></p>
+<p>这个网站可以查询过去24个月的价格波动，在网购之前都可以复制链接进来进行比价后再决定是否购买，减少背刺的概率。</p>
+<h1 id="2-mp3免费音乐资源网站"><a href="#2-mp3免费音乐资源网站" class="headerlink" title="2 mp3免费音乐资源网站"></a>2 mp3免费音乐资源网站</h1><p><a href="https://tools.liumingye.cn/music/">MyFreeMP3</a></p>
+<p>一个免费的下载高质量的mp3格式歌曲的网站，一些常见的比较热门的歌曲都有，不过新歌可能上传比较慢。</p>
+<p><a href="https://tonzhon.com/">铜钟</a></p>
+<p>也一个免费的下载高质量的mp3格式歌曲的网站，博主一般交叉使用。</p>
+<h1 id="3-图片压缩和转换分辨率网站"><a href="#3-图片压缩和转换分辨率网站" class="headerlink" title="3 图片压缩和转换分辨率网站"></a>3 图片压缩和转换分辨率网站</h1><p><a href="https://www.onlineimagetool.com/zh/resize-png-jpg-webp-gif">图片压缩和转换分辨率网站</a></p>
+<p>可以免费在线批量压缩图片，调整图片的分辨率，在需要上传一些证件照时十分有用。</p>
+<h1 id="4-学习代码算法结构网站"><a href="#4-学习代码算法结构网站" class="headerlink" title="4 学习代码算法结构网站"></a>4 学习代码算法结构网站</h1><p><a href="https://programmercarl.com/">代码随想录</a></p>
+<p>学习代码算法，主要是C++，总结的不错。</p>
+<h1 id="5-电子书网站"><a href="#5-电子书网站" class="headerlink" title="5 电子书网站"></a>5 电子书网站</h1><p><a href="http://jiumodiary.com/">鸠摩搜书</a></p>
+<p>相对资源还算比较多，自己也经常在上面搜索一些txt，pdf，当然主要是epub格式的书籍。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>分享博客</category>
+      </categories>
+      <tags>
+        <tag>实用工具</tag>
+        <tag>网站</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>webserver项目</title>
     <url>/2023/08/15/20230815_C++%E9%AB%98%E5%B9%B6%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
     <content><![CDATA[<p>牛客网经典之webserver项目学习总结记录，其中主要包括了：</p>
@@ -845,7 +845,7 @@
 <li>当 socket 可写时，epoll_wait 通知主线程。主线程将 socket 可写事件放入请求队列。</li>
 <li>睡眠在请求队列上的某个工作线程被唤醒，它往 socket 上写入服务器处理客户请求的结果。</li>
 </ol>
-<p>Reactor 模式的工作流程：<br><img src="https://img2023.cnblogs.com/blog/3237570/202308/3237570-20230809150322004-1354631125.png" alt="img"></p>
+<p>Reactor 模式的工作流程：<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230815193855.png"></p>
 <h1 id="4-RAⅡ机制"><a href="#4-RAⅡ机制" class="headerlink" title="4 RAⅡ机制"></a>4 RAⅡ机制</h1><p>RAII（Resource Acquisition Is Initialization）中文翻译为资源获取即初始化：使用局部对象来管理资源的技术称为资源获取即初始化；这里的资源主要是指操作系统中有限的东西如内存、网络套接字等等，局部对象是指存储在栈的对象，它的生命周期是由操作系统来管理的，无需人工介入；</p>
 <p>资源的使用一般经历三个步骤a.获取资源 b.使用资源 c.销毁资源，但是资源的销毁往往是程序员经常忘记的一个环节，所以程序界就想如何在程序员中让资源自动销毁呢</p>
 <p>整个RAII过程总结四个步骤：</p>
@@ -928,8 +928,8 @@
 <li>t 表示时间</li>
 </ul>
 <h1 id="8-总结"><a href="#8-总结" class="headerlink" title="8 总结"></a>8 总结</h1><p>项目详细的总流程：Reactor模式</p>
-<p><img src="https://img2023.cnblogs.com/blog/3237570/202308/3237570-20230809150322004-1354631125.png"></p>
-<h1 id="8-1-一个完整的工作流程"><a href="#8-1-一个完整的工作流程" class="headerlink" title="8.1 一个完整的工作流程"></a>8.1 一个完整的工作流程</h1><ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230815193855.png"></p>
+<h2 id="8-1-一个完整的工作流程"><a href="#8-1-一个完整的工作流程" class="headerlink" title="8.1 一个完整的工作流程"></a>8.1 一个完整的工作流程</h2><ol>
 <li>一个客户端发起连接</li>
 <li>检测到连接，初始化新接收的连接，比如设置端口复用、状态设置、将epollfd设置为ontshot，保证只有一个线程操作等。</li>
 <li>如果检测到错误或者客户端断开连接，则断开连接</li>
@@ -938,7 +938,7 @@
 <li>检测到写事件，对生成的响应报文进行分部分发送到客户端socket地址</li>
 <li>写完毕后，关闭连接</li>
 </ol>
-<h1 id="8-2-不同部分的总结"><a href="#8-2-不同部分的总结" class="headerlink" title="8.2 不同部分的总结"></a>8.2 不同部分的总结</h1><h1 id="8-2-1主函数中："><a href="#8-2-1主函数中：" class="headerlink" title="8.2.1主函数中："></a>8.2.1主函数中：</h1><ul>
+<h2 id="8-2-不同部分的总结"><a href="#8-2-不同部分的总结" class="headerlink" title="8.2 不同部分的总结"></a>8.2 不同部分的总结</h2><h3 id="8-2-1主函数中："><a href="#8-2-1主函数中：" class="headerlink" title="8.2.1主函数中："></a>8.2.1主函数中：</h3><ul>
 <li><p>主函数逻辑：</p>
 <p>  设置信号处理,主函数创建线程池，设置端口复用，绑定端口号，创建epoll对象-&gt;调用epoll_wait函数循环监听epoll事件while(true):</p>
 <ul>
@@ -954,7 +954,7 @@
 <blockquote>
 <p>首先判断进程号是否小于1，小于1则报错<br>获得端口号port，利用atoi()函数将字符串转换成int<br>使用addsig()函数对SIGPIPE信号进行处理<br>创建线程池treadpool<http_conn><em>pool,在堆区创建<br>创建数据保存所有的客户端信息http_conn</em> users&#x3D;new http_conn[ MAX_FD ];<br>创建监听套接字listenfd，PF_INET,流式传输SOCK_STREAM<br>编写sockaddr_in结构address以便后续绑定，设置结构中的sin_addr.s_addr、sin_family、sin_port属性port为htons( port )<br>设置端口复用setsockopt( listenfd, SOL_SOCKET, SO_REUSEADDR, &amp;reuse, sizeof( reuse ))函数，其中listenfd为监听文件描述符， SOL_SOCKET为复用level，reuse为端口复用值，1为可以复用<br>将fd和本地的IP + 端口进行绑定ret &#x3D; bind( listenfd, ( struct sockaddr* )&amp;address, sizeof( address ) );<br>监听这个socket上的连接ret &#x3D; listen( listenfd, 5 )<br>创建epoll对象，和事件数组，添加 epoll_event events，int epollfd &#x3D; epoll_create( 5 );<br>将监听的文件描述符添加到epoll对象中addfd( epollfd, listenfd, false );<br><strong>while循环</strong><br>&emsp;调用epoll_wait()成功时，epoll_wait（）返回为请求的I &#x2F; O准备就绪的文件描述符的数目，保存为number<br>&emsp;如果错误输出错误<br>&emsp;循环遍历就绪的文件描述符for ( int i &#x3D; 0; i &lt; number; i++ )<br>&emsp;sockfd &#x3D; events[i].data.fd将准备好的fd读取到sockfd中<br>&emsp;if当sockfd为监听的listenfd时，有客户端链接进来<br>&emsp;elseif当events[i].events为关闭或者错误时，close_conn()关闭连接<br>&emsp;elseif当events[i].event为EPOLLIN事件，将http请求数据  http_conn::read()读取完，再将文件描述符添加到pool中通过append()函数<br>&emsp;elseif当events[i].event为EPOLLOUT事件，生成相应，调用http_conn::write()函数,成功后关闭连接<br>数据销毁：close( epollfd );close( listenfd );delete [] users; delete pool;</p>
 </blockquote>
-<h1 id="8-2-2-http-conn-read-函数"><a href="#8-2-2-http-conn-read-函数" class="headerlink" title="8.2.2 http_conn::read()函数"></a>8.2.2 http_conn::read()函数</h1><h1 id="8-2-3-http-conn-write-函数"><a href="#8-2-3-http-conn-write-函数" class="headerlink" title="8.2.3 http_conn::write()函数"></a>8.2.3 http_conn::write()函数</h1><h1 id="8-2-4-threadpool-worker工作线程逻辑："><a href="#8-2-4-threadpool-worker工作线程逻辑：" class="headerlink" title="8.2.4 threadpool::worker工作线程逻辑："></a>8.2.4 threadpool::worker工作线程逻辑：</h1><p>流程如下:</p>
+<h3 id="8-2-2-http-conn-read-函数"><a href="#8-2-2-http-conn-read-函数" class="headerlink" title="8.2.2 http_conn::read()函数"></a>8.2.2 http_conn::read()函数</h3><h3 id="8-2-3-http-conn-write-函数"><a href="#8-2-3-http-conn-write-函数" class="headerlink" title="8.2.3 http_conn::write()函数"></a>8.2.3 http_conn::write()函数</h3><h3 id="8-2-4-threadpool-worker工作线程逻辑："><a href="#8-2-4-threadpool-worker工作线程逻辑：" class="headerlink" title="8.2.4 threadpool::worker工作线程逻辑："></a>8.2.4 threadpool::worker工作线程逻辑：</h3><p>流程如下:</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">threadpool::<span class="built_in">work</span>()-&gt;threadpool::<span class="built_in">run</span>()-&gt;http_conn::<span class="built_in">process</span>()-&gt;http_conn::<span class="built_in">process_read</span>()-&gt;http_conn::<span class="built_in">process_write</span>(HTTP_CODE ret)</span><br></pre></td></tr></table></figure>
 
 
