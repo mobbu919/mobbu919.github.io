@@ -24,6 +24,65 @@
       </tags>
   </entry>
   <entry>
+    <title>MobaXterm简单教程</title>
+    <url>/2023/08/07/20230807_shell%E5%B7%A5%E5%85%B7MobaXterm/</url>
+    <content><![CDATA[<p>日常开发中一个好用的终端软件是很重要的，而MobaXterm就是其中最好用的之一，并且最重要的是MobaXterm的免费版本的功能就十分强大。</p>
+<p>本博客会介绍MobaXterm的下载，界面和简单的使用方法，还有其中的一些工具的介绍。</p>
+<span id="more"></span>
+
+<h1 id="1-下载"><a href="#1-下载" class="headerlink" title="1 下载"></a>1 下载</h1><p>官方网址链接为 <a href="https://mobaxterm.mobatek.net/">MobaXterm官方网址</a> ,点击下载即可。</p>
+<p>MobaXterm分为两种安装模式：</p>
+<p>便携式exe文件：适合安装在U盘，双击即可运行，这样服务器账号密码什么的就很方便的管理了，出门在外只需要一个U盘就可以连接服务器。<br>安装式：正常的install安装步骤。</p>
+<h1 id="2-界面介绍"><a href="#2-界面介绍" class="headerlink" title="2 界面介绍"></a>2 界面介绍</h1><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807203546.png"></p>
+<p>安装打开后大概可以看到是上图的界面，可以看到主要分为三块，图中用不同颜色的框进行标注。</p>
+<p>红色框内是一些我们可能用到的工具，比如session，serbers，tools，还有设置settings等。</p>
+<p>蓝色框内是侧边栏，比如我们最常用的通过sessions保存的远程SSH连接服务器的列表会存放在蓝色区域，方便经常连接使用还有tools工具和macros录制脚本。</p>
+<p>绿色框内是我们操作的区域，默认是途中这些西汉时的界面，如果我们打开远程服务器，终端也是显示在绿色方框内，这里面最常用红的Start local terminal和recover previous sessions也是最常用的两个功能，分别是打开本地终端和打开最近的session。</p>
+<h1 id="3-功能介绍"><a href="#3-功能介绍" class="headerlink" title="3 功能介绍"></a>3 功能介绍</h1><h2 id="3-1-Session管理"><a href="#3-1-Session管理" class="headerlink" title="3.1 Session管理"></a>3.1 Session管理</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210026.png"></p>
+<p>点击上图中的session按键，会出现以下界面</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210158.png"></p>
+<p>可以看到session中可以新建SSH，Telnet，Rsh，RDP，FTP，SFTP，Shell等功能，需要用到这些功能的时候就点击进行进一步的设置即可。其中我们最常用的就是SSH啦。</p>
+<h2 id="3-2-SSH连接远程服务器"><a href="#3-2-SSH连接远程服务器" class="headerlink" title="3.2 SSH连接远程服务器"></a>3.2 SSH连接远程服务器</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210843.png"></p>
+<p>按照3.1中步骤，点击SSH可以看到如上图所示，其中需要填写的一般只有四个部分。</p>
+<ul>
+<li><code>Remote host</code>：填写服务器的IP地址</li>
+<li><code>specify username</code>：填写你在服务器中使用的用户的名称，这样连接服务器后就可以直接登录到你的账户</li>
+<li><code>Advanced SSH setting</code>：高级SSH设置，点击之后界面如下，填写Use private key，也就是服务器的密码<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807211553.png"></li>
+<li><code>Bookmark settings</code>，书签设置，也就是在侧边栏中，当我们需要连接的服务器较多时，我们可以给不同的服务器起别名区别，填写Session name为我们想要的名字。<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807211752.png"></li>
+</ul>
+<p>都设置完毕后点击ok就可以了，这样在主界面的侧边栏中就会出现我们想要连接的session，以后方便一键连接远程服务器</p>
+<h2 id="3-3-文本编辑器和文本对比"><a href="#3-3-文本编辑器和文本对比" class="headerlink" title="3.3 文本编辑器和文本对比"></a>3.3 文本编辑器和文本对比</h2><p>侧边栏tools-&gt;MobaTExtEditor和tools-&gt;MobaDiff</p>
+<p>打开tools-&gt;MobaTExtEditor，就会显示右侧红框中的界面，方便对本地或者远程的文档进行编辑</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212100.png"></p>
+<p>打开tools-&gt;MobaDiff，选择文件1和文件2，点击ok即可分析两个文档之间的区别。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212248.png"></p>
+<h2 id="3-4-录制操作脚本"><a href="#3-4-录制操作脚本" class="headerlink" title="3.4 录制操作脚本"></a>3.4 录制操作脚本</h2><p>点击侧边栏的macro的如下图的红色框，即可开始录制，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212442.png"></p>
+<p>点击录制后，会显示以下界面，点击停止就会提醒我们保存脚本，做一些重复性工作时，可以录制获得脚本然后以后就可以使用该脚本宏啦</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212547.png"></p>
+<h2 id="3-5-本地服务器"><a href="#3-5-本地服务器" class="headerlink" title="3.5 本地服务器"></a>3.5 本地服务器</h2><p>某些情况下，我们需要搭建自己本地的服务器，以方便通过http或ftp等协议传输本地文件或数据，MobaXterm就提供了实现该服务的功能，包括了HTTP、FTP、Telent等众多的协议。</p>
+<p>点击上方的servers按钮即可打开</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213112.png"></p>
+<p>然后选择需要共享的文件夹路径，点击HTTP的开始按钮之后输入访问 <a href="http://localhost/">http://localhost:80/</a>即可访问该文件夹</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213423.png"></p>
+<h2 id="3-6-小游戏"><a href="#3-6-小游戏" class="headerlink" title="3.6 小游戏"></a>3.6 小游戏</h2><p>上方按钮中有games选项，里面有一些经典的小游戏，适合上班摸鱼的时候使用</p>
+<h1 id="4-使用技巧"><a href="#4-使用技巧" class="headerlink" title="4 使用技巧"></a>4 使用技巧</h1><h2 id="4-1-多种终端同时管理"><a href="#4-1-多种终端同时管理" class="headerlink" title="4.1 多种终端同时管理"></a>4.1 多种终端同时管理</h2><p>MobaXterm也可以使用Git，当我们同时需要使用Git Bash和远程服务器的时候，坚持切换会很麻烦，这时可以在首页右键点击Git Bash就可以在MobaXterm中同时管理多种终端啦。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213746.png"></p>
+<h2 id="4-2-SSH-休眠管理"><a href="#4-2-SSH-休眠管理" class="headerlink" title="4.2 SSH 休眠管理"></a>4.2 SSH 休眠管理</h2><p>默认设置5分钟连接的SSH会自动休眠，如果想要长时间不休眠可以在Settings-&gt;SSH-&gt;SSH keepalive修改，勾上该选项即可，如下图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807214018.png"></p>
+<p><strong>持续更新中…</strong></p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>MobaXterm</tag>
+        <tag>shell</tag>
+        <tag>SSH</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>建立个人博客网站详细教程</title>
     <url>/2023/08/03/20230803_blog%E7%BD%91%E7%AB%99/</url>
     <content><![CDATA[<p>使用github+hexo+cloudflare+node.js+next主题建立属于自己的个人博客网站，博客主要分7个部分分别是1 使用git同步github的库，2 安装node.js，3 创建网站（Hexo框架，4 修改主题，5 github图床搭建，6 博客基本功能，7 博客扩展内容(持续更新)。</p>
@@ -402,65 +461,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MobaXterm简单教程</title>
-    <url>/2023/08/07/20230807_shell%E5%B7%A5%E5%85%B7MobaXterm/</url>
-    <content><![CDATA[<p>日常开发中一个好用的终端软件是很重要的，而MobaXterm就是其中最好用的之一，并且最重要的是MobaXterm的免费版本的功能就十分强大。</p>
-<p>本博客会介绍MobaXterm的下载，界面和简单的使用方法，还有其中的一些工具的介绍。</p>
-<span id="more"></span>
-
-<h1 id="1-下载"><a href="#1-下载" class="headerlink" title="1 下载"></a>1 下载</h1><p>官方网址链接为 <a href="https://mobaxterm.mobatek.net/">MobaXterm官方网址</a> ,点击下载即可。</p>
-<p>MobaXterm分为两种安装模式：</p>
-<p>便携式exe文件：适合安装在U盘，双击即可运行，这样服务器账号密码什么的就很方便的管理了，出门在外只需要一个U盘就可以连接服务器。<br>安装式：正常的install安装步骤。</p>
-<h1 id="2-界面介绍"><a href="#2-界面介绍" class="headerlink" title="2 界面介绍"></a>2 界面介绍</h1><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807203546.png"></p>
-<p>安装打开后大概可以看到是上图的界面，可以看到主要分为三块，图中用不同颜色的框进行标注。</p>
-<p>红色框内是一些我们可能用到的工具，比如session，serbers，tools，还有设置settings等。</p>
-<p>蓝色框内是侧边栏，比如我们最常用的通过sessions保存的远程SSH连接服务器的列表会存放在蓝色区域，方便经常连接使用还有tools工具和macros录制脚本。</p>
-<p>绿色框内是我们操作的区域，默认是途中这些西汉时的界面，如果我们打开远程服务器，终端也是显示在绿色方框内，这里面最常用红的Start local terminal和recover previous sessions也是最常用的两个功能，分别是打开本地终端和打开最近的session。</p>
-<h1 id="3-功能介绍"><a href="#3-功能介绍" class="headerlink" title="3 功能介绍"></a>3 功能介绍</h1><h2 id="3-1-Session管理"><a href="#3-1-Session管理" class="headerlink" title="3.1 Session管理"></a>3.1 Session管理</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210026.png"></p>
-<p>点击上图中的session按键，会出现以下界面</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210158.png"></p>
-<p>可以看到session中可以新建SSH，Telnet，Rsh，RDP，FTP，SFTP，Shell等功能，需要用到这些功能的时候就点击进行进一步的设置即可。其中我们最常用的就是SSH啦。</p>
-<h2 id="3-2-SSH连接远程服务器"><a href="#3-2-SSH连接远程服务器" class="headerlink" title="3.2 SSH连接远程服务器"></a>3.2 SSH连接远程服务器</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210843.png"></p>
-<p>按照3.1中步骤，点击SSH可以看到如上图所示，其中需要填写的一般只有四个部分。</p>
-<ul>
-<li><code>Remote host</code>：填写服务器的IP地址</li>
-<li><code>specify username</code>：填写你在服务器中使用的用户的名称，这样连接服务器后就可以直接登录到你的账户</li>
-<li><code>Advanced SSH setting</code>：高级SSH设置，点击之后界面如下，填写Use private key，也就是服务器的密码<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807211553.png"></li>
-<li><code>Bookmark settings</code>，书签设置，也就是在侧边栏中，当我们需要连接的服务器较多时，我们可以给不同的服务器起别名区别，填写Session name为我们想要的名字。<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807211752.png"></li>
-</ul>
-<p>都设置完毕后点击ok就可以了，这样在主界面的侧边栏中就会出现我们想要连接的session，以后方便一键连接远程服务器</p>
-<h2 id="3-3-文本编辑器和文本对比"><a href="#3-3-文本编辑器和文本对比" class="headerlink" title="3.3 文本编辑器和文本对比"></a>3.3 文本编辑器和文本对比</h2><p>侧边栏tools-&gt;MobaTExtEditor和tools-&gt;MobaDiff</p>
-<p>打开tools-&gt;MobaTExtEditor，就会显示右侧红框中的界面，方便对本地或者远程的文档进行编辑</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212100.png"></p>
-<p>打开tools-&gt;MobaDiff，选择文件1和文件2，点击ok即可分析两个文档之间的区别。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212248.png"></p>
-<h2 id="3-4-录制操作脚本"><a href="#3-4-录制操作脚本" class="headerlink" title="3.4 录制操作脚本"></a>3.4 录制操作脚本</h2><p>点击侧边栏的macro的如下图的红色框，即可开始录制，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212442.png"></p>
-<p>点击录制后，会显示以下界面，点击停止就会提醒我们保存脚本，做一些重复性工作时，可以录制获得脚本然后以后就可以使用该脚本宏啦</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212547.png"></p>
-<h2 id="3-5-本地服务器"><a href="#3-5-本地服务器" class="headerlink" title="3.5 本地服务器"></a>3.5 本地服务器</h2><p>某些情况下，我们需要搭建自己本地的服务器，以方便通过http或ftp等协议传输本地文件或数据，MobaXterm就提供了实现该服务的功能，包括了HTTP、FTP、Telent等众多的协议。</p>
-<p>点击上方的servers按钮即可打开</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213112.png"></p>
-<p>然后选择需要共享的文件夹路径，点击HTTP的开始按钮之后输入访问 <a href="http://localhost/">http://localhost:80/</a>即可访问该文件夹</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213423.png"></p>
-<h2 id="3-6-小游戏"><a href="#3-6-小游戏" class="headerlink" title="3.6 小游戏"></a>3.6 小游戏</h2><p>上方按钮中有games选项，里面有一些经典的小游戏，适合上班摸鱼的时候使用</p>
-<h1 id="4-使用技巧"><a href="#4-使用技巧" class="headerlink" title="4 使用技巧"></a>4 使用技巧</h1><h2 id="4-1-多种终端同时管理"><a href="#4-1-多种终端同时管理" class="headerlink" title="4.1 多种终端同时管理"></a>4.1 多种终端同时管理</h2><p>MobaXterm也可以使用Git，当我们同时需要使用Git Bash和远程服务器的时候，坚持切换会很麻烦，这时可以在首页右键点击Git Bash就可以在MobaXterm中同时管理多种终端啦。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213746.png"></p>
-<h2 id="4-2-SSH-休眠管理"><a href="#4-2-SSH-休眠管理" class="headerlink" title="4.2 SSH 休眠管理"></a>4.2 SSH 休眠管理</h2><p>默认设置5分钟连接的SSH会自动休眠，如果想要长时间不休眠可以在Settings-&gt;SSH-&gt;SSH keepalive修改，勾上该选项即可，如下图</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807214018.png"></p>
-<p><strong>持续更新中…</strong></p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>MobaXterm</tag>
-        <tag>shell</tag>
-        <tag>SSH</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>markdown的简单用法</title>
     <url>/2023/08/08/20230808_markdown%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<p>如果需要经常记录一些东西，那么markdown就是一个绕不开的东西，而习惯用markdown也会养成记录的习惯，本文主要从四个方面介绍markdown的简单用法，分别是1.markdown简介，2.markdown编译器，3.markdown语法。</p>
@@ -670,34 +670,6 @@
       </tags>
   </entry>
   <entry>
-    <title>超好用网站汇总</title>
-    <url>/2023/08/09/20230809_%E5%A5%BD%E7%94%A8%E7%BD%91%E7%AB%99%E6%B1%87%E6%80%BB/</url>
-    <content><![CDATA[<p>总结分享自己常用的一些好用网站</p>
-<span id="more"></span>
-
-<h1 id="1-比价网站"><a href="#1-比价网站" class="headerlink" title="1 比价网站"></a>1 比价网站</h1><p><a href="https://tool.manmanbuy.com/">比价网站</a></p>
-<p>这个网站可以查询过去24个月的价格波动，在网购之前都可以复制链接进来进行比价后再决定是否购买，减少背刺的概率。</p>
-<h1 id="2-mp3免费音乐资源网站"><a href="#2-mp3免费音乐资源网站" class="headerlink" title="2 mp3免费音乐资源网站"></a>2 mp3免费音乐资源网站</h1><p><a href="https://tools.liumingye.cn/music/">MyFreeMP3</a></p>
-<p>一个免费的下载高质量的mp3格式歌曲的网站，一些常见的比较热门的歌曲都有，不过新歌可能上传比较慢。</p>
-<p><a href="https://tonzhon.com/">铜钟</a></p>
-<p>也一个免费的下载高质量的mp3格式歌曲的网站，博主一般交叉使用。</p>
-<h1 id="3-图片压缩和转换分辨率网站"><a href="#3-图片压缩和转换分辨率网站" class="headerlink" title="3 图片压缩和转换分辨率网站"></a>3 图片压缩和转换分辨率网站</h1><p><a href="https://www.onlineimagetool.com/zh/resize-png-jpg-webp-gif">图片压缩和转换分辨率网站</a></p>
-<p>可以免费在线批量压缩图片，调整图片的分辨率，在需要上传一些证件照时十分有用。</p>
-<h1 id="4-学习代码算法结构网站"><a href="#4-学习代码算法结构网站" class="headerlink" title="4 学习代码算法结构网站"></a>4 学习代码算法结构网站</h1><p><a href="https://programmercarl.com/">代码随想录</a></p>
-<p>学习代码算法，主要是C++，总结的不错。</p>
-<h1 id="5-电子书网站"><a href="#5-电子书网站" class="headerlink" title="5 电子书网站"></a>5 电子书网站</h1><p><a href="http://jiumodiary.com/">鸠摩搜书</a></p>
-<p>相对资源还算比较多，自己也经常在上面搜索一些txt，pdf，当然主要是epub格式的书籍。</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>分享博客</category>
-      </categories>
-      <tags>
-        <tag>实用工具</tag>
-        <tag>网站</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>steam一键切换用户的脚本</title>
     <url>/2023/08/08/20230808_steam%E7%94%A8%E6%88%B7%E5%88%87%E6%8D%A2%E8%84%9A%E6%9C%ACbat/</url>
     <content><![CDATA[<p>由于博主经常用很多不同的号玩CSGO，每一次都需要输入账号密码，并且等待令牌，十分麻烦，遂找到了一个脚本切换steam登录信息，其实steam++也可以实现这个功能，但是毕竟很多时候是借其他人的号，有泄露密码风险的还是不好。</p>
@@ -738,6 +710,34 @@
       </tags>
   </entry>
   <entry>
+    <title>超好用网站汇总</title>
+    <url>/2023/08/09/20230809_%E5%A5%BD%E7%94%A8%E7%BD%91%E7%AB%99%E6%B1%87%E6%80%BB/</url>
+    <content><![CDATA[<p>总结分享自己常用的一些好用网站</p>
+<span id="more"></span>
+
+<h1 id="1-比价网站"><a href="#1-比价网站" class="headerlink" title="1 比价网站"></a>1 比价网站</h1><p><a href="https://tool.manmanbuy.com/">比价网站</a></p>
+<p>这个网站可以查询过去24个月的价格波动，在网购之前都可以复制链接进来进行比价后再决定是否购买，减少背刺的概率。</p>
+<h1 id="2-mp3免费音乐资源网站"><a href="#2-mp3免费音乐资源网站" class="headerlink" title="2 mp3免费音乐资源网站"></a>2 mp3免费音乐资源网站</h1><p><a href="https://tools.liumingye.cn/music/">MyFreeMP3</a></p>
+<p>一个免费的下载高质量的mp3格式歌曲的网站，一些常见的比较热门的歌曲都有，不过新歌可能上传比较慢。</p>
+<p><a href="https://tonzhon.com/">铜钟</a></p>
+<p>也一个免费的下载高质量的mp3格式歌曲的网站，博主一般交叉使用。</p>
+<h1 id="3-图片压缩和转换分辨率网站"><a href="#3-图片压缩和转换分辨率网站" class="headerlink" title="3 图片压缩和转换分辨率网站"></a>3 图片压缩和转换分辨率网站</h1><p><a href="https://www.onlineimagetool.com/zh/resize-png-jpg-webp-gif">图片压缩和转换分辨率网站</a></p>
+<p>可以免费在线批量压缩图片，调整图片的分辨率，在需要上传一些证件照时十分有用。</p>
+<h1 id="4-学习代码算法结构网站"><a href="#4-学习代码算法结构网站" class="headerlink" title="4 学习代码算法结构网站"></a>4 学习代码算法结构网站</h1><p><a href="https://programmercarl.com/">代码随想录</a></p>
+<p>学习代码算法，主要是C++，总结的不错。</p>
+<h1 id="5-电子书网站"><a href="#5-电子书网站" class="headerlink" title="5 电子书网站"></a>5 电子书网站</h1><p><a href="http://jiumodiary.com/">鸠摩搜书</a></p>
+<p>相对资源还算比较多，自己也经常在上面搜索一些txt，pdf，当然主要是epub格式的书籍。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>分享博客</category>
+      </categories>
+      <tags>
+        <tag>实用工具</tag>
+        <tag>网站</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>webserver项目</title>
     <url>/2023/08/15/20230815_C++%E9%AB%98%E5%B9%B6%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
     <content><![CDATA[<p>牛客网经典之webserver项目学习总结记录，其中主要包括了：</p>
@@ -748,9 +748,8 @@
 <li>利用正则与状态机解析 HTTP请求报文实现处理静态资源的请求；</li>
 <li>基于小根堆实现的定时器，关闭超时的非活动连接；</li>
 <li>服务器压力测试；</li>
+<li>项目总结<span id="more"></span></li>
 </ul>
-<span id="more"></span>
-
 <h1 id="1-总体介绍"><a href="#1-总体介绍" class="headerlink" title="1 总体介绍"></a>1 总体介绍</h1><h2 id="1-1-项目需求"><a href="#1-1-项目需求" class="headerlink" title="1.1 项目需求"></a>1.1 项目需求</h2><p>实现一个高性能的 Web Server， 就是一个服务器软件（程序）。其主要功能是通过 HTTP 协议与客户端进行通信，来接收，存储，处理来自客户端的 HTTP 请求，并对其请求做出 HTTP 响应，返回给客户端其请求的内容或返回一个 Error 信息。</p>
 <h2 id="1-2-项目主要内容"><a href="#1-2-项目主要内容" class="headerlink" title="1.2 项目主要内容"></a>1.2 项目主要内容</h2><ol>
 <li>使用多线程模型，利用信号量实现线程间加锁</li>
@@ -811,7 +810,7 @@
 <li>主线程使用某种算法来主动选择子线程。最简单、最常用的算法是随机算法和 Round Robin（轮流选取）算法，但更优秀、更智能的算法将使任务在各个工作线程中更均匀地分配，从而减轻服务器的整体压力。</li>
 <li>主线程和所有子线程通过一个共享的工作队列来同步，子线程都睡眠在该工作队列上。当有新的任务到来时，主线程将任务添加到工作队列中。这将唤醒正在等待任务的子线程，不过只有一个子线程将获得新任务的接管权，它可以从工作队列中取出任务并执行之，而其他子线程将继续睡眠在工作队列上。</li>
 </ul>
-<p>线程池的一般模型为：<br><img src="https://img2023.cnblogs.com/blog/3237570/202308/3237570-20230809152740361-2099898684.png" alt="img"></p>
+<p>线程池的一般模型为：<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230815200641.png"></p>
 <blockquote>
 <p>线程池中的线程数量最直接的限制因素是CPU的处理器的数量<code>N</code> ：如果你的CPU是4-cores的，对于CPU密集型的任务来说，那线程池中的线程数量最好也设置为4（或者+1防止其他因素造成的线程阻塞）；对于IO密集型的任务，一般要多于CPU的核数，因为线程间竞争的不是CPU的计算资源而是IO，IO的处理一般较慢，多于cores数的线程将为CPU争取更多的任务，不至在线程处理IO的过程造成CPU空闲导致资源浪费。</p>
 </blockquote>

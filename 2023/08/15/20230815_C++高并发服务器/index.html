@@ -23,18 +23,18 @@
     var CONFIG = {"hostname":"mobbu.space","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="牛客网经典之webserver项目学习总结记录，其中主要包括了：  使用多线程模型，利用信号量实现线程间加锁； 利用I0复用技术Epoll与线程池实现多线程的Reactor高并发模型； 利用RAII机制实现了数据库连接池，减少数据库连接建立与关闭的开销； 利用正则与状态机解析 HTTP请求报文实现处理静态资源的请求； 基于小根堆实现的定时器，关闭超时的非活动连接； 服务器压力测试；">
+  <meta name="description" content="牛客网经典之webserver项目学习总结记录，其中主要包括了：  使用多线程模型，利用信号量实现线程间加锁； 利用I0复用技术Epoll与线程池实现多线程的Reactor高并发模型； 利用RAII机制实现了数据库连接池，减少数据库连接建立与关闭的开销； 利用正则与状态机解析 HTTP请求报文实现处理静态资源的请求； 基于小根堆实现的定时器，关闭超时的非活动连接； 服务器压力测试； 项目总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webserver项目">
 <meta property="og:url" content="http://mobbu.space/2023/08/15/20230815_C++%E9%AB%98%E5%B9%B6%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8/index.html">
 <meta property="og:site_name" content="“灵能相谈所”">
-<meta property="og:description" content="牛客网经典之webserver项目学习总结记录，其中主要包括了：  使用多线程模型，利用信号量实现线程间加锁； 利用I0复用技术Epoll与线程池实现多线程的Reactor高并发模型； 利用RAII机制实现了数据库连接池，减少数据库连接建立与关闭的开销； 利用正则与状态机解析 HTTP请求报文实现处理静态资源的请求； 基于小根堆实现的定时器，关闭超时的非活动连接； 服务器压力测试；">
+<meta property="og:description" content="牛客网经典之webserver项目学习总结记录，其中主要包括了：  使用多线程模型，利用信号量实现线程间加锁； 利用I0复用技术Epoll与线程池实现多线程的Reactor高并发模型； 利用RAII机制实现了数据库连接池，减少数据库连接建立与关闭的开销； 利用正则与状态机解析 HTTP请求报文实现处理静态资源的请求； 基于小根堆实现的定时器，关闭超时的非活动连接； 服务器压力测试； 项目总结">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img2023.cnblogs.com/blog/3237570/202308/3237570-20230809152740361-2099898684.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230815200641.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230815193855.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230815193855.png">
 <meta property="article:published_time" content="2023-08-15T11:27:53.972Z">
-<meta property="article:modified_time" content="2023-08-15T12:00:26.613Z">
+<meta property="article:modified_time" content="2023-08-15T12:07:26.095Z">
 <meta property="article:author" content="mobbu">
 <meta property="article:tag" content="webserver">
 <meta property="article:tag" content="Linux">
@@ -43,7 +43,7 @@
 <meta property="article:tag" content="Reactor">
 <meta property="article:tag" content="正则与状态机">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img2023.cnblogs.com/blog/3237570/202308/3237570-20230809152740361-2099898684.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230815200641.png">
 
 <link rel="canonical" href="http://mobbu.space/2023/08/15/20230815_C++%E9%AB%98%E5%B9%B6%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">
 
@@ -231,7 +231,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-08-15 19:27:53 / 修改时间：20:00:26" itemprop="dateCreated datePublished" datetime="2023-08-15T19:27:53+08:00">2023-08-15</time>
+              <time title="创建时间：2023-08-15 19:27:53 / 修改时间：20:07:26" itemprop="dateCreated datePublished" datetime="2023-08-15T19:27:53+08:00">2023-08-15</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -283,9 +283,8 @@
 <li>利用正则与状态机解析 HTTP请求报文实现处理静态资源的请求；</li>
 <li>基于小根堆实现的定时器，关闭超时的非活动连接；</li>
 <li>服务器压力测试；</li>
+<li>项目总结<span id="more"></span></li>
 </ul>
-<span id="more"></span>
-
 <h1 id="1-总体介绍"><a href="#1-总体介绍" class="headerlink" title="1 总体介绍"></a>1 总体介绍</h1><h2 id="1-1-项目需求"><a href="#1-1-项目需求" class="headerlink" title="1.1 项目需求"></a>1.1 项目需求</h2><p>实现一个高性能的 Web Server， 就是一个服务器软件（程序）。其主要功能是通过 HTTP 协议与客户端进行通信，来接收，存储，处理来自客户端的 HTTP 请求，并对其请求做出 HTTP 响应，返回给客户端其请求的内容或返回一个 Error 信息。</p>
 <h2 id="1-2-项目主要内容"><a href="#1-2-项目主要内容" class="headerlink" title="1.2 项目主要内容"></a>1.2 项目主要内容</h2><ol>
 <li>使用多线程模型，利用信号量实现线程间加锁</li>
@@ -346,7 +345,7 @@
 <li>主线程使用某种算法来主动选择子线程。最简单、最常用的算法是随机算法和 Round Robin（轮流选取）算法，但更优秀、更智能的算法将使任务在各个工作线程中更均匀地分配，从而减轻服务器的整体压力。</li>
 <li>主线程和所有子线程通过一个共享的工作队列来同步，子线程都睡眠在该工作队列上。当有新的任务到来时，主线程将任务添加到工作队列中。这将唤醒正在等待任务的子线程，不过只有一个子线程将获得新任务的接管权，它可以从工作队列中取出任务并执行之，而其他子线程将继续睡眠在工作队列上。</li>
 </ul>
-<p>线程池的一般模型为：<br><img src="https://img2023.cnblogs.com/blog/3237570/202308/3237570-20230809152740361-2099898684.png" alt="img"></p>
+<p>线程池的一般模型为：<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230815200641.png"></p>
 <blockquote>
 <p>线程池中的线程数量最直接的限制因素是CPU的处理器的数量<code>N</code> ：如果你的CPU是4-cores的，对于CPU密集型的任务来说，那线程池中的线程数量最好也设置为4（或者+1防止其他因素造成的线程阻塞）；对于IO密集型的任务，一般要多于CPU的核数，因为线程间竞争的不是CPU的计算资源而是IO，IO的处理一般较慢，多于cores数的线程将为CPU争取更多的任务，不至在线程处理IO的过程造成CPU空闲导致资源浪费。</p>
 </blockquote>
