@@ -26,7 +26,7 @@
   <meta name="description" content="牛客网经典之webserver项目学习总结记录，其中主要包括了：  使用多线程模型，利用信号量实现线程间加锁； 利用I0复用技术Epoll与线程池实现多线程的Reactor高并发模型； 利用RAII机制实现了数据库连接池，减少数据库连接建立与关闭的开销； 利用正则与状态机解析 HTTP请求报文实现处理静态资源的请求； 基于小根堆实现的定时器，关闭超时的非活动连接； 服务器压力测试； 项目总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webserver项目">
-<meta property="og:url" content="http://mobbu.space/2023/08/15/20230815_C++%E9%AB%98%E5%B9%B6%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8/index.html">
+<meta property="og:url" content="http://mobbu.space/2023/08/15/20230815_C++HighConcurrencyWeberver/index.html">
 <meta property="og:site_name" content="“灵能相谈所”">
 <meta property="og:description" content="牛客网经典之webserver项目学习总结记录，其中主要包括了：  使用多线程模型，利用信号量实现线程间加锁； 利用I0复用技术Epoll与线程池实现多线程的Reactor高并发模型； 利用RAII机制实现了数据库连接池，减少数据库连接建立与关闭的开销； 利用正则与状态机解析 HTTP请求报文实现处理静态资源的请求； 基于小根堆实现的定时器，关闭超时的非活动连接； 服务器压力测试； 项目总结">
 <meta property="og:locale" content="zh_CN">
@@ -45,7 +45,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230815200641.png">
 
-<link rel="canonical" href="http://mobbu.space/2023/08/15/20230815_C++%E9%AB%98%E5%B9%B6%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+<link rel="canonical" href="http://mobbu.space/2023/08/15/20230815_C++HighConcurrencyWeberver/">
 
 
 <script id="page-configurations">
@@ -207,7 +207,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://mobbu.space/2023/08/15/20230815_C++%E9%AB%98%E5%B9%B6%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+    <link itemprop="mainEntityOfPage" href="http://mobbu.space/2023/08/15/20230815_C++HighConcurrencyWeberver/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/pink_mob.jpeg">
@@ -519,7 +519,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://mobbu.space/2023/08/15/20230815_C++%E9%AB%98%E5%B9%B6%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="webserver项目">http://mobbu.space/2023/08/15/20230815_C++高并发服务器/</a>
+    <a href="http://mobbu.space/2023/08/15/20230815_C++HighConcurrencyWeberver/" title="webserver项目">http://mobbu.space/2023/08/15/20230815_C++HighConcurrencyWeberver/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -544,11 +544,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/08/09/20230809_%E5%A5%BD%E7%94%A8%E7%BD%91%E7%AB%99%E6%B1%87%E6%80%BB/" rel="prev" title="超好用网站汇总">
+    <a href="/2023/08/09/20230809_PerfectWebsiteSummary/" rel="prev" title="超好用网站汇总">
       <i class="fa fa-chevron-left"></i> 超好用网站汇总
     </a></div>
       <div class="post-nav-item">
-    <a href="/2023/08/19/20230919_C++%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/" rel="next" title="C++学习路线">
+    <a href="/2023/08/19/20230819_C++LearningRoute/" rel="next" title="C++学习路线">
       C++学习路线 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -626,7 +626,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -639,7 +639,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -693,12 +693,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">52k</span>
+    <span title="站点总字数">61k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">48 分钟</span>
+    <span title="站点阅读时长">55 分钟</span>
 </div>
   <div class="powered-by">
    <!--由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动-->
@@ -825,7 +825,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'mobbu919.github.io',
       owner       : 'mobbu919',
       admin       : ['mobbu919'],
-      id          : '81688f71df7bdabc5416593cbed453ad',
+      id          : '25193fdf0c8a8dda1e0fb66e4f415326',
         language: 'zh-CN',
       distractionFreeMode: true
     });
