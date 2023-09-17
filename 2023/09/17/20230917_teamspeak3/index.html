@@ -23,21 +23,31 @@
     var CONFIG = {"hostname":"mobbu.space","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="当我们写了一定量的代码之后，就会遇到如何管理代码的问题。目前管理代码主要有两种管理工具分别是  Git：分布式管理 SVN：集中式管理  那么分布式管理有哪些好处呢？我目前感受到的优点如下：  管理代码成本低 分支branch机制让主干代码很简洁移动 可以回滚和查看之前commit的任意版本，这个在实际中十分有用 分支机制让多人协同修改代码更加方便 可以在不同电脑上轻松同步项目代码  下面主要介绍">
+  <meta name="description" content="联机游戏中，有一个稳定、简洁、占用很小的语音开黑软件是一个很重要的事情。这里我就介绍一下一款使用体验很好的实时语音软件teamspeak，虽然这款有一定的门槛，但是瑕不掩瑜。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git教程和分布式管理代码">
-<meta property="og:url" content="http://mobbu.space/2023/08/21/20230821_GitAbout/index.html">
+<meta property="og:title" content="teamspeak3的简单教程">
+<meta property="og:url" content="http://mobbu.space/2023/09/17/20230917_teamspeak3/index.html">
 <meta property="og:site_name" content="“灵能相谈所”">
-<meta property="og:description" content="当我们写了一定量的代码之后，就会遇到如何管理代码的问题。目前管理代码主要有两种管理工具分别是  Git：分布式管理 SVN：集中式管理  那么分布式管理有哪些好处呢？我目前感受到的优点如下：  管理代码成本低 分支branch机制让主干代码很简洁移动 可以回滚和查看之前commit的任意版本，这个在实际中十分有用 分支机制让多人协同修改代码更加方便 可以在不同电脑上轻松同步项目代码  下面主要介绍">
+<meta property="og:description" content="联机游戏中，有一个稳定、简洁、占用很小的语音开黑软件是一个很重要的事情。这里我就介绍一下一款使用体验很好的实时语音软件teamspeak，虽然这款有一定的门槛，但是瑕不掩瑜。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-08-21T11:29:49.503Z">
-<meta property="article:modified_time" content="2023-08-21T11:18:41.887Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-1.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-2.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-3.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-6.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-7.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-8.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-4.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-5.png">
+<meta property="article:published_time" content="2023-09-17T08:15:40.955Z">
+<meta property="article:modified_time" content="2023-09-17T08:15:18.741Z">
 <meta property="article:author" content="mobbu">
-<meta property="article:tag" content="Github">
-<meta property="article:tag" content="git">
+<meta property="article:tag" content="teamspeak">
+<meta property="article:tag" content="语音服务器">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image.png">
 
-<link rel="canonical" href="http://mobbu.space/2023/08/21/20230821_GitAbout/">
+<link rel="canonical" href="http://mobbu.space/2023/09/17/20230917_teamspeak3/">
 
 
 <script id="page-configurations">
@@ -50,7 +60,7 @@
   };
 </script>
 
-  <title>git教程和分布式管理代码 | “灵能相谈所”</title>
+  <title>teamspeak3的简单教程 | “灵能相谈所”</title>
   
 
 
@@ -199,7 +209,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://mobbu.space/2023/08/21/20230821_GitAbout/">
+    <link itemprop="mainEntityOfPage" href="http://mobbu.space/2023/09/17/20230917_teamspeak3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/pink_mob.jpeg">
@@ -212,7 +222,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          git教程和分布式管理代码
+          teamspeak3的简单教程
         </h1>
 
         <div class="post-meta">
@@ -223,7 +233,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-08-21 19:29:49 / 修改时间：19:18:41" itemprop="dateCreated datePublished" datetime="2023-08-21T19:29:49+08:00">2023-08-21</time>
+              <time title="创建时间：2023-09-17 16:15:40 / 修改时间：16:15:18" itemprop="dateCreated datePublished" datetime="2023-09-17T16:15:40+08:00">2023-09-17</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -231,7 +241,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">技术博客</span></a>
+                  <a href="/categories/%E5%88%86%E4%BA%AB%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">分享博客</span></a>
                 </span>
             </span>
 
@@ -248,14 +258,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
+              <span>1.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -267,58 +277,77 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>当我们写了一定量的代码之后，就会遇到如何管理代码的问题。目前管理代码主要有两种管理工具分别是</p>
-<ul>
-<li>Git：分布式管理</li>
-<li>SVN：集中式管理</li>
-</ul>
-<p>那么分布式管理有哪些好处呢？我目前感受到的优点如下：</p>
-<ul>
-<li>管理代码成本低</li>
-<li>分支branch机制让主干代码很简洁移动</li>
-<li>可以回滚和查看之前commit的任意版本，这个在实际中十分有用</li>
-<li>分支机制让多人协同修改代码更加方便</li>
-<li>可以在不同电脑上轻松同步项目代码</li>
-</ul>
-<p>下面主要介绍Git的一些基本用法。</p>
+        <p>联机游戏中，有一个稳定、简洁、占用很小的语音开黑软件是一个很重要的事情。这里我就介绍一下一款使用体验很好的实时语音软件teamspeak，虽然这款有一定的门槛，但是瑕不掩瑜。</p>
 <span id="more"></span>
 
-<p>首先贴上官方资料<a target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2/">Pro Git(2nd Edition)</a></p>
-<h1 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1 基本概念"></a>1 基本概念</h1><h2 id="1-1-三种状态"><a href="#1-1-三种状态" class="headerlink" title="1.1 三种状态"></a>1.1 三种状态</h2><ul>
-<li>已提交（committed）：已提交表示数据已经安全地保存在本地数据库中。</li>
-<li>已修改（modified）：已修改表示修改了文件，但还没保存到数据库中。</li>
-<li>已暂存（staged）：已暂存表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。</li>
-</ul>
-<h2 id="1-2-工作流程"><a href="#1-2-工作流程" class="headerlink" title="1.2 工作流程"></a>1.2 工作流程</h2><ul>
-<li><p>在工作区中修改文件。</p>
-</li>
-<li><p>将你想要下次提交的更改选择性地暂存，这样只会将更改的部分添加到暂存区。</p>
-</li>
-<li><p>提交更新，找到暂存区的文件，将快照永久性存储到 Git 目录。</p>
-</li>
-</ul>
-<p>如果 Git 目录中保存着特定版本的文件，就属于 已提交 状态。 如果文件已修改并放入暂存区，就属于 已暂存 状态。 如果自上次检出后，作了修改但还没有放到暂存区域，就是 已修改 状态。 在 Git 基础 一章，你会进一步了解这些状态的细节， 并学会如何根据文件状态实施后续操作，以及怎样跳过暂存直接提交。</p>
-<h1 id="2-基本操作"><a href="#2-基本操作" class="headerlink" title="2 基本操作"></a>2 基本操作</h1><p>一个基本操作流程如下：<br>首先你有一个github的库，公有私有都可以。</p>
+<h1 id="1-下载和安装"><a href="#1-下载和安装" class="headerlink" title="1 下载和安装"></a>1 下载和安装</h1><p>官方网址:<a target="_blank" rel="noopener" href="https://teamspeak.com/zh-CN/downloads/">teamspeak</a>，一定要在官网下载，国内有一些盗版的软件，虽然据说只是换皮版本，但是由于我也没看过源代码，不是特别清楚</p>
+<p>下载完毕后默认安装即可，其中会提示我们是否安装overwolf，这个可下可不下，主要是一些teamspeak的一些插件。</p>
+<h1 id="2-连接服务器和基础功能"><a href="#2-连接服务器和基础功能" class="headerlink" title="2 连接服务器和基础功能"></a>2 连接服务器和基础功能</h1><p>安装完成后，打开软件，可能需要你进行注册，注册完成后打开软件如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image.png"></p>
+<p>我们主要使用上面的工具栏进行相应的操作。</p>
+<h2 id="2-1-Connections-连接服务器"><a href="#2-1-Connections-连接服务器" class="headerlink" title="2.1 Connections 连接服务器"></a>2.1 Connections 连接服务器</h2><p>点击Connections 连接服务器</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-1.png"></p>
+<p>如上图在server address中填入你的服务器名称，在server password中填写你的服务器密码。</p>
+<p>经常使用的服务器可以保存为书签bookmarks，下次点击即可直接连接</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-2.png"></p>
+<h2 id="2-2-语音服务器的选择"><a href="#2-2-语音服务器的选择" class="headerlink" title="2.2 语音服务器的选择"></a>2.2 语音服务器的选择</h2><p>有关语音服务器，这里如果你愿意折腾，你可以自己去申请一个公网IP，搞一个自己的服务器，当然这个服务器不一定只用来当作语言服务器，还可以做其他的事情，但是如果如果想省事可以直接租用现有的服务器，简单说这里大概可以分为三个选择：</p>
 <ol>
-<li>github上的库clone到本地</li>
+<li>租用现有的teamspeak服务器，最省事，花费也相对较少</li>
+<li>租云服务器，比如阿里云、腾讯云、华为云等，然后调试装一些语言服务器必要的开源，这方面也有一些教程，相对比较麻烦</li>
+<li>一步到位，自己的空余电脑当作服务器，并且申请公网地址，再进行语言服务器的设置</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:xxx.git</span><br></pre></td></tr></table></figure>
-
-<p>在github上建库之后，输入代码git clone到本地仓库</p>
-<ol start="2">
-<li><p><code>git init</code>初始化生成.git文件夹</p>
+<p>总的来说一般都是租用现有的teamspeak服务器，我是在<a target="_blank" rel="noopener" href="https://ts3.com.cn/price">teamspeak服务器网站</a>进行租用的，勉强能用，有时候服务器会出一些问题，但是总体来说可用，省事。</p>
+<h2 id="2-3-基础功能介绍"><a href="#2-3-基础功能介绍" class="headerlink" title="2.3 基础功能介绍"></a>2.3 基础功能介绍</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-3.png"></p>
+<p>连接到服务器后，选择到响应频道，一般就使用这两个键位，打开&#x2F;关闭麦克风，打开&#x2F;关闭声音</p>
+<h1 id="3-基础设置"><a href="#3-基础设置" class="headerlink" title="3 基础设置"></a>3 基础设置</h1><p>主要分为功能设置、交互设置、频道管理设置</p>
+<h2 id="3-1-功能设置"><a href="#3-1-功能设置" class="headerlink" title="3.1 功能设置"></a>3.1 功能设置</h2><p>这一部分是必要的设置，如下图的最下方的红色方框options，其余三个部分都是频道管理的部分</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-6.png"></p>
+<p>点击打开后的界面如下：<br>可以看到左侧有很多设置，但是我们常用的修改的设置就是playback，也就是输出，还有capture，也就是输入。</p>
+<h3 id="3-1-1-输入设置"><a href="#3-1-1-输入设置" class="headerlink" title="3.1.1 输入设置"></a>3.1.1 输入设置</h3><p>设置界面如下图，可以看到主要分为三个部分。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-7.png"></p>
+<p>主要需要调整三个部分</p>
+<ul>
+<li><p>第一个部分是输入的设备，在capture device中选择我们想要输入的设备就可以了</p>
 </li>
-<li><p>本地进行修改后，<code>git add .</code>将所有修改添加到缓存区，此时处于已修改的状态</p>
+<li><p>第二个部分是语音输入模式，这里只推荐阈值触发模式，也就是说当你的声音达到一定强度时会自动触发输入，选择Voice Activity Detction-&gt;Volume Gate，然后调整下方的滑动条，这个值也就是触发输入的阈值，你可以在begin test选项中进行进一步的调试。</p>
 </li>
-<li><p><code>git commit -am &quot;修改的提示信息&quot;</code>将修改的信息提交到本地仓库</p>
+<li><p>第三个部分是一些数字信号处理，比如回声消除、打字音消除等，全部勾选就可以了</p>
 </li>
-<li><p><code>git push</code>将修改的信息push到云端也就是github的仓库中</p>
+</ul>
+<h3 id="3-1-2-输出设置"><a href="#3-1-2-输出设置" class="headerlink" title="3.1.2 输出设置"></a>3.1.2 输出设置</h3><p>设置界面如下如图，这个部分很简单，设置我们想要输出的设备和大概的声音就可以了<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-8.png"></p>
+<h2 id="3-2-交互设置"><a href="#3-2-交互设置" class="headerlink" title="3.2 交互设置"></a>3.2 交互设置</h2><p>交互设置主要就是在如下界面修改，选择self就可以看到了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-4.png"></p>
+<p>其中第一个红框是一些默认设置不用修改</p>
+<p>第二部分是离线，麦克风和输出的功能按钮</p>
+<p>第三个部分就是我们需要设置的交互设置了：</p>
+<ul>
+<li>change nickname ：修改在本服务器的昵称</li>
+<li>set avatar：修改在本服务器的头像</li>
+<li>delete avatar：删除头像</li>
+</ul>
+<h2 id="3-3-频道管理设置"><a href="#3-3-频道管理设置" class="headerlink" title="3.3 频道管理设置"></a>3.3 频道管理设置</h2><p>如果你是一个服务器的拥有者，那么你肯定想要对不同的玩家有不同的权限，否则会乱套，其中主要分为管理员、会员、游客三种权限、</p>
+<ul>
+<li>管理员 ：<ul>
+<li>能够创建频道、删除频道</li>
+<li>进入加锁的频道</li>
+<li>移动管理员或以下权限的人到任意频道</li>
+<li>授予&#x2F;撤销管理员、会员、游客权限</li>
+</ul>
 </li>
-</ol>
-<p>一些常用Git命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">git log		        //查看提交日志</span><br><span class="line">git add		        //提交到缓存区</span><br><span class="line">git reset 	        //撤销缓存区</span><br><span class="line">git commit 	        //提交代码到本地仓库</span><br><span class="line">git push			//提交代码到远程仓库</span><br><span class="line">git pull			//拷贝远程仓库的代码</span><br><span class="line">git checkout		//回退文件修改或者切换分支</span><br><span class="line">git stash			//暂存本地修改</span><br><span class="line">git stash pop		//释放第一个暂存区代码</span><br><span class="line">git diff			//查看本地具体修改，通常用于生成补丁</span><br><span class="line">git format-patch	//将本地提交生成补丁</span><br><span class="line">git revert			//回滚一个提交</span><br><span class="line">git cherry-pick		//下载远程仓库的某个提交</span><br><span class="line">git show			//查看具体修改</span><br><span class="line">git status			//查看所有修改文件</span><br></pre></td></tr></table></figure>
-
-
+<li>会员：会员能做到管理员大部分事情<ul>
+<li>能够创建频道、删除频道</li>
+<li>进入加锁的频道</li>
+<li>移动会员或以下权限的人到任意频道</li>
+<li>授予&#x2F;撤销会员、游客权限</li>
+</ul>
+</li>
+<li>游客：没有权限</li>
+</ul>
+<p>所以一般给个会员权限就够了，权限设置如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-5.png"></p>
+<p>选择设置server groups，打开后默认是超级管理员、管理员和游客，可以对每一个权限进行修改，比如修改名字和头像，改成自己想要的名字以增加趣味性，比如超级管理员修改为超级赛亚人并且配上相应的头像等。在设置的左下角也可以加上其余的权限等级来细化一些权限，这个就自行设置了。</p>
+<p>当你是会员以上的权限时，这时你就可以对服务器进行一个频道的划分，比如lol、csgo、观赛等分区，根据你的小团体的游戏成分进行划分即可。记得创建频道的时候选择永久，否则下一次登陆的时候就会消失</p>
+<h1 id="4-服务器的进一步设置"><a href="#4-服务器的进一步设置" class="headerlink" title="4 服务器的进一步设置"></a>4 服务器的进一步设置</h1><p>主要是进行一些界面的优化，一些个性化的设置，比如设置频道的介绍、频道的icon图等等</p>
 <p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
 
     </div>
@@ -335,7 +364,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://mobbu.space/2023/08/21/20230821_GitAbout/" title="git教程和分布式管理代码">http://mobbu.space/2023/08/21/20230821_GitAbout/</a>
+    <a href="http://mobbu.space/2023/09/17/20230917_teamspeak3/" title="teamspeak3的简单教程">http://mobbu.space/2023/09/17/20230917_teamspeak3/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -346,8 +375,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Github/" rel="tag"># Github</a>
-              <a href="/tags/git/" rel="tag"># git</a>
+              <a href="/tags/teamspeak/" rel="tag"># teamspeak</a>
+              <a href="/tags/%E8%AF%AD%E9%9F%B3%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag"># 语音服务器</a>
           </div>
 
         
@@ -356,13 +385,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/08/21/20230821_SortingAlgorithmSummary/" rel="prev" title="解析经典排序算法">
-      <i class="fa fa-chevron-left"></i> 解析经典排序算法
+    <a href="/2023/08/22/20230822_VscodeDeployC++/" rel="prev" title="vscode配置C++环境">
+      <i class="fa fa-chevron-left"></i> vscode配置C++环境
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/08/22/20230822_VscodeDeployC++/" rel="next" title="vscode配置C++环境">
-      vscode配置C++环境 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -422,7 +448,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">1 基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E4%B8%89%E7%A7%8D%E7%8A%B6%E6%80%81"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 三种状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 工作流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">2 基本操作</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">1 下载和安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%92%8C%E5%9F%BA%E7%A1%80%E5%8A%9F%E8%83%BD"><span class="nav-number">2.</span> <span class="nav-text">2 连接服务器和基础功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Connections-%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 Connections 连接服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E8%AF%AD%E9%9F%B3%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E9%80%89%E6%8B%A9"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 语音服务器的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E5%9F%BA%E7%A1%80%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 基础功能介绍</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E5%9F%BA%E7%A1%80%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">3 基础设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E5%8A%9F%E8%83%BD%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 功能设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1-%E8%BE%93%E5%85%A5%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.1.1.</span> <span class="nav-text">3.1.1 输入设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2-%E8%BE%93%E5%87%BA%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.1.2.</span> <span class="nav-text">3.1.2 输出设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E4%BA%A4%E4%BA%92%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 交互设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-%E9%A2%91%E9%81%93%E7%AE%A1%E7%90%86%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 频道管理设置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E8%AE%BE%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">4 服务器的进一步设置</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -637,7 +663,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'mobbu919.github.io',
       owner       : 'mobbu919',
       admin       : ['mobbu919'],
-      id          : 'bf871abc550bd9d0cf292b6da515631c',
+      id          : '0b6a04a56a6159a0e6f7256c1365f346',
         language: 'zh-CN',
       distractionFreeMode: true
     });
