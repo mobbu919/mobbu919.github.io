@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/mob.jpeg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/mob32.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/mob16.jpg">
+  <link rel="mask-icon" href="/images/mob.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mobbu.space","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="简要介绍一下C++11以后的智能指针，有std::unique_ptr&lt;T&gt;，std::shared_ptr&lt;T&gt;，std::weak_ptr&lt;T&gt;，并且废弃了std::auto_ptr&lt;T&gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++智能指针">
+<meta property="og:url" content="http://mobbu.space/2023/09/20/20230920_SmartPtr/index.html">
+<meta property="og:site_name" content="“灵能相谈所”">
+<meta property="og:description" content="简要介绍一下C++11以后的智能指针，有std::unique_ptr&lt;T&gt;，std::shared_ptr&lt;T&gt;，std::weak_ptr&lt;T&gt;，并且废弃了std::auto_ptr&lt;T&gt;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230920101244.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230920101259.png">
+<meta property="article:published_time" content="2023-09-20T05:30:36.892Z">
+<meta property="article:modified_time" content="2023-09-20T05:30:36.796Z">
+<meta property="article:author" content="mobbu">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="智能指针">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230920101244.png">
+
+<link rel="canonical" href="http://mobbu.space/2023/09/20/20230920_SmartPtr/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>C++智能指针 | “灵能相谈所”</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">“灵能相谈所”</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mobbu.space/2023/09/20/20230920_SmartPtr/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/pink_mob.jpeg">
+      <meta itemprop="name" content="mobbu">
+      <meta itemprop="description" content="道阻且长">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="“灵能相谈所”">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C++智能指针
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-09-20 13:30:36" itemprop="dateCreated datePublished" datetime="2023-09-20T13:30:36+08:00">2023-09-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">技术博客</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>简要介绍一下C++11以后的智能指针，有<code>std::unique_ptr&lt;T&gt;</code>，<code>std::shared_ptr&lt;T&gt;</code>，<code>std::weak_ptr&lt;T&gt;</code>，并且废弃了<code>std::auto_ptr&lt;T&gt;</code></p>
+<span id="more"></span>
+
+<p>首先智能指针是一个RAII类模型，用于动态分配内存，其设计思想是将基本类型指针封装为（模板）类对象指针，并在离开作用域时调用析构函数，使用delete删除指针所指向的内存空间。</p>
+<p>智能指针的作用是，能够处理内存泄漏问题和空悬指针问题。</p>
+<ul>
+<li><p>对于unique_ptr，实现独占式拥有的概念，同一时间只能有一个智能指针可以指向该对象，因为无法进行拷贝构造和拷贝赋值，但是可以进行移动构造和移动赋值；</p>
+</li>
+<li><p>对于shared_ptr，实现共享式拥有的概念，即多个智能指针可以指向相同的对象，该对象及相关资源会在其所指对象不再使用之后，自动释放与对象相关的资源；</p>
+</li>
+<li><p>对于weak_ptr，解决shared_ptr相互引用时，两个指针的引用计数永远不会下降为0，从而导致死锁问题。而weak_ptr是对对象的一种弱引用，可以绑定到shared_ptr，但不会增加对象的引用计数。</p>
+</li>
+</ul>
+<h1 id="unique-ptr"><a href="#unique-ptr" class="headerlink" title="unique_ptr"></a>unique_ptr</h1><p>每个 unique_ptr 指针指向的堆内存空间的引用计数，都只能为 1，一旦该 unique_ptr 指针放弃对所指堆内存空间的所有权，则该空间会被立即释放回收。</p>
+<ul>
+<li><p>创建unique_ptr  </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建空的unique_ptr</span></span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p1</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p2</span><span class="params">(<span class="literal">nullptr</span>)</span></span>;</span><br><span class="line"><span class="comment">// 有指向的</span></span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p3</span><span class="params">(<span class="keyword">new</span> <span class="type">int</span>)</span></span>;</span><br><span class="line"><span class="comment">// 创建空的unique_ptr</span></span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p4</span><span class="params">(<span class="keyword">new</span> <span class="type">int</span>)</span></span>;</span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p5</span><span class="params">(p4)</span></span>;<span class="comment">//错误的，没有拷贝构造</span></span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p5</span><span class="params">(std::move(p4))</span></span>;<span class="comment">//正确的，有移动构造</span></span><br></pre></td></tr></table></figure>
+<p>值得一提的是，对于调用移动构造函数的 p4 和 p5 来说，p5 将获取 p4 所指堆空间的所有权，而 p4 将变成空指针（nullptr）。</p>
+</li>
+<li><p>unique_ptr 可以指向一个数组</p>
+  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">std::unique_ptr&lt;<span class="type">int</span>[]&gt; uptr = std::<span class="built_in">make_unique</span>&lt;<span class="type">int</span>[]&gt;(<span class="number">10</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    uptr[i] = i * i;</span><br><span class="line">&#125;   </span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    std::cout &lt;&lt; uptr[i] &lt;&lt; std::endl;</span><br><span class="line">&#125;   </span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>C++14新增make_unique</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unique_ptr&lt;<span class="type">int</span>&gt; p1 = <span class="built_in">make_unique</span>&lt;<span class="type">int</span>&gt;(<span class="number">100</span>);</span><br><span class="line"><span class="keyword">auto</span> p2 = <span class="built_in">make_unique</span>&lt;<span class="type">int</span>&gt;(<span class="number">200</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>将unique_ptr转换成shared_ptr类型<br>转换条件：如果unique_ptr为右值时，他就可以赋值给shared_ptr。<br>原因：因为shared_ptr包含一个显示构造函数，可用于将右值unique_ptr转换为shared_ptr，shared_ptr将接管原来归unqiue_ptr所拥有的对象。</p>
+</li>
+<li><p>unique_ptr的简单实现</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">UniquePtr</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">UniquePtr</span>(T *pResource = <span class="literal">NULL</span>)</span><br><span class="line">		: <span class="built_in">m_pResource</span>(pResource) &#123;&#125;</span><br><span class="line">	~<span class="built_in">UniquePtr</span>()&#123; <span class="built_in">del</span>();&#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">reset</span><span class="params">(T* pResource)</span></span>&#123;<span class="comment">// 先释放资源(如果持有), 再持有资源</span></span><br><span class="line">		<span class="built_in">del</span>();</span><br><span class="line">		m_pResource = pResource;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">T* <span class="title">release</span><span class="params">()</span></span>&#123;<span class="comment">// 返回资源，资源的释放由调用方处理</span></span><br><span class="line">		T* pTemp = m_pResource;</span><br><span class="line">		m_pResource = <span class="literal">nullptr</span>;</span><br><span class="line">		<span class="keyword">return</span> pTemp;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">T* <span class="title">get</span><span class="params">()</span></span>&#123;<span class="comment">// 获取资源，调用方应该只使用不释放，否则会两次delete资源</span></span><br><span class="line">	</span><br><span class="line">		<span class="keyword">return</span> m_pResource;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">operator</span> <span class="title">bool</span><span class="params">()</span> <span class="type">const</span></span>&#123; <span class="comment">// 是否持有资源</span></span><br><span class="line">		<span class="keyword">return</span> m_pResource != <span class="literal">nullptr</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	T&amp; <span class="keyword">operator</span> * ()&#123;</span><br><span class="line">		<span class="keyword">return</span> *m_pResource;</span><br><span class="line">	&#125;</span><br><span class="line">	T* <span class="keyword">operator</span> -&gt; ()&#123;</span><br><span class="line">		<span class="keyword">return</span> m_pResource;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">del</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="literal">nullptr</span> == m_pResource) <span class="keyword">return</span>;</span><br><span class="line">		<span class="keyword">delete</span> m_pResource;</span><br><span class="line">		m_pResource = <span class="literal">nullptr</span>;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="built_in">UniquePtr</span>(<span class="type">const</span> UniquePtr &amp;) = <span class="keyword">delete</span>; <span class="comment">// 禁用拷贝构造</span></span><br><span class="line">	UniquePtr&amp; <span class="keyword">operator</span> = (<span class="type">const</span> UniquePtr &amp;) = <span class="keyword">delete</span>; <span class="comment">// 禁用拷贝赋值</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	T *m_pResource;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="shared-ptr"><a href="#shared-ptr" class="headerlink" title="shared_ptr"></a>shared_ptr</h1><p>参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/521454381">C++ 智能指针详解（二）——shared_ptr与weak_ptr</a></p>
+<ul>
+<li><p>特点总结如下</p>
+<ul>
+<li>共享所有权</li>
+<li>存储成本较裸指针多了个引用计数指针（相关控制块-共享）</li>
+<li>接口慎用（会导致蔓延问题）</li>
+<li>线程安全，引用计数增减会减慢多核性能</li>
+<li>支持拷贝构造，支持移动</li>
+</ul>
+</li>
+<li><p>shared_ptr使用注意事项</p>
+<ul>
+<li>避免循环引用，解决办法使用弱引用指针</li>
+<li>避免对原始指针多于两组的所有权（使用enable_shared_from_this&lt;&gt;避免this被多组所有权）</li>
+<li>避免在shared引用对象成员中再次使用shared_ptr，这样会导致资源重复释放</li>
+</ul>
+</li>
+<li><p>shared_ptr内存模型</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230920101244.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230920101259.png"></p>
+<ul>
+<li>API</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">函数API</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">p.get()</td>
+<td align="center">返回p中保存的指针。小心使用，若智能指针释放了其对象，返回的指针所指向的对象也就消失了</td>
+</tr>
+<tr>
+<td align="center">p.use_count()</td>
+<td align="center">返回与p共享对象的智能指针数量；可能很慢，注意用于调试</td>
+</tr>
+<tr>
+<td align="center">p.unique()</td>
+<td align="center">若p.use_count()为1，返回true；否则返回false</td>
+</tr>
+<tr>
+<td align="center">p &#x3D; q</td>
+<td align="center">p和q都是shared_ptr，所保存的指针能相互转换。此操作会递减p的引用计数，递增q的引用计数；若p的引用计数变为0，则将其管理的原内存释放</td>
+</tr>
+<tr>
+<td align="center">make_shared<T>(args)</td>
+<td align="center">返回一个shared_ptr，指向一个动态分配的类型为T的对象。使用args初始化此对象</td>
+</tr>
+<tr>
+<td align="center">shared_ptr<T> p(q)</td>
+<td align="center">p是share_ptr q的拷贝；此操作会递增q中的计数器。q中的指针类型必须能转换为T*</td>
+</tr>
+<tr>
+<td align="center">shared_ptr<T> p(u)</td>
+<td align="center">p从unique_ptr u那里接管了对象的所有权；将u置为空</td>
+</tr>
+<tr>
+<td align="center">shared_ptr<T> p(q,d)</td>
+<td align="center">p接管了内置指针q所指向的对象的所有权。q必须能转换为T*类型。p将使用可调用的对象d来代替delete</td>
+</tr>
+<tr>
+<td align="center">shared_ptr<T> p(p2,d)</td>
+<td align="center">p是share_ptr p2的拷贝；此操作会递增p2中的计数器。p2中的指针类型必须能转换为T*，p将使用可调用的对象d来代替delete</td>
+</tr>
+<tr>
+<td align="center">p.reset()</td>
+<td align="center">p置为空。若p是唯一指向其对象的shared_ptr，reset会释放此对象</td>
+</tr>
+<tr>
+<td align="center">p.reset(q)</td>
+<td align="center">传递了参数内置指针q，会令p指向q</td>
+</tr>
+<tr>
+<td align="center">p.reset(q,d)</td>
+<td align="center">传递了参数d，将会调用d而不是delete来释放q</td>
+</tr>
+<tr>
+<td align="center">p.swap(q)或swap(p,q)</td>
+<td align="center">交换两个智能指针</td>
+</tr>
+</tbody></table>
+<h1 id="weak-ptr"><a href="#weak-ptr" class="headerlink" title="weak_ptr"></a>weak_ptr</h1><ul>
+<li>API</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">函数API</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">weak_ptr<T> w</td>
+<td align="center">空weak_ptr可以指向类型为T的对象</td>
+</tr>
+<tr>
+<td align="center">weak_ptr<T> w(sp)</td>
+<td align="center">与shared_ptr sp指向相同对象的weak_ptr。T必须能转换为sp指向的类型</td>
+</tr>
+<tr>
+<td align="center">w &#x3D; p</td>
+<td align="center">p可以是一个shared_ptr或一个weak_ptr。赋值后w与p共享对象</td>
+</tr>
+<tr>
+<td align="center">w.reset()</td>
+<td align="center">将w置为空</td>
+</tr>
+<tr>
+<td align="center">w.use_count()</td>
+<td align="center">与w共享对象的shared_ptr的数量</td>
+</tr>
+<tr>
+<td align="center">w.expired()</td>
+<td align="center">若w.use_count()为0，返回true，否则返回false</td>
+</tr>
+<tr>
+<td align="center">w.lock()</td>
+<td align="center">如果expired为true，返回一个空shared_ptr；否则返回一个指向w的对象的shared_ptr</td>
+</tr>
+</tbody></table>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>mobbu
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://mobbu.space/2023/09/20/20230920_SmartPtr/" title="C++智能指针">http://mobbu.space/2023/09/20/20230920_SmartPtr/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/C/" rel="tag"># C++</a>
+              <a href="/tags/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/" rel="tag"># 智能指针</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/09/19/20230919_SingletonWithThreadpool/" rel="prev" title="单例设计模式简单实现">
+      <i class="fa fa-chevron-left"></i> 单例设计模式简单实现
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#unique-ptr"><span class="nav-number">1.</span> <span class="nav-text">unique_ptr</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#shared-ptr"><span class="nav-number">2.</span> <span class="nav-text">shared_ptr</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#weak-ptr"><span class="nav-number">3.</span> <span class="nav-text">weak_ptr</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="mobbu"
+      src="/images/pink_mob.jpeg">
+  <p class="site-author-name" itemprop="name">mobbu</p>
+  <div class="site-description" itemprop="description">道阻且长</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/mobbu919" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;mobbu919" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mobbu777@163.com" title="E-Mail → mobbu777@163.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links Website
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.cnblogs.com/mobbu" title="https:&#x2F;&#x2F;www.cnblogs.com&#x2F;mobbu" rel="noopener" target="_blank">mobbu的博客园</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2023-08 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">mobbu</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">71k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:04</span>
+</div>
+  <div class="powered-by">
+   <!--由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动-->
+  </div>
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客数<span id="busuanzi_value_site_uv"></span>人</span>
+    <span class="post-meta-divider">|</span>
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+$(document).ready(function() {
+
+    var int = setInterval(fixCount, 50);  // 50ms周期检测函数
+    var countOffset = 20000;  // 初始化首次数据
+
+    function fixCount() {            
+       if (document.getElementById("busuanzi_container_site_pv").style.display != "none")
+        {
+            $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + countOffset); 
+            clearInterval(int);
+        }                  
+        if ($("#busuanzi_container_site_pv").css("display") != "none")
+        {
+            $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + countOffset); // 加上初始数据 
+            clearInterval(int); // 停止检测
+        }  
+    }
+       	
+});
+</script> 
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '574a9ec89d2c91a007ad',
+      clientSecret: 'fd02cd7c15478f08e869ea62cb030da32e88a10c',
+      repo        : 'mobbu919.github.io',
+      owner       : 'mobbu919',
+      admin       : ['mobbu919'],
+      id          : 'eb701312035b1703a97cc143dc5b8f93',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
