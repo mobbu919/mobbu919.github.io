@@ -24,215 +24,6 @@
       </tags>
   </entry>
   <entry>
-    <title>markdown的简单用法</title>
-    <url>/2023/08/09/20230808_markdownLanguage/</url>
-    <content><![CDATA[<p>如果需要经常记录一些东西，那么markdown就是一个绕不开的东西，而习惯用markdown也会养成记录的习惯，本文主要从四个方面介绍markdown的简单用法，分别是1.markdown简介，2.markdown编译器，3.markdown语法。</p>
-<p>当你经常用markdown记录时也会有一个烦恼就是如何实现多设备同步查看记录的文件呢，这时你可以选择在一些博客网站创建自己的账号，比如CSDN，博客园等，又或者直接建立一个属于你自己的博客网站了，这里可以看博主的另一篇博客<a href="https://mobbu.space/2023/08/03/20230803_blog%E7%BD%91%E7%AB%99/">如何建立自己的博客网站</a>里面很详细的介绍了如何搭建自己的博客网站。</p>
-<span id="more"></span>
-
-<p>markdown官方中文网站就有在线编辑器和一些基础用法，可以在这里尝试markdown，<a href="https://markdown.com.cn/">markdown官方网站</a></p>
-<h1 id="1-Markdown简介"><a href="#1-Markdown简介" class="headerlink" title="1 Markdown简介"></a>1 Markdown简介</h1><p>Markdown 是一种轻量级的标记语言，可用于在纯文本文档中添加格式化元素。Markdown 由 John Gruber 于 2004 年创建，如今已成为世界上最受欢迎的标记语言之一。</p>
-<h2 id="1-1-Markdown特点"><a href="#1-1-Markdown特点" class="headerlink" title="1.1 Markdown特点"></a>1.1 Markdown特点</h2><ol>
-<li>专注于文字内容；</li>
-<li>纯文本，易读易写，可以方便地纳入版本控制；</li>
-<li>语法简单，没有什么学习成本，能轻松在码字的同时做出美观大方的排版。</li>
-</ol>
-<h2 id="1-2-Markdown的优点"><a href="#1-2-Markdown的优点" class="headerlink" title="1.2 Markdown的优点"></a>1.2 Markdown的优点</h2><ol>
-<li>使用范围广，StackOverflow、CSDN、掘金、简书、GitBook、有道云笔记、V2EX、光谷社区等。主流的代码托管平台，如 GitHub、GitLab、BitBucket、Coding、Gitee 等等，都支持 Markdown 语法，很多开源项目的 README、开发文档、帮助文档、Wiki 等都用 Markdown 写作。</li>
-<li>可移植性强，可以轻松从一个平台移植到另外一个平台。</li>
-<li>可读性强，虽然markdown不是一个所见即所得的记录方式，但是在未编译的情况下可读性也很高，编译之后的格式更加工整美观。</li>
-</ol>
-<h1 id="2-Markdown编译器"><a href="#2-Markdown编译器" class="headerlink" title="2 Markdown编译器"></a>2 Markdown编译器</h1><p>markdown的编译器有很多，你甚至可以直接用记事本来进行编写(仅编写)，但是无法实时预览编译效果。一般使用最多的markdown编译器有Typora、Atom和vscode等。博主使用的是vscode，因为我喜欢这种集成到一起管理的感觉，以后或许会记录我使用到的vscode的一些功能的博客。这里简要介绍一下在vscode中编写markdown的界面和流程</p>
-<h2 id="2-1-vscode界面"><a href="#2-1-vscode界面" class="headerlink" title="2.1 vscode界面"></a>2.1 vscode界面</h2><p>下载安装后，打开vscode，界面如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808193654.png"></p>
-<p>其中1为资源管理器，2为查找，3为源代码管理，4为运行和调试，5为扩展，如果你的界面是英文，你首先可以在扩展中搜索简体中文，安装后重启即可。</p>
-<p>然后可以点击资源管理器打开文件夹或者直接在右侧界面中打开文件夹，一般我们习惯打开文件夹管理。比如我创建D盘markdown文件夹。</p>
-<h2 id="2-2-markdown编辑界面"><a href="#2-2-markdown编辑界面" class="headerlink" title="2.2 markdown编辑界面"></a>2.2 markdown编辑界面</h2><p>比如打开markdown文件夹，新建一个markdown.md文件</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808194144.png"></p>
-<p>此时界面如上图，可以看到大致分为三个部分，侧边栏，顶部栏和编辑区。</p>
-<ul>
-<li><p>侧边栏分为四个部分，打开的编辑区，打开的文件夹(途中为markdown文件夹)，大纲，时间线。</p>
-<ul>
-<li>打开的编辑器：也就是右侧的编辑区域的窗口</li>
-<li>打开的文件夹：文件管理区，创建的文件和文件夹都在这里</li>
-<li>大纲：我们写的md文件的大纲</li>
-<li>时间线：提供我们修改文件的记录，比如昨天修改文件，5分钟前修改文件等等。</li>
-</ul>
-</li>
-<li><p>顶部栏分为两个部分左侧为窗口，右侧有两个按钮，第一个按钮为实时解析预览md文件，第二个为向右拆分窗口，也就是打开两个编辑markdown文件的窗口。</p>
-</li>
-<li><p>编辑区：当我们点击第一个按钮时(带有放大镜的图标)比如这就是一个正常的编辑markdown文档时的状态，左侧编辑markdown文档，右侧查看实时渲染的结果</p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808194754.png"></p>
-<p>并且vscode在编辑区右键可以导出PDF文件</p>
-<h1 id="3-Markdown语法"><a href="#3-Markdown语法" class="headerlink" title="3 Markdown语法"></a>3 Markdown语法</h1><h2 id="3-1-标题"><a href="#3-1-标题" class="headerlink" title="3.1 标题"></a>3.1 标题</h2><p>带有不同数量的<code>#</code>为不同标题</p>
-<table>
-<thead>
-<tr>
-<th align="center">标题</th>
-<th align="center">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">一级标题</td>
-<td align="center"><code>&quot;#&quot;+&quot;空格&quot;+&quot;标题&quot;</code></td>
-</tr>
-<tr>
-<td align="center">二级标题</td>
-<td align="center"><code>&quot;##&quot;+&quot;空格&quot;+&quot;标题&quot;</code></td>
-</tr>
-<tr>
-<td align="center">三级标题</td>
-<td align="center"><code>&quot;###&quot;+&quot;空格&quot;+&quot;标题&quot;</code></td>
-</tr>
-</tbody></table>
-<p>比如<code># 这是一级标题</code>，为了避免标题乱序，这里就不演示了。</p>
-<h2 id="3-2换行"><a href="#3-2换行" class="headerlink" title="3.2换行"></a>3.2换行</h2><p>推荐两种方式进行换行：</p>
-<ul>
-<li>在句子末尾添加两个空格：方便又实用</li>
-<li>在句子末尾添加<code>&lt;br&gt;</code></li>
-</ul>
-<h2 id="3-3-字体"><a href="#3-3-字体" class="headerlink" title="3.3 字体"></a>3.3 字体</h2><table>
-<thead>
-<tr>
-<th align="center">字体</th>
-<th align="center">代码</th>
-<th align="center">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">粗体</td>
-<td align="center"><code>**内容**</code></td>
-<td align="center"><strong>这个是粗体</strong></td>
-</tr>
-<tr>
-<td align="center">斜体</td>
-<td align="center"><code>*内容*</code></td>
-<td align="center"><em>这个是斜体</em></td>
-</tr>
-<tr>
-<td align="center">粗体加斜体</td>
-<td align="center"><code>***内容***</code></td>
-<td align="center"><em><strong>这个是粗体加斜体</strong></em></td>
-</tr>
-<tr>
-<td align="center">删除线</td>
-<td align="center"><code>~~内容~~</code></td>
-<td align="center"><del>这里想用删除线</del></td>
-</tr>
-</tbody></table>
-<p>如果想更改字体颜色，字体类型，或者居中显示，那么可以内嵌HTML来实现</p>
-<h2 id="3-4-无序列表"><a href="#3-4-无序列表" class="headerlink" title="3.4 无序列表"></a>3.4 无序列表</h2><p>无序列表的使用，在符号<code>-</code>后加空格使用。如下：</p>
-<ul>
-<li>无序列表 1</li>
-<li>无序列表 2</li>
-<li>无序列表 3</li>
-</ul>
-<p>如果要控制列表的层级，则需要在符号<code>-</code>前使用空格。如下：</p>
-<ul>
-<li>无序列表 1</li>
-<li>无序列表 2<ul>
-<li>无序列表 2.1</li>
-<li>无序列表 2.2</li>
-</ul>
-</li>
-</ul>
-<h2 id="3-5-有序列表"><a href="#3-5-有序列表" class="headerlink" title="3.5 有序列表"></a>3.5 有序列表</h2><p>有序列表的使用，在数字及符号<code>.</code>后加空格后输入内容，如下：</p>
-<ol>
-<li>有序列表 1</li>
-<li>有序列表 2</li>
-<li>有序列表 3</li>
-</ol>
-<h2 id="3-6-引用"><a href="#3-6-引用" class="headerlink" title="3.6 引用"></a>3.6 引用</h2><p>引用的格式是在符号<code>&gt;</code>后面书写文字。如下：</p>
-<blockquote>
-<p>我没说过这句话。 ——鲁迅</p>
-</blockquote>
-<h2 id="3-7-超链接"><a href="#3-7-超链接" class="headerlink" title="3.7 超链接"></a>3.7 超链接</h2><ul>
-<li>比如想要链接我的博客，则输入<code>[“灵能相谈所”](mobbu.space)</code>的效果如下：<br><a href="mobbu.space">“灵能相谈所”</a><br>其中方框内为链接的名称，括号内为你的网址。</li>
-<li>其实编译器会默认将网址编译为超链接比如<a href="http://www.google.com/">www.google.com</a><br>如果你不想网址变成超链接，那么你可以用 ` ` 将网址包含进来，比如<code>www.google.com</code></li>
-</ul>
-<h2 id="3-8-插入图片"><a href="#3-8-插入图片" class="headerlink" title="3.8 插入图片"></a>3.8 插入图片</h2><ul>
-<li><p>语法：<code>![图片名](图片链接)</code></p>
-</li>
-<li><p>图片名为你想给图片起的别名，也可为空。图片链接可以为本地链接，也可以是网上的图片链接，如果是本地链接，那么当你的md文档上传到网站或者移动到其他位置你的图片都可能失效，此时最好使用网上链接。我也有做过免费的github图床建立的教程-&gt;<a href="https://mobbu.space/2023/08/03/20230803_blog%E7%BD%91%E7%AB%99/">github图床建立</a>中的第5节就是相关教程。</p>
-</li>
-<li><p>示例：比如以下图片插入示例</p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/mob_base_2.jpg"></p>
-<ul>
-<li>如果你想对图片做进一步调整，这时也可以使用html内嵌进行修改，比如想使图片居中显示，指定大小，输入如下代码<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div img align = center&gt;&lt;src = &quot;图片链接&quot; width = 500&gt;&lt;!div&gt;</span><br></pre></td></tr></table></figure>
-其中width就是调整大小，会按照比例缩放大小，大小为像素多少，以下为上述图片的修改效果。</li>
-</ul>
-<div  align = center><img src = "https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/mob_base_2.jpg" width = 500></div>
-
-<p>通过上述修改我们可以获得合适大小，合适位置的图片。</p>
-<h2 id="3-9-分割线"><a href="#3-9-分割线" class="headerlink" title="3.9 分割线"></a>3.9 分割线</h2><ul>
-<li><p>语法：<code>---</code></p>
-</li>
-<li><p>示例：</p>
-</li>
-</ul>
-<p>这是一条分割线</p>
-<hr>
-<h2 id="3-10-表格"><a href="#3-10-表格" class="headerlink" title="3.10 表格"></a>3.10 表格</h2><ul>
-<li>语法：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">|属性1|属性2|属性3|</span><br><span class="line">|--:|:-:|:--|</span><br><span class="line">|属性1的值|属性2的值|属性3的值|</span><br><span class="line">|梨子梨子梨子梨子|梨子梨子梨子梨子|梨子梨子梨子梨子|</span><br></pre></td></tr></table></figure></li>
-<li>示例：比如就是刚刚的语法中显示的</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="right">属性1</th>
-<th align="center">属性2</th>
-<th align="left">属性3</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="right">属性1的值</td>
-<td align="center">属性2的值</td>
-<td align="left">属性3的值</td>
-</tr>
-<tr>
-<td align="right">梨子梨子梨子梨子</td>
-<td align="center">梨子梨子梨子梨子</td>
-<td align="left">梨子梨子梨子梨子</td>
-</tr>
-</tbody></table>
-<p>第一行为属性名字，第二行为靠右显示<code>--:</code>，居中显示<code>:-:</code>，靠右显示<code>:--</code></p>
-<h2 id="3-11-代码"><a href="#3-11-代码" class="headerlink" title="3.11 代码"></a>3.11 代码</h2><ul>
-<li>语法：<ul>
-<li>输入` 代码` 为行中嵌入代码，</li>
-<li>使用：如下代码为单独嵌入，并且可以在第一行输入想高亮的代码比如C语言输入C即可<br>```C<br>代码<br>```</li>
-</ul>
-</li>
-<li>示例<ul>
-<li>行中嵌入：<code>printf(&quot;hello world&quot;);</code></li>
-<li>单独嵌入：<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  std::cout &lt;&lt; <span class="string">&quot;hello world&quot;</span> &lt;&lt; endl;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-<h2 id="3-12-数学公式"><a href="#3-12-数学公式" class="headerlink" title="3.12 数学公式"></a>3.12 数学公式</h2><ul>
-<li>语法：单独嵌入<code>$$数学公式$$</code>或者行内嵌入<code>$数学公式$</code></li>
-<li>示例:<ul>
-<li>单独嵌入:<code>$$H(D_2) = -\left(\frac&#123;2&#125;&#123;4&#125;\log_2 \frac&#123;2&#125;&#123;4&#125; + \frac&#123;2&#125;&#123;4&#125;\log_2 \frac&#123;2&#125;&#123;4&#125;\right) = 1$$</code><br>$$H(D_2) &#x3D; -\left(\frac{2}{4}\log_2 \frac{2}{4} + \frac{2}{4}\log_2 \frac{2}{4}\right) &#x3D; 1$$</li>
-<li>行内嵌入：<code>$H(D_2) = -\left(\frac&#123;2&#125;&#123;4&#125;\log_2 \frac&#123;2&#125;&#123;4&#125; + \frac&#123;2&#125;&#123;4&#125;\log_2 \frac&#123;2&#125;&#123;4&#125;\right) = 1$</code>比如$H(D_2) &#x3D; -\left(\frac{2}{4}\log_2 \frac{2}{4} + \frac{2}{4}\log_2 \frac{2}{4}\right) &#x3D; 1$</li>
-</ul>
-</li>
-<li>数学公式编辑功能十分强大，运用得好在公式编辑方面十分方便。具体还有很多语法，比如各种复杂符号的写法比如累加累乘，矩阵的写法等，可以参考以下博客 <a href="https://blog.csdn.net/m0_37769093/article/details/107732606">markdown公式编辑</a>，总结得非常全面。</li>
-</ul>
-<h1 id="4-总结"><a href="#4-总结" class="headerlink" title="4 总结"></a>4 总结</h1><p>以上就是markdown的一些基本用法，主要还是要养成记录的习惯，如果你有制作网站或者查阅观看论文的需求的话，markdown可以说是十分有用了。</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-        <tag>vscode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>建立个人博客网站详细教程</title>
     <url>/2023/08/09/20230803_blogWebsite/</url>
     <content><![CDATA[<p>使用github+hexo+cloudflare+node.js+next主题建立属于自己的个人博客网站，博客主要分7个部分分别是1 使用git同步github的库，2 安装node.js，3 创建网站（Hexo框架，4 修改主题，5 github图床搭建，6 博客基本功能，7 博客扩展内容(持续更新)。</p>
@@ -611,146 +402,6 @@
       </tags>
   </entry>
   <entry>
-    <title>超好用网站汇总</title>
-    <url>/2023/08/09/20230809_PerfectWebsiteSummary/</url>
-    <content><![CDATA[<p>总结分享自己常用的一些好用网站</p>
-<span id="more"></span>
-
-<h1 id="1-比价网站"><a href="#1-比价网站" class="headerlink" title="1 比价网站"></a>1 比价网站</h1><p><a href="https://tool.manmanbuy.com/">比价网站</a></p>
-<p>这个网站可以查询过去24个月的价格波动，在网购之前都可以复制链接进来进行比价后再决定是否购买，减少背刺的概率。</p>
-<h1 id="2-mp3免费音乐资源网站"><a href="#2-mp3免费音乐资源网站" class="headerlink" title="2 mp3免费音乐资源网站"></a>2 mp3免费音乐资源网站</h1><p><a href="https://tools.liumingye.cn/music/">MyFreeMP3</a></p>
-<p>一个免费的下载高质量的mp3格式歌曲的网站，一些常见的比较热门的歌曲都有，不过新歌可能上传比较慢。</p>
-<p><a href="https://tonzhon.com/">铜钟</a></p>
-<p>也一个免费的下载高质量的mp3格式歌曲的网站，博主一般交叉使用。</p>
-<h1 id="3-图片压缩和转换分辨率网站"><a href="#3-图片压缩和转换分辨率网站" class="headerlink" title="3 图片压缩和转换分辨率网站"></a>3 图片压缩和转换分辨率网站</h1><p><a href="https://www.onlineimagetool.com/zh/resize-png-jpg-webp-gif">图片压缩和转换分辨率网站</a></p>
-<p>可以免费在线批量压缩图片，调整图片的分辨率，在需要上传一些证件照时十分有用。</p>
-<h1 id="4-学习代码算法结构网站"><a href="#4-学习代码算法结构网站" class="headerlink" title="4 学习代码算法结构网站"></a>4 学习代码算法结构网站</h1><p><a href="https://programmercarl.com/">代码随想录</a></p>
-<p>学习代码算法，主要是C++，总结的不错。</p>
-<h1 id="5-电子书网站"><a href="#5-电子书网站" class="headerlink" title="5 电子书网站"></a>5 电子书网站</h1><p><a href="http://jiumodiary.com/">鸠摩搜书</a></p>
-<p>相对资源还算比较多，自己也经常在上面搜索一些txt，pdf，当然主要是epub格式的书籍。</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>分享博客</category>
-      </categories>
-      <tags>
-        <tag>实用工具</tag>
-        <tag>网站</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C++学习路线</title>
-    <url>/2023/08/22/20230819_C++LearningRoute/</url>
-    <content><![CDATA[<p>记录一下打工牛马人的C++的学习路线。</p>
-<p>主要部分有C++基础，C++算法，计算机网络，MySQL数据库，Redis，软件设计模式，操作系统、Linux操作、网络编程，C++经典项目(webserver)，如果有时间还可以多参与几个练手的小项目。</p>
-<span id="more"></span>
-
-<h1 id="C-基础"><a href="#C-基础" class="headerlink" title="C++基础"></a>C++基础</h1><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1et411b73Z/">黑马程序员C++基础</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17560955.html">C++基础笔记</a></p>
-<p>主要是三部分内容</p>
-<ul>
-<li>C++语法入门：变量与常量、数据类型、运算符、程序流程结构、数组、函数、指针、结构体</li>
-<li>类和对象：封装、继承、多态</li>
-<li>模板与STL</li>
-</ul>
-<h1 id="C-算法"><a href="#C-算法" class="headerlink" title="C++算法"></a>C++算法</h1><p>主要在代码随想录上刷题和学习：<a href="https://programmercarl.com/%E5%89%8D%E5%BA%8F/%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC.html#%E9%A2%98%E5%A4%96%E8%AF%9D">代码随想录</a></p>
-<p>有时间可以刷两道三遍，不然理解可能不到位</p>
-<p>主要包含：</p>
-<table>
-<thead>
-<tr>
-<th align="center">内容</th>
-<th align="center">难度</th>
-<th align="center">内容</th>
-<th align="center">面试&#x2F;笔试较多</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">数组</td>
-<td align="center">简单</td>
-<td align="center">数组相关</td>
-<td align="center">面试多</td>
-</tr>
-<tr>
-<td align="center">链表</td>
-<td align="center">简单</td>
-<td align="center">链表概念、设计、删除等</td>
-<td align="center">面试多</td>
-</tr>
-<tr>
-<td align="center">哈希表</td>
-<td align="center">简单</td>
-<td align="center">快速判断一个元素是否出现集合里</td>
-<td align="center">一般</td>
-</tr>
-<tr>
-<td align="center">字符串</td>
-<td align="center">简单</td>
-<td align="center">针对字符，使用双指针很多</td>
-<td align="center">一般</td>
-</tr>
-<tr>
-<td align="center">双指针法</td>
-<td align="center">简单</td>
-<td align="center">数组，链表，字符串中使用较多</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">栈与队列</td>
-<td align="center">简单</td>
-<td align="center">面试提问较多</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">二叉树</td>
-<td align="center">中等</td>
-<td align="center">二叉树，搜索树，遍历等</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">回溯算法</td>
-<td align="center">中等</td>
-<td align="center">暴力算法，组合</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">贪心算法</td>
-<td align="center">困难</td>
-<td align="center">局部最优推广到全局</td>
-<td align="center">笔试</td>
-</tr>
-<tr>
-<td align="center">动态规划</td>
-<td align="center">困难</td>
-<td align="center">能够定义dp数据，当前状态由前两个状态决定</td>
-<td align="center">笔试</td>
-</tr>
-</tbody></table>
-<h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1c4411d7jb/">计算机网络(湖科大教书匠)</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17577514.html">计算机网络笔记</a></p>
-<p>此部分比较简单，并且在后序网络编程还会复习一部分，笔记只记录了一些相对重要的部分。</p>
-<h1 id="MySQL和Redis"><a href="#MySQL和Redis" class="headerlink" title="MySQL和Redis"></a>MySQL和Redis</h1><h2 id="MySQL：一般学习这个"><a href="#MySQL：一般学习这个" class="headerlink" title="MySQL：一般学习这个"></a>MySQL：一般学习这个</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1Kr4y1i7ru/">黑马程序员MySQL</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17648671.html">SQL基础增删改查</a></p>
-<h2 id="Redis：岗位有需要可以一周内突击学习"><a href="#Redis：岗位有需要可以一周内突击学习" class="headerlink" title="Redis：岗位有需要可以一周内突击学习"></a>Redis：岗位有需要可以一周内突击学习</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1cr4y1671t/">黑马程序员Redis</a><br><strong>我的笔记链接：</strong></p>
-<h1 id="软件设计模式"><a href="#软件设计模式" class="headerlink" title="软件设计模式"></a>软件设计模式</h1><p>有时间看视频，没时间直接搜索资料记住概念和常见的几种设计模式即可</p>
-<p><strong>视频链接：</strong> 讲的挺好，有时间可以仔细听，对程序编写有好处<br><a href="https://www.bilibili.com/video/BV1Yr4y157Ci/">C++设计模式入门</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17559583.html">一些常用软件设计模式</a></p>
-<p>一般了解策略模式、工厂模式、单例模式(最简单)、观察者模式、适配这模式即可了</p>
-<h1 id="C-项目"><a href="#C-项目" class="headerlink" title="C++项目"></a>C++项目</h1><p><a href="https://www.nowcoder.com/study/live/504">牛客网C++项目</a></p>
-<p>这个项目就包含了基础的Linux系统编程、Linux多进程开发、Linux多线程开发、网络编程和实战。所以如果时间不够可以就看着一个项目就好了。包含了<strong>Linux基础</strong>、<strong>操作系统</strong>、<strong>网络编程</strong>和<strong>websever</strong>项目，差的知识后序查漏补缺就好了。</p>
-<p>笔记链接如下：</p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17547122.html">第1章 Linux系统编程入门</a></p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17586114.html">第2章 Linux多进程开发</a></p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17601631.html">第3章 Linux多线程开发</a></p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17609639.html">第4章 Linux网络编程</a></p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17629592.html">第5章 项目实战与总结</a></p>
-<p><a href="https://mobbu.space/2023/08/15/20230815_C++%E9%AB%98%E5%B9%B6%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8/#more">webserver项目解析与总结</a></p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>分享博客</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MobaXterm简单教程</title>
     <url>/2023/08/07/20230807_shelToolMobaXterm/</url>
     <content><![CDATA[<p>日常开发中一个好用的终端软件是很重要的，而MobaXterm就是其中最好用的之一，并且最重要的是MobaXterm的免费版本的功能就十分强大。</p>
@@ -807,6 +458,283 @@
         <tag>MobaXterm</tag>
         <tag>shell</tag>
         <tag>SSH</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>markdown的简单用法</title>
+    <url>/2023/08/09/20230808_markdownLanguage/</url>
+    <content><![CDATA[<p>如果需要经常记录一些东西，那么markdown就是一个绕不开的东西，而习惯用markdown也会养成记录的习惯，本文主要从四个方面介绍markdown的简单用法，分别是1.markdown简介，2.markdown编译器，3.markdown语法。</p>
+<p>当你经常用markdown记录时也会有一个烦恼就是如何实现多设备同步查看记录的文件呢，这时你可以选择在一些博客网站创建自己的账号，比如CSDN，博客园等，又或者直接建立一个属于你自己的博客网站了，这里可以看博主的另一篇博客<a href="https://mobbu.space/2023/08/03/20230803_blog%E7%BD%91%E7%AB%99/">如何建立自己的博客网站</a>里面很详细的介绍了如何搭建自己的博客网站。</p>
+<span id="more"></span>
+
+<p>markdown官方中文网站就有在线编辑器和一些基础用法，可以在这里尝试markdown，<a href="https://markdown.com.cn/">markdown官方网站</a></p>
+<h1 id="1-Markdown简介"><a href="#1-Markdown简介" class="headerlink" title="1 Markdown简介"></a>1 Markdown简介</h1><p>Markdown 是一种轻量级的标记语言，可用于在纯文本文档中添加格式化元素。Markdown 由 John Gruber 于 2004 年创建，如今已成为世界上最受欢迎的标记语言之一。</p>
+<h2 id="1-1-Markdown特点"><a href="#1-1-Markdown特点" class="headerlink" title="1.1 Markdown特点"></a>1.1 Markdown特点</h2><ol>
+<li>专注于文字内容；</li>
+<li>纯文本，易读易写，可以方便地纳入版本控制；</li>
+<li>语法简单，没有什么学习成本，能轻松在码字的同时做出美观大方的排版。</li>
+</ol>
+<h2 id="1-2-Markdown的优点"><a href="#1-2-Markdown的优点" class="headerlink" title="1.2 Markdown的优点"></a>1.2 Markdown的优点</h2><ol>
+<li>使用范围广，StackOverflow、CSDN、掘金、简书、GitBook、有道云笔记、V2EX、光谷社区等。主流的代码托管平台，如 GitHub、GitLab、BitBucket、Coding、Gitee 等等，都支持 Markdown 语法，很多开源项目的 README、开发文档、帮助文档、Wiki 等都用 Markdown 写作。</li>
+<li>可移植性强，可以轻松从一个平台移植到另外一个平台。</li>
+<li>可读性强，虽然markdown不是一个所见即所得的记录方式，但是在未编译的情况下可读性也很高，编译之后的格式更加工整美观。</li>
+</ol>
+<h1 id="2-Markdown编译器"><a href="#2-Markdown编译器" class="headerlink" title="2 Markdown编译器"></a>2 Markdown编译器</h1><p>markdown的编译器有很多，你甚至可以直接用记事本来进行编写(仅编写)，但是无法实时预览编译效果。一般使用最多的markdown编译器有Typora、Atom和vscode等。博主使用的是vscode，因为我喜欢这种集成到一起管理的感觉，以后或许会记录我使用到的vscode的一些功能的博客。这里简要介绍一下在vscode中编写markdown的界面和流程</p>
+<h2 id="2-1-vscode界面"><a href="#2-1-vscode界面" class="headerlink" title="2.1 vscode界面"></a>2.1 vscode界面</h2><p>下载安装后，打开vscode，界面如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808193654.png"></p>
+<p>其中1为资源管理器，2为查找，3为源代码管理，4为运行和调试，5为扩展，如果你的界面是英文，你首先可以在扩展中搜索简体中文，安装后重启即可。</p>
+<p>然后可以点击资源管理器打开文件夹或者直接在右侧界面中打开文件夹，一般我们习惯打开文件夹管理。比如我创建D盘markdown文件夹。</p>
+<h2 id="2-2-markdown编辑界面"><a href="#2-2-markdown编辑界面" class="headerlink" title="2.2 markdown编辑界面"></a>2.2 markdown编辑界面</h2><p>比如打开markdown文件夹，新建一个markdown.md文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808194144.png"></p>
+<p>此时界面如上图，可以看到大致分为三个部分，侧边栏，顶部栏和编辑区。</p>
+<ul>
+<li><p>侧边栏分为四个部分，打开的编辑区，打开的文件夹(途中为markdown文件夹)，大纲，时间线。</p>
+<ul>
+<li>打开的编辑器：也就是右侧的编辑区域的窗口</li>
+<li>打开的文件夹：文件管理区，创建的文件和文件夹都在这里</li>
+<li>大纲：我们写的md文件的大纲</li>
+<li>时间线：提供我们修改文件的记录，比如昨天修改文件，5分钟前修改文件等等。</li>
+</ul>
+</li>
+<li><p>顶部栏分为两个部分左侧为窗口，右侧有两个按钮，第一个按钮为实时解析预览md文件，第二个为向右拆分窗口，也就是打开两个编辑markdown文件的窗口。</p>
+</li>
+<li><p>编辑区：当我们点击第一个按钮时(带有放大镜的图标)比如这就是一个正常的编辑markdown文档时的状态，左侧编辑markdown文档，右侧查看实时渲染的结果</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808194754.png"></p>
+<p>并且vscode在编辑区右键可以导出PDF文件</p>
+<h1 id="3-Markdown语法"><a href="#3-Markdown语法" class="headerlink" title="3 Markdown语法"></a>3 Markdown语法</h1><h2 id="3-1-标题"><a href="#3-1-标题" class="headerlink" title="3.1 标题"></a>3.1 标题</h2><p>带有不同数量的<code>#</code>为不同标题</p>
+<table>
+<thead>
+<tr>
+<th align="center">标题</th>
+<th align="center">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">一级标题</td>
+<td align="center"><code>&quot;#&quot;+&quot;空格&quot;+&quot;标题&quot;</code></td>
+</tr>
+<tr>
+<td align="center">二级标题</td>
+<td align="center"><code>&quot;##&quot;+&quot;空格&quot;+&quot;标题&quot;</code></td>
+</tr>
+<tr>
+<td align="center">三级标题</td>
+<td align="center"><code>&quot;###&quot;+&quot;空格&quot;+&quot;标题&quot;</code></td>
+</tr>
+</tbody></table>
+<p>比如<code># 这是一级标题</code>，为了避免标题乱序，这里就不演示了。</p>
+<h2 id="3-2换行"><a href="#3-2换行" class="headerlink" title="3.2换行"></a>3.2换行</h2><p>推荐两种方式进行换行：</p>
+<ul>
+<li>在句子末尾添加两个空格：方便又实用</li>
+<li>在句子末尾添加<code>&lt;br&gt;</code></li>
+</ul>
+<h2 id="3-3-字体"><a href="#3-3-字体" class="headerlink" title="3.3 字体"></a>3.3 字体</h2><table>
+<thead>
+<tr>
+<th align="center">字体</th>
+<th align="center">代码</th>
+<th align="center">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">粗体</td>
+<td align="center"><code>**内容**</code></td>
+<td align="center"><strong>这个是粗体</strong></td>
+</tr>
+<tr>
+<td align="center">斜体</td>
+<td align="center"><code>*内容*</code></td>
+<td align="center"><em>这个是斜体</em></td>
+</tr>
+<tr>
+<td align="center">粗体加斜体</td>
+<td align="center"><code>***内容***</code></td>
+<td align="center"><em><strong>这个是粗体加斜体</strong></em></td>
+</tr>
+<tr>
+<td align="center">删除线</td>
+<td align="center"><code>~~内容~~</code></td>
+<td align="center"><del>这里想用删除线</del></td>
+</tr>
+</tbody></table>
+<p>如果想更改字体颜色，字体类型，或者居中显示，那么可以内嵌HTML来实现</p>
+<h2 id="3-4-无序列表"><a href="#3-4-无序列表" class="headerlink" title="3.4 无序列表"></a>3.4 无序列表</h2><p>无序列表的使用，在符号<code>-</code>后加空格使用。如下：</p>
+<ul>
+<li>无序列表 1</li>
+<li>无序列表 2</li>
+<li>无序列表 3</li>
+</ul>
+<p>如果要控制列表的层级，则需要在符号<code>-</code>前使用空格。如下：</p>
+<ul>
+<li>无序列表 1</li>
+<li>无序列表 2<ul>
+<li>无序列表 2.1</li>
+<li>无序列表 2.2</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-5-有序列表"><a href="#3-5-有序列表" class="headerlink" title="3.5 有序列表"></a>3.5 有序列表</h2><p>有序列表的使用，在数字及符号<code>.</code>后加空格后输入内容，如下：</p>
+<ol>
+<li>有序列表 1</li>
+<li>有序列表 2</li>
+<li>有序列表 3</li>
+</ol>
+<h2 id="3-6-引用"><a href="#3-6-引用" class="headerlink" title="3.6 引用"></a>3.6 引用</h2><p>引用的格式是在符号<code>&gt;</code>后面书写文字。如下：</p>
+<blockquote>
+<p>我没说过这句话。 ——鲁迅</p>
+</blockquote>
+<h2 id="3-7-超链接"><a href="#3-7-超链接" class="headerlink" title="3.7 超链接"></a>3.7 超链接</h2><ul>
+<li>比如想要链接我的博客，则输入<code>[“灵能相谈所”](mobbu.space)</code>的效果如下：<br><a href="mobbu.space">“灵能相谈所”</a><br>其中方框内为链接的名称，括号内为你的网址。</li>
+<li>其实编译器会默认将网址编译为超链接比如<a href="http://www.google.com/">www.google.com</a><br>如果你不想网址变成超链接，那么你可以用 ` ` 将网址包含进来，比如<code>www.google.com</code></li>
+</ul>
+<h2 id="3-8-插入图片"><a href="#3-8-插入图片" class="headerlink" title="3.8 插入图片"></a>3.8 插入图片</h2><ul>
+<li><p>语法：<code>![图片名](图片链接)</code></p>
+</li>
+<li><p>图片名为你想给图片起的别名，也可为空。图片链接可以为本地链接，也可以是网上的图片链接，如果是本地链接，那么当你的md文档上传到网站或者移动到其他位置你的图片都可能失效，此时最好使用网上链接。我也有做过免费的github图床建立的教程-&gt;<a href="https://mobbu.space/2023/08/03/20230803_blog%E7%BD%91%E7%AB%99/">github图床建立</a>中的第5节就是相关教程。</p>
+</li>
+<li><p>示例：比如以下图片插入示例</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/mob_base_2.jpg"></p>
+<ul>
+<li>如果你想对图片做进一步调整，这时也可以使用html内嵌进行修改，比如想使图片居中显示，指定大小，输入如下代码<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div img align = center&gt;&lt;src = &quot;图片链接&quot; width = 500&gt;&lt;!div&gt;</span><br></pre></td></tr></table></figure>
+其中width就是调整大小，会按照比例缩放大小，大小为像素多少，以下为上述图片的修改效果。</li>
+</ul>
+<div  align = center><img src = "https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/mob_base_2.jpg" width = 500></div>
+
+<p>通过上述修改我们可以获得合适大小，合适位置的图片。</p>
+<h2 id="3-9-分割线"><a href="#3-9-分割线" class="headerlink" title="3.9 分割线"></a>3.9 分割线</h2><ul>
+<li><p>语法：<code>---</code></p>
+</li>
+<li><p>示例：</p>
+</li>
+</ul>
+<p>这是一条分割线</p>
+<hr>
+<h2 id="3-10-表格"><a href="#3-10-表格" class="headerlink" title="3.10 表格"></a>3.10 表格</h2><ul>
+<li>语法：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">|属性1|属性2|属性3|</span><br><span class="line">|--:|:-:|:--|</span><br><span class="line">|属性1的值|属性2的值|属性3的值|</span><br><span class="line">|梨子梨子梨子梨子|梨子梨子梨子梨子|梨子梨子梨子梨子|</span><br></pre></td></tr></table></figure></li>
+<li>示例：比如就是刚刚的语法中显示的</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="right">属性1</th>
+<th align="center">属性2</th>
+<th align="left">属性3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">属性1的值</td>
+<td align="center">属性2的值</td>
+<td align="left">属性3的值</td>
+</tr>
+<tr>
+<td align="right">梨子梨子梨子梨子</td>
+<td align="center">梨子梨子梨子梨子</td>
+<td align="left">梨子梨子梨子梨子</td>
+</tr>
+</tbody></table>
+<p>第一行为属性名字，第二行为靠右显示<code>--:</code>，居中显示<code>:-:</code>，靠右显示<code>:--</code></p>
+<h2 id="3-11-代码"><a href="#3-11-代码" class="headerlink" title="3.11 代码"></a>3.11 代码</h2><ul>
+<li>语法：<ul>
+<li>输入` 代码` 为行中嵌入代码，</li>
+<li>使用：如下代码为单独嵌入，并且可以在第一行输入想高亮的代码比如C语言输入C即可<br>```C<br>代码<br>```</li>
+</ul>
+</li>
+<li>示例<ul>
+<li>行中嵌入：<code>printf(&quot;hello world&quot;);</code></li>
+<li>单独嵌入：<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  std::cout &lt;&lt; <span class="string">&quot;hello world&quot;</span> &lt;&lt; endl;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="3-12-数学公式"><a href="#3-12-数学公式" class="headerlink" title="3.12 数学公式"></a>3.12 数学公式</h2><ul>
+<li>语法：单独嵌入<code>$$数学公式$$</code>或者行内嵌入<code>$数学公式$</code></li>
+<li>示例:<ul>
+<li>单独嵌入:<code>$$H(D_2) = -\left(\frac&#123;2&#125;&#123;4&#125;\log_2 \frac&#123;2&#125;&#123;4&#125; + \frac&#123;2&#125;&#123;4&#125;\log_2 \frac&#123;2&#125;&#123;4&#125;\right) = 1$$</code><br>$$H(D_2) &#x3D; -\left(\frac{2}{4}\log_2 \frac{2}{4} + \frac{2}{4}\log_2 \frac{2}{4}\right) &#x3D; 1$$</li>
+<li>行内嵌入：<code>$H(D_2) = -\left(\frac&#123;2&#125;&#123;4&#125;\log_2 \frac&#123;2&#125;&#123;4&#125; + \frac&#123;2&#125;&#123;4&#125;\log_2 \frac&#123;2&#125;&#123;4&#125;\right) = 1$</code>比如$H(D_2) &#x3D; -\left(\frac{2}{4}\log_2 \frac{2}{4} + \frac{2}{4}\log_2 \frac{2}{4}\right) &#x3D; 1$</li>
+</ul>
+</li>
+<li>数学公式编辑功能十分强大，运用得好在公式编辑方面十分方便。具体还有很多语法，比如各种复杂符号的写法比如累加累乘，矩阵的写法等，可以参考以下博客 <a href="https://blog.csdn.net/m0_37769093/article/details/107732606">markdown公式编辑</a>，总结得非常全面。</li>
+</ul>
+<h1 id="4-总结"><a href="#4-总结" class="headerlink" title="4 总结"></a>4 总结</h1><p>以上就是markdown的一些基本用法，主要还是要养成记录的习惯，如果你有制作网站或者查阅观看论文的需求的话，markdown可以说是十分有用了。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>vscode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>超好用网站汇总</title>
+    <url>/2023/08/09/20230809_PerfectWebsiteSummary/</url>
+    <content><![CDATA[<p>总结分享自己常用的一些好用网站</p>
+<span id="more"></span>
+
+<h1 id="1-比价网站"><a href="#1-比价网站" class="headerlink" title="1 比价网站"></a>1 比价网站</h1><p><a href="https://tool.manmanbuy.com/">比价网站</a></p>
+<p>这个网站可以查询过去24个月的价格波动，在网购之前都可以复制链接进来进行比价后再决定是否购买，减少背刺的概率。</p>
+<h1 id="2-mp3免费音乐资源网站"><a href="#2-mp3免费音乐资源网站" class="headerlink" title="2 mp3免费音乐资源网站"></a>2 mp3免费音乐资源网站</h1><p><a href="https://tools.liumingye.cn/music/">MyFreeMP3</a></p>
+<p>一个免费的下载高质量的mp3格式歌曲的网站，一些常见的比较热门的歌曲都有，不过新歌可能上传比较慢。</p>
+<p><a href="https://tonzhon.com/">铜钟</a></p>
+<p>也一个免费的下载高质量的mp3格式歌曲的网站，博主一般交叉使用。</p>
+<h1 id="3-图片压缩和转换分辨率网站"><a href="#3-图片压缩和转换分辨率网站" class="headerlink" title="3 图片压缩和转换分辨率网站"></a>3 图片压缩和转换分辨率网站</h1><p><a href="https://www.onlineimagetool.com/zh/resize-png-jpg-webp-gif">图片压缩和转换分辨率网站</a></p>
+<p>可以免费在线批量压缩图片，调整图片的分辨率，在需要上传一些证件照时十分有用。</p>
+<h1 id="4-学习代码算法结构网站"><a href="#4-学习代码算法结构网站" class="headerlink" title="4 学习代码算法结构网站"></a>4 学习代码算法结构网站</h1><p><a href="https://programmercarl.com/">代码随想录</a></p>
+<p>学习代码算法，主要是C++，总结的不错。</p>
+<h1 id="5-电子书网站"><a href="#5-电子书网站" class="headerlink" title="5 电子书网站"></a>5 电子书网站</h1><p><a href="http://jiumodiary.com/">鸠摩搜书</a></p>
+<p>相对资源还算比较多，自己也经常在上面搜索一些txt，pdf，当然主要是epub格式的书籍。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>分享博客</category>
+      </categories>
+      <tags>
+        <tag>实用工具</tag>
+        <tag>网站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>steam一键切换用户的脚本</title>
+    <url>/2023/08/08/20230808_steamUserChangebat/</url>
+    <content><![CDATA[<p>由于博主经常用很多不同的号玩CSGO，每一次都需要输入账号密码，并且等待令牌，十分麻烦，遂找到了一个脚本切换steam登录信息，其实steam++也可以实现这个功能，但是毕竟很多时候是借其他人的号，有泄露密码风险的还是不好。</p>
+<p>原理就是Steam的默认登录账号是写在注册表的，然后会根据注册表账号去Steam&#x2F;config&#x2F;loginusers.vdf找对应账号信息，所以切换用户的时候把注册表修改到对应的账号就可以了。</p>
+<span id="more"></span>
+
+<p>首先你需要登陆过一次你记录的账户，并且选择记住密码登录。这样你的本地就会保存对应的账号信息，此时就可以使用脚本修改到对应的账号就可以了。</p>
+<h1 id="1-创建脚本并修改"><a href="#1-创建脚本并修改" class="headerlink" title="1 创建脚本并修改"></a>1 创建脚本并修改</h1><p>新建脚本文件ChangeSteamAccount.bat，输入以下代码：</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">taskkill</span> /f /im steam.exe</span><br><span class="line"><span class="built_in">taskkill</span> /f /im SteamService.exe</span><br><span class="line"><span class="built_in">echo</span> 请输入你要登录的账号(<span class="number">1</span>.妹妹<span class="number">1</span>；<span class="number">2</span>.妹妹<span class="number">2</span>；<span class="number">3</span>.妹妹<span class="number">3</span>)：</span><br><span class="line"><span class="built_in">set</span> /p area=</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">1</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account1 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">2</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account2 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">3</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account3 /f)</span><br><span class="line"><span class="built_in">start</span> D:\Steam\Steam.exe</span><br></pre></td></tr></table></figure>
+
+<p>接下来你需要对上述代码中的对应部分进行修改</p>
+<ol>
+<li>在上述代码中的第四行，也就是以下这一行代码进行修改，将括号中的文字修改为你想要提示的语句，比如我这里有三个妹妹的号，我就可以标记为妹妹1，妹妹2，妹妹3.</li>
+</ol>
+<p><code>echo 请输入你要登录的账号(1.妹妹1；2.妹妹2；3.妹妹3)：</code></p>
+<ol start="2">
+<li><p>在上述代码的第5，6，7行，修改if判断语句中的Account1，Account2，Account3为你想修改的账号的steam登录名，就比如上面的妹妹1的steam名字为meiyangyang，那么就把Account1修改为meiyangyang就可以了。</p>
+</li>
+<li><p>修改第8行，将路径修改为你的steam路径即可，路径可以通过<code>右键steam快捷键-&gt;快捷键方式-&gt;目标</code>找到。</p>
+</li>
+<li><p>如果想添加更多的号，直接类推上述操作即可，比如想添加妹妹4，那么代码如下：</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">taskkill</span> /f /im steam.exe</span><br><span class="line"><span class="built_in">taskkill</span> /f /im SteamService.exe</span><br><span class="line"><span class="built_in">echo</span> 请输入你要登录的账号(<span class="number">1</span>.妹妹<span class="number">1</span>；<span class="number">2</span>.妹妹<span class="number">2</span>；<span class="number">3</span>.妹妹<span class="number">3</span>；妹妹<span class="number">4</span>)：</span><br><span class="line"><span class="built_in">set</span> /p area=</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">1</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account1 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">2</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account2 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">3</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account3 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">4</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account4 /f)</span><br><span class="line"><span class="built_in">start</span> D:\Steam\Steam.exe</span><br></pre></td></tr></table></figure>
+<p>其中修改了第四行，然后添加了一个if判断，记得将if判断中的area判断值修改为4，将Account4修改为你想要的名字。</p>
+</li>
+<li><p>可能会出现乱码情况，此时需要将你文本编辑的编码方式从UTF-8修改为ANSI，直接另存为文件，选择编码方式为ANSI即可解决问题</p>
+</li>
+</ol>
+<h1 id="2-实操演示"><a href="#2-实操演示" class="headerlink" title="2 实操演示"></a>2 实操演示</h1><p>如下图为打开后的界面，由于我此时打开的电脑没有安装steam，所以第一行第二行错误，其实这两行错误不用管，此时只需要输入你想登录的账号的序号就可以，比如我想登录妹妹1的账号，此时只需要输入1，按下回车即可登录。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808105819.png"></p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>steam</tag>
+        <tag>bat脚本</tag>
       </tags>
   </entry>
   <entry>
@@ -1055,6 +983,118 @@
       </tags>
   </entry>
   <entry>
+    <title>C++学习路线</title>
+    <url>/2023/08/22/20230819_C++LearningRoute/</url>
+    <content><![CDATA[<p>记录一下打工牛马人的C++的学习路线。</p>
+<p>主要部分有C++基础，C++算法，计算机网络，MySQL数据库，Redis，软件设计模式，操作系统、Linux操作、网络编程，C++经典项目(webserver)，如果有时间还可以多参与几个练手的小项目。</p>
+<span id="more"></span>
+
+<h1 id="C-基础"><a href="#C-基础" class="headerlink" title="C++基础"></a>C++基础</h1><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1et411b73Z/">黑马程序员C++基础</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17560955.html">C++基础笔记</a></p>
+<p>主要是三部分内容</p>
+<ul>
+<li>C++语法入门：变量与常量、数据类型、运算符、程序流程结构、数组、函数、指针、结构体</li>
+<li>类和对象：封装、继承、多态</li>
+<li>模板与STL</li>
+</ul>
+<h1 id="C-算法"><a href="#C-算法" class="headerlink" title="C++算法"></a>C++算法</h1><p>主要在代码随想录上刷题和学习：<a href="https://programmercarl.com/%E5%89%8D%E5%BA%8F/%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC.html#%E9%A2%98%E5%A4%96%E8%AF%9D">代码随想录</a></p>
+<p>有时间可以刷两道三遍，不然理解可能不到位</p>
+<p>主要包含：</p>
+<table>
+<thead>
+<tr>
+<th align="center">内容</th>
+<th align="center">难度</th>
+<th align="center">内容</th>
+<th align="center">面试&#x2F;笔试较多</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">数组</td>
+<td align="center">简单</td>
+<td align="center">数组相关</td>
+<td align="center">面试多</td>
+</tr>
+<tr>
+<td align="center">链表</td>
+<td align="center">简单</td>
+<td align="center">链表概念、设计、删除等</td>
+<td align="center">面试多</td>
+</tr>
+<tr>
+<td align="center">哈希表</td>
+<td align="center">简单</td>
+<td align="center">快速判断一个元素是否出现集合里</td>
+<td align="center">一般</td>
+</tr>
+<tr>
+<td align="center">字符串</td>
+<td align="center">简单</td>
+<td align="center">针对字符，使用双指针很多</td>
+<td align="center">一般</td>
+</tr>
+<tr>
+<td align="center">双指针法</td>
+<td align="center">简单</td>
+<td align="center">数组，链表，字符串中使用较多</td>
+<td align="center">笔试&#x2F;面试</td>
+</tr>
+<tr>
+<td align="center">栈与队列</td>
+<td align="center">简单</td>
+<td align="center">面试提问较多</td>
+<td align="center">笔试&#x2F;面试</td>
+</tr>
+<tr>
+<td align="center">二叉树</td>
+<td align="center">中等</td>
+<td align="center">二叉树，搜索树，遍历等</td>
+<td align="center">笔试&#x2F;面试</td>
+</tr>
+<tr>
+<td align="center">回溯算法</td>
+<td align="center">中等</td>
+<td align="center">暴力算法，组合</td>
+<td align="center">笔试&#x2F;面试</td>
+</tr>
+<tr>
+<td align="center">贪心算法</td>
+<td align="center">困难</td>
+<td align="center">局部最优推广到全局</td>
+<td align="center">笔试</td>
+</tr>
+<tr>
+<td align="center">动态规划</td>
+<td align="center">困难</td>
+<td align="center">能够定义dp数据，当前状态由前两个状态决定</td>
+<td align="center">笔试</td>
+</tr>
+</tbody></table>
+<h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1c4411d7jb/">计算机网络(湖科大教书匠)</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17577514.html">计算机网络笔记</a></p>
+<p>此部分比较简单，并且在后序网络编程还会复习一部分，笔记只记录了一些相对重要的部分。</p>
+<h1 id="MySQL和Redis"><a href="#MySQL和Redis" class="headerlink" title="MySQL和Redis"></a>MySQL和Redis</h1><h2 id="MySQL：一般学习这个"><a href="#MySQL：一般学习这个" class="headerlink" title="MySQL：一般学习这个"></a>MySQL：一般学习这个</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1Kr4y1i7ru/">黑马程序员MySQL</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17648671.html">SQL基础增删改查</a></p>
+<h2 id="Redis：岗位有需要可以一周内突击学习"><a href="#Redis：岗位有需要可以一周内突击学习" class="headerlink" title="Redis：岗位有需要可以一周内突击学习"></a>Redis：岗位有需要可以一周内突击学习</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1cr4y1671t/">黑马程序员Redis</a><br><strong>我的笔记链接：</strong></p>
+<h1 id="软件设计模式"><a href="#软件设计模式" class="headerlink" title="软件设计模式"></a>软件设计模式</h1><p>有时间看视频，没时间直接搜索资料记住概念和常见的几种设计模式即可</p>
+<p><strong>视频链接：</strong> 讲的挺好，有时间可以仔细听，对程序编写有好处<br><a href="https://www.bilibili.com/video/BV1Yr4y157Ci/">C++设计模式入门</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17559583.html">一些常用软件设计模式</a></p>
+<p>一般了解策略模式、工厂模式、单例模式(最简单)、观察者模式、适配这模式即可了</p>
+<h1 id="C-项目"><a href="#C-项目" class="headerlink" title="C++项目"></a>C++项目</h1><p><a href="https://www.nowcoder.com/study/live/504">牛客网C++项目</a></p>
+<p>这个项目就包含了基础的Linux系统编程、Linux多进程开发、Linux多线程开发、网络编程和实战。所以如果时间不够可以就看着一个项目就好了。包含了<strong>Linux基础</strong>、<strong>操作系统</strong>、<strong>网络编程</strong>和<strong>websever</strong>项目，差的知识后序查漏补缺就好了。</p>
+<p>笔记链接如下：</p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17547122.html">第1章 Linux系统编程入门</a></p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17586114.html">第2章 Linux多进程开发</a></p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17601631.html">第3章 Linux多线程开发</a></p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17609639.html">第4章 Linux网络编程</a></p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17629592.html">第5章 项目实战与总结</a></p>
+<p><a href="https://mobbu.space/2023/08/15/20230815_C++%E9%AB%98%E5%B9%B6%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8/#more">webserver项目解析与总结</a></p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>分享博客</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>git教程和分布式管理代码</title>
     <url>/2023/08/21/20230821_GitAbout/</url>
     <content><![CDATA[<p>当我们写了一定量的代码之后，就会遇到如何管理代码的问题。目前管理代码主要有两种管理工具分别是</p>
@@ -1117,130 +1157,6 @@
       <tags>
         <tag>Github</tag>
         <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>steam一键切换用户的脚本</title>
-    <url>/2023/08/08/20230808_steamUserChangebat/</url>
-    <content><![CDATA[<p>由于博主经常用很多不同的号玩CSGO，每一次都需要输入账号密码，并且等待令牌，十分麻烦，遂找到了一个脚本切换steam登录信息，其实steam++也可以实现这个功能，但是毕竟很多时候是借其他人的号，有泄露密码风险的还是不好。</p>
-<p>原理就是Steam的默认登录账号是写在注册表的，然后会根据注册表账号去Steam&#x2F;config&#x2F;loginusers.vdf找对应账号信息，所以切换用户的时候把注册表修改到对应的账号就可以了。</p>
-<span id="more"></span>
-
-<p>首先你需要登陆过一次你记录的账户，并且选择记住密码登录。这样你的本地就会保存对应的账号信息，此时就可以使用脚本修改到对应的账号就可以了。</p>
-<h1 id="1-创建脚本并修改"><a href="#1-创建脚本并修改" class="headerlink" title="1 创建脚本并修改"></a>1 创建脚本并修改</h1><p>新建脚本文件ChangeSteamAccount.bat，输入以下代码：</p>
-<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">taskkill</span> /f /im steam.exe</span><br><span class="line"><span class="built_in">taskkill</span> /f /im SteamService.exe</span><br><span class="line"><span class="built_in">echo</span> 请输入你要登录的账号(<span class="number">1</span>.妹妹<span class="number">1</span>；<span class="number">2</span>.妹妹<span class="number">2</span>；<span class="number">3</span>.妹妹<span class="number">3</span>)：</span><br><span class="line"><span class="built_in">set</span> /p area=</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">1</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account1 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">2</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account2 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">3</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account3 /f)</span><br><span class="line"><span class="built_in">start</span> D:\Steam\Steam.exe</span><br></pre></td></tr></table></figure>
-
-<p>接下来你需要对上述代码中的对应部分进行修改</p>
-<ol>
-<li>在上述代码中的第四行，也就是以下这一行代码进行修改，将括号中的文字修改为你想要提示的语句，比如我这里有三个妹妹的号，我就可以标记为妹妹1，妹妹2，妹妹3.</li>
-</ol>
-<p><code>echo 请输入你要登录的账号(1.妹妹1；2.妹妹2；3.妹妹3)：</code></p>
-<ol start="2">
-<li><p>在上述代码的第5，6，7行，修改if判断语句中的Account1，Account2，Account3为你想修改的账号的steam登录名，就比如上面的妹妹1的steam名字为meiyangyang，那么就把Account1修改为meiyangyang就可以了。</p>
-</li>
-<li><p>修改第8行，将路径修改为你的steam路径即可，路径可以通过<code>右键steam快捷键-&gt;快捷键方式-&gt;目标</code>找到。</p>
-</li>
-<li><p>如果想添加更多的号，直接类推上述操作即可，比如想添加妹妹4，那么代码如下：</p>
-<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">taskkill</span> /f /im steam.exe</span><br><span class="line"><span class="built_in">taskkill</span> /f /im SteamService.exe</span><br><span class="line"><span class="built_in">echo</span> 请输入你要登录的账号(<span class="number">1</span>.妹妹<span class="number">1</span>；<span class="number">2</span>.妹妹<span class="number">2</span>；<span class="number">3</span>.妹妹<span class="number">3</span>；妹妹<span class="number">4</span>)：</span><br><span class="line"><span class="built_in">set</span> /p area=</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">1</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account1 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">2</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account2 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">3</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account3 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">4</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account4 /f)</span><br><span class="line"><span class="built_in">start</span> D:\Steam\Steam.exe</span><br></pre></td></tr></table></figure>
-<p>其中修改了第四行，然后添加了一个if判断，记得将if判断中的area判断值修改为4，将Account4修改为你想要的名字。</p>
-</li>
-<li><p>可能会出现乱码情况，此时需要将你文本编辑的编码方式从UTF-8修改为ANSI，直接另存为文件，选择编码方式为ANSI即可解决问题</p>
-</li>
-</ol>
-<h1 id="2-实操演示"><a href="#2-实操演示" class="headerlink" title="2 实操演示"></a>2 实操演示</h1><p>如下图为打开后的界面，由于我此时打开的电脑没有安装steam，所以第一行第二行错误，其实这两行错误不用管，此时只需要输入你想登录的账号的序号就可以，比如我想登录妹妹1的账号，此时只需要输入1，按下回车即可登录。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808105819.png"></p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>steam</tag>
-        <tag>bat脚本</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>teamspeak3的简单教程</title>
-    <url>/2023/09/17/20230917_teamspeak3/</url>
-    <content><![CDATA[<p>联机游戏中，有一个稳定、简洁、占用很小的语音开黑软件是一个很重要的事情。这里我就介绍一下一款使用体验很好的实时语音软件teamspeak，虽然这款有一定的门槛，但是瑕不掩瑜。</p>
-<span id="more"></span>
-
-<h1 id="1-下载和安装"><a href="#1-下载和安装" class="headerlink" title="1 下载和安装"></a>1 下载和安装</h1><p>官方网址:<a href="https://teamspeak.com/zh-CN/downloads/">teamspeak</a>，一定要在官网下载，国内有一些盗版的软件，虽然据说只是换皮版本，但是由于我也没看过源代码，不是特别清楚</p>
-<p>下载完毕后默认安装即可，其中会提示我们是否安装overwolf，这个可下可不下，主要是一些teamspeak的一些插件。</p>
-<h1 id="2-连接服务器和基础功能"><a href="#2-连接服务器和基础功能" class="headerlink" title="2 连接服务器和基础功能"></a>2 连接服务器和基础功能</h1><p>安装完成后，打开软件，可能需要你进行注册，注册完成后打开软件如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image.png"></p>
-<p>我们主要使用上面的工具栏进行相应的操作。</p>
-<h2 id="2-1-Connections-连接服务器"><a href="#2-1-Connections-连接服务器" class="headerlink" title="2.1 Connections 连接服务器"></a>2.1 Connections 连接服务器</h2><p>点击Connections 连接服务器</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-1.png"></p>
-<p>如上图在server address中填入你的服务器名称，在server password中填写你的服务器密码。</p>
-<p>经常使用的服务器可以保存为书签bookmarks，下次点击即可直接连接</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-2.png"></p>
-<h2 id="2-2-语音服务器的选择"><a href="#2-2-语音服务器的选择" class="headerlink" title="2.2 语音服务器的选择"></a>2.2 语音服务器的选择</h2><p>有关语音服务器，这里如果你愿意折腾，你可以自己去申请一个公网IP，搞一个自己的服务器，当然这个服务器不一定只用来当作语言服务器，还可以做其他的事情，但是如果如果想省事可以直接租用现有的服务器，简单说这里大概可以分为三个选择：</p>
-<ol>
-<li>租用现有的teamspeak服务器，最省事，花费也相对较少</li>
-<li>租云服务器，比如阿里云、腾讯云、华为云等，然后调试装一些语言服务器必要的开源，这方面也有一些教程，相对比较麻烦</li>
-<li>一步到位，自己的空余电脑当作服务器，并且申请公网地址，再进行语言服务器的设置</li>
-</ol>
-<p>总的来说一般都是租用现有的teamspeak服务器，我是在<a href="https://ts3.com.cn/price">teamspeak服务器网站</a>进行租用的，勉强能用，有时候服务器会出一些问题，但是总体来说可用，省事。</p>
-<h2 id="2-3-基础功能介绍"><a href="#2-3-基础功能介绍" class="headerlink" title="2.3 基础功能介绍"></a>2.3 基础功能介绍</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-3.png"></p>
-<p>连接到服务器后，选择到响应频道，一般就使用这两个键位，打开&#x2F;关闭麦克风，打开&#x2F;关闭声音</p>
-<h1 id="3-基础设置"><a href="#3-基础设置" class="headerlink" title="3 基础设置"></a>3 基础设置</h1><p>主要分为功能设置、交互设置、频道管理设置</p>
-<h2 id="3-1-功能设置"><a href="#3-1-功能设置" class="headerlink" title="3.1 功能设置"></a>3.1 功能设置</h2><p>这一部分是必要的设置，如下图的最下方的红色方框options，其余三个部分都是频道管理的部分</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-6.png"></p>
-<p>点击打开后的界面如下：<br>可以看到左侧有很多设置，但是我们常用的修改的设置就是playback，也就是输出，还有capture，也就是输入。</p>
-<h3 id="3-1-1-输入设置"><a href="#3-1-1-输入设置" class="headerlink" title="3.1.1 输入设置"></a>3.1.1 输入设置</h3><p>设置界面如下图，可以看到主要分为三个部分。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-7.png"></p>
-<p>主要需要调整三个部分</p>
-<ul>
-<li><p>第一个部分是输入的设备，在capture device中选择我们想要输入的设备就可以了</p>
-</li>
-<li><p>第二个部分是语音输入模式，这里只推荐阈值触发模式，也就是说当你的声音达到一定强度时会自动触发输入，选择Voice Activity Detction-&gt;Volume Gate，然后调整下方的滑动条，这个值也就是触发输入的阈值，你可以在begin test选项中进行进一步的调试。</p>
-</li>
-<li><p>第三个部分是一些数字信号处理，比如回声消除、打字音消除等，全部勾选就可以了</p>
-</li>
-</ul>
-<h3 id="3-1-2-输出设置"><a href="#3-1-2-输出设置" class="headerlink" title="3.1.2 输出设置"></a>3.1.2 输出设置</h3><p>设置界面如下如图，这个部分很简单，设置我们想要输出的设备和大概的声音就可以了<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-8.png"></p>
-<h2 id="3-2-交互设置"><a href="#3-2-交互设置" class="headerlink" title="3.2 交互设置"></a>3.2 交互设置</h2><p>交互设置主要就是在如下界面修改，选择self就可以看到了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-4.png"></p>
-<p>其中第一个红框是一些默认设置不用修改</p>
-<p>第二部分是离线，麦克风和输出的功能按钮</p>
-<p>第三个部分就是我们需要设置的交互设置了：</p>
-<ul>
-<li>change nickname ：修改在本服务器的昵称</li>
-<li>set avatar：修改在本服务器的头像</li>
-<li>delete avatar：删除头像</li>
-</ul>
-<h2 id="3-3-频道管理设置"><a href="#3-3-频道管理设置" class="headerlink" title="3.3 频道管理设置"></a>3.3 频道管理设置</h2><p>如果你是一个服务器的拥有者，那么你肯定想要对不同的玩家有不同的权限，否则会乱套，其中主要分为管理员、会员、游客三种权限、</p>
-<ul>
-<li>管理员 ：<ul>
-<li>能够创建频道、删除频道</li>
-<li>进入加锁的频道</li>
-<li>移动管理员或以下权限的人到任意频道</li>
-<li>授予&#x2F;撤销管理员、会员、游客权限</li>
-</ul>
-</li>
-<li>会员：会员能做到管理员大部分事情<ul>
-<li>能够创建频道、删除频道</li>
-<li>进入加锁的频道</li>
-<li>移动会员或以下权限的人到任意频道</li>
-<li>授予&#x2F;撤销会员、游客权限</li>
-</ul>
-</li>
-<li>游客：没有权限</li>
-</ul>
-<p>所以一般给个会员权限就够了，权限设置如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-5.png"></p>
-<p>选择设置server groups，打开后默认是超级管理员、管理员和游客，可以对每一个权限进行修改，比如修改名字和头像，改成自己想要的名字以增加趣味性，比如超级管理员修改为超级赛亚人并且配上相应的头像等。在设置的左下角也可以加上其余的权限等级来细化一些权限，这个就自行设置了。</p>
-<p>当你是会员以上的权限时，这时你就可以对服务器进行一个频道的划分，比如lol、csgo、观赛等分区，根据你的小团体的游戏成分进行划分即可。记得创建频道的时候选择永久，否则下一次登陆的时候就会消失</p>
-<h1 id="4-服务器的进一步设置"><a href="#4-服务器的进一步设置" class="headerlink" title="4 服务器的进一步设置"></a>4 服务器的进一步设置</h1><p>主要是进行一些界面的优化，一些个性化的设置，比如设置频道的介绍、频道的icon图等等</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>分享博客</category>
-      </categories>
-      <tags>
-        <tag>teamspeak</tag>
-        <tag>语音服务器</tag>
       </tags>
   </entry>
   <entry>
@@ -1474,6 +1390,90 @@
       <tags>
         <tag>vscode</tag>
         <tag>C/C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>teamspeak3的简单教程</title>
+    <url>/2023/09/17/20230917_teamspeak3/</url>
+    <content><![CDATA[<p>联机游戏中，有一个稳定、简洁、占用很小的语音开黑软件是一个很重要的事情。这里我就介绍一下一款使用体验很好的实时语音软件teamspeak，虽然这款有一定的门槛，但是瑕不掩瑜。</p>
+<span id="more"></span>
+
+<h1 id="1-下载和安装"><a href="#1-下载和安装" class="headerlink" title="1 下载和安装"></a>1 下载和安装</h1><p>官方网址:<a href="https://teamspeak.com/zh-CN/downloads/">teamspeak</a>，一定要在官网下载，国内有一些盗版的软件，虽然据说只是换皮版本，但是由于我也没看过源代码，不是特别清楚</p>
+<p>下载完毕后默认安装即可，其中会提示我们是否安装overwolf，这个可下可不下，主要是一些teamspeak的一些插件。</p>
+<h1 id="2-连接服务器和基础功能"><a href="#2-连接服务器和基础功能" class="headerlink" title="2 连接服务器和基础功能"></a>2 连接服务器和基础功能</h1><p>安装完成后，打开软件，可能需要你进行注册，注册完成后打开软件如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image.png"></p>
+<p>我们主要使用上面的工具栏进行相应的操作。</p>
+<h2 id="2-1-Connections-连接服务器"><a href="#2-1-Connections-连接服务器" class="headerlink" title="2.1 Connections 连接服务器"></a>2.1 Connections 连接服务器</h2><p>点击Connections 连接服务器</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-1.png"></p>
+<p>如上图在server address中填入你的服务器名称，在server password中填写你的服务器密码。</p>
+<p>经常使用的服务器可以保存为书签bookmarks，下次点击即可直接连接</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-2.png"></p>
+<h2 id="2-2-语音服务器的选择"><a href="#2-2-语音服务器的选择" class="headerlink" title="2.2 语音服务器的选择"></a>2.2 语音服务器的选择</h2><p>有关语音服务器，这里如果你愿意折腾，你可以自己去申请一个公网IP，搞一个自己的服务器，当然这个服务器不一定只用来当作语言服务器，还可以做其他的事情，但是如果如果想省事可以直接租用现有的服务器，简单说这里大概可以分为三个选择：</p>
+<ol>
+<li>租用现有的teamspeak服务器，最省事，花费也相对较少</li>
+<li>租云服务器，比如阿里云、腾讯云、华为云等，然后调试装一些语言服务器必要的开源，这方面也有一些教程，相对比较麻烦</li>
+<li>一步到位，自己的空余电脑当作服务器，并且申请公网地址，再进行语言服务器的设置</li>
+</ol>
+<p>总的来说一般都是租用现有的teamspeak服务器，我是在<a href="https://ts3.com.cn/price">teamspeak服务器网站</a>进行租用的，勉强能用，有时候服务器会出一些问题，但是总体来说可用，省事。</p>
+<h2 id="2-3-基础功能介绍"><a href="#2-3-基础功能介绍" class="headerlink" title="2.3 基础功能介绍"></a>2.3 基础功能介绍</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-3.png"></p>
+<p>连接到服务器后，选择到响应频道，一般就使用这两个键位，打开&#x2F;关闭麦克风，打开&#x2F;关闭声音</p>
+<h1 id="3-基础设置"><a href="#3-基础设置" class="headerlink" title="3 基础设置"></a>3 基础设置</h1><p>主要分为功能设置、交互设置、频道管理设置</p>
+<h2 id="3-1-功能设置"><a href="#3-1-功能设置" class="headerlink" title="3.1 功能设置"></a>3.1 功能设置</h2><p>这一部分是必要的设置，如下图的最下方的红色方框options，其余三个部分都是频道管理的部分</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-6.png"></p>
+<p>点击打开后的界面如下：<br>可以看到左侧有很多设置，但是我们常用的修改的设置就是playback，也就是输出，还有capture，也就是输入。</p>
+<h3 id="3-1-1-输入设置"><a href="#3-1-1-输入设置" class="headerlink" title="3.1.1 输入设置"></a>3.1.1 输入设置</h3><p>设置界面如下图，可以看到主要分为三个部分。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-7.png"></p>
+<p>主要需要调整三个部分</p>
+<ul>
+<li><p>第一个部分是输入的设备，在capture device中选择我们想要输入的设备就可以了</p>
+</li>
+<li><p>第二个部分是语音输入模式，这里只推荐阈值触发模式，也就是说当你的声音达到一定强度时会自动触发输入，选择Voice Activity Detction-&gt;Volume Gate，然后调整下方的滑动条，这个值也就是触发输入的阈值，你可以在begin test选项中进行进一步的调试。</p>
+</li>
+<li><p>第三个部分是一些数字信号处理，比如回声消除、打字音消除等，全部勾选就可以了</p>
+</li>
+</ul>
+<h3 id="3-1-2-输出设置"><a href="#3-1-2-输出设置" class="headerlink" title="3.1.2 输出设置"></a>3.1.2 输出设置</h3><p>设置界面如下如图，这个部分很简单，设置我们想要输出的设备和大概的声音就可以了<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-8.png"></p>
+<h2 id="3-2-交互设置"><a href="#3-2-交互设置" class="headerlink" title="3.2 交互设置"></a>3.2 交互设置</h2><p>交互设置主要就是在如下界面修改，选择self就可以看到了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-4.png"></p>
+<p>其中第一个红框是一些默认设置不用修改</p>
+<p>第二部分是离线，麦克风和输出的功能按钮</p>
+<p>第三个部分就是我们需要设置的交互设置了：</p>
+<ul>
+<li>change nickname ：修改在本服务器的昵称</li>
+<li>set avatar：修改在本服务器的头像</li>
+<li>delete avatar：删除头像</li>
+</ul>
+<h2 id="3-3-频道管理设置"><a href="#3-3-频道管理设置" class="headerlink" title="3.3 频道管理设置"></a>3.3 频道管理设置</h2><p>如果你是一个服务器的拥有者，那么你肯定想要对不同的玩家有不同的权限，否则会乱套，其中主要分为管理员、会员、游客三种权限、</p>
+<ul>
+<li>管理员 ：<ul>
+<li>能够创建频道、删除频道</li>
+<li>进入加锁的频道</li>
+<li>移动管理员或以下权限的人到任意频道</li>
+<li>授予&#x2F;撤销管理员、会员、游客权限</li>
+</ul>
+</li>
+<li>会员：会员能做到管理员大部分事情<ul>
+<li>能够创建频道、删除频道</li>
+<li>进入加锁的频道</li>
+<li>移动会员或以下权限的人到任意频道</li>
+<li>授予&#x2F;撤销会员、游客权限</li>
+</ul>
+</li>
+<li>游客：没有权限</li>
+</ul>
+<p>所以一般给个会员权限就够了，权限设置如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-5.png"></p>
+<p>选择设置server groups，打开后默认是超级管理员、管理员和游客，可以对每一个权限进行修改，比如修改名字和头像，改成自己想要的名字以增加趣味性，比如超级管理员修改为超级赛亚人并且配上相应的头像等。在设置的左下角也可以加上其余的权限等级来细化一些权限，这个就自行设置了。</p>
+<p>当你是会员以上的权限时，这时你就可以对服务器进行一个频道的划分，比如lol、csgo、观赛等分区，根据你的小团体的游戏成分进行划分即可。记得创建频道的时候选择永久，否则下一次登陆的时候就会消失</p>
+<h1 id="4-服务器的进一步设置"><a href="#4-服务器的进一步设置" class="headerlink" title="4 服务器的进一步设置"></a>4 服务器的进一步设置</h1><p>主要是进行一些界面的优化，一些个性化的设置，比如设置频道的介绍、频道的icon图等等</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>分享博客</category>
+      </categories>
+      <tags>
+        <tag>teamspeak</tag>
+        <tag>语音服务器</tag>
       </tags>
   </entry>
   <entry>
