@@ -442,93 +442,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MobaXterm简单教程</title>
-    <url>/2023/08/07/20230807_shelToolMobaXterm/</url>
-    <content><![CDATA[<p>日常开发中一个好用的终端软件是很重要的，而MobaXterm就是其中最好用的之一，并且最重要的是MobaXterm的免费版本的功能就十分强大。</p>
-<p>本博客会介绍MobaXterm的下载，界面和简单的使用方法，还有其中的一些工具的介绍。</p>
-<span id="more"></span>
-
-<h1 id="1-下载"><a href="#1-下载" class="headerlink" title="1 下载"></a>1 下载</h1><p>官方网址链接为 <a href="https://mobaxterm.mobatek.net/">MobaXterm官方网址</a> ,点击下载即可。</p>
-<p>MobaXterm分为两种安装模式：</p>
-<p>便携式exe文件：适合安装在U盘，双击即可运行，这样服务器账号密码什么的就很方便的管理了，出门在外只需要一个U盘就可以连接服务器。<br>安装式：正常的install安装步骤。</p>
-<h1 id="2-界面介绍"><a href="#2-界面介绍" class="headerlink" title="2 界面介绍"></a>2 界面介绍</h1><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807203546.png"></p>
-<p>安装打开后大概可以看到是上图的界面，可以看到主要分为三块，图中用不同颜色的框进行标注。</p>
-<p>红色框内是一些我们可能用到的工具，比如session，serbers，tools，还有设置settings等。</p>
-<p>蓝色框内是侧边栏，比如我们最常用的通过sessions保存的远程SSH连接服务器的列表会存放在蓝色区域，方便经常连接使用还有tools工具和macros录制脚本。</p>
-<p>绿色框内是我们操作的区域，默认是途中这些西汉时的界面，如果我们打开远程服务器，终端也是显示在绿色方框内，这里面最常用红的Start local terminal和recover previous sessions也是最常用的两个功能，分别是打开本地终端和打开最近的session。</p>
-<h1 id="3-功能介绍"><a href="#3-功能介绍" class="headerlink" title="3 功能介绍"></a>3 功能介绍</h1><h2 id="3-1-Session管理"><a href="#3-1-Session管理" class="headerlink" title="3.1 Session管理"></a>3.1 Session管理</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210026.png"></p>
-<p>点击上图中的session按键，会出现以下界面</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210158.png"></p>
-<p>可以看到session中可以新建SSH，Telnet，Rsh，RDP，FTP，SFTP，Shell等功能，需要用到这些功能的时候就点击进行进一步的设置即可。其中我们最常用的就是SSH啦。</p>
-<h2 id="3-2-SSH连接远程服务器"><a href="#3-2-SSH连接远程服务器" class="headerlink" title="3.2 SSH连接远程服务器"></a>3.2 SSH连接远程服务器</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210843.png"></p>
-<p>按照3.1中步骤，点击SSH可以看到如上图所示，其中需要填写的一般只有四个部分。</p>
-<ul>
-<li><code>Remote host</code>：填写服务器的IP地址</li>
-<li><code>specify username</code>：填写你在服务器中使用的用户的名称，这样连接服务器后就可以直接登录到你的账户</li>
-<li><code>Advanced SSH setting</code>：高级SSH设置，点击之后界面如下，填写Use private key，也就是服务器的密码<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807211553.png"></li>
-<li><code>Bookmark settings</code>，书签设置，也就是在侧边栏中，当我们需要连接的服务器较多时，我们可以给不同的服务器起别名区别，填写Session name为我们想要的名字。<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807211752.png"></li>
-</ul>
-<p>都设置完毕后点击ok就可以了，这样在主界面的侧边栏中就会出现我们想要连接的session，以后方便一键连接远程服务器</p>
-<h2 id="3-3-文本编辑器和文本对比"><a href="#3-3-文本编辑器和文本对比" class="headerlink" title="3.3 文本编辑器和文本对比"></a>3.3 文本编辑器和文本对比</h2><p>侧边栏tools-&gt;MobaTExtEditor和tools-&gt;MobaDiff</p>
-<p>打开tools-&gt;MobaTExtEditor，就会显示右侧红框中的界面，方便对本地或者远程的文档进行编辑</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212100.png"></p>
-<p>打开tools-&gt;MobaDiff，选择文件1和文件2，点击ok即可分析两个文档之间的区别。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212248.png"></p>
-<h2 id="3-4-录制操作脚本"><a href="#3-4-录制操作脚本" class="headerlink" title="3.4 录制操作脚本"></a>3.4 录制操作脚本</h2><p>点击侧边栏的macro的如下图的红色框，即可开始录制，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212442.png"></p>
-<p>点击录制后，会显示以下界面，点击停止就会提醒我们保存脚本，做一些重复性工作时，可以录制获得脚本然后以后就可以使用该脚本宏啦</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212547.png"></p>
-<h2 id="3-5-本地服务器"><a href="#3-5-本地服务器" class="headerlink" title="3.5 本地服务器"></a>3.5 本地服务器</h2><p>某些情况下，我们需要搭建自己本地的服务器，以方便通过http或ftp等协议传输本地文件或数据，MobaXterm就提供了实现该服务的功能，包括了HTTP、FTP、Telent等众多的协议。</p>
-<p>点击上方的servers按钮即可打开</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213112.png"></p>
-<p>然后选择需要共享的文件夹路径，点击HTTP的开始按钮之后输入访问 <a href="http://localhost/">http://localhost:80/</a>即可访问该文件夹</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213423.png"></p>
-<h2 id="3-6-小游戏"><a href="#3-6-小游戏" class="headerlink" title="3.6 小游戏"></a>3.6 小游戏</h2><p>上方按钮中有games选项，里面有一些经典的小游戏，适合上班摸鱼的时候使用</p>
-<h1 id="4-使用技巧"><a href="#4-使用技巧" class="headerlink" title="4 使用技巧"></a>4 使用技巧</h1><h2 id="4-1-多种终端同时管理"><a href="#4-1-多种终端同时管理" class="headerlink" title="4.1 多种终端同时管理"></a>4.1 多种终端同时管理</h2><p>MobaXterm也可以使用Git，当我们同时需要使用Git Bash和远程服务器的时候，坚持切换会很麻烦，这时可以在首页右键点击Git Bash就可以在MobaXterm中同时管理多种终端啦。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213746.png"></p>
-<h2 id="4-2-SSH-休眠管理"><a href="#4-2-SSH-休眠管理" class="headerlink" title="4.2 SSH 休眠管理"></a>4.2 SSH 休眠管理</h2><p>默认设置5分钟连接的SSH会自动休眠，如果想要长时间不休眠可以在Settings-&gt;SSH-&gt;SSH keepalive修改，勾上该选项即可，如下图</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807214018.png"></p>
-<p><strong>持续更新中…</strong></p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>MobaXterm</tag>
-        <tag>shell</tag>
-        <tag>SSH</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>超好用网站汇总</title>
-    <url>/2023/08/09/20230809_PerfectWebsiteSummary/</url>
-    <content><![CDATA[<p>总结分享自己常用的一些好用网站</p>
-<span id="more"></span>
-
-<h1 id="1-比价网站"><a href="#1-比价网站" class="headerlink" title="1 比价网站"></a>1 比价网站</h1><p><a href="https://tool.manmanbuy.com/">比价网站</a></p>
-<p>这个网站可以查询过去24个月的价格波动，在网购之前都可以复制链接进来进行比价后再决定是否购买，减少背刺的概率。</p>
-<h1 id="2-mp3免费音乐资源网站"><a href="#2-mp3免费音乐资源网站" class="headerlink" title="2 mp3免费音乐资源网站"></a>2 mp3免费音乐资源网站</h1><p><a href="https://tools.liumingye.cn/music/">MyFreeMP3</a></p>
-<p>一个免费的下载高质量的mp3格式歌曲的网站，一些常见的比较热门的歌曲都有，不过新歌可能上传比较慢。</p>
-<p><a href="https://tonzhon.com/">铜钟</a></p>
-<p>也一个免费的下载高质量的mp3格式歌曲的网站，博主一般交叉使用。</p>
-<h1 id="3-图片压缩和转换分辨率网站"><a href="#3-图片压缩和转换分辨率网站" class="headerlink" title="3 图片压缩和转换分辨率网站"></a>3 图片压缩和转换分辨率网站</h1><p><a href="https://www.onlineimagetool.com/zh/resize-png-jpg-webp-gif">图片压缩和转换分辨率网站</a></p>
-<p>可以免费在线批量压缩图片，调整图片的分辨率，在需要上传一些证件照时十分有用。</p>
-<h1 id="4-学习代码算法结构网站"><a href="#4-学习代码算法结构网站" class="headerlink" title="4 学习代码算法结构网站"></a>4 学习代码算法结构网站</h1><p><a href="https://programmercarl.com/">代码随想录</a></p>
-<p>学习代码算法，主要是C++，总结的不错。</p>
-<h1 id="5-电子书网站"><a href="#5-电子书网站" class="headerlink" title="5 电子书网站"></a>5 电子书网站</h1><p><a href="http://jiumodiary.com/">鸠摩搜书</a></p>
-<p>相对资源还算比较多，自己也经常在上面搜索一些txt，pdf，当然主要是epub格式的书籍。</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>分享博客</category>
-      </categories>
-      <tags>
-        <tag>实用工具</tag>
-        <tag>网站</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>markdown的简单用法</title>
     <url>/2023/08/09/20230808_markdownLanguage/</url>
     <content><![CDATA[<p>如果需要经常记录一些东西，那么markdown就是一个绕不开的东西，而习惯用markdown也会养成记录的习惯，本文主要从四个方面介绍markdown的简单用法，分别是1.markdown简介，2.markdown编译器，3.markdown语法。</p>
@@ -738,541 +651,90 @@
       </tags>
   </entry>
   <entry>
-    <title>C++学习路线</title>
-    <url>/2023/08/22/20230819_C++LearningRoute/</url>
-    <content><![CDATA[<p>记录一下打工牛马人的C++的学习路线。</p>
-<p>主要部分有C++基础，C++算法，计算机网络，MySQL数据库，Redis，软件设计模式，操作系统、Linux操作、网络编程，C++经典项目(webserver)，如果有时间还可以多参与几个练手的小项目。</p>
+    <title>超好用网站汇总</title>
+    <url>/2023/08/09/20230809_PerfectWebsiteSummary/</url>
+    <content><![CDATA[<p>总结分享自己常用的一些好用网站</p>
 <span id="more"></span>
 
-<h1 id="C-基础"><a href="#C-基础" class="headerlink" title="C++基础"></a>C++基础</h1><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1et411b73Z/">黑马程序员C++基础</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17560955.html">C++基础笔记</a></p>
-<p>主要是三部分内容</p>
-<ul>
-<li>C++语法入门：变量与常量、数据类型、运算符、程序流程结构、数组、函数、指针、结构体</li>
-<li>类和对象：封装、继承、多态</li>
-<li>模板与STL</li>
-</ul>
-<h1 id="C-算法"><a href="#C-算法" class="headerlink" title="C++算法"></a>C++算法</h1><p>主要在代码随想录上刷题和学习：<a href="https://programmercarl.com/%E5%89%8D%E5%BA%8F/%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC.html#%E9%A2%98%E5%A4%96%E8%AF%9D">代码随想录</a></p>
-<p>有时间可以刷两道三遍，不然理解可能不到位</p>
-<p>主要包含：</p>
-<table>
-<thead>
-<tr>
-<th align="center">内容</th>
-<th align="center">难度</th>
-<th align="center">内容</th>
-<th align="center">面试&#x2F;笔试较多</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">数组</td>
-<td align="center">简单</td>
-<td align="center">数组相关</td>
-<td align="center">面试多</td>
-</tr>
-<tr>
-<td align="center">链表</td>
-<td align="center">简单</td>
-<td align="center">链表概念、设计、删除等</td>
-<td align="center">面试多</td>
-</tr>
-<tr>
-<td align="center">哈希表</td>
-<td align="center">简单</td>
-<td align="center">快速判断一个元素是否出现集合里</td>
-<td align="center">一般</td>
-</tr>
-<tr>
-<td align="center">字符串</td>
-<td align="center">简单</td>
-<td align="center">针对字符，使用双指针很多</td>
-<td align="center">一般</td>
-</tr>
-<tr>
-<td align="center">双指针法</td>
-<td align="center">简单</td>
-<td align="center">数组，链表，字符串中使用较多</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">栈与队列</td>
-<td align="center">简单</td>
-<td align="center">面试提问较多</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">二叉树</td>
-<td align="center">中等</td>
-<td align="center">二叉树，搜索树，遍历等</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">回溯算法</td>
-<td align="center">中等</td>
-<td align="center">暴力算法，组合</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">贪心算法</td>
-<td align="center">困难</td>
-<td align="center">局部最优推广到全局</td>
-<td align="center">笔试</td>
-</tr>
-<tr>
-<td align="center">动态规划</td>
-<td align="center">困难</td>
-<td align="center">能够定义dp数据，当前状态由前两个状态决定</td>
-<td align="center">笔试</td>
-</tr>
-</tbody></table>
-<h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1c4411d7jb/">计算机网络(湖科大教书匠)</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17577514.html">计算机网络笔记</a></p>
-<p>此部分比较简单，并且在后序网络编程还会复习一部分，笔记只记录了一些相对重要的部分。</p>
-<h1 id="MySQL和Redis"><a href="#MySQL和Redis" class="headerlink" title="MySQL和Redis"></a>MySQL和Redis</h1><h2 id="MySQL：一般学习这个"><a href="#MySQL：一般学习这个" class="headerlink" title="MySQL：一般学习这个"></a>MySQL：一般学习这个</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1Kr4y1i7ru/">黑马程序员MySQL</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17648671.html">SQL基础增删改查</a></p>
-<h2 id="Redis：岗位有需要可以一周内突击学习"><a href="#Redis：岗位有需要可以一周内突击学习" class="headerlink" title="Redis：岗位有需要可以一周内突击学习"></a>Redis：岗位有需要可以一周内突击学习</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1cr4y1671t/">黑马程序员Redis</a><br><strong>我的笔记链接：</strong></p>
-<h1 id="软件设计模式"><a href="#软件设计模式" class="headerlink" title="软件设计模式"></a>软件设计模式</h1><p>有时间看视频，没时间直接搜索资料记住概念和常见的几种设计模式即可</p>
-<p><strong>视频链接：</strong> 讲的挺好，有时间可以仔细听，对程序编写有好处<br><a href="https://www.bilibili.com/video/BV1Yr4y157Ci/">C++设计模式入门</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17559583.html">一些常用软件设计模式</a></p>
-<p>一般了解策略模式、工厂模式、单例模式(最简单)、观察者模式、适配这模式即可了</p>
-<h1 id="C-项目"><a href="#C-项目" class="headerlink" title="C++项目"></a>C++项目</h1><p><a href="https://www.nowcoder.com/study/live/504">牛客网C++项目</a></p>
-<p>这个项目就包含了基础的Linux系统编程、Linux多进程开发、Linux多线程开发、网络编程和实战。所以如果时间不够可以就看着一个项目就好了。包含了<strong>Linux基础</strong>、<strong>操作系统</strong>、<strong>网络编程</strong>和<strong>websever</strong>项目，差的知识后序查漏补缺就好了。</p>
-<p>笔记链接如下：</p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17547122.html">第1章 Linux系统编程入门</a></p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17586114.html">第2章 Linux多进程开发</a></p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17601631.html">第3章 Linux多线程开发</a></p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17609639.html">第4章 Linux网络编程</a></p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17629592.html">第5章 项目实战与总结</a></p>
-<p><a href="https://mobbu.space/2023/08/15/20230815_C++%E9%AB%98%E5%B9%B6%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8/#more">webserver项目解析与总结</a></p>
+<h1 id="1-比价网站"><a href="#1-比价网站" class="headerlink" title="1 比价网站"></a>1 比价网站</h1><p><a href="https://tool.manmanbuy.com/">比价网站</a></p>
+<p>这个网站可以查询过去24个月的价格波动，在网购之前都可以复制链接进来进行比价后再决定是否购买，减少背刺的概率。</p>
+<h1 id="2-mp3免费音乐资源网站"><a href="#2-mp3免费音乐资源网站" class="headerlink" title="2 mp3免费音乐资源网站"></a>2 mp3免费音乐资源网站</h1><p><a href="https://tools.liumingye.cn/music/">MyFreeMP3</a></p>
+<p>一个免费的下载高质量的mp3格式歌曲的网站，一些常见的比较热门的歌曲都有，不过新歌可能上传比较慢。</p>
+<p><a href="https://tonzhon.com/">铜钟</a></p>
+<p>也一个免费的下载高质量的mp3格式歌曲的网站，博主一般交叉使用。</p>
+<h1 id="3-图片压缩和转换分辨率网站"><a href="#3-图片压缩和转换分辨率网站" class="headerlink" title="3 图片压缩和转换分辨率网站"></a>3 图片压缩和转换分辨率网站</h1><p><a href="https://www.onlineimagetool.com/zh/resize-png-jpg-webp-gif">图片压缩和转换分辨率网站</a></p>
+<p>可以免费在线批量压缩图片，调整图片的分辨率，在需要上传一些证件照时十分有用。</p>
+<h1 id="4-学习代码算法结构网站"><a href="#4-学习代码算法结构网站" class="headerlink" title="4 学习代码算法结构网站"></a>4 学习代码算法结构网站</h1><p><a href="https://programmercarl.com/">代码随想录</a></p>
+<p>学习代码算法，主要是C++，总结的不错。</p>
+<h1 id="5-电子书网站"><a href="#5-电子书网站" class="headerlink" title="5 电子书网站"></a>5 电子书网站</h1><p><a href="http://jiumodiary.com/">鸠摩搜书</a></p>
+<p>相对资源还算比较多，自己也经常在上面搜索一些txt，pdf，当然主要是epub格式的书籍。</p>
 <p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
 ]]></content>
       <categories>
         <category>分享博客</category>
       </categories>
       <tags>
-        <tag>C++</tag>
+        <tag>实用工具</tag>
+        <tag>网站</tag>
       </tags>
   </entry>
   <entry>
-    <title>git教程和分布式管理代码</title>
-    <url>/2023/08/21/20230821_GitAbout/</url>
-    <content><![CDATA[<p>当我们写了一定量的代码之后，就会遇到如何管理代码的问题。目前管理代码主要有两种管理工具分别是</p>
-<ul>
-<li>Git：分布式管理</li>
-<li>SVN：集中式管理</li>
-</ul>
-<p>那么分布式管理有哪些好处呢？我目前感受到的优点如下：</p>
-<ul>
-<li>管理代码成本低</li>
-<li>分支branch机制让主干代码很简洁移动</li>
-<li>可以回滚和查看之前commit的任意版本，这个在实际中十分有用</li>
-<li>分支机制让多人协同修改代码更加方便</li>
-<li>可以在不同电脑上轻松同步项目代码</li>
-</ul>
-<p>下面主要介绍Git的一些基本用法。</p>
+    <title>MobaXterm简单教程</title>
+    <url>/2023/08/07/20230807_shelToolMobaXterm/</url>
+    <content><![CDATA[<p>日常开发中一个好用的终端软件是很重要的，而MobaXterm就是其中最好用的之一，并且最重要的是MobaXterm的免费版本的功能就十分强大。</p>
+<p>本博客会介绍MobaXterm的下载，界面和简单的使用方法，还有其中的一些工具的介绍。</p>
 <span id="more"></span>
 
-<p>首先贴上官方资料<a href="https://git-scm.com/book/zh/v2/">Pro Git(2nd Edition)</a></p>
-<h1 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1 基本概念"></a>1 基本概念</h1><h2 id="1-1-三种状态"><a href="#1-1-三种状态" class="headerlink" title="1.1 三种状态"></a>1.1 三种状态</h2><ul>
-<li>已提交（committed）：已提交表示数据已经安全地保存在本地数据库中。</li>
-<li>已修改（modified）：已修改表示修改了文件，但还没保存到数据库中。</li>
-<li>已暂存（staged）：已暂存表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。</li>
+<h1 id="1-下载"><a href="#1-下载" class="headerlink" title="1 下载"></a>1 下载</h1><p>官方网址链接为 <a href="https://mobaxterm.mobatek.net/">MobaXterm官方网址</a> ,点击下载即可。</p>
+<p>MobaXterm分为两种安装模式：</p>
+<p>便携式exe文件：适合安装在U盘，双击即可运行，这样服务器账号密码什么的就很方便的管理了，出门在外只需要一个U盘就可以连接服务器。<br>安装式：正常的install安装步骤。</p>
+<h1 id="2-界面介绍"><a href="#2-界面介绍" class="headerlink" title="2 界面介绍"></a>2 界面介绍</h1><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807203546.png"></p>
+<p>安装打开后大概可以看到是上图的界面，可以看到主要分为三块，图中用不同颜色的框进行标注。</p>
+<p>红色框内是一些我们可能用到的工具，比如session，serbers，tools，还有设置settings等。</p>
+<p>蓝色框内是侧边栏，比如我们最常用的通过sessions保存的远程SSH连接服务器的列表会存放在蓝色区域，方便经常连接使用还有tools工具和macros录制脚本。</p>
+<p>绿色框内是我们操作的区域，默认是途中这些西汉时的界面，如果我们打开远程服务器，终端也是显示在绿色方框内，这里面最常用红的Start local terminal和recover previous sessions也是最常用的两个功能，分别是打开本地终端和打开最近的session。</p>
+<h1 id="3-功能介绍"><a href="#3-功能介绍" class="headerlink" title="3 功能介绍"></a>3 功能介绍</h1><h2 id="3-1-Session管理"><a href="#3-1-Session管理" class="headerlink" title="3.1 Session管理"></a>3.1 Session管理</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210026.png"></p>
+<p>点击上图中的session按键，会出现以下界面</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210158.png"></p>
+<p>可以看到session中可以新建SSH，Telnet，Rsh，RDP，FTP，SFTP，Shell等功能，需要用到这些功能的时候就点击进行进一步的设置即可。其中我们最常用的就是SSH啦。</p>
+<h2 id="3-2-SSH连接远程服务器"><a href="#3-2-SSH连接远程服务器" class="headerlink" title="3.2 SSH连接远程服务器"></a>3.2 SSH连接远程服务器</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210843.png"></p>
+<p>按照3.1中步骤，点击SSH可以看到如上图所示，其中需要填写的一般只有四个部分。</p>
+<ul>
+<li><code>Remote host</code>：填写服务器的IP地址</li>
+<li><code>specify username</code>：填写你在服务器中使用的用户的名称，这样连接服务器后就可以直接登录到你的账户</li>
+<li><code>Advanced SSH setting</code>：高级SSH设置，点击之后界面如下，填写Use private key，也就是服务器的密码<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807211553.png"></li>
+<li><code>Bookmark settings</code>，书签设置，也就是在侧边栏中，当我们需要连接的服务器较多时，我们可以给不同的服务器起别名区别，填写Session name为我们想要的名字。<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807211752.png"></li>
 </ul>
-<h2 id="1-2-工作流程"><a href="#1-2-工作流程" class="headerlink" title="1.2 工作流程"></a>1.2 工作流程</h2><ul>
-<li><p>在工作区中修改文件。</p>
-</li>
-<li><p>将你想要下次提交的更改选择性地暂存，这样只会将更改的部分添加到暂存区。</p>
-</li>
-<li><p>提交更新，找到暂存区的文件，将快照永久性存储到 Git 目录。</p>
-</li>
-</ul>
-<p>如果 Git 目录中保存着特定版本的文件，就属于 已提交 状态。 如果文件已修改并放入暂存区，就属于 已暂存 状态。 如果自上次检出后，作了修改但还没有放到暂存区域，就是 已修改 状态。 在 Git 基础 一章，你会进一步了解这些状态的细节， 并学会如何根据文件状态实施后续操作，以及怎样跳过暂存直接提交。</p>
-<h1 id="2-基本操作"><a href="#2-基本操作" class="headerlink" title="2 基本操作"></a>2 基本操作</h1><p>一个基本操作流程如下：<br>首先你有一个github的库，公有私有都可以。</p>
-<ol>
-<li>github上的库clone到本地</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@github.com:xxx.git</span><br></pre></td></tr></table></figure>
-
-<p>在github上建库之后，输入代码git clone到本地仓库</p>
-<ol start="2">
-<li><p><code>git init</code>初始化生成.git文件夹</p>
-</li>
-<li><p>本地进行修改后，<code>git add .</code>将所有修改添加到缓存区，此时处于已修改的状态</p>
-</li>
-<li><p><code>git commit -am &quot;修改的提示信息&quot;</code>将修改的信息提交到本地仓库</p>
-</li>
-<li><p><code>git push</code>将修改的信息push到云端也就是github的仓库中</p>
-</li>
-</ol>
-<p>一些常用Git命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git log		        //查看提交日志</span><br><span class="line">git add		        //提交到缓存区</span><br><span class="line">git reset 	        //撤销缓存区</span><br><span class="line">git commit 	        //提交代码到本地仓库</span><br><span class="line">git push			//提交代码到远程仓库</span><br><span class="line">git pull			//拷贝远程仓库的代码</span><br><span class="line">git checkout		//回退文件修改或者切换分支</span><br><span class="line">git stash			//暂存本地修改</span><br><span class="line">git stash pop		//释放第一个暂存区代码</span><br><span class="line">git diff			//查看本地具体修改，通常用于生成补丁</span><br><span class="line">git format-patch	//将本地提交生成补丁</span><br><span class="line">git revert			//回滚一个提交</span><br><span class="line">git cherry-pick		//下载远程仓库的某个提交</span><br><span class="line">git show			//查看具体修改</span><br><span class="line">git status			//查看所有修改文件</span><br></pre></td></tr></table></figure>
-
-
+<p>都设置完毕后点击ok就可以了，这样在主界面的侧边栏中就会出现我们想要连接的session，以后方便一键连接远程服务器</p>
+<h2 id="3-3-文本编辑器和文本对比"><a href="#3-3-文本编辑器和文本对比" class="headerlink" title="3.3 文本编辑器和文本对比"></a>3.3 文本编辑器和文本对比</h2><p>侧边栏tools-&gt;MobaTExtEditor和tools-&gt;MobaDiff</p>
+<p>打开tools-&gt;MobaTExtEditor，就会显示右侧红框中的界面，方便对本地或者远程的文档进行编辑</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212100.png"></p>
+<p>打开tools-&gt;MobaDiff，选择文件1和文件2，点击ok即可分析两个文档之间的区别。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212248.png"></p>
+<h2 id="3-4-录制操作脚本"><a href="#3-4-录制操作脚本" class="headerlink" title="3.4 录制操作脚本"></a>3.4 录制操作脚本</h2><p>点击侧边栏的macro的如下图的红色框，即可开始录制，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212442.png"></p>
+<p>点击录制后，会显示以下界面，点击停止就会提醒我们保存脚本，做一些重复性工作时，可以录制获得脚本然后以后就可以使用该脚本宏啦</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212547.png"></p>
+<h2 id="3-5-本地服务器"><a href="#3-5-本地服务器" class="headerlink" title="3.5 本地服务器"></a>3.5 本地服务器</h2><p>某些情况下，我们需要搭建自己本地的服务器，以方便通过http或ftp等协议传输本地文件或数据，MobaXterm就提供了实现该服务的功能，包括了HTTP、FTP、Telent等众多的协议。</p>
+<p>点击上方的servers按钮即可打开</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213112.png"></p>
+<p>然后选择需要共享的文件夹路径，点击HTTP的开始按钮之后输入访问 <a href="http://localhost/">http://localhost:80/</a>即可访问该文件夹</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213423.png"></p>
+<h2 id="3-6-小游戏"><a href="#3-6-小游戏" class="headerlink" title="3.6 小游戏"></a>3.6 小游戏</h2><p>上方按钮中有games选项，里面有一些经典的小游戏，适合上班摸鱼的时候使用</p>
+<h1 id="4-使用技巧"><a href="#4-使用技巧" class="headerlink" title="4 使用技巧"></a>4 使用技巧</h1><h2 id="4-1-多种终端同时管理"><a href="#4-1-多种终端同时管理" class="headerlink" title="4.1 多种终端同时管理"></a>4.1 多种终端同时管理</h2><p>MobaXterm也可以使用Git，当我们同时需要使用Git Bash和远程服务器的时候，坚持切换会很麻烦，这时可以在首页右键点击Git Bash就可以在MobaXterm中同时管理多种终端啦。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213746.png"></p>
+<h2 id="4-2-SSH-休眠管理"><a href="#4-2-SSH-休眠管理" class="headerlink" title="4.2 SSH 休眠管理"></a>4.2 SSH 休眠管理</h2><p>默认设置5分钟连接的SSH会自动休眠，如果想要长时间不休眠可以在Settings-&gt;SSH-&gt;SSH keepalive修改，勾上该选项即可，如下图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807214018.png"></p>
+<p><strong>持续更新中…</strong></p>
 <p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
 ]]></content>
       <categories>
         <category>技术博客</category>
       </categories>
       <tags>
-        <tag>Github</tag>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解析经典排序算法</title>
-    <url>/2023/08/23/20230821_SortingAlgorithmSummary/</url>
-    <content><![CDATA[<p>总结常用的排序算法，比如快速排序、选择排序、桶排序、堆排序、冒泡排序，分别进行原理分析，复杂度分析，使用场景区分，适用的数据结构，并进行对比总结。</p>
-<span id="more"></span>
-
-<p>首先总结表如下：</p>
-<table>
-<thead>
-<tr>
-<th align="center">排序方法</th>
-<th align="center">平均时间复杂度</th>
-<th align="center">最好情况</th>
-<th align="center">最坏情况</th>
-<th align="center">空间复杂度</th>
-<th align="center">是否稳定</th>
-<th align="center">排序方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">冒泡排序</td>
-<td align="center">$O(n^2)$</td>
-<td align="center">$O(n)$</td>
-<td align="center">$O(n^2)$</td>
-<td align="center">$O(1)$</td>
-<td align="center">稳定</td>
-<td align="center">内部排序</td>
-</tr>
-<tr>
-<td align="center">选择排序</td>
-<td align="center">$O(n^2)$</td>
-<td align="center">$O(n^2)$</td>
-<td align="center">$O(n^2)$</td>
-<td align="center">$O(1)$</td>
-<td align="center">不稳定</td>
-<td align="center">内部排序</td>
-</tr>
-<tr>
-<td align="center">插入排序</td>
-<td align="center">$O(n^2)$</td>
-<td align="center">$O(n)$</td>
-<td align="center">$O(n^2)$</td>
-<td align="center">$O(1)$</td>
-<td align="center">稳定</td>
-<td align="center">内部排序</td>
-</tr>
-<tr>
-<td align="center">希尔排序</td>
-<td align="center">$O(n\log n)$</td>
-<td align="center">$O(n\log ^2 n)$</td>
-<td align="center">$O(n\log ^2 n)$</td>
-<td align="center">$O(1)$</td>
-<td align="center">不稳定</td>
-<td align="center">内部排序</td>
-</tr>
-<tr>
-<td align="center">快速排序</td>
-<td align="center">$O(n\log n)$</td>
-<td align="center">$O(n\log n)$</td>
-<td align="center">$O(n^2)$</td>
-<td align="center">$O(\log n)$</td>
-<td align="center">不稳定</td>
-<td align="center">内部排序</td>
-</tr>
-<tr>
-<td align="center">归并排序</td>
-<td align="center">$O(n\log n)$</td>
-<td align="center">$O(n\log n)$</td>
-<td align="center">$O(n\log n)$</td>
-<td align="center">$O(n)$</td>
-<td align="center">稳定</td>
-<td align="center">外部排序</td>
-</tr>
-<tr>
-<td align="center">堆排序</td>
-<td align="center">$O(n\log n)$</td>
-<td align="center">$O(n\log n)$</td>
-<td align="center">$O(n\log n)$</td>
-<td align="center">$O(1)$</td>
-<td align="center">不稳定</td>
-<td align="center">内部排序</td>
-</tr>
-<tr>
-<td align="center">桶排序</td>
-<td align="center">$O(n+k)$</td>
-<td align="center">$O(n+k)$</td>
-<td align="center">$O(n^2)$</td>
-<td align="center">$O(k)$</td>
-<td align="center">稳定</td>
-<td align="center">外部排序</td>
-</tr>
-<tr>
-<td align="center">计数排序</td>
-<td align="center">$O(n+k)$</td>
-<td align="center">$O(n+k)$</td>
-<td align="center">$O(n+k)$</td>
-<td align="center">$O(k)$</td>
-<td align="center">稳定</td>
-<td align="center">外部排序</td>
-</tr>
-</tbody></table>
-<h1 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1 冒泡排序"></a>1 冒泡排序</h1><h2 id="1-1-算法简述"><a href="#1-1-算法简述" class="headerlink" title="1.1 算法简述"></a>1.1 算法简述</h2><p>两两比较，选出较大值，每一轮选出单轮最大值到数组末端，这个过程就像泡泡变大的过程，所以交冒泡算法。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">bubbleSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>() - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="comment">//int flag = 0;</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; nums.<span class="built_in">size</span>() - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[j] &gt; nums[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                <span class="built_in">swap</span>(nums[j], nums[j + <span class="number">1</span>]);</span><br><span class="line">                <span class="comment">//flag = 1;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//if(flag == 0) return;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-2-优化"><a href="#1-2-优化" class="headerlink" title="1.2 优化"></a>1.2 优化</h2><p>定义一个flag，只要进行交换就置为1.当某一次内层for循环没有交换过flag为0，那么说明已经排序好了</p>
-<h2 id="1-3-最好情况"><a href="#1-3-最好情况" class="headerlink" title="1.3 最好情况"></a>1.3 最好情况</h2><p>数组已经是正序排列时，仅有比较，没有交换</p>
-<h2 id="1-4-最坏情况"><a href="#1-4-最坏情况" class="headerlink" title="1.4 最坏情况"></a>1.4 最坏情况</h2><p>数组是反序排列时，每一轮都需要交换</p>
-<h1 id="2选择排序"><a href="#2选择排序" class="headerlink" title="2选择排序"></a>2选择排序</h1><p>选择排序是一种简单直观的排序算法，无论什么数据进去都是 O(n²) 的时间复杂度。所以用到它的时候，数据规模越小越好。唯一的好处可能就是不占用额外的内存空间了吧。</p>
-<h2 id="2-1-算法简述"><a href="#2-1-算法简述" class="headerlink" title="2.1 算法简述"></a>2.1 算法简述</h2><p>首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置。</p>
-<p>再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。</p>
-<p>重复第二步，直到所有元素均排序完毕。</p>
-<h2 id="2-2-代码"><a href="#2-2-代码" class="headerlink" title="2.2 代码"></a>2.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">selection_sort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="type">int</span> min = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; nums.<span class="built_in">size</span>(); j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[min] &gt; nums[j]) min = j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">swap</span>(nums[min], nums[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="3-插入排序"><a href="#3-插入排序" class="headerlink" title="3 插入排序"></a>3 插入排序</h1><p>插入排序的代码实现虽然没有冒泡排序和选择排序那么简单粗暴，但它的原理应该是最容易理解的了，因为只要打过扑克牌的人都应该能够秒懂。插入排序是一种最简单直观的排序算法，它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。</p>
-<p>插入排序和冒泡排序一样，也有一种优化算法，叫做拆半插入。</p>
-<h2 id="3-1-算法简述"><a href="#3-1-算法简述" class="headerlink" title="3.1 算法简述"></a>3.1 算法简述</h2><p>将第一待排序序列第一个元素看做一个有序序列，把第二个元素到最后一个元素当成是未排序序列。</p>
-<p>从头到尾依次扫描未排序序列，将扫描到的每个元素插入有序序列的适当位置。（如果待插入的元素与有序序列中的某个元素相等，则将待插入元素插入到相等元素的后面。）</p>
-<h2 id="3-2-代码"><a href="#3-2-代码" class="headerlink" title="3.2 代码"></a>3.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">insertion_sort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="type">int</span> num = nums[i];</span><br><span class="line">        <span class="type">int</span> j = i - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; num &lt; nums[j]) &#123;</span><br><span class="line">            <span class="comment">// 当j大于0且有序区间值大于num时，向左移动</span></span><br><span class="line">            nums[j + <span class="number">1</span>] = nums[j];</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//优化，折半查找法</span></span><br><span class="line">        nums[j + <span class="number">1</span>] = num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-3优化"><a href="#3-3优化" class="headerlink" title="3.3优化"></a>3.3优化</h2><p>已排序的序列中，序列元素都是按照顺序排列的，直接比较已排序序列的中位数，这个中间的位置将一排序列分为左右两部分，通过一次比较后，就缩小了比较的范围，重复这样的操作，需要插入的元素就找到了合适的位置了。</p>
-<h1 id="4-希尔排序"><a href="#4-希尔排序" class="headerlink" title="4 希尔排序"></a>4 希尔排序</h1><p>希尔排序，也称递减增量排序算法，是插入排序的一种更高效的改进版本。但希尔排序是非稳定排序算法。</p>
-<p>希尔排序是基于插入排序的以下两点性质而提出改进方法的：</p>
-<p>插入排序在对几乎已经排好序的数据操作时，效率高，即可以达到线性排序的效率；<br>但插入排序一般来说是低效的，因为插入排序每次只能将数据移动一位；<br>希尔排序的基本思想是：先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，待整个序列中的记录”基本有序”时，再对全体记录进行依次直接插入排序。</p>
-<h2 id="4-1-算法简述"><a href="#4-1-算法简述" class="headerlink" title="4.1 算法简述"></a>4.1 算法简述</h2><p>选择一个增量序列 t1，t2，……，tk，其中 ti &gt; tj, tk &#x3D; 1；</p>
-<p>按增量序列个数 k，对序列进行 k 趟排序；</p>
-<p>每趟排序，根据对应的增量 ti，将待排序列分割成若干长度为 m 的子序列，分别对各子表进行直接插入排序。仅增量因子为 1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。</p>
-<h2 id="4-2-代码"><a href="#4-2-代码" class="headerlink" title="4.2 代码"></a>4.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">shell_sort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> h = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">3</span> * h &lt; nums.<span class="built_in">size</span>()) &#123;</span><br><span class="line">        h = <span class="number">3</span> * h + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (h &gt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = h; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = i; j &gt;= h &amp;&amp; nums[j] &lt; nums[j - h]; j -= h) &#123;</span><br><span class="line">                <span class="built_in">swap</span>(nums[j], nums[j - h]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        h = h / <span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="5-快速排序"><a href="#5-快速排序" class="headerlink" title="5 快速排序"></a>5 快速排序</h1><p>快速排序是由东尼·霍尔所发展的一种排序算法。在平均状况下，排序 n 个项目要 Ο(nlogn) 次比较。在最坏状况下则需要 Ο(n2) 次比较，但这种状况并不常见。事实上，快速排序通常明显比其他 Ο(nlogn) 算法更快，因为它的内部循环（inner loop）可以在大部分的架构上很有效率地被实现出来。</p>
-<p>快速排序使用分治法（Divide and conquer）策略来把一个串行（list）分为两个子串行（sub-lists）。</p>
-<p>快速排序又是一种分而治之思想在排序算法上的典型应用。本质上来看，快速排序应该算是在冒泡排序基础上的递归分治法。</p>
-<p>快速排序的名字起的是简单粗暴，因为一听到这个名字你就知道它存在的意义，就是快，而且效率高！它是处理大数据最快的排序算法之一了。虽然 Worst Case 的时间复杂度达到了 O(n²)，但是人家就是优秀，在大多数情况下都比平均时间复杂度为 O(n logn) 的排序算法表现要更好，可是这是为什么呢，我也不知道。好在我的强迫症又犯了，查了 N 多资料终于在《算法艺术与信息学竞赛》上找到了满意的答案：</p>
-<p>快速排序的最坏运行情况是 O(n²)，比如说顺序数列的快排。但它的平摊期望时间是 O(nlogn)，且 O(nlogn) 记号中隐含的常数因子很小，比复杂度稳定等于 O(nlogn) 的归并排序要小很多。所以，对绝大多数顺序性较弱的随机数列而言，快速排序总是优于归并排序。</p>
-<h2 id="5-1-算法简述"><a href="#5-1-算法简述" class="headerlink" title="5.1 算法简述"></a>5.1 算法简述</h2><ol>
-<li><p>从数列中挑出一个元素，称为 “基准”（pivot）;</p>
-</li>
-<li><p>重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作；</p>
-</li>
-<li><p>递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序；</p>
-</li>
-</ol>
-<h2 id="5-2-代码"><a href="#5-2-代码" class="headerlink" title="5.2 代码"></a>5.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 快速排序</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">Paritition</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> low, <span class="type">int</span> high)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//返回基准pivot的nums的序号</span></span><br><span class="line">    <span class="type">int</span> pivot = nums[low];</span><br><span class="line">    <span class="keyword">while</span> (low &lt; high) &#123;</span><br><span class="line">        <span class="comment">//将nums分为小于基准和大于基准的两侧</span></span><br><span class="line">        <span class="keyword">while</span> (low &lt; high &amp;&amp; nums[high] &gt;= pivot) --high;</span><br><span class="line">        nums[low] = nums[high];</span><br><span class="line">        <span class="keyword">while</span> (low &lt; high &amp;&amp; nums[low] &lt;= pivot) ++low;</span><br><span class="line">        nums[high] = nums[low];</span><br><span class="line">    &#125;</span><br><span class="line">    nums[low] = pivot;</span><br><span class="line">    <span class="keyword">return</span> low;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">QuickSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> low, <span class="type">int</span> high)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (low &lt; high) &#123;</span><br><span class="line">        <span class="type">int</span> pivot = <span class="built_in">Paritition</span>(nums, low, high);</span><br><span class="line">        <span class="built_in">QuickSort</span>(nums, low, pivot - <span class="number">1</span>);<span class="comment">//递归小于基准部分</span></span><br><span class="line">        <span class="built_in">QuickSort</span>(nums, pivot + <span class="number">1</span>, high);<span class="comment">//递归大于基准部分</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">QuickSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">QuickSort</span>(nums, <span class="number">0</span>, nums.<span class="built_in">size</span>() - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="6-归并排序"><a href="#6-归并排序" class="headerlink" title="6 归并排序"></a>6 归并排序</h1><p>归并排序（Merge sort）是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。</p>
-<p>作为一种典型的分而治之思想的算法应用，归并排序的实现由两种方法：</p>
-<p>自上而下的递归（所有递归的方法都可以用迭代重写，所以就有了第 2 种方法）；<br>自下而上的迭代；</p>
-<p>和选择排序一样，归并排序的性能不受输入数据的影响，但表现比选择排序好的多，因为始终都是 O(nlogn) 的时间复杂度。代价是需要额外的内存空间。</p>
-<h2 id="6-1-算法简述"><a href="#6-1-算法简述" class="headerlink" title="6.1 算法简述"></a>6.1 算法简述</h2><ol>
-<li><p>申请空间，使其大小为两个已经排序序列之和，该空间用来存放合并后的序列；</p>
-</li>
-<li><p>设定两个指针，最初位置分别为两个已经排序序列的起始位置；</p>
-</li>
-<li><p>比较两个指针所指向的元素，选择相对小的元素放入到合并空间，并移动指针到下一位置；</p>
-</li>
-<li><p>重复步骤 3 直到某一指针达到序列尾；</p>
-</li>
-<li><p>将另一序列剩下的所有元素直接复制到合并序列尾。</p>
-</li>
-</ol>
-<h2 id="6-2-代码"><a href="#6-2-代码" class="headerlink" title="6.2 代码"></a>6.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 归并排序</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Merge</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> front, <span class="type">int</span> mid, <span class="type">int</span> end)</span> </span>&#123;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">LeftSubArray</span><span class="params">(nums.begin() + front, nums.begin() + mid + <span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">RightSubArray</span><span class="params">(nums.begin() + mid + <span class="number">1</span>, nums.begin() + end + <span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="type">int</span> idxLeft = <span class="number">0</span>, idxRight = <span class="number">0</span>;</span><br><span class="line">    LeftSubArray.<span class="built_in">insert</span>(LeftSubArray.<span class="built_in">end</span>(), numeric_limits&lt;<span class="type">int</span>&gt;::<span class="built_in">max</span>());</span><br><span class="line">    RightSubArray.<span class="built_in">insert</span>(RightSubArray.<span class="built_in">end</span>(), numeric_limits&lt;<span class="type">int</span>&gt;::<span class="built_in">max</span>());</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = front; i &lt;= end; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (LeftSubArray[idxLeft] &lt; RightSubArray[idxRight]) &#123;</span><br><span class="line">            nums[i] = LeftSubArray[idxLeft];</span><br><span class="line">            idxLeft++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            nums[i] = RightSubArray[idxRight];</span><br><span class="line">            idxRight++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">MergeSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> front, <span class="type">int</span> end)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (front &gt;= end) <span class="keyword">return</span>;</span><br><span class="line">    <span class="type">int</span> mid = (front + end) / <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">MergeSort</span>(nums, front, mid);</span><br><span class="line">    <span class="built_in">MergeSort</span>(nums, mid + <span class="number">1</span>, end);</span><br><span class="line">    <span class="built_in">Merge</span>(nums, front, mid, end);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">MergeSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">MergeSort</span>(nums, <span class="number">0</span>, nums.<span class="built_in">size</span>() - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="7-堆排序"><a href="#7-堆排序" class="headerlink" title="7 堆排序"></a>7 堆排序</h1><p>堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。堆排序可以说是一种利用堆的概念来排序的选择排序。分为两种方法：</p>
-<p>大顶堆：每个节点的值都大于或等于其子节点的值，在堆排序算法中用于升序排列；<br>小顶堆：每个节点的值都小于或等于其子节点的值，在堆排序算法中用于降序排列；<br>堆排序的平均时间复杂度为 Ο(nlogn)。</p>
-<h2 id="7-1-算法简述"><a href="#7-1-算法简述" class="headerlink" title="7.1 算法简述"></a>7.1 算法简述</h2><ol>
-<li><p>创建一个堆 H[0……n-1]；</p>
-</li>
-<li><p>把堆首（最大值）和堆尾互换；</p>
-</li>
-<li><p>把堆的尺寸缩小 1，并调用 shift_down(0)，目的是把新的数组顶端数据调整到相应位置；</p>
-</li>
-<li><p>重复步骤 2，直到堆的尺寸为 1。</p>
-</li>
-</ol>
-<h2 id="7-2-代码"><a href="#7-2-代码" class="headerlink" title="7.2 代码"></a>7.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">max_heapify</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> start, <span class="type">int</span> end)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> dad = start;</span><br><span class="line">    <span class="type">int</span> son = dad * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (son &lt;= end) &#123; </span><br><span class="line">        <span class="keyword">if</span> (son + <span class="number">1</span> &lt;= end &amp;&amp; arr[son] &lt; arr[son + <span class="number">1</span>]) </span><br><span class="line">            son++;</span><br><span class="line">        <span class="keyword">if</span> (arr[dad] &gt; arr[son]) </span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123; </span><br><span class="line">            <span class="built_in">swap</span>(arr[dad], arr[son]);</span><br><span class="line">            dad = son;</span><br><span class="line">            son = dad * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">heap_sort</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = len / <span class="number">2</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        <span class="built_in">max_heapify</span>(arr, i, len - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = len - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="built_in">swap</span>(arr[<span class="number">0</span>], arr[i]);</span><br><span class="line">        <span class="built_in">max_heapify</span>(arr, <span class="number">0</span>, i - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="8-计数排序"><a href="#8-计数排序" class="headerlink" title="8 计数排序"></a>8 计数排序</h1><p>计数排序的核心在于将输入的数据值转化为键存储在额外开辟的数组空间中。作为一种线性时间复杂度的排序，计数排序要求输入的数据必须是有确定范围的整数。</p>
-<p>当输入的元素是 n 个 0 到 k 之间的整数时，它的运行时间是 Θ(n + k)。计数排序不是比较排序，排序的速度快于任何比较排序算法。</p>
-<p>由于用来计数的数组C的长度取决于待排序数组中数据的范围（等于待排序数组的最大值与最小值的差加上1），这使得计数排序对于数据范围很大的数组，需要大量时间和内存。</p>
-<p>类似于哈希法</p>
-<h2 id="8-1-算法简述"><a href="#8-1-算法简述" class="headerlink" title="8.1 算法简述"></a>8.1 算法简述</h2><p>（1）找出待排序的数组中最大和最小的元素<br>（2）统计数组中每个值为i的元素出现的次数，存入数组C的第i项<br>（3）对所有的计数累加（从C中的第一个元素开始，每一项和前一项相加）<br>（4）反向填充目标数组：将每个元素i放在新数组的第C(i)项，每放一个元素就将C(i)减去1</p>
-<h2 id="8-2-代码"><a href="#8-2-代码" class="headerlink" title="8.2 代码"></a>8.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="9-桶排序"><a href="#9-桶排序" class="headerlink" title="9 桶排序"></a>9 桶排序</h1><h2 id="9-1-算法简述"><a href="#9-1-算法简述" class="headerlink" title="9.1 算法简述"></a>9.1 算法简述</h2><p>桶排序是计数排序的升级版。它利用了函数的映射关系，高效与否的关键就在于这个映射函数的确定。为了使桶排序更加高效，我们需要做到这两点：</p>
-<p>在额外空间充足的情况下，尽量增大桶的数量<br>使用的映射函数能够将输入的 N 个数据均匀的分配到 K 个桶中<br>同时，对于桶中元素的排序，选择何种比较排序算法对于性能的影响至关重要。</p>
-<h2 id="9-2-代码"><a href="#9-2-代码" class="headerlink" title="9.2 代码"></a>9.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> BUCKET_NUM = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">ListNode</span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">explicit</span> <span class="title">ListNode</span><span class="params">(<span class="type">int</span> i=<span class="number">0</span>)</span>:mData(i),mNext(NULL)&#123;</span>&#125;</span><br><span class="line">        ListNode* mNext;</span><br><span class="line">        <span class="type">int</span> mData;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">ListNode* <span class="title">insert</span><span class="params">(ListNode* head,<span class="type">int</span> val)</span></span>&#123;</span><br><span class="line">        ListNode dummyNode;</span><br><span class="line">        ListNode *newNode = <span class="keyword">new</span> <span class="built_in">ListNode</span>(val);</span><br><span class="line">        ListNode *pre,*curr;</span><br><span class="line">        dummyNode.mNext = head;</span><br><span class="line">        pre = &amp;dummyNode;</span><br><span class="line">        curr = head;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">NULL</span>!=curr &amp;&amp; curr-&gt;mData&lt;=val)&#123;</span><br><span class="line">                pre = curr;</span><br><span class="line">                curr = curr-&gt;mNext;</span><br><span class="line">        &#125;</span><br><span class="line">        newNode-&gt;mNext = curr;</span><br><span class="line">        pre-&gt;mNext = newNode;</span><br><span class="line">        <span class="keyword">return</span> dummyNode.mNext;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function">ListNode* <span class="title">Merge</span><span class="params">(ListNode *head1,ListNode *head2)</span></span>&#123;</span><br><span class="line">        ListNode dummyNode;</span><br><span class="line">        ListNode *dummy = &amp;dummyNode;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">NULL</span>!=head1 &amp;&amp; <span class="literal">NULL</span>!=head2)&#123;</span><br><span class="line">                <span class="keyword">if</span>(head1-&gt;mData &lt;= head2-&gt;mData)&#123;</span><br><span class="line">                        dummy-&gt;mNext = head1;</span><br><span class="line">                        head1 = head1-&gt;mNext;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                        dummy-&gt;mNext = head2;</span><br><span class="line">                        head2 = head2-&gt;mNext;</span><br><span class="line">                &#125;</span><br><span class="line">                dummy = dummy-&gt;mNext;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="literal">NULL</span>!=head1) dummy-&gt;mNext = head1;</span><br><span class="line">        <span class="keyword">if</span>(<span class="literal">NULL</span>!=head2) dummy-&gt;mNext = head2;</span><br><span class="line">       </span><br><span class="line">        <span class="keyword">return</span> dummyNode.mNext;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BucketSort</span><span class="params">(<span class="type">int</span> n,<span class="type">int</span> arr[])</span></span>&#123;</span><br><span class="line">        <span class="function">vector&lt;ListNode*&gt; <span class="title">buckets</span><span class="params">(BUCKET_NUM,(ListNode*)(<span class="number">0</span>))</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">                <span class="type">int</span> index = arr[i]/BUCKET_NUM;</span><br><span class="line">                ListNode *head = buckets.<span class="built_in">at</span>(index);</span><br><span class="line">                buckets.<span class="built_in">at</span>(index) = <span class="built_in">insert</span>(head,arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode *head = buckets.<span class="built_in">at</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;BUCKET_NUM;++i)&#123;</span><br><span class="line">                head = <span class="built_in">Merge</span>(head,buckets.<span class="built_in">at</span>(i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">                arr[i] = head-&gt;mData;</span><br><span class="line">                head = head-&gt;mNext;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="9-3-最好情况"><a href="#9-3-最好情况" class="headerlink" title="9.3 最好情况"></a>9.3 最好情况</h2><p>当输入的数据可以均匀的分配到每一个桶中。</p>
-<h2 id="9-4-最坏情况"><a href="#9-4-最坏情况" class="headerlink" title="9.4 最坏情况"></a>9.4 最坏情况</h2><p>当输入的数据被分配到了同一个桶中。</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>C/C++</tag>
-        <tag>排序算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>teamspeak3的简单教程</title>
-    <url>/2023/09/17/20230917_teamspeak3/</url>
-    <content><![CDATA[<p>联机游戏中，有一个稳定、简洁、占用很小的语音开黑软件是一个很重要的事情。这里我就介绍一下一款使用体验很好的实时语音软件teamspeak，虽然这款有一定的门槛，但是瑕不掩瑜。</p>
-<span id="more"></span>
-
-<h1 id="1-下载和安装"><a href="#1-下载和安装" class="headerlink" title="1 下载和安装"></a>1 下载和安装</h1><p>官方网址:<a href="https://teamspeak.com/zh-CN/downloads/">teamspeak</a>，一定要在官网下载，国内有一些盗版的软件，虽然据说只是换皮版本，但是由于我也没看过源代码，不是特别清楚</p>
-<p>下载完毕后默认安装即可，其中会提示我们是否安装overwolf，这个可下可不下，主要是一些teamspeak的一些插件。</p>
-<h1 id="2-连接服务器和基础功能"><a href="#2-连接服务器和基础功能" class="headerlink" title="2 连接服务器和基础功能"></a>2 连接服务器和基础功能</h1><p>安装完成后，打开软件，可能需要你进行注册，注册完成后打开软件如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image.png"></p>
-<p>我们主要使用上面的工具栏进行相应的操作。</p>
-<h2 id="2-1-Connections-连接服务器"><a href="#2-1-Connections-连接服务器" class="headerlink" title="2.1 Connections 连接服务器"></a>2.1 Connections 连接服务器</h2><p>点击Connections 连接服务器</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-1.png"></p>
-<p>如上图在server address中填入你的服务器名称，在server password中填写你的服务器密码。</p>
-<p>经常使用的服务器可以保存为书签bookmarks，下次点击即可直接连接</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-2.png"></p>
-<h2 id="2-2-语音服务器的选择"><a href="#2-2-语音服务器的选择" class="headerlink" title="2.2 语音服务器的选择"></a>2.2 语音服务器的选择</h2><p>有关语音服务器，这里如果你愿意折腾，你可以自己去申请一个公网IP，搞一个自己的服务器，当然这个服务器不一定只用来当作语言服务器，还可以做其他的事情，但是如果如果想省事可以直接租用现有的服务器，简单说这里大概可以分为三个选择：</p>
-<ol>
-<li>租用现有的teamspeak服务器，最省事，花费也相对较少</li>
-<li>租云服务器，比如阿里云、腾讯云、华为云等，然后调试装一些语言服务器必要的开源，这方面也有一些教程，相对比较麻烦</li>
-<li>一步到位，自己的空余电脑当作服务器，并且申请公网地址，再进行语言服务器的设置</li>
-</ol>
-<p>总的来说一般都是租用现有的teamspeak服务器，我是在<a href="https://ts3.com.cn/price">teamspeak服务器网站</a>进行租用的，勉强能用，有时候服务器会出一些问题，但是总体来说可用，省事。</p>
-<h2 id="2-3-基础功能介绍"><a href="#2-3-基础功能介绍" class="headerlink" title="2.3 基础功能介绍"></a>2.3 基础功能介绍</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-3.png"></p>
-<p>连接到服务器后，选择到响应频道，一般就使用这两个键位，打开&#x2F;关闭麦克风，打开&#x2F;关闭声音</p>
-<h1 id="3-基础设置"><a href="#3-基础设置" class="headerlink" title="3 基础设置"></a>3 基础设置</h1><p>主要分为功能设置、交互设置、频道管理设置</p>
-<h2 id="3-1-功能设置"><a href="#3-1-功能设置" class="headerlink" title="3.1 功能设置"></a>3.1 功能设置</h2><p>这一部分是必要的设置，如下图的最下方的红色方框options，其余三个部分都是频道管理的部分</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-6.png"></p>
-<p>点击打开后的界面如下：<br>可以看到左侧有很多设置，但是我们常用的修改的设置就是playback，也就是输出，还有capture，也就是输入。</p>
-<h3 id="3-1-1-输入设置"><a href="#3-1-1-输入设置" class="headerlink" title="3.1.1 输入设置"></a>3.1.1 输入设置</h3><p>设置界面如下图，可以看到主要分为三个部分。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-7.png"></p>
-<p>主要需要调整三个部分</p>
-<ul>
-<li><p>第一个部分是输入的设备，在capture device中选择我们想要输入的设备就可以了</p>
-</li>
-<li><p>第二个部分是语音输入模式，这里只推荐阈值触发模式，也就是说当你的声音达到一定强度时会自动触发输入，选择Voice Activity Detction-&gt;Volume Gate，然后调整下方的滑动条，这个值也就是触发输入的阈值，你可以在begin test选项中进行进一步的调试。</p>
-</li>
-<li><p>第三个部分是一些数字信号处理，比如回声消除、打字音消除等，全部勾选就可以了</p>
-</li>
-</ul>
-<h3 id="3-1-2-输出设置"><a href="#3-1-2-输出设置" class="headerlink" title="3.1.2 输出设置"></a>3.1.2 输出设置</h3><p>设置界面如下如图，这个部分很简单，设置我们想要输出的设备和大概的声音就可以了<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-8.png"></p>
-<h2 id="3-2-交互设置"><a href="#3-2-交互设置" class="headerlink" title="3.2 交互设置"></a>3.2 交互设置</h2><p>交互设置主要就是在如下界面修改，选择self就可以看到了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-4.png"></p>
-<p>其中第一个红框是一些默认设置不用修改</p>
-<p>第二部分是离线，麦克风和输出的功能按钮</p>
-<p>第三个部分就是我们需要设置的交互设置了：</p>
-<ul>
-<li>change nickname ：修改在本服务器的昵称</li>
-<li>set avatar：修改在本服务器的头像</li>
-<li>delete avatar：删除头像</li>
-</ul>
-<h2 id="3-3-频道管理设置"><a href="#3-3-频道管理设置" class="headerlink" title="3.3 频道管理设置"></a>3.3 频道管理设置</h2><p>如果你是一个服务器的拥有者，那么你肯定想要对不同的玩家有不同的权限，否则会乱套，其中主要分为管理员、会员、游客三种权限、</p>
-<ul>
-<li>管理员 ：<ul>
-<li>能够创建频道、删除频道</li>
-<li>进入加锁的频道</li>
-<li>移动管理员或以下权限的人到任意频道</li>
-<li>授予&#x2F;撤销管理员、会员、游客权限</li>
-</ul>
-</li>
-<li>会员：会员能做到管理员大部分事情<ul>
-<li>能够创建频道、删除频道</li>
-<li>进入加锁的频道</li>
-<li>移动会员或以下权限的人到任意频道</li>
-<li>授予&#x2F;撤销会员、游客权限</li>
-</ul>
-</li>
-<li>游客：没有权限</li>
-</ul>
-<p>所以一般给个会员权限就够了，权限设置如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-5.png"></p>
-<p>选择设置server groups，打开后默认是超级管理员、管理员和游客，可以对每一个权限进行修改，比如修改名字和头像，改成自己想要的名字以增加趣味性，比如超级管理员修改为超级赛亚人并且配上相应的头像等。在设置的左下角也可以加上其余的权限等级来细化一些权限，这个就自行设置了。</p>
-<p>当你是会员以上的权限时，这时你就可以对服务器进行一个频道的划分，比如lol、csgo、观赛等分区，根据你的小团体的游戏成分进行划分即可。记得创建频道的时候选择永久，否则下一次登陆的时候就会消失</p>
-<h1 id="4-服务器的进一步设置"><a href="#4-服务器的进一步设置" class="headerlink" title="4 服务器的进一步设置"></a>4 服务器的进一步设置</h1><p>主要是进行一些界面的优化，一些个性化的设置，比如设置频道的介绍、频道的icon图等等</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>分享博客</category>
-      </categories>
-      <tags>
-        <tag>teamspeak</tag>
-        <tag>语音服务器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vscode配置C++环境</title>
-    <url>/2023/08/22/20230822_VscodeDeployC++/</url>
-    <content><![CDATA[<p>因为目前还是一些简单的项目或者笔试题，所以想要实现vscode大一统的最后一步，在vscode上配置C++环境。</p>
-<span id="more"></span>
-
-<h1 id="1-下载GCC编译器"><a href="#1-下载GCC编译器" class="headerlink" title="1 下载GCC编译器"></a>1 下载GCC编译器</h1><p>官方github地址为<a href="https://github.com/niXman/mingw-builds-binaries/releases">mingw-builds-binaries</a>，在其中选择对应系统的版本进行下载即可，比如windows64位，就下载下图对应版本。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822163656.png"></p>
-<p>解压到一个没有中文和空格的路径中，将安装的bin文件夹路径添加到系统变量</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822164757.png"></p>
-<p>完成后，打开cmd，输入<code>gcc -v</code>验证是否成功</p>
-<h1 id="2-安装VSCODE的C-C-扩展"><a href="#2-安装VSCODE的C-C-扩展" class="headerlink" title="2 安装VSCODE的C&#x2F;C++扩展"></a>2 安装VSCODE的C&#x2F;C++扩展</h1><p>直接在扩展中间安装C&#x2F;C++扩展即可</p>
-<p>此时创建我们所要使用的文件夹，此时我出现一个问题，在D盘中创建文件夹无法检测到我安装的编译器，但是我在C盘中创建文件夹就没有这个问题，所幸消耗空间不多，勉强在C盘创建时用了。</p>
-<p>创建文件test.cpp</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">//include如果出错，说明是编译器问题，去C盘创建则没有问题</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;success&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>测试是否运行成功</p>
-<h1 id="3-使用VSCODE进行运行和调试"><a href="#3-使用VSCODE进行运行和调试" class="headerlink" title="3 使用VSCODE进行运行和调试"></a>3 使用VSCODE进行运行和调试</h1><h2 id="3-1-运行"><a href="#3-1-运行" class="headerlink" title="3.1 运行"></a>3.1 运行</h2><p>编写一个排序的cpp，如果想直接运行，那么直接打开终端先c++编译一下，运行即可，比如我的文件是SortAlgrithm.cpp，那么打开终端，输入<code>g++ SortAlgrithm.cpp -o SortAlgm.exe</code>，此时该目录下会出现该文件，输入<code>./SortAlgm.exe</code>，直接运行即可</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822185849.png"></p>
-<p>比如我这里就是将<code>&#123; 7,6,3,9,1,8,2,4,5 &#125;</code>进行排序输出。</p>
-<h2 id="3-2-调试"><a href="#3-2-调试" class="headerlink" title="3.2 调试"></a>3.2 调试</h2><p>比如继续调试上述的代码，如上图我在代码中设置断点，我们当然可以通过GDB直接在终端进行调试，但是这样显然比较麻烦，所以我们可以再VSCODE侧边栏打开调试，点击运行和调试按钮即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822190139.png"></p>
-<p>当我们打开之后就会出现以下调试界面</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822190313.png"></p>
-<p>这个界面相信大家都很眼熟了，跟VS的操作界面基本一致，进行代码的调试就好了。</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>vscode</tag>
-        <tag>C/C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>单例设计模式简单实现</title>
-    <url>/2023/09/19/20230919_SingletonWithThreadpool/</url>
-    <content><![CDATA[<p>软件设计模式中的最简单的设计模式的实现，主要是应用在线程池中。分为单例模式介绍、线程池实现两部分</p>
-<span id="more"></span>
-
-<h1 id="1-单例模式"><a href="#1-单例模式" class="headerlink" title="1 单例模式"></a>1 单例模式</h1><p>单例模式（Singleton Pattern）是软件设计模式中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。</p>
-<p>这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。</p>
-<p>单例模式是一种创建型设计模式，它确保一个类只有一个实例，并提供了一个全局访问点来访问该实例。</p>
-<p>注意：</p>
-<p>1、单例类只能有一个实例。<br>2、单例类必须自己创建自己的唯一实例。<br>3、单例类必须给所有其他对象提供这一实例。  </p>
-<p>单例模式图如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230917163929.png"></p>
-<p>简要的示例如下：  </p>
-<ol>
-<li>懒汉版：单例实例在第一次被使用时才进行初始化，这叫做延迟初始化。<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// version 1.0</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Singleton</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">static</span> Singleton* instance;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="built_in">Singleton</span>() &#123;&#125;;</span><br><span class="line">	~<span class="built_in">Singleton</span>() &#123;&#125;;</span><br><span class="line">	<span class="built_in">Singleton</span>(<span class="type">const</span> Singleton&amp;);</span><br><span class="line">	Singleton&amp; <span class="keyword">operator</span>=(<span class="type">const</span> Singleton&amp;);</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">static</span> Singleton* <span class="title">getInstance</span><span class="params">()</span> </span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(instance == <span class="literal">NULL</span>) </span><br><span class="line">			instance = <span class="keyword">new</span> <span class="built_in">Singleton</span>();</span><br><span class="line">		<span class="keyword">return</span> instance;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// init static member</span></span><br><span class="line">Singleton* Singleton::instance = <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>但是这样做有内存泄漏的问题，有两种解决办法：</p>
-<ol>
-<li>智能指针</li>
-<li>静态的嵌套类的对象</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// version 1.1</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Singleton</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">static</span> Singleton* instance;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="built_in">Singleton</span>() &#123; &#125;;</span><br><span class="line">	~<span class="built_in">Singleton</span>() &#123; &#125;;</span><br><span class="line">	<span class="built_in">Singleton</span>(<span class="type">const</span> Singleton&amp;);</span><br><span class="line">	Singleton&amp; <span class="keyword">operator</span>=(<span class="type">const</span> Singleton&amp;);</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">class</span> <span class="title class_">Deletor</span> &#123;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		~<span class="built_in">Deletor</span>() &#123;</span><br><span class="line">			<span class="keyword">if</span>(Singleton::instance != <span class="literal">NULL</span>)</span><br><span class="line">				<span class="keyword">delete</span> Singleton::instance;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="type">static</span> Deletor deletor;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">static</span> Singleton* <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(instance == <span class="literal">NULL</span>) &#123;</span><br><span class="line">			instance = <span class="keyword">new</span> <span class="built_in">Singleton</span>();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> instance;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// init static member</span></span><br><span class="line">Singleton* Singleton::instance = <span class="literal">NULL</span>;</span><br><span class="line">Singleton::Deletor Singleton::deletor;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>饿汉版</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// version 1.3</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Singleton</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">static</span> Singleton instance;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="built_in">Singleton</span>();</span><br><span class="line">	~<span class="built_in">Singleton</span>();</span><br><span class="line">	<span class="built_in">Singleton</span>(<span class="type">const</span> Singleton&amp;);</span><br><span class="line">	Singleton&amp; <span class="keyword">operator</span>=(<span class="type">const</span> Singleton&amp;);</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">static</span> Singleton&amp; <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> instance;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// initialize defaultly</span></span><br><span class="line">Singleton Singleton::instance;</span><br></pre></td></tr></table></figure>
-
-<h1 id="2-在线程池中实现单例模式"><a href="#2-在线程池中实现单例模式" class="headerlink" title="2 在线程池中实现单例模式"></a>2 在线程池中实现单例模式</h1><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">threadpool</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">static</span> threadpool* instance;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">static</span> threadpool* <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(instance == <span class="literal">NULL</span>) </span><br><span class="line">			instance = <span class="keyword">new</span> <span class="built_in">threadpool</span>();</span><br><span class="line">		<span class="keyword">return</span> instance;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">append</span><span class="params">(T *request, <span class="type">int</span> state)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">append_p</span><span class="params">(T *request)</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="comment">/*thread_number是线程池中线程的数量，max_requests是请求队列中最多允许的、等待处理的请求的数量*/</span></span><br><span class="line">    <span class="built_in">threadpool</span>(<span class="type">int</span> actor_model, connection_pool *connPool, <span class="type">int</span> thread_number = <span class="number">8</span>, <span class="type">int</span> max_request = <span class="number">10000</span>);</span><br><span class="line">    ~<span class="built_in">threadpool</span>();</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="comment">/*工作线程运行的函数，它不断从工作队列中取出任务并执行之*/</span></span><br><span class="line">    <span class="function"><span class="type">static</span> <span class="type">void</span> *<span class="title">worker</span><span class="params">(<span class="type">void</span> *arg)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">run</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> m_thread_number;        <span class="comment">//线程池中的线程数</span></span><br><span class="line">    <span class="type">int</span> m_max_requests;         <span class="comment">//请求队列中允许的最大请求数</span></span><br><span class="line">    <span class="type">pthread_t</span> *m_threads;       <span class="comment">//描述线程池的数组，其大小为m_thread_number</span></span><br><span class="line">    std::list&lt;T *&gt; m_workqueue; <span class="comment">//请求队列</span></span><br><span class="line">    locker m_queuelocker;       <span class="comment">//保护请求队列的互斥锁</span></span><br><span class="line">    sem m_queuestat;            <span class="comment">//是否有任务需要处理</span></span><br><span class="line">    connection_pool *m_connPool;  <span class="comment">//数据库</span></span><br><span class="line">    <span class="type">int</span> m_actor_model;          <span class="comment">//模型切换</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>软件设计模式</tag>
-        <tag>单例模式</tag>
+        <tag>MobaXterm</tag>
+        <tag>shell</tag>
+        <tag>SSH</tag>
       </tags>
   </entry>
   <entry>
@@ -1521,6 +983,302 @@
       </tags>
   </entry>
   <entry>
+    <title>C++学习路线</title>
+    <url>/2023/08/22/20230819_C++LearningRoute/</url>
+    <content><![CDATA[<p>记录一下打工牛马人的C++的学习路线。</p>
+<p>主要部分有C++基础，C++算法，计算机网络，MySQL数据库，Redis，软件设计模式，操作系统、Linux操作、网络编程，C++经典项目(webserver)，如果有时间还可以多参与几个练手的小项目。</p>
+<span id="more"></span>
+
+<h1 id="C-基础"><a href="#C-基础" class="headerlink" title="C++基础"></a>C++基础</h1><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1et411b73Z/">黑马程序员C++基础</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17560955.html">C++基础笔记</a></p>
+<p>主要是三部分内容</p>
+<ul>
+<li>C++语法入门：变量与常量、数据类型、运算符、程序流程结构、数组、函数、指针、结构体</li>
+<li>类和对象：封装、继承、多态</li>
+<li>模板与STL</li>
+</ul>
+<h1 id="C-算法"><a href="#C-算法" class="headerlink" title="C++算法"></a>C++算法</h1><p>主要在代码随想录上刷题和学习：<a href="https://programmercarl.com/%E5%89%8D%E5%BA%8F/%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC.html#%E9%A2%98%E5%A4%96%E8%AF%9D">代码随想录</a></p>
+<p>有时间可以刷两道三遍，不然理解可能不到位</p>
+<p>主要包含：</p>
+<table>
+<thead>
+<tr>
+<th align="center">内容</th>
+<th align="center">难度</th>
+<th align="center">内容</th>
+<th align="center">面试&#x2F;笔试较多</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">数组</td>
+<td align="center">简单</td>
+<td align="center">数组相关</td>
+<td align="center">面试多</td>
+</tr>
+<tr>
+<td align="center">链表</td>
+<td align="center">简单</td>
+<td align="center">链表概念、设计、删除等</td>
+<td align="center">面试多</td>
+</tr>
+<tr>
+<td align="center">哈希表</td>
+<td align="center">简单</td>
+<td align="center">快速判断一个元素是否出现集合里</td>
+<td align="center">一般</td>
+</tr>
+<tr>
+<td align="center">字符串</td>
+<td align="center">简单</td>
+<td align="center">针对字符，使用双指针很多</td>
+<td align="center">一般</td>
+</tr>
+<tr>
+<td align="center">双指针法</td>
+<td align="center">简单</td>
+<td align="center">数组，链表，字符串中使用较多</td>
+<td align="center">笔试&#x2F;面试</td>
+</tr>
+<tr>
+<td align="center">栈与队列</td>
+<td align="center">简单</td>
+<td align="center">面试提问较多</td>
+<td align="center">笔试&#x2F;面试</td>
+</tr>
+<tr>
+<td align="center">二叉树</td>
+<td align="center">中等</td>
+<td align="center">二叉树，搜索树，遍历等</td>
+<td align="center">笔试&#x2F;面试</td>
+</tr>
+<tr>
+<td align="center">回溯算法</td>
+<td align="center">中等</td>
+<td align="center">暴力算法，组合</td>
+<td align="center">笔试&#x2F;面试</td>
+</tr>
+<tr>
+<td align="center">贪心算法</td>
+<td align="center">困难</td>
+<td align="center">局部最优推广到全局</td>
+<td align="center">笔试</td>
+</tr>
+<tr>
+<td align="center">动态规划</td>
+<td align="center">困难</td>
+<td align="center">能够定义dp数据，当前状态由前两个状态决定</td>
+<td align="center">笔试</td>
+</tr>
+</tbody></table>
+<h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1c4411d7jb/">计算机网络(湖科大教书匠)</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17577514.html">计算机网络笔记</a></p>
+<p>此部分比较简单，并且在后序网络编程还会复习一部分，笔记只记录了一些相对重要的部分。</p>
+<h1 id="MySQL和Redis"><a href="#MySQL和Redis" class="headerlink" title="MySQL和Redis"></a>MySQL和Redis</h1><h2 id="MySQL：一般学习这个"><a href="#MySQL：一般学习这个" class="headerlink" title="MySQL：一般学习这个"></a>MySQL：一般学习这个</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1Kr4y1i7ru/">黑马程序员MySQL</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17648671.html">SQL基础增删改查</a></p>
+<h2 id="Redis：岗位有需要可以一周内突击学习"><a href="#Redis：岗位有需要可以一周内突击学习" class="headerlink" title="Redis：岗位有需要可以一周内突击学习"></a>Redis：岗位有需要可以一周内突击学习</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1cr4y1671t/">黑马程序员Redis</a><br><strong>我的笔记链接：</strong></p>
+<h1 id="软件设计模式"><a href="#软件设计模式" class="headerlink" title="软件设计模式"></a>软件设计模式</h1><p>有时间看视频，没时间直接搜索资料记住概念和常见的几种设计模式即可</p>
+<p><strong>视频链接：</strong> 讲的挺好，有时间可以仔细听，对程序编写有好处<br><a href="https://www.bilibili.com/video/BV1Yr4y157Ci/">C++设计模式入门</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17559583.html">一些常用软件设计模式</a></p>
+<p>一般了解策略模式、工厂模式、单例模式(最简单)、观察者模式、适配这模式即可了</p>
+<h1 id="C-项目"><a href="#C-项目" class="headerlink" title="C++项目"></a>C++项目</h1><p><a href="https://www.nowcoder.com/study/live/504">牛客网C++项目</a></p>
+<p>这个项目就包含了基础的Linux系统编程、Linux多进程开发、Linux多线程开发、网络编程和实战。所以如果时间不够可以就看着一个项目就好了。包含了<strong>Linux基础</strong>、<strong>操作系统</strong>、<strong>网络编程</strong>和<strong>websever</strong>项目，差的知识后序查漏补缺就好了。</p>
+<p>笔记链接如下：</p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17547122.html">第1章 Linux系统编程入门</a></p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17586114.html">第2章 Linux多进程开发</a></p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17601631.html">第3章 Linux多线程开发</a></p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17609639.html">第4章 Linux网络编程</a></p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17629592.html">第5章 项目实战与总结</a></p>
+<p><a href="https://mobbu.space/2023/08/15/20230815_C++%E9%AB%98%E5%B9%B6%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8/#more">webserver项目解析与总结</a></p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>分享博客</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vscode配置C++环境</title>
+    <url>/2023/08/22/20230822_VscodeDeployC++/</url>
+    <content><![CDATA[<p>因为目前还是一些简单的项目或者笔试题，所以想要实现vscode大一统的最后一步，在vscode上配置C++环境。</p>
+<span id="more"></span>
+
+<h1 id="1-下载GCC编译器"><a href="#1-下载GCC编译器" class="headerlink" title="1 下载GCC编译器"></a>1 下载GCC编译器</h1><p>官方github地址为<a href="https://github.com/niXman/mingw-builds-binaries/releases">mingw-builds-binaries</a>，在其中选择对应系统的版本进行下载即可，比如windows64位，就下载下图对应版本。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822163656.png"></p>
+<p>解压到一个没有中文和空格的路径中，将安装的bin文件夹路径添加到系统变量</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822164757.png"></p>
+<p>完成后，打开cmd，输入<code>gcc -v</code>验证是否成功</p>
+<h1 id="2-安装VSCODE的C-C-扩展"><a href="#2-安装VSCODE的C-C-扩展" class="headerlink" title="2 安装VSCODE的C&#x2F;C++扩展"></a>2 安装VSCODE的C&#x2F;C++扩展</h1><p>直接在扩展中间安装C&#x2F;C++扩展即可</p>
+<p>此时创建我们所要使用的文件夹，此时我出现一个问题，在D盘中创建文件夹无法检测到我安装的编译器，但是我在C盘中创建文件夹就没有这个问题，所幸消耗空间不多，勉强在C盘创建时用了。</p>
+<p>创建文件test.cpp</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">//include如果出错，说明是编译器问题，去C盘创建则没有问题</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;success&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试是否运行成功</p>
+<h1 id="3-使用VSCODE进行运行和调试"><a href="#3-使用VSCODE进行运行和调试" class="headerlink" title="3 使用VSCODE进行运行和调试"></a>3 使用VSCODE进行运行和调试</h1><h2 id="3-1-运行"><a href="#3-1-运行" class="headerlink" title="3.1 运行"></a>3.1 运行</h2><p>编写一个排序的cpp，如果想直接运行，那么直接打开终端先c++编译一下，运行即可，比如我的文件是SortAlgrithm.cpp，那么打开终端，输入<code>g++ SortAlgrithm.cpp -o SortAlgm.exe</code>，此时该目录下会出现该文件，输入<code>./SortAlgm.exe</code>，直接运行即可</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822185849.png"></p>
+<p>比如我这里就是将<code>&#123; 7,6,3,9,1,8,2,4,5 &#125;</code>进行排序输出。</p>
+<h2 id="3-2-调试"><a href="#3-2-调试" class="headerlink" title="3.2 调试"></a>3.2 调试</h2><p>比如继续调试上述的代码，如上图我在代码中设置断点，我们当然可以通过GDB直接在终端进行调试，但是这样显然比较麻烦，所以我们可以再VSCODE侧边栏打开调试，点击运行和调试按钮即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822190139.png"></p>
+<p>当我们打开之后就会出现以下调试界面</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822190313.png"></p>
+<p>这个界面相信大家都很眼熟了，跟VS的操作界面基本一致，进行代码的调试就好了。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>vscode</tag>
+        <tag>C/C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git教程和分布式管理代码</title>
+    <url>/2023/08/21/20230821_GitAbout/</url>
+    <content><![CDATA[<p>当我们写了一定量的代码之后，就会遇到如何管理代码的问题。目前管理代码主要有两种管理工具分别是</p>
+<ul>
+<li>Git：分布式管理</li>
+<li>SVN：集中式管理</li>
+</ul>
+<p>那么分布式管理有哪些好处呢？我目前感受到的优点如下：</p>
+<ul>
+<li>管理代码成本低</li>
+<li>分支branch机制让主干代码很简洁移动</li>
+<li>可以回滚和查看之前commit的任意版本，这个在实际中十分有用</li>
+<li>分支机制让多人协同修改代码更加方便</li>
+<li>可以在不同电脑上轻松同步项目代码</li>
+</ul>
+<p>下面主要介绍Git的一些基本用法。</p>
+<span id="more"></span>
+
+<p>首先贴上官方资料<a href="https://git-scm.com/book/zh/v2/">Pro Git(2nd Edition)</a></p>
+<h1 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1 基本概念"></a>1 基本概念</h1><h2 id="1-1-三种状态"><a href="#1-1-三种状态" class="headerlink" title="1.1 三种状态"></a>1.1 三种状态</h2><ul>
+<li>已提交（committed）：已提交表示数据已经安全地保存在本地数据库中。</li>
+<li>已修改（modified）：已修改表示修改了文件，但还没保存到数据库中。</li>
+<li>已暂存（staged）：已暂存表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。</li>
+</ul>
+<h2 id="1-2-工作流程"><a href="#1-2-工作流程" class="headerlink" title="1.2 工作流程"></a>1.2 工作流程</h2><ul>
+<li><p>在工作区中修改文件。</p>
+</li>
+<li><p>将你想要下次提交的更改选择性地暂存，这样只会将更改的部分添加到暂存区。</p>
+</li>
+<li><p>提交更新，找到暂存区的文件，将快照永久性存储到 Git 目录。</p>
+</li>
+</ul>
+<p>如果 Git 目录中保存着特定版本的文件，就属于 已提交 状态。 如果文件已修改并放入暂存区，就属于 已暂存 状态。 如果自上次检出后，作了修改但还没有放到暂存区域，就是 已修改 状态。 在 Git 基础 一章，你会进一步了解这些状态的细节， 并学会如何根据文件状态实施后续操作，以及怎样跳过暂存直接提交。</p>
+<h1 id="2-基本操作"><a href="#2-基本操作" class="headerlink" title="2 基本操作"></a>2 基本操作</h1><p>一个基本操作流程如下：<br>首先你有一个github的库，公有私有都可以。</p>
+<ol>
+<li>github上的库clone到本地</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@github.com:xxx.git</span><br></pre></td></tr></table></figure>
+
+<p>在github上建库之后，输入代码git clone到本地仓库</p>
+<ol start="2">
+<li><p><code>git init</code>初始化生成.git文件夹</p>
+</li>
+<li><p>本地进行修改后，<code>git add .</code>将所有修改添加到缓存区，此时处于已修改的状态</p>
+</li>
+<li><p><code>git commit -am &quot;修改的提示信息&quot;</code>将修改的信息提交到本地仓库</p>
+</li>
+<li><p><code>git push</code>将修改的信息push到云端也就是github的仓库中</p>
+</li>
+</ol>
+<p>一些常用Git命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git log		        //查看提交日志</span><br><span class="line">git add		        //提交到缓存区</span><br><span class="line">git reset 	        //撤销缓存区</span><br><span class="line">git commit 	        //提交代码到本地仓库</span><br><span class="line">git push			//提交代码到远程仓库</span><br><span class="line">git pull			//拷贝远程仓库的代码</span><br><span class="line">git checkout		//回退文件修改或者切换分支</span><br><span class="line">git stash			//暂存本地修改</span><br><span class="line">git stash pop		//释放第一个暂存区代码</span><br><span class="line">git diff			//查看本地具体修改，通常用于生成补丁</span><br><span class="line">git format-patch	//将本地提交生成补丁</span><br><span class="line">git revert			//回滚一个提交</span><br><span class="line">git cherry-pick		//下载远程仓库的某个提交</span><br><span class="line">git show			//查看具体修改</span><br><span class="line">git status			//查看所有修改文件</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>teamspeak3的简单教程</title>
+    <url>/2023/09/17/20230917_teamspeak3/</url>
+    <content><![CDATA[<p>联机游戏中，有一个稳定、简洁、占用很小的语音开黑软件是一个很重要的事情。这里我就介绍一下一款使用体验很好的实时语音软件teamspeak，虽然这款有一定的门槛，但是瑕不掩瑜。</p>
+<span id="more"></span>
+
+<h1 id="1-下载和安装"><a href="#1-下载和安装" class="headerlink" title="1 下载和安装"></a>1 下载和安装</h1><p>官方网址:<a href="https://teamspeak.com/zh-CN/downloads/">teamspeak</a>，一定要在官网下载，国内有一些盗版的软件，虽然据说只是换皮版本，但是由于我也没看过源代码，不是特别清楚</p>
+<p>下载完毕后默认安装即可，其中会提示我们是否安装overwolf，这个可下可不下，主要是一些teamspeak的一些插件。</p>
+<h1 id="2-连接服务器和基础功能"><a href="#2-连接服务器和基础功能" class="headerlink" title="2 连接服务器和基础功能"></a>2 连接服务器和基础功能</h1><p>安装完成后，打开软件，可能需要你进行注册，注册完成后打开软件如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image.png"></p>
+<p>我们主要使用上面的工具栏进行相应的操作。</p>
+<h2 id="2-1-Connections-连接服务器"><a href="#2-1-Connections-连接服务器" class="headerlink" title="2.1 Connections 连接服务器"></a>2.1 Connections 连接服务器</h2><p>点击Connections 连接服务器</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-1.png"></p>
+<p>如上图在server address中填入你的服务器名称，在server password中填写你的服务器密码。</p>
+<p>经常使用的服务器可以保存为书签bookmarks，下次点击即可直接连接</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-2.png"></p>
+<h2 id="2-2-语音服务器的选择"><a href="#2-2-语音服务器的选择" class="headerlink" title="2.2 语音服务器的选择"></a>2.2 语音服务器的选择</h2><p>有关语音服务器，这里如果你愿意折腾，你可以自己去申请一个公网IP，搞一个自己的服务器，当然这个服务器不一定只用来当作语言服务器，还可以做其他的事情，但是如果如果想省事可以直接租用现有的服务器，简单说这里大概可以分为三个选择：</p>
+<ol>
+<li>租用现有的teamspeak服务器，最省事，花费也相对较少</li>
+<li>租云服务器，比如阿里云、腾讯云、华为云等，然后调试装一些语言服务器必要的开源，这方面也有一些教程，相对比较麻烦</li>
+<li>一步到位，自己的空余电脑当作服务器，并且申请公网地址，再进行语言服务器的设置</li>
+</ol>
+<p>总的来说一般都是租用现有的teamspeak服务器，我是在<a href="https://ts3.com.cn/price">teamspeak服务器网站</a>进行租用的，勉强能用，有时候服务器会出一些问题，但是总体来说可用，省事。</p>
+<h2 id="2-3-基础功能介绍"><a href="#2-3-基础功能介绍" class="headerlink" title="2.3 基础功能介绍"></a>2.3 基础功能介绍</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-3.png"></p>
+<p>连接到服务器后，选择到响应频道，一般就使用这两个键位，打开&#x2F;关闭麦克风，打开&#x2F;关闭声音</p>
+<h1 id="3-基础设置"><a href="#3-基础设置" class="headerlink" title="3 基础设置"></a>3 基础设置</h1><p>主要分为功能设置、交互设置、频道管理设置</p>
+<h2 id="3-1-功能设置"><a href="#3-1-功能设置" class="headerlink" title="3.1 功能设置"></a>3.1 功能设置</h2><p>这一部分是必要的设置，如下图的最下方的红色方框options，其余三个部分都是频道管理的部分</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-6.png"></p>
+<p>点击打开后的界面如下：<br>可以看到左侧有很多设置，但是我们常用的修改的设置就是playback，也就是输出，还有capture，也就是输入。</p>
+<h3 id="3-1-1-输入设置"><a href="#3-1-1-输入设置" class="headerlink" title="3.1.1 输入设置"></a>3.1.1 输入设置</h3><p>设置界面如下图，可以看到主要分为三个部分。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-7.png"></p>
+<p>主要需要调整三个部分</p>
+<ul>
+<li><p>第一个部分是输入的设备，在capture device中选择我们想要输入的设备就可以了</p>
+</li>
+<li><p>第二个部分是语音输入模式，这里只推荐阈值触发模式，也就是说当你的声音达到一定强度时会自动触发输入，选择Voice Activity Detction-&gt;Volume Gate，然后调整下方的滑动条，这个值也就是触发输入的阈值，你可以在begin test选项中进行进一步的调试。</p>
+</li>
+<li><p>第三个部分是一些数字信号处理，比如回声消除、打字音消除等，全部勾选就可以了</p>
+</li>
+</ul>
+<h3 id="3-1-2-输出设置"><a href="#3-1-2-输出设置" class="headerlink" title="3.1.2 输出设置"></a>3.1.2 输出设置</h3><p>设置界面如下如图，这个部分很简单，设置我们想要输出的设备和大概的声音就可以了<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-8.png"></p>
+<h2 id="3-2-交互设置"><a href="#3-2-交互设置" class="headerlink" title="3.2 交互设置"></a>3.2 交互设置</h2><p>交互设置主要就是在如下界面修改，选择self就可以看到了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-4.png"></p>
+<p>其中第一个红框是一些默认设置不用修改</p>
+<p>第二部分是离线，麦克风和输出的功能按钮</p>
+<p>第三个部分就是我们需要设置的交互设置了：</p>
+<ul>
+<li>change nickname ：修改在本服务器的昵称</li>
+<li>set avatar：修改在本服务器的头像</li>
+<li>delete avatar：删除头像</li>
+</ul>
+<h2 id="3-3-频道管理设置"><a href="#3-3-频道管理设置" class="headerlink" title="3.3 频道管理设置"></a>3.3 频道管理设置</h2><p>如果你是一个服务器的拥有者，那么你肯定想要对不同的玩家有不同的权限，否则会乱套，其中主要分为管理员、会员、游客三种权限、</p>
+<ul>
+<li>管理员 ：<ul>
+<li>能够创建频道、删除频道</li>
+<li>进入加锁的频道</li>
+<li>移动管理员或以下权限的人到任意频道</li>
+<li>授予&#x2F;撤销管理员、会员、游客权限</li>
+</ul>
+</li>
+<li>会员：会员能做到管理员大部分事情<ul>
+<li>能够创建频道、删除频道</li>
+<li>进入加锁的频道</li>
+<li>移动会员或以下权限的人到任意频道</li>
+<li>授予&#x2F;撤销会员、游客权限</li>
+</ul>
+</li>
+<li>游客：没有权限</li>
+</ul>
+<p>所以一般给个会员权限就够了，权限设置如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-5.png"></p>
+<p>选择设置server groups，打开后默认是超级管理员、管理员和游客，可以对每一个权限进行修改，比如修改名字和头像，改成自己想要的名字以增加趣味性，比如超级管理员修改为超级赛亚人并且配上相应的头像等。在设置的左下角也可以加上其余的权限等级来细化一些权限，这个就自行设置了。</p>
+<p>当你是会员以上的权限时，这时你就可以对服务器进行一个频道的划分，比如lol、csgo、观赛等分区，根据你的小团体的游戏成分进行划分即可。记得创建频道的时候选择永久，否则下一次登陆的时候就会消失</p>
+<h1 id="4-服务器的进一步设置"><a href="#4-服务器的进一步设置" class="headerlink" title="4 服务器的进一步设置"></a>4 服务器的进一步设置</h1><p>主要是进行一些界面的优化，一些个性化的设置，比如设置频道的介绍、频道的icon图等等</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>分享博客</category>
+      </categories>
+      <tags>
+        <tag>teamspeak</tag>
+        <tag>语音服务器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>博客网站分布管理</title>
     <url>/2023/10/01/20231001_blogDistributeToMacOS/</url>
     <content><![CDATA[<p>等到要换电脑的时候，发现我在本地管理github pages需要移植一下，博客记录一下移植过程，方便以后查阅，由于博主心血来潮换了mac，这时候需要在MacOS上继续进行配置了。</p>
@@ -1576,6 +1334,315 @@
       <tags>
         <tag>博客网站</tag>
         <tag>MacOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学术PPT制作--beamer</title>
+    <url>/2023/10/04/20231004_Latex&amp;beamer/</url>
+    <content><![CDATA[<p>使用<strong>MAC+VSCODE+LATEX</strong></p>
+<p>最近有了频繁做学术汇报的需求，之前有了解到过beamer制作学术汇报PPT的优势，所以这里填一下坑，分享记录一下如何用beamer制作学术PPT以及使用latex和office制作PPT的优劣和使用场景对比分析。</p>
+<span id="more"></span>
+
+<h1 id="配置latex环境"><a href="#配置latex环境" class="headerlink" title="配置latex环境"></a>配置latex环境</h1><ol>
+<li>安装MacTex<br>mac上直接官网下载即可 <a href="https://www.tug.org/mactex/mactex-download.html">MacTex</a></li>
+</ol>
+<p>windows的操作也类似，在官方下载TeXlive即可。</p>
+<ol start="2">
+<li><p>配置vscode<br>然后我们还需要在vscode上进行配置相关的插件，这一步也非常简单，在vscode扩展中搜索LaTex Workshop，安装完成后vscode左侧出现TeX标志代表安装成功。</p>
+</li>
+<li><p>配置系统path<br>此时我们还需要将texlive到路径添加到系统路径中，打开iTerm，输入以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /etc</span><br><span class="line">sudo vi paths  #输入开机密码</span><br></pre></td></tr></table></figure>
+<p>然后在末尾加入我们安装的路径，一般为<code>/usr/local/texlive</code>，也可以终端打开测试看看是否是这个路径，注意的是保存后需要重启电脑才会使路径生效。</p>
+</li>
+<li><p>测试latex<br>新建test.tex文件，其中输入</p>
+</li>
+</ol>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">Hello World<span class="keyword">\LaTeX</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后点击右上角的执行，进行测试，成功则latex环境配置完成。</p>
+<h1 id="选择beamer模版"><a href="#选择beamer模版" class="headerlink" title="选择beamer模版"></a>选择beamer模版</h1><p>使用经典的清华大学Beamer模版，我找到了UESTC的修改版本，github上搜索UESTC_beamer即可找到大致的效果图如下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310042002619.png"></p>
+<p>具体的latex写法后续进行更新解析。</p>
+<h1 id="latex与office对比"><a href="#latex与office对比" class="headerlink" title="latex与office对比"></a>latex与office对比</h1><ul>
+<li><p>latex&amp;beamer制作PPT适用场景：复用性高，比较严肃的汇报，没有很多动画，分享干货，学术汇报的场景，不适用于快速记录</p>
+</li>
+<li><p>office适用场景：复用性不高、比较轻松的交流和快速的灵感想法记录和交流的场景</p>
+</li>
+</ul>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>vscode</tag>
+        <tag>MacOS</tag>
+        <tag>办公技能</tag>
+        <tag>beamer</tag>
+        <tag>latex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>实现windows和mac间远程桌面</title>
+    <url>/2023/10/04/20231004_Windows2MacRemoteConn/</url>
+    <content><![CDATA[<p>实现Windows和mac之间的丝滑远程桌面，主要使用的是cpolar，虽然不是免费的，但是使用的体验还是不错，价格也不算很高，每月12元有带宽还不错的固定公网IP的远程连接。</p>
+<span id="more"></span>
+
+<h1 id="1-下载cpolar"><a href="#1-下载cpolar" class="headerlink" title="1 下载cpolar"></a>1 下载cpolar</h1><p>首先登陆官网<a href="https://www.cpolar.com/">cpolar.com</a>，首先进行注册登陆。</p>
+<p>点击下载选择MacOSX下载，官方就有教程，<a href="https://www.cpolar.com/docs">教程地址</a></p>
+<p>1.安装homebrew，选择清华大学源</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/bin/zsh -c &quot;$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>安装cploar</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew tap probezy/core &amp;&amp; brew install cpolar</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>token认证<br>登录cpolar官网，点击左侧的验证，查看自己的认证token，之后将token贴在命令行里</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cpolar authtoken xxxxxxx</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310041701035.png"></p>
+</li>
+<li><p>安装服务并启动服务</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo cpolar service install #输入登陆密码</span><br><span class="line">sudo cpolar service start</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>在浏览器上访问本地9200端口【127.0.0.1:9200】，使用cpolar邮箱账号登录cpolar web UI管理界面，即可开始使用cpolar。</li>
+</ol>
+<h1 id="2-配置SSH固定公网IP地址"><a href="#2-配置SSH固定公网IP地址" class="headerlink" title="2 配置SSH固定公网IP地址"></a>2 配置SSH固定公网IP地址</h1><p>预留公网预留IP，这里就需要升级为Pro了，如果不升级Pro就没有固定公网IP，免费版就是每周会更改IP，并且带宽相对较低</p>
+<ol>
+<li>首先进入官网，登陆后选择预留-&gt;保留的TCP地址</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310041705040.png"></p>
+<ol start="2">
+<li>点击保留，即可自动生成一个预留好的固定公网IP地址</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231004170737.png"></p>
+<ol start="3">
+<li><p>按照之前的步骤进行后，打开<code>127.0.0.1:9200</code>，打开隧道列表，此时应该自动生成两个隧道，包括ssh和website<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310041710064.png"></p>
+</li>
+<li><p>我们需要创建一个新的tcp隧道，指向5900端口<br>点左边隧道管理-&gt;创建隧道</p>
+<ul>
+<li>隧道名称：可自定义，注意不要与已有隧道名称重复</li>
+<li>协议：tcp协议</li>
+<li>本地地址：5900（vnc默认端口号）</li>
+<li>端口类型：固定端口</li>
+<li>TCP地址：填写第2步中申请的地址</li>
+</ul>
+</li>
+<li><p>此时我们还需要打开mac mini 的远程连接的开关，打开设置-&gt;通用-&gt;共享，打开桌面共享，并且点击电脑设置，设置VNC密码。</p>
+</li>
+<li><p>windows电脑下载安装VNC后，输入刚刚申请的公网IP登录（注意不要输入TCP:&#x2F;&#x2F;）即可。</p>
+</li>
+</ol>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>远程桌面</tag>
+        <tag>跨平台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解析经典排序算法</title>
+    <url>/2023/08/23/20230821_SortingAlgorithmSummary/</url>
+    <content><![CDATA[<p>总结常用的排序算法，比如快速排序、选择排序、桶排序、堆排序、冒泡排序，分别进行原理分析，复杂度分析，使用场景区分，适用的数据结构，并进行对比总结。</p>
+<span id="more"></span>
+
+<p>首先总结表如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">排序方法</th>
+<th align="center">平均时间复杂度</th>
+<th align="center">最好情况</th>
+<th align="center">最坏情况</th>
+<th align="center">空间复杂度</th>
+<th align="center">是否稳定</th>
+<th align="center">排序方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">冒泡排序</td>
+<td align="center">$O(n^2)$</td>
+<td align="center">$O(n)$</td>
+<td align="center">$O(n^2)$</td>
+<td align="center">$O(1)$</td>
+<td align="center">稳定</td>
+<td align="center">内部排序</td>
+</tr>
+<tr>
+<td align="center">选择排序</td>
+<td align="center">$O(n^2)$</td>
+<td align="center">$O(n^2)$</td>
+<td align="center">$O(n^2)$</td>
+<td align="center">$O(1)$</td>
+<td align="center">不稳定</td>
+<td align="center">内部排序</td>
+</tr>
+<tr>
+<td align="center">插入排序</td>
+<td align="center">$O(n^2)$</td>
+<td align="center">$O(n)$</td>
+<td align="center">$O(n^2)$</td>
+<td align="center">$O(1)$</td>
+<td align="center">稳定</td>
+<td align="center">内部排序</td>
+</tr>
+<tr>
+<td align="center">希尔排序</td>
+<td align="center">$O(n\log n)$</td>
+<td align="center">$O(n\log ^2 n)$</td>
+<td align="center">$O(n\log ^2 n)$</td>
+<td align="center">$O(1)$</td>
+<td align="center">不稳定</td>
+<td align="center">内部排序</td>
+</tr>
+<tr>
+<td align="center">快速排序</td>
+<td align="center">$O(n\log n)$</td>
+<td align="center">$O(n\log n)$</td>
+<td align="center">$O(n^2)$</td>
+<td align="center">$O(\log n)$</td>
+<td align="center">不稳定</td>
+<td align="center">内部排序</td>
+</tr>
+<tr>
+<td align="center">归并排序</td>
+<td align="center">$O(n\log n)$</td>
+<td align="center">$O(n\log n)$</td>
+<td align="center">$O(n\log n)$</td>
+<td align="center">$O(n)$</td>
+<td align="center">稳定</td>
+<td align="center">外部排序</td>
+</tr>
+<tr>
+<td align="center">堆排序</td>
+<td align="center">$O(n\log n)$</td>
+<td align="center">$O(n\log n)$</td>
+<td align="center">$O(n\log n)$</td>
+<td align="center">$O(1)$</td>
+<td align="center">不稳定</td>
+<td align="center">内部排序</td>
+</tr>
+<tr>
+<td align="center">桶排序</td>
+<td align="center">$O(n+k)$</td>
+<td align="center">$O(n+k)$</td>
+<td align="center">$O(n^2)$</td>
+<td align="center">$O(k)$</td>
+<td align="center">稳定</td>
+<td align="center">外部排序</td>
+</tr>
+<tr>
+<td align="center">计数排序</td>
+<td align="center">$O(n+k)$</td>
+<td align="center">$O(n+k)$</td>
+<td align="center">$O(n+k)$</td>
+<td align="center">$O(k)$</td>
+<td align="center">稳定</td>
+<td align="center">外部排序</td>
+</tr>
+</tbody></table>
+<h1 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1 冒泡排序"></a>1 冒泡排序</h1><h2 id="1-1-算法简述"><a href="#1-1-算法简述" class="headerlink" title="1.1 算法简述"></a>1.1 算法简述</h2><p>两两比较，选出较大值，每一轮选出单轮最大值到数组末端，这个过程就像泡泡变大的过程，所以交冒泡算法。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">bubbleSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>() - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="comment">//int flag = 0;</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; nums.<span class="built_in">size</span>() - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[j] &gt; nums[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                <span class="built_in">swap</span>(nums[j], nums[j + <span class="number">1</span>]);</span><br><span class="line">                <span class="comment">//flag = 1;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//if(flag == 0) return;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-优化"><a href="#1-2-优化" class="headerlink" title="1.2 优化"></a>1.2 优化</h2><p>定义一个flag，只要进行交换就置为1.当某一次内层for循环没有交换过flag为0，那么说明已经排序好了</p>
+<h2 id="1-3-最好情况"><a href="#1-3-最好情况" class="headerlink" title="1.3 最好情况"></a>1.3 最好情况</h2><p>数组已经是正序排列时，仅有比较，没有交换</p>
+<h2 id="1-4-最坏情况"><a href="#1-4-最坏情况" class="headerlink" title="1.4 最坏情况"></a>1.4 最坏情况</h2><p>数组是反序排列时，每一轮都需要交换</p>
+<h1 id="2选择排序"><a href="#2选择排序" class="headerlink" title="2选择排序"></a>2选择排序</h1><p>选择排序是一种简单直观的排序算法，无论什么数据进去都是 O(n²) 的时间复杂度。所以用到它的时候，数据规模越小越好。唯一的好处可能就是不占用额外的内存空间了吧。</p>
+<h2 id="2-1-算法简述"><a href="#2-1-算法简述" class="headerlink" title="2.1 算法简述"></a>2.1 算法简述</h2><p>首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置。</p>
+<p>再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。</p>
+<p>重复第二步，直到所有元素均排序完毕。</p>
+<h2 id="2-2-代码"><a href="#2-2-代码" class="headerlink" title="2.2 代码"></a>2.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">selection_sort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="type">int</span> min = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; nums.<span class="built_in">size</span>(); j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[min] &gt; nums[j]) min = j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">swap</span>(nums[min], nums[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="3-插入排序"><a href="#3-插入排序" class="headerlink" title="3 插入排序"></a>3 插入排序</h1><p>插入排序的代码实现虽然没有冒泡排序和选择排序那么简单粗暴，但它的原理应该是最容易理解的了，因为只要打过扑克牌的人都应该能够秒懂。插入排序是一种最简单直观的排序算法，它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。</p>
+<p>插入排序和冒泡排序一样，也有一种优化算法，叫做拆半插入。</p>
+<h2 id="3-1-算法简述"><a href="#3-1-算法简述" class="headerlink" title="3.1 算法简述"></a>3.1 算法简述</h2><p>将第一待排序序列第一个元素看做一个有序序列，把第二个元素到最后一个元素当成是未排序序列。</p>
+<p>从头到尾依次扫描未排序序列，将扫描到的每个元素插入有序序列的适当位置。（如果待插入的元素与有序序列中的某个元素相等，则将待插入元素插入到相等元素的后面。）</p>
+<h2 id="3-2-代码"><a href="#3-2-代码" class="headerlink" title="3.2 代码"></a>3.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">insertion_sort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="type">int</span> num = nums[i];</span><br><span class="line">        <span class="type">int</span> j = i - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; num &lt; nums[j]) &#123;</span><br><span class="line">            <span class="comment">// 当j大于0且有序区间值大于num时，向左移动</span></span><br><span class="line">            nums[j + <span class="number">1</span>] = nums[j];</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//优化，折半查找法</span></span><br><span class="line">        nums[j + <span class="number">1</span>] = num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-3优化"><a href="#3-3优化" class="headerlink" title="3.3优化"></a>3.3优化</h2><p>已排序的序列中，序列元素都是按照顺序排列的，直接比较已排序序列的中位数，这个中间的位置将一排序列分为左右两部分，通过一次比较后，就缩小了比较的范围，重复这样的操作，需要插入的元素就找到了合适的位置了。</p>
+<h1 id="4-希尔排序"><a href="#4-希尔排序" class="headerlink" title="4 希尔排序"></a>4 希尔排序</h1><p>希尔排序，也称递减增量排序算法，是插入排序的一种更高效的改进版本。但希尔排序是非稳定排序算法。</p>
+<p>希尔排序是基于插入排序的以下两点性质而提出改进方法的：</p>
+<p>插入排序在对几乎已经排好序的数据操作时，效率高，即可以达到线性排序的效率；<br>但插入排序一般来说是低效的，因为插入排序每次只能将数据移动一位；<br>希尔排序的基本思想是：先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，待整个序列中的记录”基本有序”时，再对全体记录进行依次直接插入排序。</p>
+<h2 id="4-1-算法简述"><a href="#4-1-算法简述" class="headerlink" title="4.1 算法简述"></a>4.1 算法简述</h2><p>选择一个增量序列 t1，t2，……，tk，其中 ti &gt; tj, tk &#x3D; 1；</p>
+<p>按增量序列个数 k，对序列进行 k 趟排序；</p>
+<p>每趟排序，根据对应的增量 ti，将待排序列分割成若干长度为 m 的子序列，分别对各子表进行直接插入排序。仅增量因子为 1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。</p>
+<h2 id="4-2-代码"><a href="#4-2-代码" class="headerlink" title="4.2 代码"></a>4.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">shell_sort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> h = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">3</span> * h &lt; nums.<span class="built_in">size</span>()) &#123;</span><br><span class="line">        h = <span class="number">3</span> * h + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (h &gt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = h; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = i; j &gt;= h &amp;&amp; nums[j] &lt; nums[j - h]; j -= h) &#123;</span><br><span class="line">                <span class="built_in">swap</span>(nums[j], nums[j - h]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        h = h / <span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-快速排序"><a href="#5-快速排序" class="headerlink" title="5 快速排序"></a>5 快速排序</h1><p>快速排序是由东尼·霍尔所发展的一种排序算法。在平均状况下，排序 n 个项目要 Ο(nlogn) 次比较。在最坏状况下则需要 Ο(n2) 次比较，但这种状况并不常见。事实上，快速排序通常明显比其他 Ο(nlogn) 算法更快，因为它的内部循环（inner loop）可以在大部分的架构上很有效率地被实现出来。</p>
+<p>快速排序使用分治法（Divide and conquer）策略来把一个串行（list）分为两个子串行（sub-lists）。</p>
+<p>快速排序又是一种分而治之思想在排序算法上的典型应用。本质上来看，快速排序应该算是在冒泡排序基础上的递归分治法。</p>
+<p>快速排序的名字起的是简单粗暴，因为一听到这个名字你就知道它存在的意义，就是快，而且效率高！它是处理大数据最快的排序算法之一了。虽然 Worst Case 的时间复杂度达到了 O(n²)，但是人家就是优秀，在大多数情况下都比平均时间复杂度为 O(n logn) 的排序算法表现要更好，可是这是为什么呢，我也不知道。好在我的强迫症又犯了，查了 N 多资料终于在《算法艺术与信息学竞赛》上找到了满意的答案：</p>
+<p>快速排序的最坏运行情况是 O(n²)，比如说顺序数列的快排。但它的平摊期望时间是 O(nlogn)，且 O(nlogn) 记号中隐含的常数因子很小，比复杂度稳定等于 O(nlogn) 的归并排序要小很多。所以，对绝大多数顺序性较弱的随机数列而言，快速排序总是优于归并排序。</p>
+<h2 id="5-1-算法简述"><a href="#5-1-算法简述" class="headerlink" title="5.1 算法简述"></a>5.1 算法简述</h2><ol>
+<li><p>从数列中挑出一个元素，称为 “基准”（pivot）;</p>
+</li>
+<li><p>重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作；</p>
+</li>
+<li><p>递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序；</p>
+</li>
+</ol>
+<h2 id="5-2-代码"><a href="#5-2-代码" class="headerlink" title="5.2 代码"></a>5.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 快速排序</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">Paritition</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> low, <span class="type">int</span> high)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//返回基准pivot的nums的序号</span></span><br><span class="line">    <span class="type">int</span> pivot = nums[low];</span><br><span class="line">    <span class="keyword">while</span> (low &lt; high) &#123;</span><br><span class="line">        <span class="comment">//将nums分为小于基准和大于基准的两侧</span></span><br><span class="line">        <span class="keyword">while</span> (low &lt; high &amp;&amp; nums[high] &gt;= pivot) --high;</span><br><span class="line">        nums[low] = nums[high];</span><br><span class="line">        <span class="keyword">while</span> (low &lt; high &amp;&amp; nums[low] &lt;= pivot) ++low;</span><br><span class="line">        nums[high] = nums[low];</span><br><span class="line">    &#125;</span><br><span class="line">    nums[low] = pivot;</span><br><span class="line">    <span class="keyword">return</span> low;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">QuickSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> low, <span class="type">int</span> high)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (low &lt; high) &#123;</span><br><span class="line">        <span class="type">int</span> pivot = <span class="built_in">Paritition</span>(nums, low, high);</span><br><span class="line">        <span class="built_in">QuickSort</span>(nums, low, pivot - <span class="number">1</span>);<span class="comment">//递归小于基准部分</span></span><br><span class="line">        <span class="built_in">QuickSort</span>(nums, pivot + <span class="number">1</span>, high);<span class="comment">//递归大于基准部分</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">QuickSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">QuickSort</span>(nums, <span class="number">0</span>, nums.<span class="built_in">size</span>() - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="6-归并排序"><a href="#6-归并排序" class="headerlink" title="6 归并排序"></a>6 归并排序</h1><p>归并排序（Merge sort）是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。</p>
+<p>作为一种典型的分而治之思想的算法应用，归并排序的实现由两种方法：</p>
+<p>自上而下的递归（所有递归的方法都可以用迭代重写，所以就有了第 2 种方法）；<br>自下而上的迭代；</p>
+<p>和选择排序一样，归并排序的性能不受输入数据的影响，但表现比选择排序好的多，因为始终都是 O(nlogn) 的时间复杂度。代价是需要额外的内存空间。</p>
+<h2 id="6-1-算法简述"><a href="#6-1-算法简述" class="headerlink" title="6.1 算法简述"></a>6.1 算法简述</h2><ol>
+<li><p>申请空间，使其大小为两个已经排序序列之和，该空间用来存放合并后的序列；</p>
+</li>
+<li><p>设定两个指针，最初位置分别为两个已经排序序列的起始位置；</p>
+</li>
+<li><p>比较两个指针所指向的元素，选择相对小的元素放入到合并空间，并移动指针到下一位置；</p>
+</li>
+<li><p>重复步骤 3 直到某一指针达到序列尾；</p>
+</li>
+<li><p>将另一序列剩下的所有元素直接复制到合并序列尾。</p>
+</li>
+</ol>
+<h2 id="6-2-代码"><a href="#6-2-代码" class="headerlink" title="6.2 代码"></a>6.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 归并排序</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Merge</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> front, <span class="type">int</span> mid, <span class="type">int</span> end)</span> </span>&#123;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">LeftSubArray</span><span class="params">(nums.begin() + front, nums.begin() + mid + <span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">RightSubArray</span><span class="params">(nums.begin() + mid + <span class="number">1</span>, nums.begin() + end + <span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="type">int</span> idxLeft = <span class="number">0</span>, idxRight = <span class="number">0</span>;</span><br><span class="line">    LeftSubArray.<span class="built_in">insert</span>(LeftSubArray.<span class="built_in">end</span>(), numeric_limits&lt;<span class="type">int</span>&gt;::<span class="built_in">max</span>());</span><br><span class="line">    RightSubArray.<span class="built_in">insert</span>(RightSubArray.<span class="built_in">end</span>(), numeric_limits&lt;<span class="type">int</span>&gt;::<span class="built_in">max</span>());</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = front; i &lt;= end; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (LeftSubArray[idxLeft] &lt; RightSubArray[idxRight]) &#123;</span><br><span class="line">            nums[i] = LeftSubArray[idxLeft];</span><br><span class="line">            idxLeft++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            nums[i] = RightSubArray[idxRight];</span><br><span class="line">            idxRight++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">MergeSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> front, <span class="type">int</span> end)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (front &gt;= end) <span class="keyword">return</span>;</span><br><span class="line">    <span class="type">int</span> mid = (front + end) / <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">MergeSort</span>(nums, front, mid);</span><br><span class="line">    <span class="built_in">MergeSort</span>(nums, mid + <span class="number">1</span>, end);</span><br><span class="line">    <span class="built_in">Merge</span>(nums, front, mid, end);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">MergeSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">MergeSort</span>(nums, <span class="number">0</span>, nums.<span class="built_in">size</span>() - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="7-堆排序"><a href="#7-堆排序" class="headerlink" title="7 堆排序"></a>7 堆排序</h1><p>堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。堆排序可以说是一种利用堆的概念来排序的选择排序。分为两种方法：</p>
+<p>大顶堆：每个节点的值都大于或等于其子节点的值，在堆排序算法中用于升序排列；<br>小顶堆：每个节点的值都小于或等于其子节点的值，在堆排序算法中用于降序排列；<br>堆排序的平均时间复杂度为 Ο(nlogn)。</p>
+<h2 id="7-1-算法简述"><a href="#7-1-算法简述" class="headerlink" title="7.1 算法简述"></a>7.1 算法简述</h2><ol>
+<li><p>创建一个堆 H[0……n-1]；</p>
+</li>
+<li><p>把堆首（最大值）和堆尾互换；</p>
+</li>
+<li><p>把堆的尺寸缩小 1，并调用 shift_down(0)，目的是把新的数组顶端数据调整到相应位置；</p>
+</li>
+<li><p>重复步骤 2，直到堆的尺寸为 1。</p>
+</li>
+</ol>
+<h2 id="7-2-代码"><a href="#7-2-代码" class="headerlink" title="7.2 代码"></a>7.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">max_heapify</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> start, <span class="type">int</span> end)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> dad = start;</span><br><span class="line">    <span class="type">int</span> son = dad * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (son &lt;= end) &#123; </span><br><span class="line">        <span class="keyword">if</span> (son + <span class="number">1</span> &lt;= end &amp;&amp; arr[son] &lt; arr[son + <span class="number">1</span>]) </span><br><span class="line">            son++;</span><br><span class="line">        <span class="keyword">if</span> (arr[dad] &gt; arr[son]) </span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123; </span><br><span class="line">            <span class="built_in">swap</span>(arr[dad], arr[son]);</span><br><span class="line">            dad = son;</span><br><span class="line">            son = dad * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">heap_sort</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = len / <span class="number">2</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        <span class="built_in">max_heapify</span>(arr, i, len - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = len - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="built_in">swap</span>(arr[<span class="number">0</span>], arr[i]);</span><br><span class="line">        <span class="built_in">max_heapify</span>(arr, <span class="number">0</span>, i - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="8-计数排序"><a href="#8-计数排序" class="headerlink" title="8 计数排序"></a>8 计数排序</h1><p>计数排序的核心在于将输入的数据值转化为键存储在额外开辟的数组空间中。作为一种线性时间复杂度的排序，计数排序要求输入的数据必须是有确定范围的整数。</p>
+<p>当输入的元素是 n 个 0 到 k 之间的整数时，它的运行时间是 Θ(n + k)。计数排序不是比较排序，排序的速度快于任何比较排序算法。</p>
+<p>由于用来计数的数组C的长度取决于待排序数组中数据的范围（等于待排序数组的最大值与最小值的差加上1），这使得计数排序对于数据范围很大的数组，需要大量时间和内存。</p>
+<p>类似于哈希法</p>
+<h2 id="8-1-算法简述"><a href="#8-1-算法简述" class="headerlink" title="8.1 算法简述"></a>8.1 算法简述</h2><p>（1）找出待排序的数组中最大和最小的元素<br>（2）统计数组中每个值为i的元素出现的次数，存入数组C的第i项<br>（3）对所有的计数累加（从C中的第一个元素开始，每一项和前一项相加）<br>（4）反向填充目标数组：将每个元素i放在新数组的第C(i)项，每放一个元素就将C(i)减去1</p>
+<h2 id="8-2-代码"><a href="#8-2-代码" class="headerlink" title="8.2 代码"></a>8.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="9-桶排序"><a href="#9-桶排序" class="headerlink" title="9 桶排序"></a>9 桶排序</h1><h2 id="9-1-算法简述"><a href="#9-1-算法简述" class="headerlink" title="9.1 算法简述"></a>9.1 算法简述</h2><p>桶排序是计数排序的升级版。它利用了函数的映射关系，高效与否的关键就在于这个映射函数的确定。为了使桶排序更加高效，我们需要做到这两点：</p>
+<p>在额外空间充足的情况下，尽量增大桶的数量<br>使用的映射函数能够将输入的 N 个数据均匀的分配到 K 个桶中<br>同时，对于桶中元素的排序，选择何种比较排序算法对于性能的影响至关重要。</p>
+<h2 id="9-2-代码"><a href="#9-2-代码" class="headerlink" title="9.2 代码"></a>9.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> BUCKET_NUM = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">ListNode</span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">explicit</span> <span class="title">ListNode</span><span class="params">(<span class="type">int</span> i=<span class="number">0</span>)</span>:mData(i),mNext(NULL)&#123;</span>&#125;</span><br><span class="line">        ListNode* mNext;</span><br><span class="line">        <span class="type">int</span> mData;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">ListNode* <span class="title">insert</span><span class="params">(ListNode* head,<span class="type">int</span> val)</span></span>&#123;</span><br><span class="line">        ListNode dummyNode;</span><br><span class="line">        ListNode *newNode = <span class="keyword">new</span> <span class="built_in">ListNode</span>(val);</span><br><span class="line">        ListNode *pre,*curr;</span><br><span class="line">        dummyNode.mNext = head;</span><br><span class="line">        pre = &amp;dummyNode;</span><br><span class="line">        curr = head;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">NULL</span>!=curr &amp;&amp; curr-&gt;mData&lt;=val)&#123;</span><br><span class="line">                pre = curr;</span><br><span class="line">                curr = curr-&gt;mNext;</span><br><span class="line">        &#125;</span><br><span class="line">        newNode-&gt;mNext = curr;</span><br><span class="line">        pre-&gt;mNext = newNode;</span><br><span class="line">        <span class="keyword">return</span> dummyNode.mNext;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function">ListNode* <span class="title">Merge</span><span class="params">(ListNode *head1,ListNode *head2)</span></span>&#123;</span><br><span class="line">        ListNode dummyNode;</span><br><span class="line">        ListNode *dummy = &amp;dummyNode;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">NULL</span>!=head1 &amp;&amp; <span class="literal">NULL</span>!=head2)&#123;</span><br><span class="line">                <span class="keyword">if</span>(head1-&gt;mData &lt;= head2-&gt;mData)&#123;</span><br><span class="line">                        dummy-&gt;mNext = head1;</span><br><span class="line">                        head1 = head1-&gt;mNext;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                        dummy-&gt;mNext = head2;</span><br><span class="line">                        head2 = head2-&gt;mNext;</span><br><span class="line">                &#125;</span><br><span class="line">                dummy = dummy-&gt;mNext;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="literal">NULL</span>!=head1) dummy-&gt;mNext = head1;</span><br><span class="line">        <span class="keyword">if</span>(<span class="literal">NULL</span>!=head2) dummy-&gt;mNext = head2;</span><br><span class="line">       </span><br><span class="line">        <span class="keyword">return</span> dummyNode.mNext;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BucketSort</span><span class="params">(<span class="type">int</span> n,<span class="type">int</span> arr[])</span></span>&#123;</span><br><span class="line">        <span class="function">vector&lt;ListNode*&gt; <span class="title">buckets</span><span class="params">(BUCKET_NUM,(ListNode*)(<span class="number">0</span>))</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">                <span class="type">int</span> index = arr[i]/BUCKET_NUM;</span><br><span class="line">                ListNode *head = buckets.<span class="built_in">at</span>(index);</span><br><span class="line">                buckets.<span class="built_in">at</span>(index) = <span class="built_in">insert</span>(head,arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode *head = buckets.<span class="built_in">at</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;BUCKET_NUM;++i)&#123;</span><br><span class="line">                head = <span class="built_in">Merge</span>(head,buckets.<span class="built_in">at</span>(i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">                arr[i] = head-&gt;mData;</span><br><span class="line">                head = head-&gt;mNext;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="9-3-最好情况"><a href="#9-3-最好情况" class="headerlink" title="9.3 最好情况"></a>9.3 最好情况</h2><p>当输入的数据可以均匀的分配到每一个桶中。</p>
+<h2 id="9-4-最坏情况"><a href="#9-4-最坏情况" class="headerlink" title="9.4 最坏情况"></a>9.4 最坏情况</h2><p>当输入的数据被分配到了同一个桶中。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>C/C++</tag>
+        <tag>排序算法</tag>
       </tags>
   </entry>
   <entry>
@@ -1751,114 +1818,47 @@
       </tags>
   </entry>
   <entry>
-    <title>实现windows和mac间远程桌面</title>
-    <url>/2023/10/04/20231004_Windows2MacRemoteConn/</url>
-    <content><![CDATA[<p>实现Windows和mac之间的丝滑远程桌面，主要使用的是cpolar，虽然不是免费的，但是使用的体验还是不错，价格也不算很高，每月12元有带宽还不错的固定公网IP的远程连接。</p>
+    <title>单例设计模式简单实现</title>
+    <url>/2023/09/19/20230919_SingletonWithThreadpool/</url>
+    <content><![CDATA[<p>软件设计模式中的最简单的设计模式的实现，主要是应用在线程池中。分为单例模式介绍、线程池实现两部分</p>
 <span id="more"></span>
 
-<h1 id="1-下载cpolar"><a href="#1-下载cpolar" class="headerlink" title="1 下载cpolar"></a>1 下载cpolar</h1><p>首先登陆官网<a href="https://www.cpolar.com/">cpolar.com</a>，首先进行注册登陆。</p>
-<p>点击下载选择MacOSX下载，官方就有教程，<a href="https://www.cpolar.com/docs">教程地址</a></p>
-<p>1.安装homebrew，选择清华大学源</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/bin/zsh -c &quot;$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>安装cploar</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew tap probezy/core &amp;&amp; brew install cpolar</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><p>token认证<br>登录cpolar官网，点击左侧的验证，查看自己的认证token，之后将token贴在命令行里</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cpolar authtoken xxxxxxx</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310041701035.png"></p>
-</li>
-<li><p>安装服务并启动服务</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo cpolar service install #输入登陆密码</span><br><span class="line">sudo cpolar service start</span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>在浏览器上访问本地9200端口【127.0.0.1:9200】，使用cpolar邮箱账号登录cpolar web UI管理界面，即可开始使用cpolar。</li>
-</ol>
-<h1 id="2-配置SSH固定公网IP地址"><a href="#2-配置SSH固定公网IP地址" class="headerlink" title="2 配置SSH固定公网IP地址"></a>2 配置SSH固定公网IP地址</h1><p>预留公网预留IP，这里就需要升级为Pro了，如果不升级Pro就没有固定公网IP，免费版就是每周会更改IP，并且带宽相对较低</p>
+<h1 id="1-单例模式"><a href="#1-单例模式" class="headerlink" title="1 单例模式"></a>1 单例模式</h1><p>单例模式（Singleton Pattern）是软件设计模式中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。</p>
+<p>这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。</p>
+<p>单例模式是一种创建型设计模式，它确保一个类只有一个实例，并提供了一个全局访问点来访问该实例。</p>
+<p>注意：</p>
+<p>1、单例类只能有一个实例。<br>2、单例类必须自己创建自己的唯一实例。<br>3、单例类必须给所有其他对象提供这一实例。  </p>
+<p>单例模式图如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230917163929.png"></p>
+<p>简要的示例如下：  </p>
 <ol>
-<li>首先进入官网，登陆后选择预留-&gt;保留的TCP地址</li>
+<li>懒汉版：单例实例在第一次被使用时才进行初始化，这叫做延迟初始化。<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// version 1.0</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Singleton</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">static</span> Singleton* instance;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="built_in">Singleton</span>() &#123;&#125;;</span><br><span class="line">	~<span class="built_in">Singleton</span>() &#123;&#125;;</span><br><span class="line">	<span class="built_in">Singleton</span>(<span class="type">const</span> Singleton&amp;);</span><br><span class="line">	Singleton&amp; <span class="keyword">operator</span>=(<span class="type">const</span> Singleton&amp;);</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">static</span> Singleton* <span class="title">getInstance</span><span class="params">()</span> </span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(instance == <span class="literal">NULL</span>) </span><br><span class="line">			instance = <span class="keyword">new</span> <span class="built_in">Singleton</span>();</span><br><span class="line">		<span class="keyword">return</span> instance;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// init static member</span></span><br><span class="line">Singleton* Singleton::instance = <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure></li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310041705040.png"></p>
+<p>但是这样做有内存泄漏的问题，有两种解决办法：</p>
+<ol>
+<li>智能指针</li>
+<li>静态的嵌套类的对象</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// version 1.1</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Singleton</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">static</span> Singleton* instance;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="built_in">Singleton</span>() &#123; &#125;;</span><br><span class="line">	~<span class="built_in">Singleton</span>() &#123; &#125;;</span><br><span class="line">	<span class="built_in">Singleton</span>(<span class="type">const</span> Singleton&amp;);</span><br><span class="line">	Singleton&amp; <span class="keyword">operator</span>=(<span class="type">const</span> Singleton&amp;);</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">class</span> <span class="title class_">Deletor</span> &#123;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		~<span class="built_in">Deletor</span>() &#123;</span><br><span class="line">			<span class="keyword">if</span>(Singleton::instance != <span class="literal">NULL</span>)</span><br><span class="line">				<span class="keyword">delete</span> Singleton::instance;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="type">static</span> Deletor deletor;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">static</span> Singleton* <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(instance == <span class="literal">NULL</span>) &#123;</span><br><span class="line">			instance = <span class="keyword">new</span> <span class="built_in">Singleton</span>();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> instance;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// init static member</span></span><br><span class="line">Singleton* Singleton::instance = <span class="literal">NULL</span>;</span><br><span class="line">Singleton::Deletor Singleton::deletor;</span><br></pre></td></tr></table></figure>
+
 <ol start="2">
-<li>点击保留，即可自动生成一个预留好的固定公网IP地址</li>
+<li>饿汉版</li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231004170737.png"></p>
-<ol start="3">
-<li><p>按照之前的步骤进行后，打开<code>127.0.0.1:9200</code>，打开隧道列表，此时应该自动生成两个隧道，包括ssh和website<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310041710064.png"></p>
-</li>
-<li><p>我们需要创建一个新的tcp隧道，指向5900端口<br>点左边隧道管理-&gt;创建隧道</p>
-<ul>
-<li>隧道名称：可自定义，注意不要与已有隧道名称重复</li>
-<li>协议：tcp协议</li>
-<li>本地地址：5900（vnc默认端口号）</li>
-<li>端口类型：固定端口</li>
-<li>TCP地址：填写第2步中申请的地址</li>
-</ul>
-</li>
-<li><p>此时我们还需要打开mac mini 的远程连接的开关，打开设置-&gt;通用-&gt;共享，打开桌面共享，并且点击电脑设置，设置VNC密码。</p>
-</li>
-<li><p>windows电脑下载安装VNC后，输入刚刚申请的公网IP登录（注意不要输入TCP:&#x2F;&#x2F;）即可。</p>
-</li>
-</ol>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// version 1.3</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Singleton</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">static</span> Singleton instance;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="built_in">Singleton</span>();</span><br><span class="line">	~<span class="built_in">Singleton</span>();</span><br><span class="line">	<span class="built_in">Singleton</span>(<span class="type">const</span> Singleton&amp;);</span><br><span class="line">	Singleton&amp; <span class="keyword">operator</span>=(<span class="type">const</span> Singleton&amp;);</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">static</span> Singleton&amp; <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> instance;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// initialize defaultly</span></span><br><span class="line">Singleton Singleton::instance;</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-在线程池中实现单例模式"><a href="#2-在线程池中实现单例模式" class="headerlink" title="2 在线程池中实现单例模式"></a>2 在线程池中实现单例模式</h1><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">threadpool</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">static</span> threadpool* instance;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">static</span> threadpool* <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(instance == <span class="literal">NULL</span>) </span><br><span class="line">			instance = <span class="keyword">new</span> <span class="built_in">threadpool</span>();</span><br><span class="line">		<span class="keyword">return</span> instance;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">append</span><span class="params">(T *request, <span class="type">int</span> state)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">append_p</span><span class="params">(T *request)</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="comment">/*thread_number是线程池中线程的数量，max_requests是请求队列中最多允许的、等待处理的请求的数量*/</span></span><br><span class="line">    <span class="built_in">threadpool</span>(<span class="type">int</span> actor_model, connection_pool *connPool, <span class="type">int</span> thread_number = <span class="number">8</span>, <span class="type">int</span> max_request = <span class="number">10000</span>);</span><br><span class="line">    ~<span class="built_in">threadpool</span>();</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="comment">/*工作线程运行的函数，它不断从工作队列中取出任务并执行之*/</span></span><br><span class="line">    <span class="function"><span class="type">static</span> <span class="type">void</span> *<span class="title">worker</span><span class="params">(<span class="type">void</span> *arg)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">run</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> m_thread_number;        <span class="comment">//线程池中的线程数</span></span><br><span class="line">    <span class="type">int</span> m_max_requests;         <span class="comment">//请求队列中允许的最大请求数</span></span><br><span class="line">    <span class="type">pthread_t</span> *m_threads;       <span class="comment">//描述线程池的数组，其大小为m_thread_number</span></span><br><span class="line">    std::list&lt;T *&gt; m_workqueue; <span class="comment">//请求队列</span></span><br><span class="line">    locker m_queuelocker;       <span class="comment">//保护请求队列的互斥锁</span></span><br><span class="line">    sem m_queuestat;            <span class="comment">//是否有任务需要处理</span></span><br><span class="line">    connection_pool *m_connPool;  <span class="comment">//数据库</span></span><br><span class="line">    <span class="type">int</span> m_actor_model;          <span class="comment">//模型切换</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
 <p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
 ]]></content>
       <categories>
         <category>技术博客</category>
       </categories>
       <tags>
-        <tag>远程桌面</tag>
-        <tag>跨平台</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>学术PPT制作--beamer</title>
-    <url>/2023/10/04/20231004_Latex&amp;beamer/</url>
-    <content><![CDATA[<p>使用<strong>MAC+VSCODE+LATEX</strong></p>
-<p>最近有了频繁做学术汇报的需求，之前有了解到过beamer制作学术汇报PPT的优势，所以这里填一下坑，分享记录一下如何用beamer制作学术PPT以及使用latex和office制作PPT的优劣和使用场景对比分析。</p>
-<span id="more"></span>
-
-<h1 id="配置latex环境"><a href="#配置latex环境" class="headerlink" title="配置latex环境"></a>配置latex环境</h1><ol>
-<li>安装MacTex<br>mac上直接官网下载即可 <a href="https://www.tug.org/mactex/mactex-download.html">MacTex</a></li>
-</ol>
-<p>windows的操作也类似，在官方下载TeXlive即可。</p>
-<ol start="2">
-<li><p>配置vscode<br>然后我们还需要在vscode上进行配置相关的插件，这一步也非常简单，在vscode扩展中搜索LaTex Workshop，安装完成后vscode左侧出现TeX标志代表安装成功。</p>
-</li>
-<li><p>配置系统path<br>此时我们还需要将texlive到路径添加到系统路径中，打开iTerm，输入以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /etc</span><br><span class="line">sudo vi paths  #输入开机密码</span><br></pre></td></tr></table></figure>
-<p>然后在末尾加入我们安装的路径，一般为<code>/usr/local/texlive</code>，也可以终端打开测试看看是否是这个路径，注意的是保存后需要重启电脑才会使路径生效。</p>
-</li>
-<li><p>测试latex<br>新建test.tex文件，其中输入</p>
-</li>
-</ol>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">Hello World<span class="keyword">\LaTeX</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后点击右上角的执行，进行测试，成功则latex环境配置完成。</p>
-<h1 id="选择beamer模版"><a href="#选择beamer模版" class="headerlink" title="选择beamer模版"></a>选择beamer模版</h1><p>使用经典的清华大学Beamer模版，我找到了UESTC的修改版本，github上搜索UESTC_beamer即可找到大致的效果图如下</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310042002619.png"></p>
-<p>具体的latex写法后续进行更新解析。</p>
-<h1 id="latex与office对比"><a href="#latex与office对比" class="headerlink" title="latex与office对比"></a>latex与office对比</h1><ul>
-<li><p>latex&amp;beamer制作PPT适用场景：复用性高，比较严肃的汇报，没有很多动画，分享干货，学术汇报的场景，不适用于快速记录</p>
-</li>
-<li><p>office适用场景：复用性不高、比较轻松的交流和快速的灵感想法记录和交流的场景</p>
-</li>
-</ul>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>vscode</tag>
-        <tag>MacOS</tag>
-        <tag>办公技能</tag>
-        <tag>beamer</tag>
-        <tag>latex</tag>
+        <tag>C++</tag>
+        <tag>软件设计模式</tag>
+        <tag>单例模式</tag>
       </tags>
   </entry>
   <entry>
