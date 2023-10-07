@@ -402,65 +402,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MobaXterm简单教程</title>
-    <url>/2023/08/07/20230807_shelToolMobaXterm/</url>
-    <content><![CDATA[<p>日常开发中一个好用的终端软件是很重要的，而MobaXterm就是其中最好用的之一，并且最重要的是MobaXterm的免费版本的功能就十分强大。</p>
-<p>本博客会介绍MobaXterm的下载，界面和简单的使用方法，还有其中的一些工具的介绍。</p>
-<span id="more"></span>
-
-<h1 id="1-下载"><a href="#1-下载" class="headerlink" title="1 下载"></a>1 下载</h1><p>官方网址链接为 <a href="https://mobaxterm.mobatek.net/">MobaXterm官方网址</a> ,点击下载即可。</p>
-<p>MobaXterm分为两种安装模式：</p>
-<p>便携式exe文件：适合安装在U盘，双击即可运行，这样服务器账号密码什么的就很方便的管理了，出门在外只需要一个U盘就可以连接服务器。<br>安装式：正常的install安装步骤。</p>
-<h1 id="2-界面介绍"><a href="#2-界面介绍" class="headerlink" title="2 界面介绍"></a>2 界面介绍</h1><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807203546.png"></p>
-<p>安装打开后大概可以看到是上图的界面，可以看到主要分为三块，图中用不同颜色的框进行标注。</p>
-<p>红色框内是一些我们可能用到的工具，比如session，serbers，tools，还有设置settings等。</p>
-<p>蓝色框内是侧边栏，比如我们最常用的通过sessions保存的远程SSH连接服务器的列表会存放在蓝色区域，方便经常连接使用还有tools工具和macros录制脚本。</p>
-<p>绿色框内是我们操作的区域，默认是途中这些西汉时的界面，如果我们打开远程服务器，终端也是显示在绿色方框内，这里面最常用红的Start local terminal和recover previous sessions也是最常用的两个功能，分别是打开本地终端和打开最近的session。</p>
-<h1 id="3-功能介绍"><a href="#3-功能介绍" class="headerlink" title="3 功能介绍"></a>3 功能介绍</h1><h2 id="3-1-Session管理"><a href="#3-1-Session管理" class="headerlink" title="3.1 Session管理"></a>3.1 Session管理</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210026.png"></p>
-<p>点击上图中的session按键，会出现以下界面</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210158.png"></p>
-<p>可以看到session中可以新建SSH，Telnet，Rsh，RDP，FTP，SFTP，Shell等功能，需要用到这些功能的时候就点击进行进一步的设置即可。其中我们最常用的就是SSH啦。</p>
-<h2 id="3-2-SSH连接远程服务器"><a href="#3-2-SSH连接远程服务器" class="headerlink" title="3.2 SSH连接远程服务器"></a>3.2 SSH连接远程服务器</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210843.png"></p>
-<p>按照3.1中步骤，点击SSH可以看到如上图所示，其中需要填写的一般只有四个部分。</p>
-<ul>
-<li><code>Remote host</code>：填写服务器的IP地址</li>
-<li><code>specify username</code>：填写你在服务器中使用的用户的名称，这样连接服务器后就可以直接登录到你的账户</li>
-<li><code>Advanced SSH setting</code>：高级SSH设置，点击之后界面如下，填写Use private key，也就是服务器的密码<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807211553.png"></li>
-<li><code>Bookmark settings</code>，书签设置，也就是在侧边栏中，当我们需要连接的服务器较多时，我们可以给不同的服务器起别名区别，填写Session name为我们想要的名字。<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807211752.png"></li>
-</ul>
-<p>都设置完毕后点击ok就可以了，这样在主界面的侧边栏中就会出现我们想要连接的session，以后方便一键连接远程服务器</p>
-<h2 id="3-3-文本编辑器和文本对比"><a href="#3-3-文本编辑器和文本对比" class="headerlink" title="3.3 文本编辑器和文本对比"></a>3.3 文本编辑器和文本对比</h2><p>侧边栏tools-&gt;MobaTExtEditor和tools-&gt;MobaDiff</p>
-<p>打开tools-&gt;MobaTExtEditor，就会显示右侧红框中的界面，方便对本地或者远程的文档进行编辑</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212100.png"></p>
-<p>打开tools-&gt;MobaDiff，选择文件1和文件2，点击ok即可分析两个文档之间的区别。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212248.png"></p>
-<h2 id="3-4-录制操作脚本"><a href="#3-4-录制操作脚本" class="headerlink" title="3.4 录制操作脚本"></a>3.4 录制操作脚本</h2><p>点击侧边栏的macro的如下图的红色框，即可开始录制，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212442.png"></p>
-<p>点击录制后，会显示以下界面，点击停止就会提醒我们保存脚本，做一些重复性工作时，可以录制获得脚本然后以后就可以使用该脚本宏啦</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212547.png"></p>
-<h2 id="3-5-本地服务器"><a href="#3-5-本地服务器" class="headerlink" title="3.5 本地服务器"></a>3.5 本地服务器</h2><p>某些情况下，我们需要搭建自己本地的服务器，以方便通过http或ftp等协议传输本地文件或数据，MobaXterm就提供了实现该服务的功能，包括了HTTP、FTP、Telent等众多的协议。</p>
-<p>点击上方的servers按钮即可打开</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213112.png"></p>
-<p>然后选择需要共享的文件夹路径，点击HTTP的开始按钮之后输入访问 <a href="http://localhost/">http://localhost:80/</a>即可访问该文件夹</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213423.png"></p>
-<h2 id="3-6-小游戏"><a href="#3-6-小游戏" class="headerlink" title="3.6 小游戏"></a>3.6 小游戏</h2><p>上方按钮中有games选项，里面有一些经典的小游戏，适合上班摸鱼的时候使用</p>
-<h1 id="4-使用技巧"><a href="#4-使用技巧" class="headerlink" title="4 使用技巧"></a>4 使用技巧</h1><h2 id="4-1-多种终端同时管理"><a href="#4-1-多种终端同时管理" class="headerlink" title="4.1 多种终端同时管理"></a>4.1 多种终端同时管理</h2><p>MobaXterm也可以使用Git，当我们同时需要使用Git Bash和远程服务器的时候，坚持切换会很麻烦，这时可以在首页右键点击Git Bash就可以在MobaXterm中同时管理多种终端啦。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213746.png"></p>
-<h2 id="4-2-SSH-休眠管理"><a href="#4-2-SSH-休眠管理" class="headerlink" title="4.2 SSH 休眠管理"></a>4.2 SSH 休眠管理</h2><p>默认设置5分钟连接的SSH会自动休眠，如果想要长时间不休眠可以在Settings-&gt;SSH-&gt;SSH keepalive修改，勾上该选项即可，如下图</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807214018.png"></p>
-<p><strong>持续更新中…</strong></p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>MobaXterm</tag>
-        <tag>shell</tag>
-        <tag>SSH</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>markdown的简单用法</title>
     <url>/2023/08/09/20230808_markdownLanguage/</url>
     <content><![CDATA[<p>如果需要经常记录一些东西，那么markdown就是一个绕不开的东西，而习惯用markdown也会养成记录的习惯，本文主要从四个方面介绍markdown的简单用法，分别是1.markdown简介，2.markdown编译器，3.markdown语法。</p>
@@ -670,6 +611,93 @@
       </tags>
   </entry>
   <entry>
+    <title>MobaXterm简单教程</title>
+    <url>/2023/08/07/20230807_shelToolMobaXterm/</url>
+    <content><![CDATA[<p>日常开发中一个好用的终端软件是很重要的，而MobaXterm就是其中最好用的之一，并且最重要的是MobaXterm的免费版本的功能就十分强大。</p>
+<p>本博客会介绍MobaXterm的下载，界面和简单的使用方法，还有其中的一些工具的介绍。</p>
+<span id="more"></span>
+
+<h1 id="1-下载"><a href="#1-下载" class="headerlink" title="1 下载"></a>1 下载</h1><p>官方网址链接为 <a href="https://mobaxterm.mobatek.net/">MobaXterm官方网址</a> ,点击下载即可。</p>
+<p>MobaXterm分为两种安装模式：</p>
+<p>便携式exe文件：适合安装在U盘，双击即可运行，这样服务器账号密码什么的就很方便的管理了，出门在外只需要一个U盘就可以连接服务器。<br>安装式：正常的install安装步骤。</p>
+<h1 id="2-界面介绍"><a href="#2-界面介绍" class="headerlink" title="2 界面介绍"></a>2 界面介绍</h1><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807203546.png"></p>
+<p>安装打开后大概可以看到是上图的界面，可以看到主要分为三块，图中用不同颜色的框进行标注。</p>
+<p>红色框内是一些我们可能用到的工具，比如session，serbers，tools，还有设置settings等。</p>
+<p>蓝色框内是侧边栏，比如我们最常用的通过sessions保存的远程SSH连接服务器的列表会存放在蓝色区域，方便经常连接使用还有tools工具和macros录制脚本。</p>
+<p>绿色框内是我们操作的区域，默认是途中这些西汉时的界面，如果我们打开远程服务器，终端也是显示在绿色方框内，这里面最常用红的Start local terminal和recover previous sessions也是最常用的两个功能，分别是打开本地终端和打开最近的session。</p>
+<h1 id="3-功能介绍"><a href="#3-功能介绍" class="headerlink" title="3 功能介绍"></a>3 功能介绍</h1><h2 id="3-1-Session管理"><a href="#3-1-Session管理" class="headerlink" title="3.1 Session管理"></a>3.1 Session管理</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210026.png"></p>
+<p>点击上图中的session按键，会出现以下界面</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210158.png"></p>
+<p>可以看到session中可以新建SSH，Telnet，Rsh，RDP，FTP，SFTP，Shell等功能，需要用到这些功能的时候就点击进行进一步的设置即可。其中我们最常用的就是SSH啦。</p>
+<h2 id="3-2-SSH连接远程服务器"><a href="#3-2-SSH连接远程服务器" class="headerlink" title="3.2 SSH连接远程服务器"></a>3.2 SSH连接远程服务器</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210843.png"></p>
+<p>按照3.1中步骤，点击SSH可以看到如上图所示，其中需要填写的一般只有四个部分。</p>
+<ul>
+<li><code>Remote host</code>：填写服务器的IP地址</li>
+<li><code>specify username</code>：填写你在服务器中使用的用户的名称，这样连接服务器后就可以直接登录到你的账户</li>
+<li><code>Advanced SSH setting</code>：高级SSH设置，点击之后界面如下，填写Use private key，也就是服务器的密码<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807211553.png"></li>
+<li><code>Bookmark settings</code>，书签设置，也就是在侧边栏中，当我们需要连接的服务器较多时，我们可以给不同的服务器起别名区别，填写Session name为我们想要的名字。<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807211752.png"></li>
+</ul>
+<p>都设置完毕后点击ok就可以了，这样在主界面的侧边栏中就会出现我们想要连接的session，以后方便一键连接远程服务器</p>
+<h2 id="3-3-文本编辑器和文本对比"><a href="#3-3-文本编辑器和文本对比" class="headerlink" title="3.3 文本编辑器和文本对比"></a>3.3 文本编辑器和文本对比</h2><p>侧边栏tools-&gt;MobaTExtEditor和tools-&gt;MobaDiff</p>
+<p>打开tools-&gt;MobaTExtEditor，就会显示右侧红框中的界面，方便对本地或者远程的文档进行编辑</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212100.png"></p>
+<p>打开tools-&gt;MobaDiff，选择文件1和文件2，点击ok即可分析两个文档之间的区别。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212248.png"></p>
+<h2 id="3-4-录制操作脚本"><a href="#3-4-录制操作脚本" class="headerlink" title="3.4 录制操作脚本"></a>3.4 录制操作脚本</h2><p>点击侧边栏的macro的如下图的红色框，即可开始录制，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212442.png"></p>
+<p>点击录制后，会显示以下界面，点击停止就会提醒我们保存脚本，做一些重复性工作时，可以录制获得脚本然后以后就可以使用该脚本宏啦</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212547.png"></p>
+<h2 id="3-5-本地服务器"><a href="#3-5-本地服务器" class="headerlink" title="3.5 本地服务器"></a>3.5 本地服务器</h2><p>某些情况下，我们需要搭建自己本地的服务器，以方便通过http或ftp等协议传输本地文件或数据，MobaXterm就提供了实现该服务的功能，包括了HTTP、FTP、Telent等众多的协议。</p>
+<p>点击上方的servers按钮即可打开</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213112.png"></p>
+<p>然后选择需要共享的文件夹路径，点击HTTP的开始按钮之后输入访问 <a href="http://localhost/">http://localhost:80/</a>即可访问该文件夹</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213423.png"></p>
+<h2 id="3-6-小游戏"><a href="#3-6-小游戏" class="headerlink" title="3.6 小游戏"></a>3.6 小游戏</h2><p>上方按钮中有games选项，里面有一些经典的小游戏，适合上班摸鱼的时候使用</p>
+<h1 id="4-使用技巧"><a href="#4-使用技巧" class="headerlink" title="4 使用技巧"></a>4 使用技巧</h1><h2 id="4-1-多种终端同时管理"><a href="#4-1-多种终端同时管理" class="headerlink" title="4.1 多种终端同时管理"></a>4.1 多种终端同时管理</h2><p>MobaXterm也可以使用Git，当我们同时需要使用Git Bash和远程服务器的时候，坚持切换会很麻烦，这时可以在首页右键点击Git Bash就可以在MobaXterm中同时管理多种终端啦。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213746.png"></p>
+<h2 id="4-2-SSH-休眠管理"><a href="#4-2-SSH-休眠管理" class="headerlink" title="4.2 SSH 休眠管理"></a>4.2 SSH 休眠管理</h2><p>默认设置5分钟连接的SSH会自动休眠，如果想要长时间不休眠可以在Settings-&gt;SSH-&gt;SSH keepalive修改，勾上该选项即可，如下图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807214018.png"></p>
+<p><strong>持续更新中…</strong></p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>MobaXterm</tag>
+        <tag>shell</tag>
+        <tag>SSH</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>超好用网站汇总</title>
+    <url>/2023/08/09/20230809_PerfectWebsiteSummary/</url>
+    <content><![CDATA[<p>总结分享自己常用的一些好用网站</p>
+<span id="more"></span>
+
+<h1 id="1-比价网站"><a href="#1-比价网站" class="headerlink" title="1 比价网站"></a>1 比价网站</h1><p><a href="https://tool.manmanbuy.com/">比价网站</a></p>
+<p>这个网站可以查询过去24个月的价格波动，在网购之前都可以复制链接进来进行比价后再决定是否购买，减少背刺的概率。</p>
+<h1 id="2-mp3免费音乐资源网站"><a href="#2-mp3免费音乐资源网站" class="headerlink" title="2 mp3免费音乐资源网站"></a>2 mp3免费音乐资源网站</h1><p><a href="https://tools.liumingye.cn/music/">MyFreeMP3</a></p>
+<p>一个免费的下载高质量的mp3格式歌曲的网站，一些常见的比较热门的歌曲都有，不过新歌可能上传比较慢。</p>
+<p><a href="https://tonzhon.com/">铜钟</a></p>
+<p>也一个免费的下载高质量的mp3格式歌曲的网站，博主一般交叉使用。</p>
+<h1 id="3-图片压缩和转换分辨率网站"><a href="#3-图片压缩和转换分辨率网站" class="headerlink" title="3 图片压缩和转换分辨率网站"></a>3 图片压缩和转换分辨率网站</h1><p><a href="https://www.onlineimagetool.com/zh/resize-png-jpg-webp-gif">图片压缩和转换分辨率网站</a></p>
+<p>可以免费在线批量压缩图片，调整图片的分辨率，在需要上传一些证件照时十分有用。</p>
+<h1 id="4-学习代码算法结构网站"><a href="#4-学习代码算法结构网站" class="headerlink" title="4 学习代码算法结构网站"></a>4 学习代码算法结构网站</h1><p><a href="https://programmercarl.com/">代码随想录</a></p>
+<p>学习代码算法，主要是C++，总结的不错。</p>
+<h1 id="5-电子书网站"><a href="#5-电子书网站" class="headerlink" title="5 电子书网站"></a>5 电子书网站</h1><p><a href="http://jiumodiary.com/">鸠摩搜书</a></p>
+<p>相对资源还算比较多，自己也经常在上面搜索一些txt，pdf，当然主要是epub格式的书籍。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>分享博客</category>
+      </categories>
+      <tags>
+        <tag>实用工具</tag>
+        <tag>网站</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>steam一键切换用户的脚本</title>
     <url>/2023/08/08/20230808_steamUserChangebat/</url>
     <content><![CDATA[<p>由于博主经常用很多不同的号玩CSGO，每一次都需要输入账号密码，并且等待令牌，十分麻烦，遂找到了一个脚本切换steam登录信息，其实steam++也可以实现这个功能，但是毕竟很多时候是借其他人的号，有泄露密码风险的还是不好。</p>
@@ -707,211 +735,6 @@
       <tags>
         <tag>steam</tag>
         <tag>bat脚本</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>超好用网站汇总</title>
-    <url>/2023/08/09/20230809_PerfectWebsiteSummary/</url>
-    <content><![CDATA[<p>总结分享自己常用的一些好用网站</p>
-<span id="more"></span>
-
-<h1 id="1-比价网站"><a href="#1-比价网站" class="headerlink" title="1 比价网站"></a>1 比价网站</h1><p><a href="https://tool.manmanbuy.com/">比价网站</a></p>
-<p>这个网站可以查询过去24个月的价格波动，在网购之前都可以复制链接进来进行比价后再决定是否购买，减少背刺的概率。</p>
-<h1 id="2-mp3免费音乐资源网站"><a href="#2-mp3免费音乐资源网站" class="headerlink" title="2 mp3免费音乐资源网站"></a>2 mp3免费音乐资源网站</h1><p><a href="https://tools.liumingye.cn/music/">MyFreeMP3</a></p>
-<p>一个免费的下载高质量的mp3格式歌曲的网站，一些常见的比较热门的歌曲都有，不过新歌可能上传比较慢。</p>
-<p><a href="https://tonzhon.com/">铜钟</a></p>
-<p>也一个免费的下载高质量的mp3格式歌曲的网站，博主一般交叉使用。</p>
-<h1 id="3-图片压缩和转换分辨率网站"><a href="#3-图片压缩和转换分辨率网站" class="headerlink" title="3 图片压缩和转换分辨率网站"></a>3 图片压缩和转换分辨率网站</h1><p><a href="https://www.onlineimagetool.com/zh/resize-png-jpg-webp-gif">图片压缩和转换分辨率网站</a></p>
-<p>可以免费在线批量压缩图片，调整图片的分辨率，在需要上传一些证件照时十分有用。</p>
-<h1 id="4-学习代码算法结构网站"><a href="#4-学习代码算法结构网站" class="headerlink" title="4 学习代码算法结构网站"></a>4 学习代码算法结构网站</h1><p><a href="https://programmercarl.com/">代码随想录</a></p>
-<p>学习代码算法，主要是C++，总结的不错。</p>
-<h1 id="5-电子书网站"><a href="#5-电子书网站" class="headerlink" title="5 电子书网站"></a>5 电子书网站</h1><p><a href="http://jiumodiary.com/">鸠摩搜书</a></p>
-<p>相对资源还算比较多，自己也经常在上面搜索一些txt，pdf，当然主要是epub格式的书籍。</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>分享博客</category>
-      </categories>
-      <tags>
-        <tag>实用工具</tag>
-        <tag>网站</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C++学习路线</title>
-    <url>/2023/08/22/20230819_C++LearningRoute/</url>
-    <content><![CDATA[<p>记录一下打工牛马人的C++的学习路线。</p>
-<p>主要部分有C++基础，C++算法，计算机网络，MySQL数据库，Redis，软件设计模式，操作系统、Linux操作、网络编程，C++经典项目(webserver)，如果有时间还可以多参与几个练手的小项目。</p>
-<span id="more"></span>
-
-<h1 id="C-基础"><a href="#C-基础" class="headerlink" title="C++基础"></a>C++基础</h1><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1et411b73Z/">黑马程序员C++基础</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17560955.html">C++基础笔记</a></p>
-<p>主要是三部分内容</p>
-<ul>
-<li>C++语法入门：变量与常量、数据类型、运算符、程序流程结构、数组、函数、指针、结构体</li>
-<li>类和对象：封装、继承、多态</li>
-<li>模板与STL</li>
-</ul>
-<h1 id="C-算法"><a href="#C-算法" class="headerlink" title="C++算法"></a>C++算法</h1><p>主要在代码随想录上刷题和学习：<a href="https://programmercarl.com/%E5%89%8D%E5%BA%8F/%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC.html#%E9%A2%98%E5%A4%96%E8%AF%9D">代码随想录</a></p>
-<p>有时间可以刷两道三遍，不然理解可能不到位</p>
-<p>主要包含：</p>
-<table>
-<thead>
-<tr>
-<th align="center">内容</th>
-<th align="center">难度</th>
-<th align="center">内容</th>
-<th align="center">面试&#x2F;笔试较多</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">数组</td>
-<td align="center">简单</td>
-<td align="center">数组相关</td>
-<td align="center">面试多</td>
-</tr>
-<tr>
-<td align="center">链表</td>
-<td align="center">简单</td>
-<td align="center">链表概念、设计、删除等</td>
-<td align="center">面试多</td>
-</tr>
-<tr>
-<td align="center">哈希表</td>
-<td align="center">简单</td>
-<td align="center">快速判断一个元素是否出现集合里</td>
-<td align="center">一般</td>
-</tr>
-<tr>
-<td align="center">字符串</td>
-<td align="center">简单</td>
-<td align="center">针对字符，使用双指针很多</td>
-<td align="center">一般</td>
-</tr>
-<tr>
-<td align="center">双指针法</td>
-<td align="center">简单</td>
-<td align="center">数组，链表，字符串中使用较多</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">栈与队列</td>
-<td align="center">简单</td>
-<td align="center">面试提问较多</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">二叉树</td>
-<td align="center">中等</td>
-<td align="center">二叉树，搜索树，遍历等</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">回溯算法</td>
-<td align="center">中等</td>
-<td align="center">暴力算法，组合</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">贪心算法</td>
-<td align="center">困难</td>
-<td align="center">局部最优推广到全局</td>
-<td align="center">笔试</td>
-</tr>
-<tr>
-<td align="center">动态规划</td>
-<td align="center">困难</td>
-<td align="center">能够定义dp数据，当前状态由前两个状态决定</td>
-<td align="center">笔试</td>
-</tr>
-</tbody></table>
-<h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1c4411d7jb/">计算机网络(湖科大教书匠)</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17577514.html">计算机网络笔记</a></p>
-<p>此部分比较简单，并且在后序网络编程还会复习一部分，笔记只记录了一些相对重要的部分。</p>
-<h1 id="MySQL和Redis"><a href="#MySQL和Redis" class="headerlink" title="MySQL和Redis"></a>MySQL和Redis</h1><h2 id="MySQL：一般学习这个"><a href="#MySQL：一般学习这个" class="headerlink" title="MySQL：一般学习这个"></a>MySQL：一般学习这个</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1Kr4y1i7ru/">黑马程序员MySQL</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17648671.html">SQL基础增删改查</a></p>
-<h2 id="Redis：岗位有需要可以一周内突击学习"><a href="#Redis：岗位有需要可以一周内突击学习" class="headerlink" title="Redis：岗位有需要可以一周内突击学习"></a>Redis：岗位有需要可以一周内突击学习</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1cr4y1671t/">黑马程序员Redis</a><br><strong>我的笔记链接：</strong></p>
-<h1 id="软件设计模式"><a href="#软件设计模式" class="headerlink" title="软件设计模式"></a>软件设计模式</h1><p>有时间看视频，没时间直接搜索资料记住概念和常见的几种设计模式即可</p>
-<p><strong>视频链接：</strong> 讲的挺好，有时间可以仔细听，对程序编写有好处<br><a href="https://www.bilibili.com/video/BV1Yr4y157Ci/">C++设计模式入门</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17559583.html">一些常用软件设计模式</a></p>
-<p>一般了解策略模式、工厂模式、单例模式(最简单)、观察者模式、适配这模式即可了</p>
-<h1 id="C-项目"><a href="#C-项目" class="headerlink" title="C++项目"></a>C++项目</h1><p><a href="https://www.nowcoder.com/study/live/504">牛客网C++项目</a></p>
-<p>这个项目就包含了基础的Linux系统编程、Linux多进程开发、Linux多线程开发、网络编程和实战。所以如果时间不够可以就看着一个项目就好了。包含了<strong>Linux基础</strong>、<strong>操作系统</strong>、<strong>网络编程</strong>和<strong>websever</strong>项目，差的知识后序查漏补缺就好了。</p>
-<p>笔记链接如下：</p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17547122.html">第1章 Linux系统编程入门</a></p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17586114.html">第2章 Linux多进程开发</a></p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17601631.html">第3章 Linux多线程开发</a></p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17609639.html">第4章 Linux网络编程</a></p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17629592.html">第5章 项目实战与总结</a></p>
-<p><a href="https://mobbu.space/2023/08/15/20230815_C++%E9%AB%98%E5%B9%B6%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8/#more">webserver项目解析与总结</a></p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>分享博客</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git教程和分布式管理代码</title>
-    <url>/2023/08/21/20230821_GitAbout/</url>
-    <content><![CDATA[<p>当我们写了一定量的代码之后，就会遇到如何管理代码的问题。目前管理代码主要有两种管理工具分别是</p>
-<ul>
-<li>Git：分布式管理</li>
-<li>SVN：集中式管理</li>
-</ul>
-<p>那么分布式管理有哪些好处呢？我目前感受到的优点如下：</p>
-<ul>
-<li>管理代码成本低</li>
-<li>分支branch机制让主干代码很简洁移动</li>
-<li>可以回滚和查看之前commit的任意版本，这个在实际中十分有用</li>
-<li>分支机制让多人协同修改代码更加方便</li>
-<li>可以在不同电脑上轻松同步项目代码</li>
-</ul>
-<p>下面主要介绍Git的一些基本用法。</p>
-<span id="more"></span>
-
-<p>首先贴上官方资料<a href="https://git-scm.com/book/zh/v2/">Pro Git(2nd Edition)</a></p>
-<h1 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1 基本概念"></a>1 基本概念</h1><h2 id="1-1-三种状态"><a href="#1-1-三种状态" class="headerlink" title="1.1 三种状态"></a>1.1 三种状态</h2><ul>
-<li>已提交（committed）：已提交表示数据已经安全地保存在本地数据库中。</li>
-<li>已修改（modified）：已修改表示修改了文件，但还没保存到数据库中。</li>
-<li>已暂存（staged）：已暂存表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。</li>
-</ul>
-<h2 id="1-2-工作流程"><a href="#1-2-工作流程" class="headerlink" title="1.2 工作流程"></a>1.2 工作流程</h2><ul>
-<li><p>在工作区中修改文件。</p>
-</li>
-<li><p>将你想要下次提交的更改选择性地暂存，这样只会将更改的部分添加到暂存区。</p>
-</li>
-<li><p>提交更新，找到暂存区的文件，将快照永久性存储到 Git 目录。</p>
-</li>
-</ul>
-<p>如果 Git 目录中保存着特定版本的文件，就属于 已提交 状态。 如果文件已修改并放入暂存区，就属于 已暂存 状态。 如果自上次检出后，作了修改但还没有放到暂存区域，就是 已修改 状态。 在 Git 基础 一章，你会进一步了解这些状态的细节， 并学会如何根据文件状态实施后续操作，以及怎样跳过暂存直接提交。</p>
-<h1 id="2-基本操作"><a href="#2-基本操作" class="headerlink" title="2 基本操作"></a>2 基本操作</h1><p>一个基本操作流程如下：<br>首先你有一个github的库，公有私有都可以。</p>
-<ol>
-<li>github上的库clone到本地</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@github.com:xxx.git</span><br></pre></td></tr></table></figure>
-
-<p>在github上建库之后，输入代码git clone到本地仓库</p>
-<ol start="2">
-<li><p><code>git init</code>初始化生成.git文件夹</p>
-</li>
-<li><p>本地进行修改后，<code>git add .</code>将所有修改添加到缓存区，此时处于已修改的状态</p>
-</li>
-<li><p><code>git commit -am &quot;修改的提示信息&quot;</code>将修改的信息提交到本地仓库</p>
-</li>
-<li><p><code>git push</code>将修改的信息push到云端也就是github的仓库中</p>
-</li>
-</ol>
-<p>一些常用Git命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git log		        //查看提交日志</span><br><span class="line">git add		        //提交到缓存区</span><br><span class="line">git reset 	        //撤销缓存区</span><br><span class="line">git commit 	        //提交代码到本地仓库</span><br><span class="line">git push			//提交代码到远程仓库</span><br><span class="line">git pull			//拷贝远程仓库的代码</span><br><span class="line">git checkout		//回退文件修改或者切换分支</span><br><span class="line">git stash			//暂存本地修改</span><br><span class="line">git stash pop		//释放第一个暂存区代码</span><br><span class="line">git diff			//查看本地具体修改，通常用于生成补丁</span><br><span class="line">git format-patch	//将本地提交生成补丁</span><br><span class="line">git revert			//回滚一个提交</span><br><span class="line">git cherry-pick		//下载远程仓库的某个提交</span><br><span class="line">git show			//查看具体修改</span><br><span class="line">git status			//查看所有修改文件</span><br></pre></td></tr></table></figure>
-
-
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>Github</tag>
-        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -1160,38 +983,180 @@
       </tags>
   </entry>
   <entry>
-    <title>vscode配置C++环境</title>
-    <url>/2023/08/22/20230822_VscodeDeployC++/</url>
-    <content><![CDATA[<p>因为目前还是一些简单的项目或者笔试题，所以想要实现vscode大一统的最后一步，在vscode上配置C++环境。</p>
+    <title>C++学习路线</title>
+    <url>/2023/08/22/20230819_C++LearningRoute/</url>
+    <content><![CDATA[<p>记录一下打工牛马人的C++的学习路线。</p>
+<p>主要部分有C++基础，C++算法，计算机网络，MySQL数据库，Redis，软件设计模式，操作系统、Linux操作、网络编程，C++经典项目(webserver)，如果有时间还可以多参与几个练手的小项目。</p>
 <span id="more"></span>
 
-<h1 id="1-下载GCC编译器"><a href="#1-下载GCC编译器" class="headerlink" title="1 下载GCC编译器"></a>1 下载GCC编译器</h1><p>官方github地址为<a href="https://github.com/niXman/mingw-builds-binaries/releases">mingw-builds-binaries</a>，在其中选择对应系统的版本进行下载即可，比如windows64位，就下载下图对应版本。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822163656.png"></p>
-<p>解压到一个没有中文和空格的路径中，将安装的bin文件夹路径添加到系统变量</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822164757.png"></p>
-<p>完成后，打开cmd，输入<code>gcc -v</code>验证是否成功</p>
-<h1 id="2-安装VSCODE的C-C-扩展"><a href="#2-安装VSCODE的C-C-扩展" class="headerlink" title="2 安装VSCODE的C&#x2F;C++扩展"></a>2 安装VSCODE的C&#x2F;C++扩展</h1><p>直接在扩展中间安装C&#x2F;C++扩展即可</p>
-<p>此时创建我们所要使用的文件夹，此时我出现一个问题，在D盘中创建文件夹无法检测到我安装的编译器，但是我在C盘中创建文件夹就没有这个问题，所幸消耗空间不多，勉强在C盘创建时用了。</p>
-<p>创建文件test.cpp</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">//include如果出错，说明是编译器问题，去C盘创建则没有问题</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;success&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="C-基础"><a href="#C-基础" class="headerlink" title="C++基础"></a>C++基础</h1><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1et411b73Z/">黑马程序员C++基础</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17560955.html">C++基础笔记</a></p>
+<p>主要是三部分内容</p>
+<ul>
+<li>C++语法入门：变量与常量、数据类型、运算符、程序流程结构、数组、函数、指针、结构体</li>
+<li>类和对象：封装、继承、多态</li>
+<li>模板与STL</li>
+</ul>
+<h1 id="C-算法"><a href="#C-算法" class="headerlink" title="C++算法"></a>C++算法</h1><p>主要在代码随想录上刷题和学习：<a href="https://programmercarl.com/%E5%89%8D%E5%BA%8F/%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC.html#%E9%A2%98%E5%A4%96%E8%AF%9D">代码随想录</a></p>
+<p>有时间可以刷两道三遍，不然理解可能不到位</p>
+<p>主要包含：</p>
+<table>
+<thead>
+<tr>
+<th align="center">内容</th>
+<th align="center">难度</th>
+<th align="center">内容</th>
+<th align="center">面试&#x2F;笔试较多</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">数组</td>
+<td align="center">简单</td>
+<td align="center">数组相关</td>
+<td align="center">面试多</td>
+</tr>
+<tr>
+<td align="center">链表</td>
+<td align="center">简单</td>
+<td align="center">链表概念、设计、删除等</td>
+<td align="center">面试多</td>
+</tr>
+<tr>
+<td align="center">哈希表</td>
+<td align="center">简单</td>
+<td align="center">快速判断一个元素是否出现集合里</td>
+<td align="center">一般</td>
+</tr>
+<tr>
+<td align="center">字符串</td>
+<td align="center">简单</td>
+<td align="center">针对字符，使用双指针很多</td>
+<td align="center">一般</td>
+</tr>
+<tr>
+<td align="center">双指针法</td>
+<td align="center">简单</td>
+<td align="center">数组，链表，字符串中使用较多</td>
+<td align="center">笔试&#x2F;面试</td>
+</tr>
+<tr>
+<td align="center">栈与队列</td>
+<td align="center">简单</td>
+<td align="center">面试提问较多</td>
+<td align="center">笔试&#x2F;面试</td>
+</tr>
+<tr>
+<td align="center">二叉树</td>
+<td align="center">中等</td>
+<td align="center">二叉树，搜索树，遍历等</td>
+<td align="center">笔试&#x2F;面试</td>
+</tr>
+<tr>
+<td align="center">回溯算法</td>
+<td align="center">中等</td>
+<td align="center">暴力算法，组合</td>
+<td align="center">笔试&#x2F;面试</td>
+</tr>
+<tr>
+<td align="center">贪心算法</td>
+<td align="center">困难</td>
+<td align="center">局部最优推广到全局</td>
+<td align="center">笔试</td>
+</tr>
+<tr>
+<td align="center">动态规划</td>
+<td align="center">困难</td>
+<td align="center">能够定义dp数据，当前状态由前两个状态决定</td>
+<td align="center">笔试</td>
+</tr>
+</tbody></table>
+<h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1c4411d7jb/">计算机网络(湖科大教书匠)</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17577514.html">计算机网络笔记</a></p>
+<p>此部分比较简单，并且在后序网络编程还会复习一部分，笔记只记录了一些相对重要的部分。</p>
+<h1 id="MySQL和Redis"><a href="#MySQL和Redis" class="headerlink" title="MySQL和Redis"></a>MySQL和Redis</h1><h2 id="MySQL：一般学习这个"><a href="#MySQL：一般学习这个" class="headerlink" title="MySQL：一般学习这个"></a>MySQL：一般学习这个</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1Kr4y1i7ru/">黑马程序员MySQL</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17648671.html">SQL基础增删改查</a></p>
+<h2 id="Redis：岗位有需要可以一周内突击学习"><a href="#Redis：岗位有需要可以一周内突击学习" class="headerlink" title="Redis：岗位有需要可以一周内突击学习"></a>Redis：岗位有需要可以一周内突击学习</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1cr4y1671t/">黑马程序员Redis</a><br><strong>我的笔记链接：</strong></p>
+<h1 id="软件设计模式"><a href="#软件设计模式" class="headerlink" title="软件设计模式"></a>软件设计模式</h1><p>有时间看视频，没时间直接搜索资料记住概念和常见的几种设计模式即可</p>
+<p><strong>视频链接：</strong> 讲的挺好，有时间可以仔细听，对程序编写有好处<br><a href="https://www.bilibili.com/video/BV1Yr4y157Ci/">C++设计模式入门</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17559583.html">一些常用软件设计模式</a></p>
+<p>一般了解策略模式、工厂模式、单例模式(最简单)、观察者模式、适配这模式即可了</p>
+<h1 id="C-项目"><a href="#C-项目" class="headerlink" title="C++项目"></a>C++项目</h1><p><a href="https://www.nowcoder.com/study/live/504">牛客网C++项目</a></p>
+<p>这个项目就包含了基础的Linux系统编程、Linux多进程开发、Linux多线程开发、网络编程和实战。所以如果时间不够可以就看着一个项目就好了。包含了<strong>Linux基础</strong>、<strong>操作系统</strong>、<strong>网络编程</strong>和<strong>websever</strong>项目，差的知识后序查漏补缺就好了。</p>
+<p>笔记链接如下：</p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17547122.html">第1章 Linux系统编程入门</a></p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17586114.html">第2章 Linux多进程开发</a></p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17601631.html">第3章 Linux多线程开发</a></p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17609639.html">第4章 Linux网络编程</a></p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17629592.html">第5章 项目实战与总结</a></p>
+<p><a href="https://mobbu.space/2023/08/15/20230815_C++%E9%AB%98%E5%B9%B6%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8/#more">webserver项目解析与总结</a></p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>分享博客</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git教程和分布式管理代码</title>
+    <url>/2023/08/21/20230821_GitAbout/</url>
+    <content><![CDATA[<p>当我们写了一定量的代码之后，就会遇到如何管理代码的问题。目前管理代码主要有两种管理工具分别是</p>
+<ul>
+<li>Git：分布式管理</li>
+<li>SVN：集中式管理</li>
+</ul>
+<p>那么分布式管理有哪些好处呢？我目前感受到的优点如下：</p>
+<ul>
+<li>管理代码成本低</li>
+<li>分支branch机制让主干代码很简洁移动</li>
+<li>可以回滚和查看之前commit的任意版本，这个在实际中十分有用</li>
+<li>分支机制让多人协同修改代码更加方便</li>
+<li>可以在不同电脑上轻松同步项目代码</li>
+</ul>
+<p>下面主要介绍Git的一些基本用法。</p>
+<span id="more"></span>
 
-<p>测试是否运行成功</p>
-<h1 id="3-使用VSCODE进行运行和调试"><a href="#3-使用VSCODE进行运行和调试" class="headerlink" title="3 使用VSCODE进行运行和调试"></a>3 使用VSCODE进行运行和调试</h1><h2 id="3-1-运行"><a href="#3-1-运行" class="headerlink" title="3.1 运行"></a>3.1 运行</h2><p>编写一个排序的cpp，如果想直接运行，那么直接打开终端先c++编译一下，运行即可，比如我的文件是SortAlgrithm.cpp，那么打开终端，输入<code>g++ SortAlgrithm.cpp -o SortAlgm.exe</code>，此时该目录下会出现该文件，输入<code>./SortAlgm.exe</code>，直接运行即可</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822185849.png"></p>
-<p>比如我这里就是将<code>&#123; 7,6,3,9,1,8,2,4,5 &#125;</code>进行排序输出。</p>
-<h2 id="3-2-调试"><a href="#3-2-调试" class="headerlink" title="3.2 调试"></a>3.2 调试</h2><p>比如继续调试上述的代码，如上图我在代码中设置断点，我们当然可以通过GDB直接在终端进行调试，但是这样显然比较麻烦，所以我们可以再VSCODE侧边栏打开调试，点击运行和调试按钮即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822190139.png"></p>
-<p>当我们打开之后就会出现以下调试界面</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822190313.png"></p>
-<p>这个界面相信大家都很眼熟了，跟VS的操作界面基本一致，进行代码的调试就好了。</p>
+<p>首先贴上官方资料<a href="https://git-scm.com/book/zh/v2/">Pro Git(2nd Edition)</a></p>
+<h1 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1 基本概念"></a>1 基本概念</h1><h2 id="1-1-三种状态"><a href="#1-1-三种状态" class="headerlink" title="1.1 三种状态"></a>1.1 三种状态</h2><ul>
+<li>已提交（committed）：已提交表示数据已经安全地保存在本地数据库中。</li>
+<li>已修改（modified）：已修改表示修改了文件，但还没保存到数据库中。</li>
+<li>已暂存（staged）：已暂存表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。</li>
+</ul>
+<h2 id="1-2-工作流程"><a href="#1-2-工作流程" class="headerlink" title="1.2 工作流程"></a>1.2 工作流程</h2><ul>
+<li><p>在工作区中修改文件。</p>
+</li>
+<li><p>将你想要下次提交的更改选择性地暂存，这样只会将更改的部分添加到暂存区。</p>
+</li>
+<li><p>提交更新，找到暂存区的文件，将快照永久性存储到 Git 目录。</p>
+</li>
+</ul>
+<p>如果 Git 目录中保存着特定版本的文件，就属于 已提交 状态。 如果文件已修改并放入暂存区，就属于 已暂存 状态。 如果自上次检出后，作了修改但还没有放到暂存区域，就是 已修改 状态。 在 Git 基础 一章，你会进一步了解这些状态的细节， 并学会如何根据文件状态实施后续操作，以及怎样跳过暂存直接提交。</p>
+<h1 id="2-基本操作"><a href="#2-基本操作" class="headerlink" title="2 基本操作"></a>2 基本操作</h1><p>一个基本操作流程如下：<br>首先你有一个github的库，公有私有都可以。</p>
+<ol>
+<li>github上的库clone到本地</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@github.com:xxx.git</span><br></pre></td></tr></table></figure>
+
+<p>在github上建库之后，输入代码git clone到本地仓库</p>
+<ol start="2">
+<li><p><code>git init</code>初始化生成.git文件夹</p>
+</li>
+<li><p>本地进行修改后，<code>git add .</code>将所有修改添加到缓存区，此时处于已修改的状态</p>
+</li>
+<li><p><code>git commit -am &quot;修改的提示信息&quot;</code>将修改的信息提交到本地仓库</p>
+</li>
+<li><p><code>git push</code>将修改的信息push到云端也就是github的仓库中</p>
+</li>
+</ol>
+<p>一些常用Git命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git log		        //查看提交日志</span><br><span class="line">git add		        //提交到缓存区</span><br><span class="line">git reset 	        //撤销缓存区</span><br><span class="line">git commit 	        //提交代码到本地仓库</span><br><span class="line">git push			//提交代码到远程仓库</span><br><span class="line">git pull			//拷贝远程仓库的代码</span><br><span class="line">git checkout		//回退文件修改或者切换分支</span><br><span class="line">git stash			//暂存本地修改</span><br><span class="line">git stash pop		//释放第一个暂存区代码</span><br><span class="line">git diff			//查看本地具体修改，通常用于生成补丁</span><br><span class="line">git format-patch	//将本地提交生成补丁</span><br><span class="line">git revert			//回滚一个提交</span><br><span class="line">git cherry-pick		//下载远程仓库的某个提交</span><br><span class="line">git show			//查看具体修改</span><br><span class="line">git status			//查看所有修改文件</span><br></pre></td></tr></table></figure>
+
+
 <p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
 ]]></content>
       <categories>
         <category>技术博客</category>
       </categories>
       <tags>
-        <tag>vscode</tag>
-        <tag>C/C++</tag>
+        <tag>Github</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -1393,6 +1358,41 @@
       </tags>
   </entry>
   <entry>
+    <title>vscode配置C++环境</title>
+    <url>/2023/08/22/20230822_VscodeDeployC++/</url>
+    <content><![CDATA[<p>因为目前还是一些简单的项目或者笔试题，所以想要实现vscode大一统的最后一步，在vscode上配置C++环境。</p>
+<span id="more"></span>
+
+<h1 id="1-下载GCC编译器"><a href="#1-下载GCC编译器" class="headerlink" title="1 下载GCC编译器"></a>1 下载GCC编译器</h1><p>官方github地址为<a href="https://github.com/niXman/mingw-builds-binaries/releases">mingw-builds-binaries</a>，在其中选择对应系统的版本进行下载即可，比如windows64位，就下载下图对应版本。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822163656.png"></p>
+<p>解压到一个没有中文和空格的路径中，将安装的bin文件夹路径添加到系统变量</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822164757.png"></p>
+<p>完成后，打开cmd，输入<code>gcc -v</code>验证是否成功</p>
+<h1 id="2-安装VSCODE的C-C-扩展"><a href="#2-安装VSCODE的C-C-扩展" class="headerlink" title="2 安装VSCODE的C&#x2F;C++扩展"></a>2 安装VSCODE的C&#x2F;C++扩展</h1><p>直接在扩展中间安装C&#x2F;C++扩展即可</p>
+<p>此时创建我们所要使用的文件夹，此时我出现一个问题，在D盘中创建文件夹无法检测到我安装的编译器，但是我在C盘中创建文件夹就没有这个问题，所幸消耗空间不多，勉强在C盘创建时用了。</p>
+<p>创建文件test.cpp</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">//include如果出错，说明是编译器问题，去C盘创建则没有问题</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;success&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试是否运行成功</p>
+<h1 id="3-使用VSCODE进行运行和调试"><a href="#3-使用VSCODE进行运行和调试" class="headerlink" title="3 使用VSCODE进行运行和调试"></a>3 使用VSCODE进行运行和调试</h1><h2 id="3-1-运行"><a href="#3-1-运行" class="headerlink" title="3.1 运行"></a>3.1 运行</h2><p>编写一个排序的cpp，如果想直接运行，那么直接打开终端先c++编译一下，运行即可，比如我的文件是SortAlgrithm.cpp，那么打开终端，输入<code>g++ SortAlgrithm.cpp -o SortAlgm.exe</code>，此时该目录下会出现该文件，输入<code>./SortAlgm.exe</code>，直接运行即可</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822185849.png"></p>
+<p>比如我这里就是将<code>&#123; 7,6,3,9,1,8,2,4,5 &#125;</code>进行排序输出。</p>
+<h2 id="3-2-调试"><a href="#3-2-调试" class="headerlink" title="3.2 调试"></a>3.2 调试</h2><p>比如继续调试上述的代码，如上图我在代码中设置断点，我们当然可以通过GDB直接在终端进行调试，但是这样显然比较麻烦，所以我们可以再VSCODE侧边栏打开调试，点击运行和调试按钮即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822190139.png"></p>
+<p>当我们打开之后就会出现以下调试界面</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822190313.png"></p>
+<p>这个界面相信大家都很眼熟了，跟VS的操作界面基本一致，进行代码的调试就好了。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>vscode</tag>
+        <tag>C/C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>teamspeak3的简单教程</title>
     <url>/2023/09/17/20230917_teamspeak3/</url>
     <content><![CDATA[<p>联机游戏中，有一个稳定、简洁、占用很小的语音开黑软件是一个很重要的事情。这里我就介绍一下一款使用体验很好的实时语音软件teamspeak，虽然这款有一定的门槛，但是瑕不掩瑜。</p>
@@ -1518,6 +1518,64 @@
         <tag>C++</tag>
         <tag>软件设计模式</tag>
         <tag>单例模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客网站分布管理</title>
+    <url>/2023/10/01/20231001_blogDistributeToMacOS/</url>
+    <content><![CDATA[<p>等到要换电脑的时候，发现我在本地管理github pages需要移植一下，博客记录一下移植过程，方便以后查阅，由于博主心血来潮换了mac，这时候需要在MacOS上继续进行配置了。</p>
+<span id="more"></span>
+<h1 id="安装各种环境"><a href="#安装各种环境" class="headerlink" title="安装各种环境"></a>安装各种环境</h1><h2 id="检查git"><a href="#检查git" class="headerlink" title="检查git"></a>检查git</h2><p>一般mac都会自带git，所以只需要输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+<p>检查一下版本即可</p>
+<h2 id="安装nvm"><a href="#安装nvm" class="headerlink" title="安装nvm"></a>安装nvm</h2><p>首先先安装nvm，也就是node.js的管理工具。在nvm的github官方仓库下载最新版本安装即可。</p>
+<p>安装完成后输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">commond -v nvm</span><br></pre></td></tr></table></figure>
+
+<p>出现nvm即安装成功</p>
+<h2 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h2><p>然后按照以下步骤进行安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nvm install stable  # 使用 nvm 安装最新稳定版 Node.js</span><br><span class="line">nvm use stable     # 使用刚刚安装的 Node.js 版本</span><br><span class="line"></span><br><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
+<p>安装的时候可能会遇到出现<strong>http fetch GET 200</strong>的问题，此时只需要多等待几分钟即可。</p>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>输入以下命令进行安装hexo</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>此时就可以将我们之前的博客文件夹迁移到mac当地，在文件夹中打开iTerm终端，输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>本地测试没有问题之后则本地环境调试成功。</p>
+<h1 id="连接到github"><a href="#连接到github" class="headerlink" title="连接到github"></a>连接到github</h1><h2 id="生成ssh密钥"><a href="#生成ssh密钥" class="headerlink" title="生成ssh密钥"></a>生成ssh密钥</h2><p>首先配置git账户，设置user.name和user.email，输入以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;account name&quot;     # 设置用户名</span><br><span class="line">git config --global user.email &quot;account email&quot;     # 设置邮箱地址</span><br></pre></td></tr></table></figure>
+
+<p>设置完毕之后，就可以生成SSH KEY了，输入以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C example@mail.com</span><br></pre></td></tr></table></figure>
+<p>这里输入你自己的邮箱即可<br>然后输入以下两条命令查看并复制你的密钥</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">vim id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<h2 id="github添加SSH-key"><a href="#github添加SSH-key" class="headerlink" title="github添加SSH key"></a>github添加SSH key</h2><p>制公钥id_rsa.pub中的内容添加到github，用户-&gt;settings-&gt;SSH and GPG keys 中的按键new SSH key，将id_rsa.pub中的内容复制进去即可</p>
+<p>添加完成后，在终端输入<code>ssh -T git@github.com</code>进行验证，此时会让你输入刚刚在生成ssh密钥时输入的密码，输入后回车会看到欢迎的语句，此时说明配对成功。</p>
+<h1 id="测试上传"><a href="#测试上传" class="headerlink" title="测试上传"></a>测试上传</h1><p>此时将本博客放入博文推送的文件中，hexo clean，hexo g hexo d三部曲后，验证是否上传成功即可。</p>
+<p>验证时，发现这台机器还没有git push上传过，此时需要重新申请tokens，在github账户中，配置token的流程如下：  </p>
+<p>打开github-&gt;settings-&gt;developer settings，选择tokens(classic)，新建tokens。  </p>
+<p>此时上传(hexo d)时会要求我们输入账户和密码，账户就是github的账户，而密码就是刚刚申请的token值，具体步骤可以查看我的建立博客的博文–<a href="https://mobbu.space/2023/08/09/20230803_blogWebsite/">建立个人博客网站详细教程</a></p>
+<p>此时就能上传验证成功了。</p>
+<h1 id="图床软件picgo移植"><a href="#图床软件picgo移植" class="headerlink" title="图床软件picgo移植"></a>图床软件picgo移植</h1><ol>
+<li>下载软件<br>在picgo的github开源地址下载2.3.1的稳定版，选择下载arm64.pmg格式。</li>
+</ol>
+<p>下载后打开会出现文件已损坏的问题，这是因为没有签名，此时打开终端输入以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo spctl --master-disable #此时要输入密码</span><br><span class="line">xattr -cr /Applications/PicGo.app</span><br></pre></td></tr></table></figure>
+<p>输入上述两条命令后就能顺利打开</p>
+<ol start="2">
+<li>软件配置</li>
+</ol>
+<p>此处按照博客教程中步骤来即可设置好仓库名，地址，主要是设置好github的token，设置好后进行测试，随便上传一张图片，比如下图，验证成功。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231004161235.png"></p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>博客网站</tag>
+        <tag>MacOS</tag>
       </tags>
   </entry>
   <entry>
@@ -1693,78 +1751,132 @@
       </tags>
   </entry>
   <entry>
-    <title>博客网站分布管理</title>
-    <url>/2023/10/01/20231001_blogDistributeToMacOS/</url>
-    <content><![CDATA[<p>等到要换电脑的时候，发现我在本地管理github pages需要移植一下，博客记录一下移植过程，方便以后查阅，由于博主心血来潮换了mac，这时候需要在MacOS上继续进行配置了。</p>
+    <title>学术PPT制作--beamer</title>
+    <url>/2023/10/04/20231004_Latex&amp;beamer/</url>
+    <content><![CDATA[<p>使用<strong>MAC+VSCODE+LATEX</strong></p>
+<p>最近有了频繁做学术汇报的需求，之前有了解到过beamer制作学术汇报PPT的优势，所以这里填一下坑，分享记录一下如何用beamer制作学术PPT以及使用latex和office制作PPT的优劣和使用场景对比分析。</p>
 <span id="more"></span>
-<h1 id="安装各种环境"><a href="#安装各种环境" class="headerlink" title="安装各种环境"></a>安装各种环境</h1><h2 id="检查git"><a href="#检查git" class="headerlink" title="检查git"></a>检查git</h2><p>一般mac都会自带git，所以只需要输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
-<p>检查一下版本即可</p>
-<h2 id="安装nvm"><a href="#安装nvm" class="headerlink" title="安装nvm"></a>安装nvm</h2><p>首先先安装nvm，也就是node.js的管理工具。在nvm的github官方仓库下载最新版本安装即可。</p>
-<p>安装完成后输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">commond -v nvm</span><br></pre></td></tr></table></figure>
 
-<p>出现nvm即安装成功</p>
-<h2 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h2><p>然后按照以下步骤进行安装</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nvm install stable  # 使用 nvm 安装最新稳定版 Node.js</span><br><span class="line">nvm use stable     # 使用刚刚安装的 Node.js 版本</span><br><span class="line"></span><br><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
-<p>安装的时候可能会遇到出现<strong>http fetch GET 200</strong>的问题，此时只需要多等待几分钟即可。</p>
-<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>输入以下命令进行安装hexo</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p>此时就可以将我们之前的博客文件夹迁移到mac当地，在文件夹中打开iTerm终端，输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>本地测试没有问题之后则本地环境调试成功。</p>
-<h1 id="连接到github"><a href="#连接到github" class="headerlink" title="连接到github"></a>连接到github</h1><h2 id="生成ssh密钥"><a href="#生成ssh密钥" class="headerlink" title="生成ssh密钥"></a>生成ssh密钥</h2><p>首先配置git账户，设置user.name和user.email，输入以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;account name&quot;     # 设置用户名</span><br><span class="line">git config --global user.email &quot;account email&quot;     # 设置邮箱地址</span><br></pre></td></tr></table></figure>
-
-<p>设置完毕之后，就可以生成SSH KEY了，输入以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C example@mail.com</span><br></pre></td></tr></table></figure>
-<p>这里输入你自己的邮箱即可<br>然后输入以下两条命令查看并复制你的密钥</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">vim id_rsa.pub</span><br></pre></td></tr></table></figure>
-
-<h2 id="github添加SSH-key"><a href="#github添加SSH-key" class="headerlink" title="github添加SSH key"></a>github添加SSH key</h2><p>制公钥id_rsa.pub中的内容添加到github，用户-&gt;settings-&gt;SSH and GPG keys 中的按键new SSH key，将id_rsa.pub中的内容复制进去即可</p>
-<p>添加完成后，在终端输入<code>ssh -T git@github.com</code>进行验证，此时会让你输入刚刚在生成ssh密钥时输入的密码，输入后回车会看到欢迎的语句，此时说明配对成功。</p>
-<h1 id="测试上传"><a href="#测试上传" class="headerlink" title="测试上传"></a>测试上传</h1><p>此时将本博客放入博文推送的文件中，hexo clean，hexo g hexo d三部曲后，验证是否上传成功即可。</p>
-<p>验证时，发现这台机器还没有git push上传过，此时需要重新申请tokens，在github账户中，配置token的流程如下：  </p>
-<p>打开github-&gt;settings-&gt;developer settings，选择tokens(classic)，新建tokens。  </p>
-<p>此时上传(hexo d)时会要求我们输入账户和密码，账户就是github的账户，而密码就是刚刚申请的token值，具体步骤可以查看我的建立博客的博文–<a href="https://mobbu.space/2023/08/09/20230803_blogWebsite/">建立个人博客网站详细教程</a></p>
-<p>此时就能上传验证成功了。</p>
-<h1 id="图床软件picgo移植"><a href="#图床软件picgo移植" class="headerlink" title="图床软件picgo移植"></a>图床软件picgo移植</h1><ol>
-<li>下载软件<br>在picgo的github开源地址下载2.3.1的稳定版，选择下载arm64.pmg格式。</li>
+<h1 id="配置latex环境"><a href="#配置latex环境" class="headerlink" title="配置latex环境"></a>配置latex环境</h1><ol>
+<li>安装MacTex<br>mac上直接官网下载即可 <a href="https://www.tug.org/mactex/mactex-download.html">MacTex</a></li>
 </ol>
-<p>下载后打开会出现文件已损坏的问题，这是因为没有签名，此时打开终端输入以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo spctl --master-disable #此时要输入密码</span><br><span class="line">xattr -cr /Applications/PicGo.app</span><br></pre></td></tr></table></figure>
-<p>输入上述两条命令后就能顺利打开</p>
+<p>windows的操作也类似，在官方下载TeXlive即可。</p>
 <ol start="2">
-<li>软件配置</li>
+<li><p>配置vscode<br>然后我们还需要在vscode上进行配置相关的插件，这一步也非常简单，在vscode扩展中搜索LaTex Workshop，安装完成后vscode左侧出现TeX标志代表安装成功。</p>
+</li>
+<li><p>配置系统path<br>此时我们还需要将texlive到路径添加到系统路径中，打开iTerm，输入以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /etc</span><br><span class="line">sudo vi paths  #输入开机密码</span><br></pre></td></tr></table></figure>
+<p>然后在末尾加入我们安装的路径，一般为<code>/usr/local/texlive</code>，也可以终端打开测试看看是否是这个路径，注意的是保存后需要重启电脑才会使路径生效。</p>
+</li>
+<li><p>测试latex<br>新建test.tex文件，其中输入</p>
+</li>
 </ol>
-<p>此处按照博客教程中步骤来即可设置好仓库名，地址，主要是设置好github的token，设置好后进行测试，随便上传一张图片，比如下图，验证成功。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231004161235.png"></p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">Hello World<span class="keyword">\LaTeX</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后点击右上角的执行，进行测试，成功则latex环境配置完成。</p>
+<h1 id="选择beamer模版"><a href="#选择beamer模版" class="headerlink" title="选择beamer模版"></a>选择beamer模版</h1><p>使用经典的清华大学Beamer模版，我找到了UESTC的修改版本，github上搜索UESTC_beamer即可找到大致的效果图如下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310042002619.png"></p>
+<p>具体的latex写法后续进行更新解析。</p>
+<h1 id="latex与office对比"><a href="#latex与office对比" class="headerlink" title="latex与office对比"></a>latex与office对比</h1><ul>
+<li><p>latex&amp;beamer制作PPT适用场景：复用性高，比较严肃的汇报，没有很多动画，分享干货，学术汇报的场景，不适用于快速记录</p>
+</li>
+<li><p>office适用场景：复用性不高、比较轻松的交流和快速的灵感想法记录和交流的场景</p>
+</li>
+</ul>
 <p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
 ]]></content>
       <categories>
         <category>技术博客</category>
       </categories>
       <tags>
-        <tag>博客网站</tag>
+        <tag>vscode</tag>
         <tag>MacOS</tag>
+        <tag>办公技能</tag>
+        <tag>beamer</tag>
+        <tag>latex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>实现windows和mac间远程桌面</title>
+    <url>/2023/10/04/20231004_Windows2MacRemoteConn/</url>
+    <content><![CDATA[<p>实现Windows和mac之间的丝滑远程桌面，主要使用的是cpolar，虽然不是免费的，但是使用的体验还是不错，价格也不算很高，每月12元有带宽还不错的固定公网IP的远程连接。</p>
+<span id="more"></span>
+
+<h1 id="1-下载cpolar"><a href="#1-下载cpolar" class="headerlink" title="1 下载cpolar"></a>1 下载cpolar</h1><p>首先登陆官网<a href="https://www.cpolar.com/">cpolar.com</a>，首先进行注册登陆。</p>
+<p>点击下载选择MacOSX下载，官方就有教程，<a href="https://www.cpolar.com/docs">教程地址</a></p>
+<p>1.安装homebrew，选择清华大学源</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/bin/zsh -c &quot;$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>安装cploar</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew tap probezy/core &amp;&amp; brew install cpolar</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>token认证<br>登录cpolar官网，点击左侧的验证，查看自己的认证token，之后将token贴在命令行里</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cpolar authtoken xxxxxxx</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310041701035.png"></p>
+</li>
+<li><p>安装服务并启动服务</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo cpolar service install #输入登陆密码</span><br><span class="line">sudo cpolar service start</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>在浏览器上访问本地9200端口【127.0.0.1:9200】，使用cpolar邮箱账号登录cpolar web UI管理界面，即可开始使用cpolar。</li>
+</ol>
+<h1 id="2-配置SSH固定公网IP地址"><a href="#2-配置SSH固定公网IP地址" class="headerlink" title="2 配置SSH固定公网IP地址"></a>2 配置SSH固定公网IP地址</h1><p>预留公网预留IP，这里就需要升级为Pro了，如果不升级Pro就没有固定公网IP，免费版就是每周会更改IP，并且带宽相对较低</p>
+<ol>
+<li>首先进入官网，登陆后选择预留-&gt;保留的TCP地址</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310041705040.png"></p>
+<ol start="2">
+<li>点击保留，即可自动生成一个预留好的固定公网IP地址</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231004170737.png"></p>
+<ol start="3">
+<li><p>按照之前的步骤进行后，打开<code>127.0.0.1:9200</code>，打开隧道列表，此时应该自动生成两个隧道，包括ssh和website<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310041710064.png"></p>
+</li>
+<li><p>我们需要创建一个新的tcp隧道，指向5900端口<br>点左边隧道管理-&gt;创建隧道</p>
+<ul>
+<li>隧道名称：可自定义，注意不要与已有隧道名称重复</li>
+<li>协议：tcp协议</li>
+<li>本地地址：5900（vnc默认端口号）</li>
+<li>端口类型：固定端口</li>
+<li>TCP地址：填写第2步中申请的地址</li>
+</ul>
+</li>
+<li><p>此时我们还需要打开mac mini 的远程连接的开关，打开设置-&gt;通用-&gt;共享，打开桌面共享，并且点击电脑设置，设置VNC密码。</p>
+</li>
+<li><p>windows电脑下载安装VNC后，输入刚刚申请的公网IP登录（注意不要输入TCP:&#x2F;&#x2F;）即可。</p>
+</li>
+</ol>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>远程桌面</tag>
+        <tag>跨平台</tag>
       </tags>
   </entry>
   <entry>
     <title>多模态视频片段定位论文阅读</title>
-    <url>/2023/10/07/20231003_paperRead/</url>
+    <url>/2023/10/07/20231007_paperRead/</url>
     <content><![CDATA[<p>最近在研究多模态视频片段定位方向，在此博客记录一下论文的阅读和我在阅读中的一些个人的理解和想法，之前已经阅读了大部分了，只是因为秋招的原因耽搁了很久，近两年的论文也拉下了。</p>
 <p>参考了<a href="https://github.com/yawenzeng/Awesome-Cross-Modal-Video-Moment-Retrieval">Awesome-Cross-Modal-Video-Moment-Retrieval</a>整理的论文，后续会添加自己觉得有用的论文。</p>
 <p>主要按照年份进行阅读，其中每个年份还会进行分类阅读。中间有详细阅读的论文会添加自己的理解和解析。</p>
 <p>持续更新～</p>
 <span id="more"></span>
 
-<h1 id="2017-2"><a href="#2017-2" class="headerlink" title="2017:2"></a>2017:2</h1><p><a href="https://www.cnblogs.com/mobbu/p/17746499.html">1[ICCV 2017] [CTRL] TALL Temporal Activity Localization via Language Query</a></p>
+<h1 id="2017-2"><a href="#2017-2" class="headerlink" title="2017:2"></a>2017:2</h1><p><a href="https://www.cnblogs.com/mobbu/p/17746499.html">1[ICCV 2017] [CTRL] TALL Temporal Activity Localization via Language Query</a>⭕<br>2[ICCV 2017] [MCN] Localizing Moments in Video with Natural Language⭕</p>
+<p>1[ICCV 2017] [CTRL] TALL Temporal Activity Localization via Language Query</p>
 <ul>
 <li>动机：开山之作，点出该问题需要解决的两大困难1作为跨模态任务，如何得到适当的文本和视频表示特征，以允许跨模态匹配操作和完成语言查询。2理论上可以生成无限粒度的视频片段，然后逐一比较。但时间消耗过大，那么如何能够从有限粒度的滑动窗口做到准确的具体帧定位。</li>
 <li>方法：特征抽取–使用全局的sentence2vec和C3D。模态交互–加+乘+拼+FC。多任务：对齐分数+回归。</li>
 </ul>
-<p><a href="">2[ICCV 2017] [MCN] Localizing Moments in Video with Natural Language</a></p>
+<p>2[ICCV 2017] [MCN] Localizing Moments in Video with Natural Language</p>
 <ul>
 <li>方法：特征抽取–使用全局的LSTM和VGG。模态交互–无。多任务：模态间的均方差（而不是预测对齐分数），同时使用RGB和 optical flow光流。</li>
 </ul>
@@ -1774,11 +1886,30 @@
 <p>6[EMNLP 2018] Temporally Grounding Natural Sentence in Video</p>
 <p>7[IJCAI 2018] Multi-modal Circulant Fusion for Video-to-Language and Backward</p>
 <p>[MM 2018] Cross-modal Moment Localization in Videos</p>
-<p>动机：强调时间语态问题，即句子中的“先”“前”往往被忽视，需要更细致的理解。<br>方法：尝试结合上下文，用文本给视频加attention。<br>[SIGIR 2018] Attentive Moment Retrieval in Videos</p>
-<p>方法：尝试结合上下文，用视频给文本加attention。以上两篇的特征处理由于要加attention就开始局部化。<br>[EMNLP 2018] Localizing Moments in Video with Temporal Language</p>
-<p>动机：时序上下文是很重要的，不然无法理解句子中一些词之间的关系。<br>方法：延续MCN的思路走算匹配度无模态交互，且同时使用RGB和 optical flow光流。特征抽取–LSTM，视频表示上同时融合了多种上下文。<br>[EMNLP 2018] Temporally Grounding Natural Sentence in Video</p>
-<p>动机：捕捉视频和句子之间不断发展的细粒度的交互。<br>方法：从每帧&#x2F;逐词。使用两组lstm处理每个时刻文本和视频的交互。<br>[IJCAI 2018] Multi-modal Circulant Fusion for Video-to-Language and Backward</p>
-<p>动机：增强视觉和文本表达的融合<br>方法：同时使用vector和matrix的融合方式，其中circulant matrix的操作方式是每一行平移一个元素以探索不同模态向量的所有可能交互。<br>#年度关键词：上下文。</p>
+<ul>
+<li>动机：强调时间语态问题，即句子中的“先”“前”往往被忽视，需要更细致的理解。</li>
+<li>方法：尝试结合上下文，用文本给视频加attention。</li>
+</ul>
+<p>[SIGIR 2018] Attentive Moment Retrieval in Videos</p>
+<ul>
+<li>方法：尝试结合上下文，用视频给文本加attention。以上两篇的特征处理由于要加attention就开始局部化。</li>
+</ul>
+<p>[EMNLP 2018] Localizing Moments in Video with Temporal Language</p>
+<ul>
+<li>动机：时序上下文是很重要的，不然无法理解句子中一些词之间的关系。</li>
+<li>方法：延续MCN的思路走算匹配度无模态交互，且同时使用RGB和 optical flow光流。特征抽取–LSTM，视频表示上同时融合了多种上下文。</li>
+</ul>
+<p>[EMNLP 2018] Temporally Grounding Natural Sentence in Video</p>
+<ul>
+<li>动机：捕捉视频和句子之间不断发展的细粒度的交互。</li>
+<li>方法：从每帧&#x2F;逐词。使用两组lstm处理每个时刻文本和视频的交互。</li>
+</ul>
+<p>[IJCAI 2018] Multi-modal Circulant Fusion for Video-to-Language and Backward</p>
+<ul>
+<li>动机：增强视觉和文本表达的融合</li>
+<li>方法：同时使用vector和matrix的融合方式，其中circulant matrix的操作方式是每一行平移一个元素以探索不同模态向量的所有可能交互。</li>
+</ul>
+<p><strong>#年度关键词：上下文。</strong></p>
 <h1 id="2019-16"><a href="#2019-16" class="headerlink" title="2019: 16"></a>2019: 16</h1><p>8[AAAI 2019] Localizing Natural Language in Videos<br>9[AAAI 2019] Multilevel language and vision integration for text-to-clip retrieval<br>10[AAAI 2019] Semantic Proposal for Activity Localization in Videos via Sentence Query<br>11[AAAI 2019] To Find Where You Talk Temporal Sentence Localization in Video with Attention Based Location Regression<br>12[AAAI 2019] Read, Watch, and Move Reinforcement Learning for Temporally Grounding Natural Language Descriptions in Videos⭕<br>13[CVPR 2019] MAN_ Moment Alignment Network for Natural Language Moment Retrieval via Iterative Graph Adjustment⭕<br>14[CVPR Workshop 2019] Tripping through time Efficient Localization of Activities in Videos<br>15[CVPR 2019] Language-Driven Temporal Activity Localization A Semantic Matching Reinforcement Learning Model⭕<br>16[CVPR 2019] Weakly Supervised Video Moment Retrieval From Text Queries⭕<br>17[ICMR 2019] Cross-Modal Video Moment Retrieval with Spatial and Language-Temporal Attention⭕<br>18[MM 2019] Exploiting Temporal Relationships in Video Moment Localization with Natural Language<br>19[NIPS 2019] Semantic Conditioned Dynamic Modulation for Temporal Sentence Grounding in Videos<br>20[SIGIR 2019] Cross-modal interaction networks for query-based moment retrieval in videos<br>21[WACV2019] MAC: Mining Activity Concepts for Language-Based Temporal Localization<br>22[ArXiv 2019] Temporal Localization of Moments in Video Collections with Natural Language<br>23[ArXiv 2019] wMAN Weakly-supervised Moment Alignment Network for Text-based Video Segment Retrieval  </p>
 <p>[AAAI 2019] Localizing Natural Language in Videos</p>
 <ul>
@@ -2067,117 +2198,6 @@
         <tag>多模态</tag>
         <tag>深度学习</tag>
         <tag>论文阅读</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>学术PPT制作--beamer</title>
-    <url>/2023/10/04/20231004_Latex&amp;beamer/</url>
-    <content><![CDATA[<p>使用<strong>MAC+VSCODE+LATEX</strong></p>
-<p>最近有了频繁做学术汇报的需求，之前有了解到过beamer制作学术汇报PPT的优势，所以这里填一下坑，分享记录一下如何用beamer制作学术PPT以及使用latex和office制作PPT的优劣和使用场景对比分析。</p>
-<span id="more"></span>
-
-<h1 id="配置latex环境"><a href="#配置latex环境" class="headerlink" title="配置latex环境"></a>配置latex环境</h1><ol>
-<li>安装MacTex<br>mac上直接官网下载即可 <a href="https://www.tug.org/mactex/mactex-download.html">MacTex</a></li>
-</ol>
-<p>windows的操作也类似，在官方下载TeXlive即可。</p>
-<ol start="2">
-<li><p>配置vscode<br>然后我们还需要在vscode上进行配置相关的插件，这一步也非常简单，在vscode扩展中搜索LaTex Workshop，安装完成后vscode左侧出现TeX标志代表安装成功。</p>
-</li>
-<li><p>配置系统path<br>此时我们还需要将texlive到路径添加到系统路径中，打开iTerm，输入以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /etc</span><br><span class="line">sudo vi paths  #输入开机密码</span><br></pre></td></tr></table></figure>
-<p>然后在末尾加入我们安装的路径，一般为<code>/usr/local/texlive</code>，也可以终端打开测试看看是否是这个路径，注意的是保存后需要重启电脑才会使路径生效。</p>
-</li>
-<li><p>测试latex<br>新建test.tex文件，其中输入</p>
-</li>
-</ol>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">Hello World<span class="keyword">\LaTeX</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后点击右上角的执行，进行测试，成功则latex环境配置完成。</p>
-<h1 id="选择beamer模版"><a href="#选择beamer模版" class="headerlink" title="选择beamer模版"></a>选择beamer模版</h1><p>使用经典的清华大学Beamer模版，我找到了UESTC的修改版本，github上搜索UESTC_beamer即可找到大致的效果图如下</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310042002619.png"></p>
-<p>具体的latex写法后续进行更新解析。</p>
-<h1 id="latex与office对比"><a href="#latex与office对比" class="headerlink" title="latex与office对比"></a>latex与office对比</h1><ul>
-<li><p>latex&amp;beamer制作PPT适用场景：复用性高，比较严肃的汇报，没有很多动画，分享干货，学术汇报的场景，不适用于快速记录</p>
-</li>
-<li><p>office适用场景：复用性不高、比较轻松的交流和快速的灵感想法记录和交流的场景</p>
-</li>
-</ul>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>vscode</tag>
-        <tag>MacOS</tag>
-        <tag>办公技能</tag>
-        <tag>beamer</tag>
-        <tag>latex</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>实现windows和mac间远程桌面</title>
-    <url>/2023/10/04/20231004_Windows2MacRemoteConn/</url>
-    <content><![CDATA[<p>实现Windows和mac之间的丝滑远程桌面，主要使用的是cpolar，虽然不是免费的，但是使用的体验还是不错，价格也不算很高，每月12元有带宽还不错的固定公网IP的远程连接。</p>
-<span id="more"></span>
-
-<h1 id="1-下载cpolar"><a href="#1-下载cpolar" class="headerlink" title="1 下载cpolar"></a>1 下载cpolar</h1><p>首先登陆官网<a href="https://www.cpolar.com/">cpolar.com</a>，首先进行注册登陆。</p>
-<p>点击下载选择MacOSX下载，官方就有教程，<a href="https://www.cpolar.com/docs">教程地址</a></p>
-<p>1.安装homebrew，选择清华大学源</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/bin/zsh -c &quot;$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>安装cploar</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew tap probezy/core &amp;&amp; brew install cpolar</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><p>token认证<br>登录cpolar官网，点击左侧的验证，查看自己的认证token，之后将token贴在命令行里</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cpolar authtoken xxxxxxx</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310041701035.png"></p>
-</li>
-<li><p>安装服务并启动服务</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo cpolar service install #输入登陆密码</span><br><span class="line">sudo cpolar service start</span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>在浏览器上访问本地9200端口【127.0.0.1:9200】，使用cpolar邮箱账号登录cpolar web UI管理界面，即可开始使用cpolar。</li>
-</ol>
-<h1 id="2-配置SSH固定公网IP地址"><a href="#2-配置SSH固定公网IP地址" class="headerlink" title="2 配置SSH固定公网IP地址"></a>2 配置SSH固定公网IP地址</h1><p>预留公网预留IP，这里就需要升级为Pro了，如果不升级Pro就没有固定公网IP，免费版就是每周会更改IP，并且带宽相对较低</p>
-<ol>
-<li>首先进入官网，登陆后选择预留-&gt;保留的TCP地址</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310041705040.png"></p>
-<ol start="2">
-<li>点击保留，即可自动生成一个预留好的固定公网IP地址</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231004170737.png"></p>
-<ol start="3">
-<li><p>按照之前的步骤进行后，打开<code>127.0.0.1:9200</code>，打开隧道列表，此时应该自动生成两个隧道，包括ssh和website<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310041710064.png"></p>
-</li>
-<li><p>我们需要创建一个新的tcp隧道，指向5900端口<br>点左边隧道管理-&gt;创建隧道</p>
-<ul>
-<li>隧道名称：可自定义，注意不要与已有隧道名称重复</li>
-<li>协议：tcp协议</li>
-<li>本地地址：5900（vnc默认端口号）</li>
-<li>端口类型：固定端口</li>
-<li>TCP地址：填写第2步中申请的地址</li>
-</ul>
-</li>
-<li><p>此时我们还需要打开mac mini 的远程连接的开关，打开设置-&gt;通用-&gt;共享，打开桌面共享，并且点击电脑设置，设置VNC密码。</p>
-</li>
-<li><p>windows电脑下载安装VNC后，输入刚刚申请的公网IP登录（注意不要输入TCP:&#x2F;&#x2F;）即可。</p>
-</li>
-</ol>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>远程桌面</tag>
-        <tag>跨平台</tag>
       </tags>
   </entry>
 </search>
