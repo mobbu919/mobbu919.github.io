@@ -23,20 +23,21 @@
     var CONFIG = {"hostname":"mobbu.space","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="记录一下打工牛马人的C++的学习路线。 主要部分有C++基础，C++算法，计算机网络，MySQL数据库，Redis，软件设计模式，操作系统、Linux操作、网络编程，C++经典项目(webserver)，如果有时间还可以多参与几个练手的小项目。">
+  <meta name="description" content="C++11之后引入lambda表达式，，一般用于定义匿名函数，使得代码更加灵活简洁。lambda表达式与普通函数类似，也有参数列表、返回值类型和函数体，只是它的定义方式更简洁，并且可以在函数内部定义。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++学习路线">
-<meta property="og:url" content="http://mobbu.space/2023/08/22/20230819_C++LearningRoute/index.html">
+<meta property="og:title" content="C++之lambda表达式">
+<meta property="og:url" content="http://mobbu.space/2023/10/10/20231010_lambda/index.html">
 <meta property="og:site_name" content="“灵能相谈所”">
-<meta property="og:description" content="记录一下打工牛马人的C++的学习路线。 主要部分有C++基础，C++算法，计算机网络，MySQL数据库，Redis，软件设计模式，操作系统、Linux操作、网络编程，C++经典项目(webserver)，如果有时间还可以多参与几个练手的小项目。">
+<meta property="og:description" content="C++11之后引入lambda表达式，，一般用于定义匿名函数，使得代码更加灵活简洁。lambda表达式与普通函数类似，也有参数列表、返回值类型和函数体，只是它的定义方式更简洁，并且可以在函数内部定义。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-08-22T07:36:34.000Z">
-<meta property="article:modified_time" content="2023-08-22T07:36:34.000Z">
+<meta property="article:published_time" content="2023-10-10T08:04:17.795Z">
+<meta property="article:modified_time" content="2023-10-10T08:04:17.797Z">
 <meta property="article:author" content="mobbu">
 <meta property="article:tag" content="C++">
+<meta property="article:tag" content="lambda">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://mobbu.space/2023/08/22/20230819_C++LearningRoute/">
+<link rel="canonical" href="http://mobbu.space/2023/10/10/20231010_lambda/">
 
 
 <script id="page-configurations">
@@ -49,7 +50,7 @@
   };
 </script>
 
-  <title>C++学习路线 | “灵能相谈所”</title>
+  <title>C++之lambda表达式 | “灵能相谈所”</title>
   
 
 
@@ -198,7 +199,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://mobbu.space/2023/08/22/20230819_C++LearningRoute/">
+    <link itemprop="mainEntityOfPage" href="http://mobbu.space/2023/10/10/20231010_lambda/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/pink_mob.jpeg">
@@ -211,7 +212,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          C++学习路线
+          C++之lambda表达式
         </h1>
 
         <div class="post-meta">
@@ -221,7 +222,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2023-08-22 15:36:34" itemprop="dateCreated datePublished" datetime="2023-08-22T15:36:34+08:00">2023-08-22</time>
+              <time title="创建时间：2023-10-10 16:04:17" itemprop="dateCreated datePublished" datetime="2023-10-10T16:04:17+08:00">2023-10-10</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -229,7 +230,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%86%E4%BA%AB%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">分享博客</span></a>
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">技术博客</span></a>
                 </span>
             </span>
 
@@ -246,14 +247,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1k</span>
+              <span>1.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -265,106 +266,66 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>记录一下打工牛马人的C++的学习路线。</p>
-<p>主要部分有C++基础，C++算法，计算机网络，MySQL数据库，Redis，软件设计模式，操作系统、Linux操作、网络编程，C++经典项目(webserver)，如果有时间还可以多参与几个练手的小项目。</p>
+        <p>C++11之后引入lambda表达式，，一般用于定义匿名函数，使得代码更加灵活简洁。lambda表达式与普通函数类似，也有参数列表、返回值类型和函数体，只是它的定义方式更简洁，并且可以在函数内部定义。</p>
 <span id="more"></span>
 
-<h1 id="C-基础"><a href="#C-基础" class="headerlink" title="C++基础"></a>C++基础</h1><p><strong>视频链接：</strong><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1et411b73Z/">黑马程序员C++基础</a><br><strong>我的笔记链接：</strong><a target="_blank" rel="noopener" href="https://www.cnblogs.com/mobbu/p/17560955.html">C++基础笔记</a></p>
-<p>主要是三部分内容</p>
-<ul>
-<li>C++语法入门：变量与常量、数据类型、运算符、程序流程结构、数组、函数、指针、结构体</li>
-<li>类和对象：封装、继承、多态</li>
-<li>模板与STL</li>
-</ul>
-<h1 id="C-算法"><a href="#C-算法" class="headerlink" title="C++算法"></a>C++算法</h1><p>主要在代码随想录上刷题和学习：<a target="_blank" rel="noopener" href="https://programmercarl.com/%E5%89%8D%E5%BA%8F/%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC.html#%E9%A2%98%E5%A4%96%E8%AF%9D">代码随想录</a></p>
-<p>有时间可以刷两道三遍，不然理解可能不到位</p>
-<p>主要包含：</p>
-<table>
+<h1 id="lambda表达式概述"><a href="#lambda表达式概述" class="headerlink" title="lambda表达式概述"></a>lambda表达式概述</h1><p>最常见的lambda表达式如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> plus = [] (<span class="type">int</span> v1, <span class="type">int</span> v2) -&gt; <span class="type">int</span> &#123; <span class="keyword">return</span> v1 + v2; &#125;</span><br><span class="line"><span class="type">int</span> sum = <span class="built_in">plus</span>(<span class="number">1</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<p>上述代码是计算两数之和的，但是一般不会这样使用</p>
+<h1 id="lambda表达式的写法"><a href="#lambda表达式的写法" class="headerlink" title="lambda表达式的写法"></a>lambda表达式的写法</h1><table>
 <thead>
 <tr>
-<th align="center">内容</th>
-<th align="center">难度</th>
-<th align="center">内容</th>
-<th align="center">面试&#x2F;笔试较多</th>
+<th align="center">序号</th>
+<th align="center">写法</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">数组</td>
-<td align="center">简单</td>
-<td align="center">数组相关</td>
-<td align="center">面试多</td>
+<td align="center">(1)</td>
+<td align="center"><code>[captures]&lt;tparams&gt;(params)lambda-specifiers&#123;body&#125;</code></td>
 </tr>
 <tr>
-<td align="center">链表</td>
-<td align="center">简单</td>
-<td align="center">链表概念、设计、删除等</td>
-<td align="center">面试多</td>
+<td align="center">(2)</td>
+<td align="center"><code>[captures](params)rtailing-return-type&#123;body&#125;</code></td>
 </tr>
 <tr>
-<td align="center">哈希表</td>
-<td align="center">简单</td>
-<td align="center">快速判断一个元素是否出现集合里</td>
-<td align="center">一般</td>
+<td align="center">(3)</td>
+<td align="center"><code>[captures](params)&#123;body&#125;</code></td>
 </tr>
 <tr>
-<td align="center">字符串</td>
-<td align="center">简单</td>
-<td align="center">针对字符，使用双指针很多</td>
-<td align="center">一般</td>
-</tr>
-<tr>
-<td align="center">双指针法</td>
-<td align="center">简单</td>
-<td align="center">数组，链表，字符串中使用较多</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">栈与队列</td>
-<td align="center">简单</td>
-<td align="center">面试提问较多</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">二叉树</td>
-<td align="center">中等</td>
-<td align="center">二叉树，搜索树，遍历等</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">回溯算法</td>
-<td align="center">中等</td>
-<td align="center">暴力算法，组合</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">贪心算法</td>
-<td align="center">困难</td>
-<td align="center">局部最优推广到全局</td>
-<td align="center">笔试</td>
-</tr>
-<tr>
-<td align="center">动态规划</td>
-<td align="center">困难</td>
-<td align="center">能够定义dp数据，当前状态由前两个状态决定</td>
-<td align="center">笔试</td>
+<td align="center">(4)</td>
+<td align="center"><code>[captures]lambda-specifiers&#123;body&#125;</code></td>
 </tr>
 </tbody></table>
-<h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><p><strong>视频链接：</strong><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1c4411d7jb/">计算机网络(湖科大教书匠)</a><br><strong>我的笔记链接：</strong><a target="_blank" rel="noopener" href="https://www.cnblogs.com/mobbu/p/17577514.html">计算机网络笔记</a></p>
-<p>此部分比较简单，并且在后序网络编程还会复习一部分，笔记只记录了一些相对重要的部分。</p>
-<h1 id="MySQL和Redis"><a href="#MySQL和Redis" class="headerlink" title="MySQL和Redis"></a>MySQL和Redis</h1><h2 id="MySQL：一般学习这个"><a href="#MySQL：一般学习这个" class="headerlink" title="MySQL：一般学习这个"></a>MySQL：一般学习这个</h2><p><strong>视频链接：</strong><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Kr4y1i7ru/">黑马程序员MySQL</a><br><strong>我的笔记链接：</strong><a target="_blank" rel="noopener" href="https://www.cnblogs.com/mobbu/p/17648671.html">SQL基础增删改查</a></p>
-<h2 id="Redis：岗位有需要可以一周内突击学习"><a href="#Redis：岗位有需要可以一周内突击学习" class="headerlink" title="Redis：岗位有需要可以一周内突击学习"></a>Redis：岗位有需要可以一周内突击学习</h2><p><strong>视频链接：</strong><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1cr4y1671t/">黑马程序员Redis</a><br><strong>我的笔记链接：</strong></p>
-<h1 id="软件设计模式"><a href="#软件设计模式" class="headerlink" title="软件设计模式"></a>软件设计模式</h1><p>有时间看视频，没时间直接搜索资料记住概念和常见的几种设计模式即可</p>
-<p><strong>视频链接：</strong> 讲的挺好，有时间可以仔细听，对程序编写有好处<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yr4y157Ci/">C++设计模式入门</a><br><strong>我的笔记链接：</strong><a target="_blank" rel="noopener" href="https://www.cnblogs.com/mobbu/p/17559583.html">一些常用软件设计模式</a></p>
-<p>一般了解策略模式、工厂模式、单例模式(最简单)、观察者模式、适配这模式即可了</p>
-<h1 id="C-项目"><a href="#C-项目" class="headerlink" title="C++项目"></a>C++项目</h1><p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/study/live/504">牛客网C++项目</a></p>
-<p>这个项目就包含了基础的Linux系统编程、Linux多进程开发、Linux多线程开发、网络编程和实战。所以如果时间不够可以就看着一个项目就好了。包含了<strong>Linux基础</strong>、<strong>操作系统</strong>、<strong>网络编程</strong>和<strong>websever</strong>项目，差的知识后序查漏补缺就好了。</p>
-<p>笔记链接如下：</p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/mobbu/p/17547122.html">第1章 Linux系统编程入门</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/mobbu/p/17586114.html">第2章 Linux多进程开发</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/mobbu/p/17601631.html">第3章 Linux多线程开发</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/mobbu/p/17609639.html">第4章 Linux网络编程</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/mobbu/p/17629592.html">第5章 项目实战与总结</a></p>
-<p><a href="https://mobbu.space/2023/08/15/20230815_C++%E9%AB%98%E5%B9%B6%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8/#more">webserver项目解析与总结</a></p>
+<h1 id="四种表达式的含义"><a href="#四种表达式的含义" class="headerlink" title="四种表达式的含义"></a>四种表达式的含义</h1><p>（1）完整的lambda表达式，包含了lambda表达式的所有成分。<br>（2）常量lambda表达式，捕获的变量都是常量，不能在lambda表达式的body中进行修改。<br>（3）和（2）基本一致，唯一的区别就是，lambda表达式的函数返回值可以通过函数体推导出来。一般情况函数返回值类型明确或者没有返回值的情况下可以这样写。<br>（4）lambda表达式的函数没有任何参数，但是可以添加lambda-specifiers，lambda-specifiers是什么我们后续再介绍。</p>
+<h1 id="lambda表达式各个成员的解释"><a href="#lambda表达式各个成员的解释" class="headerlink" title="lambda表达式各个成员的解释"></a>lambda表达式各个成员的解释</h1><p>captures 捕获列表，lambda可以把上下文变量以值或引用的方式捕获，在body中直接使用。</p>
+<p>tparams 模板参数列表(c++20引入)，让lambda可以像模板函数一样被调用。</p>
+<p>params 参数列表，有一点需要注意，在c++14之后允许使用auto左右参数类型。</p>
+<p>lambda-specifiers lambda说明符， 一些可选的参数，这里不多介绍了，有兴趣的读者可以去官方文档上看。这里比较常用的参数就是mutable和exception。其中，表达式(1)中没有trailing-return-type，是因为包含在这一项里面的。</p>
+<p>trailing-return-type 返回值类型，一般可以省略掉，由编译器来推导。</p>
+<p>body 函数体，函数的具体逻辑。</p>
+<h1 id="捕获列表"><a href="#捕获列表" class="headerlink" title="捕获列表"></a>捕获列表</h1><p>上面介绍完了lambda表达式的各个成分，其实很多部分和正常的函数没什么区别，其中最大的一个不同点就是捕获列表。我在刚开始用lambda表达式的时候，还一直以为这个没啥用，只是用一个 [] 来标志着这是一个lambda表达式。后来了解了才知道，原来这个捕获列表如此强大，甚至我觉得捕获列表就是lambda表达式的灵魂。下面先介绍几种常用的捕获方式。</p>
+<p>[] 什么也不捕获，无法lambda函数体使用任何</p>
+<p>[&#x3D;] 按值的方式捕获所有变量</p>
+<p>[&amp;] 按引用的方式捕获所有变量</p>
+<p>[&#x3D;, &amp;a] 除了变量a之外，按值的方式捕获所有局部变量，变量a使用引用的方式来捕获。这里可以按引用捕获多个，例如 [&#x3D;, &amp;a, &amp;b,&amp;c]。这里注意，如果前面加了&#x3D;，后面加的具体的参数必须以引用的方式来捕获，否则会报错。</p>
+<p>[&amp;, a] 除了变量a之外，按引用的方式捕获所有局部变量，变量a使用值的方式来捕获。这里后面的参数也可以多个，例如 [&amp;, a, b, c]。这里注意，如果前面加了&amp;，后面加的具体的参数必须以值的方式来捕获。</p>
+<p>[a, &amp;b] 以值的方式捕获a，引用的方式捕获b，也可以捕获多个。</p>
+<p>[this] 在成员函数中，也可以直接捕获this指针，其实在成员函数中，[&#x3D;]和[&amp;]也会捕获this指针。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li><p>捕获列表，对应LambdaClass类的private成员。</p>
+</li>
+<li><p>参数列表，对应LambdaClass类的成员函数的operator()的形参列表</p>
+</li>
+<li><p>mutable，对应 LambdaClass类成员函数 operator() 的const属性 ，但是只有在捕获列表捕获的参数不含有引用捕获的情况下才会生效，因为捕获列表只要包含引用捕获，那operator()函数就一定是非const函数。</p>
+</li>
+<li><p>返回类型，对应 LambdaClass类成员函数 operator() 的返回类型</p>
+</li>
+<li><p>函数体，对应 LambdaClass类成员函数 operator() 的函数体。</p>
+</li>
+<li><p>引用捕获和值捕获不同的一点就是，对应的成员是否为引用类型。</p>
+</li>
+</ul>
 <p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
 
     </div>
@@ -381,7 +342,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://mobbu.space/2023/08/22/20230819_C++LearningRoute/" title="C++学习路线">http://mobbu.space/2023/08/22/20230819_C++LearningRoute/</a>
+    <a href="http://mobbu.space/2023/10/10/20231010_lambda/" title="C++之lambda表达式">http://mobbu.space/2023/10/10/20231010_lambda/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -393,6 +354,7 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/C/" rel="tag"># C++</a>
+              <a href="/tags/lambda/" rel="tag"># lambda</a>
           </div>
 
         
@@ -401,13 +363,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/08/21/20230821_GitAbout/" rel="prev" title="git教程和分布式管理代码">
-      <i class="fa fa-chevron-left"></i> git教程和分布式管理代码
+    <a href="/2023/10/09/20231009_TipsOnLinux/" rel="prev" title="Linux的操作记录">
+      <i class="fa fa-chevron-left"></i> Linux的操作记录
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/08/22/20230822_VscodeDeployC++/" rel="next" title="vscode配置C++环境">
-      vscode配置C++环境 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -467,7 +426,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">C++基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-%E7%AE%97%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">C++算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-number">3.</span> <span class="nav-text">计算机网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL%E5%92%8CRedis"><span class="nav-number">4.</span> <span class="nav-text">MySQL和Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL%EF%BC%9A%E4%B8%80%E8%88%AC%E5%AD%A6%E4%B9%A0%E8%BF%99%E4%B8%AA"><span class="nav-number">4.1.</span> <span class="nav-text">MySQL：一般学习这个</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis%EF%BC%9A%E5%B2%97%E4%BD%8D%E6%9C%89%E9%9C%80%E8%A6%81%E5%8F%AF%E4%BB%A5%E4%B8%80%E5%91%A8%E5%86%85%E7%AA%81%E5%87%BB%E5%AD%A6%E4%B9%A0"><span class="nav-number">4.2.</span> <span class="nav-text">Redis：岗位有需要可以一周内突击学习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-number">5.</span> <span class="nav-text">软件设计模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-%E9%A1%B9%E7%9B%AE"><span class="nav-number">6.</span> <span class="nav-text">C++项目</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">lambda表达式概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%86%99%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">lambda表达式的写法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E7%A7%8D%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%90%AB%E4%B9%89"><span class="nav-number">3.</span> <span class="nav-text">四种表达式的含义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%90%84%E4%B8%AA%E6%88%90%E5%91%98%E7%9A%84%E8%A7%A3%E9%87%8A"><span class="nav-number">4.</span> <span class="nav-text">lambda表达式各个成员的解释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8D%95%E8%8E%B7%E5%88%97%E8%A1%A8"><span class="nav-number">5.</span> <span class="nav-text">捕获列表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -682,7 +641,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'mobbu919.github.io',
       owner       : 'mobbu919',
       admin       : ['mobbu919'],
-      id          : '9d521957e7fb9d3010c4b94d3707e6f1',
+      id          : '50ef7c21fe36dee80b5ce91c8a48718e',
         language: 'zh-CN',
       distractionFreeMode: true
     });
