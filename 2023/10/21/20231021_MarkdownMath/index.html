@@ -23,20 +23,20 @@
     var CONFIG = {"hostname":"mobbu.space","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="记录一些Linux的操作  挂载NTFS移动硬盘 后台运行python程序 压缩和解压 查看系统状态 常用快捷键 vim 文件和目录相关">
+  <meta name="description" content="在使用markdown和latex的公式部分时，所遇到过的经常使用的部分，主要有以下部分：  markdown公式常用符号对照表 常用符号 希腊字母 间隔长度   markdown公式常用语法 公式对齐 公式标号 大括号公式 字体格式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux的操作记录">
-<meta property="og:url" content="http://mobbu.space/2023/10/09/20231009_TipsOnLinux/index.html">
+<meta property="og:title" content="Markdown公式">
+<meta property="og:url" content="http://mobbu.space/2023/10/21/20231021_MarkdownMath/index.html">
 <meta property="og:site_name" content="“灵能相谈所”">
-<meta property="og:description" content="记录一些Linux的操作  挂载NTFS移动硬盘 后台运行python程序 压缩和解压 查看系统状态 常用快捷键 vim 文件和目录相关">
+<meta property="og:description" content="在使用markdown和latex的公式部分时，所遇到过的经常使用的部分，主要有以下部分：  markdown公式常用符号对照表 常用符号 希腊字母 间隔长度   markdown公式常用语法 公式对齐 公式标号 大括号公式 字体格式">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-10-09T11:57:33.237Z">
-<meta property="article:modified_time" content="2023-10-10T08:02:40.841Z">
+<meta property="article:published_time" content="2023-10-21T12:13:52.951Z">
+<meta property="article:modified_time" content="2023-10-21T12:13:52.957Z">
 <meta property="article:author" content="mobbu">
-<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="markdown">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://mobbu.space/2023/10/09/20231009_TipsOnLinux/">
+<link rel="canonical" href="http://mobbu.space/2023/10/21/20231021_MarkdownMath/">
 
 
 <script id="page-configurations">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>Linux的操作记录 | “灵能相谈所”</title>
+  <title>Markdown公式 | “灵能相谈所”</title>
   
 
 
@@ -198,7 +198,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://mobbu.space/2023/10/09/20231009_TipsOnLinux/">
+    <link itemprop="mainEntityOfPage" href="http://mobbu.space/2023/10/21/20231021_MarkdownMath/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/pink_mob.jpeg">
@@ -211,7 +211,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Linux的操作记录
+          Markdown公式
         </h1>
 
         <div class="post-meta">
@@ -221,15 +221,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2023-10-09 19:57:33" itemprop="dateCreated datePublished" datetime="2023-10-09T19:57:33+08:00">2023-10-09</time>
+              <time title="创建时间：2023-10-21 20:13:52" itemprop="dateCreated datePublished" datetime="2023-10-21T20:13:52+08:00">2023-10-21</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-10 16:02:40" itemprop="dateModified" datetime="2023-10-10T16:02:40+08:00">2023-10-10</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -253,14 +246,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.6k</span>
+              <span>1.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -272,193 +265,197 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>记录一些Linux的操作</p>
+        <p>在使用markdown和latex的公式部分时，所遇到过的经常使用的部分，主要有以下部分：</p>
 <ul>
-<li>挂载NTFS移动硬盘</li>
-<li>后台运行python程序</li>
-<li>压缩和解压</li>
-<li>查看系统状态</li>
-<li>常用快捷键</li>
-<li>vim</li>
-<li>文件和目录相关</li>
+<li>markdown公式常用符号对照表<ul>
+<li>常用符号</li>
+<li>希腊字母</li>
+<li>间隔长度</li>
 </ul>
-<span id="more"></span>
-
-<h1 id="挂载NTFS移动硬盘"><a href="#挂载NTFS移动硬盘" class="headerlink" title="挂载NTFS移动硬盘"></a>挂载NTFS移动硬盘</h1><ol>
-<li><p>在&#x2F;media下创建挂载的文件夹，比如创建disk</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir disk</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>查看硬盘的路径，输入以下命令，会显示目前的所有硬盘资源，这时根据你硬盘的容量查找到对应的路径</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsblk</span><br></pre></td></tr></table></figure>
-<p>比如，我这里的路径是sda1</p>
+<li>markdown公式常用语法<ul>
+<li>公式对齐</li>
+<li>公式标号</li>
+<li>大括号公式</li>
+<li>字体格式<span id="more"></span></li>
+</ul>
 </li>
-<li><p>使用mount命令进行挂载，这里需要sudo</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mount /dev/sda1 /media/disk</span><br></pre></td></tr></table></figure>
-<p>此时打开disk就可以看到硬盘中的文件了</p>
+</ul>
+<h1 id="markdown公式常用符号对照表"><a href="#markdown公式常用符号对照表" class="headerlink" title="markdown公式常用符号对照表"></a>markdown公式常用符号对照表</h1><h2 id="常用符号"><a href="#常用符号" class="headerlink" title="常用符号"></a>常用符号</h2><table>
+<thead>
+<tr>
+<th align="left">符号</th>
+<th align="left">代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">$\Leftarrow$</td>
+<td align="left"><code>\Leftarrow</code></td>
+</tr>
+<tr>
+<td align="left">$\Rightarrow$</td>
+<td align="left"><code>\Rightarrow</code></td>
+</tr>
+<tr>
+<td align="left">$\leftarrow$</td>
+<td align="left"><code>\leftarrow</code></td>
+</tr>
+<tr>
+<td align="left">$\rightarrow$</td>
+<td align="left"><code>\rightarrow</code></td>
+</tr>
+<tr>
+<td align="left">$\leq$</td>
+<td align="left"><code>\leq</code></td>
+</tr>
+<tr>
+<td align="left">$\geq$</td>
+<td align="left"><code>\geq</code></td>
+</tr>
+<tr>
+<td align="left">$\neq$</td>
+<td align="left"><code>\neq</code></td>
+</tr>
+<tr>
+<td align="left">$\times$</td>
+<td align="left"><code>\times</code></td>
+</tr>
+<tr>
+<td align="left">$\div$</td>
+<td align="left"><code>\div</code></td>
+</tr>
+<tr>
+<td align="left">$\in$</td>
+<td align="left"><code>\in</code></td>
+</tr>
+<tr>
+<td align="left">$\subset$</td>
+<td align="left"><code>\subset</code></td>
+</tr>
+<tr>
+<td align="left">$\mathbb{R}$</td>
+<td align="left"><code>\mathbb&#123;R&#125;</code></td>
+</tr>
+<tr>
+<td align="left">$\cdot$</td>
+<td align="left"><code>\cdot</code></td>
+</tr>
+<tr>
+<td align="left">$\varnothing$</td>
+<td align="left"><code>\varnothing</code></td>
+</tr>
+<tr>
+<td align="left">$\vert$</td>
+<td align="left"><code>\vert</code></td>
+</tr>
+<tr>
+<td align="left">$\cdots$</td>
+<td align="left"><code>\cdots</code></td>
+</tr>
+<tr>
+<td align="left">$\vdots$</td>
+<td align="left"><code>\vdots</code></td>
+</tr>
+<tr>
+<td align="left">$\ddots$</td>
+<td align="left"><code>\ddots</code></td>
+</tr>
+</tbody></table>
+<p>补充：<br>$|$ $\rightarrow$ <code>\|</code></p>
+<h2 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h2><table>
+<thead>
+<tr>
+<th align="left">符号</th>
+<th align="left">代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">$\prod$</td>
+<td align="left"><code>\prod</code></td>
+</tr>
+<tr>
+<td align="left">$\sum$</td>
+<td align="left"><code>\sum</code></td>
+</tr>
+<tr>
+<td align="left">$\infty$</td>
+<td align="left"><code>\infty</code></td>
+</tr>
+<tr>
+<td align="left">$\nabla$</td>
+<td align="left"><code>\nabla</code></td>
+</tr>
+<tr>
+<td align="left">$\frac{a}{b}$</td>
+<td align="left"><code>\frac&#123;a&#125;&#123;b&#125;</code></td>
+</tr>
+<tr>
+<td align="left">$\sqrt x$</td>
+<td align="left"><code>\sqrt x</code></td>
+</tr>
+<tr>
+<td align="left">$\sqrt[3] x$</td>
+<td align="left"><code>\sqrt[3] x</code></td>
+</tr>
+<tr>
+<td align="left">$\int$</td>
+<td align="left"><code>\int</code></td>
+</tr>
+<tr>
+<td align="left">$\iint$</td>
+<td align="left"><code>\iint</code></td>
+</tr>
+<tr>
+<td align="left">$\partial$</td>
+<td align="left"><code>\partial</code></td>
+</tr>
+</tbody></table>
+<h2 id="常用希腊字母"><a href="#常用希腊字母" class="headerlink" title="常用希腊字母"></a>常用希腊字母</h2><h2 id="四种间隔长度"><a href="#四种间隔长度" class="headerlink" title="四种间隔长度"></a>四种间隔长度</h2><table>
+<thead>
+<tr>
+<th align="left">符号</th>
+<th align="left">代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">$a , b$</td>
+<td align="left"><code>\,</code></td>
+</tr>
+<tr>
+<td align="left">$a ; b$</td>
+<td align="left"><code>\;</code></td>
+</tr>
+<tr>
+<td align="left">$a \quad b$</td>
+<td align="left"><code>\quad</code></td>
+</tr>
+<tr>
+<td align="left">$a \qquad b$</td>
+<td align="left"><code>\qquad</code></td>
+</tr>
+</tbody></table>
+<h1 id="公式语法"><a href="#公式语法" class="headerlink" title="公式语法"></a>公式语法</h1><h2 id="公式跨行左对齐"><a href="#公式跨行左对齐" class="headerlink" title="公式跨行左对齐"></a>公式跨行左对齐</h2><h3 id="不同公式左对齐"><a href="#不同公式左对齐" class="headerlink" title="不同公式左对齐"></a>不同公式左对齐</h3><p>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">&amp; a = b+c+d+e+f\\</span><br><span class="line">&amp; b = c+d+e+f\\</span><br><span class="line">&amp; c = d+e+f\\</span><br><span class="line">&amp; d = e+f\\</span><br><span class="line">&amp; e = f</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p>效果如下：<br>$$<br>\begin{aligned}<br>&amp; a &#x3D; b+c+d+e+f\<br>&amp; b &#x3D; c+d+e+f\<br>&amp; c &#x3D; d+e+f\<br>&amp; d &#x3D; e+f\<br>&amp; e &#x3D; f<br>\end{aligned}<br>$$</p>
+<h3 id="单个长公式自身对齐"><a href="#单个长公式自身对齐" class="headerlink" title="单个长公式自身对齐"></a>单个长公式自身对齐</h3><p>只需要记住<code>&amp;</code>符号后的内容会对齐就可以了，如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">L_&#123;align&#125; &amp; =\sum_&#123;(c,q)\in P&#125;\lambda _1 \log&#123;(1+\exp&#123;(-s_&#123;cq&#125;)&#125;)&#125;\\</span><br><span class="line">&amp; + \sum_&#123;(c,q)\in P&#125;\lambda _1 \log&#123;(1+\exp&#123;(s_&#123;cq&#125;)&#125;)&#125;</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\begin{aligned}<br>L_{align} &amp; &#x3D;\sum_{(c,q)\in P}\lambda <em>1 \log{(1+\exp{(-s</em>{cq})})}\<br>&amp; + \sum_{(c,q)\in P}\lambda <em>1 \log{(1+\exp{(s</em>{cq})})}<br>\end{aligned}<br>$$</p>
+<h2 id="大括号公式"><a href="#大括号公式" class="headerlink" title="大括号公式"></a>大括号公式</h2><p>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">a=\begin&#123;cases&#125;</span><br><span class="line">0 &amp; \text&#123;if $a=0$,&#125;\\</span><br><span class="line">1 &amp; \text&#123;if $a=1$.&#125;</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+
+<p>效果：<br>$$<br>a&#x3D;\begin{cases}<br>0 &amp; \text{if $a&#x3D;0$,}\<br>1 &amp; \text{if $a&#x3D;1$.}<br>\end{cases}<br>$$</p>
+<h2 id="公式标号"><a href="#公式标号" class="headerlink" title="公式标号"></a>公式标号</h2><h3 id="手动标号"><a href="#手动标号" class="headerlink" title="手动标号"></a>手动标号</h3><p>代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">a=b</span><br><span class="line">\tag&#123;1&#125;</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">a=c</span><br><span class="line">\tag&#123;2&#125;</span><br><span class="line">$$</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>效果如下：<br>$$<br>a&#x3D;b<br>\tag{1}<br>$$<br>$$<br>a&#x3D;c<br>\tag{2}<br>$$</p>
+<h3 id="自动标号"><a href="#自动标号" class="headerlink" title="自动标号"></a>自动标号</h3><h2 id="字体格式"><a href="#字体格式" class="headerlink" title="字体格式"></a>字体格式</h2><ul>
+<li><p>原始字体：<br><code>$字母abc$</code> $\rightarrow$ $字母abc$</p>
 </li>
-<li><p>使用完毕后取消挂载，再拔掉硬盘</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo umount /dev/sda1</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h1 id="后台运行python程序"><a href="#后台运行python程序" class="headerlink" title="后台运行python程序"></a>后台运行python程序</h1><p>如果想保证一直后台运行程序，可以使用nohup</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nohup python test.py &amp;   # 挂后台运行</span><br><span class="line">tail -f nohup.out  # 动态显示输出的日志 </span><br></pre></td></tr></table></figure>
-
-<p>想要退出的话直接kill掉运行的进程就好了</p>
-<h1 id="压缩和解压"><a href="#压缩和解压" class="headerlink" title="压缩和解压"></a>压缩和解压</h1><p>最常使用就这句<code>tar -zxvf test.tar.gz -C /tmp    #解压缩到指定位置</code></p>
-<p>详细的一些命令如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">zip [选项] 压缩包名 源文件或源目录</span><br><span class="line">unzip -d /tmp/ test.zip # -d：指定解压缩位置/tmp</span><br><span class="line">gzip -r test #将test目录下的文件分别压缩打包</span><br><span class="line">gunzip install.log.gz # 解压</span><br><span class="line">tar -cvf test.cfg.tar test.cfg # -c为打包，-f为指定压缩包的文件名，-v为显示打包过程</span><br></pre></td></tr></table></figure>
-
-<p>我们更经常遇到的是tar和gz一起出现，因为tar用来打包，gz用来压缩</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tar -zcvf test.tar.gz test/     #压缩</span><br><span class="line">tar -ztvf test.tar.gz           #只查看，不解压</span><br><span class="line">tar -zxvf test.tar.gz -C /tmp    #解压缩到指定位置</span><br><span class="line">tar -zxvf test.tar.gz -C /tmp test/cde #只解压压缩包中的特定文件，到指定位置</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="查看系统状态"><a href="#查看系统状态" class="headerlink" title="查看系统状态"></a>查看系统状态</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ps -a  # 查看所有用户的所有进程</span><br><span class="line">ps -au # 按用户名和启动时间的顺序来显示进程</span><br><span class="line">kill -9 pid # 强制杀死进程号为pid的进程</span><br><span class="line">du -h # 查看置顶目录以及子目录下使用的磁盘空间</span><br><span class="line">df -h # 显示文件系统磁盘空间的使用情况</span><br><span class="line">free  # 显示当前内存和交换空间的使用情况</span><br><span class="line">nvidia-smi # 显示显卡情况</span><br></pre></td></tr></table></figure>
-
-<h1 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h1><table>
-<thead>
-<tr>
-<th align="center">快捷键</th>
-<th align="center">作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>CTRL+C</code></td>
-<td align="center">退出当前进程</td>
-</tr>
-<tr>
-<td align="center"><code>CTRL+L</code></td>
-<td align="center">清除命令行中显示内容</td>
-</tr>
-<tr>
-<td align="center"><code>CTRL+Q</code></td>
-<td align="center">退出</td>
-</tr>
-<tr>
-<td align="center"><code>TAB</code></td>
-<td align="center">自动补全</td>
-</tr>
-</tbody></table>
-<h1 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h1><h2 id="修改文本"><a href="#修改文本" class="headerlink" title="修改文本"></a>修改文本</h2><table>
-<thead>
-<tr>
-<th align="center">命令</th>
-<th align="left">作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">i</td>
-<td align="left">在光标前插入</td>
-</tr>
-<tr>
-<td align="center">I</td>
-<td align="left">在光标当前行开始插入</td>
-</tr>
-<tr>
-<td align="center">a</td>
-<td align="left">在光标后插入</td>
-</tr>
-<tr>
-<td align="center">A</td>
-<td align="left">在光标当前行末尾插入</td>
-</tr>
-<tr>
-<td align="center">o</td>
-<td align="left">在光标当前行的下一行插入新行</td>
-</tr>
-<tr>
-<td align="center">O</td>
-<td align="left">在光标当前行的上一行插入新行</td>
-</tr>
-<tr>
-<td align="center">:wq</td>
-<td align="left">保存并退出</td>
-</tr>
-</tbody></table>
-<h2 id="定位命令"><a href="#定位命令" class="headerlink" title="定位命令"></a>定位命令</h2><table>
-<thead>
-<tr>
-<th align="center">命令</th>
-<th align="left">作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">:set nu</td>
-<td align="left">显示行号</td>
-</tr>
-<tr>
-<td align="center">:set nonu</td>
-<td align="left">取消行号</td>
-</tr>
-<tr>
-<td align="center">gg</td>
-<td align="left">跳到首行</td>
-</tr>
-<tr>
-<td align="center">G</td>
-<td align="left">跳到末行</td>
-</tr>
-<tr>
-<td align="center">:n</td>
-<td align="left">跳到第n行</td>
-</tr>
-</tbody></table>
-<h2 id="替换和取消命令"><a href="#替换和取消命令" class="headerlink" title="替换和取消命令"></a>替换和取消命令</h2><table>
-<thead>
-<tr>
-<th align="center">命令</th>
-<th align="left">作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">u</td>
-<td align="left">undo，取消上一步操作</td>
-</tr>
-<tr>
-<td align="center">Ctrl + r</td>
-<td align="left">redo，返回到undo之前</td>
-</tr>
-<tr>
-<td align="center">r</td>
-<td align="left">替换光标所在处的字符</td>
-</tr>
-<tr>
-<td align="center">R</td>
-<td align="left">从光标所在处开始替换，按Esc键结束</td>
-</tr>
-</tbody></table>
-<h2 id="删除命令"><a href="#删除命令" class="headerlink" title="删除命令"></a>删除命令</h2><table>
-<thead>
-<tr>
-<th align="center">命令</th>
-<th align="left">作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">x</td>
-<td align="left">删除光标所在处字符</td>
-</tr>
-<tr>
-<td align="center">nx</td>
-<td align="left">删除光标所在处后的n个字符</td>
-</tr>
-<tr>
-<td align="center">dd</td>
-<td align="left">删除光标所在行。ndd删除n行</td>
-</tr>
-<tr>
-<td align="center">dG</td>
-<td align="left">删除光标所在行到末尾行的所以内容</td>
-</tr>
-<tr>
-<td align="center">D</td>
-<td align="left">删除光标所在处到行尾的内容</td>
-</tr>
-<tr>
-<td align="center">:5,7d</td>
-<td align="left">删除指定范围的行</td>
-</tr>
-</tbody></table>
-<h1 id="文件和目录相关"><a href="#文件和目录相关" class="headerlink" title="文件和目录相关"></a>文件和目录相关</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">pwd # 显示当前工作目录目录</span><br><span class="line">touch test.txt # 新建空白文档</span><br><span class="line">mkdir testdir  # 建立空白目录</span><br><span class="line">cp              # 复制</span><br><span class="line">mv dir1 dir2    # 移动文件或目录、文件或目录改名</span><br><span class="line">rm -rf dir1     # r同时删除dir1下的所有文件,f强制删除文件或目录</span><br><span class="line">rmdir dir1      # 删除空目录</span><br><span class="line">cat 1.txt       # 显示文本文件内容</span><br><span class="line">head -[num] 1.txt    # 显示前十行（或者指定前num）内容</span><br><span class="line">tail [-f] [-num]     # 显示后十行，f为滚动显示，num为指定数字</span><br><span class="line">wc 1.txt        # 统计文本的行数、字数、字符数</span><br><span class="line">grep aaa 1.txt       # 在1.txt中查找包含aaa的所有行</span><br></pre></td></tr></table></figure>
-
+<li><p>字体加粗：<br><code>$\pmb&#123;字母abc&#125;$</code> $\rightarrow$ $\pmb{字母abc}$</p>
+</li>
+<li><p>字体加粗加斜<br><code>$\boldsymbol&#123;字母abc&#125;$</code> $\rightarrow$ $\boldsymbol{字母abc}$</p>
+</li>
+</ul>
 <p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
 
     </div>
@@ -475,7 +472,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://mobbu.space/2023/10/09/20231009_TipsOnLinux/" title="Linux的操作记录">http://mobbu.space/2023/10/09/20231009_TipsOnLinux/</a>
+    <a href="http://mobbu.space/2023/10/21/20231021_MarkdownMath/" title="Markdown公式">http://mobbu.space/2023/10/21/20231021_MarkdownMath/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -486,7 +483,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Linux/" rel="tag"># Linux</a>
+              <a href="/tags/markdown/" rel="tag"># markdown</a>
           </div>
 
         
@@ -495,13 +492,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/10/07/20231007_paperRead/" rel="prev" title="多模态视频片段定位论文阅读">
-      <i class="fa fa-chevron-left"></i> 多模态视频片段定位论文阅读
+    <a href="/2023/10/10/20231010_lambda/" rel="prev" title="C++之lambda表达式">
+      <i class="fa fa-chevron-left"></i> C++之lambda表达式
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/10/10/20231010_lambda/" rel="next" title="C++之lambda表达式">
-      C++之lambda表达式 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -561,7 +555,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%82%E8%BD%BDNTFS%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98"><span class="nav-number">1.</span> <span class="nav-text">挂载NTFS移动硬盘</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8Cpython%E7%A8%8B%E5%BA%8F"><span class="nav-number">2.</span> <span class="nav-text">后台运行python程序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B"><span class="nav-number">3.</span> <span class="nav-text">压缩和解压</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E7%8A%B6%E6%80%81"><span class="nav-number">4.</span> <span class="nav-text">查看系统状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">5.</span> <span class="nav-text">常用快捷键</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vim"><span class="nav-number">6.</span> <span class="nav-text">vim</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%96%87%E6%9C%AC"><span class="nav-number">6.1.</span> <span class="nav-text">修改文本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%BD%8D%E5%91%BD%E4%BB%A4"><span class="nav-number">6.2.</span> <span class="nav-text">定位命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E5%92%8C%E5%8F%96%E6%B6%88%E5%91%BD%E4%BB%A4"><span class="nav-number">6.3.</span> <span class="nav-text">替换和取消命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%91%BD%E4%BB%A4"><span class="nav-number">6.4.</span> <span class="nav-text">删除命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E7%9B%B8%E5%85%B3"><span class="nav-number">7.</span> <span class="nav-text">文件和目录相关</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown%E5%85%AC%E5%BC%8F%E5%B8%B8%E7%94%A8%E7%AC%A6%E5%8F%B7%E5%AF%B9%E7%85%A7%E8%A1%A8"><span class="nav-number">1.</span> <span class="nav-text">markdown公式常用符号对照表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%AC%A6%E5%8F%B7"><span class="nav-number">1.1.</span> <span class="nav-text">常用符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.</span> <span class="nav-text">常用函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D"><span class="nav-number">1.3.</span> <span class="nav-text">常用希腊字母</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E7%A7%8D%E9%97%B4%E9%9A%94%E9%95%BF%E5%BA%A6"><span class="nav-number">1.4.</span> <span class="nav-text">四种间隔长度</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AC%E5%BC%8F%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">公式语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AC%E5%BC%8F%E8%B7%A8%E8%A1%8C%E5%B7%A6%E5%AF%B9%E9%BD%90"><span class="nav-number">2.1.</span> <span class="nav-text">公式跨行左对齐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E5%85%AC%E5%BC%8F%E5%B7%A6%E5%AF%B9%E9%BD%90"><span class="nav-number">2.1.1.</span> <span class="nav-text">不同公式左对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E4%B8%AA%E9%95%BF%E5%85%AC%E5%BC%8F%E8%87%AA%E8%BA%AB%E5%AF%B9%E9%BD%90"><span class="nav-number">2.1.2.</span> <span class="nav-text">单个长公式自身对齐</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%A7%E6%8B%AC%E5%8F%B7%E5%85%AC%E5%BC%8F"><span class="nav-number">2.2.</span> <span class="nav-text">大括号公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AC%E5%BC%8F%E6%A0%87%E5%8F%B7"><span class="nav-number">2.3.</span> <span class="nav-text">公式标号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%8B%E5%8A%A8%E6%A0%87%E5%8F%B7"><span class="nav-number">2.3.1.</span> <span class="nav-text">手动标号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E6%A0%87%E5%8F%B7"><span class="nav-number">2.3.2.</span> <span class="nav-text">自动标号</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.4.</span> <span class="nav-text">字体格式</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -776,7 +770,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'mobbu919.github.io',
       owner       : 'mobbu919',
       admin       : ['mobbu919'],
-      id          : 'de51f62b31eee3a0bbb65d9226d0d3e8',
+      id          : '86a7a9564de1179c7603e21b2a75b1ae',
         language: 'zh-CN',
       distractionFreeMode: true
     });
