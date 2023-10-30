@@ -1751,52 +1751,6 @@
       </tags>
   </entry>
   <entry>
-    <title>学术PPT制作--beamer</title>
-    <url>/2023/10/04/20231004_Latex&amp;beamer/</url>
-    <content><![CDATA[<p>使用<strong>MAC+VSCODE+LATEX</strong></p>
-<p>最近有了频繁做学术汇报的需求，之前有了解到过beamer制作学术汇报PPT的优势，所以这里填一下坑，分享记录一下如何用beamer制作学术PPT以及使用latex和office制作PPT的优劣和使用场景对比分析。</p>
-<span id="more"></span>
-
-<h1 id="配置latex环境"><a href="#配置latex环境" class="headerlink" title="配置latex环境"></a>配置latex环境</h1><ol>
-<li>安装MacTex<br>mac上直接官网下载即可 <a href="https://www.tug.org/mactex/mactex-download.html">MacTex</a></li>
-</ol>
-<p>windows的操作也类似，在官方下载TeXlive即可。</p>
-<ol start="2">
-<li><p>配置vscode<br>然后我们还需要在vscode上进行配置相关的插件，这一步也非常简单，在vscode扩展中搜索LaTex Workshop，安装完成后vscode左侧出现TeX标志代表安装成功。</p>
-</li>
-<li><p>配置系统path<br>此时我们还需要将texlive到路径添加到系统路径中，打开iTerm，输入以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /etc</span><br><span class="line">sudo vi paths  #输入开机密码</span><br></pre></td></tr></table></figure>
-<p>然后在末尾加入我们安装的路径，一般为<code>/usr/local/texlive</code>，也可以终端打开测试看看是否是这个路径，注意的是保存后需要重启电脑才会使路径生效。</p>
-</li>
-<li><p>测试latex<br>新建test.tex文件，其中输入</p>
-</li>
-</ol>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">Hello World<span class="keyword">\LaTeX</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后点击右上角的执行，进行测试，成功则latex环境配置完成。</p>
-<h1 id="选择beamer模版"><a href="#选择beamer模版" class="headerlink" title="选择beamer模版"></a>选择beamer模版</h1><p>使用经典的清华大学Beamer模版，我找到了UESTC的修改版本，github上搜索UESTC_beamer即可找到大致的效果图如下</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310042002619.png"></p>
-<p>具体的latex写法后续进行更新解析。</p>
-<h1 id="latex与office对比"><a href="#latex与office对比" class="headerlink" title="latex与office对比"></a>latex与office对比</h1><ul>
-<li><p>latex&amp;beamer制作PPT适用场景：复用性高，比较严肃的汇报，没有很多动画，分享干货，学术汇报的场景，不适用于快速记录</p>
-</li>
-<li><p>office适用场景：复用性不高、比较轻松的交流和快速的灵感想法记录和交流的场景</p>
-</li>
-</ul>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>vscode</tag>
-        <tag>MacOS</tag>
-        <tag>办公技能</tag>
-        <tag>beamer</tag>
-        <tag>latex</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>实现windows和mac间远程桌面</title>
     <url>/2023/10/04/20231004_Windows2MacRemoteConn/</url>
     <content><![CDATA[<p>实现Windows和mac之间的丝滑远程桌面，主要使用的是cpolar，虽然不是免费的，但是使用的体验还是不错，价格也不算很高，每月12元有带宽还不错的固定公网IP的远程连接。</p>
@@ -1859,6 +1813,52 @@
       <tags>
         <tag>远程桌面</tag>
         <tag>跨平台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学术PPT制作--beamer</title>
+    <url>/2023/10/04/20231004_Latex&amp;beamer/</url>
+    <content><![CDATA[<p>使用<strong>MAC+VSCODE+LATEX</strong></p>
+<p>最近有了频繁做学术汇报的需求，之前有了解到过beamer制作学术汇报PPT的优势，所以这里填一下坑，分享记录一下如何用beamer制作学术PPT以及使用latex和office制作PPT的优劣和使用场景对比分析。</p>
+<span id="more"></span>
+
+<h1 id="配置latex环境"><a href="#配置latex环境" class="headerlink" title="配置latex环境"></a>配置latex环境</h1><ol>
+<li>安装MacTex<br>mac上直接官网下载即可 <a href="https://www.tug.org/mactex/mactex-download.html">MacTex</a></li>
+</ol>
+<p>windows的操作也类似，在官方下载TeXlive即可。</p>
+<ol start="2">
+<li><p>配置vscode<br>然后我们还需要在vscode上进行配置相关的插件，这一步也非常简单，在vscode扩展中搜索LaTex Workshop，安装完成后vscode左侧出现TeX标志代表安装成功。</p>
+</li>
+<li><p>配置系统path<br>此时我们还需要将texlive到路径添加到系统路径中，打开iTerm，输入以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /etc</span><br><span class="line">sudo vi paths  #输入开机密码</span><br></pre></td></tr></table></figure>
+<p>然后在末尾加入我们安装的路径，一般为<code>/usr/local/texlive</code>，也可以终端打开测试看看是否是这个路径，注意的是保存后需要重启电脑才会使路径生效。</p>
+</li>
+<li><p>测试latex<br>新建test.tex文件，其中输入</p>
+</li>
+</ol>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">Hello World<span class="keyword">\LaTeX</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后点击右上角的执行，进行测试，成功则latex环境配置完成。</p>
+<h1 id="选择beamer模版"><a href="#选择beamer模版" class="headerlink" title="选择beamer模版"></a>选择beamer模版</h1><p>使用经典的清华大学Beamer模版，我找到了UESTC的修改版本，github上搜索UESTC_beamer即可找到大致的效果图如下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310042002619.png"></p>
+<p>具体的latex写法后续进行更新解析。</p>
+<h1 id="latex与office对比"><a href="#latex与office对比" class="headerlink" title="latex与office对比"></a>latex与office对比</h1><ul>
+<li><p>latex&amp;beamer制作PPT适用场景：复用性高，比较严肃的汇报，没有很多动画，分享干货，学术汇报的场景，不适用于快速记录</p>
+</li>
+<li><p>office适用场景：复用性不高、比较轻松的交流和快速的灵感想法记录和交流的场景</p>
+</li>
+</ul>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>vscode</tag>
+        <tag>MacOS</tag>
+        <tag>办公技能</tag>
+        <tag>beamer</tag>
+        <tag>latex</tag>
       </tags>
   </entry>
   <entry>
