@@ -1535,178 +1535,6 @@
       </tags>
   </entry>
   <entry>
-    <title>C++智能指针</title>
-    <url>/2023/09/20/20230920_SmartPtr/</url>
-    <content><![CDATA[<p>简要介绍一下C++11以后的智能指针，有<code>std::unique_ptr&lt;T&gt;</code>，<code>std::shared_ptr&lt;T&gt;</code>，<code>std::weak_ptr&lt;T&gt;</code>，并且废弃了<code>std::auto_ptr&lt;T&gt;</code></p>
-<span id="more"></span>
-
-<p>首先智能指针是一个RAII类模型，用于动态分配内存，其设计思想是将基本类型指针封装为（模板）类对象指针，并在离开作用域时调用析构函数，使用delete删除指针所指向的内存空间。</p>
-<p>智能指针的作用是，能够处理内存泄漏问题和空悬指针问题。</p>
-<ul>
-<li><p>对于unique_ptr，实现独占式拥有的概念，同一时间只能有一个智能指针可以指向该对象，因为无法进行拷贝构造和拷贝赋值，但是可以进行移动构造和移动赋值；</p>
-</li>
-<li><p>对于shared_ptr，实现共享式拥有的概念，即多个智能指针可以指向相同的对象，该对象及相关资源会在其所指对象不再使用之后，自动释放与对象相关的资源；</p>
-</li>
-<li><p>对于weak_ptr，解决shared_ptr相互引用时，两个指针的引用计数永远不会下降为0，从而导致死锁问题。而weak_ptr是对对象的一种弱引用，可以绑定到shared_ptr，但不会增加对象的引用计数。</p>
-</li>
-</ul>
-<h1 id="1-unique-ptr"><a href="#1-unique-ptr" class="headerlink" title="1 unique_ptr"></a>1 unique_ptr</h1><p>每个 unique_ptr 指针指向的堆内存空间的引用计数，都只能为 1，一旦该 unique_ptr 指针放弃对所指堆内存空间的所有权，则该空间会被立即释放回收。</p>
-<ul>
-<li><p>创建unique_ptr  </p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 创建空的unique_ptr</span></span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p1</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p2</span><span class="params">(<span class="literal">nullptr</span>)</span></span>;</span><br><span class="line"><span class="comment">// 有指向的</span></span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p3</span><span class="params">(<span class="keyword">new</span> <span class="type">int</span>)</span></span>;</span><br><span class="line"><span class="comment">// 创建空的unique_ptr</span></span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p4</span><span class="params">(<span class="keyword">new</span> <span class="type">int</span>)</span></span>;</span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p5</span><span class="params">(p4)</span></span>;<span class="comment">//错误的，没有拷贝构造</span></span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p5</span><span class="params">(std::move(p4))</span></span>;<span class="comment">//正确的，有移动构造</span></span><br></pre></td></tr></table></figure>
-<p>值得一提的是，对于调用移动构造函数的 p4 和 p5 来说，p5 将获取 p4 所指堆空间的所有权，而 p4 将变成空指针（nullptr）。</p>
-</li>
-<li><p>unique_ptr 可以指向一个数组</p>
-  <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">std::unique_ptr&lt;<span class="type">int</span>[]&gt; uptr = std::<span class="built_in">make_unique</span>&lt;<span class="type">int</span>[]&gt;(<span class="number">10</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    uptr[i] = i * i;</span><br><span class="line">&#125;   </span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    std::cout &lt;&lt; uptr[i] &lt;&lt; std::endl;</span><br><span class="line">&#125;   </span><br></pre></td></tr></table></figure>
-
-</li>
-<li><p>C++14新增make_unique</p>
-</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">unique_ptr&lt;<span class="type">int</span>&gt; p1 = <span class="built_in">make_unique</span>&lt;<span class="type">int</span>&gt;(<span class="number">100</span>);</span><br><span class="line"><span class="keyword">auto</span> p2 = <span class="built_in">make_unique</span>&lt;<span class="type">int</span>&gt;(<span class="number">200</span>);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>将unique_ptr转换成shared_ptr类型<br>转换条件：如果unique_ptr为右值时，他就可以赋值给shared_ptr。<br>原因：因为shared_ptr包含一个显示构造函数，可用于将右值unique_ptr转换为shared_ptr，shared_ptr将接管原来归unqiue_ptr所拥有的对象。</p>
-</li>
-<li><p>unique_ptr的简单实现</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">UniquePtr</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">UniquePtr</span>(T *pResource = <span class="literal">NULL</span>)</span><br><span class="line">		: <span class="built_in">m_pResource</span>(pResource) &#123;&#125;</span><br><span class="line">	~<span class="built_in">UniquePtr</span>()&#123; <span class="built_in">del</span>();&#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">reset</span><span class="params">(T* pResource)</span></span>&#123;<span class="comment">// 先释放资源(如果持有), 再持有资源</span></span><br><span class="line">		<span class="built_in">del</span>();</span><br><span class="line">		m_pResource = pResource;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">T* <span class="title">release</span><span class="params">()</span></span>&#123;<span class="comment">// 返回资源，资源的释放由调用方处理</span></span><br><span class="line">		T* pTemp = m_pResource;</span><br><span class="line">		m_pResource = <span class="literal">nullptr</span>;</span><br><span class="line">		<span class="keyword">return</span> pTemp;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">T* <span class="title">get</span><span class="params">()</span></span>&#123;<span class="comment">// 获取资源，调用方应该只使用不释放，否则会两次delete资源</span></span><br><span class="line">	</span><br><span class="line">		<span class="keyword">return</span> m_pResource;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">operator</span> <span class="title">bool</span><span class="params">()</span> <span class="type">const</span></span>&#123; <span class="comment">// 是否持有资源</span></span><br><span class="line">		<span class="keyword">return</span> m_pResource != <span class="literal">nullptr</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	T&amp; <span class="keyword">operator</span> * ()&#123;</span><br><span class="line">		<span class="keyword">return</span> *m_pResource;</span><br><span class="line">	&#125;</span><br><span class="line">	T* <span class="keyword">operator</span> -&gt; ()&#123;</span><br><span class="line">		<span class="keyword">return</span> m_pResource;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">del</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="literal">nullptr</span> == m_pResource) <span class="keyword">return</span>;</span><br><span class="line">		<span class="keyword">delete</span> m_pResource;</span><br><span class="line">		m_pResource = <span class="literal">nullptr</span>;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="built_in">UniquePtr</span>(<span class="type">const</span> UniquePtr &amp;) = <span class="keyword">delete</span>; <span class="comment">// 禁用拷贝构造</span></span><br><span class="line">	UniquePtr&amp; <span class="keyword">operator</span> = (<span class="type">const</span> UniquePtr &amp;) = <span class="keyword">delete</span>; <span class="comment">// 禁用拷贝赋值</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	T *m_pResource;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="2-shared-ptr"><a href="#2-shared-ptr" class="headerlink" title="2 shared_ptr"></a>2 shared_ptr</h1><p>参考<a href="https://zhuanlan.zhihu.com/p/521454381">C++ 智能指针详解（二）——shared_ptr与weak_ptr</a></p>
-<ul>
-<li><p>特点总结如下</p>
-<ul>
-<li>共享所有权</li>
-<li>存储成本较裸指针多了个引用计数指针（相关控制块-共享）</li>
-<li>接口慎用（会导致蔓延问题）</li>
-<li>线程安全，引用计数增减会减慢多核性能</li>
-<li>支持拷贝构造，支持移动</li>
-</ul>
-</li>
-<li><p>shared_ptr使用注意事项</p>
-<ul>
-<li>避免循环引用，解决办法使用弱引用指针</li>
-<li>避免对原始指针多于两组的所有权（使用enable_shared_from_this&lt;&gt;避免this被多组所有权）</li>
-<li>避免在shared引用对象成员中再次使用shared_ptr，这样会导致资源重复释放</li>
-</ul>
-</li>
-<li><p>shared_ptr内存模型</p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230920101244.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230920101259.png"></p>
-<ul>
-<li>API</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">函数API</th>
-<th align="center">含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">p.get()</td>
-<td align="center">返回p中保存的指针。小心使用，若智能指针释放了其对象，返回的指针所指向的对象也就消失了</td>
-</tr>
-<tr>
-<td align="center">p.use_count()</td>
-<td align="center">返回与p共享对象的智能指针数量；可能很慢，注意用于调试</td>
-</tr>
-<tr>
-<td align="center">p.unique()</td>
-<td align="center">若p.use_count()为1，返回true；否则返回false</td>
-</tr>
-<tr>
-<td align="center">p &#x3D; q</td>
-<td align="center">p和q都是shared_ptr，所保存的指针能相互转换。此操作会递减p的引用计数，递增q的引用计数；若p的引用计数变为0，则将其管理的原内存释放</td>
-</tr>
-<tr>
-<td align="center">make_shared<T>(args)</td>
-<td align="center">返回一个shared_ptr，指向一个动态分配的类型为T的对象。使用args初始化此对象</td>
-</tr>
-<tr>
-<td align="center">shared_ptr<T> p(q)</td>
-<td align="center">p是share_ptr q的拷贝；此操作会递增q中的计数器。q中的指针类型必须能转换为T*</td>
-</tr>
-<tr>
-<td align="center">shared_ptr<T> p(u)</td>
-<td align="center">p从unique_ptr u那里接管了对象的所有权；将u置为空</td>
-</tr>
-<tr>
-<td align="center">shared_ptr<T> p(q,d)</td>
-<td align="center">p接管了内置指针q所指向的对象的所有权。q必须能转换为T*类型。p将使用可调用的对象d来代替delete</td>
-</tr>
-<tr>
-<td align="center">shared_ptr<T> p(p2,d)</td>
-<td align="center">p是share_ptr p2的拷贝；此操作会递增p2中的计数器。p2中的指针类型必须能转换为T*，p将使用可调用的对象d来代替delete</td>
-</tr>
-<tr>
-<td align="center">p.reset()</td>
-<td align="center">p置为空。若p是唯一指向其对象的shared_ptr，reset会释放此对象</td>
-</tr>
-<tr>
-<td align="center">p.reset(q)</td>
-<td align="center">传递了参数内置指针q，会令p指向q</td>
-</tr>
-<tr>
-<td align="center">p.reset(q,d)</td>
-<td align="center">传递了参数d，将会调用d而不是delete来释放q</td>
-</tr>
-<tr>
-<td align="center">p.swap(q)或swap(p,q)</td>
-<td align="center">交换两个智能指针</td>
-</tr>
-</tbody></table>
-<h1 id="3-weak-ptr"><a href="#3-weak-ptr" class="headerlink" title="3 weak_ptr"></a>3 weak_ptr</h1><ul>
-<li>API</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">函数API</th>
-<th align="center">含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">weak_ptr<T> w</td>
-<td align="center">空weak_ptr可以指向类型为T的对象</td>
-</tr>
-<tr>
-<td align="center">weak_ptr<T> w(sp)</td>
-<td align="center">与shared_ptr sp指向相同对象的weak_ptr。T必须能转换为sp指向的类型</td>
-</tr>
-<tr>
-<td align="center">w &#x3D; p</td>
-<td align="center">p可以是一个shared_ptr或一个weak_ptr。赋值后w与p共享对象</td>
-</tr>
-<tr>
-<td align="center">w.reset()</td>
-<td align="center">将w置为空</td>
-</tr>
-<tr>
-<td align="center">w.use_count()</td>
-<td align="center">与w共享对象的shared_ptr的数量</td>
-</tr>
-<tr>
-<td align="center">w.expired()</td>
-<td align="center">若w.use_count()为0，返回true，否则返回false</td>
-</tr>
-<tr>
-<td align="center">w.lock()</td>
-<td align="center">如果expired为true，返回一个空shared_ptr；否则返回一个指向w的对象的shared_ptr</td>
-</tr>
-</tbody></table>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>智能指针</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博客网站分布管理</title>
     <url>/2023/10/01/20231001_blogDistributeToMacOS/</url>
     <content><![CDATA[<p>等到要换电脑的时候，发现我在本地管理github pages需要移植一下，博客记录一下移植过程，方便以后查阅，由于博主心血来潮换了mac，这时候需要在MacOS上继续进行配置了。</p>
@@ -2414,6 +2242,178 @@
       </tags>
   </entry>
   <entry>
+    <title>C++智能指针</title>
+    <url>/2023/09/20/20230920_SmartPtr/</url>
+    <content><![CDATA[<p>简要介绍一下C++11以后的智能指针，有<code>std::unique_ptr&lt;T&gt;</code>，<code>std::shared_ptr&lt;T&gt;</code>，<code>std::weak_ptr&lt;T&gt;</code>，并且废弃了<code>std::auto_ptr&lt;T&gt;</code></p>
+<span id="more"></span>
+
+<p>首先智能指针是一个RAII类模型，用于动态分配内存，其设计思想是将基本类型指针封装为（模板）类对象指针，并在离开作用域时调用析构函数，使用delete删除指针所指向的内存空间。</p>
+<p>智能指针的作用是，能够处理内存泄漏问题和空悬指针问题。</p>
+<ul>
+<li><p>对于unique_ptr，实现独占式拥有的概念，同一时间只能有一个智能指针可以指向该对象，因为无法进行拷贝构造和拷贝赋值，但是可以进行移动构造和移动赋值；</p>
+</li>
+<li><p>对于shared_ptr，实现共享式拥有的概念，即多个智能指针可以指向相同的对象，该对象及相关资源会在其所指对象不再使用之后，自动释放与对象相关的资源；</p>
+</li>
+<li><p>对于weak_ptr，解决shared_ptr相互引用时，两个指针的引用计数永远不会下降为0，从而导致死锁问题。而weak_ptr是对对象的一种弱引用，可以绑定到shared_ptr，但不会增加对象的引用计数。</p>
+</li>
+</ul>
+<h1 id="1-unique-ptr"><a href="#1-unique-ptr" class="headerlink" title="1 unique_ptr"></a>1 unique_ptr</h1><p>每个 unique_ptr 指针指向的堆内存空间的引用计数，都只能为 1，一旦该 unique_ptr 指针放弃对所指堆内存空间的所有权，则该空间会被立即释放回收。</p>
+<ul>
+<li><p>创建unique_ptr  </p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 创建空的unique_ptr</span></span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p1</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p2</span><span class="params">(<span class="literal">nullptr</span>)</span></span>;</span><br><span class="line"><span class="comment">// 有指向的</span></span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p3</span><span class="params">(<span class="keyword">new</span> <span class="type">int</span>)</span></span>;</span><br><span class="line"><span class="comment">// 创建空的unique_ptr</span></span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p4</span><span class="params">(<span class="keyword">new</span> <span class="type">int</span>)</span></span>;</span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p5</span><span class="params">(p4)</span></span>;<span class="comment">//错误的，没有拷贝构造</span></span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p5</span><span class="params">(std::move(p4))</span></span>;<span class="comment">//正确的，有移动构造</span></span><br></pre></td></tr></table></figure>
+<p>值得一提的是，对于调用移动构造函数的 p4 和 p5 来说，p5 将获取 p4 所指堆空间的所有权，而 p4 将变成空指针（nullptr）。</p>
+</li>
+<li><p>unique_ptr 可以指向一个数组</p>
+  <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">std::unique_ptr&lt;<span class="type">int</span>[]&gt; uptr = std::<span class="built_in">make_unique</span>&lt;<span class="type">int</span>[]&gt;(<span class="number">10</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    uptr[i] = i * i;</span><br><span class="line">&#125;   </span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    std::cout &lt;&lt; uptr[i] &lt;&lt; std::endl;</span><br><span class="line">&#125;   </span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>C++14新增make_unique</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">unique_ptr&lt;<span class="type">int</span>&gt; p1 = <span class="built_in">make_unique</span>&lt;<span class="type">int</span>&gt;(<span class="number">100</span>);</span><br><span class="line"><span class="keyword">auto</span> p2 = <span class="built_in">make_unique</span>&lt;<span class="type">int</span>&gt;(<span class="number">200</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>将unique_ptr转换成shared_ptr类型<br>转换条件：如果unique_ptr为右值时，他就可以赋值给shared_ptr。<br>原因：因为shared_ptr包含一个显示构造函数，可用于将右值unique_ptr转换为shared_ptr，shared_ptr将接管原来归unqiue_ptr所拥有的对象。</p>
+</li>
+<li><p>unique_ptr的简单实现</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">UniquePtr</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">UniquePtr</span>(T *pResource = <span class="literal">NULL</span>)</span><br><span class="line">		: <span class="built_in">m_pResource</span>(pResource) &#123;&#125;</span><br><span class="line">	~<span class="built_in">UniquePtr</span>()&#123; <span class="built_in">del</span>();&#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">reset</span><span class="params">(T* pResource)</span></span>&#123;<span class="comment">// 先释放资源(如果持有), 再持有资源</span></span><br><span class="line">		<span class="built_in">del</span>();</span><br><span class="line">		m_pResource = pResource;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">T* <span class="title">release</span><span class="params">()</span></span>&#123;<span class="comment">// 返回资源，资源的释放由调用方处理</span></span><br><span class="line">		T* pTemp = m_pResource;</span><br><span class="line">		m_pResource = <span class="literal">nullptr</span>;</span><br><span class="line">		<span class="keyword">return</span> pTemp;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">T* <span class="title">get</span><span class="params">()</span></span>&#123;<span class="comment">// 获取资源，调用方应该只使用不释放，否则会两次delete资源</span></span><br><span class="line">	</span><br><span class="line">		<span class="keyword">return</span> m_pResource;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">operator</span> <span class="title">bool</span><span class="params">()</span> <span class="type">const</span></span>&#123; <span class="comment">// 是否持有资源</span></span><br><span class="line">		<span class="keyword">return</span> m_pResource != <span class="literal">nullptr</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	T&amp; <span class="keyword">operator</span> * ()&#123;</span><br><span class="line">		<span class="keyword">return</span> *m_pResource;</span><br><span class="line">	&#125;</span><br><span class="line">	T* <span class="keyword">operator</span> -&gt; ()&#123;</span><br><span class="line">		<span class="keyword">return</span> m_pResource;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">del</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="literal">nullptr</span> == m_pResource) <span class="keyword">return</span>;</span><br><span class="line">		<span class="keyword">delete</span> m_pResource;</span><br><span class="line">		m_pResource = <span class="literal">nullptr</span>;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="built_in">UniquePtr</span>(<span class="type">const</span> UniquePtr &amp;) = <span class="keyword">delete</span>; <span class="comment">// 禁用拷贝构造</span></span><br><span class="line">	UniquePtr&amp; <span class="keyword">operator</span> = (<span class="type">const</span> UniquePtr &amp;) = <span class="keyword">delete</span>; <span class="comment">// 禁用拷贝赋值</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	T *m_pResource;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="2-shared-ptr"><a href="#2-shared-ptr" class="headerlink" title="2 shared_ptr"></a>2 shared_ptr</h1><p>参考<a href="https://zhuanlan.zhihu.com/p/521454381">C++ 智能指针详解（二）——shared_ptr与weak_ptr</a></p>
+<ul>
+<li><p>特点总结如下</p>
+<ul>
+<li>共享所有权</li>
+<li>存储成本较裸指针多了个引用计数指针（相关控制块-共享）</li>
+<li>接口慎用（会导致蔓延问题）</li>
+<li>线程安全，引用计数增减会减慢多核性能</li>
+<li>支持拷贝构造，支持移动</li>
+</ul>
+</li>
+<li><p>shared_ptr使用注意事项</p>
+<ul>
+<li>避免循环引用，解决办法使用弱引用指针</li>
+<li>避免对原始指针多于两组的所有权（使用enable_shared_from_this&lt;&gt;避免this被多组所有权）</li>
+<li>避免在shared引用对象成员中再次使用shared_ptr，这样会导致资源重复释放</li>
+</ul>
+</li>
+<li><p>shared_ptr内存模型</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230920101244.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230920101259.png"></p>
+<ul>
+<li>API</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">函数API</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">p.get()</td>
+<td align="center">返回p中保存的指针。小心使用，若智能指针释放了其对象，返回的指针所指向的对象也就消失了</td>
+</tr>
+<tr>
+<td align="center">p.use_count()</td>
+<td align="center">返回与p共享对象的智能指针数量；可能很慢，注意用于调试</td>
+</tr>
+<tr>
+<td align="center">p.unique()</td>
+<td align="center">若p.use_count()为1，返回true；否则返回false</td>
+</tr>
+<tr>
+<td align="center">p &#x3D; q</td>
+<td align="center">p和q都是shared_ptr，所保存的指针能相互转换。此操作会递减p的引用计数，递增q的引用计数；若p的引用计数变为0，则将其管理的原内存释放</td>
+</tr>
+<tr>
+<td align="center">make_shared<T>(args)</td>
+<td align="center">返回一个shared_ptr，指向一个动态分配的类型为T的对象。使用args初始化此对象</td>
+</tr>
+<tr>
+<td align="center">shared_ptr<T> p(q)</td>
+<td align="center">p是share_ptr q的拷贝；此操作会递增q中的计数器。q中的指针类型必须能转换为T*</td>
+</tr>
+<tr>
+<td align="center">shared_ptr<T> p(u)</td>
+<td align="center">p从unique_ptr u那里接管了对象的所有权；将u置为空</td>
+</tr>
+<tr>
+<td align="center">shared_ptr<T> p(q,d)</td>
+<td align="center">p接管了内置指针q所指向的对象的所有权。q必须能转换为T*类型。p将使用可调用的对象d来代替delete</td>
+</tr>
+<tr>
+<td align="center">shared_ptr<T> p(p2,d)</td>
+<td align="center">p是share_ptr p2的拷贝；此操作会递增p2中的计数器。p2中的指针类型必须能转换为T*，p将使用可调用的对象d来代替delete</td>
+</tr>
+<tr>
+<td align="center">p.reset()</td>
+<td align="center">p置为空。若p是唯一指向其对象的shared_ptr，reset会释放此对象</td>
+</tr>
+<tr>
+<td align="center">p.reset(q)</td>
+<td align="center">传递了参数内置指针q，会令p指向q</td>
+</tr>
+<tr>
+<td align="center">p.reset(q,d)</td>
+<td align="center">传递了参数d，将会调用d而不是delete来释放q</td>
+</tr>
+<tr>
+<td align="center">p.swap(q)或swap(p,q)</td>
+<td align="center">交换两个智能指针</td>
+</tr>
+</tbody></table>
+<h1 id="3-weak-ptr"><a href="#3-weak-ptr" class="headerlink" title="3 weak_ptr"></a>3 weak_ptr</h1><ul>
+<li>API</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">函数API</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">weak_ptr<T> w</td>
+<td align="center">空weak_ptr可以指向类型为T的对象</td>
+</tr>
+<tr>
+<td align="center">weak_ptr<T> w(sp)</td>
+<td align="center">与shared_ptr sp指向相同对象的weak_ptr。T必须能转换为sp指向的类型</td>
+</tr>
+<tr>
+<td align="center">w &#x3D; p</td>
+<td align="center">p可以是一个shared_ptr或一个weak_ptr。赋值后w与p共享对象</td>
+</tr>
+<tr>
+<td align="center">w.reset()</td>
+<td align="center">将w置为空</td>
+</tr>
+<tr>
+<td align="center">w.use_count()</td>
+<td align="center">与w共享对象的shared_ptr的数量</td>
+</tr>
+<tr>
+<td align="center">w.expired()</td>
+<td align="center">若w.use_count()为0，返回true，否则返回false</td>
+</tr>
+<tr>
+<td align="center">w.lock()</td>
+<td align="center">如果expired为true，返回一个空shared_ptr；否则返回一个指向w的对象的shared_ptr</td>
+</tr>
+</tbody></table>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>智能指针</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C++之lambda表达式</title>
     <url>/2023/10/10/20231010_lambda/</url>
     <content><![CDATA[<p>C++11之后引入lambda表达式，，一般用于定义匿名函数，使得代码更加灵活简洁。lambda表达式与普通函数类似，也有参数列表、返回值类型和函数体，只是它的定义方式更简洁，并且可以在函数内部定义。</p>
@@ -2484,6 +2484,129 @@
       <tags>
         <tag>C++</tag>
         <tag>lambda</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Beamer简单教程</title>
+    <url>/2023/10/30/20231030_BeamerTutorial/</url>
+    <content><![CDATA[<p>简要介绍一下Beamer的使用教程，一般使用Beamer时都是在现有的一些模版上进行制作，而Beamer的一些模版主要可以通过Overleaf或者Github得到。</p>
+<p>这里也给上我自己整理的模版：<a href="https://github.com/mobbu919/My_UESTC_Beamer">My_UESTC_Beamer</a></p>
+<p>主要介绍以下部分：</p>
+<ul>
+<li>文档信息&amp;封面设置</li>
+<li>内容设置：封面补充设置、目录以及子目录、新建页面、分点、插入图片、下标、公式、表格、分栏、分块<span id="more"></span></li>
+</ul>
+<p>首先寻找自己所需要的模版，如果不满意的话，还可以在现有模版上进行部分修改，我参考的模版</p>
+<ul>
+<li><a href="https://www.overleaf.com/latex/templates/uestc-beamer-theme/ybqzdsgvrfdq">UESTC中文Beamer模版</a></li>
+<li><a href="https://github.com/mobbu919/UESTC_Beamer">UESTC英文Beamer模版</a></li>
+</ul>
+<p>之后的教程会以中文模版进行介绍，大部分操作和英文是共通的。</p>
+<h1 id="1-文档信息-封面设置"><a href="#1-文档信息-封面设置" class="headerlink" title="1 文档信息&amp;封面设置"></a>1 文档信息&amp;封面设置</h1><p>首先是文档设置部分。</p>
+<p>首先是设置文档的一些属性,比如设置文档class喂beamer，使用ctex，hyperref包等，其中ctex就是支持中文的latex包，就是因为这个包的兼容性所以在mac无法制作（博主目前没找到）PPT。</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;ctex, hyperref&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[T1]&#123;fontenc&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% other packages</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;latexsym,amsmath,xcolor,multicol,booktabs,calligra&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;graphicx,pstricks,listings,stackengine&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后是PPT的封面设置,其中可以设置作者名字，PPT的标题和子标题，所在的机构和日期，这里日期可以设置当天<code>\today</code></p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\author</span>&#123;mobbu&#125;</span><br><span class="line"><span class="keyword">\title</span>&#123;论如何做好一个学术PPT&#125;</span><br><span class="line"><span class="keyword">\subtitle</span>&#123;毕业设计开题报告&#125;</span><br><span class="line"><span class="keyword">\institute</span>&#123;电子科技大学牛马学院&#125;</span><br><span class="line"><span class="keyword">\date</span>&#123;2023年10月30日&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;UESTC&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后又是一些在文档格式上的设置，一般不需要修改。</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% defs</span></span><br><span class="line"><span class="keyword">\def</span><span class="keyword">\cmd</span><span class="params">#1</span>&#123;<span class="keyword">\texttt</span>&#123;<span class="keyword">\color</span>&#123;red&#125;<span class="keyword">\footnotesize</span> <span class="built_in">$</span><span class="keyword">\backslash</span><span class="built_in">$</span><span class="params">#1</span>&#125;&#125;</span><br><span class="line"><span class="keyword">\def</span><span class="keyword">\env</span><span class="params">#1</span>&#123;<span class="keyword">\texttt</span>&#123;<span class="keyword">\color</span>&#123;blue&#125;<span class="keyword">\footnotesize</span> <span class="params">#1</span>&#125;&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;deepblue&#125;&#123;rgb&#125;&#123;0,0,0.5&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;deepred&#125;&#123;rgb&#125;&#123;0.6,0,0&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;deepgreen&#125;&#123;rgb&#125;&#123;0,0.5,0&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;halfgray&#125;&#123;gray&#125;&#123;0.55&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\lstset</span>&#123;</span><br><span class="line">    basicstyle=<span class="keyword">\ttfamily</span><span class="keyword">\small</span>,</span><br><span class="line">    keywordstyle=<span class="keyword">\bfseries</span><span class="keyword">\color</span>&#123;deepblue&#125;,</span><br><span class="line">    emphstyle=<span class="keyword">\ttfamily</span><span class="keyword">\color</span>&#123;deepred&#125;,    <span class="comment">% Custom highlighting style</span></span><br><span class="line">    stringstyle=<span class="keyword">\color</span>&#123;deepgreen&#125;,</span><br><span class="line">    numbers=left,</span><br><span class="line">    numberstyle=<span class="keyword">\small</span><span class="keyword">\color</span>&#123;halfgray&#125;,</span><br><span class="line">    rulesepcolor=<span class="keyword">\color</span>&#123;red!20!green!20!blue!20&#125;,</span><br><span class="line">    frame=shadowbox,</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h1 id="2-内容设置"><a href="#2-内容设置" class="headerlink" title="2 内容设置"></a>2 内容设置</h1><p>当设置好文档属性和封面之后，我们就需要进行PPT内容的设置了，首先文档需要在<code>\begin&#123;document&#125;</code>和<code>\end&#123;document&#125;</code>之间，这里与很多HTML语言类似，也就是说</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="comment">%你的内容</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-1-封面补充设置"><a href="#2-1-封面补充设置" class="headerlink" title="2.1 封面补充设置"></a>2.1 封面补充设置</h2><p>在第一步中我们只是设置了封面的一些内容，现在需要对具体的页面进行一些设置和补充</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\kaishu</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    <span class="keyword">\titlepage</span></span><br><span class="line">    <span class="keyword">\begin</span>&#123;figure&#125;[htpb]</span><br><span class="line">        <span class="keyword">\begin</span>&#123;center&#125;</span><br><span class="line">            <span class="keyword">\includegraphics</span>[width=0.2<span class="keyword">\linewidth</span>]&#123;pic/logo.pdf&#125;</span><br><span class="line">        <span class="keyword">\end</span>&#123;center&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231030205000.png"></p>
+<h2 id="2-2-目录以及子目录"><a href="#2-2-目录以及子目录" class="headerlink" title="2.2 目录以及子目录"></a>2.2 目录以及子目录</h2><p>以下这一段代码也是加在正文之前的。</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    <span class="keyword">\tableofcontents</span>[sectionstyle=show,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这一段的效果是，当前章节的子章节会显示，其他章节会隐藏，并且当前章节的当前子章节会正常显示，其他的会增加透明度显示，也即突出当前子章节，效果大概如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231030205112.png"></p>
+<p>当我们在正文中使用章节时，一般如下格式：</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\section</span>&#123;一级章节&#125;</span><br><span class="line"><span class="keyword">\subsection</span>&#123;二级章节&#125;</span><br><span class="line"><span class="comment">% 内容</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-3-新建页面"><a href="#2-3-新建页面" class="headerlink" title="2.3 新建页面"></a>2.3 新建页面</h2><p>代码如下，可以设置页面的标题</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;页面标题&#125;</span><br><span class="line"><span class="comment">% 页面内容</span></span><br><span class="line">这是一页PPT</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下；</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231030205906.png"></p>
+<h2 id="2-4-分点"><a href="#2-4-分点" class="headerlink" title="2.4 分点"></a>2.4 分点</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;分点&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;itemize&#125;</span><br><span class="line">    <span class="keyword">\item</span> 原神</span><br><span class="line">    <span class="keyword">\item</span> 王者荣耀</span><br><span class="line"><span class="keyword">\end</span>&#123;itemize&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231030205921.png"></p>
+<h2 id="2-5-插入图片"><a href="#2-5-插入图片" class="headerlink" title="2.5 插入图片"></a>2.5 插入图片</h2><p>这里主要需要设置居中显示，图像的大小和图像路径、图像的名称四个属性。如下代码所示。但是值得注意的是，插入的图片最好是pdf格式或者矢量图等，这样最后生成的PPT的图片效果比较好，如果使用png、jpg等常用的格式经常会出现比较模糊的情况。</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;图片插入&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;</span><br><span class="line">    <span class="comment">% 设置居中显示</span></span><br><span class="line">    <span class="keyword">\centering</span> </span><br><span class="line">    <span class="comment">% 设置页面75%宽度，链接为pic/test.pdf</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[width=0.75<span class="keyword">\linewidth</span>]&#123;pic/test.pdf&#125; </span><br><span class="line">    <span class="comment">% 设置图片标题</span></span><br><span class="line">    <span class="keyword">\caption</span>&#123;图片标题&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310302052478.png"></p>
+<h2 id="2-6-下标"><a href="#2-6-下标" class="headerlink" title="2.6 下标"></a>2.6 下标</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;下标&#125;</span><br><span class="line">    这是一个下标<span class="keyword">\footnotemark</span>[1]</span><br><span class="line">    <span class="keyword">\footnotetext</span>[1]&#123;www.mobbu.space&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+<p>或者可以：</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;下标&#125;</span><br><span class="line">    这是一个下标<span class="keyword">\footnote</span>&#123;www.mobbu.space&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>效果如下：<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310302052541.png"></p>
+<h2 id="2-7-公式"><a href="#2-7-公式" class="headerlink" title="2.7 公式"></a>2.7 公式</h2><p>公式可以直接使用markdown格式的公式，比如行内插入公式就是<code>$公式$</code>，行间公式<code>$$公式$$</code>。之前也有总结markdown公式的博客：<a href="https://mobbu.space/2023/10/21/20231021_MarkdownMath/#more">markdown公式语法汇总</a></p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;公式&#125;</span><br><span class="line">    这是一个行内公式<span class="built_in">$</span>a=b+c<span class="built_in">$</span></span><br><span class="line">    这是一个行间公式：</span><br><span class="line">    <span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line">    a=b+<span class="keyword">\frac</span>&#123;c&#125;&#123;d&#125;+<span class="keyword">\sum</span> <span class="built_in">_</span>&#123;n=1&#125;<span class="built_in">^</span>&#123;N&#125; x<span class="built_in">_</span>ny<span class="built_in">_</span>n</span><br><span class="line">    <span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+<p>效果如下：<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310302052421.png"></p>
+<h2 id="2-8-表格"><a href="#2-8-表格" class="headerlink" title="2.8 表格"></a>2.8 表格</h2><p>表格如下</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;表格&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;table&#125;[h]</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\begin</span>&#123;tabular&#125;&#123;c|c|c&#125;  <span class="comment">% 确定有几列</span></span><br><span class="line">        <span class="keyword">\toprule</span>[2pt]       <span class="comment">% 间隔</span></span><br><span class="line">        游戏 <span class="built_in">&amp;</span> 原神 <span class="built_in">&amp;</span> 塞尔达 <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span>              <span class="comment">% 横线</span></span><br><span class="line">        厂商 <span class="built_in">&amp;</span> 米哈游 <span class="built_in">&amp;</span> 任天堂 <span class="keyword">\\</span></span><br><span class="line">        平台 <span class="built_in">&amp;</span> 手机、电脑 <span class="built_in">&amp;</span> switch <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        类型 <span class="built_in">&amp;</span> 开放二次元 <span class="built_in">&amp;</span> 开放世界探索 <span class="keyword">\\</span></span><br><span class="line">        类型 <span class="built_in">&amp;</span> 组队游玩 <span class="built_in">&amp;</span> 单人游戏 <span class="keyword">\\</span></span><br><span class="line">        类型 <span class="built_in">&amp;</span> 氪金游戏 <span class="built_in">&amp;</span> 买断 <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        关键 <span class="built_in">&amp;</span> 启动 <span class="built_in">&amp;</span> 关闭 <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\bottomrule</span>[2pt]</span><br><span class="line">    <span class="keyword">\end</span>&#123;tabular&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;table&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下：<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310312143814.png"></p>
+<h2 id="2-9-分栏"><a href="#2-9-分栏" class="headerlink" title="2.9 分栏"></a>2.9 分栏</h2><p>示例如下所示，这里0.5表示该栏的宽度（占页面的比例），0.5也就是页面的一半。</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;分栏&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;columns&#125;</span><br><span class="line">        <span class="keyword">\column</span>&#123;0.5<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">        这是左边的一栏</span><br><span class="line">        <span class="keyword">\column</span>&#123;0.5<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">        这是右边的一栏</span><br><span class="line">    <span class="keyword">\end</span>&#123;columns&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下：<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310302053361.png"></p>
+<h2 id="2-10-分块"><a href="#2-10-分块" class="headerlink" title="2.10 分块"></a>2.10 分块</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;分块&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;block&#125;&#123;第一个块&#125;</span><br><span class="line">    王源</span><br><span class="line">    <span class="keyword">\end</span>&#123;block&#125;	</span><br><span class="line">    <span class="keyword">\begin</span>&#123;block&#125;&#123;第二个块&#125;</span><br><span class="line">    王俊凯</span><br><span class="line">    <span class="keyword">\end</span>&#123;block&#125;	</span><br><span class="line">    <span class="keyword">\begin</span>&#123;block&#125;&#123;第三个块&#125;</span><br><span class="line">    易洋千玺</span><br><span class="line">    <span class="keyword">\end</span>&#123;block&#125;	</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下：<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310302053549.png"></p>
+<h2 id="2-11-进阶玩法"><a href="#2-11-进阶玩法" class="headerlink" title="2.11 进阶玩法"></a>2.11 进阶玩法</h2><ul>
+<li><p><code>\vspace&#123;0.5cm&#125; </code>：在页面之间增加垂直空间，也就是说垂直空出0.5cm</p>
+</li>
+<li><p><code>\medskip</code>:这将在两行文本之间插入中等大小的垂直间距。</p>
+</li>
+<li><p><code> \begin&#123;minipage&#125;</code>创建子页面，适用场景为需要同时展示两个图片时，比如：</p>
+</li>
+</ul>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;Clique Model&#125;</span><br><span class="line">    Naturally, cohesive groups can be modeled with <span class="keyword">\textbf</span>&#123;<span class="keyword">\emph</span>&#123;Cliques&#125;&#125;.</span><br><span class="line">    </span><br><span class="line">    A clique is a subgraph where vertices are pairwise connected, i.e., a complete graph.</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">\centering</span> <span class="comment">%居中</span></span><br><span class="line">    <span class="keyword">\begin</span>&#123;minipage&#125;[c]&#123;0.4<span class="keyword">\linewidth</span>&#125;<span class="comment">% 生成宽度占页面40%的子页面</span></span><br><span class="line">        <span class="keyword">\psset</span>&#123;unit=0.8cm&#125;</span><br><span class="line">        <span class="keyword">\begin</span>&#123;figure&#125;[h]</span><br><span class="line">            <span class="keyword">\centering</span></span><br><span class="line">            <span class="keyword">\includegraphics</span>[height=.3<span class="keyword">\textheight</span>]&#123;pic/k7.png&#125;<span class="keyword">\\</span></span><br><span class="line">            <span class="keyword">\caption</span>&#123;<span class="built_in">$</span>K<span class="built_in">_</span>7<span class="built_in">$</span>&#125;</span><br><span class="line">        <span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;minipage&#125;<span class="keyword">\hspace</span>&#123;1cm&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;minipage&#125;&#123;0.4<span class="keyword">\linewidth</span>&#125;<span class="comment">% 生成宽度占页面40%的子页面</span></span><br><span class="line">        <span class="keyword">\medskip</span>    <span class="comment">% 插入中等大小的垂直间距</span></span><br><span class="line">        <span class="keyword">\begin</span>&#123;figure&#125;[h]</span><br><span class="line">            <span class="keyword">\centering</span></span><br><span class="line">            <span class="keyword">\includegraphics</span>[height=.3<span class="keyword">\textheight</span>]&#123;pic/k12.png&#125;<span class="keyword">\\</span></span><br><span class="line">            <span class="keyword">\caption</span>&#123;<span class="built_in">$</span>K<span class="built_in">_</span>&#123;12&#125;<span class="built_in">$</span>&#125;</span><br><span class="line">        <span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;minipage&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下：<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310312003430.png"></p>
+<ul>
+<li><p><code>\begin&#123;flushright&#125;</code>右对齐<br>示例：</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;flushright&#125;  </span><br><span class="line">这里是右对齐的文本。  </span><br><span class="line"><span class="keyword">\end</span>&#123;flushright&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code> \footnotesize</code>：设置字体为与脚注字体大小相同,<code>\footnotesize</code>命令只影响后续文本的字号，不会影响之前的文本。如果您需要恢复到正常字号，可以使用<code>\normalsize</code>命令。<br>示例：<code>示例：\footnotesize 这是脚注文本。</code>，这段代码会生成两行</p>
+</li>
+<li><p><code>\only&lt;num&gt;&#123;&#125;</code>：设置在括号的内容显示在当前页面，一般是在需要演示变化的情况下使用<br>比如：</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    this is kun play basketball</span><br><span class="line">    <span class="keyword">\begin</span>&#123;figure&#125;</span><br><span class="line">        <span class="keyword">\only</span>&lt;1&gt;&#123;</span><br><span class="line">            <span class="keyword">\begin</span>&#123;center&#125;</span><br><span class="line">                <span class="keyword">\includegraphics</span>[width=0.8<span class="keyword">\linewidth</span>]&#123;pic/01.jpg&#125;</span><br><span class="line">            <span class="keyword">\end</span>&#123;center&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">\only</span>&lt;2&gt;&#123;</span><br><span class="line">            <span class="keyword">\begin</span>&#123;center&#125;</span><br><span class="line">                <span class="keyword">\includegraphics</span>[width=0.8<span class="keyword">\linewidth</span>]&#123;pic/02.jpg&#125;</span><br><span class="line">            <span class="keyword">\end</span>&#123;center&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">\only</span>&lt;3&gt;&#123;</span><br><span class="line">            <span class="keyword">\begin</span>&#123;center&#125;</span><br><span class="line">                <span class="keyword">\includegraphics</span>[width=0.8<span class="keyword">\linewidth</span>]&#123;pic/03.jpg&#125;</span><br><span class="line">            <span class="keyword">\end</span>&#123;center&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">\only</span>&lt;4&gt;&#123;</span><br><span class="line">            <span class="keyword">\begin</span>&#123;center&#125;</span><br><span class="line">                <span class="keyword">\includegraphics</span>[width=0.8<span class="keyword">\linewidth</span>]&#123;pic/04.jpg&#125;</span><br><span class="line">            <span class="keyword">\end</span>&#123;center&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">\caption</span>&#123;ikun.&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+<p>效果如下：<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310312121545.png"></p>
+</li>
+</ul>
+<p>看到这个示例估计大家直截了当的懂用法了</p>
+<h1 id="3-demo示例"><a href="#3-demo示例" class="headerlink" title="3 demo示例"></a>3 demo示例</h1><p>demo代码如下：</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;ctex, hyperref&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[T1]&#123;fontenc&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% other packages</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;latexsym,amsmath,xcolor,multicol,booktabs,calligra&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;graphicx,pstricks,listings,stackengine&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后是PPT的封面设置,其中可以设置作者名字，PPT的标题和子标题，所在的机构和日期，这里日期可以设置当天<code>\today</code></p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\author</span>&#123;mobbu&#125;</span><br><span class="line"><span class="keyword">\title</span>&#123;论如何做好一个学术PPT&#125;</span><br><span class="line"><span class="keyword">\subtitle</span>&#123;毕业设计开题报告&#125;</span><br><span class="line"><span class="keyword">\institute</span>&#123;电子科技大学牛马学院&#125;</span><br><span class="line"><span class="keyword">\date</span>&#123;2023年10月30日&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;UESTC&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后又是一些在文档格式上的设置，一般不需要修改。</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% defs</span></span><br><span class="line"><span class="keyword">\def</span><span class="keyword">\cmd</span><span class="params">#1</span>&#123;<span class="keyword">\texttt</span>&#123;<span class="keyword">\color</span>&#123;red&#125;<span class="keyword">\footnotesize</span> <span class="built_in">$</span><span class="keyword">\backslash</span><span class="built_in">$</span><span class="params">#1</span>&#125;&#125;</span><br><span class="line"><span class="keyword">\def</span><span class="keyword">\env</span><span class="params">#1</span>&#123;<span class="keyword">\texttt</span>&#123;<span class="keyword">\color</span>&#123;blue&#125;<span class="keyword">\footnotesize</span> <span class="params">#1</span>&#125;&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;deepblue&#125;&#123;rgb&#125;&#123;0,0,0.5&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;deepred&#125;&#123;rgb&#125;&#123;0.6,0,0&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;deepgreen&#125;&#123;rgb&#125;&#123;0,0.5,0&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;halfgray&#125;&#123;gray&#125;&#123;0.55&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\lstset</span>&#123;</span><br><span class="line">    basicstyle=<span class="keyword">\ttfamily</span><span class="keyword">\small</span>,</span><br><span class="line">    keywordstyle=<span class="keyword">\bfseries</span><span class="keyword">\color</span>&#123;deepblue&#125;,</span><br><span class="line">    emphstyle=<span class="keyword">\ttfamily</span><span class="keyword">\color</span>&#123;deepred&#125;,    <span class="comment">% Custom highlighting style</span></span><br><span class="line">    stringstyle=<span class="keyword">\color</span>&#123;deepgreen&#125;,</span><br><span class="line">    numbers=left,</span><br><span class="line">    numberstyle=<span class="keyword">\small</span><span class="keyword">\color</span>&#123;halfgray&#125;,</span><br><span class="line">    rulesepcolor=<span class="keyword">\color</span>&#123;red!20!green!20!blue!20&#125;,</span><br><span class="line">    frame=shadowbox,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\kaishu</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    <span class="keyword">\titlepage</span></span><br><span class="line">    <span class="keyword">\begin</span>&#123;figure&#125;[htpb]</span><br><span class="line">        <span class="keyword">\begin</span>&#123;center&#125;</span><br><span class="line">            <span class="keyword">\includegraphics</span>[width=0.2<span class="keyword">\linewidth</span>]&#123;pic/logo.pdf&#125;</span><br><span class="line">        <span class="keyword">\end</span>&#123;center&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    <span class="keyword">\tableofcontents</span>[sectionstyle=show,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% -----------------------------正文--------------------------------- %</span></span><br><span class="line"><span class="comment">% part1:课题背景</span></span><br><span class="line"><span class="keyword">\section</span>&#123;课题背景&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\subsection</span>&#123;背景介绍&#125;</span><br><span class="line"></span><br><span class="line">现在大家无论是本科上课讨论课、pre还是研究生博士生组会，做PPT的机会大大的。</span><br><span class="line"></span><br><span class="line"><span class="comment">% part2:研究现状</span></span><br><span class="line"><span class="keyword">\section</span>&#123;研究现状&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\subsection</span>&#123;中文UESTC模版&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;中文模版示例&#125;</span><br><span class="line">[UESTC中文Beamer模版](https://www.overleaf.com/latex/templates/uestc-beamer-theme/ybqzdsgvrfdq)</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\subsection</span>&#123;英文UESTC模版&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;英文模版示例&#125;</span><br><span class="line">[UESTC英文Beamer模版](https://github.com/mobbu919/UESTC<span class="built_in">_</span>Beamer)</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% part3:研究内容</span></span><br><span class="line"><span class="keyword">\section</span>&#123;研究内容&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;页面标题&#125;</span><br><span class="line"><span class="comment">% 页面内容</span></span><br><span class="line">这是一页PPT</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;分点&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;itemize&#125;</span><br><span class="line">    <span class="keyword">\item</span> 原神</span><br><span class="line">    <span class="keyword">\item</span> 王者荣耀</span><br><span class="line"><span class="keyword">\end</span>&#123;itemize&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;图片插入&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;</span><br><span class="line">    <span class="comment">% 设置居中显示</span></span><br><span class="line">    <span class="keyword">\centering</span> </span><br><span class="line">    <span class="comment">% 设置页面75%宽度，链接为pic/test.pdf</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[width=0.75<span class="keyword">\linewidth</span>]&#123;pic/test.pdf&#125; </span><br><span class="line">    <span class="comment">% 设置图片标题</span></span><br><span class="line">    <span class="keyword">\caption</span>&#123;图片标题&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;下标&#125;</span><br><span class="line">    这是一个下标<span class="keyword">\footnotemark</span>[1]</span><br><span class="line">    <span class="keyword">\footnotetext</span>[1]&#123;www.mobbu.space&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;公式&#125;</span><br><span class="line">    这是一个行内公式<span class="built_in">$</span>a=b+c<span class="built_in">$</span></span><br><span class="line">    这是一个行间公式：</span><br><span class="line">    <span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line">    a=b+<span class="keyword">\frac</span>&#123;c&#125;&#123;d&#125;+<span class="keyword">\sum</span> <span class="built_in">_</span>&#123;n=1&#125;<span class="built_in">^</span>&#123;N&#125; x<span class="built_in">_</span>ny<span class="built_in">_</span>n</span><br><span class="line">    <span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;表格&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;table&#125;[h]</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\begin</span>&#123;tabular&#125;&#123;c|c|c&#125;</span><br><span class="line">        <span class="keyword">\toprule</span>[2pt]</span><br><span class="line">        游戏 <span class="built_in">&amp;</span> 原神 <span class="built_in">&amp;</span> 塞尔达 <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        厂商 <span class="built_in">&amp;</span> 米哈游 <span class="built_in">&amp;</span> 任天堂 <span class="keyword">\\</span></span><br><span class="line">        平台 <span class="built_in">&amp;</span> 手机、电脑 <span class="built_in">&amp;</span> switch <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        类型 <span class="built_in">&amp;</span> 开放二次元 <span class="built_in">&amp;</span> 开放世界探索 <span class="keyword">\\</span></span><br><span class="line">        类型 <span class="built_in">&amp;</span> 组队游玩 <span class="built_in">&amp;</span> 单人游戏 <span class="keyword">\\</span></span><br><span class="line">        类型 <span class="built_in">&amp;</span> 氪金游戏 <span class="built_in">&amp;</span> 买断 <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        关键 <span class="built_in">&amp;</span> 启动 <span class="built_in">&amp;</span> 关闭 <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\bottomrule</span>[2pt]</span><br><span class="line">    <span class="keyword">\end</span>&#123;tabular&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;table&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;分栏&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;columns&#125;</span><br><span class="line">        <span class="keyword">\column</span>&#123;0.5<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">        这是左边的一栏</span><br><span class="line">        <span class="keyword">\column</span>&#123;0.5<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">        这是右边的一栏</span><br><span class="line">    <span class="keyword">\end</span>&#123;columns&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;分块&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;block&#125;&#123;第一个块&#125;</span><br><span class="line">    王源</span><br><span class="line">    <span class="keyword">\end</span>&#123;block&#125; </span><br><span class="line">    <span class="keyword">\begin</span>&#123;block&#125;&#123;第二个块&#125;</span><br><span class="line">    王俊凯</span><br><span class="line">    <span class="keyword">\end</span>&#123;block&#125; </span><br><span class="line">    <span class="keyword">\begin</span>&#123;block&#125;&#123;第三个块&#125;</span><br><span class="line">    易洋千玺</span><br><span class="line">    <span class="keyword">\end</span>&#123;block&#125; </span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% part4:计划进度</span></span><br><span class="line"><span class="keyword">\section</span>&#123;计划进度&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;itemize&#125;</span><br><span class="line">        <span class="keyword">\item</span> 十一月、十二月：摸鱼</span><br><span class="line">        <span class="keyword">\item</span> 一月：摸鱼</span><br><span class="line">        <span class="keyword">\item</span> 二月：摸鱼</span><br><span class="line">        <span class="keyword">\item</span> 三月：摸鱼</span><br><span class="line">        <span class="keyword">\item</span> 四月：开始抱佛脚</span><br><span class="line">    <span class="keyword">\end</span>&#123;itemize&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;center&#125;</span><br><span class="line">        &#123;<span class="keyword">\Huge</span><span class="keyword">\calligra</span> Thanks!&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;center&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>Latex</tag>
+        <tag>Beamer</tag>
       </tags>
   </entry>
   <entry>
@@ -2688,129 +2811,6 @@
       </categories>
       <tags>
         <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Beamer简单教程</title>
-    <url>/2023/10/30/20231030_BeamerTutorial/</url>
-    <content><![CDATA[<p>简要介绍一下Beamer的使用教程，一般使用Beamer时都是在现有的一些模版上进行制作，而Beamer的一些模版主要可以通过Overleaf或者Github得到。</p>
-<p>这里也给上我自己整理的模版：<a href="https://github.com/mobbu919/My_UESTC_Beamer">My_UESTC_Beamer</a></p>
-<p>主要介绍以下部分：</p>
-<ul>
-<li>文档信息&amp;封面设置</li>
-<li>内容设置：封面补充设置、目录以及子目录、新建页面、分点、插入图片、下标、公式、表格、分栏、分块<span id="more"></span></li>
-</ul>
-<p>首先寻找自己所需要的模版，如果不满意的话，还可以在现有模版上进行部分修改，我参考的模版</p>
-<ul>
-<li><a href="https://www.overleaf.com/latex/templates/uestc-beamer-theme/ybqzdsgvrfdq">UESTC中文Beamer模版</a></li>
-<li><a href="https://github.com/mobbu919/UESTC_Beamer">UESTC英文Beamer模版</a></li>
-</ul>
-<p>之后的教程会以中文模版进行介绍，大部分操作和英文是共通的。</p>
-<h1 id="1-文档信息-封面设置"><a href="#1-文档信息-封面设置" class="headerlink" title="1 文档信息&amp;封面设置"></a>1 文档信息&amp;封面设置</h1><p>首先是文档设置部分。</p>
-<p>首先是设置文档的一些属性,比如设置文档class喂beamer，使用ctex，hyperref包等，其中ctex就是支持中文的latex包，就是因为这个包的兼容性所以在mac无法制作（博主目前没找到）PPT。</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;ctex, hyperref&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[T1]&#123;fontenc&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% other packages</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;latexsym,amsmath,xcolor,multicol,booktabs,calligra&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;graphicx,pstricks,listings,stackengine&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后是PPT的封面设置,其中可以设置作者名字，PPT的标题和子标题，所在的机构和日期，这里日期可以设置当天<code>\today</code></p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\author</span>&#123;mobbu&#125;</span><br><span class="line"><span class="keyword">\title</span>&#123;论如何做好一个学术PPT&#125;</span><br><span class="line"><span class="keyword">\subtitle</span>&#123;毕业设计开题报告&#125;</span><br><span class="line"><span class="keyword">\institute</span>&#123;电子科技大学牛马学院&#125;</span><br><span class="line"><span class="keyword">\date</span>&#123;2023年10月30日&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;UESTC&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最后又是一些在文档格式上的设置，一般不需要修改。</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% defs</span></span><br><span class="line"><span class="keyword">\def</span><span class="keyword">\cmd</span><span class="params">#1</span>&#123;<span class="keyword">\texttt</span>&#123;<span class="keyword">\color</span>&#123;red&#125;<span class="keyword">\footnotesize</span> <span class="built_in">$</span><span class="keyword">\backslash</span><span class="built_in">$</span><span class="params">#1</span>&#125;&#125;</span><br><span class="line"><span class="keyword">\def</span><span class="keyword">\env</span><span class="params">#1</span>&#123;<span class="keyword">\texttt</span>&#123;<span class="keyword">\color</span>&#123;blue&#125;<span class="keyword">\footnotesize</span> <span class="params">#1</span>&#125;&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;deepblue&#125;&#123;rgb&#125;&#123;0,0,0.5&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;deepred&#125;&#123;rgb&#125;&#123;0.6,0,0&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;deepgreen&#125;&#123;rgb&#125;&#123;0,0.5,0&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;halfgray&#125;&#123;gray&#125;&#123;0.55&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\lstset</span>&#123;</span><br><span class="line">    basicstyle=<span class="keyword">\ttfamily</span><span class="keyword">\small</span>,</span><br><span class="line">    keywordstyle=<span class="keyword">\bfseries</span><span class="keyword">\color</span>&#123;deepblue&#125;,</span><br><span class="line">    emphstyle=<span class="keyword">\ttfamily</span><span class="keyword">\color</span>&#123;deepred&#125;,    <span class="comment">% Custom highlighting style</span></span><br><span class="line">    stringstyle=<span class="keyword">\color</span>&#123;deepgreen&#125;,</span><br><span class="line">    numbers=left,</span><br><span class="line">    numberstyle=<span class="keyword">\small</span><span class="keyword">\color</span>&#123;halfgray&#125;,</span><br><span class="line">    rulesepcolor=<span class="keyword">\color</span>&#123;red!20!green!20!blue!20&#125;,</span><br><span class="line">    frame=shadowbox,</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<h1 id="2-内容设置"><a href="#2-内容设置" class="headerlink" title="2 内容设置"></a>2 内容设置</h1><p>当设置好文档属性和封面之后，我们就需要进行PPT内容的设置了，首先文档需要在<code>\begin&#123;document&#125;</code>和<code>\end&#123;document&#125;</code>之间，这里与很多HTML语言类似，也就是说</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="comment">%你的内容</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="2-1-封面补充设置"><a href="#2-1-封面补充设置" class="headerlink" title="2.1 封面补充设置"></a>2.1 封面补充设置</h2><p>在第一步中我们只是设置了封面的一些内容，现在需要对具体的页面进行一些设置和补充</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\kaishu</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    <span class="keyword">\titlepage</span></span><br><span class="line">    <span class="keyword">\begin</span>&#123;figure&#125;[htpb]</span><br><span class="line">        <span class="keyword">\begin</span>&#123;center&#125;</span><br><span class="line">            <span class="keyword">\includegraphics</span>[width=0.2<span class="keyword">\linewidth</span>]&#123;pic/logo.pdf&#125;</span><br><span class="line">        <span class="keyword">\end</span>&#123;center&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果如下</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231030205000.png"></p>
-<h2 id="2-2-目录以及子目录"><a href="#2-2-目录以及子目录" class="headerlink" title="2.2 目录以及子目录"></a>2.2 目录以及子目录</h2><p>以下这一段代码也是加在正文之前的。</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    <span class="keyword">\tableofcontents</span>[sectionstyle=show,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这一段的效果是，当前章节的子章节会显示，其他章节会隐藏，并且当前章节的当前子章节会正常显示，其他的会增加透明度显示，也即突出当前子章节，效果大概如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231030205112.png"></p>
-<p>当我们在正文中使用章节时，一般如下格式：</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\section</span>&#123;一级章节&#125;</span><br><span class="line"><span class="keyword">\subsection</span>&#123;二级章节&#125;</span><br><span class="line"><span class="comment">% 内容</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="2-3-新建页面"><a href="#2-3-新建页面" class="headerlink" title="2.3 新建页面"></a>2.3 新建页面</h2><p>代码如下，可以设置页面的标题</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;页面标题&#125;</span><br><span class="line"><span class="comment">% 页面内容</span></span><br><span class="line">这是一页PPT</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果如下；</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231030205906.png"></p>
-<h2 id="2-4-分点"><a href="#2-4-分点" class="headerlink" title="2.4 分点"></a>2.4 分点</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;分点&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;itemize&#125;</span><br><span class="line">    <span class="keyword">\item</span> 原神</span><br><span class="line">    <span class="keyword">\item</span> 王者荣耀</span><br><span class="line"><span class="keyword">\end</span>&#123;itemize&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231030205921.png"></p>
-<h2 id="2-5-插入图片"><a href="#2-5-插入图片" class="headerlink" title="2.5 插入图片"></a>2.5 插入图片</h2><p>这里主要需要设置居中显示，图像的大小和图像路径、图像的名称四个属性。如下代码所示。但是值得注意的是，插入的图片最好是pdf格式或者矢量图等，这样最后生成的PPT的图片效果比较好，如果使用png、jpg等常用的格式经常会出现比较模糊的情况。</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;图片插入&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;</span><br><span class="line">    <span class="comment">% 设置居中显示</span></span><br><span class="line">    <span class="keyword">\centering</span> </span><br><span class="line">    <span class="comment">% 设置页面75%宽度，链接为pic/test.pdf</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[width=0.75<span class="keyword">\linewidth</span>]&#123;pic/test.pdf&#125; </span><br><span class="line">    <span class="comment">% 设置图片标题</span></span><br><span class="line">    <span class="keyword">\caption</span>&#123;图片标题&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
-<p>效果如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310302052478.png"></p>
-<h2 id="2-6-下标"><a href="#2-6-下标" class="headerlink" title="2.6 下标"></a>2.6 下标</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;下标&#125;</span><br><span class="line">    这是一个下标<span class="keyword">\footnotemark</span>[1]</span><br><span class="line">    <span class="keyword">\footnotetext</span>[1]&#123;www.mobbu.space&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
-<p>或者可以：</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;下标&#125;</span><br><span class="line">    这是一个下标<span class="keyword">\footnote</span>&#123;www.mobbu.space&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>效果如下：<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310302052541.png"></p>
-<h2 id="2-7-公式"><a href="#2-7-公式" class="headerlink" title="2.7 公式"></a>2.7 公式</h2><p>公式可以直接使用markdown格式的公式，比如行内插入公式就是<code>$公式$</code>，行间公式<code>$$公式$$</code>。之前也有总结markdown公式的博客：<a href="https://mobbu.space/2023/10/21/20231021_MarkdownMath/#more">markdown公式语法汇总</a></p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;公式&#125;</span><br><span class="line">    这是一个行内公式<span class="built_in">$</span>a=b+c<span class="built_in">$</span></span><br><span class="line">    这是一个行间公式：</span><br><span class="line">    <span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line">    a=b+<span class="keyword">\frac</span>&#123;c&#125;&#123;d&#125;+<span class="keyword">\sum</span> <span class="built_in">_</span>&#123;n=1&#125;<span class="built_in">^</span>&#123;N&#125; x<span class="built_in">_</span>ny<span class="built_in">_</span>n</span><br><span class="line">    <span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
-<p>效果如下：<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310302052421.png"></p>
-<h2 id="2-8-表格"><a href="#2-8-表格" class="headerlink" title="2.8 表格"></a>2.8 表格</h2><p>表格如下</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;表格&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;table&#125;[h]</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\begin</span>&#123;tabular&#125;&#123;c|c|c&#125;  <span class="comment">% 确定有几列</span></span><br><span class="line">        <span class="keyword">\toprule</span>[2pt]       <span class="comment">% 间隔</span></span><br><span class="line">        游戏 <span class="built_in">&amp;</span> 原神 <span class="built_in">&amp;</span> 塞尔达 <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span>              <span class="comment">% 横线</span></span><br><span class="line">        厂商 <span class="built_in">&amp;</span> 米哈游 <span class="built_in">&amp;</span> 任天堂 <span class="keyword">\\</span></span><br><span class="line">        平台 <span class="built_in">&amp;</span> 手机、电脑 <span class="built_in">&amp;</span> switch <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        类型 <span class="built_in">&amp;</span> 开放二次元 <span class="built_in">&amp;</span> 开放世界探索 <span class="keyword">\\</span></span><br><span class="line">        类型 <span class="built_in">&amp;</span> 组队游玩 <span class="built_in">&amp;</span> 单人游戏 <span class="keyword">\\</span></span><br><span class="line">        类型 <span class="built_in">&amp;</span> 氪金游戏 <span class="built_in">&amp;</span> 买断 <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        关键 <span class="built_in">&amp;</span> 启动 <span class="built_in">&amp;</span> 关闭 <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\bottomrule</span>[2pt]</span><br><span class="line">    <span class="keyword">\end</span>&#123;tabular&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;table&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果如下：<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310312143814.png"></p>
-<h2 id="2-9-分栏"><a href="#2-9-分栏" class="headerlink" title="2.9 分栏"></a>2.9 分栏</h2><p>示例如下所示，这里0.5表示该栏的宽度（占页面的比例），0.5也就是页面的一半。</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;分栏&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;columns&#125;</span><br><span class="line">        <span class="keyword">\column</span>&#123;0.5<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">        这是左边的一栏</span><br><span class="line">        <span class="keyword">\column</span>&#123;0.5<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">        这是右边的一栏</span><br><span class="line">    <span class="keyword">\end</span>&#123;columns&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果如下：<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310302053361.png"></p>
-<h2 id="2-10-分块"><a href="#2-10-分块" class="headerlink" title="2.10 分块"></a>2.10 分块</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;分块&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;block&#125;&#123;第一个块&#125;</span><br><span class="line">    王源</span><br><span class="line">    <span class="keyword">\end</span>&#123;block&#125;	</span><br><span class="line">    <span class="keyword">\begin</span>&#123;block&#125;&#123;第二个块&#125;</span><br><span class="line">    王俊凯</span><br><span class="line">    <span class="keyword">\end</span>&#123;block&#125;	</span><br><span class="line">    <span class="keyword">\begin</span>&#123;block&#125;&#123;第三个块&#125;</span><br><span class="line">    易洋千玺</span><br><span class="line">    <span class="keyword">\end</span>&#123;block&#125;	</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果如下：<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310302053549.png"></p>
-<h2 id="2-11-进阶玩法"><a href="#2-11-进阶玩法" class="headerlink" title="2.11 进阶玩法"></a>2.11 进阶玩法</h2><ul>
-<li><p><code>\vspace&#123;0.5cm&#125; </code>：在页面之间增加垂直空间，也就是说垂直空出0.5cm</p>
-</li>
-<li><p><code>\medskip</code>:这将在两行文本之间插入中等大小的垂直间距。</p>
-</li>
-<li><p><code> \begin&#123;minipage&#125;</code>创建子页面，适用场景为需要同时展示两个图片时，比如：</p>
-</li>
-</ul>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;Clique Model&#125;</span><br><span class="line">    Naturally, cohesive groups can be modeled with <span class="keyword">\textbf</span>&#123;<span class="keyword">\emph</span>&#123;Cliques&#125;&#125;.</span><br><span class="line">    </span><br><span class="line">    A clique is a subgraph where vertices are pairwise connected, i.e., a complete graph.</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">\centering</span> <span class="comment">%居中</span></span><br><span class="line">    <span class="keyword">\begin</span>&#123;minipage&#125;[c]&#123;0.4<span class="keyword">\linewidth</span>&#125;<span class="comment">% 生成宽度占页面40%的子页面</span></span><br><span class="line">        <span class="keyword">\psset</span>&#123;unit=0.8cm&#125;</span><br><span class="line">        <span class="keyword">\begin</span>&#123;figure&#125;[h]</span><br><span class="line">            <span class="keyword">\centering</span></span><br><span class="line">            <span class="keyword">\includegraphics</span>[height=.3<span class="keyword">\textheight</span>]&#123;pic/k7.png&#125;<span class="keyword">\\</span></span><br><span class="line">            <span class="keyword">\caption</span>&#123;<span class="built_in">$</span>K<span class="built_in">_</span>7<span class="built_in">$</span>&#125;</span><br><span class="line">        <span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;minipage&#125;<span class="keyword">\hspace</span>&#123;1cm&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;minipage&#125;&#123;0.4<span class="keyword">\linewidth</span>&#125;<span class="comment">% 生成宽度占页面40%的子页面</span></span><br><span class="line">        <span class="keyword">\medskip</span>    <span class="comment">% 插入中等大小的垂直间距</span></span><br><span class="line">        <span class="keyword">\begin</span>&#123;figure&#125;[h]</span><br><span class="line">            <span class="keyword">\centering</span></span><br><span class="line">            <span class="keyword">\includegraphics</span>[height=.3<span class="keyword">\textheight</span>]&#123;pic/k12.png&#125;<span class="keyword">\\</span></span><br><span class="line">            <span class="keyword">\caption</span>&#123;<span class="built_in">$</span>K<span class="built_in">_</span>&#123;12&#125;<span class="built_in">$</span>&#125;</span><br><span class="line">        <span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;minipage&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果如下：<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310312003430.png"></p>
-<ul>
-<li><p><code>\begin&#123;flushright&#125;</code>右对齐<br>示例：</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;flushright&#125;  </span><br><span class="line">这里是右对齐的文本。  </span><br><span class="line"><span class="keyword">\end</span>&#123;flushright&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code> \footnotesize</code>：设置字体为与脚注字体大小相同,<code>\footnotesize</code>命令只影响后续文本的字号，不会影响之前的文本。如果您需要恢复到正常字号，可以使用<code>\normalsize</code>命令。<br>示例：<code>示例：\footnotesize 这是脚注文本。</code>，这段代码会生成两行</p>
-</li>
-<li><p><code>\only&lt;num&gt;&#123;&#125;</code>：设置在括号的内容显示在当前页面，一般是在需要演示变化的情况下使用<br>比如：</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    this is kun play basketball</span><br><span class="line">    <span class="keyword">\begin</span>&#123;figure&#125;</span><br><span class="line">        <span class="keyword">\only</span>&lt;1&gt;&#123;</span><br><span class="line">            <span class="keyword">\begin</span>&#123;center&#125;</span><br><span class="line">                <span class="keyword">\includegraphics</span>[width=0.8<span class="keyword">\linewidth</span>]&#123;pic/01.jpg&#125;</span><br><span class="line">            <span class="keyword">\end</span>&#123;center&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">\only</span>&lt;2&gt;&#123;</span><br><span class="line">            <span class="keyword">\begin</span>&#123;center&#125;</span><br><span class="line">                <span class="keyword">\includegraphics</span>[width=0.8<span class="keyword">\linewidth</span>]&#123;pic/02.jpg&#125;</span><br><span class="line">            <span class="keyword">\end</span>&#123;center&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">\only</span>&lt;3&gt;&#123;</span><br><span class="line">            <span class="keyword">\begin</span>&#123;center&#125;</span><br><span class="line">                <span class="keyword">\includegraphics</span>[width=0.8<span class="keyword">\linewidth</span>]&#123;pic/03.jpg&#125;</span><br><span class="line">            <span class="keyword">\end</span>&#123;center&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">\only</span>&lt;4&gt;&#123;</span><br><span class="line">            <span class="keyword">\begin</span>&#123;center&#125;</span><br><span class="line">                <span class="keyword">\includegraphics</span>[width=0.8<span class="keyword">\linewidth</span>]&#123;pic/04.jpg&#125;</span><br><span class="line">            <span class="keyword">\end</span>&#123;center&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">\caption</span>&#123;ikun.&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
-<p>效果如下：<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310312121545.png"></p>
-</li>
-</ul>
-<p>看到这个示例估计大家直截了当的懂用法了</p>
-<h1 id="3-demo示例"><a href="#3-demo示例" class="headerlink" title="3 demo示例"></a>3 demo示例</h1><p>demo代码如下：</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;ctex, hyperref&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[T1]&#123;fontenc&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% other packages</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;latexsym,amsmath,xcolor,multicol,booktabs,calligra&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;graphicx,pstricks,listings,stackengine&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后是PPT的封面设置,其中可以设置作者名字，PPT的标题和子标题，所在的机构和日期，这里日期可以设置当天<code>\today</code></p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\author</span>&#123;mobbu&#125;</span><br><span class="line"><span class="keyword">\title</span>&#123;论如何做好一个学术PPT&#125;</span><br><span class="line"><span class="keyword">\subtitle</span>&#123;毕业设计开题报告&#125;</span><br><span class="line"><span class="keyword">\institute</span>&#123;电子科技大学牛马学院&#125;</span><br><span class="line"><span class="keyword">\date</span>&#123;2023年10月30日&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;UESTC&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最后又是一些在文档格式上的设置，一般不需要修改。</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% defs</span></span><br><span class="line"><span class="keyword">\def</span><span class="keyword">\cmd</span><span class="params">#1</span>&#123;<span class="keyword">\texttt</span>&#123;<span class="keyword">\color</span>&#123;red&#125;<span class="keyword">\footnotesize</span> <span class="built_in">$</span><span class="keyword">\backslash</span><span class="built_in">$</span><span class="params">#1</span>&#125;&#125;</span><br><span class="line"><span class="keyword">\def</span><span class="keyword">\env</span><span class="params">#1</span>&#123;<span class="keyword">\texttt</span>&#123;<span class="keyword">\color</span>&#123;blue&#125;<span class="keyword">\footnotesize</span> <span class="params">#1</span>&#125;&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;deepblue&#125;&#123;rgb&#125;&#123;0,0,0.5&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;deepred&#125;&#123;rgb&#125;&#123;0.6,0,0&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;deepgreen&#125;&#123;rgb&#125;&#123;0,0.5,0&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;halfgray&#125;&#123;gray&#125;&#123;0.55&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\lstset</span>&#123;</span><br><span class="line">    basicstyle=<span class="keyword">\ttfamily</span><span class="keyword">\small</span>,</span><br><span class="line">    keywordstyle=<span class="keyword">\bfseries</span><span class="keyword">\color</span>&#123;deepblue&#125;,</span><br><span class="line">    emphstyle=<span class="keyword">\ttfamily</span><span class="keyword">\color</span>&#123;deepred&#125;,    <span class="comment">% Custom highlighting style</span></span><br><span class="line">    stringstyle=<span class="keyword">\color</span>&#123;deepgreen&#125;,</span><br><span class="line">    numbers=left,</span><br><span class="line">    numberstyle=<span class="keyword">\small</span><span class="keyword">\color</span>&#123;halfgray&#125;,</span><br><span class="line">    rulesepcolor=<span class="keyword">\color</span>&#123;red!20!green!20!blue!20&#125;,</span><br><span class="line">    frame=shadowbox,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\kaishu</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    <span class="keyword">\titlepage</span></span><br><span class="line">    <span class="keyword">\begin</span>&#123;figure&#125;[htpb]</span><br><span class="line">        <span class="keyword">\begin</span>&#123;center&#125;</span><br><span class="line">            <span class="keyword">\includegraphics</span>[width=0.2<span class="keyword">\linewidth</span>]&#123;pic/logo.pdf&#125;</span><br><span class="line">        <span class="keyword">\end</span>&#123;center&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    <span class="keyword">\tableofcontents</span>[sectionstyle=show,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% -----------------------------正文--------------------------------- %</span></span><br><span class="line"><span class="comment">% part1:课题背景</span></span><br><span class="line"><span class="keyword">\section</span>&#123;课题背景&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\subsection</span>&#123;背景介绍&#125;</span><br><span class="line"></span><br><span class="line">现在大家无论是本科上课讨论课、pre还是研究生博士生组会，做PPT的机会大大的。</span><br><span class="line"></span><br><span class="line"><span class="comment">% part2:研究现状</span></span><br><span class="line"><span class="keyword">\section</span>&#123;研究现状&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\subsection</span>&#123;中文UESTC模版&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;中文模版示例&#125;</span><br><span class="line">[UESTC中文Beamer模版](https://www.overleaf.com/latex/templates/uestc-beamer-theme/ybqzdsgvrfdq)</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\subsection</span>&#123;英文UESTC模版&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;英文模版示例&#125;</span><br><span class="line">[UESTC英文Beamer模版](https://github.com/mobbu919/UESTC<span class="built_in">_</span>Beamer)</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% part3:研究内容</span></span><br><span class="line"><span class="keyword">\section</span>&#123;研究内容&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;页面标题&#125;</span><br><span class="line"><span class="comment">% 页面内容</span></span><br><span class="line">这是一页PPT</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;分点&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;itemize&#125;</span><br><span class="line">    <span class="keyword">\item</span> 原神</span><br><span class="line">    <span class="keyword">\item</span> 王者荣耀</span><br><span class="line"><span class="keyword">\end</span>&#123;itemize&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;图片插入&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;</span><br><span class="line">    <span class="comment">% 设置居中显示</span></span><br><span class="line">    <span class="keyword">\centering</span> </span><br><span class="line">    <span class="comment">% 设置页面75%宽度，链接为pic/test.pdf</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[width=0.75<span class="keyword">\linewidth</span>]&#123;pic/test.pdf&#125; </span><br><span class="line">    <span class="comment">% 设置图片标题</span></span><br><span class="line">    <span class="keyword">\caption</span>&#123;图片标题&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;下标&#125;</span><br><span class="line">    这是一个下标<span class="keyword">\footnotemark</span>[1]</span><br><span class="line">    <span class="keyword">\footnotetext</span>[1]&#123;www.mobbu.space&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;公式&#125;</span><br><span class="line">    这是一个行内公式<span class="built_in">$</span>a=b+c<span class="built_in">$</span></span><br><span class="line">    这是一个行间公式：</span><br><span class="line">    <span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line">    a=b+<span class="keyword">\frac</span>&#123;c&#125;&#123;d&#125;+<span class="keyword">\sum</span> <span class="built_in">_</span>&#123;n=1&#125;<span class="built_in">^</span>&#123;N&#125; x<span class="built_in">_</span>ny<span class="built_in">_</span>n</span><br><span class="line">    <span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;表格&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;table&#125;[h]</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\begin</span>&#123;tabular&#125;&#123;c|c|c&#125;</span><br><span class="line">        <span class="keyword">\toprule</span>[2pt]</span><br><span class="line">        游戏 <span class="built_in">&amp;</span> 原神 <span class="built_in">&amp;</span> 塞尔达 <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        厂商 <span class="built_in">&amp;</span> 米哈游 <span class="built_in">&amp;</span> 任天堂 <span class="keyword">\\</span></span><br><span class="line">        平台 <span class="built_in">&amp;</span> 手机、电脑 <span class="built_in">&amp;</span> switch <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        类型 <span class="built_in">&amp;</span> 开放二次元 <span class="built_in">&amp;</span> 开放世界探索 <span class="keyword">\\</span></span><br><span class="line">        类型 <span class="built_in">&amp;</span> 组队游玩 <span class="built_in">&amp;</span> 单人游戏 <span class="keyword">\\</span></span><br><span class="line">        类型 <span class="built_in">&amp;</span> 氪金游戏 <span class="built_in">&amp;</span> 买断 <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        关键 <span class="built_in">&amp;</span> 启动 <span class="built_in">&amp;</span> 关闭 <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\bottomrule</span>[2pt]</span><br><span class="line">    <span class="keyword">\end</span>&#123;tabular&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;table&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;分栏&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;columns&#125;</span><br><span class="line">        <span class="keyword">\column</span>&#123;0.5<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">        这是左边的一栏</span><br><span class="line">        <span class="keyword">\column</span>&#123;0.5<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">        这是右边的一栏</span><br><span class="line">    <span class="keyword">\end</span>&#123;columns&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;分块&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;block&#125;&#123;第一个块&#125;</span><br><span class="line">    王源</span><br><span class="line">    <span class="keyword">\end</span>&#123;block&#125; </span><br><span class="line">    <span class="keyword">\begin</span>&#123;block&#125;&#123;第二个块&#125;</span><br><span class="line">    王俊凯</span><br><span class="line">    <span class="keyword">\end</span>&#123;block&#125; </span><br><span class="line">    <span class="keyword">\begin</span>&#123;block&#125;&#123;第三个块&#125;</span><br><span class="line">    易洋千玺</span><br><span class="line">    <span class="keyword">\end</span>&#123;block&#125; </span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% part4:计划进度</span></span><br><span class="line"><span class="keyword">\section</span>&#123;计划进度&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;itemize&#125;</span><br><span class="line">        <span class="keyword">\item</span> 十一月、十二月：摸鱼</span><br><span class="line">        <span class="keyword">\item</span> 一月：摸鱼</span><br><span class="line">        <span class="keyword">\item</span> 二月：摸鱼</span><br><span class="line">        <span class="keyword">\item</span> 三月：摸鱼</span><br><span class="line">        <span class="keyword">\item</span> 四月：开始抱佛脚</span><br><span class="line">    <span class="keyword">\end</span>&#123;itemize&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;center&#125;</span><br><span class="line">        &#123;<span class="keyword">\Huge</span><span class="keyword">\calligra</span> Thanks!&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;center&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>Latex</tag>
-        <tag>Beamer</tag>
       </tags>
   </entry>
 </search>
