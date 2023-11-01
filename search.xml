@@ -386,6 +386,12 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Canvas-nest</span><br><span class="line"># Dependencies: https://github.com/theme-next/theme-next-canvas-nest</span><br><span class="line"># For more information: https://github.com/hustcc/canvas-nest.js</span><br><span class="line">canvas_nest:</span><br><span class="line">  enable: true</span><br><span class="line">  onmobile: false # Display on mobile or not</span><br><span class="line">  color: &quot;27,27,27&quot; # RGB values, use `,` to separate</span><br><span class="line">  opacity: 0.5 # The opacity of line: 0~1</span><br><span class="line">  zIndex: -1 # z-index property of the background</span><br><span class="line">  count: 99 # The number of lines</span><br></pre></td></tr></table></figure>
 
 <p>不过博主觉得动态背景效果不佳，遂最终没有使用该效果。</p>
+<ol start="19">
+<li>取消网站目录的自动编号</li>
+</ol>
+<p>打开Blog&#x2F;themes&#x2F;next&#x2F;_config.yml中的toc部分修改代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">toc:</span><br><span class="line">  enable: true</span><br><span class="line">  # Automatically add list number to toc.</span><br><span class="line">  number: false # 该项修改为false即可</span><br></pre></td></tr></table></figure>
+
 <p><strong>持续更新中…</strong></p>
 <p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
 ]]></content>
@@ -989,15 +995,17 @@
 <p>主要部分有C++基础，C++算法，计算机网络，MySQL数据库，Redis，软件设计模式，操作系统、Linux操作、网络编程，C++经典项目(webserver)，如果有时间还可以多参与几个练手的小项目。</p>
 <span id="more"></span>
 
-<h1 id="C-基础"><a href="#C-基础" class="headerlink" title="C++基础"></a>C++基础</h1><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1et411b73Z/">黑马程序员C++基础</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17560955.html">C++基础笔记</a></p>
+<h1 id="1-C-基础"><a href="#1-C-基础" class="headerlink" title="1 C++基础"></a>1 C++基础</h1><p>这部分过一下基础就好了，不用画太多时间。</p>
+<p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1et411b73Z/">黑马程序员C++基础</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17560955.html">C++基础笔记</a></p>
 <p>主要是三部分内容</p>
 <ul>
 <li>C++语法入门：变量与常量、数据类型、运算符、程序流程结构、数组、函数、指针、结构体</li>
 <li>类和对象：封装、继承、多态</li>
 <li>模板与STL</li>
 </ul>
-<h1 id="C-算法"><a href="#C-算法" class="headerlink" title="C++算法"></a>C++算法</h1><p>主要在代码随想录上刷题和学习：<a href="https://programmercarl.com/%E5%89%8D%E5%BA%8F/%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC.html#%E9%A2%98%E5%A4%96%E8%AF%9D">代码随想录</a></p>
-<p>有时间可以刷两道三遍，不然理解可能不到位</p>
+<h1 id="2-C-算法"><a href="#2-C-算法" class="headerlink" title="2 C++算法"></a>2 C++算法</h1><p>主要在代码随想录上刷题和学习：<a href="https://programmercarl.com/%E5%89%8D%E5%BA%8F/%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC.html#%E9%A2%98%E5%A4%96%E8%AF%9D">代码随想录</a></p>
+<p>有时间可以刷两道三遍，不然理解可能不到位。</p>
+<p>做完如果还有时间，可以去牛客网上刷完剑指offer的题。</p>
 <p>主要包含：</p>
 <table>
 <thead>
@@ -1068,15 +1076,21 @@
 <td align="center">能够定义dp数据，当前状态由前两个状态决定</td>
 <td align="center">笔试</td>
 </tr>
+<tr>
+<td align="center">图论</td>
+<td align="center">中等到困难</td>
+<td align="center">图论相关，主要是搜索</td>
+<td align="center">笔试</td>
+</tr>
 </tbody></table>
-<h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1c4411d7jb/">计算机网络(湖科大教书匠)</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17577514.html">计算机网络笔记</a></p>
+<h1 id="3-计算机网络"><a href="#3-计算机网络" class="headerlink" title="3 计算机网络"></a>3 计算机网络</h1><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1c4411d7jb/">计算机网络(湖科大教书匠)</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17577514.html">计算机网络笔记</a></p>
 <p>此部分比较简单，并且在后序网络编程还会复习一部分，笔记只记录了一些相对重要的部分。</p>
-<h1 id="MySQL和Redis"><a href="#MySQL和Redis" class="headerlink" title="MySQL和Redis"></a>MySQL和Redis</h1><h2 id="MySQL：一般学习这个"><a href="#MySQL：一般学习这个" class="headerlink" title="MySQL：一般学习这个"></a>MySQL：一般学习这个</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1Kr4y1i7ru/">黑马程序员MySQL</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17648671.html">SQL基础增删改查</a></p>
-<h2 id="Redis：岗位有需要可以一周内突击学习"><a href="#Redis：岗位有需要可以一周内突击学习" class="headerlink" title="Redis：岗位有需要可以一周内突击学习"></a>Redis：岗位有需要可以一周内突击学习</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1cr4y1671t/">黑马程序员Redis</a><br><strong>我的笔记链接：</strong></p>
-<h1 id="软件设计模式"><a href="#软件设计模式" class="headerlink" title="软件设计模式"></a>软件设计模式</h1><p>有时间看视频，没时间直接搜索资料记住概念和常见的几种设计模式即可</p>
+<h1 id="4-MySQL和Redis"><a href="#4-MySQL和Redis" class="headerlink" title="4 MySQL和Redis"></a>4 MySQL和Redis</h1><h2 id="4-1-MySQL：一般学习这个"><a href="#4-1-MySQL：一般学习这个" class="headerlink" title="4.1 MySQL：一般学习这个"></a>4.1 MySQL：一般学习这个</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1Kr4y1i7ru/">黑马程序员MySQL</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17648671.html">SQL基础增删改查</a></p>
+<h2 id="4-2-Redis：岗位有需要可以一周内突击学习"><a href="#4-2-Redis：岗位有需要可以一周内突击学习" class="headerlink" title="4.2 Redis：岗位有需要可以一周内突击学习"></a>4.2 Redis：岗位有需要可以一周内突击学习</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1cr4y1671t/">黑马程序员Redis</a>  </p>
+<h1 id="5-软件设计模式"><a href="#5-软件设计模式" class="headerlink" title="5 软件设计模式"></a>5 软件设计模式</h1><p>有时间看视频，没时间直接搜索资料记住概念和常见的几种设计模式即可</p>
 <p><strong>视频链接：</strong> 讲的挺好，有时间可以仔细听，对程序编写有好处<br><a href="https://www.bilibili.com/video/BV1Yr4y157Ci/">C++设计模式入门</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17559583.html">一些常用软件设计模式</a></p>
-<p>一般了解策略模式、工厂模式、单例模式(最简单)、观察者模式、适配这模式即可了</p>
-<h1 id="C-项目"><a href="#C-项目" class="headerlink" title="C++项目"></a>C++项目</h1><p><a href="https://www.nowcoder.com/study/live/504">牛客网C++项目</a></p>
+<p>一般了解策略模式、工厂模式、单例模式(最简单)、观察者模式、适配者模式即可了</p>
+<h1 id="6-C-项目"><a href="#6-C-项目" class="headerlink" title="6 C++项目"></a>6 C++项目</h1><p><a href="https://www.nowcoder.com/study/live/504">牛客网C++项目</a></p>
 <p>这个项目就包含了基础的Linux系统编程、Linux多进程开发、Linux多线程开发、网络编程和实战。所以如果时间不够可以就看着一个项目就好了。包含了<strong>Linux基础</strong>、<strong>操作系统</strong>、<strong>网络编程</strong>和<strong>websever</strong>项目，差的知识后序查漏补缺就好了。</p>
 <p>笔记链接如下：</p>
 <p><a href="https://www.cnblogs.com/mobbu/p/17547122.html">第1章 Linux系统编程入门</a></p>
@@ -1536,7 +1550,7 @@
 <li><p>对于weak_ptr，解决shared_ptr相互引用时，两个指针的引用计数永远不会下降为0，从而导致死锁问题。而weak_ptr是对对象的一种弱引用，可以绑定到shared_ptr，但不会增加对象的引用计数。</p>
 </li>
 </ul>
-<h1 id="unique-ptr"><a href="#unique-ptr" class="headerlink" title="unique_ptr"></a>unique_ptr</h1><p>每个 unique_ptr 指针指向的堆内存空间的引用计数，都只能为 1，一旦该 unique_ptr 指针放弃对所指堆内存空间的所有权，则该空间会被立即释放回收。</p>
+<h1 id="1-unique-ptr"><a href="#1-unique-ptr" class="headerlink" title="1 unique_ptr"></a>1 unique_ptr</h1><p>每个 unique_ptr 指针指向的堆内存空间的引用计数，都只能为 1，一旦该 unique_ptr 指针放弃对所指堆内存空间的所有权，则该空间会被立即释放回收。</p>
 <ul>
 <li><p>创建unique_ptr  </p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 创建空的unique_ptr</span></span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p1</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p2</span><span class="params">(<span class="literal">nullptr</span>)</span></span>;</span><br><span class="line"><span class="comment">// 有指向的</span></span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p3</span><span class="params">(<span class="keyword">new</span> <span class="type">int</span>)</span></span>;</span><br><span class="line"><span class="comment">// 创建空的unique_ptr</span></span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p4</span><span class="params">(<span class="keyword">new</span> <span class="type">int</span>)</span></span>;</span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p5</span><span class="params">(p4)</span></span>;<span class="comment">//错误的，没有拷贝构造</span></span><br><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">p5</span><span class="params">(std::move(p4))</span></span>;<span class="comment">//正确的，有移动构造</span></span><br></pre></td></tr></table></figure>
@@ -1557,7 +1571,7 @@
 <li><p>unique_ptr的简单实现</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">UniquePtr</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">UniquePtr</span>(T *pResource = <span class="literal">NULL</span>)</span><br><span class="line">		: <span class="built_in">m_pResource</span>(pResource) &#123;&#125;</span><br><span class="line">	~<span class="built_in">UniquePtr</span>()&#123; <span class="built_in">del</span>();&#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">reset</span><span class="params">(T* pResource)</span></span>&#123;<span class="comment">// 先释放资源(如果持有), 再持有资源</span></span><br><span class="line">		<span class="built_in">del</span>();</span><br><span class="line">		m_pResource = pResource;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">T* <span class="title">release</span><span class="params">()</span></span>&#123;<span class="comment">// 返回资源，资源的释放由调用方处理</span></span><br><span class="line">		T* pTemp = m_pResource;</span><br><span class="line">		m_pResource = <span class="literal">nullptr</span>;</span><br><span class="line">		<span class="keyword">return</span> pTemp;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">T* <span class="title">get</span><span class="params">()</span></span>&#123;<span class="comment">// 获取资源，调用方应该只使用不释放，否则会两次delete资源</span></span><br><span class="line">	</span><br><span class="line">		<span class="keyword">return</span> m_pResource;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">operator</span> <span class="title">bool</span><span class="params">()</span> <span class="type">const</span></span>&#123; <span class="comment">// 是否持有资源</span></span><br><span class="line">		<span class="keyword">return</span> m_pResource != <span class="literal">nullptr</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	T&amp; <span class="keyword">operator</span> * ()&#123;</span><br><span class="line">		<span class="keyword">return</span> *m_pResource;</span><br><span class="line">	&#125;</span><br><span class="line">	T* <span class="keyword">operator</span> -&gt; ()&#123;</span><br><span class="line">		<span class="keyword">return</span> m_pResource;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">del</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="literal">nullptr</span> == m_pResource) <span class="keyword">return</span>;</span><br><span class="line">		<span class="keyword">delete</span> m_pResource;</span><br><span class="line">		m_pResource = <span class="literal">nullptr</span>;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="built_in">UniquePtr</span>(<span class="type">const</span> UniquePtr &amp;) = <span class="keyword">delete</span>; <span class="comment">// 禁用拷贝构造</span></span><br><span class="line">	UniquePtr&amp; <span class="keyword">operator</span> = (<span class="type">const</span> UniquePtr &amp;) = <span class="keyword">delete</span>; <span class="comment">// 禁用拷贝赋值</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	T *m_pResource;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h1 id="shared-ptr"><a href="#shared-ptr" class="headerlink" title="shared_ptr"></a>shared_ptr</h1><p>参考<a href="https://zhuanlan.zhihu.com/p/521454381">C++ 智能指针详解（二）——shared_ptr与weak_ptr</a></p>
+<h1 id="2-shared-ptr"><a href="#2-shared-ptr" class="headerlink" title="2 shared_ptr"></a>2 shared_ptr</h1><p>参考<a href="https://zhuanlan.zhihu.com/p/521454381">C++ 智能指针详解（二）——shared_ptr与weak_ptr</a></p>
 <ul>
 <li><p>特点总结如下</p>
 <ul>
@@ -1643,7 +1657,7 @@
 <td align="center">交换两个智能指针</td>
 </tr>
 </tbody></table>
-<h1 id="weak-ptr"><a href="#weak-ptr" class="headerlink" title="weak_ptr"></a>weak_ptr</h1><ul>
+<h1 id="3-weak-ptr"><a href="#3-weak-ptr" class="headerlink" title="3 weak_ptr"></a>3 weak_ptr</h1><ul>
 <li>API</li>
 </ul>
 <table>
@@ -1697,24 +1711,24 @@
     <url>/2023/10/01/20231001_blogDistributeToMacOS/</url>
     <content><![CDATA[<p>等到要换电脑的时候，发现我在本地管理github pages需要移植一下，博客记录一下移植过程，方便以后查阅，由于博主心血来潮换了mac，这时候需要在MacOS上继续进行配置了。</p>
 <span id="more"></span>
-<h1 id="安装各种环境"><a href="#安装各种环境" class="headerlink" title="安装各种环境"></a>安装各种环境</h1><h2 id="检查git"><a href="#检查git" class="headerlink" title="检查git"></a>检查git</h2><p>一般mac都会自带git，所以只需要输入</p>
+<h1 id="1-安装各种环境"><a href="#1-安装各种环境" class="headerlink" title="1 安装各种环境"></a>1 安装各种环境</h1><h2 id="1-1-检查git"><a href="#1-1-检查git" class="headerlink" title="1.1 检查git"></a>1.1 检查git</h2><p>一般mac都会自带git，所以只需要输入</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
 <p>检查一下版本即可</p>
-<h2 id="安装nvm"><a href="#安装nvm" class="headerlink" title="安装nvm"></a>安装nvm</h2><p>首先先安装nvm，也就是node.js的管理工具。在nvm的github官方仓库下载最新版本安装即可。</p>
+<h2 id="1-2-安装nvm"><a href="#1-2-安装nvm" class="headerlink" title="1.2 安装nvm"></a>1.2 安装nvm</h2><p>首先先安装nvm，也就是node.js的管理工具。在nvm的github官方仓库下载最新版本安装即可。</p>
 <p>安装完成后输入</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">commond -v nvm</span><br></pre></td></tr></table></figure>
 
 <p>出现nvm即安装成功</p>
-<h2 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h2><p>然后按照以下步骤进行安装</p>
+<h2 id="1-3-安装node-js"><a href="#1-3-安装node-js" class="headerlink" title="1.3 安装node.js"></a>1.3 安装node.js</h2><p>然后按照以下步骤进行安装</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nvm install stable  # 使用 nvm 安装最新稳定版 Node.js</span><br><span class="line">nvm use stable     # 使用刚刚安装的 Node.js 版本</span><br><span class="line"></span><br><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
 <p>安装的时候可能会遇到出现<strong>http fetch GET 200</strong>的问题，此时只需要多等待几分钟即可。</p>
-<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>输入以下命令进行安装hexo</p>
+<h2 id="1-4-安装hexo"><a href="#1-4-安装hexo" class="headerlink" title="1.4 安装hexo"></a>1.4 安装hexo</h2><p>输入以下命令进行安装hexo</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
 <p>此时就可以将我们之前的博客文件夹迁移到mac当地，在文件夹中打开iTerm终端，输入</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 <p>本地测试没有问题之后则本地环境调试成功。</p>
-<h1 id="连接到github"><a href="#连接到github" class="headerlink" title="连接到github"></a>连接到github</h1><h2 id="生成ssh密钥"><a href="#生成ssh密钥" class="headerlink" title="生成ssh密钥"></a>生成ssh密钥</h2><p>首先配置git账户，设置user.name和user.email，输入以下命令</p>
+<h1 id="2-连接到github"><a href="#2-连接到github" class="headerlink" title="2 连接到github"></a>2 连接到github</h1><h2 id="2-1-生成ssh密钥"><a href="#2-1-生成ssh密钥" class="headerlink" title="2.1 生成ssh密钥"></a>2.1 生成ssh密钥</h2><p>首先配置git账户，设置user.name和user.email，输入以下命令</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;account name&quot;     # 设置用户名</span><br><span class="line">git config --global user.email &quot;account email&quot;     # 设置邮箱地址</span><br></pre></td></tr></table></figure>
 
 <p>设置完毕之后，就可以生成SSH KEY了，输入以下命令</p>
@@ -1722,14 +1736,14 @@
 <p>这里输入你自己的邮箱即可<br>然后输入以下两条命令查看并复制你的密钥</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">vim id_rsa.pub</span><br></pre></td></tr></table></figure>
 
-<h2 id="github添加SSH-key"><a href="#github添加SSH-key" class="headerlink" title="github添加SSH key"></a>github添加SSH key</h2><p>制公钥id_rsa.pub中的内容添加到github，用户-&gt;settings-&gt;SSH and GPG keys 中的按键new SSH key，将id_rsa.pub中的内容复制进去即可</p>
+<h2 id="2-2-github添加SSH-key"><a href="#2-2-github添加SSH-key" class="headerlink" title="2.2 github添加SSH key"></a>2.2 github添加SSH key</h2><p>制公钥id_rsa.pub中的内容添加到github，用户-&gt;settings-&gt;SSH and GPG keys 中的按键new SSH key，将id_rsa.pub中的内容复制进去即可</p>
 <p>添加完成后，在终端输入<code>ssh -T git@github.com</code>进行验证，此时会让你输入刚刚在生成ssh密钥时输入的密码，输入后回车会看到欢迎的语句，此时说明配对成功。</p>
-<h1 id="测试上传"><a href="#测试上传" class="headerlink" title="测试上传"></a>测试上传</h1><p>此时将本博客放入博文推送的文件中，hexo clean，hexo g hexo d三部曲后，验证是否上传成功即可。</p>
+<h1 id="3-测试上传"><a href="#3-测试上传" class="headerlink" title="3 测试上传"></a>3 测试上传</h1><p>此时将本博客放入博文推送的文件中，hexo clean，hexo g hexo d三部曲后，验证是否上传成功即可。</p>
 <p>验证时，发现这台机器还没有git push上传过，此时需要重新申请tokens，在github账户中，配置token的流程如下：  </p>
 <p>打开github-&gt;settings-&gt;developer settings，选择tokens(classic)，新建tokens。  </p>
 <p>此时上传(hexo d)时会要求我们输入账户和密码，账户就是github的账户，而密码就是刚刚申请的token值，具体步骤可以查看我的建立博客的博文–<a href="https://mobbu.space/2023/08/09/20230803_blogWebsite/">建立个人博客网站详细教程</a></p>
 <p>此时就能上传验证成功了。</p>
-<h1 id="图床软件picgo移植"><a href="#图床软件picgo移植" class="headerlink" title="图床软件picgo移植"></a>图床软件picgo移植</h1><ol>
+<h1 id="4-图床软件picgo移植"><a href="#4-图床软件picgo移植" class="headerlink" title="4 图床软件picgo移植"></a>4 图床软件picgo移植</h1><ol>
 <li>下载软件<br>在picgo的github开源地址下载2.3.1的稳定版，选择下载arm64.pmg格式。</li>
 </ol>
 <p>下载后打开会出现文件已损坏的问题，这是因为没有签名，此时打开终端输入以下命令</p>
@@ -1757,7 +1771,7 @@
 <p>最近有了频繁做学术汇报的需求，之前有了解到过beamer制作学术汇报PPT的优势，所以这里填一下坑，分享记录一下如何用beamer制作学术PPT以及使用latex和office制作PPT的优劣和使用场景对比分析。</p>
 <span id="more"></span>
 
-<h1 id="配置latex环境"><a href="#配置latex环境" class="headerlink" title="配置latex环境"></a>配置latex环境</h1><ol>
+<h1 id="1-配置latex环境"><a href="#1-配置latex环境" class="headerlink" title="1 配置latex环境"></a>1 配置latex环境</h1><ol>
 <li>安装MacTex<br>mac上直接官网下载即可 <a href="https://www.tug.org/mactex/mactex-download.html">MacTex</a></li>
 </ol>
 <p>windows的操作也类似，在官方下载TeXlive即可。</p>
@@ -1774,10 +1788,10 @@
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">Hello World<span class="keyword">\LaTeX</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
 
 <p>然后点击右上角的执行，进行测试，成功则latex环境配置完成。</p>
-<h1 id="选择beamer模版"><a href="#选择beamer模版" class="headerlink" title="选择beamer模版"></a>选择beamer模版</h1><p>使用经典的清华大学Beamer模版，我找到了UESTC的修改版本，github上搜索UESTC_beamer即可找到大致的效果图如下</p>
+<h1 id="2-选择beamer模版"><a href="#2-选择beamer模版" class="headerlink" title="2 选择beamer模版"></a>2 选择beamer模版</h1><p>使用经典的清华大学Beamer模版，我找到了UESTC的修改版本，github上搜索UESTC_beamer即可找到大致的效果图如下</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310042002619.png"></p>
 <p>具体的latex写法后续进行更新解析。</p>
-<h1 id="latex与office对比"><a href="#latex与office对比" class="headerlink" title="latex与office对比"></a>latex与office对比</h1><ul>
+<h1 id="3-latex与office对比"><a href="#3-latex与office对比" class="headerlink" title="3 latex与office对比"></a>3 latex与office对比</h1><ul>
 <li><p>latex&amp;beamer制作PPT适用场景：复用性高，比较严肃的汇报，没有很多动画，分享干货，学术汇报的场景，不适用于快速记录</p>
 </li>
 <li><p>office适用场景：复用性不高、比较轻松的交流和快速的灵感想法记录和交流的场景</p>
@@ -2215,7 +2229,7 @@
 </ul>
 <span id="more"></span>
 
-<h1 id="挂载NTFS移动硬盘"><a href="#挂载NTFS移动硬盘" class="headerlink" title="挂载NTFS移动硬盘"></a>挂载NTFS移动硬盘</h1><ol>
+<h1 id="1-挂载NTFS移动硬盘"><a href="#1-挂载NTFS移动硬盘" class="headerlink" title="1 挂载NTFS移动硬盘"></a>1 挂载NTFS移动硬盘</h1><ol>
 <li><p>在&#x2F;media下创建挂载的文件夹，比如创建disk</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir disk</span><br></pre></td></tr></table></figure>
 </li>
@@ -2230,11 +2244,11 @@
 <li><p>使用完毕后取消挂载，再拔掉硬盘</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo umount /dev/sda1</span><br></pre></td></tr></table></figure></li>
 </ol>
-<h1 id="后台运行python程序"><a href="#后台运行python程序" class="headerlink" title="后台运行python程序"></a>后台运行python程序</h1><p>如果想保证一直后台运行程序，可以使用nohup</p>
+<h1 id="2-后台运行python程序"><a href="#2-后台运行python程序" class="headerlink" title="2 后台运行python程序"></a>2 后台运行python程序</h1><p>如果想保证一直后台运行程序，可以使用nohup</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nohup python test.py &amp;   # 挂后台运行</span><br><span class="line">tail -f nohup.out  # 动态显示输出的日志 </span><br></pre></td></tr></table></figure>
 
 <p>想要退出的话直接kill掉运行的进程就好了</p>
-<h1 id="压缩和解压"><a href="#压缩和解压" class="headerlink" title="压缩和解压"></a>压缩和解压</h1><p>最常使用就这句<code>tar -zxvf test.tar.gz -C /tmp    #解压缩到指定位置</code></p>
+<h1 id="3-压缩和解压"><a href="#3-压缩和解压" class="headerlink" title="3 压缩和解压"></a>3 压缩和解压</h1><p>最常使用就这句<code>tar -zxvf test.tar.gz -C /tmp    #解压缩到指定位置</code></p>
 <p>详细的一些命令如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">zip [选项] 压缩包名 源文件或源目录</span><br><span class="line">unzip -d /tmp/ test.zip # -d：指定解压缩位置/tmp</span><br><span class="line">gzip -r test #将test目录下的文件分别压缩打包</span><br><span class="line">gunzip install.log.gz # 解压</span><br><span class="line">tar -cvf test.cfg.tar test.cfg # -c为打包，-f为指定压缩包的文件名，-v为显示打包过程</span><br></pre></td></tr></table></figure>
 
@@ -2242,9 +2256,9 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -zcvf test.tar.gz test/     #压缩</span><br><span class="line">tar -ztvf test.tar.gz           #只查看，不解压</span><br><span class="line">tar -zxvf test.tar.gz -C /tmp    #解压缩到指定位置</span><br><span class="line">tar -zxvf test.tar.gz -C /tmp test/cde #只解压压缩包中的特定文件，到指定位置</span><br></pre></td></tr></table></figure>
 
 
-<h1 id="查看系统状态"><a href="#查看系统状态" class="headerlink" title="查看系统状态"></a>查看系统状态</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ps -a  # 查看所有用户的所有进程</span><br><span class="line">ps -au # 按用户名和启动时间的顺序来显示进程</span><br><span class="line">kill -9 pid # 强制杀死进程号为pid的进程</span><br><span class="line">du -h # 查看置顶目录以及子目录下使用的磁盘空间</span><br><span class="line">df -h # 显示文件系统磁盘空间的使用情况</span><br><span class="line">free  # 显示当前内存和交换空间的使用情况</span><br><span class="line">nvidia-smi # 显示显卡情况</span><br></pre></td></tr></table></figure>
+<h1 id="4-查看系统状态"><a href="#4-查看系统状态" class="headerlink" title="4 查看系统状态"></a>4 查看系统状态</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ps -a  # 查看所有用户的所有进程</span><br><span class="line">ps -au # 按用户名和启动时间的顺序来显示进程</span><br><span class="line">kill -9 pid # 强制杀死进程号为pid的进程</span><br><span class="line">du -h # 查看置顶目录以及子目录下使用的磁盘空间</span><br><span class="line">df -h # 显示文件系统磁盘空间的使用情况</span><br><span class="line">free  # 显示当前内存和交换空间的使用情况</span><br><span class="line">nvidia-smi # 显示显卡情况</span><br></pre></td></tr></table></figure>
 
-<h1 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h1><table>
+<h1 id="5-常用快捷键"><a href="#5-常用快捷键" class="headerlink" title="5 常用快捷键"></a>5 常用快捷键</h1><table>
 <thead>
 <tr>
 <th align="center">快捷键</th>
@@ -2268,7 +2282,7 @@
 <td align="center">自动补全</td>
 </tr>
 </tbody></table>
-<h1 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h1><h2 id="修改文本"><a href="#修改文本" class="headerlink" title="修改文本"></a>修改文本</h2><table>
+<h1 id="6-vim"><a href="#6-vim" class="headerlink" title="6 vim"></a>6 vim</h1><h2 id="6-1-修改文本"><a href="#6-1-修改文本" class="headerlink" title="6.1 修改文本"></a>6.1 修改文本</h2><table>
 <thead>
 <tr>
 <th align="center">命令</th>
@@ -2304,7 +2318,7 @@
 <td align="left">保存并退出</td>
 </tr>
 </tbody></table>
-<h2 id="定位命令"><a href="#定位命令" class="headerlink" title="定位命令"></a>定位命令</h2><table>
+<h2 id="6-2-定位命令"><a href="#6-2-定位命令" class="headerlink" title="6.2 定位命令"></a>6.2 定位命令</h2><table>
 <thead>
 <tr>
 <th align="center">命令</th>
@@ -2332,7 +2346,7 @@
 <td align="left">跳到第n行</td>
 </tr>
 </tbody></table>
-<h2 id="替换和取消命令"><a href="#替换和取消命令" class="headerlink" title="替换和取消命令"></a>替换和取消命令</h2><table>
+<h2 id="6-3-替换和取消命令"><a href="#6-3-替换和取消命令" class="headerlink" title="6.3 替换和取消命令"></a>6.3 替换和取消命令</h2><table>
 <thead>
 <tr>
 <th align="center">命令</th>
@@ -2356,7 +2370,7 @@
 <td align="left">从光标所在处开始替换，按Esc键结束</td>
 </tr>
 </tbody></table>
-<h2 id="删除命令"><a href="#删除命令" class="headerlink" title="删除命令"></a>删除命令</h2><table>
+<h2 id="6-4-删除命令"><a href="#6-4-删除命令" class="headerlink" title="6.4 删除命令"></a>6.4 删除命令</h2><table>
 <thead>
 <tr>
 <th align="center">命令</th>
@@ -2388,7 +2402,7 @@
 <td align="left">删除指定范围的行</td>
 </tr>
 </tbody></table>
-<h1 id="文件和目录相关"><a href="#文件和目录相关" class="headerlink" title="文件和目录相关"></a>文件和目录相关</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pwd # 显示当前工作目录目录</span><br><span class="line">touch test.txt # 新建空白文档</span><br><span class="line">mkdir testdir  # 建立空白目录</span><br><span class="line">cp              # 复制</span><br><span class="line">mv dir1 dir2    # 移动文件或目录、文件或目录改名</span><br><span class="line">rm -rf dir1     # r同时删除dir1下的所有文件,f强制删除文件或目录</span><br><span class="line">rmdir dir1      # 删除空目录</span><br><span class="line">cat 1.txt       # 显示文本文件内容</span><br><span class="line">head -[num] 1.txt    # 显示前十行（或者指定前num）内容</span><br><span class="line">tail [-f] [-num]     # 显示后十行，f为滚动显示，num为指定数字</span><br><span class="line">wc 1.txt        # 统计文本的行数、字数、字符数</span><br><span class="line">grep aaa 1.txt       # 在1.txt中查找包含aaa的所有行</span><br></pre></td></tr></table></figure>
+<h1 id="7-文件和目录相关"><a href="#7-文件和目录相关" class="headerlink" title="7 文件和目录相关"></a>7 文件和目录相关</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pwd # 显示当前工作目录目录</span><br><span class="line">touch test.txt # 新建空白文档</span><br><span class="line">mkdir testdir  # 建立空白目录</span><br><span class="line">cp              # 复制</span><br><span class="line">mv dir1 dir2    # 移动文件或目录、文件或目录改名</span><br><span class="line">rm -rf dir1     # r同时删除dir1下的所有文件,f强制删除文件或目录</span><br><span class="line">rmdir dir1      # 删除空目录</span><br><span class="line">cat 1.txt       # 显示文本文件内容</span><br><span class="line">head -[num] 1.txt    # 显示前十行（或者指定前num）内容</span><br><span class="line">tail [-f] [-num]     # 显示后十行，f为滚动显示，num为指定数字</span><br><span class="line">wc 1.txt        # 统计文本的行数、字数、字符数</span><br><span class="line">grep aaa 1.txt       # 在1.txt中查找包含aaa的所有行</span><br></pre></td></tr></table></figure>
 
 <p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
 ]]></content>
@@ -2405,11 +2419,11 @@
     <content><![CDATA[<p>C++11之后引入lambda表达式，，一般用于定义匿名函数，使得代码更加灵活简洁。lambda表达式与普通函数类似，也有参数列表、返回值类型和函数体，只是它的定义方式更简洁，并且可以在函数内部定义。</p>
 <span id="more"></span>
 
-<h1 id="lambda表达式概述"><a href="#lambda表达式概述" class="headerlink" title="lambda表达式概述"></a>lambda表达式概述</h1><p>最常见的lambda表达式如下：</p>
+<h1 id="1-lambda表达式概述"><a href="#1-lambda表达式概述" class="headerlink" title="1 lambda表达式概述"></a>1 lambda表达式概述</h1><p>最常见的lambda表达式如下：</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">auto</span> plus = [] (<span class="type">int</span> v1, <span class="type">int</span> v2) -&gt; <span class="type">int</span> &#123; <span class="keyword">return</span> v1 + v2; &#125;</span><br><span class="line"><span class="type">int</span> sum = <span class="built_in">plus</span>(<span class="number">1</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
 
 <p>上述代码是计算两数之和的，但是一般不会这样使用</p>
-<h1 id="lambda表达式的写法"><a href="#lambda表达式的写法" class="headerlink" title="lambda表达式的写法"></a>lambda表达式的写法</h1><table>
+<h1 id="2-lambda表达式的写法"><a href="#2-lambda表达式的写法" class="headerlink" title="2 lambda表达式的写法"></a>2 lambda表达式的写法</h1><table>
 <thead>
 <tr>
 <th align="center">序号</th>
@@ -2433,14 +2447,14 @@
 <td align="center"><code>[captures]lambda-specifiers&#123;body&#125;</code></td>
 </tr>
 </tbody></table>
-<h1 id="四种表达式的含义"><a href="#四种表达式的含义" class="headerlink" title="四种表达式的含义"></a>四种表达式的含义</h1><p>（1）完整的lambda表达式，包含了lambda表达式的所有成分。<br>（2）常量lambda表达式，捕获的变量都是常量，不能在lambda表达式的body中进行修改。<br>（3）和（2）基本一致，唯一的区别就是，lambda表达式的函数返回值可以通过函数体推导出来。一般情况函数返回值类型明确或者没有返回值的情况下可以这样写。<br>（4）lambda表达式的函数没有任何参数，但是可以添加lambda-specifiers，lambda-specifiers是什么我们后续再介绍。</p>
-<h1 id="lambda表达式各个成员的解释"><a href="#lambda表达式各个成员的解释" class="headerlink" title="lambda表达式各个成员的解释"></a>lambda表达式各个成员的解释</h1><p>captures 捕获列表，lambda可以把上下文变量以值或引用的方式捕获，在body中直接使用。</p>
+<h1 id="3-四种表达式的含义"><a href="#3-四种表达式的含义" class="headerlink" title="3 四种表达式的含义"></a>3 四种表达式的含义</h1><p>（1）完整的lambda表达式，包含了lambda表达式的所有成分。<br>（2）常量lambda表达式，捕获的变量都是常量，不能在lambda表达式的body中进行修改。<br>（3）和（2）基本一致，唯一的区别就是，lambda表达式的函数返回值可以通过函数体推导出来。一般情况函数返回值类型明确或者没有返回值的情况下可以这样写。<br>（4）lambda表达式的函数没有任何参数，但是可以添加lambda-specifiers，lambda-specifiers是什么我们后续再介绍。</p>
+<h1 id="4-lambda表达式各个成员的解释"><a href="#4-lambda表达式各个成员的解释" class="headerlink" title="4 lambda表达式各个成员的解释"></a>4 lambda表达式各个成员的解释</h1><p>captures 捕获列表，lambda可以把上下文变量以值或引用的方式捕获，在body中直接使用。</p>
 <p>tparams 模板参数列表(c++20引入)，让lambda可以像模板函数一样被调用。</p>
 <p>params 参数列表，有一点需要注意，在c++14之后允许使用auto左右参数类型。</p>
 <p>lambda-specifiers lambda说明符， 一些可选的参数，这里不多介绍了，有兴趣的读者可以去官方文档上看。这里比较常用的参数就是mutable和exception。其中，表达式(1)中没有trailing-return-type，是因为包含在这一项里面的。</p>
 <p>trailing-return-type 返回值类型，一般可以省略掉，由编译器来推导。</p>
 <p>body 函数体，函数的具体逻辑。</p>
-<h1 id="捕获列表"><a href="#捕获列表" class="headerlink" title="捕获列表"></a>捕获列表</h1><p>上面介绍完了lambda表达式的各个成分，其实很多部分和正常的函数没什么区别，其中最大的一个不同点就是捕获列表。我在刚开始用lambda表达式的时候，还一直以为这个没啥用，只是用一个 [] 来标志着这是一个lambda表达式。后来了解了才知道，原来这个捕获列表如此强大，甚至我觉得捕获列表就是lambda表达式的灵魂。下面先介绍几种常用的捕获方式。</p>
+<h1 id="5-捕获列表"><a href="#5-捕获列表" class="headerlink" title="5 捕获列表"></a>5 捕获列表</h1><p>上面介绍完了lambda表达式的各个成分，其实很多部分和正常的函数没什么区别，其中最大的一个不同点就是捕获列表。我在刚开始用lambda表达式的时候，还一直以为这个没啥用，只是用一个 [] 来标志着这是一个lambda表达式。后来了解了才知道，原来这个捕获列表如此强大，甚至我觉得捕获列表就是lambda表达式的灵魂。下面先介绍几种常用的捕获方式。</p>
 <p>[] 什么也不捕获，无法lambda函数体使用任何</p>
 <p>[&#x3D;] 按值的方式捕获所有变量</p>
 <p>[&amp;] 按引用的方式捕获所有变量</p>
@@ -2448,7 +2462,7 @@
 <p>[&amp;, a] 除了变量a之外，按引用的方式捕获所有局部变量，变量a使用值的方式来捕获。这里后面的参数也可以多个，例如 [&amp;, a, b, c]。这里注意，如果前面加了&amp;，后面加的具体的参数必须以值的方式来捕获。</p>
 <p>[a, &amp;b] 以值的方式捕获a，引用的方式捕获b，也可以捕获多个。</p>
 <p>[this] 在成员函数中，也可以直接捕获this指针，其实在成员函数中，[&#x3D;]和[&amp;]也会捕获this指针。</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<h1 id="6-总结"><a href="#6-总结" class="headerlink" title="6 总结"></a>6 总结</h1><ul>
 <li><p>捕获列表，对应LambdaClass类的private成员。</p>
 </li>
 <li><p>参数列表，对应LambdaClass类的成员函数的operator()的形参列表</p>
@@ -2491,7 +2505,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="markdown公式常用符号对照表"><a href="#markdown公式常用符号对照表" class="headerlink" title="markdown公式常用符号对照表"></a>markdown公式常用符号对照表</h1><h2 id="常用符号"><a href="#常用符号" class="headerlink" title="常用符号"></a>常用符号</h2><table>
+<h1 id="1-markdown公式常用符号对照表"><a href="#1-markdown公式常用符号对照表" class="headerlink" title="1 markdown公式常用符号对照表"></a>1 markdown公式常用符号对照表</h1><h2 id="1-1-常用符号"><a href="#1-1-常用符号" class="headerlink" title="1.1 常用符号"></a>1.1 常用符号</h2><table>
 <thead>
 <tr>
 <th align="left">符号</th>
@@ -2572,7 +2586,7 @@
 </tr>
 </tbody></table>
 <p>补充：<br>$|$ $\rightarrow$ <code>\|</code></p>
-<h2 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h2><table>
+<h2 id="1-2-常用函数"><a href="#1-2-常用函数" class="headerlink" title="1.2 常用函数"></a>1.2 常用函数</h2><table>
 <thead>
 <tr>
 <th align="left">符号</th>
@@ -2620,7 +2634,7 @@
 <td align="left"><code>\partial</code></td>
 </tr>
 </tbody></table>
-<h2 id="常用希腊字母"><a href="#常用希腊字母" class="headerlink" title="常用希腊字母"></a>常用希腊字母</h2><h2 id="四种间隔长度"><a href="#四种间隔长度" class="headerlink" title="四种间隔长度"></a>四种间隔长度</h2><table>
+<h2 id="1-3-常用希腊字母"><a href="#1-3-常用希腊字母" class="headerlink" title="1.3 常用希腊字母"></a>1.3 常用希腊字母</h2><h2 id="1-4-四种间隔长度"><a href="#1-4-四种间隔长度" class="headerlink" title="1.4 四种间隔长度"></a>1.4 四种间隔长度</h2><table>
 <thead>
 <tr>
 <th align="left">符号</th>
@@ -2644,21 +2658,22 @@
 <td align="left"><code>\qquad</code></td>
 </tr>
 </tbody></table>
-<h1 id="公式语法"><a href="#公式语法" class="headerlink" title="公式语法"></a>公式语法</h1><h2 id="公式跨行左对齐"><a href="#公式跨行左对齐" class="headerlink" title="公式跨行左对齐"></a>公式跨行左对齐</h2><h3 id="不同公式左对齐"><a href="#不同公式左对齐" class="headerlink" title="不同公式左对齐"></a>不同公式左对齐</h3><p>语法：</p>
+<h1 id="2-公式语法"><a href="#2-公式语法" class="headerlink" title="2 公式语法"></a>2 公式语法</h1><h2 id="2-1-公式跨行左对齐"><a href="#2-1-公式跨行左对齐" class="headerlink" title="2.1 公式跨行左对齐"></a>2.1 公式跨行左对齐</h2><h3 id="2-1-1-不同公式左对齐"><a href="#2-1-1-不同公式左对齐" class="headerlink" title="2.1.1 不同公式左对齐"></a>2.1.1 不同公式左对齐</h3><p>语法：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">&amp; a = b+c+d+e+f\\</span><br><span class="line">&amp; b = c+d+e+f\\</span><br><span class="line">&amp; c = d+e+f\\</span><br><span class="line">&amp; d = e+f\\</span><br><span class="line">&amp; e = f</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
 <p>效果如下：<br>$$<br>\begin{aligned}<br>&amp; a &#x3D; b+c+d+e+f\<br>&amp; b &#x3D; c+d+e+f\<br>&amp; c &#x3D; d+e+f\<br>&amp; d &#x3D; e+f\<br>&amp; e &#x3D; f<br>\end{aligned}<br>$$</p>
-<h3 id="单个长公式自身对齐"><a href="#单个长公式自身对齐" class="headerlink" title="单个长公式自身对齐"></a>单个长公式自身对齐</h3><p>只需要记住<code>&amp;</code>符号后的内容会对齐就可以了，如下：</p>
+<h3 id="2-1-2-单个长公式自身对齐"><a href="#2-1-2-单个长公式自身对齐" class="headerlink" title="2.1.2 单个长公式自身对齐"></a>2.1.2 单个长公式自身对齐</h3><p>只需要记住<code>&amp;</code>符号后的内容会对齐就可以了，如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">L_&#123;align&#125; &amp; =\sum_&#123;(c,q)\in P&#125;\lambda _1 \log&#123;(1+\exp&#123;(-s_&#123;cq&#125;)&#125;)&#125;\\</span><br><span class="line">&amp; + \sum_&#123;(c,q)\in P&#125;\lambda _1 \log&#123;(1+\exp&#123;(s_&#123;cq&#125;)&#125;)&#125;</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
 
 <p>$$<br>\begin{aligned}<br>L_{align} &amp; &#x3D;\sum_{(c,q)\in P}\lambda <em>1 \log{(1+\exp{(-s</em>{cq})})}\<br>&amp; + \sum_{(c,q)\in P}\lambda <em>1 \log{(1+\exp{(s</em>{cq})})}<br>\end{aligned}<br>$$</p>
-<h2 id="大括号公式"><a href="#大括号公式" class="headerlink" title="大括号公式"></a>大括号公式</h2><p>语法：</p>
+<h2 id="2-2-大括号公式"><a href="#2-2-大括号公式" class="headerlink" title="2.2 大括号公式"></a>2.2 大括号公式</h2><p>语法：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">a=\begin&#123;cases&#125;</span><br><span class="line">0 &amp; \text&#123;if $a=0$,&#125;\\</span><br><span class="line">1 &amp; \text&#123;if $a=1$.&#125;</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
 
 <p>效果：<br>$$<br>a&#x3D;\begin{cases}<br>0 &amp; \text{if $a&#x3D;0$,}\<br>1 &amp; \text{if $a&#x3D;1$.}<br>\end{cases}<br>$$</p>
-<h2 id="公式标号"><a href="#公式标号" class="headerlink" title="公式标号"></a>公式标号</h2><h3 id="手动标号"><a href="#手动标号" class="headerlink" title="手动标号"></a>手动标号</h3><p>代码如下：</p>
+<h2 id="2-3-公式标号"><a href="#2-3-公式标号" class="headerlink" title="2.3 公式标号"></a>2.3 公式标号</h2><h3 id="2-3-1-手动标号"><a href="#2-3-1-手动标号" class="headerlink" title="2.3.1 手动标号"></a>2.3.1 手动标号</h3><p>代码如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">a=b</span><br><span class="line">\tag&#123;1&#125;</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">a=c</span><br><span class="line">\tag&#123;2&#125;</span><br><span class="line">$$</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>效果如下：<br>$$<br>a&#x3D;b<br>\tag{1}<br>$$<br>$$<br>a&#x3D;c<br>\tag{2}<br>$$</p>
-<h3 id="自动标号"><a href="#自动标号" class="headerlink" title="自动标号"></a>自动标号</h3><h2 id="字体格式"><a href="#字体格式" class="headerlink" title="字体格式"></a>字体格式</h2><ul>
+<h3 id="2-3-2-自动标号"><a href="#2-3-2-自动标号" class="headerlink" title="2.3.2 自动标号"></a>2.3.2 自动标号</h3><p>自动编号在某些情况下会出问题，所以在公式不多或者不用经常修改的情况下还是建议使用手动标号。</p>
+<h2 id="2-4-字体格式"><a href="#2-4-字体格式" class="headerlink" title="2.4 字体格式"></a>2.4 字体格式</h2><ul>
 <li><p>原始字体：<br><code>$字母abc$</code> $\rightarrow$ $字母abc$</p>
 </li>
 <li><p>字体加粗：<br><code>$\pmb&#123;字母abc&#125;$</code> $\rightarrow$ $\pmb{字母abc}$</p>
@@ -2691,7 +2706,7 @@
 <li><a href="https://github.com/mobbu919/UESTC_Beamer">UESTC英文Beamer模版</a></li>
 </ul>
 <p>之后的教程会以中文模版进行介绍，大部分操作和英文是共通的。</p>
-<h1 id="文档信息-封面设置"><a href="#文档信息-封面设置" class="headerlink" title="文档信息&amp;封面设置"></a>文档信息&amp;封面设置</h1><p>首先是文档设置部分。</p>
+<h1 id="1-文档信息-封面设置"><a href="#1-文档信息-封面设置" class="headerlink" title="1 文档信息&amp;封面设置"></a>1 文档信息&amp;封面设置</h1><p>首先是文档设置部分。</p>
 <p>首先是设置文档的一些属性,比如设置文档class喂beamer，使用ctex，hyperref包等，其中ctex就是支持中文的latex包，就是因为这个包的兼容性所以在mac无法制作（博主目前没找到）PPT。</p>
 <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;ctex, hyperref&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[T1]&#123;fontenc&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% other packages</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;latexsym,amsmath,xcolor,multicol,booktabs,calligra&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;graphicx,pstricks,listings,stackengine&#125;</span><br></pre></td></tr></table></figure>
 
@@ -2702,17 +2717,17 @@
 <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% defs</span></span><br><span class="line"><span class="keyword">\def</span><span class="keyword">\cmd</span><span class="params">#1</span>&#123;<span class="keyword">\texttt</span>&#123;<span class="keyword">\color</span>&#123;red&#125;<span class="keyword">\footnotesize</span> <span class="built_in">$</span><span class="keyword">\backslash</span><span class="built_in">$</span><span class="params">#1</span>&#125;&#125;</span><br><span class="line"><span class="keyword">\def</span><span class="keyword">\env</span><span class="params">#1</span>&#123;<span class="keyword">\texttt</span>&#123;<span class="keyword">\color</span>&#123;blue&#125;<span class="keyword">\footnotesize</span> <span class="params">#1</span>&#125;&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;deepblue&#125;&#123;rgb&#125;&#123;0,0,0.5&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;deepred&#125;&#123;rgb&#125;&#123;0.6,0,0&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;deepgreen&#125;&#123;rgb&#125;&#123;0,0.5,0&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;halfgray&#125;&#123;gray&#125;&#123;0.55&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\lstset</span>&#123;</span><br><span class="line">    basicstyle=<span class="keyword">\ttfamily</span><span class="keyword">\small</span>,</span><br><span class="line">    keywordstyle=<span class="keyword">\bfseries</span><span class="keyword">\color</span>&#123;deepblue&#125;,</span><br><span class="line">    emphstyle=<span class="keyword">\ttfamily</span><span class="keyword">\color</span>&#123;deepred&#125;,    <span class="comment">% Custom highlighting style</span></span><br><span class="line">    stringstyle=<span class="keyword">\color</span>&#123;deepgreen&#125;,</span><br><span class="line">    numbers=left,</span><br><span class="line">    numberstyle=<span class="keyword">\small</span><span class="keyword">\color</span>&#123;halfgray&#125;,</span><br><span class="line">    rulesepcolor=<span class="keyword">\color</span>&#123;red!20!green!20!blue!20&#125;,</span><br><span class="line">    frame=shadowbox,</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
-<h1 id="内容设置"><a href="#内容设置" class="headerlink" title="内容设置"></a>内容设置</h1><p>当设置好文档属性和封面之后，我们就需要进行PPT内容的设置了，首先文档需要在<code>\begin&#123;document&#125;</code>和<code>\end&#123;document&#125;</code>之间，这里与很多HTML语言类似，也就是说</p>
+<h1 id="2-内容设置"><a href="#2-内容设置" class="headerlink" title="2 内容设置"></a>2 内容设置</h1><p>当设置好文档属性和封面之后，我们就需要进行PPT内容的设置了，首先文档需要在<code>\begin&#123;document&#125;</code>和<code>\end&#123;document&#125;</code>之间，这里与很多HTML语言类似，也就是说</p>
 <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="comment">%你的内容</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="封面补充设置"><a href="#封面补充设置" class="headerlink" title="封面补充设置"></a>封面补充设置</h2><p>在第一步中我们只是设置了封面的一些内容，现在需要对具体的页面进行一些设置和补充</p>
+<h2 id="2-1-封面补充设置"><a href="#2-1-封面补充设置" class="headerlink" title="2.1 封面补充设置"></a>2.1 封面补充设置</h2><p>在第一步中我们只是设置了封面的一些内容，现在需要对具体的页面进行一些设置和补充</p>
 <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\kaishu</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    <span class="keyword">\titlepage</span></span><br><span class="line">    <span class="keyword">\begin</span>&#123;figure&#125;[htpb]</span><br><span class="line">        <span class="keyword">\begin</span>&#123;center&#125;</span><br><span class="line">            <span class="keyword">\includegraphics</span>[width=0.2<span class="keyword">\linewidth</span>]&#123;pic/logo.pdf&#125;</span><br><span class="line">        <span class="keyword">\end</span>&#123;center&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
 
 <p>效果如下</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231030205000.png"></p>
-<h2 id="目录以及子目录"><a href="#目录以及子目录" class="headerlink" title="目录以及子目录"></a>目录以及子目录</h2><p>以下这一段代码也是加在正文之前的。</p>
+<h2 id="2-2-目录以及子目录"><a href="#2-2-目录以及子目录" class="headerlink" title="2.2 目录以及子目录"></a>2.2 目录以及子目录</h2><p>以下这一段代码也是加在正文之前的。</p>
 <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    <span class="keyword">\tableofcontents</span>[sectionstyle=show,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这一段的效果是，当前章节的子章节会显示，其他章节会隐藏，并且当前章节的当前子章节会正常显示，其他的会增加透明度显示，也即突出当前子章节，效果大概如下：</p>
@@ -2720,40 +2735,40 @@
 <p>当我们在正文中使用章节时，一般如下格式：</p>
 <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\section</span>&#123;一级章节&#125;</span><br><span class="line"><span class="keyword">\subsection</span>&#123;二级章节&#125;</span><br><span class="line"><span class="comment">% 内容</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="新建页面"><a href="#新建页面" class="headerlink" title="新建页面"></a>新建页面</h2><p>代码如下，可以设置页面的标题</p>
+<h2 id="2-3-新建页面"><a href="#2-3-新建页面" class="headerlink" title="2.3 新建页面"></a>2.3 新建页面</h2><p>代码如下，可以设置页面的标题</p>
 <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;页面标题&#125;</span><br><span class="line"><span class="comment">% 页面内容</span></span><br><span class="line">这是一页PPT</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
 
 <p>效果如下；</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231030205906.png"></p>
-<h2 id="分点"><a href="#分点" class="headerlink" title="分点"></a>分点</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;分点&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;itemize&#125;</span><br><span class="line">    <span class="keyword">\item</span> 原神</span><br><span class="line">    <span class="keyword">\item</span> 王者荣耀</span><br><span class="line"><span class="keyword">\end</span>&#123;itemize&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-4-分点"><a href="#2-4-分点" class="headerlink" title="2.4 分点"></a>2.4 分点</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;分点&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;itemize&#125;</span><br><span class="line">    <span class="keyword">\item</span> 原神</span><br><span class="line">    <span class="keyword">\item</span> 王者荣耀</span><br><span class="line"><span class="keyword">\end</span>&#123;itemize&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
 
 <p>效果如下：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231030205921.png"></p>
-<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>这里主要需要设置居中显示，图像的大小和图像路径、图像的名称四个属性。如下代码所示。但是值得注意的是，插入的图片最好是pdf格式或者矢量图等，这样最后生成的PPT的图片效果比较好，如果使用png、jpg等常用的格式经常会出现比较模糊的情况。</p>
+<h2 id="2-5-插入图片"><a href="#2-5-插入图片" class="headerlink" title="2.5 插入图片"></a>2.5 插入图片</h2><p>这里主要需要设置居中显示，图像的大小和图像路径、图像的名称四个属性。如下代码所示。但是值得注意的是，插入的图片最好是pdf格式或者矢量图等，这样最后生成的PPT的图片效果比较好，如果使用png、jpg等常用的格式经常会出现比较模糊的情况。</p>
 <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;图片插入&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;</span><br><span class="line">    <span class="comment">% 设置居中显示</span></span><br><span class="line">    <span class="keyword">\centering</span> </span><br><span class="line">    <span class="comment">% 设置页面75%宽度，链接为pic/test.pdf</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[width=0.75<span class="keyword">\linewidth</span>]&#123;pic/test.pdf&#125; </span><br><span class="line">    <span class="comment">% 设置图片标题</span></span><br><span class="line">    <span class="keyword">\caption</span>&#123;图片标题&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310302052478.png"></p>
-<h2 id="下标"><a href="#下标" class="headerlink" title="下标"></a>下标</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;下标&#125;</span><br><span class="line">    这是一个下标<span class="keyword">\footnotemark</span>[1]</span><br><span class="line">    <span class="keyword">\footnotetext</span>[1]&#123;www.mobbu.space&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-6-下标"><a href="#2-6-下标" class="headerlink" title="2.6 下标"></a>2.6 下标</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;下标&#125;</span><br><span class="line">    这是一个下标<span class="keyword">\footnotemark</span>[1]</span><br><span class="line">    <span class="keyword">\footnotetext</span>[1]&#123;www.mobbu.space&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
 <p>或者可以：</p>
 <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;下标&#125;</span><br><span class="line">    这是一个下标<span class="keyword">\footnote</span>&#123;www.mobbu.space&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
 
 
 <p>效果如下：<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310302052541.png"></p>
-<h2 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h2><p>公式可以直接使用markdown格式的公式，比如行内插入公式就是<code>$公式$</code>，行间公式<code>$$公式$$</code>。之前也有总结markdown公式的博客：<a href="https://mobbu.space/2023/10/21/20231021_MarkdownMath/#more">markdown公式语法汇总</a></p>
+<h2 id="2-7-公式"><a href="#2-7-公式" class="headerlink" title="2.7 公式"></a>2.7 公式</h2><p>公式可以直接使用markdown格式的公式，比如行内插入公式就是<code>$公式$</code>，行间公式<code>$$公式$$</code>。之前也有总结markdown公式的博客：<a href="https://mobbu.space/2023/10/21/20231021_MarkdownMath/#more">markdown公式语法汇总</a></p>
 <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;公式&#125;</span><br><span class="line">    这是一个行内公式<span class="built_in">$</span>a=b+c<span class="built_in">$</span></span><br><span class="line">    这是一个行间公式：</span><br><span class="line">    <span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line">    a=b+<span class="keyword">\frac</span>&#123;c&#125;&#123;d&#125;+<span class="keyword">\sum</span> <span class="built_in">_</span>&#123;n=1&#125;<span class="built_in">^</span>&#123;N&#125; x<span class="built_in">_</span>ny<span class="built_in">_</span>n</span><br><span class="line">    <span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
 <p>效果如下：<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310302052421.png"></p>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>表格如下</p>
+<h2 id="2-8-表格"><a href="#2-8-表格" class="headerlink" title="2.8 表格"></a>2.8 表格</h2><p>表格如下</p>
 <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;表格&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;table&#125;[h]</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\begin</span>&#123;tabular&#125;&#123;c|c|c&#125;  <span class="comment">% 确定有几列</span></span><br><span class="line">        <span class="keyword">\toprule</span>[2pt]       <span class="comment">% 间隔</span></span><br><span class="line">        游戏 <span class="built_in">&amp;</span> 原神 <span class="built_in">&amp;</span> 塞尔达 <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span>              <span class="comment">% 横线</span></span><br><span class="line">        厂商 <span class="built_in">&amp;</span> 米哈游 <span class="built_in">&amp;</span> 任天堂 <span class="keyword">\\</span></span><br><span class="line">        平台 <span class="built_in">&amp;</span> 手机、电脑 <span class="built_in">&amp;</span> switch <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        类型 <span class="built_in">&amp;</span> 开放二次元 <span class="built_in">&amp;</span> 开放世界探索 <span class="keyword">\\</span></span><br><span class="line">        类型 <span class="built_in">&amp;</span> 组队游玩 <span class="built_in">&amp;</span> 单人游戏 <span class="keyword">\\</span></span><br><span class="line">        类型 <span class="built_in">&amp;</span> 氪金游戏 <span class="built_in">&amp;</span> 买断 <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        关键 <span class="built_in">&amp;</span> 启动 <span class="built_in">&amp;</span> 关闭 <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\bottomrule</span>[2pt]</span><br><span class="line">    <span class="keyword">\end</span>&#123;tabular&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;table&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
 
 <p>效果如下：<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310312143814.png"></p>
-<h2 id="分栏"><a href="#分栏" class="headerlink" title="分栏"></a>分栏</h2><p>示例如下所示，这里0.5表示该栏的宽度（占页面的比例），0.5也就是页面的一半。</p>
+<h2 id="2-9-分栏"><a href="#2-9-分栏" class="headerlink" title="2.9 分栏"></a>2.9 分栏</h2><p>示例如下所示，这里0.5表示该栏的宽度（占页面的比例），0.5也就是页面的一半。</p>
 <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;分栏&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;columns&#125;</span><br><span class="line">        <span class="keyword">\column</span>&#123;0.5<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">        这是左边的一栏</span><br><span class="line">        <span class="keyword">\column</span>&#123;0.5<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">        这是右边的一栏</span><br><span class="line">    <span class="keyword">\end</span>&#123;columns&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
 
 <p>效果如下：<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310302053361.png"></p>
-<h2 id="分块"><a href="#分块" class="headerlink" title="分块"></a>分块</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;分块&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;block&#125;&#123;第一个块&#125;</span><br><span class="line">    王源</span><br><span class="line">    <span class="keyword">\end</span>&#123;block&#125;	</span><br><span class="line">    <span class="keyword">\begin</span>&#123;block&#125;&#123;第二个块&#125;</span><br><span class="line">    王俊凯</span><br><span class="line">    <span class="keyword">\end</span>&#123;block&#125;	</span><br><span class="line">    <span class="keyword">\begin</span>&#123;block&#125;&#123;第三个块&#125;</span><br><span class="line">    易洋千玺</span><br><span class="line">    <span class="keyword">\end</span>&#123;block&#125;	</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-10-分块"><a href="#2-10-分块" class="headerlink" title="2.10 分块"></a>2.10 分块</h2><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;分块&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;block&#125;&#123;第一个块&#125;</span><br><span class="line">    王源</span><br><span class="line">    <span class="keyword">\end</span>&#123;block&#125;	</span><br><span class="line">    <span class="keyword">\begin</span>&#123;block&#125;&#123;第二个块&#125;</span><br><span class="line">    王俊凯</span><br><span class="line">    <span class="keyword">\end</span>&#123;block&#125;	</span><br><span class="line">    <span class="keyword">\begin</span>&#123;block&#125;&#123;第三个块&#125;</span><br><span class="line">    易洋千玺</span><br><span class="line">    <span class="keyword">\end</span>&#123;block&#125;	</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
 
 <p>效果如下：<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310302053549.png"></p>
-<h2 id="进阶玩法"><a href="#进阶玩法" class="headerlink" title="进阶玩法"></a>进阶玩法</h2><ul>
+<h2 id="2-11-进阶玩法"><a href="#2-11-进阶玩法" class="headerlink" title="2.11 进阶玩法"></a>2.11 进阶玩法</h2><ul>
 <li><p><code>\vspace&#123;0.5cm&#125; </code>：在页面之间增加垂直空间，也就是说垂直空出0.5cm</p>
 </li>
 <li><p><code>\medskip</code>:这将在两行文本之间插入中等大小的垂直间距。</p>

@@ -31,7 +31,7 @@
 <meta property="og:description" content="C++11之后引入lambda表达式，，一般用于定义匿名函数，使得代码更加灵活简洁。lambda表达式与普通函数类似，也有参数列表、返回值类型和函数体，只是它的定义方式更简洁，并且可以在函数内部定义。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-10T08:04:17.795Z">
-<meta property="article:modified_time" content="2023-10-10T08:04:17.797Z">
+<meta property="article:modified_time" content="2023-11-01T06:52:33.827Z">
 <meta property="article:author" content="mobbu">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="lambda">
@@ -224,6 +224,13 @@
 
               <time title="创建时间：2023-10-10 16:04:17" itemprop="dateCreated datePublished" datetime="2023-10-10T16:04:17+08:00">2023-10-10</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-11-01 14:52:33" itemprop="dateModified" datetime="2023-11-01T14:52:33+08:00">2023-11-01</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -269,11 +276,11 @@
         <p>C++11之后引入lambda表达式，，一般用于定义匿名函数，使得代码更加灵活简洁。lambda表达式与普通函数类似，也有参数列表、返回值类型和函数体，只是它的定义方式更简洁，并且可以在函数内部定义。</p>
 <span id="more"></span>
 
-<h1 id="lambda表达式概述"><a href="#lambda表达式概述" class="headerlink" title="lambda表达式概述"></a>lambda表达式概述</h1><p>最常见的lambda表达式如下：</p>
+<h1 id="1-lambda表达式概述"><a href="#1-lambda表达式概述" class="headerlink" title="1 lambda表达式概述"></a>1 lambda表达式概述</h1><p>最常见的lambda表达式如下：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> plus = [] (<span class="type">int</span> v1, <span class="type">int</span> v2) -&gt; <span class="type">int</span> &#123; <span class="keyword">return</span> v1 + v2; &#125;</span><br><span class="line"><span class="type">int</span> sum = <span class="built_in">plus</span>(<span class="number">1</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
 
 <p>上述代码是计算两数之和的，但是一般不会这样使用</p>
-<h1 id="lambda表达式的写法"><a href="#lambda表达式的写法" class="headerlink" title="lambda表达式的写法"></a>lambda表达式的写法</h1><table>
+<h1 id="2-lambda表达式的写法"><a href="#2-lambda表达式的写法" class="headerlink" title="2 lambda表达式的写法"></a>2 lambda表达式的写法</h1><table>
 <thead>
 <tr>
 <th align="center">序号</th>
@@ -297,14 +304,14 @@
 <td align="center"><code>[captures]lambda-specifiers&#123;body&#125;</code></td>
 </tr>
 </tbody></table>
-<h1 id="四种表达式的含义"><a href="#四种表达式的含义" class="headerlink" title="四种表达式的含义"></a>四种表达式的含义</h1><p>（1）完整的lambda表达式，包含了lambda表达式的所有成分。<br>（2）常量lambda表达式，捕获的变量都是常量，不能在lambda表达式的body中进行修改。<br>（3）和（2）基本一致，唯一的区别就是，lambda表达式的函数返回值可以通过函数体推导出来。一般情况函数返回值类型明确或者没有返回值的情况下可以这样写。<br>（4）lambda表达式的函数没有任何参数，但是可以添加lambda-specifiers，lambda-specifiers是什么我们后续再介绍。</p>
-<h1 id="lambda表达式各个成员的解释"><a href="#lambda表达式各个成员的解释" class="headerlink" title="lambda表达式各个成员的解释"></a>lambda表达式各个成员的解释</h1><p>captures 捕获列表，lambda可以把上下文变量以值或引用的方式捕获，在body中直接使用。</p>
+<h1 id="3-四种表达式的含义"><a href="#3-四种表达式的含义" class="headerlink" title="3 四种表达式的含义"></a>3 四种表达式的含义</h1><p>（1）完整的lambda表达式，包含了lambda表达式的所有成分。<br>（2）常量lambda表达式，捕获的变量都是常量，不能在lambda表达式的body中进行修改。<br>（3）和（2）基本一致，唯一的区别就是，lambda表达式的函数返回值可以通过函数体推导出来。一般情况函数返回值类型明确或者没有返回值的情况下可以这样写。<br>（4）lambda表达式的函数没有任何参数，但是可以添加lambda-specifiers，lambda-specifiers是什么我们后续再介绍。</p>
+<h1 id="4-lambda表达式各个成员的解释"><a href="#4-lambda表达式各个成员的解释" class="headerlink" title="4 lambda表达式各个成员的解释"></a>4 lambda表达式各个成员的解释</h1><p>captures 捕获列表，lambda可以把上下文变量以值或引用的方式捕获，在body中直接使用。</p>
 <p>tparams 模板参数列表(c++20引入)，让lambda可以像模板函数一样被调用。</p>
 <p>params 参数列表，有一点需要注意，在c++14之后允许使用auto左右参数类型。</p>
 <p>lambda-specifiers lambda说明符， 一些可选的参数，这里不多介绍了，有兴趣的读者可以去官方文档上看。这里比较常用的参数就是mutable和exception。其中，表达式(1)中没有trailing-return-type，是因为包含在这一项里面的。</p>
 <p>trailing-return-type 返回值类型，一般可以省略掉，由编译器来推导。</p>
 <p>body 函数体，函数的具体逻辑。</p>
-<h1 id="捕获列表"><a href="#捕获列表" class="headerlink" title="捕获列表"></a>捕获列表</h1><p>上面介绍完了lambda表达式的各个成分，其实很多部分和正常的函数没什么区别，其中最大的一个不同点就是捕获列表。我在刚开始用lambda表达式的时候，还一直以为这个没啥用，只是用一个 [] 来标志着这是一个lambda表达式。后来了解了才知道，原来这个捕获列表如此强大，甚至我觉得捕获列表就是lambda表达式的灵魂。下面先介绍几种常用的捕获方式。</p>
+<h1 id="5-捕获列表"><a href="#5-捕获列表" class="headerlink" title="5 捕获列表"></a>5 捕获列表</h1><p>上面介绍完了lambda表达式的各个成分，其实很多部分和正常的函数没什么区别，其中最大的一个不同点就是捕获列表。我在刚开始用lambda表达式的时候，还一直以为这个没啥用，只是用一个 [] 来标志着这是一个lambda表达式。后来了解了才知道，原来这个捕获列表如此强大，甚至我觉得捕获列表就是lambda表达式的灵魂。下面先介绍几种常用的捕获方式。</p>
 <p>[] 什么也不捕获，无法lambda函数体使用任何</p>
 <p>[&#x3D;] 按值的方式捕获所有变量</p>
 <p>[&amp;] 按引用的方式捕获所有变量</p>
@@ -312,7 +319,7 @@
 <p>[&amp;, a] 除了变量a之外，按引用的方式捕获所有局部变量，变量a使用值的方式来捕获。这里后面的参数也可以多个，例如 [&amp;, a, b, c]。这里注意，如果前面加了&amp;，后面加的具体的参数必须以值的方式来捕获。</p>
 <p>[a, &amp;b] 以值的方式捕获a，引用的方式捕获b，也可以捕获多个。</p>
 <p>[this] 在成员函数中，也可以直接捕获this指针，其实在成员函数中，[&#x3D;]和[&amp;]也会捕获this指针。</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<h1 id="6-总结"><a href="#6-总结" class="headerlink" title="6 总结"></a>6 总结</h1><ul>
 <li><p>捕获列表，对应LambdaClass类的private成员。</p>
 </li>
 <li><p>参数列表，对应LambdaClass类的成员函数的operator()的形参列表</p>
@@ -429,7 +436,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">lambda表达式概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%86%99%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">lambda表达式的写法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E7%A7%8D%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%90%AB%E4%B9%89"><span class="nav-number">3.</span> <span class="nav-text">四种表达式的含义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%90%84%E4%B8%AA%E6%88%90%E5%91%98%E7%9A%84%E8%A7%A3%E9%87%8A"><span class="nav-number">4.</span> <span class="nav-text">lambda表达式各个成员的解释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8D%95%E8%8E%B7%E5%88%97%E8%A1%A8"><span class="nav-number">5.</span> <span class="nav-text">捕获列表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A6%82%E8%BF%B0"><span class="nav-text">1 lambda表达式概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%86%99%E6%B3%95"><span class="nav-text">2 lambda表达式的写法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E5%9B%9B%E7%A7%8D%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%90%AB%E4%B9%89"><span class="nav-text">3 四种表达式的含义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%90%84%E4%B8%AA%E6%88%90%E5%91%98%E7%9A%84%E8%A7%A3%E9%87%8A"><span class="nav-text">4 lambda表达式各个成员的解释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E6%8D%95%E8%8E%B7%E5%88%97%E8%A1%A8"><span class="nav-text">5 捕获列表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-%E6%80%BB%E7%BB%93"><span class="nav-text">6 总结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -512,16 +519,20 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">111k</span>
+    <span title="站点总字数">112k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
     <span title="站点阅读时长">1:41</span>
 </div>
+
+<!--
   <div class="powered-by">
    <!--由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动-->
   </div>
+-->
+
 
 
     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -554,7 +565,7 @@ $(document).ready(function() {
 </script> 
 
 
-// 本站已安全运行 XX天 XX小时XX分XX秒
+<!-- 本站已安全运行 XX天 XX小时XX分XX秒 -->
 <script>
       var now = new Date(); 
       function createtime() { 
