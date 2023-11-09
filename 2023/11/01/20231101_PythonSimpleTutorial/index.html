@@ -31,7 +31,7 @@
 <meta property="og:description" content="最近又经常用到python了，所以这里也总结一下python的使用的过程和简要的语法。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-01T11:34:06.880Z">
-<meta property="article:modified_time" content="2023-11-01T11:34:06.883Z">
+<meta property="article:modified_time" content="2023-11-09T08:52:28.579Z">
 <meta property="article:author" content="mobbu">
 <meta property="article:tag" content="vscode">
 <meta property="article:tag" content="python">
@@ -224,6 +224,13 @@
 
               <time title="创建时间：2023-11-01 19:34:06" itemprop="dateCreated datePublished" datetime="2023-11-01T19:34:06+08:00">2023-11-01</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-11-09 16:52:28" itemprop="dateModified" datetime="2023-11-09T16:52:28+08:00">2023-11-09</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -247,14 +254,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>101</span>
+              <span>17k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>15 分钟</span>
             </span>
 
         </div>
@@ -268,7 +275,445 @@
       
         <p>最近又经常用到python了，所以这里也总结一下python的使用的过程和简要的语法。</p>
 <span id="more"></span>
-<h1 id="python语法简介"><a href="#python语法简介" class="headerlink" title="python语法简介"></a>python语法简介</h1><h1 id="python运行和调试"><a href="#python运行和调试" class="headerlink" title="python运行和调试"></a>python运行和调试</h1><h1 id="调库大法好"><a href="#调库大法好" class="headerlink" title="调库大法好"></a>调库大法好</h1><h1 id="python-日志"><a href="#python-日志" class="headerlink" title="python 日志"></a>python 日志</h1><h1 id="简单爬虫"><a href="#简单爬虫" class="headerlink" title="简单爬虫"></a>简单爬虫</h1><p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+<h1 id="1-python语法简介"><a href="#1-python语法简介" class="headerlink" title="1 python语法简介"></a>1 python语法简介</h1><h2 id="1-1-基础语法"><a href="#1-1-基础语法" class="headerlink" title="1.1 基础语法"></a>1.1 基础语法</h2><p>python缩进就是断行</p>
+<p>数据类型：<br>    - 列表（List）：列表是Python中的基础数据结构之一，它是一个有序的元素集合，可以随时添加或删除其中的元素。<br>    - 元组（Tuple）：元组与列表类似，也是一个有序的元素集合，但是元组是不可变的，一旦创建就不能修改其中的元素。<br>    - 字典（Dictionary）：字典是一种键值对（Key-Value Pair）形式的数据结构，它由键（Key）和对应的值（Value）组成，可以通过键来访问对应的值。<br>    - 集合（Set）：集合是一种无序的元素集合，其中的元素不重复且没有顺序要求。集合支持添加、删除、交集、并集等操作。</p>
+<p>例如：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">my_list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">my_tuple = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line">my_dict = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Alice&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">25</span>&#125;</span><br><span class="line">my_set = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-1-1-主函数"><a href="#1-1-1-主函数" class="headerlink" title="1.1.1 主函数"></a>1.1.1 主函数</h3><p>一般情况下使用如下格式：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>: <span class="comment"># 主函数</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;hello world&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>代码作用为，当运行当前文件，也就是说当前文件为主函数（文件）时运行以下代码，也就是主函数，如果该文件只是其他文件调用，那么就不运行以下代码了。所以一般的库函数是不需要主函数的。</p>
+<h3 id="1-1-2-循环"><a href="#1-1-2-循环" class="headerlink" title="1.1.2 循环"></a>1.1.2 循环</h3><p>常用的循环while、for循环都有。</p>
+<ol>
+<li>while循环</li>
+</ol>
+<p>很简单，伪代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">while 条件:</span><br><span class="line">    循环</span><br></pre></td></tr></table></figure>
+<p>例子如下：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> x &lt; <span class="number">5</span>:</span><br><span class="line">    <span class="built_in">print</span>(x)</span><br><span class="line">    x += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>for循环</li>
+</ol>
+<p>比如这时有一个数据结构，比如列表：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nums = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">    <span class="built_in">print</span>(num)</span><br></pre></td></tr></table></figure>
+
+<p>此时就会遍历nums中的每一个元素。</p>
+<h3 id="1-1-3-函数"><a href="#1-1-3-函数" class="headerlink" title="1.1.3 函数"></a>1.1.3 函数</h3><ol>
+<li>slice 切片</li>
+</ol>
+<p>切片的基本概念是：从开始位置开始，按照给定的步长遍历序列，提取或跳过元素。你可以使用正步长（默认）来提取元素，也可以使用负步长（从后向前）来跳过元素。  </p>
+<p><code>list[start:end:step]</code>:<br>    - list为列表<br>    - start：开始的序号，可以为负数，负数意义为倒序的位置，可以省略<br>    - end：结束的序号，也可以为负数，也可以省略<br>    - step：切片的步长，可以为负数，这样就是倒序切片，大小为采样的间隔</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]  </span><br><span class="line"><span class="built_in">list</span> = <span class="built_in">list</span>[::-<span class="number">1</span>]  </span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>)  <span class="comment"># 输出：[5, 4, 3, 2, 1]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">list</span> = <span class="built_in">list</span>[<span class="number">2</span>:<span class="number">5</span>:<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>)  <span class="comment"># 输出：[3, 2, 1]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">list</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]  </span><br><span class="line"><span class="built_in">list</span> = <span class="built_in">list</span>[-<span class="number">2</span>::<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>)  <span class="comment"># 输出：[4,5]</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="1-1-4-类"><a href="#1-1-4-类" class="headerlink" title="1.1.4 类"></a>1.1.4 类</h3><ol>
+<li>类的定义</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span>:  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, age</span>):  </span><br><span class="line">        self.name = name  </span><br><span class="line">        self.age = age  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">say_hello</span>(<span class="params">self</span>):  </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;Hello, my name is <span class="subst">&#123;self.name&#125;</span> and I am <span class="subst">&#123;self.age&#125;</span> years old.&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>使用时：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">me = MyClass(<span class="string">&quot;Alice&quot;</span>, <span class="number">25</span>)  </span><br><span class="line">me.say_hello()  <span class="comment"># 输出: Hello, my name is Alice and I am 25 years old.</span></span><br></pre></td></tr></table></figure>
+<p>总之跟</p>
+<ol start="2">
+<li>self函数</li>
+</ol>
+<p>有点类似于C++中类的this指针，也就是指向自己的指针。定义类内数据时，都会用到self。</p>
+<h3 id="1-1-5-引用import"><a href="#1-1-5-引用import" class="headerlink" title="1.1.5 引用import"></a>1.1.5 引用import</h3><h3 id="1-1-6-init-py文件"><a href="#1-1-6-init-py文件" class="headerlink" title="1.1.6  __init__.py文件"></a>1.1.6  <code>__init__.py</code>文件</h3><h2 id="1-2-内置函数"><a href="#1-2-内置函数" class="headerlink" title="1.2 内置函数"></a>1.2 内置函数</h2><h3 id="1-2-1-getattr-函数"><a href="#1-2-1-getattr-函数" class="headerlink" title="1.2.1 getattr()函数"></a>1.2.1 getattr()函数</h3><p>在Python中，getattr()是一个内置函数，用于获取对象的属性值。它的语法如下：<br><code>getattr(object, name[, default])</code></p>
+<p>比如:<br>例1:获取单个属性值</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>:  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, age</span>):  </span><br><span class="line">        self.name = name  </span><br><span class="line">        self.age = age  </span><br><span class="line">  </span><br><span class="line">p = Person(<span class="string">&#x27;Alice&#x27;</span>, <span class="number">25</span>)  </span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">getattr</span>(p, <span class="string">&#x27;name&#x27;</span>))  <span class="comment"># 输出: Alice  </span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">getattr</span>(p, <span class="string">&#x27;age&#x27;</span>))  <span class="comment"># 输出: 25</span></span><br></pre></td></tr></table></figure>
+<p>例2：获取多个属性值</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>:  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, age</span>):  </span><br><span class="line">        self.name = name  </span><br><span class="line">        self.age = age  </span><br><span class="line">        self.city = <span class="string">&#x27;New York&#x27;</span>  </span><br><span class="line">  </span><br><span class="line">p = Person(<span class="string">&#x27;Alice&#x27;</span>, <span class="number">25</span>)  </span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">getattr</span>(p, (<span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;age&#x27;</span>)))  <span class="comment"># 输出: (&#x27;Alice&#x27;, 25)</span></span><br></pre></td></tr></table></figure>
+<p>例3：获取不存在的属性时返回默认值</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>:  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, age</span>):  </span><br><span class="line">        self.name = name  </span><br><span class="line">        self.age = age  </span><br><span class="line">        self.city = <span class="string">&#x27;New York&#x27;</span>  </span><br><span class="line">  </span><br><span class="line">p = Person(<span class="string">&#x27;Alice&#x27;</span>, <span class="number">25</span>)  </span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">getattr</span>(p, <span class="string">&#x27;address&#x27;</span>, <span class="string">&#x27;N/A&#x27;</span>))  <span class="comment"># 输出: N/A，因为不存在address属性</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="1-2-2-print函数"><a href="#1-2-2-print函数" class="headerlink" title="1.2.2 print函数"></a>1.2.2 print函数</h3><p>print函数用于打印字符串到终端中，一般用于记录日志，那么一般在用刀print的时候，我们想要统一输出的格式，这时也会经常用到在format()方法，它是将指定的值按照指定的格式插入到字符串中。类似于C++中的格式化输出printf()函数用法。</p>
+<p>首先format用法一般<code>string.format(value1, value2, ..., valueN)</code>，在string中也要有占位符<code>&#123;&#125;</code>,括号中也可以有格式化控制的语句，</p>
+<p>一般来说，<code>&#39;example&#123;[:[width][type]]&#125;&#39;.format()</code></p>
+<table>
+<thead>
+<tr>
+<th align="left">符号</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">s</td>
+<td align="left">对字符串类型格式化</td>
+</tr>
+<tr>
+<td align="left">d</td>
+<td align="left">十进制整数</td>
+</tr>
+<tr>
+<td align="left">c</td>
+<td align="left">将十进制整数自动转换成对应的 Unicode 字符</td>
+</tr>
+<tr>
+<td align="left">e or E</td>
+<td align="left">转换成科学计数法后，再格式化输出</td>
+</tr>
+<tr>
+<td align="left">g or G</td>
+<td align="left">自动在 e 和 f（或 E 和 F）中切换</td>
+</tr>
+<tr>
+<td align="left">b</td>
+<td align="left">将十进制数自动转换成二进制表示，再格式化输出</td>
+</tr>
+<tr>
+<td align="left">o</td>
+<td align="left">将十进制数自动转换成八进制表示，再格式化输出</td>
+</tr>
+<tr>
+<td align="left">x or X</td>
+<td align="left">将十进制数自动转换成十六进制表示，再格式化输出</td>
+</tr>
+<tr>
+<td align="left">f or F</td>
+<td align="left">转换为浮点数（默认小数点后保留 6 位），再格式化输出</td>
+</tr>
+<tr>
+<td align="left">%</td>
+<td align="left">显示百分比（默认显示小数点后 6 位）</td>
+</tr>
+</tbody></table>
+<p>比如</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nums = [[<span class="number">2592</span>,<span class="number">2834</span>],[<span class="number">0.304625</span>,<span class="number">0.312436</span>],[<span class="number">0.771011</span>,<span class="number">0.782213</span>]]</span><br><span class="line"><span class="comment"># &#123;:06d&#125;为6位整数，&#123;:.4f&#125;为保留四位小数</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;iter&#123;:06d&#125;-&#123;:.4f&#125;-&#123;:.4f&#125;.pkl&#x27;</span>.<span class="built_in">format</span>(nums[<span class="number">0</span>][<span class="number">0</span>],nums[<span class="number">1</span>][<span class="number">0</span>],nums[<span class="number">2</span>][<span class="number">0</span>]))</span><br></pre></td></tr></table></figure>
+<p>输出的内容如下：<br>iter002592-0.3046-0.7710.pkl</p>
+<h1 id="2-python运行和调试"><a href="#2-python运行和调试" class="headerlink" title="2 python运行和调试"></a>2 python运行和调试</h1><ol>
+<li><p>运行</p>
+<ul>
+<li>使用vscode，在扩展中安装python扩展，然后点击运行就可以在终端上看到结果</li>
+<li>终端直接运行，在命令行输入 python demo.py</li>
+</ul>
+</li>
+<li><p>调试</p>
+<ul>
+<li>根据数据中的日志进行调整</li>
+<li>vscode进行断点调试</li>
+</ul>
+</li>
+</ol>
+<h1 id="3-调库大法好"><a href="#3-调库大法好" class="headerlink" title="3 调库大法好"></a>3 调库大法好</h1><h2 id="3-1-argparse库"><a href="#3-1-argparse库" class="headerlink" title="3.1 argparse库"></a>3.1 argparse库</h2><p>python自带的库，用于处理命令行，在很多时候，我们运行py程序时，都需要用到命令行参数，通过使用parse_args()函数，可以使我们的Python程序具有灵活性和可扩展性，因为我们可以在命令行中提供自定义的参数值来控制程序的执行。</p>
+<p>示例：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># 创建解析器对象  </span></span><br><span class="line">parser = argparse.ArgumentParser(description=<span class="string">&quot;这是一个示例程序&quot;</span>)  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># 添加命令行选项  </span></span><br><span class="line">parser.add_argument(<span class="string">&quot;-a&quot;</span>, <span class="string">&quot;--arg1&quot;</span>, <span class="built_in">help</span>=<span class="string">&quot;参数1&quot;</span>)  </span><br><span class="line">parser.add_argument(<span class="string">&quot;-b&quot;</span>, <span class="string">&quot;--arg2&quot;</span>, <span class="built_in">help</span>=<span class="string">&quot;参数2&quot;</span>)  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># 解析命令行参数  </span></span><br><span class="line">args = parser.parse_args()  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># 使用获取的参数值执行程序逻辑  </span></span><br><span class="line"><span class="keyword">if</span> args.arg1:  </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;参数1的值是:&quot;</span>, args.arg1)  </span><br><span class="line"><span class="keyword">if</span> args.arg2:  </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;参数2的值是:&quot;</span>, args.arg2)</span><br></pre></td></tr></table></figure>
+
+<p>在上面的示例中，我们使用argparse模块创建了一个解析器对象，并添加了两个命令行选项–arg1和–arg2。然后，我们调用parse_args()函数解析命令行参数，并将结果存储在args变量中。最后，我们使用获取的参数值执行程序逻辑，打印出参数的值。</p>
+<p>调用的时候，我们一般在终端调用，比如这个文件为argparseExp.py，则命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python argparseExp.py --arg1 exp1 --arg2 exp2</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-2-easydict库"><a href="#3-2-easydict库" class="headerlink" title="3.2 easydict库"></a>3.2 easydict库</h2><p>EasyDict是一个Python库，它提供了一个简单的方式来创建和操作字典。EasyDict的主要特点是它允许你使用点符号（<code>.</code>）来访问字典中的键值对，而不是使用方括号（<code>[]</code>）。<br>以下是在Python中使用EasyDict库的方法：<br>首先，你需要安装EasyDict库。你可以使用pip来安装：<br><code>pip install EasyDict</code><br>安装完成后，你就可以在Python代码中使用EasyDict了。下面是一个简单的例子：  </p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> easydict <span class="keyword">import</span> EasyDict <span class="keyword">as</span> edict </span><br><span class="line">  </span><br><span class="line"><span class="comment"># 创建一个字典  </span></span><br><span class="line">my_dict = edict()  </span><br><span class="line">my_dict.name = <span class="string">&quot;John&quot;</span>  </span><br><span class="line">my_dict.age = <span class="number">30</span>  </span><br><span class="line">my_dict.city = <span class="string">&quot;New York&quot;</span>  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># 访问和修改字典中的值  </span></span><br><span class="line"><span class="built_in">print</span>(my_dict.name)  <span class="comment"># 输出: John  </span></span><br><span class="line"><span class="built_in">print</span>(my_dict.age)  <span class="comment"># 输出: 30  </span></span><br><span class="line">my_dict.city = <span class="string">&quot;Los Angeles&quot;</span>  </span><br><span class="line"><span class="built_in">print</span>(my_dict.city)  <span class="comment"># 输出: Los Angeles  </span></span><br><span class="line">  </span><br><span class="line"><span class="comment"># 使用get方法访问字典中的值，如果键不存在，则返回None或指定的默认值  </span></span><br><span class="line"><span class="built_in">print</span>(my_dict.get(<span class="string">&quot;job&quot;</span>))  <span class="comment"># 输出: None  </span></span><br><span class="line"><span class="built_in">print</span>(my_dict.get(<span class="string">&quot;job&quot;</span>, <span class="string">&quot;unemployed&quot;</span>))  <span class="comment"># 输出: unemployed</span></span><br><span class="line">此外，EasyDict还支持嵌套字典。你可以像下面这样创建一个嵌套字典：</span><br><span class="line">python</span><br><span class="line">复制代码</span><br><span class="line"><span class="keyword">from</span> easydict <span class="keyword">import</span> EasyDict <span class="keyword">as</span> edict  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># 创建一个嵌套字典  </span></span><br><span class="line">my_dict = edict()  </span><br><span class="line">my_dict.profile = edict()  </span><br><span class="line">my_dict.profile.name = <span class="string">&quot;John&quot;</span>  </span><br><span class="line">my_dict.profile.age = <span class="number">30</span>  </span><br><span class="line">my_dict.profile.city = <span class="string">&quot;New York&quot;</span>  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># 访问嵌套字典中的值  </span></span><br><span class="line"><span class="built_in">print</span>(my_dict.profile.name)  <span class="comment"># 输出: John  </span></span><br><span class="line"><span class="built_in">print</span>(my_dict.profile.age)  <span class="comment"># 输出: 30</span></span><br></pre></td></tr></table></figure>
+
+<p>以上就是EasyDict库的基本使用方法。它提供了一种简洁的方式来创建和操作字典，特别是对于那些需要频繁使用字典的Python开发者来说。</p>
+<h2 id="3-3-yaml库"><a href="#3-3-yaml库" class="headerlink" title="3.3 yaml库"></a>3.3 yaml库</h2><p>Python中的PyYAML库可以让你方便地处理YAML格式的数据。YAML是一种常用的配置文件格式，它以简洁的语法表达复杂的结构。</p>
+<p>安装完成后，你可以在Python代码中使用PyYAML库来读取和写入YAML数据。下面是一个简单的例子：</p>
+<ol>
+<li><p>读取YAML文件</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> yaml  </span><br><span class="line"><span class="comment"># 打开YAML文件并读取数据  </span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;example.yaml&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> file:  </span><br><span class="line">    data = yaml.safe_load(file)  </span><br><span class="line"><span class="comment"># 输出读取到的数据  </span></span><br><span class="line"><span class="built_in">print</span>(data)</span><br></pre></td></tr></table></figure>
+<p>在上面的代码中，我们使用yaml.safe_load()函数从文件中读取YAML数据，并将其存储在变量data中。</p>
+</li>
+<li><p>写入YAML文件<br>python<br>复制代码</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> yaml  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># 创建一个字典  </span></span><br><span class="line">data = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;John&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">30</span>, <span class="string">&#x27;city&#x27;</span>: <span class="string">&#x27;New York&#x27;</span>&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># 将数据写入YAML文件  </span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;example.yaml&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> file:  </span><br><span class="line">    yaml.dump(data, file)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>在上面的代码中，我们使用<code>yaml.dump()</code>函数将字典data写入到文件中。默认情况下，<code>yaml.dump()</code>会输出美观的YAML格式。你也可以通过设置参数来控制输出的格式。例如，你可以设置indent&#x3D;4来使输出更容易阅读。</p>
+<ol start="3">
+<li>使用标签<br>YAML还支持使用标签来指定数据类型。你可以使用!符号加上类型名称作为标签。例如，你可以使用!int来指定一个整数类型的数据。<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> yaml  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># 创建一个字典，其中包含一个带有标签的整数  </span></span><br><span class="line">data = &#123;<span class="string">&#x27;age&#x27;</span>: &#123;<span class="string">&#x27;!int&#x27;</span>: <span class="number">30</span>&#125;&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># 将数据写入YAML文件  </span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;example.yaml&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> file:  </span><br><span class="line">    yaml.dump(data, file)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>在上面的代码中，我们使用!int标签来指定字典中的age键的值是一个整数。当我们读取这个YAML文件时，PyYAML会自动将带有标签的值转换为相应的Python类型。例如，带有!int标签的值将被转换为整数类型。</p>
+<h2 id="3-4-json库"><a href="#3-4-json库" class="headerlink" title="3.4 json库"></a>3.4 json库</h2><p>Python中的<code>json</code>库是一个用于处理JSON数据的标准库。使用<code>json</code>库，你可以轻松地将Python对象转换为JSON格式，以及将JSON数据转换为Python对象。</p>
+<p>下面是<code>json</code>库的基本使用方法：</p>
+<ol>
+<li><strong>将Python对象转换为JSON字符串</strong></li>
+</ol>
+<p>使用<code>json.dumps()</code>函数，将Python对象转换为JSON格式的字符串。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="comment"># Python对象</span></span><br><span class="line">data = &#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;John&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>: <span class="number">30</span>,</span><br><span class="line">    <span class="string">&#x27;city&#x27;</span>: <span class="string">&#x27;New York&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转换为JSON字符串</span></span><br><span class="line">json_data = json.dumps(data)</span><br><span class="line"><span class="built_in">print</span>(json_data)</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">&quot;name&quot;</span>: <span class="string">&quot;John&quot;</span>, <span class="string">&quot;age&quot;</span>: <span class="number">30</span>, <span class="string">&quot;city&quot;</span>: <span class="string">&quot;New York&quot;</span>&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><strong>将JSON字符串转换为Python对象</strong></li>
+</ol>
+<p>使用<code>json.loads()</code>函数，将JSON格式的字符串转换为Python对象。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="comment"># JSON字符串</span></span><br><span class="line">json_data = <span class="string">&#x27;&#123;&quot;name&quot;: &quot;John&quot;, &quot;age&quot;: 30, &quot;city&quot;: &quot;New York&quot;&#125;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 转换为Python对象</span></span><br><span class="line">data = json.loads(json_data)</span><br><span class="line"><span class="built_in">print</span>(data)</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;John&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">30</span>, <span class="string">&#x27;city&#x27;</span>: <span class="string">&#x27;New York&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><strong>读写JSON文件</strong></li>
+</ol>
+<ul>
+<li><strong>写入JSON文件</strong></li>
+</ul>
+<p>使用<code>json.dump()</code>函数，将Python对象写入到JSON文件。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">data = &#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;John&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>: <span class="number">30</span>,</span><br><span class="line">    <span class="string">&#x27;city&#x27;</span>: <span class="string">&#x27;New York&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;data.json&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">    json.dump(data, file)</span><br></pre></td></tr></table></figure>
+<p>上述代码将<code>data</code>对象写入到名为<code>data.json</code>的文件中。</p>
+<ul>
+<li><strong>读取JSON文件</strong></li>
+</ul>
+<p>使用<code>json.load()</code>函数，从JSON文件中读取数据并转换为Python对象。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;data.json&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">    data = json.load(file)</span><br><span class="line">    <span class="built_in">print</span>(data)</span><br></pre></td></tr></table></figure>
+<p>上述代码将从名为<code>data.json</code>的文件中读取数据，并转换为Python对象。</p>
+<h2 id="3-5-numpy"><a href="#3-5-numpy" class="headerlink" title="3.5 numpy"></a>3.5 numpy</h2><p>一般<code>import numpy as np</code></p>
+<p>NumPy是一个强大的Python库，主要用于进行大规模多维数组和矩阵的数值计算。以下是一些常用的NumPy函数及其使用方法：</p>
+<ol>
+<li><p><strong>创建数组（Array Creation）</strong>:</p>
+<ul>
+<li><code>numpy.array()</code>: 这个函数用于将列表、元组或标量转换为NumPy数组。 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python`import numpy as np</span><br><span class="line">arr = np.array([1, 2, 3, 4, 5])`</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>切片（Slicing）</strong>:</p>
+<ul>
+<li><code>[:]</code>: 用于获取数组的子集。	 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python`arr[1:3]  # [2, 3]`</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>数学运算（Mathematical Operations）</strong>:</p>
+<ul>
+<li><code>numpy.sum()</code>: 计算数组中所有元素的和。	</li>
+<li><code>numpy.mean()</code>: 计算数组的平均值。</li>
+</ul>
+<p>	</p>
+</li>
+<li><p><strong>矩阵运算（Matrix Operations）</strong>:</p>
+<ul>
+<li><code>numpy.dot()</code>: 计算两个数组的点积。</li>
+</ul>
+<p>	</p>
+</li>
+<li><p><strong>索引和切片（Indexing and Slicing）</strong>:</p>
+<ul>
+<li>使用负索引从后向前选择元素。例如：<code>arr[-1]</code> 将返回最后一个元素。</li>
+</ul>
+</li>
+<li><p><strong>排序和搜索（Sorting and Searching）</strong>:</p>
+<ul>
+<li><code>numpy.sort()</code>: 对数组进行排序。</li>
+<li><code>numpy.where()</code>: 返回满足给定条件的元素的索引。</li>
+</ul>
+</li>
+<li><p><strong>文件操作（File Operations）</strong>:</p>
+<ul>
+<li><code>numpy.load()</code>: 从文件中加载NumPy数组。</li>
+<li><code>numpy.save()</code>: 将NumPy数组保存到文件。例如：<code>np.save(&#39;my_array.npy&#39;, arr)</code>。</li>
+</ul>
+</li>
+<li><p><strong>统计和统计函数（Statistics and Statistical Functions）</strong>:</p>
+<ul>
+<li><code>numpy.mean()</code>: 计算数组的平均值。</li>
+<li><code>numpy.std()</code>: 计算数组的标准偏差。</li>
+</ul>
+</li>
+<li><p><strong>线性代数（Linear Algebra）</strong>: NumPy库提供了许多线性代数函数，如矩阵乘法、逆矩阵、特征值等。例如：<code>np.dot(A, B)</code> 执行矩阵乘法，<code>np.linalg.inv(A)</code> 返回矩阵A的逆矩阵。</p>
+</li>
+<li><p><strong>随机数生成（Random Number Generation）</strong>: NumPy库提供了许多用于生成随机数的函数，如 <code>numpy.random.rand()</code>，<code>numpy.random.randn()</code> 等。例如：<code>np.random.rand(3, 4)</code> 将生成一个3x4的随机数组。</p>
+</li>
+</ol>
+<h2 id="3-6-pandas"><a href="#3-6-pandas" class="headerlink" title="3.6 pandas"></a>3.6 pandas</h2><p>pandas库是Python中常用的数据处理库，其中包含了许多有用的函数和方法。以下是一些pandas库中常用的函数及其使用方法举例：</p>
+<ol>
+<li><code>pandas.Series</code>：创建一个一维数组，可以包含不同类型的数据。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个Series对象</span></span><br><span class="line">s = pd.Series([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br><span class="line"><span class="built_in">print</span>(s)</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><code>pandas.DataFrame</code>：创建一个二维表格，可以包含行和列数据。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个DataFrame对象</span></span><br><span class="line">df = pd.DataFrame(&#123;<span class="string">&#x27;A&#x27;</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="string">&#x27;B&#x27;</span>: [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], <span class="string">&#x27;C&#x27;</span>: [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]&#125;)</span><br><span class="line"><span class="built_in">print</span>(df)</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><code>pandas.read_csv</code>：从CSV文件中读取数据并返回一个DataFrame对象。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从CSV文件中读取数据</span></span><br><span class="line">df = pd.read_csv(<span class="string">&#x27;data.csv&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(df)</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li><code>pandas.DataFrame.head</code>：返回DataFrame的前n行数据。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个DataFrame对象</span></span><br><span class="line">df = pd.DataFrame(&#123;<span class="string">&#x27;A&#x27;</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="string">&#x27;B&#x27;</span>: [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], <span class="string">&#x27;C&#x27;</span>: [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]&#125;)</span><br><span class="line"><span class="built_in">print</span>(df.head(<span class="number">3</span>))  <span class="comment"># 返回前3行数据</span></span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li><code>pandas.DataFrame.tail</code>：返回DataFrame的最后n行数据。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个DataFrame对象</span></span><br><span class="line">df = pd.DataFrame(&#123;<span class="string">&#x27;A&#x27;</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="string">&#x27;B&#x27;</span>: [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], <span class="string">&#x27;C&#x27;</span>: [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]&#125;)</span><br><span class="line"><span class="built_in">print</span>(df.tail(<span class="number">3</span>))  <span class="comment"># 返回最后3行数据</span></span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li><code>pandas.DataFrame.index</code>：返回DataFrame的索引。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个DataFrame对象</span></span><br><span class="line">df = pd.DataFrame(&#123;<span class="string">&#x27;A&#x27;</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="string">&#x27;B&#x27;</span>: [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], <span class="string">&#x27;C&#x27;</span>: [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]&#125;)</span><br><span class="line"><span class="built_in">print</span>(df.index)  <span class="comment"># 返回索引值</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-7-h5py"><a href="#3-7-h5py" class="headerlink" title="3.7 h5py"></a>3.7 h5py</h2><p>h5py是一个Python库，它提供了与HDF5文件格式的接口。HDF5是一种存储大量数据的文件格式，包括矩阵数据，统计数据等。在科学计算和数据分析中常常使用到。</p>
+<p>以下是h5py库中的一些常用函数及其使用方法：</p>
+<ol>
+<li><code>h5py.h5o.open()</code>: 这个函数用于打开HDF5对象。它需要两个参数：一个是文件句柄，另一个是要打开的对象的名称。返回值是一个新的句柄，用于后续操作。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> h5py</span><br><span class="line">f = h5py.File(<span class="string">&#x27;mytestfile.hdf5&#x27;</span>, <span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">dset = f[<span class="string">&#x27;mydataset&#x27;</span>]</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><code>h5py.h5d.create()</code>: 这个函数用于创建一个新的数据集。它需要两个参数：一个是文件句柄，另一个是数据集的名称。返回值是一个新的数据集句柄，用于后续操作。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> h5py</span><br><span class="line">f = h5py.File(<span class="string">&#x27;mytestfile.hdf5&#x27;</span>, <span class="string">&#x27;w&#x27;</span>)</span><br><span class="line">dset = h5py.h5d.create(f, <span class="string">&#x27;mydataset&#x27;</span>, h5py.h5t.STD_I32BE, (<span class="number">100</span>,))</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><code>h5py.h5d.write()</code>: 这个函数用于将数据写入数据集。它需要四个参数：一个是数据集的句柄，另一个是要写入的数据，第三个是数据的缓冲区，第四个是数据的长度。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> h5py</span><br><span class="line">f = h5py.File(<span class="string">&#x27;mytestfile.hdf5&#x27;</span>, <span class="string">&#x27;w&#x27;</span>)</span><br><span class="line">dset = h5py.h5d.create(f, <span class="string">&#x27;mydataset&#x27;</span>, h5py.h5t.STD_I32BE, (<span class="number">100</span>,))</span><br><span class="line">data = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>)]</span><br><span class="line">dset.write(data, data)</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li><code>h5py.h5d.read()</code>: 这个函数用于从数据集中读取数据。它需要两个参数：一个是数据集的句柄，另一个是数据的缓冲区。返回值是读取的数据。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> h5py</span><br><span class="line">f = h5py.File(<span class="string">&#x27;mytestfile.hdf5&#x27;</span>, <span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">dset = f[<span class="string">&#x27;mydataset&#x27;</span>]</span><br><span class="line">data = np.zeros((<span class="number">100</span>,), dtype=np.int32)</span><br><span class="line">dset.read(data)</span><br></pre></td></tr></table></figure>
+<p>以上就是h5py库中的一些常用函数的使用方法，当然还有许多其他函数，具体使用方法可以查阅官方文档或相关教程。</p>
+<h2 id="3-8-torch"><a href="#3-8-torch" class="headerlink" title="3.8 torch"></a>3.8 torch</h2><p>PyTorch库是一个广泛使用的深度学习框架，它提供了许多功能强大的函数和方法来支持模型训练和推理。以下是一些常用的PyTorch库使用方法，以及示例说明：</p>
+<ol>
+<li>导入PyTorch库</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>创建张量（Tensor）</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x = torch.tensor([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])  <span class="comment"># 创建一个包含元素1、2、3的张量</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>定义模型</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">model = torch.nn.Sequential(</span><br><span class="line">    torch.nn.Linear(in_features=<span class="number">64</span>, out_features=<span class="number">128</span>),</span><br><span class="line">    torch.nn.ReLU(),</span><br><span class="line">    torch.nn.Linear(in_features=<span class="number">128</span>, out_features=<span class="number">10</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>定义损失函数和优化器</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">criterion = torch.nn.CrossEntropyLoss()  <span class="comment"># 定义损失函数为交叉熵损失</span></span><br><span class="line">optimizer = torch.optim.SGD(model.parameters(), lr=<span class="number">0.01</span>)  <span class="comment"># 定义优化器为随机梯度下降，学习率为0.01</span></span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>训练模型</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(num_epochs):</span><br><span class="line">    <span class="keyword">for</span> inputs, labels <span class="keyword">in</span> dataloader:</span><br><span class="line">        optimizer.zero_grad()  <span class="comment"># 清空梯度缓存</span></span><br><span class="line">        outputs = model(inputs)  <span class="comment"># 前向传播</span></span><br><span class="line">        loss = criterion(outputs, labels)  <span class="comment"># 计算损失</span></span><br><span class="line">        loss.backward()  <span class="comment"># 反向传播，计算梯度</span></span><br><span class="line">        optimizer.step()  <span class="comment"># 更新权重，执行梯度下降</span></span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>模型推理（预测）</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> torch.no_grad():  <span class="comment"># 关闭梯度计算，加速推理过程</span></span><br><span class="line">    outputs = model(inputs)  <span class="comment"># 前向传播，得到预测结果</span></span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li>保存和加载模型</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">torch.save(model.state_dict(), <span class="string">&#x27;model_weights.pth&#x27;</span>)  <span class="comment"># 保存模型权重到文件</span></span><br><span class="line">model_loaded = torch.load(<span class="string">&#x27;model_weights.pth&#x27;</span>)  <span class="comment"># 从文件加载模型权重到模型对象中</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-9-torchtext"><a href="#3-9-torchtext" class="headerlink" title="3.9 torchtext"></a>3.9 torchtext</h2><p>Torchtext是一个用于文本处理的库，它可以帮助我们更有效地处理文本数据，支持深度学习模型训练等。以下是一些Torchtext库中的常用使用方法：</p>
+<ol>
+<li>建立语料库（Dataset）</li>
+</ol>
+<p>使用Torchtext可以方便地建立语料库，只需要提供数据路径、格式、Field等信息即可。例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torchtext.data <span class="keyword">import</span> TabularDataset</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义数据路径和格式</span></span><br><span class="line">path = <span class="string">&#x27;data.csv&#x27;</span></span><br><span class="line"><span class="built_in">format</span> = <span class="string">&#x27;csv&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义Field信息</span></span><br><span class="line">fields = [(<span class="string">&#x27;text&#x27;</span>, torchtext.data.Field(batch_first=<span class="literal">True</span>, pad_token=<span class="number">0</span>, unk_token=<span class="number">1</span>))]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立语料库</span></span><br><span class="line">dataset = TabularDataset(path, <span class="built_in">format</span>=<span class="built_in">format</span>, fields=fields)</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>建立索引库（Index）</li>
+</ol>
+<p>使用Torchtext可以方便地建立索引库，包括词2指数和指数2词的映射。例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torchtext.vocab <span class="keyword">import</span> GloVe</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载预训练的词向量（以GloVe为例）</span></span><br><span class="line">glove = GloVe(name=<span class="string">&#x27;6B&#x27;</span>, dim=<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立词2指数映射（返回一个包含所有词向量的张量）</span></span><br><span class="line">index2word = glove.build_vocab()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立指数2词映射（返回一个包含所有指数的张量）</span></span><br><span class="line">word2index = &#123;v: i <span class="keyword">for</span> i, v <span class="keyword">in</span> <span class="built_in">enumerate</span>(index2word)&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>数据预处理（Field）</li>
+</ol>
+<p>使用Torchtext可以方便地进行文本数据预处理，例如分词、转换为小写、补全字符等。例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torchtext.data <span class="keyword">import</span> Field</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义分词方法和其他配置信息</span></span><br><span class="line">field = Field(tokenize=<span class="string">&#x27;spacy&#x27;</span>, tokenizer_language=<span class="string">&#x27;en_core_web_sm&#x27;</span>, lower=<span class="literal">True</span>, pad_token=<span class="number">0</span>, unk_token=<span class="number">1</span>, include_lengths=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-10-math"><a href="#3-10-math" class="headerlink" title="3.10 math"></a>3.10 math</h2><p>Python的math库中有很多函数，可以帮助我们在数学计算中更加便捷。以下是math库中的一些常用函数及使用方法：</p>
+<ol>
+<li><code>math.ceil(x)</code>：返回大于或等于x的最小整数。例如，math.ceil(10.2)的结果是11。</li>
+<li><code>math.floor(x)</code>：返回小于或等于x的最大整数。例如，math.floor(10.2)的结果是10。</li>
+<li><code>math.sqrt(x)</code>：返回x的平方根。例如，math.sqrt(16)的结果是4。</li>
+<li><code>math.sin(x)</code>、<code>math.cos(x)</code>、<code>math.tan(x)</code>：分别返回x的正弦值、余弦值和正切值。例如，math.sin(math.pi&#x2F;2)的结果是1.0，math.cos(0)的结果是1.0，math.tan(math.pi&#x2F;4)的结果是1.0。</li>
+<li><code>math.exp(x)</code>：返回e的x次幂。例如，math.exp(1)的结果是2.718281828459045。</li>
+<li><code>math.log(x)</code>：返回x的自然对数。例如，math.log(10)的结果是2.302585092994046。</li>
+<li><code>math.pi</code>：返回圆周率π的值。例如，math.pi的结果是3.141592653589793。</li>
+<li><code>math.isclose(a, b, rel_tol=1e-09, abs_tol=0.0)</code>：比较两个值是否相等，如果相等返回True，否则返回False。其中，rel_tol是相对容差，abs_tol是绝对容差。例如，math.isclose(math.pi, math.pi<em>10000</em>*(1&#x2F;5))的结果是True。</li>
+</ol>
+<p>以上只是math库中的一些常用函数和使用方法，math库还提供了其他更多功能强大的函数供我们使用。</p>
+<h2 id="3-11-tqdm"><a href="#3-11-tqdm" class="headerlink" title="3.11 tqdm"></a>3.11 tqdm</h2><p>Tqdm是一个快速，可扩展的Python进度条，可以在Python长循环中添加一个进度提示信息，用户只需要封装任意的迭代器tqdm(iterator)。使用pip就可以安装。使用tqdm的前提是from tqdm import tqdm。</p>
+<p>以下是一些tqdm库的常用使用方法和示例：</p>
+<ol>
+<li>基本用法：只需要封装任意的迭代器tqdm(iterator)。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> tqdm(<span class="built_in">range</span>(<span class="number">100</span>)):</span><br><span class="line">    time.sleep(<span class="number">0.01</span>)  <span class="comment"># 模拟一个耗时操作</span></span><br></pre></td></tr></table></figure>
+<p>在这个例子中，我们使用tqdm封装了range对象，在每次循环时，都会显示一个进度条，实时显示当前循环的进度。</p>
+<ol start="2">
+<li>自定义进度条的显示：可以通过设置参数来定制进度条的显示。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> tqdm(<span class="built_in">range</span>(<span class="number">100</span>), desc=<span class="string">&quot;处理进度&quot;</span>, ncols=<span class="number">100</span>):  <span class="comment"># 添加描述和进度条宽度</span></span><br><span class="line">    time.sleep(<span class="number">0.01</span>)  <span class="comment"># 模拟一个耗时操作</span></span><br></pre></td></tr></table></figure>
+<p>在这个例子中，我们添加了进度条的描述和宽度。</p>
+<ol start="3">
+<li>使用tqdm处理文件读取：可以在文件读取操作中使用tqdm。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line"><span class="keyword">import</span> glob</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取所有.txt文件</span></span><br><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> tqdm(glob.glob(<span class="string">&#x27;*.txt&#x27;</span>)):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(filename, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        data = f.read()  <span class="comment"># 读取文件内容</span></span><br></pre></td></tr></table></figure>
+<p>在这个例子中，我们使用tqdm处理了文件读取操作。对于每个找到的.txt文件，都会在进度条中显示其处理的进度。</p>
+<h2 id="3-12-glob"><a href="#3-12-glob" class="headerlink" title="3.12 glob"></a>3.12 glob</h2><p>glob是Python标准库中的一个模块，用于处理文件和目录的通配符匹配。以下是glob库的一些常用使用方法和示例：</p>
+<ol>
+<li><code>glob.glob(pattern)</code>: 返回一个列表，包含所有符合特定模式的文件路径名。可以使用一些特殊字符来实现通配符匹配，例如：<code>*</code>代表匹配任意长度的任意字符，<code>?</code>代表匹配任意单个字符，<code>[char]</code>或<code>[!char]</code>代表匹配括号中任意一个或不在括号中的字符。</li>
+</ol>
+<p>示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> glob</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找当前目录下所有以 .txt 结尾的文件</span></span><br><span class="line">text_files = glob.glob(<span class="string">&#x27;*.txt&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(text_files)</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><code>glob.iglob(pattern)</code>: 返回一个生成器对象，可以使用for循环逐一获取符合特定模式的文件路径名。</li>
+</ol>
+<p>示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> glob</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用生成器逐一获取当前目录下所有以 .txt 结尾的文件名</span></span><br><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> glob.iglob(<span class="string">&#x27;*.txt&#x27;</span>):</span><br><span class="line">    <span class="built_in">print</span>(filename)</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>使用特殊字符进行模式匹配：glob模块支持使用特殊字符进行模式匹配，例如：<code>*</code>代表匹配任意长度的任意字符，<code>?</code>代表匹配任意单个字符，<code>[char]</code>或<code>[!char]</code>代表匹配括号中任意一个或不在括号中的字符。</li>
+</ol>
+<p>示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> glob</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找当前目录下所有以 a 或者 b 开头，且以 .txt 结尾的文件</span></span><br><span class="line">ab_files = glob.glob(<span class="string">&#x27;[ab]*.txt&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(ab_files)</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-13-logging"><a href="#3-13-logging" class="headerlink" title="3.13 logging"></a>3.13 logging</h2><p>logging库是Python的标准库之一，用于记录日志信息。它提供了多种功能，如设置日志级别、添加日志格式、创建日志文件等。以下是一些logging库的常用使用方法和示例：</p>
+<ol>
+<li>导入logging模块</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>设置日志级别和日志格式</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">logging.basicConfig(filename=<span class="string">&#x27;example.log&#x27;</span>, level=logging.DEBUG, </span><br><span class="line">                    <span class="built_in">format</span>=<span class="string">&#x27;%(asctime)s %(levelname)s %(message)s&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>这里设置了日志级别为DEBUG，将日志信息输出到example.log文件中，并指定了日志的格式。</p>
+<ol start="3">
+<li>创建logger对象</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logger = logging.getLogger(<span class="string">&#x27;example_logger&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>这里创建了一个名为”example_logger”的logger对象。</p>
+<ol start="4">
+<li>设置logger对象的日志级别</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logger.setLevel(logging.DEBUG)</span><br></pre></td></tr></table></figure>
+<p>这里设置了logger对象的日志级别为DEBUG。</p>
+<ol start="5">
+<li>添加handler对象，用于将日志信息输出到指定目的地</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">handler = logging.FileHandler(<span class="string">&#x27;example_handler.log&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>这里创建了一个FileHandler对象，将日志信息输出到example_handler.log文件中。</p>
+<ol start="6">
+<li>设置handler对象的日志格式</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">formatter = logging.Formatter(<span class="string">&#x27;%(asctime)s %(levelname)s %(message)s&#x27;</span>)</span><br><span class="line">handler.setFormatter(formatter)</span><br></pre></td></tr></table></figure>
+<p>这里创建了一个Formatter对象，并设置handler对象的日志格式为该Formatter对象。</p>
+<ol start="7">
+<li>将handler对象添加到logger对象中</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logger.addHandler(handler)</span><br></pre></td></tr></table></figure>
+<p>这里将handler对象添加到logger对象中，使得logger对象可以将日志信息输出到example_handler.log文件中。</p>
+<ol start="8">
+<li>记录日志信息</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">logger.debug(<span class="string">&#x27;This is a debug message&#x27;</span>)</span><br><span class="line">logger.info(<span class="string">&#x27;This is an info message&#x27;</span>)</span><br><span class="line">logger.warning(<span class="string">&#x27;This is a warning message&#x27;</span>)</span><br><span class="line">logger.error(<span class="string">&#x27;This is an error message&#x27;</span>)</span><br><span class="line">logger.critical(<span class="string">&#x27;This is a critical message&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>这里使用logger对象记录了不同级别的日志信息。根据日志级别，日志信息将按照设置的顺序输出到example.log文件中。同时，example_handler.log文件中也将记录这些日志信息。</p>
+<h2 id="3-14-time"><a href="#3-14-time" class="headerlink" title="3.14 time"></a>3.14 time</h2><p>Python的<code>time</code>库提供了各种与时间相关的功能，包括获取当前时间、计算时间差、处理时区等。以下是一些<code>time</code>库中常用的使用方法和示例：</p>
+<ol>
+<li><code>time.time()</code>: 返回自1970年1月1日以来的秒数。这是一个浮点数，可以用于表示特定的时间点。</li>
+</ol>
+<p>示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">current_time = time.time()</span><br><span class="line"><span class="built_in">print</span>(current_time)  <span class="comment"># 输出类似 1615833877.989923 的浮点数</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><code>time.sleep(seconds)</code>: 使程序暂停指定的秒数。</li>
+</ol>
+<p>示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;开始休眠&quot;</span>)</span><br><span class="line">time.sleep(<span class="number">5</span>)  <span class="comment"># 程序将暂停5秒</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;休眠结束&quot;</span>)</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><code>time.localtime(seconds)</code>: 将给定的秒数转换为本地时间。返回一个包含年、月、日、时、分、秒和微秒的<code>time.struct_time</code>对象。</li>
+</ol>
+<p>示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">current_local_time = time.localtime()</span><br><span class="line"><span class="built_in">print</span>(current_local_time)  <span class="comment"># 输出类似 (2023, 3, 15, 16, 28, 37, 46, 3079, 2) 的元组</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li><code>time.mktime(time_tuple)</code>: 反过来看，可以将一个<code>time.struct_time</code>对象转换回秒数。</li>
+</ol>
+<p>示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">current_local_time = time.localtime()</span><br><span class="line">seconds = time.mktime(current_local_time)</span><br><span class="line"><span class="built_in">print</span>(seconds)  <span class="comment"># 输出类似 1647275817.0 的浮点数</span></span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li><code>time.strftime(format, time_tuple)</code>: 根据给定的格式字符串和时间元组，生成一个字符串表示特定日期和时间的日期时间。</li>
+</ol>
+<p>示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">current_local_time = time.localtime()</span><br><span class="line">formatted_time = time.strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>, current_local_time)</span><br><span class="line"><span class="built_in">print</span>(formatted_time)  <span class="comment"># 输出类似 &#x27;2023-03-15 16:28:37&#x27; 的字符串</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
 
     </div>
 
@@ -371,7 +816,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#python%E8%AF%AD%E6%B3%95%E7%AE%80%E4%BB%8B"><span class="nav-text">python语法简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python%E8%BF%90%E8%A1%8C%E5%92%8C%E8%B0%83%E8%AF%95"><span class="nav-text">python运行和调试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B0%83%E5%BA%93%E5%A4%A7%E6%B3%95%E5%A5%BD"><span class="nav-text">调库大法好</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python-%E6%97%A5%E5%BF%97"><span class="nav-text">python 日志</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E7%88%AC%E8%99%AB"><span class="nav-text">简单爬虫</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-python%E8%AF%AD%E6%B3%95%E7%AE%80%E4%BB%8B"><span class="nav-text">1 python语法简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-text">1.1 基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1-%E4%B8%BB%E5%87%BD%E6%95%B0"><span class="nav-text">1.1.1 主函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-2-%E5%BE%AA%E7%8E%AF"><span class="nav-text">1.1.2 循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-3-%E5%87%BD%E6%95%B0"><span class="nav-text">1.1.3 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-4-%E7%B1%BB"><span class="nav-text">1.1.4 类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-5-%E5%BC%95%E7%94%A8import"><span class="nav-text">1.1.5 引用import</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-6-init-py%E6%96%87%E4%BB%B6"><span class="nav-text">1.1.6  __init__.py文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0"><span class="nav-text">1.2 内置函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-getattr-%E5%87%BD%E6%95%B0"><span class="nav-text">1.2.1 getattr()函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-print%E5%87%BD%E6%95%B0"><span class="nav-text">1.2.2 print函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-python%E8%BF%90%E8%A1%8C%E5%92%8C%E8%B0%83%E8%AF%95"><span class="nav-text">2 python运行和调试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E8%B0%83%E5%BA%93%E5%A4%A7%E6%B3%95%E5%A5%BD"><span class="nav-text">3 调库大法好</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-argparse%E5%BA%93"><span class="nav-text">3.1 argparse库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-easydict%E5%BA%93"><span class="nav-text">3.2 easydict库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-yaml%E5%BA%93"><span class="nav-text">3.3 yaml库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-json%E5%BA%93"><span class="nav-text">3.4 json库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-numpy"><span class="nav-text">3.5 numpy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-pandas"><span class="nav-text">3.6 pandas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-7-h5py"><span class="nav-text">3.7 h5py</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-8-torch"><span class="nav-text">3.8 torch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-9-torchtext"><span class="nav-text">3.9 torchtext</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-10-math"><span class="nav-text">3.10 math</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-11-tqdm"><span class="nav-text">3.11 tqdm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-12-glob"><span class="nav-text">3.12 glob</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-13-logging"><span class="nav-text">3.13 logging</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-14-time"><span class="nav-text">3.14 time</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -454,12 +899,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">115k</span>
+    <span title="站点总字数">131k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:44</span>
+    <span title="站点阅读时长">1:59</span>
 </div>
   <div class="powered-by">
    <!--由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动-->
