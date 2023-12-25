@@ -194,6 +194,102 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mobbu.space/2023/08/15/20230815_C++HighConcurrencyWeberver/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/pink_mob.jpeg">
+      <meta itemprop="name" content="mobbu">
+      <meta itemprop="description" content="道阻且长">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="“灵能相谈所”">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/08/15/20230815_C++HighConcurrencyWeberver/" class="post-title-link" itemprop="url">webserver项目</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-08-15 20:07:28" itemprop="dateCreated datePublished" datetime="2023-08-15T20:07:28+08:00">2023-08-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">技术博客</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>29k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>27 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>牛客网经典之webserver项目学习总结记录，其中主要包括了：</p>
+<ul>
+<li>使用多线程模型，利用信号量实现线程间加锁；</li>
+<li>利用I0复用技术Epoll与线程池实现多线程的Reactor高并发模型；</li>
+<li>利用RAII机制实现了数据库连接池，减少数据库连接建立与关闭的开销；</li>
+<li>利用正则与状态机解析 HTTP请求报文实现处理静态资源的请求；</li>
+<li>基于小根堆实现的定时器，关闭超时的非活动连接；</li>
+<li>服务器压力测试；</li>
+<li>项目总结
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/08/15/20230815_C++HighConcurrencyWeberver/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://mobbu.space/2023/08/09/20230809_PerfectWebsiteSummary/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -808,7 +904,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -880,7 +976,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:01</span>
+    <span title="站点阅读时长">2:02</span>
 </div>
   <div class="powered-by">
    <!--由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动-->
