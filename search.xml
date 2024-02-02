@@ -1,29 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>解决git中443问题</title>
-    <url>/2023/08/08/20230803_443/</url>
-    <content><![CDATA[<p>解决当使用魔法后依旧<code>git push -u origin main</code>出现443TIME OUT失败的问题。</p>
-<span id="more"></span>
-<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>在本地修改库，git到github时一直443，time out。最初以为是网络的问题。</p>
-<p>但是使用了魔法，还是没有效果。于是最终发现是代理没有修改端口。</p>
-<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><ol>
-<li>在设置中找到代理的端口，比如我这里是 127.0.0.1:10809</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/20230803162424.png" alt="img"></p>
-<ol start="2">
-<li>bash中输入以下代码即可<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:10809</span><br><span class="line">git config --global https.proxy http://127.0.0.1:10809</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>Github</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>建立个人博客网站详细教程</title>
     <url>/2023/08/09/20230803_blogWebsite/</url>
     <content><![CDATA[<p>使用github+hexo+cloudflare+node.js+next主题建立属于自己的个人博客网站，博客主要分7个部分分别是1 使用git同步github的库，2 安装node.js，3 创建网站（Hexo框架，4 修改主题，5 github图床搭建，6 博客基本功能，7 博客扩展内容(持续更新)。</p>
@@ -408,6 +385,88 @@
       </tags>
   </entry>
   <entry>
+    <title>解决git中443问题</title>
+    <url>/2023/08/08/20230803_443/</url>
+    <content><![CDATA[<p>解决当使用魔法后依旧<code>git push -u origin main</code>出现443TIME OUT失败的问题。</p>
+<span id="more"></span>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>在本地修改库，git到github时一直443，time out。最初以为是网络的问题。</p>
+<p>但是使用了魔法，还是没有效果。于是最终发现是代理没有修改端口。</p>
+<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><ol>
+<li>在设置中找到代理的端口，比如我这里是 127.0.0.1:10809</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/20230803162424.png" alt="img"></p>
+<ol start="2">
+<li>bash中输入以下代码即可<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:10809</span><br><span class="line">git config --global https.proxy http://127.0.0.1:10809</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MobaXterm简单教程</title>
+    <url>/2023/08/07/20230807_shelToolMobaXterm/</url>
+    <content><![CDATA[<p>日常开发中一个好用的终端软件是很重要的，而MobaXterm就是其中最好用的之一，并且最重要的是MobaXterm的免费版本的功能就十分强大。</p>
+<p>本博客会介绍MobaXterm的下载，界面和简单的使用方法，还有其中的一些工具的介绍。</p>
+<span id="more"></span>
+
+<h1 id="1-下载"><a href="#1-下载" class="headerlink" title="1 下载"></a>1 下载</h1><p>官方网址链接为 <a href="https://mobaxterm.mobatek.net/">MobaXterm官方网址</a> ,点击下载即可。</p>
+<p>MobaXterm分为两种安装模式：</p>
+<p>便携式exe文件：适合安装在U盘，双击即可运行，这样服务器账号密码什么的就很方便的管理了，出门在外只需要一个U盘就可以连接服务器。<br>安装式：正常的install安装步骤。</p>
+<h1 id="2-界面介绍"><a href="#2-界面介绍" class="headerlink" title="2 界面介绍"></a>2 界面介绍</h1><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807203546.png"></p>
+<p>安装打开后大概可以看到是上图的界面，可以看到主要分为三块，图中用不同颜色的框进行标注。</p>
+<p>红色框内是一些我们可能用到的工具，比如session，serbers，tools，还有设置settings等。</p>
+<p>蓝色框内是侧边栏，比如我们最常用的通过sessions保存的远程SSH连接服务器的列表会存放在蓝色区域，方便经常连接使用还有tools工具和macros录制脚本。</p>
+<p>绿色框内是我们操作的区域，默认是途中这些西汉时的界面，如果我们打开远程服务器，终端也是显示在绿色方框内，这里面最常用红的Start local terminal和recover previous sessions也是最常用的两个功能，分别是打开本地终端和打开最近的session。</p>
+<h1 id="3-功能介绍"><a href="#3-功能介绍" class="headerlink" title="3 功能介绍"></a>3 功能介绍</h1><h2 id="3-1-Session管理"><a href="#3-1-Session管理" class="headerlink" title="3.1 Session管理"></a>3.1 Session管理</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210026.png"></p>
+<p>点击上图中的session按键，会出现以下界面</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210158.png"></p>
+<p>可以看到session中可以新建SSH，Telnet，Rsh，RDP，FTP，SFTP，Shell等功能，需要用到这些功能的时候就点击进行进一步的设置即可。其中我们最常用的就是SSH啦。</p>
+<h2 id="3-2-SSH连接远程服务器"><a href="#3-2-SSH连接远程服务器" class="headerlink" title="3.2 SSH连接远程服务器"></a>3.2 SSH连接远程服务器</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210843.png"></p>
+<p>按照3.1中步骤，点击SSH可以看到如上图所示，其中需要填写的一般只有四个部分。</p>
+<ul>
+<li><code>Remote host</code>：填写服务器的IP地址</li>
+<li><code>specify username</code>：填写你在服务器中使用的用户的名称，这样连接服务器后就可以直接登录到你的账户</li>
+<li><code>Advanced SSH setting</code>：高级SSH设置，点击之后界面如下，填写Use private key，也就是服务器的密码<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807211553.png"></li>
+<li><code>Bookmark settings</code>，书签设置，也就是在侧边栏中，当我们需要连接的服务器较多时，我们可以给不同的服务器起别名区别，填写Session name为我们想要的名字。<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807211752.png"></li>
+</ul>
+<p>都设置完毕后点击ok就可以了，这样在主界面的侧边栏中就会出现我们想要连接的session，以后方便一键连接远程服务器</p>
+<h2 id="3-3-文本编辑器和文本对比"><a href="#3-3-文本编辑器和文本对比" class="headerlink" title="3.3 文本编辑器和文本对比"></a>3.3 文本编辑器和文本对比</h2><p>侧边栏tools-&gt;MobaTExtEditor和tools-&gt;MobaDiff</p>
+<p>打开tools-&gt;MobaTExtEditor，就会显示右侧红框中的界面，方便对本地或者远程的文档进行编辑</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212100.png"></p>
+<p>打开tools-&gt;MobaDiff，选择文件1和文件2，点击ok即可分析两个文档之间的区别。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212248.png"></p>
+<h2 id="3-4-录制操作脚本"><a href="#3-4-录制操作脚本" class="headerlink" title="3.4 录制操作脚本"></a>3.4 录制操作脚本</h2><p>点击侧边栏的macro的如下图的红色框，即可开始录制，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212442.png"></p>
+<p>点击录制后，会显示以下界面，点击停止就会提醒我们保存脚本，做一些重复性工作时，可以录制获得脚本然后以后就可以使用该脚本宏啦</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212547.png"></p>
+<h2 id="3-5-本地服务器"><a href="#3-5-本地服务器" class="headerlink" title="3.5 本地服务器"></a>3.5 本地服务器</h2><p>某些情况下，我们需要搭建自己本地的服务器，以方便通过http或ftp等协议传输本地文件或数据，MobaXterm就提供了实现该服务的功能，包括了HTTP、FTP、Telent等众多的协议。</p>
+<p>点击上方的servers按钮即可打开</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213112.png"></p>
+<p>然后选择需要共享的文件夹路径，点击HTTP的开始按钮之后输入访问 <a href="http://localhost/">http://localhost:80/</a>即可访问该文件夹</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213423.png"></p>
+<h2 id="3-6-小游戏"><a href="#3-6-小游戏" class="headerlink" title="3.6 小游戏"></a>3.6 小游戏</h2><p>上方按钮中有games选项，里面有一些经典的小游戏，适合上班摸鱼的时候使用</p>
+<h1 id="4-使用技巧"><a href="#4-使用技巧" class="headerlink" title="4 使用技巧"></a>4 使用技巧</h1><h2 id="4-1-多种终端同时管理"><a href="#4-1-多种终端同时管理" class="headerlink" title="4.1 多种终端同时管理"></a>4.1 多种终端同时管理</h2><p>MobaXterm也可以使用Git，当我们同时需要使用Git Bash和远程服务器的时候，坚持切换会很麻烦，这时可以在首页右键点击Git Bash就可以在MobaXterm中同时管理多种终端啦。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213746.png"></p>
+<h2 id="4-2-SSH-休眠管理"><a href="#4-2-SSH-休眠管理" class="headerlink" title="4.2 SSH 休眠管理"></a>4.2 SSH 休眠管理</h2><p>默认设置5分钟连接的SSH会自动休眠，如果想要长时间不休眠可以在Settings-&gt;SSH-&gt;SSH keepalive修改，勾上该选项即可，如下图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807214018.png"></p>
+<p><strong>持续更新中…</strong></p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>MobaXterm</tag>
+        <tag>shell</tag>
+        <tag>SSH</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>markdown的简单用法</title>
     <url>/2023/08/09/20230808_markdownLanguage/</url>
     <content><![CDATA[<p>如果需要经常记录一些东西，那么markdown就是一个绕不开的东西，而习惯用markdown也会养成记录的习惯，本文主要从四个方面介绍markdown的简单用法，分别是1.markdown简介，2.markdown编译器，3.markdown语法。</p>
@@ -614,65 +673,6 @@
       <tags>
         <tag>markdown</tag>
         <tag>vscode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MobaXterm简单教程</title>
-    <url>/2023/08/07/20230807_shelToolMobaXterm/</url>
-    <content><![CDATA[<p>日常开发中一个好用的终端软件是很重要的，而MobaXterm就是其中最好用的之一，并且最重要的是MobaXterm的免费版本的功能就十分强大。</p>
-<p>本博客会介绍MobaXterm的下载，界面和简单的使用方法，还有其中的一些工具的介绍。</p>
-<span id="more"></span>
-
-<h1 id="1-下载"><a href="#1-下载" class="headerlink" title="1 下载"></a>1 下载</h1><p>官方网址链接为 <a href="https://mobaxterm.mobatek.net/">MobaXterm官方网址</a> ,点击下载即可。</p>
-<p>MobaXterm分为两种安装模式：</p>
-<p>便携式exe文件：适合安装在U盘，双击即可运行，这样服务器账号密码什么的就很方便的管理了，出门在外只需要一个U盘就可以连接服务器。<br>安装式：正常的install安装步骤。</p>
-<h1 id="2-界面介绍"><a href="#2-界面介绍" class="headerlink" title="2 界面介绍"></a>2 界面介绍</h1><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807203546.png"></p>
-<p>安装打开后大概可以看到是上图的界面，可以看到主要分为三块，图中用不同颜色的框进行标注。</p>
-<p>红色框内是一些我们可能用到的工具，比如session，serbers，tools，还有设置settings等。</p>
-<p>蓝色框内是侧边栏，比如我们最常用的通过sessions保存的远程SSH连接服务器的列表会存放在蓝色区域，方便经常连接使用还有tools工具和macros录制脚本。</p>
-<p>绿色框内是我们操作的区域，默认是途中这些西汉时的界面，如果我们打开远程服务器，终端也是显示在绿色方框内，这里面最常用红的Start local terminal和recover previous sessions也是最常用的两个功能，分别是打开本地终端和打开最近的session。</p>
-<h1 id="3-功能介绍"><a href="#3-功能介绍" class="headerlink" title="3 功能介绍"></a>3 功能介绍</h1><h2 id="3-1-Session管理"><a href="#3-1-Session管理" class="headerlink" title="3.1 Session管理"></a>3.1 Session管理</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210026.png"></p>
-<p>点击上图中的session按键，会出现以下界面</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210158.png"></p>
-<p>可以看到session中可以新建SSH，Telnet，Rsh，RDP，FTP，SFTP，Shell等功能，需要用到这些功能的时候就点击进行进一步的设置即可。其中我们最常用的就是SSH啦。</p>
-<h2 id="3-2-SSH连接远程服务器"><a href="#3-2-SSH连接远程服务器" class="headerlink" title="3.2 SSH连接远程服务器"></a>3.2 SSH连接远程服务器</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807210843.png"></p>
-<p>按照3.1中步骤，点击SSH可以看到如上图所示，其中需要填写的一般只有四个部分。</p>
-<ul>
-<li><code>Remote host</code>：填写服务器的IP地址</li>
-<li><code>specify username</code>：填写你在服务器中使用的用户的名称，这样连接服务器后就可以直接登录到你的账户</li>
-<li><code>Advanced SSH setting</code>：高级SSH设置，点击之后界面如下，填写Use private key，也就是服务器的密码<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807211553.png"></li>
-<li><code>Bookmark settings</code>，书签设置，也就是在侧边栏中，当我们需要连接的服务器较多时，我们可以给不同的服务器起别名区别，填写Session name为我们想要的名字。<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807211752.png"></li>
-</ul>
-<p>都设置完毕后点击ok就可以了，这样在主界面的侧边栏中就会出现我们想要连接的session，以后方便一键连接远程服务器</p>
-<h2 id="3-3-文本编辑器和文本对比"><a href="#3-3-文本编辑器和文本对比" class="headerlink" title="3.3 文本编辑器和文本对比"></a>3.3 文本编辑器和文本对比</h2><p>侧边栏tools-&gt;MobaTExtEditor和tools-&gt;MobaDiff</p>
-<p>打开tools-&gt;MobaTExtEditor，就会显示右侧红框中的界面，方便对本地或者远程的文档进行编辑</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212100.png"></p>
-<p>打开tools-&gt;MobaDiff，选择文件1和文件2，点击ok即可分析两个文档之间的区别。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212248.png"></p>
-<h2 id="3-4-录制操作脚本"><a href="#3-4-录制操作脚本" class="headerlink" title="3.4 录制操作脚本"></a>3.4 录制操作脚本</h2><p>点击侧边栏的macro的如下图的红色框，即可开始录制，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212442.png"></p>
-<p>点击录制后，会显示以下界面，点击停止就会提醒我们保存脚本，做一些重复性工作时，可以录制获得脚本然后以后就可以使用该脚本宏啦</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807212547.png"></p>
-<h2 id="3-5-本地服务器"><a href="#3-5-本地服务器" class="headerlink" title="3.5 本地服务器"></a>3.5 本地服务器</h2><p>某些情况下，我们需要搭建自己本地的服务器，以方便通过http或ftp等协议传输本地文件或数据，MobaXterm就提供了实现该服务的功能，包括了HTTP、FTP、Telent等众多的协议。</p>
-<p>点击上方的servers按钮即可打开</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213112.png"></p>
-<p>然后选择需要共享的文件夹路径，点击HTTP的开始按钮之后输入访问 <a href="http://localhost/">http://localhost:80/</a>即可访问该文件夹</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213423.png"></p>
-<h2 id="3-6-小游戏"><a href="#3-6-小游戏" class="headerlink" title="3.6 小游戏"></a>3.6 小游戏</h2><p>上方按钮中有games选项，里面有一些经典的小游戏，适合上班摸鱼的时候使用</p>
-<h1 id="4-使用技巧"><a href="#4-使用技巧" class="headerlink" title="4 使用技巧"></a>4 使用技巧</h1><h2 id="4-1-多种终端同时管理"><a href="#4-1-多种终端同时管理" class="headerlink" title="4.1 多种终端同时管理"></a>4.1 多种终端同时管理</h2><p>MobaXterm也可以使用Git，当我们同时需要使用Git Bash和远程服务器的时候，坚持切换会很麻烦，这时可以在首页右键点击Git Bash就可以在MobaXterm中同时管理多种终端啦。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807213746.png"></p>
-<h2 id="4-2-SSH-休眠管理"><a href="#4-2-SSH-休眠管理" class="headerlink" title="4.2 SSH 休眠管理"></a>4.2 SSH 休眠管理</h2><p>默认设置5分钟连接的SSH会自动休眠，如果想要长时间不休眠可以在Settings-&gt;SSH-&gt;SSH keepalive修改，勾上该选项即可，如下图</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230807214018.png"></p>
-<p><strong>持续更新中…</strong></p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>MobaXterm</tag>
-        <tag>shell</tag>
-        <tag>SSH</tag>
       </tags>
   </entry>
   <entry>
@@ -1109,71 +1109,6 @@
       </tags>
   </entry>
   <entry>
-    <title>git教程和分布式管理代码</title>
-    <url>/2023/08/21/20230821_GitAbout/</url>
-    <content><![CDATA[<p>当我们写了一定量的代码之后，就会遇到如何管理代码的问题。目前管理代码主要有两种管理工具分别是</p>
-<ul>
-<li>Git：分布式管理</li>
-<li>SVN：集中式管理</li>
-</ul>
-<p>那么分布式管理有哪些好处呢？我目前感受到的优点如下：</p>
-<ul>
-<li>管理代码成本低</li>
-<li>分支branch机制让主干代码很简洁移动</li>
-<li>可以回滚和查看之前commit的任意版本，这个在实际中十分有用</li>
-<li>分支机制让多人协同修改代码更加方便</li>
-<li>可以在不同电脑上轻松同步项目代码</li>
-</ul>
-<p>下面主要介绍Git的一些基本用法。</p>
-<span id="more"></span>
-
-<p>首先贴上官方资料<a href="https://git-scm.com/book/zh/v2/">Pro Git(2nd Edition)</a></p>
-<h1 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1 基本概念"></a>1 基本概念</h1><h2 id="1-1-三种状态"><a href="#1-1-三种状态" class="headerlink" title="1.1 三种状态"></a>1.1 三种状态</h2><ul>
-<li>已提交（committed）：已提交表示数据已经安全地保存在本地数据库中。</li>
-<li>已修改（modified）：已修改表示修改了文件，但还没保存到数据库中。</li>
-<li>已暂存（staged）：已暂存表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。</li>
-</ul>
-<h2 id="1-2-工作流程"><a href="#1-2-工作流程" class="headerlink" title="1.2 工作流程"></a>1.2 工作流程</h2><ul>
-<li><p>在工作区中修改文件。</p>
-</li>
-<li><p>将你想要下次提交的更改选择性地暂存，这样只会将更改的部分添加到暂存区。</p>
-</li>
-<li><p>提交更新，找到暂存区的文件，将快照永久性存储到 Git 目录。</p>
-</li>
-</ul>
-<p>如果 Git 目录中保存着特定版本的文件，就属于 已提交 状态。 如果文件已修改并放入暂存区，就属于 已暂存 状态。 如果自上次检出后，作了修改但还没有放到暂存区域，就是 已修改 状态。 在 Git 基础 一章，你会进一步了解这些状态的细节， 并学会如何根据文件状态实施后续操作，以及怎样跳过暂存直接提交。</p>
-<h1 id="2-基本操作"><a href="#2-基本操作" class="headerlink" title="2 基本操作"></a>2 基本操作</h1><p>一个基本操作流程如下：<br>首先你有一个github的库，公有私有都可以。</p>
-<ol>
-<li>github上的库clone到本地</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@github.com:xxx.git</span><br></pre></td></tr></table></figure>
-
-<p>在github上建库之后，输入代码git clone到本地仓库</p>
-<ol start="2">
-<li><p><code>git init</code>初始化生成.git文件夹</p>
-</li>
-<li><p>本地进行修改后，<code>git add .</code>将所有修改添加到缓存区，此时处于已修改的状态</p>
-</li>
-<li><p><code>git commit -am &quot;修改的提示信息&quot;</code>将修改的信息提交到本地仓库</p>
-</li>
-<li><p><code>git push</code>将修改的信息push到云端也就是github的仓库中</p>
-</li>
-</ol>
-<p>一些常用Git命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git log		        //查看提交日志</span><br><span class="line">git add		        //提交到缓存区</span><br><span class="line">git reset 	        //撤销缓存区</span><br><span class="line">git commit 	        //提交代码到本地仓库</span><br><span class="line">git push			//提交代码到远程仓库</span><br><span class="line">git pull			//拷贝远程仓库的代码</span><br><span class="line">git checkout		//回退文件修改或者切换分支</span><br><span class="line">git stash			//暂存本地修改</span><br><span class="line">git stash pop		//释放第一个暂存区代码</span><br><span class="line">git diff			//查看本地具体修改，通常用于生成补丁</span><br><span class="line">git format-patch	//将本地提交生成补丁</span><br><span class="line">git revert			//回滚一个提交</span><br><span class="line">git cherry-pick		//下载远程仓库的某个提交</span><br><span class="line">git show			//查看具体修改</span><br><span class="line">git status			//查看所有修改文件</span><br></pre></td></tr></table></figure>
-
-
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>Github</tag>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>解析经典排序算法</title>
     <url>/2023/08/23/20230821_SortingAlgorithmSummary/</url>
     <content><![CDATA[<p>总结常用的排序算法，比如快速排序、选择排序、桶排序、堆排序、冒泡排序，分别进行原理分析，复杂度分析，使用场景区分，适用的数据结构，并进行对比总结。</p>
@@ -1535,110 +1470,6 @@
       </tags>
   </entry>
   <entry>
-    <title>博客网站分布管理</title>
-    <url>/2023/10/01/20231001_blogDistributeToMacOS/</url>
-    <content><![CDATA[<p>等到要换电脑的时候，发现我在本地管理github pages需要移植一下，博客记录一下移植过程，方便以后查阅，由于博主心血来潮换了mac，这时候需要在MacOS上继续进行配置了。</p>
-<span id="more"></span>
-<h1 id="1-安装各种环境"><a href="#1-安装各种环境" class="headerlink" title="1 安装各种环境"></a>1 安装各种环境</h1><h2 id="1-1-检查git"><a href="#1-1-检查git" class="headerlink" title="1.1 检查git"></a>1.1 检查git</h2><p>一般mac都会自带git，所以只需要输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
-<p>检查一下版本即可</p>
-<h2 id="1-2-安装nvm"><a href="#1-2-安装nvm" class="headerlink" title="1.2 安装nvm"></a>1.2 安装nvm</h2><p>首先先安装nvm，也就是node.js的管理工具。在nvm的github官方仓库下载最新版本安装即可。</p>
-<p>安装完成后输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">commond -v nvm</span><br></pre></td></tr></table></figure>
-
-<p>出现nvm即安装成功</p>
-<h2 id="1-3-安装node-js"><a href="#1-3-安装node-js" class="headerlink" title="1.3 安装node.js"></a>1.3 安装node.js</h2><p>然后按照以下步骤进行安装</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nvm install stable  # 使用 nvm 安装最新稳定版 Node.js</span><br><span class="line">nvm use stable     # 使用刚刚安装的 Node.js 版本</span><br><span class="line"></span><br><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
-<p>安装的时候可能会遇到出现<strong>http fetch GET 200</strong>的问题，此时只需要多等待几分钟即可。</p>
-<h2 id="1-4-安装hexo"><a href="#1-4-安装hexo" class="headerlink" title="1.4 安装hexo"></a>1.4 安装hexo</h2><p>输入以下命令进行安装hexo</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p>此时就可以将我们之前的博客文件夹迁移到mac当地，在文件夹中打开iTerm终端，输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>本地测试没有问题之后则本地环境调试成功。</p>
-<h1 id="2-连接到github"><a href="#2-连接到github" class="headerlink" title="2 连接到github"></a>2 连接到github</h1><h2 id="2-1-生成ssh密钥"><a href="#2-1-生成ssh密钥" class="headerlink" title="2.1 生成ssh密钥"></a>2.1 生成ssh密钥</h2><p>首先配置git账户，设置user.name和user.email，输入以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;account name&quot;     # 设置用户名</span><br><span class="line">git config --global user.email &quot;account email&quot;     # 设置邮箱地址</span><br></pre></td></tr></table></figure>
-
-<p>设置完毕之后，就可以生成SSH KEY了，输入以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C example@mail.com</span><br></pre></td></tr></table></figure>
-<p>这里输入你自己的邮箱即可<br>然后输入以下两条命令查看并复制你的密钥</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">vim id_rsa.pub</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-2-github添加SSH-key"><a href="#2-2-github添加SSH-key" class="headerlink" title="2.2 github添加SSH key"></a>2.2 github添加SSH key</h2><p>制公钥id_rsa.pub中的内容添加到github，用户-&gt;settings-&gt;SSH and GPG keys 中的按键new SSH key，将id_rsa.pub中的内容复制进去即可</p>
-<p>添加完成后，在终端输入<code>ssh -T git@github.com</code>进行验证，此时会让你输入刚刚在生成ssh密钥时输入的密码，输入后回车会看到欢迎的语句，此时说明配对成功。</p>
-<h1 id="3-测试上传"><a href="#3-测试上传" class="headerlink" title="3 测试上传"></a>3 测试上传</h1><p>此时将本博客放入博文推送的文件中，hexo clean，hexo g hexo d三部曲后，验证是否上传成功即可。</p>
-<p>验证时，发现这台机器还没有git push上传过，此时需要重新申请tokens，在github账户中，配置token的流程如下：  </p>
-<p>打开github-&gt;settings-&gt;developer settings，选择tokens(classic)，新建tokens。  </p>
-<p>此时上传(hexo d)时会要求我们输入账户和密码，账户就是github的账户，而密码就是刚刚申请的token值，具体步骤可以查看我的建立博客的博文–<a href="https://moburein.com/2023/08/09/20230803_blogWebsite/">建立个人博客网站详细教程</a></p>
-<p>此时就能上传验证成功了。</p>
-<h1 id="4-图床软件picgo移植"><a href="#4-图床软件picgo移植" class="headerlink" title="4 图床软件picgo移植"></a>4 图床软件picgo移植</h1><ol>
-<li>下载软件<br>在picgo的github开源地址下载2.3.1的稳定版，选择下载arm64.pmg格式。</li>
-</ol>
-<p>下载后打开会出现文件已损坏的问题，这是因为没有签名，此时打开终端输入以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo spctl --master-disable #此时要输入密码</span><br><span class="line">xattr -cr /Applications/PicGo.app</span><br></pre></td></tr></table></figure>
-<p>输入上述两条命令后就能顺利打开</p>
-<ol start="2">
-<li>软件配置</li>
-</ol>
-<p>此处按照博客教程中步骤来即可设置好仓库名，地址，主要是设置好github的token，设置好后进行测试，随便上传一张图片，比如下图，验证成功。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231004161235.png"></p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>博客网站</tag>
-        <tag>MacOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>学术PPT制作--beamer</title>
-    <url>/2023/10/04/20231004_Latex&amp;beamer/</url>
-    <content><![CDATA[<p>使用<strong>MAC+VSCODE+LATEX</strong></p>
-<p>最近有了频繁做学术汇报的需求，之前有了解到过beamer制作学术汇报PPT的优势，所以这里填一下坑，分享记录一下如何用beamer制作学术PPT以及使用latex和office制作PPT的优劣和使用场景对比分析。</p>
-<span id="more"></span>
-
-<h1 id="1-配置latex环境"><a href="#1-配置latex环境" class="headerlink" title="1 配置latex环境"></a>1 配置latex环境</h1><ol>
-<li>安装MacTex<br>mac上直接官网下载即可 <a href="https://www.tug.org/mactex/mactex-download.html">MacTex</a></li>
-</ol>
-<p>windows的操作也类似，在官方下载TeXlive即可。</p>
-<ol start="2">
-<li><p>配置vscode<br>然后我们还需要在vscode上进行配置相关的插件，这一步也非常简单，在vscode扩展中搜索LaTex Workshop，安装完成后vscode左侧出现TeX标志代表安装成功。</p>
-</li>
-<li><p>配置系统path<br>此时我们还需要将texlive到路径添加到系统路径中，打开iTerm，输入以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /etc</span><br><span class="line">sudo vi paths  #输入开机密码</span><br></pre></td></tr></table></figure>
-<p>然后在末尾加入我们安装的路径，一般为<code>/usr/local/texlive</code>，也可以终端打开测试看看是否是这个路径，注意的是保存后需要重启电脑才会使路径生效。</p>
-</li>
-<li><p>测试latex<br>新建test.tex文件，其中输入</p>
-</li>
-</ol>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">Hello World<span class="keyword">\LaTeX</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后点击右上角的执行，进行测试，成功则latex环境配置完成。</p>
-<h1 id="2-选择beamer模版"><a href="#2-选择beamer模版" class="headerlink" title="2 选择beamer模版"></a>2 选择beamer模版</h1><p>使用经典的清华大学Beamer模版，我找到了UESTC的修改版本，github上搜索UESTC_beamer即可找到大致的效果图如下</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310042002619.png"></p>
-<p>具体的latex写法后续进行更新解析。</p>
-<h1 id="3-latex与office对比"><a href="#3-latex与office对比" class="headerlink" title="3 latex与office对比"></a>3 latex与office对比</h1><ul>
-<li><p>latex&amp;beamer制作PPT适用场景：复用性高，比较严肃的汇报，没有很多动画，分享干货，学术汇报的场景，不适用于快速记录</p>
-</li>
-<li><p>office适用场景：复用性不高、比较轻松的交流和快速的灵感想法记录和交流的场景</p>
-</li>
-</ul>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>vscode</tag>
-        <tag>MacOS</tag>
-        <tag>办公技能</tag>
-        <tag>beamer</tag>
-        <tag>latex</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C++智能指针</title>
     <url>/2023/09/20/20230920_SmartPtr/</url>
     <content><![CDATA[<p>简要介绍一下C++11以后的智能指针，有<code>std::unique_ptr&lt;T&gt;</code>，<code>std::shared_ptr&lt;T&gt;</code>，<code>std::weak_ptr&lt;T&gt;</code>，并且废弃了<code>std::auto_ptr&lt;T&gt;</code></p>
@@ -1808,6 +1639,175 @@
       <tags>
         <tag>C++</tag>
         <tag>智能指针</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客网站分布管理</title>
+    <url>/2023/10/01/20231001_blogDistributeToMacOS/</url>
+    <content><![CDATA[<p>等到要换电脑的时候，发现我在本地管理github pages需要移植一下，博客记录一下移植过程，方便以后查阅，由于博主心血来潮换了mac，这时候需要在MacOS上继续进行配置了。</p>
+<span id="more"></span>
+<h1 id="1-安装各种环境"><a href="#1-安装各种环境" class="headerlink" title="1 安装各种环境"></a>1 安装各种环境</h1><h2 id="1-1-检查git"><a href="#1-1-检查git" class="headerlink" title="1.1 检查git"></a>1.1 检查git</h2><p>一般mac都会自带git，所以只需要输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+<p>检查一下版本即可</p>
+<h2 id="1-2-安装nvm"><a href="#1-2-安装nvm" class="headerlink" title="1.2 安装nvm"></a>1.2 安装nvm</h2><p>首先先安装nvm，也就是node.js的管理工具。在nvm的github官方仓库下载最新版本安装即可。</p>
+<p>安装完成后输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">commond -v nvm</span><br></pre></td></tr></table></figure>
+
+<p>出现nvm即安装成功</p>
+<h2 id="1-3-安装node-js"><a href="#1-3-安装node-js" class="headerlink" title="1.3 安装node.js"></a>1.3 安装node.js</h2><p>然后按照以下步骤进行安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nvm install stable  # 使用 nvm 安装最新稳定版 Node.js</span><br><span class="line">nvm use stable     # 使用刚刚安装的 Node.js 版本</span><br><span class="line"></span><br><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
+<p>安装的时候可能会遇到出现<strong>http fetch GET 200</strong>的问题，此时只需要多等待几分钟即可。</p>
+<h2 id="1-4-安装hexo"><a href="#1-4-安装hexo" class="headerlink" title="1.4 安装hexo"></a>1.4 安装hexo</h2><p>输入以下命令进行安装hexo</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>此时就可以将我们之前的博客文件夹迁移到mac当地，在文件夹中打开iTerm终端，输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>本地测试没有问题之后则本地环境调试成功。</p>
+<h1 id="2-连接到github"><a href="#2-连接到github" class="headerlink" title="2 连接到github"></a>2 连接到github</h1><h2 id="2-1-生成ssh密钥"><a href="#2-1-生成ssh密钥" class="headerlink" title="2.1 生成ssh密钥"></a>2.1 生成ssh密钥</h2><p>首先配置git账户，设置user.name和user.email，输入以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;account name&quot;     # 设置用户名</span><br><span class="line">git config --global user.email &quot;account email&quot;     # 设置邮箱地址</span><br></pre></td></tr></table></figure>
+
+<p>设置完毕之后，就可以生成SSH KEY了，输入以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C example@mail.com</span><br></pre></td></tr></table></figure>
+<p>这里输入你自己的邮箱即可<br>然后输入以下两条命令查看并复制你的密钥</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">vim id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-github添加SSH-key"><a href="#2-2-github添加SSH-key" class="headerlink" title="2.2 github添加SSH key"></a>2.2 github添加SSH key</h2><p>制公钥id_rsa.pub中的内容添加到github，用户-&gt;settings-&gt;SSH and GPG keys 中的按键new SSH key，将id_rsa.pub中的内容复制进去即可</p>
+<p>添加完成后，在终端输入<code>ssh -T git@github.com</code>进行验证，此时会让你输入刚刚在生成ssh密钥时输入的密码，输入后回车会看到欢迎的语句，此时说明配对成功。</p>
+<h1 id="3-测试上传"><a href="#3-测试上传" class="headerlink" title="3 测试上传"></a>3 测试上传</h1><p>此时将本博客放入博文推送的文件中，hexo clean，hexo g hexo d三部曲后，验证是否上传成功即可。</p>
+<p>验证时，发现这台机器还没有git push上传过，此时需要重新申请tokens，在github账户中，配置token的流程如下：  </p>
+<p>打开github-&gt;settings-&gt;developer settings，选择tokens(classic)，新建tokens。  </p>
+<p>此时上传(hexo d)时会要求我们输入账户和密码，账户就是github的账户，而密码就是刚刚申请的token值，具体步骤可以查看我的建立博客的博文–<a href="https://moburein.com/2023/08/09/20230803_blogWebsite/">建立个人博客网站详细教程</a></p>
+<p>此时就能上传验证成功了。</p>
+<h1 id="4-图床软件picgo移植"><a href="#4-图床软件picgo移植" class="headerlink" title="4 图床软件picgo移植"></a>4 图床软件picgo移植</h1><ol>
+<li>下载软件<br>在picgo的github开源地址下载2.3.1的稳定版，选择下载arm64.pmg格式。</li>
+</ol>
+<p>下载后打开会出现文件已损坏的问题，这是因为没有签名，此时打开终端输入以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo spctl --master-disable #此时要输入密码</span><br><span class="line">xattr -cr /Applications/PicGo.app</span><br></pre></td></tr></table></figure>
+<p>输入上述两条命令后就能顺利打开</p>
+<ol start="2">
+<li>软件配置</li>
+</ol>
+<p>此处按照博客教程中步骤来即可设置好仓库名，地址，主要是设置好github的token，设置好后进行测试，随便上传一张图片，比如下图，验证成功。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231004161235.png"></p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>博客网站</tag>
+        <tag>MacOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git教程和分布式管理代码</title>
+    <url>/2023/08/21/20230821_GitAbout/</url>
+    <content><![CDATA[<p>当我们写了一定量的代码之后，就会遇到如何管理代码的问题。目前管理代码主要有两种管理工具分别是</p>
+<ul>
+<li>Git：分布式管理</li>
+<li>SVN：集中式管理</li>
+</ul>
+<p>那么分布式管理有哪些好处呢？我目前感受到的优点如下：</p>
+<ul>
+<li>管理代码成本低</li>
+<li>分支branch机制让主干代码很简洁移动</li>
+<li>可以回滚和查看之前commit的任意版本，这个在实际中十分有用</li>
+<li>分支机制让多人协同修改代码更加方便</li>
+<li>可以在不同电脑上轻松同步项目代码</li>
+</ul>
+<p>下面主要介绍Git的一些基本用法。</p>
+<span id="more"></span>
+
+<p>首先贴上官方资料<a href="https://git-scm.com/book/zh/v2/">Pro Git(2nd Edition)</a></p>
+<h1 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1 基本概念"></a>1 基本概念</h1><h2 id="1-1-三种状态"><a href="#1-1-三种状态" class="headerlink" title="1.1 三种状态"></a>1.1 三种状态</h2><ul>
+<li>已提交（committed）：已提交表示数据已经安全地保存在本地数据库中。</li>
+<li>已修改（modified）：已修改表示修改了文件，但还没保存到数据库中。</li>
+<li>已暂存（staged）：已暂存表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。</li>
+</ul>
+<h2 id="1-2-工作流程"><a href="#1-2-工作流程" class="headerlink" title="1.2 工作流程"></a>1.2 工作流程</h2><ul>
+<li><p>在工作区中修改文件。</p>
+</li>
+<li><p>将你想要下次提交的更改选择性地暂存，这样只会将更改的部分添加到暂存区。</p>
+</li>
+<li><p>提交更新，找到暂存区的文件，将快照永久性存储到 Git 目录。</p>
+</li>
+</ul>
+<p>如果 Git 目录中保存着特定版本的文件，就属于 已提交 状态。 如果文件已修改并放入暂存区，就属于 已暂存 状态。 如果自上次检出后，作了修改但还没有放到暂存区域，就是 已修改 状态。 在 Git 基础 一章，你会进一步了解这些状态的细节， 并学会如何根据文件状态实施后续操作，以及怎样跳过暂存直接提交。</p>
+<h1 id="2-基本操作"><a href="#2-基本操作" class="headerlink" title="2 基本操作"></a>2 基本操作</h1><p>一个基本操作流程如下：<br>首先你有一个github的库，公有私有都可以。</p>
+<ol>
+<li>github上的库clone到本地</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@github.com:xxx.git</span><br></pre></td></tr></table></figure>
+
+<p>在github上建库之后，输入代码git clone到本地仓库</p>
+<ol start="2">
+<li><p><code>git init</code>初始化生成.git文件夹</p>
+</li>
+<li><p>本地进行修改后，<code>git add .</code>将所有修改添加到缓存区，此时处于已修改的状态</p>
+</li>
+<li><p><code>git commit -am &quot;修改的提示信息&quot;</code>将修改的信息提交到本地仓库</p>
+</li>
+<li><p><code>git push</code>将修改的信息push到云端也就是github的仓库中</p>
+</li>
+</ol>
+<p>一些常用Git命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git log		        //查看提交日志</span><br><span class="line">git add		        //提交到缓存区</span><br><span class="line">git reset 	        //撤销缓存区</span><br><span class="line">git commit 	        //提交代码到本地仓库</span><br><span class="line">git push			//提交代码到远程仓库</span><br><span class="line">git pull			//拷贝远程仓库的代码</span><br><span class="line">git checkout		//回退文件修改或者切换分支</span><br><span class="line">git stash			//暂存本地修改</span><br><span class="line">git stash pop		//释放第一个暂存区代码</span><br><span class="line">git diff			//查看本地具体修改，通常用于生成补丁</span><br><span class="line">git format-patch	//将本地提交生成补丁</span><br><span class="line">git revert			//回滚一个提交</span><br><span class="line">git cherry-pick		//下载远程仓库的某个提交</span><br><span class="line">git show			//查看具体修改</span><br><span class="line">git status			//查看所有修改文件</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学术PPT制作--beamer</title>
+    <url>/2023/10/04/20231004_Latex&amp;beamer/</url>
+    <content><![CDATA[<p>使用<strong>MAC+VSCODE+LATEX</strong></p>
+<p>最近有了频繁做学术汇报的需求，之前有了解到过beamer制作学术汇报PPT的优势，所以这里填一下坑，分享记录一下如何用beamer制作学术PPT以及使用latex和office制作PPT的优劣和使用场景对比分析。</p>
+<span id="more"></span>
+
+<h1 id="1-配置latex环境"><a href="#1-配置latex环境" class="headerlink" title="1 配置latex环境"></a>1 配置latex环境</h1><ol>
+<li>安装MacTex<br>mac上直接官网下载即可 <a href="https://www.tug.org/mactex/mactex-download.html">MacTex</a></li>
+</ol>
+<p>windows的操作也类似，在官方下载TeXlive即可。</p>
+<ol start="2">
+<li><p>配置vscode<br>然后我们还需要在vscode上进行配置相关的插件，这一步也非常简单，在vscode扩展中搜索LaTex Workshop，安装完成后vscode左侧出现TeX标志代表安装成功。</p>
+</li>
+<li><p>配置系统path<br>此时我们还需要将texlive到路径添加到系统路径中，打开iTerm，输入以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /etc</span><br><span class="line">sudo vi paths  #输入开机密码</span><br></pre></td></tr></table></figure>
+<p>然后在末尾加入我们安装的路径，一般为<code>/usr/local/texlive</code>，也可以终端打开测试看看是否是这个路径，注意的是保存后需要重启电脑才会使路径生效。</p>
+</li>
+<li><p>测试latex<br>新建test.tex文件，其中输入</p>
+</li>
+</ol>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">Hello World<span class="keyword">\LaTeX</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后点击右上角的执行，进行测试，成功则latex环境配置完成。</p>
+<h1 id="2-选择beamer模版"><a href="#2-选择beamer模版" class="headerlink" title="2 选择beamer模版"></a>2 选择beamer模版</h1><p>使用经典的清华大学Beamer模版，我找到了UESTC的修改版本，github上搜索UESTC_beamer即可找到大致的效果图如下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310042002619.png"></p>
+<p>具体的latex写法后续进行更新解析。</p>
+<h1 id="3-latex与office对比"><a href="#3-latex与office对比" class="headerlink" title="3 latex与office对比"></a>3 latex与office对比</h1><ul>
+<li><p>latex&amp;beamer制作PPT适用场景：复用性高，比较严肃的汇报，没有很多动画，分享干货，学术汇报的场景，不适用于快速记录</p>
+</li>
+<li><p>office适用场景：复用性不高、比较轻松的交流和快速的灵感想法记录和交流的场景</p>
+</li>
+</ul>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>vscode</tag>
+        <tag>MacOS</tag>
+        <tag>办公技能</tag>
+        <tag>beamer</tag>
+        <tag>latex</tag>
       </tags>
   </entry>
   <entry>
@@ -2814,6 +2814,352 @@
       </tags>
   </entry>
   <entry>
+    <title>拍摄一些好用的小工具——软件</title>
+    <url>/2023/12/18/20231218_PhotoApps/</url>
+    <content><![CDATA[<p>记录一些拍摄相关的软件或者小程序：</p>
+<ul>
+<li>添加画框小软件</li>
+<li>添加水印软件</li>
+<li>查看星体数据，比如太阳和月亮数据软件</li>
+<li>简易修图软件</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="1-画框小软件"><a href="#1-画框小软件" class="headerlink" title="1 画框小软件"></a>1 画框小软件</h1><p>壹印：一个开源的添加画框的软件，github地址为：<a href="https://github.com/ggchivalrous/yiyin%E3%80%82">https://github.com/ggchivalrous/yiyin。</a></p>
+<p>操作也非常简单，这里不再赘述，主要展示两种可以制作的效果</p>
+<ul>
+<li>圆角渐变颜色画框</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/test.jpg"></p>
+<ul>
+<li>经典白色底相框</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/yinxing.jpg"></p>
+<p>这个软件也有两个小缺憾，一是添加相机的信息处，并没有相机的logo，二是还有如果能够集成进添加水印就更好了。</p>
+<h1 id="2-水印软件"><a href="#2-水印软件" class="headerlink" title="2 水印软件"></a>2 水印软件</h1><p>目前直接使用的Lightroom自带的水印，这样的好处是比较方便，输出图片的时候，直接设置一下水印就好了，这样减少了调整图片的步骤，非常符合提升效率的原则，但是坏处就是选择比较少，并且会有水印的符号。</p>
+<h1 id="3-天气软件"><a href="#3-天气软件" class="headerlink" title="3 天气软件"></a>3 天气软件</h1><p>外拍时，对于天气要求很高，ios自带的天气软件就能看到很多关爱你的信息，比如</p>
+<ul>
+<li>能见度：能见度对于拍照影响很大，能见度很低的情况下，拍摄出来的照片都是灰蒙蒙的，对比度很低</li>
+<li>日升，日落：这一项最重要，尤其要注意日落的时间，抓住拍摄的黄金时间，也即日落前后的总计一小时时间，这一个小时的光线变化是最丰富的，从日落的温暖橘黄到日落后到BLUE HOUR，都是出片的绝佳时机，并且能够捕捉到冷暖对比。</li>
+<li>月亮：对于想要打月亮的时候很重要，选择每个月满月的时候，并且需要提前看好月亮的方位，选择好前景，架设三脚架等待月升</li>
+<li>气温、紫外线、晴雨等基本信息，注意防暑、防晒、防雨等等</li>
+</ul>
+<p>对于想要拍摄银河这些，可能需要更加专业的软件，或者一些微信小程序也有一些星象的相关信息。</p>
+<h1 id="4-修图软件"><a href="#4-修图软件" class="headerlink" title="4 修图软件"></a>4 修图软件</h1><p>醒图，一个手机修图软件。</p>
+<p>这里就不介绍LR和PS了，都是在电脑上使用的。醒图是我目前使用比较良好的一个手机app，免费的功能基本够用了，我一般的流程是在电脑的LR上调色完成之后，在醒图上对模特的面部做一些基本的调整就可以了，简单磨个皮，调整一下脸型就好了。</p>
+<p>如果你想整活，醒图的换表情的功能也很实用，能够改变模特的表情，实测还是比较够用的。对于清晰度不是很高的照片基本够用，清晰度高了的照片使用会有比较明显的割裂感。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>摄影博客</category>
+      </categories>
+      <tags>
+        <tag>摄影</tag>
+        <tag>软件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阴天or夜景街拍调色</title>
+    <url>/2023/12/25/20231225_NightStreetLrStyle/</url>
+    <content><![CDATA[<p>使用场景主要是阴天或者夜景这样光比比较小，需要凸显冷暖等的颜色的时候的调色。调色过程也比较简单。</p>
+<p>主要部分如下：</p>
+<ul>
+<li>基本</li>
+<li>色调曲线</li>
+<li>校准</li>
+<li>HSL</li>
+<li>效果<span id="more"></span></li>
+</ul>
+<h1 id="1-基本调整"><a href="#1-基本调整" class="headerlink" title="1 基本调整"></a>1 基本调整</h1><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312251549960.png"  width = "300" >  
+
+<p>色温-5，色调-5；曝光度+0.8，对比度+10，高光-55，阴影+29，白色色阶+14，黑色色阶-14；清晰度+30，鲜艳度+50.</p>
+<ul>
+<li><p>首先调整色温和色调，色温可以根据不同照片进行调节，主要恢复一下照片原有的色温就可以了。</p>
+</li>
+<li><p>增加曝光度和对比度，因为小光比，阴天或者夜景的对比度会比较低，拉高一点。</p>
+</li>
+<li><p>降低高光、增加阴影、给一点宽容度，然后增加白色色阶、压暗黑色色阶，恢复一点对比度</p>
+</li>
+<li><p>在不是近景拍摄人物肖像的情况下，拉高一点清晰度，大概30，这样增加一下街拍质感</p>
+</li>
+<li><p>增加一下鲜艳度，让颜色鲜艳一点</p>
+</li>
+</ul>
+<h1 id="2-色调曲线"><a href="#2-色调曲线" class="headerlink" title="2 色调曲线"></a>2 色调曲线</h1><ul>
+<li><p>亮度曲线，暗部提高15-20左右，然后恢复中间调和暗调。</p>
+</li>
+<li><p>红色曲线打三个点，阴影拉低一点，为阴影加一点青色</p>
+</li>
+<li><p>绿色曲线打三个点，阴影拉低一点，为阴影加一点品红</p>
+</li>
+</ul>
+<p>总的效果就是给阴影带一点蓝色并且加上一点影调。</p>
+<h1 id="3-校准"><a href="#3-校准" class="headerlink" title="3 校准"></a>3 校准</h1><ul>
+<li>右右左：红原色向右48，饱和度增加20，绿原色向右48，蓝颜色向左20</li>
+</ul>
+<p>这样突出画面的暖色，减弱画面的冷色调，如果冷色调更多，则可以将蓝色饱和度降低一点。</p>
+<p>注意：这里如果想要青橙色调，操作就是吧蓝色向左多一点比如也试8，然后降低一点饱和度，否则饱和度会溢出。</p>
+<h1 id="4-HSL"><a href="#4-HSL" class="headerlink" title="4 HSL"></a>4 HSL</h1><p>这一步主要进一步调整冷暖</p>
+<ul>
+<li>色相：红色-50，黄色-20</li>
+<li>饱和度：橙色+24，黄色-20，蓝色-40</li>
+<li>明亮度：红色-36，黄色+16</li>
+</ul>
+<h1 id="5-效果"><a href="#5-效果" class="headerlink" title="5 效果"></a>5 效果</h1><ul>
+<li>暗角：数量-13，中点37，圆度+4，羽化+100</li>
+<li>颗粒：看感觉来</li>
+</ul>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>摄影博客</category>
+      </categories>
+      <tags>
+        <tag>摄影</tag>
+        <tag>Lightroom</tag>
+        <tag>调色</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vscode使用教程</title>
+    <url>/2023/11/01/20231101_vscodeTutorial/</url>
+    <content><![CDATA[<p>vscode是我目前使用最多的平台工具无论是在windows还是macOS，本博客总结我的使用的所有场景，以及简单的搭建过程</p>
+<ul>
+<li>vscode 概要介绍</li>
+<li>C&#x2F;C++ 编程、编译</li>
+<li>python 使用</li>
+<li>markdown 记录</li>
+<li>latex&amp;beamer的学术PPT制作</li>
+<li>git的使用</li>
+<li>SSH远程连接服务器</li>
+<li>博客园的扩展</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="1-vscode概要介绍"><a href="#1-vscode概要介绍" class="headerlink" title="1 vscode概要介绍"></a>1 vscode概要介绍</h1><p>首先是进行下载安装，官方地址为：<a href="https://code.visualstudio.com/">vscode下载</a>，找到对应版本下载安装。</p>
+<p>首先介绍一下vscode的界面和大概使用流程。</p>
+<p>打开vscode，界面如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808193654.png"></p>
+<p>其中1为资源管理器，2为查找，3为源代码管理（git），4为运行和调试，5为扩展。这左侧为统称为工具栏，后续在扩展中下载相应的扩展后，左侧会多出你选择的扩展，所以理论上你可以在vscode上干任何事，甚至你可以在上面编程。</p>
+<h2 id="1-1-设置系统语言"><a href="#1-1-设置系统语言" class="headerlink" title="1.1 设置系统语言"></a>1.1 设置系统语言</h2><p>第一步，你的界面默认应该是英文，你首先可以在工具栏中的扩展中搜索简体中文，安装后重启即可。</p>
+<h2 id="1-2-工作流程"><a href="#1-2-工作流程" class="headerlink" title="1.2 工作流程"></a>1.2 工作流程</h2><p>一般来说，我的工作流程是，如之前的图中所示，你可以在欢迎界面中点击打开文件夹，或者是克隆Git仓库，打开一个工作区进行摸鱼，以markdown为例子的话，如果你想要进行一些记录，你可以创建一个你的文件夹，这个文件夹可以是你git clone下来的，也可以是本地直接创建的，以本地创建为例：</p>
+<p>比如打开markdown文件夹，新建一个markdown.md文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808194144.png"></p>
+<p>此时界面如上图，可以看到大致分为三个部分，侧边栏，顶部栏和编辑区。然后进行工作即可。</p>
+<h1 id="2-C-C-编程、编译"><a href="#2-C-C-编程、编译" class="headerlink" title="2 C&#x2F;C++ 编程、编译"></a>2 C&#x2F;C++ 编程、编译</h1><p>这里可以看我的另外一篇博客：<a href="https://moburein.com/2023/08/22/20230822_VscodeDeployC++/">vscode配置C++环境</a>。</p>
+<p>这篇博客主要介绍了三个部分，如下：</p>
+<ul>
+<li>1 下载GCC编译器</li>
+<li>2 安装VSCODE的C&#x2F;C++扩展</li>
+<li>3 使用VSCODE进行运行和调试</li>
+</ul>
+<p>最终实现在vscode上流畅码代码和调试C++(包括断点、查看参数等)程序。</p>
+<h1 id="3-python-使用"><a href="#3-python-使用" class="headerlink" title="3 python 使用"></a>3 python 使用</h1><p>在vscode上使用python很容易，只需要在扩展中搜索python，下载重新加载vscode即可直接新建py文件进行python代码的编写了，只需要注意右下角python的版本，选择你想要的版本就可以了。</p>
+<p>这里也贴上我一些项目里或者学习的时候python的一些记录：<a href="https://moburein.com/2023/11/01/20231101_PythonSimpleTutorial/">python使用总结</a></p>
+<p>里面有介绍python的简要语法和编程思想、一些常用的库，包括机器学习常用的库，还有日志相关，还有简单爬虫等，可能会后续再更新。</p>
+<h1 id="4-markdown-记录"><a href="#4-markdown-记录" class="headerlink" title="4 markdown 记录"></a>4 markdown 记录</h1><p>这里可以看我的另外一篇博客：<a href="https://moburein.com/2023/08/09/20230808_markdownLanguage/">markdown的简单用法</a>。</p>
+<p>这篇博客主要介绍了三个部分，如下：</p>
+<ul>
+<li>1 Markdown简介</li>
+<li>2 Markdown编译器</li>
+<li>3 Markdown语法</li>
+</ul>
+<p>vscode能实现markdown的流畅的编写，一般使用都是左边代码，右边预览，并且在公式和语法比较熟悉之后，使用markdown的记录效率会很高，并且在转化方面优势很大，可以轻松转化为网页、或者PPT中的内容</p>
+<h1 id="5-latex-beamer的学术PPT制作"><a href="#5-latex-beamer的学术PPT制作" class="headerlink" title="5 latex&amp;beamer的学术PPT制作"></a>5 latex&amp;beamer的学术PPT制作</h1><p>这里可以看我的另外一篇博客：<a href="https://moburein.com/2023/10/30/20231030_BeamerTutorial/">Beamer简单教程</a>。</p>
+<p>这篇博客主要UESTC的模版，然后介绍了一下写PPT的一些基本语法，包括封面设置、目录以及子目录、新建页面、分点、插入图片、下标、公式、表格、分栏、分块等。</p>
+<p>通过beamer能够简单有效的将我们平时的积累以很快的速度转化为PPT，提升效率，并且风格也比较适合做学术或者部门内部的汇报。</p>
+<h1 id="6-git的使用"><a href="#6-git的使用" class="headerlink" title="6 git的使用"></a>6 git的使用</h1><p>git管理也是vscode的基础功能之一了，当该文件夹是git clone下来的，那么此时在工具栏上的源代码管理（git）就会提示，你目前的修改，你可以设置自动时间上传，但是也可以手动上传，也就是push。</p>
+<h2 id="6-1-github账户验证"><a href="#6-1-github账户验证" class="headerlink" title="6.1 github账户验证"></a>6.1 github账户验证</h2><p>首先你需要将你的电脑跟你的比如说github账户进行验证，流程如下：</p>
+<ol>
+<li><p>首先你先安装git，windows在git的官网安装就好了，如果是mac基本是自带git，如果没有git，也可以通过brew安装。</p>
+</li>
+<li><p>配置git账户，设置user.name和user.email，输入以下命令</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;account name&quot;     # 设置用户名</span><br><span class="line">git config --global user.email &quot;account email&quot;     # 设置邮箱地址</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>设置完毕之后，就可以生成SSH KEY了，输入以下命令</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C example@mail.com</span><br></pre></td></tr></table></figure>
+<p>这里输入你自己的邮箱即可  </p>
+<ol start="4">
+<li><p>然后输入以下两条命令查看并复制你的密钥</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">vim id_rsa.pub</span><br></pre></td></tr></table></figure></li>
+<li><p>将公钥id_rsa.pub中的内容添加到github，用户-&gt;settings-&gt;SSH and GPG keys 中的按键new SSH key，将id_rsa.pub中的内容复制进去即可</p>
+</li>
+<li><p>添加完成后，在终端输入<code>ssh -T git@github.com</code>进行验证，此时会让你输入刚刚在生成ssh密钥时输入的密码，输入后回车会看到欢迎的语句，此时说明配对成功。</p>
+</li>
+</ol>
+<p>这个流程中，你唯一需要注意的就是你的路径，其余都是傻瓜式操作。</p>
+<h2 id="6-2-流程展示"><a href="#6-2-流程展示" class="headerlink" title="6.2 流程展示"></a>6.2 流程展示</h2><p>假设你与github的某个仓库链接，也就是你git clone的某个仓库，一般来说的流程如下。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231101194733.png"></p>
+<p>此时就是有待处理的部分。此时点击git管理，界面应该与下图类似</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231101194855.png"></p>
+<p>首先将鼠标放在更改上会出现<code>+</code>号，此时点击加号，然后输入你的修改信息点击提交即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011950617.png"></p>
+<p>此时你的修改可能还并没有push到远程仓库，此时查看左下角的图标是否显示你还未push到云上，如下图。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011954845.png"></p>
+<p>点击之后会出现下图，点击确认后你就可以查看你的云端是否有修改了，一般来说这里就结束了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011954859.png"></p>
+<h1 id="7-SSH远程连接服务器"><a href="#7-SSH远程连接服务器" class="headerlink" title="7 SSH远程连接服务器"></a>7 SSH远程连接服务器</h1><p>在扩展中搜索remote，安装这个remote-ssh即可，这时工具栏上就会多出远程连接工具，点击远程连接工具</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012006995.png"></p>
+<p>界面如下，点击如下图中的加号</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012007311.png"></p>
+<p>这时会弹出ssh连接命令，此时输入你的需要连接的账号回车会提示你输入密码，此时输入密码即可进入你所要ssh连接的服务器中。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012008499.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012010522.png"></p>
+<p>还有一个进阶操作，你可以将你的公钥添加到服务器的authorized_keys文件中，这样你登录时就不再需要输入密码了。具体操作如下：</p>
+<ul>
+<li>将本地之前生成的<code>id_rsa.pub</code>中的内容全部复制，一般在.ssh文件夹中，可以通过vim打开复制后输入<code>:q</code>回车退出，</li>
+<li>然后再在服务器的.ssh文件夹中找到authorized_keys文件，使用vim工具打开，按i键进入插入编辑模式，复制刚刚的内容进去，保存退出<code>:wq</code>回车就完成了。</li>
+</ul>
+<h1 id="8-cnblogs博客园扩展"><a href="#8-cnblogs博客园扩展" class="headerlink" title="8 cnblogs博客园扩展"></a>8 cnblogs博客园扩展</h1><p>直接在扩展中搜索cnblogs就可以了，这个扩展主要是为了解决在cnblogs上写博客时的图片问题，这个官方插件提供了在博客园上使用的图床，安装后在markdown文件的右上角会出现多两个图标，主要使用上传剪切板图片这个功能，一般我们需要使用的时候都是直接剪切屏幕中的图片，这时复制后点击如下图的图标。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012019990.png"></p>
+<p>会出现以下界面，你可以选择本地图片或者是剪切图片，一般来说我是选择剪贴板图片，这样操作方便。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012020877.png"></p>
+<p>点击之后就会弹出连接，选择markdown连接直接复制到md文件中就可以了，完美解决新手用户没有图床的问题。我一般在学习的时候也会在博客园上写一些博客，这样能将更多有意思的东西放在自己的博客网站上。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>SSH</tag>
+        <tag>markdown</tag>
+        <tag>vscode</tag>
+        <tag>C/C++</tag>
+        <tag>git</tag>
+        <tag>python</tag>
+        <tag>github</tag>
+        <tag>cnblogs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日系胶片调色</title>
+    <url>/2023/12/04/20231204_LrFilmStyle/</url>
+    <content><![CDATA[<p>总结一下摄影中我比较喜欢的一种风格，使用lightroom进行仿日系胶片调色。</p>
+<p>总结重点：</p>
+<ul>
+<li>基础设置：提高曝光，让照片保持微微过曝的状态，提亮暗部，压一下高光</li>
+<li>仿胶片：所以使用曲线让暗部不是纯黑色，带一点灰色，让白点也降低，模拟胶片的感觉</li>
+<li>使用曲线恢复一些对比度，使用颜色曲线和颜色分级对照片进行颜色调整，一般有几个选择，选择让高光部分偏某某色，让暗部偏某某色，可以是黄色、青色、蓝色等等</li>
+<li>使用hsl、颜色分级将画面的一些杂色降低饱和度、亮度等</li>
+<li>根据情况添加暗角，可以适当降低一点清晰度，这样在拍摄人物时会有一种朦胧感</li>
+<li>添加一些颗粒，这样更有质感</li>
+</ul>
+<span id="more"></span>
+
+<p>我的总结主要是按照两步走，重点是要形成自己调色的方法论。</p>
+<p>第一步是分析原有照片的风格，调色的重点和主观感受，然后针对分析进行第二部的针对性调色，重要的不是参数，而是如何分析得到需要进行的操作。</p>
+<p>这篇博客是参考了b站up青山摄影的视频总结而成。</p>
+<h1 id="1-日系胶片风格"><a href="#1-日系胶片风格" class="headerlink" title="1 日系胶片风格"></a>1 日系胶片风格</h1><p>这里首先放上经典日系胶片风格照片：</p>
+<figure class="second">  
+  <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041934070.png"  width = "300" alt="原图">  
+  <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041923679.png"  width = "300" alt="调色后">  
+</figure>
+
+<p>首先进行分析可以得到如下结论：</p>
+<ul>
+<li>对比度不高</li>
+<li>轻微过曝</li>
+<li>胶片质感</li>
+<li>画面中间调偏青色</li>
+<li>肤色调整白皙并且带血色</li>
+<li>人物衣服的白色有一点朦胧感</li>
+</ul>
+<h1 id="2-实战调色"><a href="#2-实战调色" class="headerlink" title="2 实战调色"></a>2 实战调色</h1><h2 id="2-1-基础设置"><a href="#2-1-基础设置" class="headerlink" title="2.1 基础设置"></a>2.1 基础设置</h2><p>目的： 为了保证轻微过曝，并且将原片降低一点对比度模拟胶片感</p>
+<p>措施：</p>
+<ul>
+<li>提高曝光</li>
+<li>降低一点对比度</li>
+<li>增加一点饱和度</li>
+<li>降低一点鲜艳度</li>
+</ul>
+<h2 id="2-2-曲线"><a href="#2-2-曲线" class="headerlink" title="2.2 曲线"></a>2.2 曲线</h2><p>目的：将画面的中间调调整为青色，并且改变照片的影调，让照片有一种灰灰的感觉，模拟胶片，这一步是重点</p>
+<p>措施：</p>
+<ul>
+<li>分颜色调整，使得画面中间调偏青色，那么分别修改红绿蓝曲线，修改如下，<ul>
+<li>中间调蓝色和绿色提高，红色不变，这一步中间调就会变成青色</li>
+<li>高光三条曲线都提高，阴影曲线都降低，增加对比度</li>
+</ul>
+</li>
+</ul>
+<figure class="third">
+    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041954921.png"  width = "200" alt="红色曲线">  
+    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041952314.png"  width = "200" alt="绿色曲线">  
+    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041953288.png"  width = "200" alt="蓝色曲线">  
+</figure>
+
+<ul>
+<li>调整亮度曲线，将最左端，也就是黑点提高，这一步是让照片的黑点不是纯黑而是变成带一点点灰色，来模拟胶片的感觉。</li>
+</ul>
+<center>
+    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041956807.png" width = "200" alt="亮度曲线">
+</center>
+
+<p>经过曲线和基础调整之后照片已经有了雏形，如下：</p>
+<center>
+<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204195528.png"  width = "300" alt="曲线调整后图片">  
+</center>
+
+<h2 id="2-3-进一步调整色调"><a href="#2-3-进一步调整色调" class="headerlink" title="2.3 进一步调整色调"></a>2.3 进一步调整色调</h2><p>调整完曲线之后，分析图片感觉还是有一点点过于亮，进一步调整明暗关系，将白色和高光调低，提升一点阴影，降低一点黑色色阶，这里是一个小trick，这样可以使得整体明亮的图片看起来对比度稍微高一点，得到所谓的通透的感觉。</p>
+<center>
+<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204202005.png"  width = "300">  
+</center>
+
+<p>偏好部分，同样有一个小trick，人物的白色衣服在日光下容易过曝，所以可以见底一些清晰度，让白色衣服有一种朦胧的感觉，不至于刺眼或者过于吸引眼球。同时增加一点饱和度，降低一点鲜艳度，使得图片的风格更加胶片的高宽容度感。</p>
+<center>
+<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042022428.png"  width = "300">  
+</center>
+
+<h2 id="2-4-HSL调色"><a href="#2-4-HSL调色" class="headerlink" title="2.4 HSL调色"></a>2.4 HSL调色</h2><p>进一步调整颜色，调整肤色——HSL调色中的橙色，以及调整背景中其他的颜色的饱和度</p>
+<figure class="third">
+    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042028231.png"  width = "220" alt="红色曲线">  
+    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042028800.png"  width = "220" alt="绿色曲线">  
+    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042027175.png"  width = "220" alt="蓝色曲线">  
+</figure>
+
+<ul>
+<li>调整饱和度和明亮度中的橙色是为了调整肤色，让肤色显的又白又有血色</li>
+<li>调整饱和度和明亮度的蓝色是为了不让背景中的蓝色喧兵夺主</li>
+<li>调整色相中的红色是为了使得人物的嘴唇颜色正常，偏红色</li>
+</ul>
+<h2 id="2-5-颜色校准"><a href="#2-5-颜色校准" class="headerlink" title="2.5 颜色校准"></a>2.5 颜色校准</h2><p>调整颜色校准使得照片整体偏黄一点，人物肤色正常一点，其实这一步我个人感觉意义不明，没啥大作用，就是使得整体照片偏黄偏品红一点。</p>
+<center>
+<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204203936.png"  width = "300">  
+</center>
+
+<h2 id="2-6-颜色分级"><a href="#2-6-颜色分级" class="headerlink" title="2.6 颜色分级"></a>2.6 颜色分级</h2><p>这一步很重要，这一步进一步调整了照片的明暗关系，将最后的影调调整到跟胶片很相似了。</p>
+<center>
+<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204204334.png"  width = "300">  
+</center>
+
+<p>这里就主要调整阴影和高光了，我的理解是中间调在曲线部分已经调整，但是这样为什么不在中间色调一步完成呢。</p>
+<ul>
+<li>阴影部分向右调整，这样使得图片暗部进一步变灰，至于偏色就见仁见智，偏青色、黄色、蓝色、甚至红色都可以，实际中一般是偏青色，偏黄色就是复古</li>
+<li>高光向左移动，这样使得照片更有一种哑光的感觉，其实也就是将白色也带一点灰的感觉，偏色就同样根据审美来调整</li>
+</ul>
+<h2 id="2-7-暗角以及颗粒"><a href="#2-7-暗角以及颗粒" class="headerlink" title="2.7 暗角以及颗粒"></a>2.7 暗角以及颗粒</h2><p>增加一点暗角。数量就是暗角的程度，中点也就是暗角的区域，为0也就是以中心点为基准，羽化调整到100，这样使得暗角的过渡狠顺滑。</p>
+<p>然后增加一点数量的颗粒，大小可以调整小一点，粗糙度看个人审美。</p>
+<center>
+<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042050909.png"  width = "300">  
+</center>
+
+
+
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>摄影博客</category>
+      </categories>
+      <tags>
+        <tag>摄影</tag>
+        <tag>Lightroom</tag>
+        <tag>调色</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>python使用总结</title>
     <url>/2023/11/01/20231101_PythonSimpleTutorial/</url>
     <content><![CDATA[<p>最近又经常用到python了，所以这里也总结一下python的使用的过程和简要的语法。</p>
@@ -3264,352 +3610,6 @@
       <tags>
         <tag>vscode</tag>
         <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vscode使用教程</title>
-    <url>/2023/11/01/20231101_vscodeTutorial/</url>
-    <content><![CDATA[<p>vscode是我目前使用最多的平台工具无论是在windows还是macOS，本博客总结我的使用的所有场景，以及简单的搭建过程</p>
-<ul>
-<li>vscode 概要介绍</li>
-<li>C&#x2F;C++ 编程、编译</li>
-<li>python 使用</li>
-<li>markdown 记录</li>
-<li>latex&amp;beamer的学术PPT制作</li>
-<li>git的使用</li>
-<li>SSH远程连接服务器</li>
-<li>博客园的扩展</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="1-vscode概要介绍"><a href="#1-vscode概要介绍" class="headerlink" title="1 vscode概要介绍"></a>1 vscode概要介绍</h1><p>首先是进行下载安装，官方地址为：<a href="https://code.visualstudio.com/">vscode下载</a>，找到对应版本下载安装。</p>
-<p>首先介绍一下vscode的界面和大概使用流程。</p>
-<p>打开vscode，界面如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808193654.png"></p>
-<p>其中1为资源管理器，2为查找，3为源代码管理（git），4为运行和调试，5为扩展。这左侧为统称为工具栏，后续在扩展中下载相应的扩展后，左侧会多出你选择的扩展，所以理论上你可以在vscode上干任何事，甚至你可以在上面编程。</p>
-<h2 id="1-1-设置系统语言"><a href="#1-1-设置系统语言" class="headerlink" title="1.1 设置系统语言"></a>1.1 设置系统语言</h2><p>第一步，你的界面默认应该是英文，你首先可以在工具栏中的扩展中搜索简体中文，安装后重启即可。</p>
-<h2 id="1-2-工作流程"><a href="#1-2-工作流程" class="headerlink" title="1.2 工作流程"></a>1.2 工作流程</h2><p>一般来说，我的工作流程是，如之前的图中所示，你可以在欢迎界面中点击打开文件夹，或者是克隆Git仓库，打开一个工作区进行摸鱼，以markdown为例子的话，如果你想要进行一些记录，你可以创建一个你的文件夹，这个文件夹可以是你git clone下来的，也可以是本地直接创建的，以本地创建为例：</p>
-<p>比如打开markdown文件夹，新建一个markdown.md文件</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808194144.png"></p>
-<p>此时界面如上图，可以看到大致分为三个部分，侧边栏，顶部栏和编辑区。然后进行工作即可。</p>
-<h1 id="2-C-C-编程、编译"><a href="#2-C-C-编程、编译" class="headerlink" title="2 C&#x2F;C++ 编程、编译"></a>2 C&#x2F;C++ 编程、编译</h1><p>这里可以看我的另外一篇博客：<a href="https://moburein.com/2023/08/22/20230822_VscodeDeployC++/">vscode配置C++环境</a>。</p>
-<p>这篇博客主要介绍了三个部分，如下：</p>
-<ul>
-<li>1 下载GCC编译器</li>
-<li>2 安装VSCODE的C&#x2F;C++扩展</li>
-<li>3 使用VSCODE进行运行和调试</li>
-</ul>
-<p>最终实现在vscode上流畅码代码和调试C++(包括断点、查看参数等)程序。</p>
-<h1 id="3-python-使用"><a href="#3-python-使用" class="headerlink" title="3 python 使用"></a>3 python 使用</h1><p>在vscode上使用python很容易，只需要在扩展中搜索python，下载重新加载vscode即可直接新建py文件进行python代码的编写了，只需要注意右下角python的版本，选择你想要的版本就可以了。</p>
-<p>这里也贴上我一些项目里或者学习的时候python的一些记录：<a href="https://moburein.com/2023/11/01/20231101_PythonSimpleTutorial/">python使用总结</a></p>
-<p>里面有介绍python的简要语法和编程思想、一些常用的库，包括机器学习常用的库，还有日志相关，还有简单爬虫等，可能会后续再更新。</p>
-<h1 id="4-markdown-记录"><a href="#4-markdown-记录" class="headerlink" title="4 markdown 记录"></a>4 markdown 记录</h1><p>这里可以看我的另外一篇博客：<a href="https://moburein.com/2023/08/09/20230808_markdownLanguage/">markdown的简单用法</a>。</p>
-<p>这篇博客主要介绍了三个部分，如下：</p>
-<ul>
-<li>1 Markdown简介</li>
-<li>2 Markdown编译器</li>
-<li>3 Markdown语法</li>
-</ul>
-<p>vscode能实现markdown的流畅的编写，一般使用都是左边代码，右边预览，并且在公式和语法比较熟悉之后，使用markdown的记录效率会很高，并且在转化方面优势很大，可以轻松转化为网页、或者PPT中的内容</p>
-<h1 id="5-latex-beamer的学术PPT制作"><a href="#5-latex-beamer的学术PPT制作" class="headerlink" title="5 latex&amp;beamer的学术PPT制作"></a>5 latex&amp;beamer的学术PPT制作</h1><p>这里可以看我的另外一篇博客：<a href="https://moburein.com/2023/10/30/20231030_BeamerTutorial/">Beamer简单教程</a>。</p>
-<p>这篇博客主要UESTC的模版，然后介绍了一下写PPT的一些基本语法，包括封面设置、目录以及子目录、新建页面、分点、插入图片、下标、公式、表格、分栏、分块等。</p>
-<p>通过beamer能够简单有效的将我们平时的积累以很快的速度转化为PPT，提升效率，并且风格也比较适合做学术或者部门内部的汇报。</p>
-<h1 id="6-git的使用"><a href="#6-git的使用" class="headerlink" title="6 git的使用"></a>6 git的使用</h1><p>git管理也是vscode的基础功能之一了，当该文件夹是git clone下来的，那么此时在工具栏上的源代码管理（git）就会提示，你目前的修改，你可以设置自动时间上传，但是也可以手动上传，也就是push。</p>
-<h2 id="6-1-github账户验证"><a href="#6-1-github账户验证" class="headerlink" title="6.1 github账户验证"></a>6.1 github账户验证</h2><p>首先你需要将你的电脑跟你的比如说github账户进行验证，流程如下：</p>
-<ol>
-<li><p>首先你先安装git，windows在git的官网安装就好了，如果是mac基本是自带git，如果没有git，也可以通过brew安装。</p>
-</li>
-<li><p>配置git账户，设置user.name和user.email，输入以下命令</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;account name&quot;     # 设置用户名</span><br><span class="line">git config --global user.email &quot;account email&quot;     # 设置邮箱地址</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>设置完毕之后，就可以生成SSH KEY了，输入以下命令</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C example@mail.com</span><br></pre></td></tr></table></figure>
-<p>这里输入你自己的邮箱即可  </p>
-<ol start="4">
-<li><p>然后输入以下两条命令查看并复制你的密钥</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">vim id_rsa.pub</span><br></pre></td></tr></table></figure></li>
-<li><p>将公钥id_rsa.pub中的内容添加到github，用户-&gt;settings-&gt;SSH and GPG keys 中的按键new SSH key，将id_rsa.pub中的内容复制进去即可</p>
-</li>
-<li><p>添加完成后，在终端输入<code>ssh -T git@github.com</code>进行验证，此时会让你输入刚刚在生成ssh密钥时输入的密码，输入后回车会看到欢迎的语句，此时说明配对成功。</p>
-</li>
-</ol>
-<p>这个流程中，你唯一需要注意的就是你的路径，其余都是傻瓜式操作。</p>
-<h2 id="6-2-流程展示"><a href="#6-2-流程展示" class="headerlink" title="6.2 流程展示"></a>6.2 流程展示</h2><p>假设你与github的某个仓库链接，也就是你git clone的某个仓库，一般来说的流程如下。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231101194733.png"></p>
-<p>此时就是有待处理的部分。此时点击git管理，界面应该与下图类似</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231101194855.png"></p>
-<p>首先将鼠标放在更改上会出现<code>+</code>号，此时点击加号，然后输入你的修改信息点击提交即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011950617.png"></p>
-<p>此时你的修改可能还并没有push到远程仓库，此时查看左下角的图标是否显示你还未push到云上，如下图。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011954845.png"></p>
-<p>点击之后会出现下图，点击确认后你就可以查看你的云端是否有修改了，一般来说这里就结束了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011954859.png"></p>
-<h1 id="7-SSH远程连接服务器"><a href="#7-SSH远程连接服务器" class="headerlink" title="7 SSH远程连接服务器"></a>7 SSH远程连接服务器</h1><p>在扩展中搜索remote，安装这个remote-ssh即可，这时工具栏上就会多出远程连接工具，点击远程连接工具</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012006995.png"></p>
-<p>界面如下，点击如下图中的加号</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012007311.png"></p>
-<p>这时会弹出ssh连接命令，此时输入你的需要连接的账号回车会提示你输入密码，此时输入密码即可进入你所要ssh连接的服务器中。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012008499.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012010522.png"></p>
-<p>还有一个进阶操作，你可以将你的公钥添加到服务器的authorized_keys文件中，这样你登录时就不再需要输入密码了。具体操作如下：</p>
-<ul>
-<li>将本地之前生成的<code>id_rsa.pub</code>中的内容全部复制，一般在.ssh文件夹中，可以通过vim打开复制后输入<code>:q</code>回车退出，</li>
-<li>然后再在服务器的.ssh文件夹中找到authorized_keys文件，使用vim工具打开，按i键进入插入编辑模式，复制刚刚的内容进去，保存退出<code>:wq</code>回车就完成了。</li>
-</ul>
-<h1 id="8-cnblogs博客园扩展"><a href="#8-cnblogs博客园扩展" class="headerlink" title="8 cnblogs博客园扩展"></a>8 cnblogs博客园扩展</h1><p>直接在扩展中搜索cnblogs就可以了，这个扩展主要是为了解决在cnblogs上写博客时的图片问题，这个官方插件提供了在博客园上使用的图床，安装后在markdown文件的右上角会出现多两个图标，主要使用上传剪切板图片这个功能，一般我们需要使用的时候都是直接剪切屏幕中的图片，这时复制后点击如下图的图标。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012019990.png"></p>
-<p>会出现以下界面，你可以选择本地图片或者是剪切图片，一般来说我是选择剪贴板图片，这样操作方便。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012020877.png"></p>
-<p>点击之后就会弹出连接，选择markdown连接直接复制到md文件中就可以了，完美解决新手用户没有图床的问题。我一般在学习的时候也会在博客园上写一些博客，这样能将更多有意思的东西放在自己的博客网站上。</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-        <tag>vscode</tag>
-        <tag>SSH</tag>
-        <tag>git</tag>
-        <tag>C/C++</tag>
-        <tag>python</tag>
-        <tag>github</tag>
-        <tag>cnblogs</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>日系胶片调色</title>
-    <url>/2023/12/04/20231204_LrFilmStyle/</url>
-    <content><![CDATA[<p>总结一下摄影中我比较喜欢的一种风格，使用lightroom进行仿日系胶片调色。</p>
-<p>总结重点：</p>
-<ul>
-<li>基础设置：提高曝光，让照片保持微微过曝的状态，提亮暗部，压一下高光</li>
-<li>仿胶片：所以使用曲线让暗部不是纯黑色，带一点灰色，让白点也降低，模拟胶片的感觉</li>
-<li>使用曲线恢复一些对比度，使用颜色曲线和颜色分级对照片进行颜色调整，一般有几个选择，选择让高光部分偏某某色，让暗部偏某某色，可以是黄色、青色、蓝色等等</li>
-<li>使用hsl、颜色分级将画面的一些杂色降低饱和度、亮度等</li>
-<li>根据情况添加暗角，可以适当降低一点清晰度，这样在拍摄人物时会有一种朦胧感</li>
-<li>添加一些颗粒，这样更有质感</li>
-</ul>
-<span id="more"></span>
-
-<p>我的总结主要是按照两步走，重点是要形成自己调色的方法论。</p>
-<p>第一步是分析原有照片的风格，调色的重点和主观感受，然后针对分析进行第二部的针对性调色，重要的不是参数，而是如何分析得到需要进行的操作。</p>
-<p>这篇博客是参考了b站up青山摄影的视频总结而成。</p>
-<h1 id="1-日系胶片风格"><a href="#1-日系胶片风格" class="headerlink" title="1 日系胶片风格"></a>1 日系胶片风格</h1><p>这里首先放上经典日系胶片风格照片：</p>
-<figure class="second">  
-  <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041934070.png"  width = "300" alt="原图">  
-  <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041923679.png"  width = "300" alt="调色后">  
-</figure>
-
-<p>首先进行分析可以得到如下结论：</p>
-<ul>
-<li>对比度不高</li>
-<li>轻微过曝</li>
-<li>胶片质感</li>
-<li>画面中间调偏青色</li>
-<li>肤色调整白皙并且带血色</li>
-<li>人物衣服的白色有一点朦胧感</li>
-</ul>
-<h1 id="2-实战调色"><a href="#2-实战调色" class="headerlink" title="2 实战调色"></a>2 实战调色</h1><h2 id="2-1-基础设置"><a href="#2-1-基础设置" class="headerlink" title="2.1 基础设置"></a>2.1 基础设置</h2><p>目的： 为了保证轻微过曝，并且将原片降低一点对比度模拟胶片感</p>
-<p>措施：</p>
-<ul>
-<li>提高曝光</li>
-<li>降低一点对比度</li>
-<li>增加一点饱和度</li>
-<li>降低一点鲜艳度</li>
-</ul>
-<h2 id="2-2-曲线"><a href="#2-2-曲线" class="headerlink" title="2.2 曲线"></a>2.2 曲线</h2><p>目的：将画面的中间调调整为青色，并且改变照片的影调，让照片有一种灰灰的感觉，模拟胶片，这一步是重点</p>
-<p>措施：</p>
-<ul>
-<li>分颜色调整，使得画面中间调偏青色，那么分别修改红绿蓝曲线，修改如下，<ul>
-<li>中间调蓝色和绿色提高，红色不变，这一步中间调就会变成青色</li>
-<li>高光三条曲线都提高，阴影曲线都降低，增加对比度</li>
-</ul>
-</li>
-</ul>
-<figure class="third">
-    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041954921.png"  width = "200" alt="红色曲线">  
-    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041952314.png"  width = "200" alt="绿色曲线">  
-    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041953288.png"  width = "200" alt="蓝色曲线">  
-</figure>
-
-<ul>
-<li>调整亮度曲线，将最左端，也就是黑点提高，这一步是让照片的黑点不是纯黑而是变成带一点点灰色，来模拟胶片的感觉。</li>
-</ul>
-<center>
-    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041956807.png" width = "200" alt="亮度曲线">
-</center>
-
-<p>经过曲线和基础调整之后照片已经有了雏形，如下：</p>
-<center>
-<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204195528.png"  width = "300" alt="曲线调整后图片">  
-</center>
-
-<h2 id="2-3-进一步调整色调"><a href="#2-3-进一步调整色调" class="headerlink" title="2.3 进一步调整色调"></a>2.3 进一步调整色调</h2><p>调整完曲线之后，分析图片感觉还是有一点点过于亮，进一步调整明暗关系，将白色和高光调低，提升一点阴影，降低一点黑色色阶，这里是一个小trick，这样可以使得整体明亮的图片看起来对比度稍微高一点，得到所谓的通透的感觉。</p>
-<center>
-<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204202005.png"  width = "300">  
-</center>
-
-<p>偏好部分，同样有一个小trick，人物的白色衣服在日光下容易过曝，所以可以见底一些清晰度，让白色衣服有一种朦胧的感觉，不至于刺眼或者过于吸引眼球。同时增加一点饱和度，降低一点鲜艳度，使得图片的风格更加胶片的高宽容度感。</p>
-<center>
-<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042022428.png"  width = "300">  
-</center>
-
-<h2 id="2-4-HSL调色"><a href="#2-4-HSL调色" class="headerlink" title="2.4 HSL调色"></a>2.4 HSL调色</h2><p>进一步调整颜色，调整肤色——HSL调色中的橙色，以及调整背景中其他的颜色的饱和度</p>
-<figure class="third">
-    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042028231.png"  width = "220" alt="红色曲线">  
-    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042028800.png"  width = "220" alt="绿色曲线">  
-    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042027175.png"  width = "220" alt="蓝色曲线">  
-</figure>
-
-<ul>
-<li>调整饱和度和明亮度中的橙色是为了调整肤色，让肤色显的又白又有血色</li>
-<li>调整饱和度和明亮度的蓝色是为了不让背景中的蓝色喧兵夺主</li>
-<li>调整色相中的红色是为了使得人物的嘴唇颜色正常，偏红色</li>
-</ul>
-<h2 id="2-5-颜色校准"><a href="#2-5-颜色校准" class="headerlink" title="2.5 颜色校准"></a>2.5 颜色校准</h2><p>调整颜色校准使得照片整体偏黄一点，人物肤色正常一点，其实这一步我个人感觉意义不明，没啥大作用，就是使得整体照片偏黄偏品红一点。</p>
-<center>
-<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204203936.png"  width = "300">  
-</center>
-
-<h2 id="2-6-颜色分级"><a href="#2-6-颜色分级" class="headerlink" title="2.6 颜色分级"></a>2.6 颜色分级</h2><p>这一步很重要，这一步进一步调整了照片的明暗关系，将最后的影调调整到跟胶片很相似了。</p>
-<center>
-<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204204334.png"  width = "300">  
-</center>
-
-<p>这里就主要调整阴影和高光了，我的理解是中间调在曲线部分已经调整，但是这样为什么不在中间色调一步完成呢。</p>
-<ul>
-<li>阴影部分向右调整，这样使得图片暗部进一步变灰，至于偏色就见仁见智，偏青色、黄色、蓝色、甚至红色都可以，实际中一般是偏青色，偏黄色就是复古</li>
-<li>高光向左移动，这样使得照片更有一种哑光的感觉，其实也就是将白色也带一点灰的感觉，偏色就同样根据审美来调整</li>
-</ul>
-<h2 id="2-7-暗角以及颗粒"><a href="#2-7-暗角以及颗粒" class="headerlink" title="2.7 暗角以及颗粒"></a>2.7 暗角以及颗粒</h2><p>增加一点暗角。数量就是暗角的程度，中点也就是暗角的区域，为0也就是以中心点为基准，羽化调整到100，这样使得暗角的过渡狠顺滑。</p>
-<p>然后增加一点数量的颗粒，大小可以调整小一点，粗糙度看个人审美。</p>
-<center>
-<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042050909.png"  width = "300">  
-</center>
-
-
-
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>摄影博客</category>
-      </categories>
-      <tags>
-        <tag>Lightroom</tag>
-        <tag>摄影</tag>
-        <tag>调色</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>拍摄一些好用的小工具——软件</title>
-    <url>/2023/12/18/20231218_PhotoApps/</url>
-    <content><![CDATA[<p>记录一些拍摄相关的软件或者小程序：</p>
-<ul>
-<li>添加画框小软件</li>
-<li>添加水印软件</li>
-<li>查看星体数据，比如太阳和月亮数据软件</li>
-<li>简易修图软件</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="1-画框小软件"><a href="#1-画框小软件" class="headerlink" title="1 画框小软件"></a>1 画框小软件</h1><p>壹印：一个开源的添加画框的软件，github地址为：<a href="https://github.com/ggchivalrous/yiyin%E3%80%82">https://github.com/ggchivalrous/yiyin。</a></p>
-<p>操作也非常简单，这里不再赘述，主要展示两种可以制作的效果</p>
-<ul>
-<li>圆角渐变颜色画框</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/test.jpg"></p>
-<ul>
-<li>经典白色底相框</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/yinxing.jpg"></p>
-<p>这个软件也有两个小缺憾，一是添加相机的信息处，并没有相机的logo，二是还有如果能够集成进添加水印就更好了。</p>
-<h1 id="2-水印软件"><a href="#2-水印软件" class="headerlink" title="2 水印软件"></a>2 水印软件</h1><p>目前直接使用的Lightroom自带的水印，这样的好处是比较方便，输出图片的时候，直接设置一下水印就好了，这样减少了调整图片的步骤，非常符合提升效率的原则，但是坏处就是选择比较少，并且会有水印的符号。</p>
-<h1 id="3-天气软件"><a href="#3-天气软件" class="headerlink" title="3 天气软件"></a>3 天气软件</h1><p>外拍时，对于天气要求很高，ios自带的天气软件就能看到很多关爱你的信息，比如</p>
-<ul>
-<li>能见度：能见度对于拍照影响很大，能见度很低的情况下，拍摄出来的照片都是灰蒙蒙的，对比度很低</li>
-<li>日升，日落：这一项最重要，尤其要注意日落的时间，抓住拍摄的黄金时间，也即日落前后的总计一小时时间，这一个小时的光线变化是最丰富的，从日落的温暖橘黄到日落后到BLUE HOUR，都是出片的绝佳时机，并且能够捕捉到冷暖对比。</li>
-<li>月亮：对于想要打月亮的时候很重要，选择每个月满月的时候，并且需要提前看好月亮的方位，选择好前景，架设三脚架等待月升</li>
-<li>气温、紫外线、晴雨等基本信息，注意防暑、防晒、防雨等等</li>
-</ul>
-<p>对于想要拍摄银河这些，可能需要更加专业的软件，或者一些微信小程序也有一些星象的相关信息。</p>
-<h1 id="4-修图软件"><a href="#4-修图软件" class="headerlink" title="4 修图软件"></a>4 修图软件</h1><p>醒图，一个手机修图软件。</p>
-<p>这里就不介绍LR和PS了，都是在电脑上使用的。醒图是我目前使用比较良好的一个手机app，免费的功能基本够用了，我一般的流程是在电脑的LR上调色完成之后，在醒图上对模特的面部做一些基本的调整就可以了，简单磨个皮，调整一下脸型就好了。</p>
-<p>如果你想整活，醒图的换表情的功能也很实用，能够改变模特的表情，实测还是比较够用的。对于清晰度不是很高的照片基本够用，清晰度高了的照片使用会有比较明显的割裂感。</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>摄影博客</category>
-      </categories>
-      <tags>
-        <tag>摄影</tag>
-        <tag>软件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>阴天or夜景街拍调色</title>
-    <url>/2023/12/25/20231225_NightStreetLrStyle/</url>
-    <content><![CDATA[<p>使用场景主要是阴天或者夜景这样光比比较小，需要凸显冷暖等的颜色的时候的调色。调色过程也比较简单。</p>
-<p>主要部分如下：</p>
-<ul>
-<li>基本</li>
-<li>色调曲线</li>
-<li>校准</li>
-<li>HSL</li>
-<li>效果<span id="more"></span></li>
-</ul>
-<h1 id="1-基本调整"><a href="#1-基本调整" class="headerlink" title="1 基本调整"></a>1 基本调整</h1><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312251549960.png"  width = "300" >  
-
-<p>色温-5，色调-5；曝光度+0.8，对比度+10，高光-55，阴影+29，白色色阶+14，黑色色阶-14；清晰度+30，鲜艳度+50.</p>
-<ul>
-<li><p>首先调整色温和色调，色温可以根据不同照片进行调节，主要恢复一下照片原有的色温就可以了。</p>
-</li>
-<li><p>增加曝光度和对比度，因为小光比，阴天或者夜景的对比度会比较低，拉高一点。</p>
-</li>
-<li><p>降低高光、增加阴影、给一点宽容度，然后增加白色色阶、压暗黑色色阶，恢复一点对比度</p>
-</li>
-<li><p>在不是近景拍摄人物肖像的情况下，拉高一点清晰度，大概30，这样增加一下街拍质感</p>
-</li>
-<li><p>增加一下鲜艳度，让颜色鲜艳一点</p>
-</li>
-</ul>
-<h1 id="2-色调曲线"><a href="#2-色调曲线" class="headerlink" title="2 色调曲线"></a>2 色调曲线</h1><ul>
-<li><p>亮度曲线，暗部提高15-20左右，然后恢复中间调和暗调。</p>
-</li>
-<li><p>红色曲线打三个点，阴影拉低一点，为阴影加一点青色</p>
-</li>
-<li><p>绿色曲线打三个点，阴影拉低一点，为阴影加一点品红</p>
-</li>
-</ul>
-<p>总的效果就是给阴影带一点蓝色并且加上一点影调。</p>
-<h1 id="3-校准"><a href="#3-校准" class="headerlink" title="3 校准"></a>3 校准</h1><ul>
-<li>右右左：红原色向右48，饱和度增加20，绿原色向右48，蓝颜色向左20</li>
-</ul>
-<p>这样突出画面的暖色，减弱画面的冷色调，如果冷色调更多，则可以将蓝色饱和度降低一点。</p>
-<p>注意：这里如果想要青橙色调，操作就是吧蓝色向左多一点比如也试8，然后降低一点饱和度，否则饱和度会溢出。</p>
-<h1 id="4-HSL"><a href="#4-HSL" class="headerlink" title="4 HSL"></a>4 HSL</h1><p>这一步主要进一步调整冷暖</p>
-<ul>
-<li>色相：红色-50，黄色-20</li>
-<li>饱和度：橙色+24，黄色-20，蓝色-40</li>
-<li>明亮度：红色-36，黄色+16</li>
-</ul>
-<h1 id="5-效果"><a href="#5-效果" class="headerlink" title="5 效果"></a>5 效果</h1><ul>
-<li>暗角：数量-13，中点37，圆度+4，羽化+100</li>
-<li>颗粒：看感觉来</li>
-</ul>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>摄影博客</category>
-      </categories>
-      <tags>
-        <tag>Lightroom</tag>
-        <tag>摄影</tag>
-        <tag>调色</tag>
       </tags>
   </entry>
 </search>
