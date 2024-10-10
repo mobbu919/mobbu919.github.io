@@ -23,23 +23,22 @@
     var CONFIG = {"hostname":"moburein.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="等到要换电脑的时候，发现我在本地管理github pages需要移植一下，博客记录一下移植过程，方便以后查阅，由于博主心血来潮换了mac，这时候需要在MacOS上继续进行配置了。">
+  <meta name="description" content="由于工作需要经常在虚拟机中编译比较大型的C语言的项目，组内推荐使用SourceInsight配合Samba共享文件夹在windows端查看虚拟机ubuntu中的代码，于是进行简单的使用流程记录。 分为以下几个部分介绍  SourceInsight的优势、使用方式以及常用的操作 如何配置Samba共享文件夹 设置虚拟机的网卡以解决虚拟机的IP地址一直变化导致Samba文件夹失效的问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="博客网站分布管理">
-<meta property="og:url" content="http://moburein.com/2023/10/01/20231001_blogDistributeToMacOS/index.html">
+<meta property="og:title" content="SourceInsight4+Samba教程">
+<meta property="og:url" content="http://moburein.com/2024/10/10/20241010_SourceInsight4WithSamba/index.html">
 <meta property="og:site_name" content="“灵能相谈所”">
-<meta property="og:description" content="等到要换电脑的时候，发现我在本地管理github pages需要移植一下，博客记录一下移植过程，方便以后查阅，由于博主心血来潮换了mac，这时候需要在MacOS上继续进行配置了。">
+<meta property="og:description" content="由于工作需要经常在虚拟机中编译比较大型的C语言的项目，组内推荐使用SourceInsight配合Samba共享文件夹在windows端查看虚拟机ubuntu中的代码，于是进行简单的使用流程记录。 分为以下几个部分介绍  SourceInsight的优势、使用方式以及常用的操作 如何配置Samba共享文件夹 设置虚拟机的网卡以解决虚拟机的IP地址一直变化导致Samba文件夹失效的问题">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231004161235.png">
-<meta property="article:published_time" content="2023-10-01T13:17:16.691Z">
-<meta property="article:modified_time" content="2023-11-28T08:31:37.022Z">
+<meta property="article:published_time" content="2024-10-10T15:16:54.182Z">
+<meta property="article:modified_time" content="2024-10-10T15:16:54.186Z">
 <meta property="article:author" content="Moburein">
-<meta property="article:tag" content="MacOS">
-<meta property="article:tag" content="博客网站">
+<meta property="article:tag" content="C&#x2F;C++">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="IDE">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231004161235.png">
 
-<link rel="canonical" href="http://moburein.com/2023/10/01/20231001_blogDistributeToMacOS/">
+<link rel="canonical" href="http://moburein.com/2024/10/10/20241010_SourceInsight4WithSamba/">
 
 
 <script id="page-configurations">
@@ -52,7 +51,7 @@
   };
 </script>
 
-  <title>博客网站分布管理 | “灵能相谈所”</title>
+  <title>SourceInsight4+Samba教程 | “灵能相谈所”</title>
   
 
 
@@ -201,7 +200,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://moburein.com/2023/10/01/20231001_blogDistributeToMacOS/">
+    <link itemprop="mainEntityOfPage" href="http://moburein.com/2024/10/10/20241010_SourceInsight4WithSamba/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/pink_mob.jpeg">
@@ -214,7 +213,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          博客网站分布管理
+          SourceInsight4+Samba教程
         </h1>
 
         <div class="post-meta">
@@ -224,15 +223,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2023-10-01 21:17:16" itemprop="dateCreated datePublished" datetime="2023-10-01T21:17:16+08:00">2023-10-01</time>
+              <time title="创建时间：2024-10-10 23:16:54" itemprop="dateCreated datePublished" datetime="2024-10-10T23:16:54+08:00">2024-10-10</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-11-28 16:31:37" itemprop="dateModified" datetime="2023-11-28T16:31:37+08:00">2023-11-28</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -256,14 +248,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.6k</span>
+              <span>3.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -275,51 +267,188 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>等到要换电脑的时候，发现我在本地管理github pages需要移植一下，博客记录一下移植过程，方便以后查阅，由于博主心血来潮换了mac，这时候需要在MacOS上继续进行配置了。</p>
+        <p>由于工作需要经常在虚拟机中编译比较大型的C语言的项目，组内推荐使用SourceInsight配合Samba共享文件夹在windows端查看虚拟机ubuntu中的代码，于是进行简单的使用流程记录。</p>
+<p>分为以下几个部分介绍</p>
+<ul>
+<li>SourceInsight的优势、使用方式以及常用的操作</li>
+<li>如何配置Samba共享文件夹</li>
+<li>设置虚拟机的网卡以解决虚拟机的IP地址一直变化导致Samba文件夹失效的问题</li>
+</ul>
 <span id="more"></span>
-<h1 id="1-安装各种环境"><a href="#1-安装各种环境" class="headerlink" title="1 安装各种环境"></a>1 安装各种环境</h1><h2 id="1-1-检查git"><a href="#1-1-检查git" class="headerlink" title="1.1 检查git"></a>1.1 检查git</h2><p>一般mac都会自带git，所以只需要输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
-<p>检查一下版本即可</p>
-<h2 id="1-2-安装nvm"><a href="#1-2-安装nvm" class="headerlink" title="1.2 安装nvm"></a>1.2 安装nvm</h2><p>首先先安装nvm，也就是node.js的管理工具。在nvm的github官方仓库下载最新版本安装即可。</p>
-<p>安装完成后输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">commond -v nvm</span><br></pre></td></tr></table></figure>
 
-<p>出现nvm即安装成功</p>
-<h2 id="1-3-安装node-js"><a href="#1-3-安装node-js" class="headerlink" title="1.3 安装node.js"></a>1.3 安装node.js</h2><p>然后按照以下步骤进行安装</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nvm install stable  # 使用 nvm 安装最新稳定版 Node.js</span><br><span class="line">nvm use stable     # 使用刚刚安装的 Node.js 版本</span><br><span class="line"></span><br><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
-<p>安装的时候可能会遇到出现<strong>http fetch GET 200</strong>的问题，此时只需要多等待几分钟即可。</p>
-<h2 id="1-4-安装hexo"><a href="#1-4-安装hexo" class="headerlink" title="1.4 安装hexo"></a>1.4 安装hexo</h2><p>输入以下命令进行安装hexo</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p>此时就可以将我们之前的博客文件夹迁移到mac当地，在文件夹中打开iTerm终端，输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>本地测试没有问题之后则本地环境调试成功。</p>
-<h1 id="2-连接到github"><a href="#2-连接到github" class="headerlink" title="2 连接到github"></a>2 连接到github</h1><h2 id="2-1-生成ssh密钥"><a href="#2-1-生成ssh密钥" class="headerlink" title="2.1 生成ssh密钥"></a>2.1 生成ssh密钥</h2><p>首先配置git账户，设置user.name和user.email，输入以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;account name&quot;     # 设置用户名</span><br><span class="line">git config --global user.email &quot;account email&quot;     # 设置邮箱地址</span><br></pre></td></tr></table></figure>
-
-<p>设置完毕之后，就可以生成SSH KEY了，输入以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C example@mail.com</span><br></pre></td></tr></table></figure>
-<p>这里输入你自己的邮箱即可<br>然后输入以下两条命令查看并复制你的密钥</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">vim id_rsa.pub</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-2-github添加SSH-key"><a href="#2-2-github添加SSH-key" class="headerlink" title="2.2 github添加SSH key"></a>2.2 github添加SSH key</h2><p>制公钥id_rsa.pub中的内容添加到github，用户-&gt;settings-&gt;SSH and GPG keys 中的按键new SSH key，将id_rsa.pub中的内容复制进去即可</p>
-<p>添加完成后，在终端输入<code>ssh -T git@github.com</code>进行验证，此时会让你输入刚刚在生成ssh密钥时输入的密码，输入后回车会看到欢迎的语句，此时说明配对成功。</p>
-<h1 id="3-测试上传"><a href="#3-测试上传" class="headerlink" title="3 测试上传"></a>3 测试上传</h1><p>此时将本博客放入博文推送的文件中，hexo clean，hexo g hexo d三部曲后，验证是否上传成功即可。</p>
-<p>验证时，发现这台机器还没有git push上传过，此时需要重新申请tokens，在github账户中，配置token的流程如下：  </p>
-<p>打开github-&gt;settings-&gt;developer settings，选择tokens(classic)，新建tokens。  </p>
-<p>此时上传(hexo d)时会要求我们输入账户和密码，账户就是github的账户，而密码就是刚刚申请的token值，具体步骤可以查看我的建立博客的博文–<a href="https://moburein.com/2023/08/09/20230803_blogWebsite/">建立个人博客网站详细教程</a></p>
-<p>此时就能上传验证成功了。</p>
-<h1 id="4-图床软件picgo移植"><a href="#4-图床软件picgo移植" class="headerlink" title="4 图床软件picgo移植"></a>4 图床软件picgo移植</h1><ol>
-<li>下载软件<br>在picgo的github开源地址下载2.3.1的稳定版，选择下载arm64.pmg格式。</li>
+<h1 id="1-SourceInsight"><a href="#1-SourceInsight" class="headerlink" title="1 SourceInsight"></a>1 SourceInsight</h1><p>SourceInsight是一个看似复古的IDE，但是在看一些大型的项目的时候会比较好用，尤其是查看一些函数的从属关系的reference的时候会很好用。</p>
+<p>这里可以参考这一篇博客讲解的很详细，这里就不再赘述一些界面介绍了，其中介绍的SourceInsight3.5，笔者用的SourceInsight4.0与他的界面和功能几乎没有差距，只是分辨率提升了。在3.5版本对于4k的分辨图标会不够清晰，看着不够好。</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/andy-songwei/p/9965714.html">博客园：【工利其器】必会工具之（一）Source Insight篇</a></p>
+<p>该博客主要介绍了SI的简介、创建项目、添加文件、以及其中的界面如何使用的详细介绍，很值得细读。</p>
+<p>笔者这里就再记录一些常用的快捷操作，还有对于SourceInsight的一些稍微进阶的设置。</p>
+<h2 id="1-1-快捷键记录"><a href="#1-1-快捷键记录" class="headerlink" title="1.1 快捷键记录"></a>1.1 快捷键记录</h2><table>
+<thead>
+<tr>
+<th align="left">快捷键</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>SHIFT+F8</code></td>
+<td align="left">高亮选中的单词(不包括注释中的单词)</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+G</code>或<code>F5</code></td>
+<td align="left">跳到指定行</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+鼠标左键</code></td>
+<td align="left">直接跳转至标识定义处调用处</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+F</code></td>
+<td align="left">本文件内查找</td>
+</tr>
+<tr>
+<td align="left"><code>F3</code></td>
+<td align="left">本文件查找结果的上一个</td>
+</tr>
+<tr>
+<td align="left"><code>F4</code></td>
+<td align="left">本文件查找结果的下一个</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+M</code></td>
+<td align="left">创建或查找书签，方便下次找回此位置</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+O</code></td>
+<td align="left">搜索文件，找到回车打开，找不到ESC退出</td>
+</tr>
+<tr>
+<td align="left"><code>ALT</code> + <code>,</code></td>
+<td align="left">后退</td>
+</tr>
+<tr>
+<td align="left"><code>ALT</code> + <code>.</code></td>
+<td align="left">前进</td>
+</tr>
+<tr>
+<td align="left"><code>ALT + F12</code></td>
+<td align="left">可以切换，让字符宽度变得一致，或者是大小不同地显示</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+G</code>或者<code>F7</code></td>
+<td align="left">打开Symbol Window</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+&#39;</code></td>
+<td align="left">智能重命名</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+G</code></td>
+<td align="left">打开Symbol Window</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+G</code></td>
+<td align="left">打开Symbol Window</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+G</code></td>
+<td align="left">打开Symbol Window</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+G</code></td>
+<td align="left">打开Symbol Window</td>
+</tr>
+</tbody></table>
+<h2 id="1-2-SourceInsight进阶设置"><a href="#1-2-SourceInsight进阶设置" class="headerlink" title="1.2 SourceInsight进阶设置"></a>1.2 SourceInsight进阶设置</h2><ol>
+<li>让{ 和 } 不缩进</li>
 </ol>
-<p>下载后打开会出现文件已损坏的问题，这是因为没有签名，此时打开终端输入以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable #此时要输入密码</span><br><span class="line">xattr -cr /Applications/PicGo.app</span><br></pre></td></tr></table></figure>
-<p>输入上述两条命令后就能顺利打开</p>
+<p>Options -&gt; Document Options -&gt; Auto Indenting -&gt; Auto Indent Type 选 Simple。</p>
+<p>还有：让{ 和 } 不缩进： options-&gt;document options-&gt;auto indent 去掉indent Open Brace和Indent Close Brace。 （不好使，括号无法配对对齐！）</p>
 <ol start="2">
-<li>软件配置</li>
+<li>添加文件类型</li>
 </ol>
-<p>此处按照博客教程中步骤来即可设置好仓库名，地址，主要是设置好github的token，设置好后进行测试，随便上传一张图片，比如下图，验证成功。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231004161235.png"></p>
+<p>用户可以定义自己的类型，Options-&gt;Document Options-&gt;add type，定义文件类型名以及文件名后缀。</p>
+<p>勾选include when adding to projects在添加目录下文件到工程是该类文件就会添加进SI的工程。</p>
+<p>如果需要将所有文件添加进SI的工程，可以定义一种文件类型*.*。</p>
+<ol start="3">
+<li>恢复ctrl+a的全选功能</li>
+</ol>
+<p>Options -&gt; Key Assignments：通过关键词save 找到save all，更改为ctrl+shift+a，通过关键词select找到select all，更改为ctrl +a。</p>
+<ol start="4">
+<li>设置背景色</li>
+</ol>
+<p>Options-&gt;preference-&gt;color-&gt;windows background设置背景色（护眼色：85，90，205）。</p>
+<ol start="5">
+<li>解决TAB键缩进问题</li>
+</ol>
+<p>Options-&gt; Document Options里面的右下角Editing Options栏里，把Expand tabs勾起来，然后确定。OK，现在TAB键的缩进和四个空格的缩进在SIS里面看起来就对齐。</p>
+<p>Linux下TAB是8个空格长度，这样设置可以让TAB和4个空格保持一致！）</p>
+<h1 id="2-Samba共享文件夹设置"><a href="#2-Samba共享文件夹设置" class="headerlink" title="2 Samba共享文件夹设置"></a>2 Samba共享文件夹设置</h1><p>虽然SourceInsight很好用，但是在很多项目都在虚拟机里面编译，这时候该如何看到其中的代码呢。此时就可以设置Samba共享文件夹来在windows上打开虚拟机Linux下的共享文件。</p>
+<p>以下是在Ubuntu上配置Samba共享文件夹给Windows使用的详细配置教程：</p>
+<h2 id="2-1-前提条件"><a href="#2-1-前提条件" class="headerlink" title="2.1 前提条件"></a>2.1 前提条件</h2><ol>
+<li>确保Ubuntu和Windows在同一局域网内，或者通过网线直接连接。</li>
+<li>Ubuntu系统已安装并更新到最新版本。</li>
+</ol>
+<h2 id="2-2-安装Samba"><a href="#2-2-安装Samba" class="headerlink" title="2.2 安装Samba"></a>2.2 安装Samba</h2><ol>
+<li>打开Ubuntu的终端。</li>
+<li>更新软件包列表：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>安装Samba及其相关组件：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install samba samba-common -y</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-3-配置Samba"><a href="#2-3-配置Samba" class="headerlink" title="2.3 配置Samba"></a>2.3 配置Samba</h2><ol>
+<li>创建或选择一个要共享的文件夹，并设置其权限。例如，假设要共享的文件夹路径为<code>/home/ubuntu/shared</code>，则设置权限为：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">chmod</span> 777 /home/ubuntu/shared</span><br></pre></td></tr></table></figure>
+
+<p>或者，使用更安全的权限设置，仅允许特定用户读写：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">chown</span> your_username:your_groupname /home/ubuntu/shared</span><br><span class="line">sudo <span class="built_in">chmod</span> 770 /home/ubuntu/shared</span><br></pre></td></tr></table></figure>
+
+<p>其中，<code>your_username</code>和<code>your_groupname</code>分别替换为你的Ubuntu用户名和组名。</p>
+<ol start="2">
+<li>添加一个Samba用户（如果需要的话）。如果已有一个Ubuntu用户，可以直接为其设置Samba密码：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo smbpasswd -a your_username</span><br></pre></td></tr></table></figure>
+
+<p>按照提示输入并确认Samba密码。</p>
+<ol start="3">
+<li>编辑Samba配置文件<code>/etc/samba/smb.conf</code>。在文件末尾添加一个新的共享配置段，例如：</li>
+</ol>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[shared]</span></span><br><span class="line"><span class="attr">path</span> = /home/ubuntu/shared</span><br><span class="line"><span class="attr">browseable</span> = <span class="literal">yes</span></span><br><span class="line"><span class="attr">public</span> = <span class="literal">yes</span></span><br><span class="line"><span class="attr">writable</span> = <span class="literal">yes</span></span><br><span class="line"><span class="attr">available</span> = <span class="literal">yes</span></span><br></pre></td></tr></table></figure>
+
+<p>如果希望限制访问权限，可以添加<code>valid users</code>选项并指定Samba用户名：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[shared]</span></span><br><span class="line"><span class="attr">path</span> = /home/ubuntu/shared</span><br><span class="line"><span class="attr">browseable</span> = <span class="literal">yes</span></span><br><span class="line">valid <span class="attr">users</span> = your_username</span><br><span class="line"><span class="attr">writable</span> = <span class="literal">yes</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>保存并关闭配置文件。</li>
+</ol>
+<h2 id="2-4-重启Samba服务"><a href="#2-4-重启Samba服务" class="headerlink" title="2.4 重启Samba服务"></a>2.4 重启Samba服务</h2><ol>
+<li>重启Samba服务以使配置生效：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart smbd</span><br><span class="line">sudo systemctl restart nmbd</span><br></pre></td></tr></table></figure>
+
+<p>或者，使用旧的服务管理命令（在某些Ubuntu版本中可能仍有效）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo service smbd restart</span><br><span class="line">sudo service nmbd restart</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-5-在Windows上访问共享文件夹"><a href="#2-5-在Windows上访问共享文件夹" class="headerlink" title="2.5 在Windows上访问共享文件夹"></a>2.5 在Windows上访问共享文件夹</h2><ol>
+<li>打开Windows资源管理器（文件资源管理器）。</li>
+<li>在地址栏中输入Ubuntu的IP地址和共享文件夹名称，格式为：<code>\\ubuntu_ip_address\shared</code>。例如，如果Ubuntu的IP地址是<code>192.168.1.100</code>，则输入：<code>\\192.168.1.100\shared</code>。</li>
+<li>如果设置了Samba用户和密码，将提示输入这些凭据以访问共享文件夹。</li>
+</ol>
+<h2 id="2-6-获取Ubuntu的IP地址"><a href="#2-6-获取Ubuntu的IP地址" class="headerlink" title="2.6 获取Ubuntu的IP地址"></a>2.6 获取Ubuntu的IP地址</h2><p>在Ubuntu终端中输入以下命令以获取IP地址：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
+
+<p>查找与网络连接相对应的条目（例如<code>eth0</code>、<code>wlan0</code>等），并找到<code>inet</code>后面的IP地址，比如为192.168.1.100。</p>
+<p><strong>注意事项</strong></p>
+<ol>
+<li>确保防火墙设置允许Samba通信（通常使用TCP端口137、138、139和445）。</li>
+<li>如果在Windows上遇到访问问题，请检查Samba配置文件中的权限设置和共享名称是否正确。</li>
+<li>对于更复杂的共享需求（如多个共享文件夹、访问控制列表等），可以进一步编辑<code>/etc/samba/smb.conf</code>文件并添加相应的配置段。</li>
+</ol>
+<p>通过以上步骤，应该就可以在Ubuntu上成功配置Samba共享文件夹，并在Windows上访问它。在资源管理器中看到共享文件夹可以通过右键-&gt;映射到磁盘，这样以后在windows上就能够更方便的打开共享文件夹来</p>
+<h1 id="3-虚拟机网卡设置"><a href="#3-虚拟机网卡设置" class="headerlink" title="3 虚拟机网卡设置"></a>3 虚拟机网卡设置</h1><p>在使用以上的Source Insight+Samba的方案进行开发中，笔者经常会遇到一个问题就是虚拟机的ip会经常变化，这是因为在虚拟机中使用的是NAT模式，这样就会经常变化ip地址。需要修改其为自定义模式。</p>
 <p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
 
     </div>
@@ -336,7 +465,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://moburein.com/2023/10/01/20231001_blogDistributeToMacOS/" title="博客网站分布管理">http://moburein.com/2023/10/01/20231001_blogDistributeToMacOS/</a>
+    <a href="http://moburein.com/2024/10/10/20241010_SourceInsight4WithSamba/" title="SourceInsight4+Samba教程">http://moburein.com/2024/10/10/20241010_SourceInsight4WithSamba/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -347,8 +476,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/MacOS/" rel="tag"># MacOS</a>
-              <a href="/tags/%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" rel="tag"># 博客网站</a>
+              <a href="/tags/C-C/" rel="tag"># C/C++</a>
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+              <a href="/tags/IDE/" rel="tag"># IDE</a>
           </div>
 
         
@@ -357,13 +487,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/09/20/20230920_SmartPtr/" rel="prev" title="C++智能指针">
-      <i class="fa fa-chevron-left"></i> C++智能指针
+    <a href="/2024/10/04/20241004_VimTutorial/" rel="prev" title="VIM简单教程">
+      <i class="fa fa-chevron-left"></i> VIM简单教程
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/10/04/20231004_Windows2MacRemoteConn/" rel="next" title="实现windows和mac间远程桌面">
-      实现windows和mac间远程桌面 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -423,7 +550,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85%E5%90%84%E7%A7%8D%E7%8E%AF%E5%A2%83"><span class="nav-text">1 安装各种环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E6%A3%80%E6%9F%A5git"><span class="nav-text">1.1 检查git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E5%AE%89%E8%A3%85nvm"><span class="nav-text">1.2 安装nvm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E5%AE%89%E8%A3%85node-js"><span class="nav-text">1.3 安装node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-%E5%AE%89%E8%A3%85hexo"><span class="nav-text">1.4 安装hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E8%BF%9E%E6%8E%A5%E5%88%B0github"><span class="nav-text">2 连接到github</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E7%94%9F%E6%88%90ssh%E5%AF%86%E9%92%A5"><span class="nav-text">2.1 生成ssh密钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-github%E6%B7%BB%E5%8A%A0SSH-key"><span class="nav-text">2.2 github添加SSH key</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E6%B5%8B%E8%AF%95%E4%B8%8A%E4%BC%A0"><span class="nav-text">3 测试上传</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E5%9B%BE%E5%BA%8A%E8%BD%AF%E4%BB%B6picgo%E7%A7%BB%E6%A4%8D"><span class="nav-text">4 图床软件picgo移植</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-SourceInsight"><span class="nav-text">1 SourceInsight</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95"><span class="nav-text">1.1 快捷键记录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-SourceInsight%E8%BF%9B%E9%98%B6%E8%AE%BE%E7%BD%AE"><span class="nav-text">1.2 SourceInsight进阶设置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Samba%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9%E8%AE%BE%E7%BD%AE"><span class="nav-text">2 Samba共享文件夹设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6"><span class="nav-text">2.1 前提条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E5%AE%89%E8%A3%85Samba"><span class="nav-text">2.2 安装Samba</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E9%85%8D%E7%BD%AESamba"><span class="nav-text">2.3 配置Samba</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-%E9%87%8D%E5%90%AFSamba%E6%9C%8D%E5%8A%A1"><span class="nav-text">2.4 重启Samba服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-%E5%9C%A8Windows%E4%B8%8A%E8%AE%BF%E9%97%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-text">2.5 在Windows上访问共享文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-%E8%8E%B7%E5%8F%96Ubuntu%E7%9A%84IP%E5%9C%B0%E5%9D%80"><span class="nav-text">2.6 获取Ubuntu的IP地址</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E5%8D%A1%E8%AE%BE%E7%BD%AE"><span class="nav-text">3 虚拟机网卡设置</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -661,7 +788,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'mobbu919.github.io',
       owner       : 'mobbu919',
       admin       : ['mobbu919'],
-      id          : 'a67ef8ff07572711d28e5a7bf7f6d136',
+      id          : '528decdbec50950603f54ec1bed0e5ea',
         language: 'zh-CN',
       distractionFreeMode: true
     });
