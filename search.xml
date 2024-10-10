@@ -718,6 +718,160 @@
       </tags>
   </entry>
   <entry>
+    <title>超好用网站汇总</title>
+    <url>/2023/08/09/20230809_PerfectWebsiteSummary/</url>
+    <content><![CDATA[<p>总结分享自己常用的一些好用网站</p>
+<span id="more"></span>
+
+<h1 id="1-比价网站"><a href="#1-比价网站" class="headerlink" title="1 比价网站"></a>1 比价网站</h1><p><a href="https://tool.manmanbuy.com/">比价网站</a></p>
+<p>这个网站可以查询过去24个月的价格波动，在网购之前都可以复制链接进来进行比价后再决定是否购买，减少背刺的概率。</p>
+<h1 id="2-mp3免费音乐资源网站"><a href="#2-mp3免费音乐资源网站" class="headerlink" title="2 mp3免费音乐资源网站"></a>2 mp3免费音乐资源网站</h1><p><a href="https://tools.liumingye.cn/music/">MyFreeMP3</a></p>
+<p>一个免费的下载高质量的mp3格式歌曲的网站，一些常见的比较热门的歌曲都有，不过新歌可能上传比较慢。</p>
+<p><a href="https://tonzhon.com/">铜钟</a></p>
+<p>也一个免费的下载高质量的mp3格式歌曲的网站，博主一般交叉使用。</p>
+<h1 id="3-图片压缩和转换分辨率网站"><a href="#3-图片压缩和转换分辨率网站" class="headerlink" title="3 图片压缩和转换分辨率网站"></a>3 图片压缩和转换分辨率网站</h1><p><a href="https://www.onlineimagetool.com/zh/resize-png-jpg-webp-gif">图片压缩和转换分辨率网站</a></p>
+<p>可以免费在线批量压缩图片，调整图片的分辨率，在需要上传一些证件照时十分有用。</p>
+<h1 id="4-学习代码算法结构网站"><a href="#4-学习代码算法结构网站" class="headerlink" title="4 学习代码算法结构网站"></a>4 学习代码算法结构网站</h1><p><a href="https://programmercarl.com/">代码随想录</a></p>
+<p>学习代码算法，主要是C++，总结的不错。</p>
+<h1 id="5-电子书网站"><a href="#5-电子书网站" class="headerlink" title="5 电子书网站"></a>5 电子书网站</h1><p><a href="http://jiumodiary.com/">鸠摩搜书</a></p>
+<p>相对资源还算比较多，自己也经常在上面搜索一些txt，pdf，当然主要是epub格式的书籍。</p>
+<h1 id="6-更新的Z-library镜像"><a href="#6-更新的Z-library镜像" class="headerlink" title="6 更新的Z-library镜像"></a>6 更新的Z-library镜像</h1><p><a href="https://zh.z-library.se/">Z-library镜像</a></p>
+<p>最全的电子书网站</p>
+<h1 id="7-在线Latex网站"><a href="#7-在线Latex网站" class="headerlink" title="7 在线Latex网站"></a>7 在线Latex网站</h1><p><a href="https://www.overleaf.com/">Overleaf</a></p>
+<p>在线书写和生成Latex的网站，基本上都是免费，注册IEEE的用户且绑定可以白嫖会员。</p>
+<h1 id="8-动漫资源网站"><a href="#8-动漫资源网站" class="headerlink" title="8 动漫资源网站"></a>8 动漫资源网站</h1><p><a href="https://share.dmhy.org/">动漫花园</a></p>
+<p>基本是资源最全的动漫资源网站了，非常的良心</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>分享博客</category>
+      </categories>
+      <tags>
+        <tag>实用工具</tag>
+        <tag>网站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++学习路线</title>
+    <url>/2023/08/22/20230819_C++LearningRoute/</url>
+    <content><![CDATA[<p>记录一下打工牛马人的C++的学习路线。</p>
+<p>主要部分有C++基础，C++算法，计算机网络，MySQL数据库，Redis，软件设计模式，操作系统、Linux操作、网络编程，C++经典项目(webserver)，如果有时间还可以多参与几个练手的小项目。</p>
+<span id="more"></span>
+
+<h1 id="1-C-基础"><a href="#1-C-基础" class="headerlink" title="1 C++基础"></a>1 C++基础</h1><p>这部分过一下基础就好了，不用画太多时间。</p>
+<p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1et411b73Z/">黑马程序员C++基础</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17560955.html">C++基础笔记</a></p>
+<p>主要是三部分内容</p>
+<ul>
+<li>C++语法入门：变量与常量、数据类型、运算符、程序流程结构、数组、函数、指针、结构体</li>
+<li>类和对象：封装、继承、多态</li>
+<li>模板与STL</li>
+</ul>
+<h1 id="2-C-算法"><a href="#2-C-算法" class="headerlink" title="2 C++算法"></a>2 C++算法</h1><p>主要在代码随想录上刷题和学习：<a href="https://programmercarl.com/%E5%89%8D%E5%BA%8F/%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC.html#%E9%A2%98%E5%A4%96%E8%AF%9D">代码随想录</a></p>
+<p>有时间可以刷两道三遍，不然理解可能不到位。</p>
+<p>做完如果还有时间，可以去牛客网上刷完剑指offer的题。</p>
+<p>主要包含：</p>
+<table>
+<thead>
+<tr>
+<th align="center">内容</th>
+<th align="center">难度</th>
+<th align="center">内容</th>
+<th align="center">面试&#x2F;笔试较多</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">数组</td>
+<td align="center">简单</td>
+<td align="center">数组相关</td>
+<td align="center">面试多</td>
+</tr>
+<tr>
+<td align="center">链表</td>
+<td align="center">简单</td>
+<td align="center">链表概念、设计、删除等</td>
+<td align="center">面试多</td>
+</tr>
+<tr>
+<td align="center">哈希表</td>
+<td align="center">简单</td>
+<td align="center">快速判断一个元素是否出现集合里</td>
+<td align="center">一般</td>
+</tr>
+<tr>
+<td align="center">字符串</td>
+<td align="center">简单</td>
+<td align="center">针对字符，使用双指针很多</td>
+<td align="center">一般</td>
+</tr>
+<tr>
+<td align="center">双指针法</td>
+<td align="center">简单</td>
+<td align="center">数组，链表，字符串中使用较多</td>
+<td align="center">笔试&#x2F;面试</td>
+</tr>
+<tr>
+<td align="center">栈与队列</td>
+<td align="center">简单</td>
+<td align="center">面试提问较多</td>
+<td align="center">笔试&#x2F;面试</td>
+</tr>
+<tr>
+<td align="center">二叉树</td>
+<td align="center">中等</td>
+<td align="center">二叉树，搜索树，遍历等</td>
+<td align="center">笔试&#x2F;面试</td>
+</tr>
+<tr>
+<td align="center">回溯算法</td>
+<td align="center">中等</td>
+<td align="center">暴力算法，组合</td>
+<td align="center">笔试&#x2F;面试</td>
+</tr>
+<tr>
+<td align="center">贪心算法</td>
+<td align="center">困难</td>
+<td align="center">局部最优推广到全局</td>
+<td align="center">笔试</td>
+</tr>
+<tr>
+<td align="center">动态规划</td>
+<td align="center">困难</td>
+<td align="center">能够定义dp数据，当前状态由前两个状态决定</td>
+<td align="center">笔试</td>
+</tr>
+<tr>
+<td align="center">图论</td>
+<td align="center">中等到困难</td>
+<td align="center">图论相关，主要是搜索</td>
+<td align="center">笔试</td>
+</tr>
+</tbody></table>
+<h1 id="3-计算机网络"><a href="#3-计算机网络" class="headerlink" title="3 计算机网络"></a>3 计算机网络</h1><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1c4411d7jb/">计算机网络(湖科大教书匠)</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17577514.html">计算机网络笔记</a></p>
+<p>此部分比较简单，并且在后序网络编程还会复习一部分，笔记只记录了一些相对重要的部分。</p>
+<h1 id="4-MySQL和Redis"><a href="#4-MySQL和Redis" class="headerlink" title="4 MySQL和Redis"></a>4 MySQL和Redis</h1><h2 id="4-1-MySQL：一般学习这个"><a href="#4-1-MySQL：一般学习这个" class="headerlink" title="4.1 MySQL：一般学习这个"></a>4.1 MySQL：一般学习这个</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1Kr4y1i7ru/">黑马程序员MySQL</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17648671.html">SQL基础增删改查</a></p>
+<h2 id="4-2-Redis：岗位有需要可以一周内突击学习"><a href="#4-2-Redis：岗位有需要可以一周内突击学习" class="headerlink" title="4.2 Redis：岗位有需要可以一周内突击学习"></a>4.2 Redis：岗位有需要可以一周内突击学习</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1cr4y1671t/">黑马程序员Redis</a>  </p>
+<h1 id="5-软件设计模式"><a href="#5-软件设计模式" class="headerlink" title="5 软件设计模式"></a>5 软件设计模式</h1><p>有时间看视频，没时间直接搜索资料记住概念和常见的几种设计模式即可</p>
+<p><strong>视频链接：</strong> 讲的挺好，有时间可以仔细听，对程序编写有好处<br><a href="https://www.bilibili.com/video/BV1Yr4y157Ci/">C++设计模式入门</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17559583.html">一些常用软件设计模式</a></p>
+<p>一般了解策略模式、工厂模式、单例模式(最简单)、观察者模式、适配者模式即可了</p>
+<h1 id="6-C-项目"><a href="#6-C-项目" class="headerlink" title="6 C++项目"></a>6 C++项目</h1><p><a href="https://www.nowcoder.com/study/live/504">牛客网C++项目</a></p>
+<p>这个项目就包含了基础的Linux系统编程、Linux多进程开发、Linux多线程开发、网络编程和实战。所以如果时间不够可以就看着一个项目就好了。包含了<strong>Linux基础</strong>、<strong>操作系统</strong>、<strong>网络编程</strong>和<strong>websever</strong>项目，差的知识后序查漏补缺就好了。</p>
+<p>笔记链接如下：</p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17547122.html">第1章 Linux系统编程入门</a></p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17586114.html">第2章 Linux多进程开发</a></p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17601631.html">第3章 Linux多线程开发</a></p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17609639.html">第4章 Linux网络编程</a></p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17629592.html">第5章 项目实战与总结</a></p>
+<p><a href="https://moburein.com/2023/08/15/20230815_C++HighConcurrencyWeberver/">webserver项目解析与总结</a></p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>分享博客</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>webserver项目</title>
     <url>/2023/08/15/20230815_C++HighConcurrencyWeberver/</url>
     <content><![CDATA[<p>牛客网经典之webserver项目学习总结记录，其中主要包括了：</p>
@@ -963,126 +1117,6 @@
       </tags>
   </entry>
   <entry>
-    <title>C++学习路线</title>
-    <url>/2023/08/22/20230819_C++LearningRoute/</url>
-    <content><![CDATA[<p>记录一下打工牛马人的C++的学习路线。</p>
-<p>主要部分有C++基础，C++算法，计算机网络，MySQL数据库，Redis，软件设计模式，操作系统、Linux操作、网络编程，C++经典项目(webserver)，如果有时间还可以多参与几个练手的小项目。</p>
-<span id="more"></span>
-
-<h1 id="1-C-基础"><a href="#1-C-基础" class="headerlink" title="1 C++基础"></a>1 C++基础</h1><p>这部分过一下基础就好了，不用画太多时间。</p>
-<p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1et411b73Z/">黑马程序员C++基础</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17560955.html">C++基础笔记</a></p>
-<p>主要是三部分内容</p>
-<ul>
-<li>C++语法入门：变量与常量、数据类型、运算符、程序流程结构、数组、函数、指针、结构体</li>
-<li>类和对象：封装、继承、多态</li>
-<li>模板与STL</li>
-</ul>
-<h1 id="2-C-算法"><a href="#2-C-算法" class="headerlink" title="2 C++算法"></a>2 C++算法</h1><p>主要在代码随想录上刷题和学习：<a href="https://programmercarl.com/%E5%89%8D%E5%BA%8F/%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC.html#%E9%A2%98%E5%A4%96%E8%AF%9D">代码随想录</a></p>
-<p>有时间可以刷两道三遍，不然理解可能不到位。</p>
-<p>做完如果还有时间，可以去牛客网上刷完剑指offer的题。</p>
-<p>主要包含：</p>
-<table>
-<thead>
-<tr>
-<th align="center">内容</th>
-<th align="center">难度</th>
-<th align="center">内容</th>
-<th align="center">面试&#x2F;笔试较多</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">数组</td>
-<td align="center">简单</td>
-<td align="center">数组相关</td>
-<td align="center">面试多</td>
-</tr>
-<tr>
-<td align="center">链表</td>
-<td align="center">简单</td>
-<td align="center">链表概念、设计、删除等</td>
-<td align="center">面试多</td>
-</tr>
-<tr>
-<td align="center">哈希表</td>
-<td align="center">简单</td>
-<td align="center">快速判断一个元素是否出现集合里</td>
-<td align="center">一般</td>
-</tr>
-<tr>
-<td align="center">字符串</td>
-<td align="center">简单</td>
-<td align="center">针对字符，使用双指针很多</td>
-<td align="center">一般</td>
-</tr>
-<tr>
-<td align="center">双指针法</td>
-<td align="center">简单</td>
-<td align="center">数组，链表，字符串中使用较多</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">栈与队列</td>
-<td align="center">简单</td>
-<td align="center">面试提问较多</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">二叉树</td>
-<td align="center">中等</td>
-<td align="center">二叉树，搜索树，遍历等</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">回溯算法</td>
-<td align="center">中等</td>
-<td align="center">暴力算法，组合</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">贪心算法</td>
-<td align="center">困难</td>
-<td align="center">局部最优推广到全局</td>
-<td align="center">笔试</td>
-</tr>
-<tr>
-<td align="center">动态规划</td>
-<td align="center">困难</td>
-<td align="center">能够定义dp数据，当前状态由前两个状态决定</td>
-<td align="center">笔试</td>
-</tr>
-<tr>
-<td align="center">图论</td>
-<td align="center">中等到困难</td>
-<td align="center">图论相关，主要是搜索</td>
-<td align="center">笔试</td>
-</tr>
-</tbody></table>
-<h1 id="3-计算机网络"><a href="#3-计算机网络" class="headerlink" title="3 计算机网络"></a>3 计算机网络</h1><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1c4411d7jb/">计算机网络(湖科大教书匠)</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17577514.html">计算机网络笔记</a></p>
-<p>此部分比较简单，并且在后序网络编程还会复习一部分，笔记只记录了一些相对重要的部分。</p>
-<h1 id="4-MySQL和Redis"><a href="#4-MySQL和Redis" class="headerlink" title="4 MySQL和Redis"></a>4 MySQL和Redis</h1><h2 id="4-1-MySQL：一般学习这个"><a href="#4-1-MySQL：一般学习这个" class="headerlink" title="4.1 MySQL：一般学习这个"></a>4.1 MySQL：一般学习这个</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1Kr4y1i7ru/">黑马程序员MySQL</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17648671.html">SQL基础增删改查</a></p>
-<h2 id="4-2-Redis：岗位有需要可以一周内突击学习"><a href="#4-2-Redis：岗位有需要可以一周内突击学习" class="headerlink" title="4.2 Redis：岗位有需要可以一周内突击学习"></a>4.2 Redis：岗位有需要可以一周内突击学习</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1cr4y1671t/">黑马程序员Redis</a>  </p>
-<h1 id="5-软件设计模式"><a href="#5-软件设计模式" class="headerlink" title="5 软件设计模式"></a>5 软件设计模式</h1><p>有时间看视频，没时间直接搜索资料记住概念和常见的几种设计模式即可</p>
-<p><strong>视频链接：</strong> 讲的挺好，有时间可以仔细听，对程序编写有好处<br><a href="https://www.bilibili.com/video/BV1Yr4y157Ci/">C++设计模式入门</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17559583.html">一些常用软件设计模式</a></p>
-<p>一般了解策略模式、工厂模式、单例模式(最简单)、观察者模式、适配者模式即可了</p>
-<h1 id="6-C-项目"><a href="#6-C-项目" class="headerlink" title="6 C++项目"></a>6 C++项目</h1><p><a href="https://www.nowcoder.com/study/live/504">牛客网C++项目</a></p>
-<p>这个项目就包含了基础的Linux系统编程、Linux多进程开发、Linux多线程开发、网络编程和实战。所以如果时间不够可以就看着一个项目就好了。包含了<strong>Linux基础</strong>、<strong>操作系统</strong>、<strong>网络编程</strong>和<strong>websever</strong>项目，差的知识后序查漏补缺就好了。</p>
-<p>笔记链接如下：</p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17547122.html">第1章 Linux系统编程入门</a></p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17586114.html">第2章 Linux多进程开发</a></p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17601631.html">第3章 Linux多线程开发</a></p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17609639.html">第4章 Linux网络编程</a></p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17629592.html">第5章 项目实战与总结</a></p>
-<p><a href="https://moburein.com/2023/08/15/20230815_C++HighConcurrencyWeberver/">webserver项目解析与总结</a></p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>分享博客</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>git教程和分布式管理代码</title>
     <url>/2023/08/21/20230821_GitAbout/</url>
     <content><![CDATA[<p>当我们写了一定量的代码之后，就会遇到如何管理代码的问题。目前管理代码主要有两种管理工具分别是</p>
@@ -1145,75 +1179,6 @@
       <tags>
         <tag>Github</tag>
         <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vscode配置C++环境</title>
-    <url>/2023/08/22/20230822_VscodeDeployC++/</url>
-    <content><![CDATA[<p>因为目前还是一些简单的项目或者笔试题，所以想要实现vscode大一统的最后一步，在vscode上配置C++环境。</p>
-<span id="more"></span>
-
-<h1 id="1-下载GCC编译器"><a href="#1-下载GCC编译器" class="headerlink" title="1 下载GCC编译器"></a>1 下载GCC编译器</h1><p>官方github地址为<a href="https://github.com/niXman/mingw-builds-binaries/releases">mingw-builds-binaries</a>，在其中选择对应系统的版本进行下载即可，比如windows64位，就下载下图对应版本。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822163656.png"></p>
-<p>解压到一个没有中文和空格的路径中，将安装的bin文件夹路径添加到系统变量</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822164757.png"></p>
-<p>完成后，打开cmd，输入<code>gcc -v</code>验证是否成功</p>
-<h1 id="2-安装VSCODE的C-C-扩展"><a href="#2-安装VSCODE的C-C-扩展" class="headerlink" title="2 安装VSCODE的C&#x2F;C++扩展"></a>2 安装VSCODE的C&#x2F;C++扩展</h1><p>直接在扩展中间安装C&#x2F;C++扩展即可</p>
-<p>此时创建我们所要使用的文件夹，此时我出现一个问题，在D盘中创建文件夹无法检测到我安装的编译器，但是我在C盘中创建文件夹就没有这个问题，所幸消耗空间不多，勉强在C盘创建时用了。</p>
-<p>创建文件test.cpp</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">//include如果出错，说明是编译器问题，去C盘创建则没有问题</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;success&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>测试是否运行成功</p>
-<h1 id="3-使用VSCODE进行运行和调试"><a href="#3-使用VSCODE进行运行和调试" class="headerlink" title="3 使用VSCODE进行运行和调试"></a>3 使用VSCODE进行运行和调试</h1><h2 id="3-1-运行"><a href="#3-1-运行" class="headerlink" title="3.1 运行"></a>3.1 运行</h2><p>编写一个排序的cpp，如果想直接运行，那么直接打开终端先c++编译一下，运行即可，比如我的文件是SortAlgrithm.cpp，那么打开终端，输入<code>g++ SortAlgrithm.cpp -o SortAlgm.exe</code>，此时该目录下会出现该文件，输入<code>./SortAlgm.exe</code>，直接运行即可</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822185849.png"></p>
-<p>比如我这里就是将<code>&#123; 7,6,3,9,1,8,2,4,5 &#125;</code>进行排序输出。</p>
-<h2 id="3-2-调试"><a href="#3-2-调试" class="headerlink" title="3.2 调试"></a>3.2 调试</h2><p>比如继续调试上述的代码，如上图我在代码中设置断点，我们当然可以通过GDB直接在终端进行调试，但是这样显然比较麻烦，所以我们可以再VSCODE侧边栏打开调试，点击运行和调试按钮即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822190139.png"></p>
-<p>当我们打开之后就会出现以下调试界面</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822190313.png"></p>
-<p>这个界面相信大家都很眼熟了，跟VS的操作界面基本一致，进行代码的调试就好了。</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>vscode</tag>
-        <tag>C/C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>超好用网站汇总</title>
-    <url>/2023/08/09/20230809_PerfectWebsiteSummary/</url>
-    <content><![CDATA[<p>总结分享自己常用的一些好用网站</p>
-<span id="more"></span>
-
-<h1 id="1-比价网站"><a href="#1-比价网站" class="headerlink" title="1 比价网站"></a>1 比价网站</h1><p><a href="https://tool.manmanbuy.com/">比价网站</a></p>
-<p>这个网站可以查询过去24个月的价格波动，在网购之前都可以复制链接进来进行比价后再决定是否购买，减少背刺的概率。</p>
-<h1 id="2-mp3免费音乐资源网站"><a href="#2-mp3免费音乐资源网站" class="headerlink" title="2 mp3免费音乐资源网站"></a>2 mp3免费音乐资源网站</h1><p><a href="https://tools.liumingye.cn/music/">MyFreeMP3</a></p>
-<p>一个免费的下载高质量的mp3格式歌曲的网站，一些常见的比较热门的歌曲都有，不过新歌可能上传比较慢。</p>
-<p><a href="https://tonzhon.com/">铜钟</a></p>
-<p>也一个免费的下载高质量的mp3格式歌曲的网站，博主一般交叉使用。</p>
-<h1 id="3-图片压缩和转换分辨率网站"><a href="#3-图片压缩和转换分辨率网站" class="headerlink" title="3 图片压缩和转换分辨率网站"></a>3 图片压缩和转换分辨率网站</h1><p><a href="https://www.onlineimagetool.com/zh/resize-png-jpg-webp-gif">图片压缩和转换分辨率网站</a></p>
-<p>可以免费在线批量压缩图片，调整图片的分辨率，在需要上传一些证件照时十分有用。</p>
-<h1 id="4-学习代码算法结构网站"><a href="#4-学习代码算法结构网站" class="headerlink" title="4 学习代码算法结构网站"></a>4 学习代码算法结构网站</h1><p><a href="https://programmercarl.com/">代码随想录</a></p>
-<p>学习代码算法，主要是C++，总结的不错。</p>
-<h1 id="5-电子书网站"><a href="#5-电子书网站" class="headerlink" title="5 电子书网站"></a>5 电子书网站</h1><p><a href="http://jiumodiary.com/">鸠摩搜书</a></p>
-<p>相对资源还算比较多，自己也经常在上面搜索一些txt，pdf，当然主要是epub格式的书籍。</p>
-<h1 id="6-更新的Z-library镜像"><a href="#6-更新的Z-library镜像" class="headerlink" title="6 更新的Z-library镜像"></a>6 更新的Z-library镜像</h1><p><a href="https://zh.z-library.se/">Z-library镜像</a></p>
-<p>最全的电子书网站</p>
-<h1 id="7-在线Latex网站"><a href="#7-在线Latex网站" class="headerlink" title="7 在线Latex网站"></a>7 在线Latex网站</h1><p><a href="https://www.overleaf.com/">Overleaf</a></p>
-<p>在线书写和生成Latex的网站，基本上都是免费，注册IEEE的用户且绑定可以白嫖会员。</p>
-<h1 id="8-动漫资源网站"><a href="#8-动漫资源网站" class="headerlink" title="8 动漫资源网站"></a>8 动漫资源网站</h1><p><a href="https://share.dmhy.org/">动漫花园</a></p>
-<p>基本是资源最全的动漫资源网站了，非常的良心</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>分享博客</category>
-      </categories>
-      <tags>
-        <tag>实用工具</tag>
-        <tag>网站</tag>
       </tags>
   </entry>
   <entry>
@@ -1412,6 +1377,125 @@
       <tags>
         <tag>C/C++</tag>
         <tag>排序算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vscode配置C++环境</title>
+    <url>/2023/08/22/20230822_VscodeDeployC++/</url>
+    <content><![CDATA[<p>因为目前还是一些简单的项目或者笔试题，所以想要实现vscode大一统的最后一步，在vscode上配置C++环境。</p>
+<span id="more"></span>
+
+<h1 id="1-下载GCC编译器"><a href="#1-下载GCC编译器" class="headerlink" title="1 下载GCC编译器"></a>1 下载GCC编译器</h1><p>官方github地址为<a href="https://github.com/niXman/mingw-builds-binaries/releases">mingw-builds-binaries</a>，在其中选择对应系统的版本进行下载即可，比如windows64位，就下载下图对应版本。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822163656.png"></p>
+<p>解压到一个没有中文和空格的路径中，将安装的bin文件夹路径添加到系统变量</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822164757.png"></p>
+<p>完成后，打开cmd，输入<code>gcc -v</code>验证是否成功</p>
+<h1 id="2-安装VSCODE的C-C-扩展"><a href="#2-安装VSCODE的C-C-扩展" class="headerlink" title="2 安装VSCODE的C&#x2F;C++扩展"></a>2 安装VSCODE的C&#x2F;C++扩展</h1><p>直接在扩展中间安装C&#x2F;C++扩展即可</p>
+<p>此时创建我们所要使用的文件夹，此时我出现一个问题，在D盘中创建文件夹无法检测到我安装的编译器，但是我在C盘中创建文件夹就没有这个问题，所幸消耗空间不多，勉强在C盘创建时用了。</p>
+<p>创建文件test.cpp</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">//include如果出错，说明是编译器问题，去C盘创建则没有问题</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;success&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试是否运行成功</p>
+<h1 id="3-使用VSCODE进行运行和调试"><a href="#3-使用VSCODE进行运行和调试" class="headerlink" title="3 使用VSCODE进行运行和调试"></a>3 使用VSCODE进行运行和调试</h1><h2 id="3-1-运行"><a href="#3-1-运行" class="headerlink" title="3.1 运行"></a>3.1 运行</h2><p>编写一个排序的cpp，如果想直接运行，那么直接打开终端先c++编译一下，运行即可，比如我的文件是SortAlgrithm.cpp，那么打开终端，输入<code>g++ SortAlgrithm.cpp -o SortAlgm.exe</code>，此时该目录下会出现该文件，输入<code>./SortAlgm.exe</code>，直接运行即可</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822185849.png"></p>
+<p>比如我这里就是将<code>&#123; 7,6,3,9,1,8,2,4,5 &#125;</code>进行排序输出。</p>
+<h2 id="3-2-调试"><a href="#3-2-调试" class="headerlink" title="3.2 调试"></a>3.2 调试</h2><p>比如继续调试上述的代码，如上图我在代码中设置断点，我们当然可以通过GDB直接在终端进行调试，但是这样显然比较麻烦，所以我们可以再VSCODE侧边栏打开调试，点击运行和调试按钮即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822190139.png"></p>
+<p>当我们打开之后就会出现以下调试界面</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822190313.png"></p>
+<p>这个界面相信大家都很眼熟了，跟VS的操作界面基本一致，进行代码的调试就好了。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>vscode</tag>
+        <tag>C/C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>teamspeak3的简单教程</title>
+    <url>/2023/09/17/20230917_teamspeak3/</url>
+    <content><![CDATA[<p>联机游戏中，有一个稳定、简洁、占用很小的语音开黑软件是一个很重要的事情。这里我就介绍一下一款使用体验很好的实时语音软件teamspeak，虽然这款有一定的门槛，但是瑕不掩瑜。</p>
+<span id="more"></span>
+
+<h1 id="1-下载和安装"><a href="#1-下载和安装" class="headerlink" title="1 下载和安装"></a>1 下载和安装</h1><p>官方网址:<a href="https://teamspeak.com/zh-CN/downloads/">teamspeak</a>，一定要在官网下载，国内有一些盗版的软件，虽然据说只是换皮版本，但是由于我也没看过源代码，不是特别清楚</p>
+<p>下载完毕后默认安装即可，其中会提示我们是否安装overwolf，这个可下可不下，主要是一些teamspeak的一些插件。</p>
+<h1 id="2-连接服务器和基础功能"><a href="#2-连接服务器和基础功能" class="headerlink" title="2 连接服务器和基础功能"></a>2 连接服务器和基础功能</h1><p>安装完成后，打开软件，可能需要你进行注册，注册完成后打开软件如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image.png"></p>
+<p>我们主要使用上面的工具栏进行相应的操作。</p>
+<h2 id="2-1-Connections-连接服务器"><a href="#2-1-Connections-连接服务器" class="headerlink" title="2.1 Connections 连接服务器"></a>2.1 Connections 连接服务器</h2><p>点击Connections 连接服务器</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-1.png"></p>
+<p>如上图在server address中填入你的服务器名称，在server password中填写你的服务器密码。</p>
+<p>经常使用的服务器可以保存为书签bookmarks，下次点击即可直接连接</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-2.png"></p>
+<h2 id="2-2-语音服务器的选择"><a href="#2-2-语音服务器的选择" class="headerlink" title="2.2 语音服务器的选择"></a>2.2 语音服务器的选择</h2><p>有关语音服务器，这里如果你愿意折腾，你可以自己去申请一个公网IP，搞一个自己的服务器，当然这个服务器不一定只用来当作语言服务器，还可以做其他的事情，但是如果如果想省事可以直接租用现有的服务器，简单说这里大概可以分为三个选择：</p>
+<ol>
+<li>租用现有的teamspeak服务器，最省事，花费也相对较少</li>
+<li>租云服务器，比如阿里云、腾讯云、华为云等，然后调试装一些语言服务器必要的开源，这方面也有一些教程，相对比较麻烦</li>
+<li>一步到位，自己的空余电脑当作服务器，并且申请公网地址，再进行语言服务器的设置</li>
+</ol>
+<p>总的来说一般都是租用现有的teamspeak服务器，我是在<a href="https://ts3.com.cn/price">teamspeak服务器网站</a>进行租用的，勉强能用，有时候服务器会出一些问题，但是总体来说可用，省事。</p>
+<h2 id="2-3-基础功能介绍"><a href="#2-3-基础功能介绍" class="headerlink" title="2.3 基础功能介绍"></a>2.3 基础功能介绍</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-3.png"></p>
+<p>连接到服务器后，选择到响应频道，一般就使用这两个键位，打开&#x2F;关闭麦克风，打开&#x2F;关闭声音</p>
+<h1 id="3-基础设置"><a href="#3-基础设置" class="headerlink" title="3 基础设置"></a>3 基础设置</h1><p>主要分为功能设置、交互设置、频道管理设置</p>
+<h2 id="3-1-功能设置"><a href="#3-1-功能设置" class="headerlink" title="3.1 功能设置"></a>3.1 功能设置</h2><p>这一部分是必要的设置，如下图的最下方的红色方框options，其余三个部分都是频道管理的部分</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-6.png"></p>
+<p>点击打开后的界面如下：<br>可以看到左侧有很多设置，但是我们常用的修改的设置就是playback，也就是输出，还有capture，也就是输入。</p>
+<h3 id="3-1-1-输入设置"><a href="#3-1-1-输入设置" class="headerlink" title="3.1.1 输入设置"></a>3.1.1 输入设置</h3><p>设置界面如下图，可以看到主要分为三个部分。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-7.png"></p>
+<p>主要需要调整三个部分</p>
+<ul>
+<li><p>第一个部分是输入的设备，在capture device中选择我们想要输入的设备就可以了</p>
+</li>
+<li><p>第二个部分是语音输入模式，这里只推荐阈值触发模式，也就是说当你的声音达到一定强度时会自动触发输入，选择Voice Activity Detction-&gt;Volume Gate，然后调整下方的滑动条，这个值也就是触发输入的阈值，你可以在begin test选项中进行进一步的调试。</p>
+</li>
+<li><p>第三个部分是一些数字信号处理，比如回声消除、打字音消除等，全部勾选就可以了</p>
+</li>
+</ul>
+<h3 id="3-1-2-输出设置"><a href="#3-1-2-输出设置" class="headerlink" title="3.1.2 输出设置"></a>3.1.2 输出设置</h3><p>设置界面如下如图，这个部分很简单，设置我们想要输出的设备和大概的声音就可以了<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-8.png"></p>
+<h2 id="3-2-交互设置"><a href="#3-2-交互设置" class="headerlink" title="3.2 交互设置"></a>3.2 交互设置</h2><p>交互设置主要就是在如下界面修改，选择self就可以看到了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-4.png"></p>
+<p>其中第一个红框是一些默认设置不用修改</p>
+<p>第二部分是离线，麦克风和输出的功能按钮</p>
+<p>第三个部分就是我们需要设置的交互设置了：</p>
+<ul>
+<li>change nickname ：修改在本服务器的昵称</li>
+<li>set avatar：修改在本服务器的头像</li>
+<li>delete avatar：删除头像</li>
+</ul>
+<h2 id="3-3-频道管理设置"><a href="#3-3-频道管理设置" class="headerlink" title="3.3 频道管理设置"></a>3.3 频道管理设置</h2><p>如果你是一个服务器的拥有者，那么你肯定想要对不同的玩家有不同的权限，否则会乱套，其中主要分为管理员、会员、游客三种权限、</p>
+<ul>
+<li>管理员 ：<ul>
+<li>能够创建频道、删除频道</li>
+<li>进入加锁的频道</li>
+<li>移动管理员或以下权限的人到任意频道</li>
+<li>授予&#x2F;撤销管理员、会员、游客权限</li>
+</ul>
+</li>
+<li>会员：会员能做到管理员大部分事情<ul>
+<li>能够创建频道、删除频道</li>
+<li>进入加锁的频道</li>
+<li>移动会员或以下权限的人到任意频道</li>
+<li>授予&#x2F;撤销会员、游客权限</li>
+</ul>
+</li>
+<li>游客：没有权限</li>
+</ul>
+<p>所以一般给个会员权限就够了，权限设置如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-5.png"></p>
+<p>选择设置server groups，打开后默认是超级管理员、管理员和游客，可以对每一个权限进行修改，比如修改名字和头像，改成自己想要的名字以增加趣味性，比如超级管理员修改为超级赛亚人并且配上相应的头像等。在设置的左下角也可以加上其余的权限等级来细化一些权限，这个就自行设置了。</p>
+<p>当你是会员以上的权限时，这时你就可以对服务器进行一个频道的划分，比如lol、csgo、观赛等分区，根据你的小团体的游戏成分进行划分即可。记得创建频道的时候选择永久，否则下一次登陆的时候就会消失</p>
+<h1 id="4-服务器的进一步设置"><a href="#4-服务器的进一步设置" class="headerlink" title="4 服务器的进一步设置"></a>4 服务器的进一步设置</h1><p>主要是进行一些界面的优化，一些个性化的设置，比如设置频道的介绍、频道的icon图等等</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>分享博客</category>
+      </categories>
+      <tags>
+        <tag>teamspeak</tag>
+        <tag>语音服务器</tag>
       </tags>
   </entry>
   <entry>
@@ -1735,474 +1819,68 @@
       </tags>
   </entry>
   <entry>
-    <title>teamspeak3的简单教程</title>
-    <url>/2023/09/17/20230917_teamspeak3/</url>
-    <content><![CDATA[<p>联机游戏中，有一个稳定、简洁、占用很小的语音开黑软件是一个很重要的事情。这里我就介绍一下一款使用体验很好的实时语音软件teamspeak，虽然这款有一定的门槛，但是瑕不掩瑜。</p>
+    <title>实现windows和mac间远程桌面</title>
+    <url>/2023/10/04/20231004_Windows2MacRemoteConn/</url>
+    <content><![CDATA[<p>实现Windows和mac之间的丝滑远程桌面，主要使用的是cpolar，虽然不是免费的，但是使用的体验还是不错，价格也不算很高，每月12元有带宽还不错的固定公网IP的远程连接。</p>
 <span id="more"></span>
 
-<h1 id="1-下载和安装"><a href="#1-下载和安装" class="headerlink" title="1 下载和安装"></a>1 下载和安装</h1><p>官方网址:<a href="https://teamspeak.com/zh-CN/downloads/">teamspeak</a>，一定要在官网下载，国内有一些盗版的软件，虽然据说只是换皮版本，但是由于我也没看过源代码，不是特别清楚</p>
-<p>下载完毕后默认安装即可，其中会提示我们是否安装overwolf，这个可下可不下，主要是一些teamspeak的一些插件。</p>
-<h1 id="2-连接服务器和基础功能"><a href="#2-连接服务器和基础功能" class="headerlink" title="2 连接服务器和基础功能"></a>2 连接服务器和基础功能</h1><p>安装完成后，打开软件，可能需要你进行注册，注册完成后打开软件如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image.png"></p>
-<p>我们主要使用上面的工具栏进行相应的操作。</p>
-<h2 id="2-1-Connections-连接服务器"><a href="#2-1-Connections-连接服务器" class="headerlink" title="2.1 Connections 连接服务器"></a>2.1 Connections 连接服务器</h2><p>点击Connections 连接服务器</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-1.png"></p>
-<p>如上图在server address中填入你的服务器名称，在server password中填写你的服务器密码。</p>
-<p>经常使用的服务器可以保存为书签bookmarks，下次点击即可直接连接</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-2.png"></p>
-<h2 id="2-2-语音服务器的选择"><a href="#2-2-语音服务器的选择" class="headerlink" title="2.2 语音服务器的选择"></a>2.2 语音服务器的选择</h2><p>有关语音服务器，这里如果你愿意折腾，你可以自己去申请一个公网IP，搞一个自己的服务器，当然这个服务器不一定只用来当作语言服务器，还可以做其他的事情，但是如果如果想省事可以直接租用现有的服务器，简单说这里大概可以分为三个选择：</p>
-<ol>
-<li>租用现有的teamspeak服务器，最省事，花费也相对较少</li>
-<li>租云服务器，比如阿里云、腾讯云、华为云等，然后调试装一些语言服务器必要的开源，这方面也有一些教程，相对比较麻烦</li>
-<li>一步到位，自己的空余电脑当作服务器，并且申请公网地址，再进行语言服务器的设置</li>
+<h1 id="1-下载cpolar"><a href="#1-下载cpolar" class="headerlink" title="1 下载cpolar"></a>1 下载cpolar</h1><p>首先登陆官网<a href="https://www.cpolar.com/">cpolar.com</a>，首先进行注册登陆。</p>
+<p>点击下载选择MacOSX下载，官方就有教程，<a href="https://www.cpolar.com/docs">教程地址</a></p>
+<p>1.安装homebrew，选择清华大学源</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/bin/zsh -c &quot;$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>安装cploar</li>
 </ol>
-<p>总的来说一般都是租用现有的teamspeak服务器，我是在<a href="https://ts3.com.cn/price">teamspeak服务器网站</a>进行租用的，勉强能用，有时候服务器会出一些问题，但是总体来说可用，省事。</p>
-<h2 id="2-3-基础功能介绍"><a href="#2-3-基础功能介绍" class="headerlink" title="2.3 基础功能介绍"></a>2.3 基础功能介绍</h2><p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-3.png"></p>
-<p>连接到服务器后，选择到响应频道，一般就使用这两个键位，打开&#x2F;关闭麦克风，打开&#x2F;关闭声音</p>
-<h1 id="3-基础设置"><a href="#3-基础设置" class="headerlink" title="3 基础设置"></a>3 基础设置</h1><p>主要分为功能设置、交互设置、频道管理设置</p>
-<h2 id="3-1-功能设置"><a href="#3-1-功能设置" class="headerlink" title="3.1 功能设置"></a>3.1 功能设置</h2><p>这一部分是必要的设置，如下图的最下方的红色方框options，其余三个部分都是频道管理的部分</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-6.png"></p>
-<p>点击打开后的界面如下：<br>可以看到左侧有很多设置，但是我们常用的修改的设置就是playback，也就是输出，还有capture，也就是输入。</p>
-<h3 id="3-1-1-输入设置"><a href="#3-1-1-输入设置" class="headerlink" title="3.1.1 输入设置"></a>3.1.1 输入设置</h3><p>设置界面如下图，可以看到主要分为三个部分。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-7.png"></p>
-<p>主要需要调整三个部分</p>
-<ul>
-<li><p>第一个部分是输入的设备，在capture device中选择我们想要输入的设备就可以了</p>
-</li>
-<li><p>第二个部分是语音输入模式，这里只推荐阈值触发模式，也就是说当你的声音达到一定强度时会自动触发输入，选择Voice Activity Detction-&gt;Volume Gate，然后调整下方的滑动条，这个值也就是触发输入的阈值，你可以在begin test选项中进行进一步的调试。</p>
-</li>
-<li><p>第三个部分是一些数字信号处理，比如回声消除、打字音消除等，全部勾选就可以了</p>
-</li>
-</ul>
-<h3 id="3-1-2-输出设置"><a href="#3-1-2-输出设置" class="headerlink" title="3.1.2 输出设置"></a>3.1.2 输出设置</h3><p>设置界面如下如图，这个部分很简单，设置我们想要输出的设备和大概的声音就可以了<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-8.png"></p>
-<h2 id="3-2-交互设置"><a href="#3-2-交互设置" class="headerlink" title="3.2 交互设置"></a>3.2 交互设置</h2><p>交互设置主要就是在如下界面修改，选择self就可以看到了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-4.png"></p>
-<p>其中第一个红框是一些默认设置不用修改</p>
-<p>第二部分是离线，麦克风和输出的功能按钮</p>
-<p>第三个部分就是我们需要设置的交互设置了：</p>
-<ul>
-<li>change nickname ：修改在本服务器的昵称</li>
-<li>set avatar：修改在本服务器的头像</li>
-<li>delete avatar：删除头像</li>
-</ul>
-<h2 id="3-3-频道管理设置"><a href="#3-3-频道管理设置" class="headerlink" title="3.3 频道管理设置"></a>3.3 频道管理设置</h2><p>如果你是一个服务器的拥有者，那么你肯定想要对不同的玩家有不同的权限，否则会乱套，其中主要分为管理员、会员、游客三种权限、</p>
-<ul>
-<li>管理员 ：<ul>
-<li>能够创建频道、删除频道</li>
-<li>进入加锁的频道</li>
-<li>移动管理员或以下权限的人到任意频道</li>
-<li>授予&#x2F;撤销管理员、会员、游客权限</li>
-</ul>
-</li>
-<li>会员：会员能做到管理员大部分事情<ul>
-<li>能够创建频道、删除频道</li>
-<li>进入加锁的频道</li>
-<li>移动会员或以下权限的人到任意频道</li>
-<li>授予&#x2F;撤销会员、游客权限</li>
-</ul>
-</li>
-<li>游客：没有权限</li>
-</ul>
-<p>所以一般给个会员权限就够了，权限设置如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/image-5.png"></p>
-<p>选择设置server groups，打开后默认是超级管理员、管理员和游客，可以对每一个权限进行修改，比如修改名字和头像，改成自己想要的名字以增加趣味性，比如超级管理员修改为超级赛亚人并且配上相应的头像等。在设置的左下角也可以加上其余的权限等级来细化一些权限，这个就自行设置了。</p>
-<p>当你是会员以上的权限时，这时你就可以对服务器进行一个频道的划分，比如lol、csgo、观赛等分区，根据你的小团体的游戏成分进行划分即可。记得创建频道的时候选择永久，否则下一次登陆的时候就会消失</p>
-<h1 id="4-服务器的进一步设置"><a href="#4-服务器的进一步设置" class="headerlink" title="4 服务器的进一步设置"></a>4 服务器的进一步设置</h1><p>主要是进行一些界面的优化，一些个性化的设置，比如设置频道的介绍、频道的icon图等等</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>分享博客</category>
-      </categories>
-      <tags>
-        <tag>teamspeak</tag>
-        <tag>语音服务器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux的操作记录</title>
-    <url>/2023/10/09/20231009_TipsOnLinux/</url>
-    <content><![CDATA[<p>记录一些Linux的操作</p>
-<ul>
-<li>挂载NTFS移动硬盘</li>
-<li>后台运行python程序</li>
-<li>压缩和解压</li>
-<li>查看系统状态</li>
-<li>常用快捷键</li>
-<li>vim</li>
-<li>文件和目录相关</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="1-挂载NTFS移动硬盘"><a href="#1-挂载NTFS移动硬盘" class="headerlink" title="1 挂载NTFS移动硬盘"></a>1 挂载NTFS移动硬盘</h1><ol>
-<li><p>在&#x2F;media下创建挂载的文件夹，比如创建disk</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir disk</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看硬盘的路径，输入以下命令，会显示目前的所有硬盘资源，这时根据你硬盘的容量查找到对应的路径</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsblk</span><br></pre></td></tr></table></figure>
-<p>比如，我这里的路径是sda1</p>
-</li>
-<li><p>使用mount命令进行挂载，这里需要sudo</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo mount /dev/sda1 /media/disk</span><br></pre></td></tr></table></figure>
-<p>此时打开disk就可以看到硬盘中的文件了</p>
-</li>
-<li><p>使用完毕后取消挂载，再拔掉硬盘</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo umount /dev/sda1</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h1 id="2-后台运行python程序"><a href="#2-后台运行python程序" class="headerlink" title="2 后台运行python程序"></a>2 后台运行python程序</h1><p>如果想保证一直后台运行程序，可以使用nohup</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nohup python test.py &amp;   # 挂后台运行</span><br><span class="line">tail -f nohup.out  # 动态显示输出的日志 </span><br></pre></td></tr></table></figure>
-
-<p>想要退出的话直接kill掉运行的进程就好了</p>
-<h1 id="3-压缩和解压"><a href="#3-压缩和解压" class="headerlink" title="3 压缩和解压"></a>3 压缩和解压</h1><p>最常使用就这句<code>tar -zxvf test.tar.gz -C /tmp    #解压缩到指定位置</code></p>
-<p>详细的一些命令如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">zip [选项] 压缩包名 源文件或源目录</span><br><span class="line">unzip -d /tmp/ test.zip # -d：指定解压缩位置/tmp</span><br><span class="line">gzip -r test #将test目录下的文件分别压缩打包</span><br><span class="line">gunzip install.log.gz # 解压</span><br><span class="line">tar -cvf test.cfg.tar test.cfg # -c为打包，-f为指定压缩包的文件名，-v为显示打包过程</span><br></pre></td></tr></table></figure>
-
-<p>我们更经常遇到的是tar和gz一起出现，因为tar用来打包，gz用来压缩</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -zcvf test.tar.gz test/     #压缩</span><br><span class="line">tar -ztvf test.tar.gz           #只查看，不解压</span><br><span class="line">tar -zxvf test.tar.gz -C /tmp    #解压缩到指定位置</span><br><span class="line">tar -zxvf test.tar.gz -C /tmp test/cde #只解压压缩包中的特定文件，到指定位置</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="4-查看系统状态"><a href="#4-查看系统状态" class="headerlink" title="4 查看系统状态"></a>4 查看系统状态</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ps -a  # 查看所有用户的所有进程</span><br><span class="line">ps -au # 按用户名和启动时间的顺序来显示进程</span><br><span class="line">kill -9 pid # 强制杀死进程号为pid的进程</span><br><span class="line">du -h # 查看置顶目录以及子目录下使用的磁盘空间</span><br><span class="line">df -h # 显示文件系统磁盘空间的使用情况</span><br><span class="line">free  # 显示当前内存和交换空间的使用情况</span><br><span class="line">nvidia-smi # 显示显卡情况</span><br></pre></td></tr></table></figure>
-
-<h1 id="5-常用快捷键"><a href="#5-常用快捷键" class="headerlink" title="5 常用快捷键"></a>5 常用快捷键</h1><table>
-<thead>
-<tr>
-<th align="center">快捷键</th>
-<th align="center">作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>CTRL+C</code></td>
-<td align="center">退出当前进程</td>
-</tr>
-<tr>
-<td align="center"><code>CTRL+L</code></td>
-<td align="center">清除命令行中显示内容</td>
-</tr>
-<tr>
-<td align="center"><code>CTRL+Q</code></td>
-<td align="center">退出</td>
-</tr>
-<tr>
-<td align="center"><code>TAB</code></td>
-<td align="center">自动补全</td>
-</tr>
-</tbody></table>
-<h1 id="6-vim"><a href="#6-vim" class="headerlink" title="6 vim"></a>6 vim</h1><h2 id="6-1-修改文本"><a href="#6-1-修改文本" class="headerlink" title="6.1 修改文本"></a>6.1 修改文本</h2><table>
-<thead>
-<tr>
-<th align="center">命令</th>
-<th align="left">作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">i</td>
-<td align="left">在光标前插入</td>
-</tr>
-<tr>
-<td align="center">I</td>
-<td align="left">在光标当前行开始插入</td>
-</tr>
-<tr>
-<td align="center">a</td>
-<td align="left">在光标后插入</td>
-</tr>
-<tr>
-<td align="center">A</td>
-<td align="left">在光标当前行末尾插入</td>
-</tr>
-<tr>
-<td align="center">o</td>
-<td align="left">在光标当前行的下一行插入新行</td>
-</tr>
-<tr>
-<td align="center">O</td>
-<td align="left">在光标当前行的上一行插入新行</td>
-</tr>
-<tr>
-<td align="center">:wq</td>
-<td align="left">保存并退出</td>
-</tr>
-</tbody></table>
-<h2 id="6-2-定位命令"><a href="#6-2-定位命令" class="headerlink" title="6.2 定位命令"></a>6.2 定位命令</h2><table>
-<thead>
-<tr>
-<th align="center">命令</th>
-<th align="left">作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">:set nu</td>
-<td align="left">显示行号</td>
-</tr>
-<tr>
-<td align="center">:set nonu</td>
-<td align="left">取消行号</td>
-</tr>
-<tr>
-<td align="center">gg</td>
-<td align="left">跳到首行</td>
-</tr>
-<tr>
-<td align="center">G</td>
-<td align="left">跳到末行</td>
-</tr>
-<tr>
-<td align="center">:n</td>
-<td align="left">跳到第n行</td>
-</tr>
-</tbody></table>
-<h2 id="6-3-替换和取消命令"><a href="#6-3-替换和取消命令" class="headerlink" title="6.3 替换和取消命令"></a>6.3 替换和取消命令</h2><table>
-<thead>
-<tr>
-<th align="center">命令</th>
-<th align="left">作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">u</td>
-<td align="left">undo，取消上一步操作</td>
-</tr>
-<tr>
-<td align="center">Ctrl + r</td>
-<td align="left">redo，返回到undo之前</td>
-</tr>
-<tr>
-<td align="center">r</td>
-<td align="left">替换光标所在处的字符</td>
-</tr>
-<tr>
-<td align="center">R</td>
-<td align="left">从光标所在处开始替换，按Esc键结束</td>
-</tr>
-</tbody></table>
-<h2 id="6-4-删除命令"><a href="#6-4-删除命令" class="headerlink" title="6.4 删除命令"></a>6.4 删除命令</h2><table>
-<thead>
-<tr>
-<th align="center">命令</th>
-<th align="left">作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">x</td>
-<td align="left">删除光标所在处字符</td>
-</tr>
-<tr>
-<td align="center">nx</td>
-<td align="left">删除光标所在处后的n个字符</td>
-</tr>
-<tr>
-<td align="center">dd</td>
-<td align="left">删除光标所在行。ndd删除n行</td>
-</tr>
-<tr>
-<td align="center">dG</td>
-<td align="left">删除光标所在行到末尾行的所以内容</td>
-</tr>
-<tr>
-<td align="center">D</td>
-<td align="left">删除光标所在处到行尾的内容</td>
-</tr>
-<tr>
-<td align="center">:5,7d</td>
-<td align="left">删除指定范围的行</td>
-</tr>
-</tbody></table>
-<h1 id="7-文件和目录相关"><a href="#7-文件和目录相关" class="headerlink" title="7 文件和目录相关"></a>7 文件和目录相关</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pwd # 显示当前工作目录目录</span><br><span class="line">touch test.txt # 新建空白文档</span><br><span class="line">mkdir testdir  # 建立空白目录</span><br><span class="line">cp              # 复制</span><br><span class="line">mv dir1 dir2    # 移动文件或目录、文件或目录改名</span><br><span class="line">rm -rf dir1     # r同时删除dir1下的所有文件,f强制删除文件或目录</span><br><span class="line">rmdir dir1      # 删除空目录</span><br><span class="line">cat 1.txt       # 显示文本文件内容</span><br><span class="line">head -[num] 1.txt    # 显示前十行（或者指定前num）内容</span><br><span class="line">tail [-f] [-num]     # 显示后十行，f为滚动显示，num为指定数字</span><br><span class="line">wc 1.txt        # 统计文本的行数、字数、字符数</span><br><span class="line">grep aaa 1.txt       # 在1.txt中查找包含aaa的所有行</span><br></pre></td></tr></table></figure>
-
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C++之lambda表达式</title>
-    <url>/2023/10/10/20231010_lambda/</url>
-    <content><![CDATA[<p>C++11之后引入lambda表达式，，一般用于定义匿名函数，使得代码更加灵活简洁。lambda表达式与普通函数类似，也有参数列表、返回值类型和函数体，只是它的定义方式更简洁，并且可以在函数内部定义。</p>
-<span id="more"></span>
-
-<h1 id="1-lambda表达式概述"><a href="#1-lambda表达式概述" class="headerlink" title="1 lambda表达式概述"></a>1 lambda表达式概述</h1><p>最常见的lambda表达式如下：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">auto</span> plus = [] (<span class="type">int</span> v1, <span class="type">int</span> v2) -&gt; <span class="type">int</span> &#123; <span class="keyword">return</span> v1 + v2; &#125;</span><br><span class="line"><span class="type">int</span> sum = <span class="built_in">plus</span>(<span class="number">1</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
-
-<p>上述代码是计算两数之和的，但是一般不会这样使用</p>
-<h1 id="2-lambda表达式的写法"><a href="#2-lambda表达式的写法" class="headerlink" title="2 lambda表达式的写法"></a>2 lambda表达式的写法</h1><table>
-<thead>
-<tr>
-<th align="center">序号</th>
-<th align="center">写法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">(1)</td>
-<td align="center"><code>[captures]&lt;tparams&gt;(params)lambda-specifiers&#123;body&#125;</code></td>
-</tr>
-<tr>
-<td align="center">(2)</td>
-<td align="center"><code>[captures](params)rtailing-return-type&#123;body&#125;</code></td>
-</tr>
-<tr>
-<td align="center">(3)</td>
-<td align="center"><code>[captures](params)&#123;body&#125;</code></td>
-</tr>
-<tr>
-<td align="center">(4)</td>
-<td align="center"><code>[captures]lambda-specifiers&#123;body&#125;</code></td>
-</tr>
-</tbody></table>
-<h1 id="3-四种表达式的含义"><a href="#3-四种表达式的含义" class="headerlink" title="3 四种表达式的含义"></a>3 四种表达式的含义</h1><p>（1）完整的lambda表达式，包含了lambda表达式的所有成分。<br>（2）常量lambda表达式，捕获的变量都是常量，不能在lambda表达式的body中进行修改。<br>（3）和（2）基本一致，唯一的区别就是，lambda表达式的函数返回值可以通过函数体推导出来。一般情况函数返回值类型明确或者没有返回值的情况下可以这样写。<br>（4）lambda表达式的函数没有任何参数，但是可以添加lambda-specifiers，lambda-specifiers是什么我们后续再介绍。</p>
-<h1 id="4-lambda表达式各个成员的解释"><a href="#4-lambda表达式各个成员的解释" class="headerlink" title="4 lambda表达式各个成员的解释"></a>4 lambda表达式各个成员的解释</h1><p>captures 捕获列表，lambda可以把上下文变量以值或引用的方式捕获，在body中直接使用。</p>
-<p>tparams 模板参数列表(c++20引入)，让lambda可以像模板函数一样被调用。</p>
-<p>params 参数列表，有一点需要注意，在c++14之后允许使用auto左右参数类型。</p>
-<p>lambda-specifiers lambda说明符， 一些可选的参数，这里不多介绍了，有兴趣的读者可以去官方文档上看。这里比较常用的参数就是mutable和exception。其中，表达式(1)中没有trailing-return-type，是因为包含在这一项里面的。</p>
-<p>trailing-return-type 返回值类型，一般可以省略掉，由编译器来推导。</p>
-<p>body 函数体，函数的具体逻辑。</p>
-<h1 id="5-捕获列表"><a href="#5-捕获列表" class="headerlink" title="5 捕获列表"></a>5 捕获列表</h1><p>上面介绍完了lambda表达式的各个成分，其实很多部分和正常的函数没什么区别，其中最大的一个不同点就是捕获列表。我在刚开始用lambda表达式的时候，还一直以为这个没啥用，只是用一个 [] 来标志着这是一个lambda表达式。后来了解了才知道，原来这个捕获列表如此强大，甚至我觉得捕获列表就是lambda表达式的灵魂。下面先介绍几种常用的捕获方式。</p>
-<p>[] 什么也不捕获，无法lambda函数体使用任何</p>
-<p>[&#x3D;] 按值的方式捕获所有变量</p>
-<p>[&amp;] 按引用的方式捕获所有变量</p>
-<p>[&#x3D;, &amp;a] 除了变量a之外，按值的方式捕获所有局部变量，变量a使用引用的方式来捕获。这里可以按引用捕获多个，例如 [&#x3D;, &amp;a, &amp;b,&amp;c]。这里注意，如果前面加了&#x3D;，后面加的具体的参数必须以引用的方式来捕获，否则会报错。</p>
-<p>[&amp;, a] 除了变量a之外，按引用的方式捕获所有局部变量，变量a使用值的方式来捕获。这里后面的参数也可以多个，例如 [&amp;, a, b, c]。这里注意，如果前面加了&amp;，后面加的具体的参数必须以值的方式来捕获。</p>
-<p>[a, &amp;b] 以值的方式捕获a，引用的方式捕获b，也可以捕获多个。</p>
-<p>[this] 在成员函数中，也可以直接捕获this指针，其实在成员函数中，[&#x3D;]和[&amp;]也会捕获this指针。</p>
-<h1 id="6-总结"><a href="#6-总结" class="headerlink" title="6 总结"></a>6 总结</h1><ul>
-<li><p>捕获列表，对应LambdaClass类的private成员。</p>
-</li>
-<li><p>参数列表，对应LambdaClass类的成员函数的operator()的形参列表</p>
-</li>
-<li><p>mutable，对应 LambdaClass类成员函数 operator() 的const属性 ，但是只有在捕获列表捕获的参数不含有引用捕获的情况下才会生效，因为捕获列表只要包含引用捕获，那operator()函数就一定是非const函数。</p>
-</li>
-<li><p>返回类型，对应 LambdaClass类成员函数 operator() 的返回类型</p>
-</li>
-<li><p>函数体，对应 LambdaClass类成员函数 operator() 的函数体。</p>
-</li>
-<li><p>引用捕获和值捕获不同的一点就是，对应的成员是否为引用类型。</p>
-</li>
-</ul>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>lambda</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vscode使用教程</title>
-    <url>/2023/11/01/20231101_vscodeTutorial/</url>
-    <content><![CDATA[<p>vscode是我目前使用最多的平台工具无论是在windows还是macOS，本博客总结我的使用的所有场景，以及简单的搭建过程</p>
-<ul>
-<li>vscode 概要介绍</li>
-<li>C&#x2F;C++ 编程、编译</li>
-<li>python 使用</li>
-<li>markdown 记录</li>
-<li>latex&amp;beamer的学术PPT制作</li>
-<li>git的使用</li>
-<li>SSH远程连接服务器</li>
-<li>博客园的扩展</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="1-vscode概要介绍"><a href="#1-vscode概要介绍" class="headerlink" title="1 vscode概要介绍"></a>1 vscode概要介绍</h1><p>首先是进行下载安装，官方地址为：<a href="https://code.visualstudio.com/">vscode下载</a>，找到对应版本下载安装。</p>
-<p>首先介绍一下vscode的界面和大概使用流程。</p>
-<p>打开vscode，界面如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808193654.png"></p>
-<p>其中1为资源管理器，2为查找，3为源代码管理（git），4为运行和调试，5为扩展。这左侧为统称为工具栏，后续在扩展中下载相应的扩展后，左侧会多出你选择的扩展，所以理论上你可以在vscode上干任何事，甚至你可以在上面编程。</p>
-<h2 id="1-1-设置系统语言"><a href="#1-1-设置系统语言" class="headerlink" title="1.1 设置系统语言"></a>1.1 设置系统语言</h2><p>第一步，你的界面默认应该是英文，你首先可以在工具栏中的扩展中搜索简体中文，安装后重启即可。</p>
-<h2 id="1-2-工作流程"><a href="#1-2-工作流程" class="headerlink" title="1.2 工作流程"></a>1.2 工作流程</h2><p>一般来说，我的工作流程是，如之前的图中所示，你可以在欢迎界面中点击打开文件夹，或者是克隆Git仓库，打开一个工作区进行摸鱼，以markdown为例子的话，如果你想要进行一些记录，你可以创建一个你的文件夹，这个文件夹可以是你git clone下来的，也可以是本地直接创建的，以本地创建为例：</p>
-<p>比如打开markdown文件夹，新建一个markdown.md文件</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808194144.png"></p>
-<p>此时界面如上图，可以看到大致分为三个部分，侧边栏，顶部栏和编辑区。然后进行工作即可。</p>
-<h1 id="2-C-C-编程、编译"><a href="#2-C-C-编程、编译" class="headerlink" title="2 C&#x2F;C++ 编程、编译"></a>2 C&#x2F;C++ 编程、编译</h1><p>这里可以看我的另外一篇博客：<a href="https://moburein.com/2023/08/22/20230822_VscodeDeployC++/">vscode配置C++环境</a>。</p>
-<p>这篇博客主要介绍了三个部分，如下：</p>
-<ul>
-<li>1 下载GCC编译器</li>
-<li>2 安装VSCODE的C&#x2F;C++扩展</li>
-<li>3 使用VSCODE进行运行和调试</li>
-</ul>
-<p>最终实现在vscode上流畅码代码和调试C++(包括断点、查看参数等)程序。</p>
-<h1 id="3-python-使用"><a href="#3-python-使用" class="headerlink" title="3 python 使用"></a>3 python 使用</h1><p>在vscode上使用python很容易，只需要在扩展中搜索python，下载重新加载vscode即可直接新建py文件进行python代码的编写了，只需要注意右下角python的版本，选择你想要的版本就可以了。</p>
-<p>这里也贴上我一些项目里或者学习的时候python的一些记录：<a href="https://moburein.com/2023/11/01/20231101_PythonSimpleTutorial/">python使用总结</a></p>
-<p>里面有介绍python的简要语法和编程思想、一些常用的库，包括机器学习常用的库，还有日志相关，还有简单爬虫等，可能会后续再更新。</p>
-<h1 id="4-markdown-记录"><a href="#4-markdown-记录" class="headerlink" title="4 markdown 记录"></a>4 markdown 记录</h1><p>这里可以看我的另外一篇博客：<a href="https://moburein.com/2023/08/09/20230808_markdownLanguage/">markdown的简单用法</a>。</p>
-<p>这篇博客主要介绍了三个部分，如下：</p>
-<ul>
-<li>1 Markdown简介</li>
-<li>2 Markdown编译器</li>
-<li>3 Markdown语法</li>
-</ul>
-<p>vscode能实现markdown的流畅的编写，一般使用都是左边代码，右边预览，并且在公式和语法比较熟悉之后，使用markdown的记录效率会很高，并且在转化方面优势很大，可以轻松转化为网页、或者PPT中的内容</p>
-<h1 id="5-latex-beamer的学术PPT制作"><a href="#5-latex-beamer的学术PPT制作" class="headerlink" title="5 latex&amp;beamer的学术PPT制作"></a>5 latex&amp;beamer的学术PPT制作</h1><p>这里可以看我的另外一篇博客：<a href="https://moburein.com/2023/10/30/20231030_BeamerTutorial/">Beamer简单教程</a>。</p>
-<p>这篇博客主要UESTC的模版，然后介绍了一下写PPT的一些基本语法，包括封面设置、目录以及子目录、新建页面、分点、插入图片、下标、公式、表格、分栏、分块等。</p>
-<p>通过beamer能够简单有效的将我们平时的积累以很快的速度转化为PPT，提升效率，并且风格也比较适合做学术或者部门内部的汇报。</p>
-<h1 id="6-git的使用"><a href="#6-git的使用" class="headerlink" title="6 git的使用"></a>6 git的使用</h1><p>git管理也是vscode的基础功能之一了，当该文件夹是git clone下来的，那么此时在工具栏上的源代码管理（git）就会提示，你目前的修改，你可以设置自动时间上传，但是也可以手动上传，也就是push。</p>
-<h2 id="6-1-github账户验证"><a href="#6-1-github账户验证" class="headerlink" title="6.1 github账户验证"></a>6.1 github账户验证</h2><p>首先你需要将你的电脑跟你的比如说github账户进行验证，流程如下：</p>
-<ol>
-<li><p>首先你先安装git，windows在git的官网安装就好了，如果是mac基本是自带git，如果没有git，也可以通过brew安装。</p>
-</li>
-<li><p>配置git账户，设置user.name和user.email，输入以下命令</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;account name&quot;     # 设置用户名</span><br><span class="line">git config --global user.email &quot;account email&quot;     # 设置邮箱地址</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew tap probezy/core &amp;&amp; brew install cpolar</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
-<li>设置完毕之后，就可以生成SSH KEY了，输入以下命令</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C example@mail.com</span><br></pre></td></tr></table></figure>
-<p>这里输入你自己的邮箱即可  </p>
-<ol start="4">
-<li><p>然后输入以下两条命令查看并复制你的密钥</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">vim id_rsa.pub</span><br></pre></td></tr></table></figure></li>
-<li><p>将公钥id_rsa.pub中的内容添加到github，用户-&gt;settings-&gt;SSH and GPG keys 中的按键new SSH key，将id_rsa.pub中的内容复制进去即可</p>
+<li><p>token认证<br>登录cpolar官网，点击左侧的验证，查看自己的认证token，之后将token贴在命令行里</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cpolar authtoken xxxxxxx</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310041701035.png"></p>
 </li>
-<li><p>添加完成后，在终端输入<code>ssh -T git@github.com</code>进行验证，此时会让你输入刚刚在生成ssh密钥时输入的密码，输入后回车会看到欢迎的语句，此时说明配对成功。</p>
+<li><p>安装服务并启动服务</p>
 </li>
 </ol>
-<p>这个流程中，你唯一需要注意的就是你的路径，其余都是傻瓜式操作。</p>
-<h2 id="6-2-流程展示"><a href="#6-2-流程展示" class="headerlink" title="6.2 流程展示"></a>6.2 流程展示</h2><p>假设你与github的某个仓库链接，也就是你git clone的某个仓库，一般来说的流程如下。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231101194733.png"></p>
-<p>此时就是有待处理的部分。此时点击git管理，界面应该与下图类似</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231101194855.png"></p>
-<p>首先将鼠标放在更改上会出现<code>+</code>号，此时点击加号，然后输入你的修改信息点击提交即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011950617.png"></p>
-<p>此时你的修改可能还并没有push到远程仓库，此时查看左下角的图标是否显示你还未push到云上，如下图。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011954845.png"></p>
-<p>点击之后会出现下图，点击确认后你就可以查看你的云端是否有修改了，一般来说这里就结束了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011954859.png"></p>
-<h1 id="7-SSH远程连接服务器"><a href="#7-SSH远程连接服务器" class="headerlink" title="7 SSH远程连接服务器"></a>7 SSH远程连接服务器</h1><p>在扩展中搜索remote，安装这个remote-ssh即可，这时工具栏上就会多出远程连接工具，点击远程连接工具</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012006995.png"></p>
-<p>界面如下，点击如下图中的加号</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012007311.png"></p>
-<p>这时会弹出ssh连接命令，此时输入你的需要连接的账号回车会提示你输入密码，此时输入密码即可进入你所要ssh连接的服务器中。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012008499.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012010522.png"></p>
-<p>还有一个进阶操作，你可以将你的公钥添加到服务器的authorized_keys文件中，这样你登录时就不再需要输入密码了。具体操作如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo cpolar service install #输入登陆密码</span><br><span class="line">sudo cpolar service start</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>在浏览器上访问本地9200端口【127.0.0.1:9200】，使用cpolar邮箱账号登录cpolar web UI管理界面，即可开始使用cpolar。</li>
+</ol>
+<h1 id="2-配置SSH固定公网IP地址"><a href="#2-配置SSH固定公网IP地址" class="headerlink" title="2 配置SSH固定公网IP地址"></a>2 配置SSH固定公网IP地址</h1><p>预留公网预留IP，这里就需要升级为Pro了，如果不升级Pro就没有固定公网IP，免费版就是每周会更改IP，并且带宽相对较低</p>
+<ol>
+<li>首先进入官网，登陆后选择预留-&gt;保留的TCP地址</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310041705040.png"></p>
+<ol start="2">
+<li>点击保留，即可自动生成一个预留好的固定公网IP地址</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231004170737.png"></p>
+<ol start="3">
+<li><p>按照之前的步骤进行后，打开<code>127.0.0.1:9200</code>，打开隧道列表，此时应该自动生成两个隧道，包括ssh和website<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310041710064.png"></p>
+</li>
+<li><p>我们需要创建一个新的tcp隧道，指向5900端口<br>点左边隧道管理-&gt;创建隧道</p>
 <ul>
-<li>将本地之前生成的<code>id_rsa.pub</code>中的内容全部复制，一般在.ssh文件夹中，可以通过vim打开复制后输入<code>:q</code>回车退出，</li>
-<li>然后再在服务器的.ssh文件夹中找到authorized_keys文件，使用vim工具打开，按i键进入插入编辑模式，复制刚刚的内容进去，保存退出<code>:wq</code>回车就完成了。</li>
+<li>隧道名称：可自定义，注意不要与已有隧道名称重复</li>
+<li>协议：tcp协议</li>
+<li>本地地址：5900（vnc默认端口号）</li>
+<li>端口类型：固定端口</li>
+<li>TCP地址：填写第2步中申请的地址</li>
 </ul>
-<h1 id="8-cnblogs博客园扩展"><a href="#8-cnblogs博客园扩展" class="headerlink" title="8 cnblogs博客园扩展"></a>8 cnblogs博客园扩展</h1><p>直接在扩展中搜索cnblogs就可以了，这个扩展主要是为了解决在cnblogs上写博客时的图片问题，这个官方插件提供了在博客园上使用的图床，安装后在markdown文件的右上角会出现多两个图标，主要使用上传剪切板图片这个功能，一般我们需要使用的时候都是直接剪切屏幕中的图片，这时复制后点击如下图的图标。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012019990.png"></p>
-<p>会出现以下界面，你可以选择本地图片或者是剪切图片，一般来说我是选择剪贴板图片，这样操作方便。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012020877.png"></p>
-<p>点击之后就会弹出连接，选择markdown连接直接复制到md文件中就可以了，完美解决新手用户没有图床的问题。我一般在学习的时候也会在博客园上写一些博客，这样能将更多有意思的东西放在自己的博客网站上。</p>
+</li>
+<li><p>此时我们还需要打开mac mini 的远程连接的开关，打开设置-&gt;通用-&gt;共享，打开桌面共享，并且点击电脑设置，设置VNC密码。</p>
+</li>
+<li><p>windows电脑下载安装VNC后，输入刚刚申请的公网IP登录（注意不要输入TCP:&#x2F;&#x2F;）即可。</p>
+</li>
+</ol>
 <p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
 ]]></content>
       <categories>
         <category>技术博客</category>
       </categories>
       <tags>
-        <tag>SSH</tag>
-        <tag>markdown</tag>
-        <tag>vscode</tag>
-        <tag>git</tag>
-        <tag>C/C++</tag>
-        <tag>python</tag>
-        <tag>github</tag>
-        <tag>cnblogs</tag>
+        <tag>远程桌面</tag>
+        <tag>跨平台</tag>
       </tags>
   </entry>
   <entry>
@@ -2545,562 +2223,195 @@
       </tags>
   </entry>
   <entry>
-    <title>日系胶片调色</title>
-    <url>/2023/12/04/20231204_LrFilmStyle/</url>
-    <content><![CDATA[<p>总结一下摄影中我比较喜欢的一种风格，使用lightroom进行仿日系胶片调色。</p>
-<p>总结重点：</p>
+    <title>Linux的操作记录</title>
+    <url>/2023/10/09/20231009_TipsOnLinux/</url>
+    <content><![CDATA[<p>记录一些Linux的操作</p>
 <ul>
-<li>基础设置：提高曝光，让照片保持微微过曝的状态，提亮暗部，压一下高光</li>
-<li>仿胶片：所以使用曲线让暗部不是纯黑色，带一点灰色，让白点也降低，模拟胶片的感觉</li>
-<li>使用曲线恢复一些对比度，使用颜色曲线和颜色分级对照片进行颜色调整，一般有几个选择，选择让高光部分偏某某色，让暗部偏某某色，可以是黄色、青色、蓝色等等</li>
-<li>使用hsl、颜色分级将画面的一些杂色降低饱和度、亮度等</li>
-<li>根据情况添加暗角，可以适当降低一点清晰度，这样在拍摄人物时会有一种朦胧感</li>
-<li>添加一些颗粒，这样更有质感</li>
+<li>挂载NTFS移动硬盘</li>
+<li>后台运行python程序</li>
+<li>压缩和解压</li>
+<li>查看系统状态</li>
+<li>常用快捷键</li>
+<li>vim</li>
+<li>文件和目录相关</li>
 </ul>
 <span id="more"></span>
 
-<p>我的总结主要是按照两步走，重点是要形成自己调色的方法论。</p>
-<p>第一步是分析原有照片的风格，调色的重点和主观感受，然后针对分析进行第二部的针对性调色，重要的不是参数，而是如何分析得到需要进行的操作。</p>
-<p>这篇博客是参考了b站up青山摄影的视频总结而成。</p>
-<h1 id="1-日系胶片风格"><a href="#1-日系胶片风格" class="headerlink" title="1 日系胶片风格"></a>1 日系胶片风格</h1><p>这里首先放上经典日系胶片风格照片：</p>
-<figure class="second">  
-  <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041934070.png"  width = "300" alt="原图">  
-  <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041923679.png"  width = "300" alt="调色后">  
-</figure>
-
-<p>首先进行分析可以得到如下结论：</p>
-<ul>
-<li>对比度不高</li>
-<li>轻微过曝</li>
-<li>胶片质感</li>
-<li>画面中间调偏青色</li>
-<li>肤色调整白皙并且带血色</li>
-<li>人物衣服的白色有一点朦胧感</li>
-</ul>
-<h1 id="2-实战调色"><a href="#2-实战调色" class="headerlink" title="2 实战调色"></a>2 实战调色</h1><h2 id="2-1-基础设置"><a href="#2-1-基础设置" class="headerlink" title="2.1 基础设置"></a>2.1 基础设置</h2><p>目的： 为了保证轻微过曝，并且将原片降低一点对比度模拟胶片感</p>
-<p>措施：</p>
-<ul>
-<li>提高曝光</li>
-<li>降低一点对比度</li>
-<li>增加一点饱和度</li>
-<li>降低一点鲜艳度</li>
-</ul>
-<h2 id="2-2-曲线"><a href="#2-2-曲线" class="headerlink" title="2.2 曲线"></a>2.2 曲线</h2><p>目的：将画面的中间调调整为青色，并且改变照片的影调，让照片有一种灰灰的感觉，模拟胶片，这一步是重点</p>
-<p>措施：</p>
-<ul>
-<li>分颜色调整，使得画面中间调偏青色，那么分别修改红绿蓝曲线，修改如下，<ul>
-<li>中间调蓝色和绿色提高，红色不变，这一步中间调就会变成青色</li>
-<li>高光三条曲线都提高，阴影曲线都降低，增加对比度</li>
-</ul>
+<h1 id="1-挂载NTFS移动硬盘"><a href="#1-挂载NTFS移动硬盘" class="headerlink" title="1 挂载NTFS移动硬盘"></a>1 挂载NTFS移动硬盘</h1><ol>
+<li><p>在&#x2F;media下创建挂载的文件夹，比如创建disk</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir disk</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<figure class="third">
-    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041954921.png"  width = "200" alt="红色曲线">  
-    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041952314.png"  width = "200" alt="绿色曲线">  
-    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041953288.png"  width = "200" alt="蓝色曲线">  
-</figure>
+<li><p>查看硬盘的路径，输入以下命令，会显示目前的所有硬盘资源，这时根据你硬盘的容量查找到对应的路径</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsblk</span><br></pre></td></tr></table></figure>
+<p>比如，我这里的路径是sda1</p>
+</li>
+<li><p>使用mount命令进行挂载，这里需要sudo</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo mount /dev/sda1 /media/disk</span><br></pre></td></tr></table></figure>
+<p>此时打开disk就可以看到硬盘中的文件了</p>
+</li>
+<li><p>使用完毕后取消挂载，再拔掉硬盘</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo umount /dev/sda1</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="2-后台运行python程序"><a href="#2-后台运行python程序" class="headerlink" title="2 后台运行python程序"></a>2 后台运行python程序</h1><p>如果想保证一直后台运行程序，可以使用nohup</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nohup python test.py &amp;   # 挂后台运行</span><br><span class="line">tail -f nohup.out  # 动态显示输出的日志 </span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>调整亮度曲线，将最左端，也就是黑点提高，这一步是让照片的黑点不是纯黑而是变成带一点点灰色，来模拟胶片的感觉。</li>
-</ul>
-<center>
-    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041956807.png" width = "200" alt="亮度曲线">
-</center>
+<p>想要退出的话直接kill掉运行的进程就好了</p>
+<h1 id="3-压缩和解压"><a href="#3-压缩和解压" class="headerlink" title="3 压缩和解压"></a>3 压缩和解压</h1><p>最常使用就这句<code>tar -zxvf test.tar.gz -C /tmp    #解压缩到指定位置</code></p>
+<p>详细的一些命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">zip [选项] 压缩包名 源文件或源目录</span><br><span class="line">unzip -d /tmp/ test.zip # -d：指定解压缩位置/tmp</span><br><span class="line">gzip -r test #将test目录下的文件分别压缩打包</span><br><span class="line">gunzip install.log.gz # 解压</span><br><span class="line">tar -cvf test.cfg.tar test.cfg # -c为打包，-f为指定压缩包的文件名，-v为显示打包过程</span><br></pre></td></tr></table></figure>
 
-<p>经过曲线和基础调整之后照片已经有了雏形，如下：</p>
-<center>
-<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204195528.png"  width = "300" alt="曲线调整后图片">  
-</center>
-
-<h2 id="2-3-进一步调整色调"><a href="#2-3-进一步调整色调" class="headerlink" title="2.3 进一步调整色调"></a>2.3 进一步调整色调</h2><p>调整完曲线之后，分析图片感觉还是有一点点过于亮，进一步调整明暗关系，将白色和高光调低，提升一点阴影，降低一点黑色色阶，这里是一个小trick，这样可以使得整体明亮的图片看起来对比度稍微高一点，得到所谓的通透的感觉。</p>
-<center>
-<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204202005.png"  width = "300">  
-</center>
-
-<p>偏好部分，同样有一个小trick，人物的白色衣服在日光下容易过曝，所以可以见底一些清晰度，让白色衣服有一种朦胧的感觉，不至于刺眼或者过于吸引眼球。同时增加一点饱和度，降低一点鲜艳度，使得图片的风格更加胶片的高宽容度感。</p>
-<center>
-<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042022428.png"  width = "300">  
-</center>
-
-<h2 id="2-4-HSL调色"><a href="#2-4-HSL调色" class="headerlink" title="2.4 HSL调色"></a>2.4 HSL调色</h2><p>进一步调整颜色，调整肤色——HSL调色中的橙色，以及调整背景中其他的颜色的饱和度</p>
-<figure class="third">
-    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042028231.png"  width = "220" alt="红色曲线">  
-    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042028800.png"  width = "220" alt="绿色曲线">  
-    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042027175.png"  width = "220" alt="蓝色曲线">  
-</figure>
-
-<ul>
-<li>调整饱和度和明亮度中的橙色是为了调整肤色，让肤色显的又白又有血色</li>
-<li>调整饱和度和明亮度的蓝色是为了不让背景中的蓝色喧兵夺主</li>
-<li>调整色相中的红色是为了使得人物的嘴唇颜色正常，偏红色</li>
-</ul>
-<h2 id="2-5-颜色校准"><a href="#2-5-颜色校准" class="headerlink" title="2.5 颜色校准"></a>2.5 颜色校准</h2><p>调整颜色校准使得照片整体偏黄一点，人物肤色正常一点，其实这一步我个人感觉意义不明，没啥大作用，就是使得整体照片偏黄偏品红一点。</p>
-<center>
-<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204203936.png"  width = "300">  
-</center>
-
-<h2 id="2-6-颜色分级"><a href="#2-6-颜色分级" class="headerlink" title="2.6 颜色分级"></a>2.6 颜色分级</h2><p>这一步很重要，这一步进一步调整了照片的明暗关系，将最后的影调调整到跟胶片很相似了。</p>
-<center>
-<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204204334.png"  width = "300">  
-</center>
-
-<p>这里就主要调整阴影和高光了，我的理解是中间调在曲线部分已经调整，但是这样为什么不在中间色调一步完成呢。</p>
-<ul>
-<li>阴影部分向右调整，这样使得图片暗部进一步变灰，至于偏色就见仁见智，偏青色、黄色、蓝色、甚至红色都可以，实际中一般是偏青色，偏黄色就是复古</li>
-<li>高光向左移动，这样使得照片更有一种哑光的感觉，其实也就是将白色也带一点灰的感觉，偏色就同样根据审美来调整</li>
-</ul>
-<h2 id="2-7-暗角以及颗粒"><a href="#2-7-暗角以及颗粒" class="headerlink" title="2.7 暗角以及颗粒"></a>2.7 暗角以及颗粒</h2><p>增加一点暗角。数量就是暗角的程度，中点也就是暗角的区域，为0也就是以中心点为基准，羽化调整到100，这样使得暗角的过渡狠顺滑。</p>
-<p>然后增加一点数量的颗粒，大小可以调整小一点，粗糙度看个人审美。</p>
-<center>
-<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042050909.png"  width = "300">  
-</center>
+<p>我们更经常遇到的是tar和gz一起出现，因为tar用来打包，gz用来压缩</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -zcvf test.tar.gz test/     #压缩</span><br><span class="line">tar -ztvf test.tar.gz           #只查看，不解压</span><br><span class="line">tar -zxvf test.tar.gz -C /tmp    #解压缩到指定位置</span><br><span class="line">tar -zxvf test.tar.gz -C /tmp test/cde #只解压压缩包中的特定文件，到指定位置</span><br></pre></td></tr></table></figure>
 
 
+<h1 id="4-查看系统状态"><a href="#4-查看系统状态" class="headerlink" title="4 查看系统状态"></a>4 查看系统状态</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ps -a  # 查看所有用户的所有进程</span><br><span class="line">ps -au # 按用户名和启动时间的顺序来显示进程</span><br><span class="line">kill -9 pid # 强制杀死进程号为pid的进程</span><br><span class="line">du -h # 查看置顶目录以及子目录下使用的磁盘空间</span><br><span class="line">df -h # 显示文件系统磁盘空间的使用情况</span><br><span class="line">free  # 显示当前内存和交换空间的使用情况</span><br><span class="line">nvidia-smi # 显示显卡情况</span><br></pre></td></tr></table></figure>
 
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>摄影博客</category>
-      </categories>
-      <tags>
-        <tag>Lightroom</tag>
-        <tag>摄影</tag>
-        <tag>调色</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>拍摄一些好用的小工具——软件</title>
-    <url>/2023/12/18/20231218_PhotoApps/</url>
-    <content><![CDATA[<p>记录一些拍摄相关的软件或者小程序：</p>
-<ul>
-<li>添加画框小软件</li>
-<li>添加水印软件</li>
-<li>查看星体数据，比如太阳和月亮数据软件</li>
-<li>简易修图软件</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="1-画框小软件"><a href="#1-画框小软件" class="headerlink" title="1 画框小软件"></a>1 画框小软件</h1><p>壹印：一个开源的添加画框的软件，github地址为：<a href="https://github.com/ggchivalrous/yiyin%E3%80%82">https://github.com/ggchivalrous/yiyin。</a></p>
-<p>操作也非常简单，这里不再赘述，主要展示两种可以制作的效果</p>
-<ul>
-<li>圆角渐变颜色画框</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/test.jpg"></p>
-<ul>
-<li>经典白色底相框</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/yinxing.jpg"></p>
-<p>这个软件也有两个小缺憾，一是添加相机的信息处，并没有相机的logo，二是还有如果能够集成进添加水印就更好了。</p>
-<h1 id="2-水印软件"><a href="#2-水印软件" class="headerlink" title="2 水印软件"></a>2 水印软件</h1><p>目前直接使用的Lightroom自带的水印，这样的好处是比较方便，输出图片的时候，直接设置一下水印就好了，这样减少了调整图片的步骤，非常符合提升效率的原则，但是坏处就是选择比较少，并且会有水印的符号。</p>
-<h1 id="3-天气软件"><a href="#3-天气软件" class="headerlink" title="3 天气软件"></a>3 天气软件</h1><p>外拍时，对于天气要求很高，ios自带的天气软件就能看到很多关爱你的信息，比如</p>
-<ul>
-<li>能见度：能见度对于拍照影响很大，能见度很低的情况下，拍摄出来的照片都是灰蒙蒙的，对比度很低</li>
-<li>日升，日落：这一项最重要，尤其要注意日落的时间，抓住拍摄的黄金时间，也即日落前后的总计一小时时间，这一个小时的光线变化是最丰富的，从日落的温暖橘黄到日落后到BLUE HOUR，都是出片的绝佳时机，并且能够捕捉到冷暖对比。</li>
-<li>月亮：对于想要打月亮的时候很重要，选择每个月满月的时候，并且需要提前看好月亮的方位，选择好前景，架设三脚架等待月升</li>
-<li>气温、紫外线、晴雨等基本信息，注意防暑、防晒、防雨等等</li>
-</ul>
-<p>对于想要拍摄银河这些，可能需要更加专业的软件，或者一些微信小程序也有一些星象的相关信息。</p>
-<h1 id="4-修图软件"><a href="#4-修图软件" class="headerlink" title="4 修图软件"></a>4 修图软件</h1><p>醒图，一个手机修图软件。</p>
-<p>这里就不介绍LR和PS了，都是在电脑上使用的。醒图是我目前使用比较良好的一个手机app，免费的功能基本够用了，我一般的流程是在电脑的LR上调色完成之后，在醒图上对模特的面部做一些基本的调整就可以了，简单磨个皮，调整一下脸型就好了。</p>
-<p>如果你想整活，醒图的换表情的功能也很实用，能够改变模特的表情，实测还是比较够用的。对于清晰度不是很高的照片基本够用，清晰度高了的照片使用会有比较明显的割裂感。</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>摄影博客</category>
-      </categories>
-      <tags>
-        <tag>摄影</tag>
-        <tag>软件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>阴天or夜景街拍调色</title>
-    <url>/2023/12/25/20231225_NightStreetLrStyle/</url>
-    <content><![CDATA[<p>使用场景主要是阴天或者夜景这样光比比较小，需要凸显冷暖等的颜色的时候的调色。调色过程也比较简单。</p>
-<p>主要部分如下：</p>
-<ul>
-<li>基本</li>
-<li>色调曲线</li>
-<li>校准</li>
-<li>HSL</li>
-<li>效果<span id="more"></span></li>
-</ul>
-<h1 id="1-基本调整"><a href="#1-基本调整" class="headerlink" title="1 基本调整"></a>1 基本调整</h1><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312251549960.png"  width = "300" >  
-
-<p>色温-5，色调-5；曝光度+0.8，对比度+10，高光-55，阴影+29，白色色阶+14，黑色色阶-14；清晰度+30，鲜艳度+50.</p>
-<ul>
-<li><p>首先调整色温和色调，色温可以根据不同照片进行调节，主要恢复一下照片原有的色温就可以了。</p>
-</li>
-<li><p>增加曝光度和对比度，因为小光比，阴天或者夜景的对比度会比较低，拉高一点。</p>
-</li>
-<li><p>降低高光、增加阴影、给一点宽容度，然后增加白色色阶、压暗黑色色阶，恢复一点对比度</p>
-</li>
-<li><p>在不是近景拍摄人物肖像的情况下，拉高一点清晰度，大概30，这样增加一下街拍质感</p>
-</li>
-<li><p>增加一下鲜艳度，让颜色鲜艳一点</p>
-</li>
-</ul>
-<h1 id="2-色调曲线"><a href="#2-色调曲线" class="headerlink" title="2 色调曲线"></a>2 色调曲线</h1><ul>
-<li><p>亮度曲线，暗部提高15-20左右，然后恢复中间调和暗调。</p>
-</li>
-<li><p>红色曲线打三个点，阴影拉低一点，为阴影加一点青色</p>
-</li>
-<li><p>绿色曲线打三个点，阴影拉低一点，为阴影加一点品红</p>
-</li>
-</ul>
-<p>总的效果就是给阴影带一点蓝色并且加上一点影调。</p>
-<h1 id="3-校准"><a href="#3-校准" class="headerlink" title="3 校准"></a>3 校准</h1><ul>
-<li>右右左：红原色向右48，饱和度增加20，绿原色向右48，蓝颜色向左20</li>
-</ul>
-<p>这样突出画面的暖色，减弱画面的冷色调，如果冷色调更多，则可以将蓝色饱和度降低一点。</p>
-<p>注意：这里如果想要青橙色调，操作就是吧蓝色向左多一点比如也试8，然后降低一点饱和度，否则饱和度会溢出。</p>
-<h1 id="4-HSL"><a href="#4-HSL" class="headerlink" title="4 HSL"></a>4 HSL</h1><p>这一步主要进一步调整冷暖</p>
-<ul>
-<li>色相：红色-50，黄色-20</li>
-<li>饱和度：橙色+24，黄色-20，蓝色-40</li>
-<li>明亮度：红色-36，黄色+16</li>
-</ul>
-<h1 id="5-效果"><a href="#5-效果" class="headerlink" title="5 效果"></a>5 效果</h1><ul>
-<li>暗角：数量-13，中点37，圆度+4，羽化+100</li>
-<li>颗粒：看感觉来</li>
-</ul>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>摄影博客</category>
-      </categories>
-      <tags>
-        <tag>Lightroom</tag>
-        <tag>摄影</tag>
-        <tag>调色</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VIM简单教程</title>
-    <url>/2024/10/04/20241004_VimTutorial/</url>
-    <content><![CDATA[<p>在Linux环境下难免会遇到使用VIM的情况，于是在这里进行一些总结</p>
-<p>本博客简要总结了一些使用VIM的使用技巧。</p>
-<span id="more"></span>
-
-<p>Vim是一款功能强大的文本编辑器，它提供了许多高效的编辑技巧和快捷键。</p>
-<p>首先是如何进行vim的界面，命令为<code>vim example.c</code>。其中example.c为当前路径下的文件，当然也可以对指定路径下的文件进行vim编辑。</p>
-<p>在进入vim编辑界面后，以下是一些使用Vim的详细技巧：</p>
-<h3 id="1-基本模式与切换"><a href="#1-基本模式与切换" class="headerlink" title="1 基本模式与切换"></a>1 基本模式与切换</h3><p>首先需要了解Vim的三种基本模式：普通模式（Normal mode）、插入模式（Insert mode）和命令模式（Command mode，也叫Ex模式）。</p>
-<ul>
-<li><strong>普通模式</strong>：启动Vim时默认进入的模式，可以进行光标移动、删除、复制、粘贴等操作。</li>
-<li><strong>插入模式</strong>：在普通模式下按<code>i</code>、<code>a</code>、<code>o</code>、<code>O</code>等键进入，用于输入文本。<ul>
-<li><code>i</code>：在当前光标位置前进入插入模式。</li>
-<li><code>a</code>：在当前光标位置后进入插入模式。</li>
-<li><code>o</code>：在当前行下新开一行并进入插入模式。</li>
-<li><code>O</code>：在当前行上新开一行并进入插入模式。</li>
-</ul>
-</li>
-<li><strong>命令模式</strong>：在普通模式下输入<code>:</code>进入，用于执行命令，如保存文件、退出Vim、替换文本等。</li>
-</ul>
-<p>从插入模式或命令模式返回普通模式，可以按下<code>Esc</code>键。</p>
-<h3 id="2-光标移动"><a href="#2-光标移动" class="headerlink" title="2 光标移动"></a>2 光标移动</h3><ul>
-<li><code>h</code>：左移一个字符。</li>
-<li><code>j</code>：下移一行。</li>
-<li><code>k</code>：上移一行。</li>
-<li><code>l</code>：右移一个字符。</li>
-<li><code>w</code>：移至下一个单词的开头。</li>
-<li><code>e</code>：移至当前单词的结尾。</li>
-<li><code>b</code>：移至当前单词的开头。</li>
-<li><code>gg</code>：移至文件开头。</li>
-<li><code>G</code>：移至文件末尾。</li>
-<li><code>(数字)G</code>：移至指定行号。</li>
-<li><code>^</code>：移动到行首第一个非空白字符（汉字空格不被视为空白字符）。</li>
-<li><code>0</code>：移动到行首第一个字符。</li>
-<li><code>$</code>：移动到行尾。</li>
-</ul>
-<h3 id="3-文本编辑"><a href="#3-文本编辑" class="headerlink" title="3 文本编辑"></a>3 文本编辑</h3><ul>
-<li><p><strong>删除</strong>：</p>
-<ul>
-<li><code>x</code>：删除当前光标所在位置的字符。</li>
-<li><code>X</code>：删除当前光标所在位置前一个字符。</li>
-<li><code>dd</code>：删除整行。</li>
-<li><code>ndd</code>：删除n行。</li>
-<li><code>dw</code>：删除一个单词。</li>
-<li><code>d3w</code>：删除三个单词。</li>
-<li><code>d$</code>：删除从当前光标到行尾的内容。</li>
-<li><code>D</code>：等同于<code>d$</code>，删除从当前光标到行尾的内容。</li>
-</ul>
-</li>
-<li><p><strong>复制与粘贴</strong>：</p>
-<ul>
-<li><code>yy</code>：复制当前行。</li>
-<li><code>nyy</code>：复制光标以下n-1行。</li>
-<li><code>p</code>：在当前光标位置粘贴文本。</li>
-<li><code>yw</code>：复制一个单词。</li>
-<li><code>ye</code>：复制从当前光标到单词结尾的内容。</li>
-<li><code>y$</code>：复制从当前光标到行尾的内容。</li>
-</ul>
-</li>
-<li><p><strong>撤销与重做</strong>：</p>
-<ul>
-<li><code>u</code>：撤销上一步操作。</li>
-<li><code>Ctrl+r</code>：重做上一步撤销的操作。</li>
-</ul>
-</li>
-</ul>
-<h3 id="4-页面滚动"><a href="#4-页面滚动" class="headerlink" title="4 页面滚动"></a>4 页面滚动</h3><ul>
-<li><code>Ctrl+f</code>：向前翻整页（forward）。</li>
-<li><code>Ctrl+b</code>：向后翻整页（backward）。</li>
-<li><code>Ctrl+d</code>：向下翻半页（down）。</li>
-<li><code>Ctrl+u</code>：向上翻半页（up）。</li>
-<li><code>Ctrl+e</code>：向上滚一行。</li>
-<li><code>Ctrl+y</code>：向下滚一行。</li>
-<li><code>Ctrl+B</code>：向后滚一页（与<code>Ctrl+b</code>不同，注意大小写）。</li>
-<li><code>Ctrl+F</code>：向前滚一页（与<code>Ctrl+f</code>不同，注意大小写）。</li>
-</ul>
-<h3 id="5-命令模式操作"><a href="#5-命令模式操作" class="headerlink" title="5 命令模式操作"></a>5 命令模式操作</h3><ul>
-<li><code>:w</code>：保存文件。</li>
-<li><code>:q</code>：退出Vim。</li>
-<li><code>:wq</code>：保存并退出Vim。</li>
-<li><code>:q!</code>：强制退出Vim。</li>
-<li><code>ZZ</code>：保存并退出，与<code>:wq</code>等效（注意是大写的Z）。</li>
-<li><code>:set number</code>：显示行号。</li>
-<li><code>:set nonumber</code>：隐藏行号。</li>
-<li><code>:syntax on</code>：开启语法高亮。</li>
-<li><code>:syntax off</code>：关闭语法高亮。</li>
-<li><code>:s/old/new/g</code>：替换当前行的第一个<code>old</code>为<code>new</code>。</li>
-<li><code>:s/old/new/gc</code>：替换当前行的第一个<code>old</code>为<code>new</code>，每次替换前询问。</li>
-<li><code>:%s/old/new/g</code>：替换整个文件的<code>old</code>为<code>new</code>。</li>
-<li><code>:args</code>：查看或设置参数列表中的文件。</li>
-<li><code>:argdo %s/old/new/g</code>：在参数列表中的每个文件里执行替换操作。</li>
-</ul>
-<h3 id="6-高级技巧"><a href="#6-高级技巧" class="headerlink" title="6 高级技巧"></a>6 高级技巧</h3><ul>
-<li><p><strong>可视化模式</strong>：按<code>v</code>进入可视化模式，可以选择文本块，然后进行复制、剪切、粘贴等操作。</p>
-</li>
-<li><p><strong>重复命令</strong>：<code>.</code>命令可以重复上一次修改命令。例如，如果上一次操作是删除一个单词，那么<code>.</code>将再次删除一个单词。</p>
-</li>
-<li><p><strong>查找与替换</strong>：</p>
-<ul>
-<li><code>/pattern</code>：从当前光标位置开始向下查找指定模式。</li>
-<li><code>?pattern</code>：从当前光标位置开始向上查找指定模式。</li>
-<li><code>n</code>：在查找模式下，切换到下一个匹配项。</li>
-<li><code>N</code>：在查找模式下，切换到上一个匹配项。</li>
-</ul>
-</li>
-<li><p><strong>多文件操作</strong>：</p>
-<ul>
-<li><code>:sp [filename]</code>：水平分割窗口并打开新文件或当前文件。</li>
-<li><code>:vsp [filename]</code>：垂直分割窗口并打开新文件或当前文件。</li>
-<li><code>Ctrl+w+h/j/k/l</code>：在分割的窗口间切换。</li>
-<li><code>:tabe [filename]</code>：在新的标签页中打开文件。</li>
-<li><code>:tabn</code>和<code>:tabp</code>：在标签页间切换。</li>
-</ul>
-</li>
-<li><p><strong>录制宏</strong>：</p>
-<ul>
-<li>使用<code>q</code>命令开始录制宏，然后执行一系列操作。</li>
-<li>录制完成后，再次按<code>q</code>结束录制。</li>
-<li>使用<code>@</code>命令加上宏的寄存器名称来执行录制的宏。</li>
-</ul>
-</li>
-<li><p><strong>插件使用</strong>：</p>
-<ul>
-<li>Vim支持各种插件，如NERDTree用于目录树管理，MiniBufExplorer用于buffer窗口管理，word_complete.vim用于自动补全等。</li>
-<li>插件的安装和配置通常需要在Vim的配置文件（如<code>.vimrc</code>）中进行。</li>
-</ul>
-</li>
-</ul>
-<p>以上是使用Vim的一些详细技巧，掌握这些技巧可以大大提高文本编辑的效率。不过，Vim的功能非常强大，还有更多高级功能和自定义设置等待我们去探索和学习。</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>VIM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SourceInsight4+Samba教程</title>
-    <url>/2024/10/10/20241010_SourceInsight4WithSamba/</url>
-    <content><![CDATA[<p>由于工作需要经常在虚拟机中编译比较大型的C语言的项目，组内推荐使用SourceInsight配合Samba共享文件夹在windows端查看虚拟机ubuntu中的代码，于是进行简单的使用流程记录。</p>
-<p>分为以下几个部分介绍</p>
-<ul>
-<li>SourceInsight的优势、使用方式以及常用的操作</li>
-<li>如何配置Samba共享文件夹</li>
-<li>设置虚拟机的网卡以解决虚拟机的IP地址一直变化导致Samba文件夹失效的问题</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="1-SourceInsight"><a href="#1-SourceInsight" class="headerlink" title="1 SourceInsight"></a>1 SourceInsight</h1><p>SourceInsight是一个看似复古的IDE，但是在看一些大型的项目的时候会比较好用，尤其是查看一些函数的从属关系的reference的时候会很好用。</p>
-<p>这里可以参考这一篇博客讲解的很详细，这里就不再赘述一些界面介绍了，其中介绍的SourceInsight3.5，笔者用的SourceInsight4.0与他的界面和功能几乎没有差距，只是分辨率提升了。在3.5版本对于4k的分辨图标会不够清晰，看着不够好。</p>
-<p><a href="https://www.cnblogs.com/andy-songwei/p/9965714.html">博客园：【工利其器】必会工具之（一）Source Insight篇</a></p>
-<p>该博客主要介绍了SI的简介、创建项目、添加文件、以及其中的界面如何使用的详细介绍，很值得细读。</p>
-<p>笔者这里就再记录一些常用的快捷操作，还有对于SourceInsight的一些稍微进阶的设置。</p>
-<h2 id="1-1-快捷键记录"><a href="#1-1-快捷键记录" class="headerlink" title="1.1 快捷键记录"></a>1.1 快捷键记录</h2><table>
+<h1 id="5-常用快捷键"><a href="#5-常用快捷键" class="headerlink" title="5 常用快捷键"></a>5 常用快捷键</h1><table>
 <thead>
 <tr>
-<th align="left">快捷键</th>
+<th align="center">快捷键</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>CTRL+C</code></td>
+<td align="center">退出当前进程</td>
+</tr>
+<tr>
+<td align="center"><code>CTRL+L</code></td>
+<td align="center">清除命令行中显示内容</td>
+</tr>
+<tr>
+<td align="center"><code>CTRL+Q</code></td>
+<td align="center">退出</td>
+</tr>
+<tr>
+<td align="center"><code>TAB</code></td>
+<td align="center">自动补全</td>
+</tr>
+</tbody></table>
+<h1 id="6-vim"><a href="#6-vim" class="headerlink" title="6 vim"></a>6 vim</h1><h2 id="6-1-修改文本"><a href="#6-1-修改文本" class="headerlink" title="6.1 修改文本"></a>6.1 修改文本</h2><table>
+<thead>
+<tr>
+<th align="center">命令</th>
 <th align="left">作用</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left"><code>SHIFT+F8</code></td>
-<td align="left">高亮选中的单词(不包括注释中的单词)</td>
+<td align="center">i</td>
+<td align="left">在光标前插入</td>
 </tr>
 <tr>
-<td align="left"><code>CTRL+G</code>或<code>F5</code></td>
-<td align="left">跳到指定行</td>
+<td align="center">I</td>
+<td align="left">在光标当前行开始插入</td>
 </tr>
 <tr>
-<td align="left"><code>CTRL+鼠标左键</code></td>
-<td align="left">直接跳转至标识定义处调用处</td>
+<td align="center">a</td>
+<td align="left">在光标后插入</td>
 </tr>
 <tr>
-<td align="left"><code>CTRL+F</code></td>
-<td align="left">本文件内查找</td>
+<td align="center">A</td>
+<td align="left">在光标当前行末尾插入</td>
 </tr>
 <tr>
-<td align="left"><code>F3</code></td>
-<td align="left">本文件查找结果的上一个</td>
+<td align="center">o</td>
+<td align="left">在光标当前行的下一行插入新行</td>
 </tr>
 <tr>
-<td align="left"><code>F4</code></td>
-<td align="left">本文件查找结果的下一个</td>
+<td align="center">O</td>
+<td align="left">在光标当前行的上一行插入新行</td>
 </tr>
 <tr>
-<td align="left"><code>CTRL+M</code></td>
-<td align="left">创建或查找书签，方便下次找回此位置</td>
-</tr>
-<tr>
-<td align="left"><code>CTRL+O</code></td>
-<td align="left">搜索文件，找到回车打开，找不到ESC退出</td>
-</tr>
-<tr>
-<td align="left"><code>ALT</code> + <code>,</code></td>
-<td align="left">后退</td>
-</tr>
-<tr>
-<td align="left"><code>ALT</code> + <code>.</code></td>
-<td align="left">前进</td>
-</tr>
-<tr>
-<td align="left"><code>ALT + F12</code></td>
-<td align="left">可以切换，让字符宽度变得一致，或者是大小不同地显示</td>
-</tr>
-<tr>
-<td align="left"><code>CTRL+G</code>或者<code>F7</code></td>
-<td align="left">打开Symbol Window</td>
-</tr>
-<tr>
-<td align="left"><code>CTRL+&#39;</code></td>
-<td align="left">智能重命名</td>
-</tr>
-<tr>
-<td align="left"><code>CTRL+G</code></td>
-<td align="left">打开Symbol Window</td>
-</tr>
-<tr>
-<td align="left"><code>CTRL+G</code></td>
-<td align="left">打开Symbol Window</td>
-</tr>
-<tr>
-<td align="left"><code>CTRL+G</code></td>
-<td align="left">打开Symbol Window</td>
-</tr>
-<tr>
-<td align="left"><code>CTRL+G</code></td>
-<td align="left">打开Symbol Window</td>
+<td align="center">:wq</td>
+<td align="left">保存并退出</td>
 </tr>
 </tbody></table>
-<h2 id="1-2-SourceInsight进阶设置"><a href="#1-2-SourceInsight进阶设置" class="headerlink" title="1.2 SourceInsight进阶设置"></a>1.2 SourceInsight进阶设置</h2><ol>
-<li>让{ 和 } 不缩进</li>
-</ol>
-<p>Options -&gt; Document Options -&gt; Auto Indenting -&gt; Auto Indent Type 选 Simple。</p>
-<p>还有：让{ 和 } 不缩进： options-&gt;document options-&gt;auto indent 去掉indent Open Brace和Indent Close Brace。 （不好使，括号无法配对对齐！）</p>
-<ol start="2">
-<li>添加文件类型</li>
-</ol>
-<p>用户可以定义自己的类型，Options-&gt;Document Options-&gt;add type，定义文件类型名以及文件名后缀。</p>
-<p>勾选include when adding to projects在添加目录下文件到工程是该类文件就会添加进SI的工程。</p>
-<p>如果需要将所有文件添加进SI的工程，可以定义一种文件类型*.*。</p>
-<ol start="3">
-<li>恢复ctrl+a的全选功能</li>
-</ol>
-<p>Options -&gt; Key Assignments：通过关键词save 找到save all，更改为ctrl+shift+a，通过关键词select找到select all，更改为ctrl +a。</p>
-<ol start="4">
-<li>设置背景色</li>
-</ol>
-<p>Options-&gt;preference-&gt;color-&gt;windows background设置背景色（护眼色：85，90，205）。</p>
-<ol start="5">
-<li>解决TAB键缩进问题</li>
-</ol>
-<p>Options-&gt; Document Options里面的右下角Editing Options栏里，把Expand tabs勾起来，然后确定。OK，现在TAB键的缩进和四个空格的缩进在SIS里面看起来就对齐。</p>
-<p>Linux下TAB是8个空格长度，这样设置可以让TAB和4个空格保持一致！）</p>
-<h1 id="2-Samba共享文件夹设置"><a href="#2-Samba共享文件夹设置" class="headerlink" title="2 Samba共享文件夹设置"></a>2 Samba共享文件夹设置</h1><p>虽然SourceInsight很好用，但是在很多项目都在虚拟机里面编译，这时候该如何看到其中的代码呢。此时就可以设置Samba共享文件夹来在windows上打开虚拟机Linux下的共享文件。</p>
-<p>以下是在Ubuntu上配置Samba共享文件夹给Windows使用的详细配置教程：</p>
-<h2 id="2-1-前提条件"><a href="#2-1-前提条件" class="headerlink" title="2.1 前提条件"></a>2.1 前提条件</h2><ol>
-<li>确保Ubuntu和Windows在同一局域网内，或者通过网线直接连接。</li>
-<li>Ubuntu系统已安装并更新到最新版本。</li>
-</ol>
-<h2 id="2-2-安装Samba"><a href="#2-2-安装Samba" class="headerlink" title="2.2 安装Samba"></a>2.2 安装Samba</h2><ol>
-<li>打开Ubuntu的终端。</li>
-<li>更新软件包列表：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+<h2 id="6-2-定位命令"><a href="#6-2-定位命令" class="headerlink" title="6.2 定位命令"></a>6.2 定位命令</h2><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">:set nu</td>
+<td align="left">显示行号</td>
+</tr>
+<tr>
+<td align="center">:set nonu</td>
+<td align="left">取消行号</td>
+</tr>
+<tr>
+<td align="center">gg</td>
+<td align="left">跳到首行</td>
+</tr>
+<tr>
+<td align="center">G</td>
+<td align="left">跳到末行</td>
+</tr>
+<tr>
+<td align="center">:n</td>
+<td align="left">跳到第n行</td>
+</tr>
+</tbody></table>
+<h2 id="6-3-替换和取消命令"><a href="#6-3-替换和取消命令" class="headerlink" title="6.3 替换和取消命令"></a>6.3 替换和取消命令</h2><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">u</td>
+<td align="left">undo，取消上一步操作</td>
+</tr>
+<tr>
+<td align="center">Ctrl + r</td>
+<td align="left">redo，返回到undo之前</td>
+</tr>
+<tr>
+<td align="center">r</td>
+<td align="left">替换光标所在处的字符</td>
+</tr>
+<tr>
+<td align="center">R</td>
+<td align="left">从光标所在处开始替换，按Esc键结束</td>
+</tr>
+</tbody></table>
+<h2 id="6-4-删除命令"><a href="#6-4-删除命令" class="headerlink" title="6.4 删除命令"></a>6.4 删除命令</h2><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">x</td>
+<td align="left">删除光标所在处字符</td>
+</tr>
+<tr>
+<td align="center">nx</td>
+<td align="left">删除光标所在处后的n个字符</td>
+</tr>
+<tr>
+<td align="center">dd</td>
+<td align="left">删除光标所在行。ndd删除n行</td>
+</tr>
+<tr>
+<td align="center">dG</td>
+<td align="left">删除光标所在行到末尾行的所以内容</td>
+</tr>
+<tr>
+<td align="center">D</td>
+<td align="left">删除光标所在处到行尾的内容</td>
+</tr>
+<tr>
+<td align="center">:5,7d</td>
+<td align="left">删除指定范围的行</td>
+</tr>
+</tbody></table>
+<h1 id="7-文件和目录相关"><a href="#7-文件和目录相关" class="headerlink" title="7 文件和目录相关"></a>7 文件和目录相关</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pwd # 显示当前工作目录目录</span><br><span class="line">touch test.txt # 新建空白文档</span><br><span class="line">mkdir testdir  # 建立空白目录</span><br><span class="line">cp              # 复制</span><br><span class="line">mv dir1 dir2    # 移动文件或目录、文件或目录改名</span><br><span class="line">rm -rf dir1     # r同时删除dir1下的所有文件,f强制删除文件或目录</span><br><span class="line">rmdir dir1      # 删除空目录</span><br><span class="line">cat 1.txt       # 显示文本文件内容</span><br><span class="line">head -[num] 1.txt    # 显示前十行（或者指定前num）内容</span><br><span class="line">tail [-f] [-num]     # 显示后十行，f为滚动显示，num为指定数字</span><br><span class="line">wc 1.txt        # 统计文本的行数、字数、字符数</span><br><span class="line">grep aaa 1.txt       # 在1.txt中查找包含aaa的所有行</span><br></pre></td></tr></table></figure>
 
-<ol start="3">
-<li>安装Samba及其相关组件：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install samba samba-common -y</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-3-配置Samba"><a href="#2-3-配置Samba" class="headerlink" title="2.3 配置Samba"></a>2.3 配置Samba</h2><ol>
-<li>创建或选择一个要共享的文件夹，并设置其权限。例如，假设要共享的文件夹路径为<code>/home/ubuntu/shared</code>，则设置权限为：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">chmod</span> 777 /home/ubuntu/shared</span><br></pre></td></tr></table></figure>
-
-<p>或者，使用更安全的权限设置，仅允许特定用户读写：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">chown</span> your_username:your_groupname /home/ubuntu/shared</span><br><span class="line">sudo <span class="built_in">chmod</span> 770 /home/ubuntu/shared</span><br></pre></td></tr></table></figure>
-
-<p>其中，<code>your_username</code>和<code>your_groupname</code>分别替换为你的Ubuntu用户名和组名。</p>
-<ol start="2">
-<li>添加一个Samba用户（如果需要的话）。如果已有一个Ubuntu用户，可以直接为其设置Samba密码：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo smbpasswd -a your_username</span><br></pre></td></tr></table></figure>
-
-<p>按照提示输入并确认Samba密码。</p>
-<ol start="3">
-<li>编辑Samba配置文件<code>/etc/samba/smb.conf</code>。在文件末尾添加一个新的共享配置段，例如：</li>
-</ol>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[shared]</span></span><br><span class="line"><span class="attr">path</span> = /home/ubuntu/shared</span><br><span class="line"><span class="attr">browseable</span> = <span class="literal">yes</span></span><br><span class="line"><span class="attr">public</span> = <span class="literal">yes</span></span><br><span class="line"><span class="attr">writable</span> = <span class="literal">yes</span></span><br><span class="line"><span class="attr">available</span> = <span class="literal">yes</span></span><br></pre></td></tr></table></figure>
-
-<p>如果希望限制访问权限，可以添加<code>valid users</code>选项并指定Samba用户名：</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[shared]</span></span><br><span class="line"><span class="attr">path</span> = /home/ubuntu/shared</span><br><span class="line"><span class="attr">browseable</span> = <span class="literal">yes</span></span><br><span class="line">valid <span class="attr">users</span> = your_username</span><br><span class="line"><span class="attr">writable</span> = <span class="literal">yes</span></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>保存并关闭配置文件。</li>
-</ol>
-<h2 id="2-4-重启Samba服务"><a href="#2-4-重启Samba服务" class="headerlink" title="2.4 重启Samba服务"></a>2.4 重启Samba服务</h2><ol>
-<li>重启Samba服务以使配置生效：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl restart smbd</span><br><span class="line">sudo systemctl restart nmbd</span><br></pre></td></tr></table></figure>
-
-<p>或者，使用旧的服务管理命令（在某些Ubuntu版本中可能仍有效）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo service smbd restart</span><br><span class="line">sudo service nmbd restart</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-5-在Windows上访问共享文件夹"><a href="#2-5-在Windows上访问共享文件夹" class="headerlink" title="2.5 在Windows上访问共享文件夹"></a>2.5 在Windows上访问共享文件夹</h2><ol>
-<li>打开Windows资源管理器（文件资源管理器）。</li>
-<li>在地址栏中输入Ubuntu的IP地址和共享文件夹名称，格式为：<code>\\ubuntu_ip_address\shared</code>。例如，如果Ubuntu的IP地址是<code>192.168.1.100</code>，则输入：<code>\\192.168.1.100\shared</code>。</li>
-<li>如果设置了Samba用户和密码，将提示输入这些凭据以访问共享文件夹。</li>
-</ol>
-<h2 id="2-6-获取Ubuntu的IP地址"><a href="#2-6-获取Ubuntu的IP地址" class="headerlink" title="2.6 获取Ubuntu的IP地址"></a>2.6 获取Ubuntu的IP地址</h2><p>在Ubuntu终端中输入以下命令以获取IP地址：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
-
-<p>查找与网络连接相对应的条目（例如<code>eth0</code>、<code>wlan0</code>等），并找到<code>inet</code>后面的IP地址，比如为192.168.1.100。</p>
-<p><strong>注意事项</strong></p>
-<ol>
-<li>确保防火墙设置允许Samba通信（通常使用TCP端口137、138、139和445）。</li>
-<li>如果在Windows上遇到访问问题，请检查Samba配置文件中的权限设置和共享名称是否正确。</li>
-<li>对于更复杂的共享需求（如多个共享文件夹、访问控制列表等），可以进一步编辑<code>/etc/samba/smb.conf</code>文件并添加相应的配置段。</li>
-</ol>
-<p>通过以上步骤，应该就可以在Ubuntu上成功配置Samba共享文件夹，并在Windows上访问它。在资源管理器中看到共享文件夹可以通过右键-&gt;映射到磁盘，这样以后在windows上就能够更方便的打开共享文件夹来</p>
-<h1 id="3-虚拟机网卡设置"><a href="#3-虚拟机网卡设置" class="headerlink" title="3 虚拟机网卡设置"></a>3 虚拟机网卡设置</h1><p>在使用以上的Source Insight+Samba的方案进行开发中，笔者经常会遇到一个问题就是虚拟机的ip会经常变化，这是因为在虚拟机中使用的是NAT模式，这样就会经常变化ip地址。需要修改其为自定义模式。</p>
 <p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
 ]]></content>
       <categories>
@@ -3108,8 +2419,79 @@
       </categories>
       <tags>
         <tag>Linux</tag>
-        <tag>C/C++</tag>
-        <tag>IDE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++之lambda表达式</title>
+    <url>/2023/10/10/20231010_lambda/</url>
+    <content><![CDATA[<p>C++11之后引入lambda表达式，，一般用于定义匿名函数，使得代码更加灵活简洁。lambda表达式与普通函数类似，也有参数列表、返回值类型和函数体，只是它的定义方式更简洁，并且可以在函数内部定义。</p>
+<span id="more"></span>
+
+<h1 id="1-lambda表达式概述"><a href="#1-lambda表达式概述" class="headerlink" title="1 lambda表达式概述"></a>1 lambda表达式概述</h1><p>最常见的lambda表达式如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">auto</span> plus = [] (<span class="type">int</span> v1, <span class="type">int</span> v2) -&gt; <span class="type">int</span> &#123; <span class="keyword">return</span> v1 + v2; &#125;</span><br><span class="line"><span class="type">int</span> sum = <span class="built_in">plus</span>(<span class="number">1</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<p>上述代码是计算两数之和的，但是一般不会这样使用</p>
+<h1 id="2-lambda表达式的写法"><a href="#2-lambda表达式的写法" class="headerlink" title="2 lambda表达式的写法"></a>2 lambda表达式的写法</h1><table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">写法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">(1)</td>
+<td align="center"><code>[captures]&lt;tparams&gt;(params)lambda-specifiers&#123;body&#125;</code></td>
+</tr>
+<tr>
+<td align="center">(2)</td>
+<td align="center"><code>[captures](params)rtailing-return-type&#123;body&#125;</code></td>
+</tr>
+<tr>
+<td align="center">(3)</td>
+<td align="center"><code>[captures](params)&#123;body&#125;</code></td>
+</tr>
+<tr>
+<td align="center">(4)</td>
+<td align="center"><code>[captures]lambda-specifiers&#123;body&#125;</code></td>
+</tr>
+</tbody></table>
+<h1 id="3-四种表达式的含义"><a href="#3-四种表达式的含义" class="headerlink" title="3 四种表达式的含义"></a>3 四种表达式的含义</h1><p>（1）完整的lambda表达式，包含了lambda表达式的所有成分。<br>（2）常量lambda表达式，捕获的变量都是常量，不能在lambda表达式的body中进行修改。<br>（3）和（2）基本一致，唯一的区别就是，lambda表达式的函数返回值可以通过函数体推导出来。一般情况函数返回值类型明确或者没有返回值的情况下可以这样写。<br>（4）lambda表达式的函数没有任何参数，但是可以添加lambda-specifiers，lambda-specifiers是什么我们后续再介绍。</p>
+<h1 id="4-lambda表达式各个成员的解释"><a href="#4-lambda表达式各个成员的解释" class="headerlink" title="4 lambda表达式各个成员的解释"></a>4 lambda表达式各个成员的解释</h1><p>captures 捕获列表，lambda可以把上下文变量以值或引用的方式捕获，在body中直接使用。</p>
+<p>tparams 模板参数列表(c++20引入)，让lambda可以像模板函数一样被调用。</p>
+<p>params 参数列表，有一点需要注意，在c++14之后允许使用auto左右参数类型。</p>
+<p>lambda-specifiers lambda说明符， 一些可选的参数，这里不多介绍了，有兴趣的读者可以去官方文档上看。这里比较常用的参数就是mutable和exception。其中，表达式(1)中没有trailing-return-type，是因为包含在这一项里面的。</p>
+<p>trailing-return-type 返回值类型，一般可以省略掉，由编译器来推导。</p>
+<p>body 函数体，函数的具体逻辑。</p>
+<h1 id="5-捕获列表"><a href="#5-捕获列表" class="headerlink" title="5 捕获列表"></a>5 捕获列表</h1><p>上面介绍完了lambda表达式的各个成分，其实很多部分和正常的函数没什么区别，其中最大的一个不同点就是捕获列表。我在刚开始用lambda表达式的时候，还一直以为这个没啥用，只是用一个 [] 来标志着这是一个lambda表达式。后来了解了才知道，原来这个捕获列表如此强大，甚至我觉得捕获列表就是lambda表达式的灵魂。下面先介绍几种常用的捕获方式。</p>
+<p>[] 什么也不捕获，无法lambda函数体使用任何</p>
+<p>[&#x3D;] 按值的方式捕获所有变量</p>
+<p>[&amp;] 按引用的方式捕获所有变量</p>
+<p>[&#x3D;, &amp;a] 除了变量a之外，按值的方式捕获所有局部变量，变量a使用引用的方式来捕获。这里可以按引用捕获多个，例如 [&#x3D;, &amp;a, &amp;b,&amp;c]。这里注意，如果前面加了&#x3D;，后面加的具体的参数必须以引用的方式来捕获，否则会报错。</p>
+<p>[&amp;, a] 除了变量a之外，按引用的方式捕获所有局部变量，变量a使用值的方式来捕获。这里后面的参数也可以多个，例如 [&amp;, a, b, c]。这里注意，如果前面加了&amp;，后面加的具体的参数必须以值的方式来捕获。</p>
+<p>[a, &amp;b] 以值的方式捕获a，引用的方式捕获b，也可以捕获多个。</p>
+<p>[this] 在成员函数中，也可以直接捕获this指针，其实在成员函数中，[&#x3D;]和[&amp;]也会捕获this指针。</p>
+<h1 id="6-总结"><a href="#6-总结" class="headerlink" title="6 总结"></a>6 总结</h1><ul>
+<li><p>捕获列表，对应LambdaClass类的private成员。</p>
+</li>
+<li><p>参数列表，对应LambdaClass类的成员函数的operator()的形参列表</p>
+</li>
+<li><p>mutable，对应 LambdaClass类成员函数 operator() 的const属性 ，但是只有在捕获列表捕获的参数不含有引用捕获的情况下才会生效，因为捕获列表只要包含引用捕获，那operator()函数就一定是非const函数。</p>
+</li>
+<li><p>返回类型，对应 LambdaClass类成员函数 operator() 的返回类型</p>
+</li>
+<li><p>函数体，对应 LambdaClass类成员函数 operator() 的函数体。</p>
+</li>
+<li><p>引用捕获和值捕获不同的一点就是，对应的成员是否为引用类型。</p>
+</li>
+</ul>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>lambda</tag>
       </tags>
   </entry>
   <entry>
@@ -3314,71 +2696,6 @@
       </categories>
       <tags>
         <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>实现windows和mac间远程桌面</title>
-    <url>/2023/10/04/20231004_Windows2MacRemoteConn/</url>
-    <content><![CDATA[<p>实现Windows和mac之间的丝滑远程桌面，主要使用的是cpolar，虽然不是免费的，但是使用的体验还是不错，价格也不算很高，每月12元有带宽还不错的固定公网IP的远程连接。</p>
-<span id="more"></span>
-
-<h1 id="1-下载cpolar"><a href="#1-下载cpolar" class="headerlink" title="1 下载cpolar"></a>1 下载cpolar</h1><p>首先登陆官网<a href="https://www.cpolar.com/">cpolar.com</a>，首先进行注册登陆。</p>
-<p>点击下载选择MacOSX下载，官方就有教程，<a href="https://www.cpolar.com/docs">教程地址</a></p>
-<p>1.安装homebrew，选择清华大学源</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/bin/zsh -c &quot;$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>安装cploar</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew tap probezy/core &amp;&amp; brew install cpolar</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><p>token认证<br>登录cpolar官网，点击左侧的验证，查看自己的认证token，之后将token贴在命令行里</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cpolar authtoken xxxxxxx</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310041701035.png"></p>
-</li>
-<li><p>安装服务并启动服务</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo cpolar service install #输入登陆密码</span><br><span class="line">sudo cpolar service start</span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>在浏览器上访问本地9200端口【127.0.0.1:9200】，使用cpolar邮箱账号登录cpolar web UI管理界面，即可开始使用cpolar。</li>
-</ol>
-<h1 id="2-配置SSH固定公网IP地址"><a href="#2-配置SSH固定公网IP地址" class="headerlink" title="2 配置SSH固定公网IP地址"></a>2 配置SSH固定公网IP地址</h1><p>预留公网预留IP，这里就需要升级为Pro了，如果不升级Pro就没有固定公网IP，免费版就是每周会更改IP，并且带宽相对较低</p>
-<ol>
-<li>首先进入官网，登陆后选择预留-&gt;保留的TCP地址</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310041705040.png"></p>
-<ol start="2">
-<li>点击保留，即可自动生成一个预留好的固定公网IP地址</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231004170737.png"></p>
-<ol start="3">
-<li><p>按照之前的步骤进行后，打开<code>127.0.0.1:9200</code>，打开隧道列表，此时应该自动生成两个隧道，包括ssh和website<br><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310041710064.png"></p>
-</li>
-<li><p>我们需要创建一个新的tcp隧道，指向5900端口<br>点左边隧道管理-&gt;创建隧道</p>
-<ul>
-<li>隧道名称：可自定义，注意不要与已有隧道名称重复</li>
-<li>协议：tcp协议</li>
-<li>本地地址：5900（vnc默认端口号）</li>
-<li>端口类型：固定端口</li>
-<li>TCP地址：填写第2步中申请的地址</li>
-</ul>
-</li>
-<li><p>此时我们还需要打开mac mini 的远程连接的开关，打开设置-&gt;通用-&gt;共享，打开桌面共享，并且点击电脑设置，设置VNC密码。</p>
-</li>
-<li><p>windows电脑下载安装VNC后，输入刚刚申请的公网IP登录（注意不要输入TCP:&#x2F;&#x2F;）即可。</p>
-</li>
-</ol>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>远程桌面</tag>
-        <tag>跨平台</tag>
       </tags>
   </entry>
   <entry>
@@ -3955,6 +3272,689 @@
       <tags>
         <tag>vscode</tag>
         <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vscode使用教程</title>
+    <url>/2023/11/01/20231101_vscodeTutorial/</url>
+    <content><![CDATA[<p>vscode是我目前使用最多的平台工具无论是在windows还是macOS，本博客总结我的使用的所有场景，以及简单的搭建过程</p>
+<ul>
+<li>vscode 概要介绍</li>
+<li>C&#x2F;C++ 编程、编译</li>
+<li>python 使用</li>
+<li>markdown 记录</li>
+<li>latex&amp;beamer的学术PPT制作</li>
+<li>git的使用</li>
+<li>SSH远程连接服务器</li>
+<li>博客园的扩展</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="1-vscode概要介绍"><a href="#1-vscode概要介绍" class="headerlink" title="1 vscode概要介绍"></a>1 vscode概要介绍</h1><p>首先是进行下载安装，官方地址为：<a href="https://code.visualstudio.com/">vscode下载</a>，找到对应版本下载安装。</p>
+<p>首先介绍一下vscode的界面和大概使用流程。</p>
+<p>打开vscode，界面如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808193654.png"></p>
+<p>其中1为资源管理器，2为查找，3为源代码管理（git），4为运行和调试，5为扩展。这左侧为统称为工具栏，后续在扩展中下载相应的扩展后，左侧会多出你选择的扩展，所以理论上你可以在vscode上干任何事，甚至你可以在上面编程。</p>
+<h2 id="1-1-设置系统语言"><a href="#1-1-设置系统语言" class="headerlink" title="1.1 设置系统语言"></a>1.1 设置系统语言</h2><p>第一步，你的界面默认应该是英文，你首先可以在工具栏中的扩展中搜索简体中文，安装后重启即可。</p>
+<h2 id="1-2-工作流程"><a href="#1-2-工作流程" class="headerlink" title="1.2 工作流程"></a>1.2 工作流程</h2><p>一般来说，我的工作流程是，如之前的图中所示，你可以在欢迎界面中点击打开文件夹，或者是克隆Git仓库，打开一个工作区进行摸鱼，以markdown为例子的话，如果你想要进行一些记录，你可以创建一个你的文件夹，这个文件夹可以是你git clone下来的，也可以是本地直接创建的，以本地创建为例：</p>
+<p>比如打开markdown文件夹，新建一个markdown.md文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808194144.png"></p>
+<p>此时界面如上图，可以看到大致分为三个部分，侧边栏，顶部栏和编辑区。然后进行工作即可。</p>
+<h1 id="2-C-C-编程、编译"><a href="#2-C-C-编程、编译" class="headerlink" title="2 C&#x2F;C++ 编程、编译"></a>2 C&#x2F;C++ 编程、编译</h1><p>这里可以看我的另外一篇博客：<a href="https://moburein.com/2023/08/22/20230822_VscodeDeployC++/">vscode配置C++环境</a>。</p>
+<p>这篇博客主要介绍了三个部分，如下：</p>
+<ul>
+<li>1 下载GCC编译器</li>
+<li>2 安装VSCODE的C&#x2F;C++扩展</li>
+<li>3 使用VSCODE进行运行和调试</li>
+</ul>
+<p>最终实现在vscode上流畅码代码和调试C++(包括断点、查看参数等)程序。</p>
+<h1 id="3-python-使用"><a href="#3-python-使用" class="headerlink" title="3 python 使用"></a>3 python 使用</h1><p>在vscode上使用python很容易，只需要在扩展中搜索python，下载重新加载vscode即可直接新建py文件进行python代码的编写了，只需要注意右下角python的版本，选择你想要的版本就可以了。</p>
+<p>这里也贴上我一些项目里或者学习的时候python的一些记录：<a href="https://moburein.com/2023/11/01/20231101_PythonSimpleTutorial/">python使用总结</a></p>
+<p>里面有介绍python的简要语法和编程思想、一些常用的库，包括机器学习常用的库，还有日志相关，还有简单爬虫等，可能会后续再更新。</p>
+<h1 id="4-markdown-记录"><a href="#4-markdown-记录" class="headerlink" title="4 markdown 记录"></a>4 markdown 记录</h1><p>这里可以看我的另外一篇博客：<a href="https://moburein.com/2023/08/09/20230808_markdownLanguage/">markdown的简单用法</a>。</p>
+<p>这篇博客主要介绍了三个部分，如下：</p>
+<ul>
+<li>1 Markdown简介</li>
+<li>2 Markdown编译器</li>
+<li>3 Markdown语法</li>
+</ul>
+<p>vscode能实现markdown的流畅的编写，一般使用都是左边代码，右边预览，并且在公式和语法比较熟悉之后，使用markdown的记录效率会很高，并且在转化方面优势很大，可以轻松转化为网页、或者PPT中的内容</p>
+<h1 id="5-latex-beamer的学术PPT制作"><a href="#5-latex-beamer的学术PPT制作" class="headerlink" title="5 latex&amp;beamer的学术PPT制作"></a>5 latex&amp;beamer的学术PPT制作</h1><p>这里可以看我的另外一篇博客：<a href="https://moburein.com/2023/10/30/20231030_BeamerTutorial/">Beamer简单教程</a>。</p>
+<p>这篇博客主要UESTC的模版，然后介绍了一下写PPT的一些基本语法，包括封面设置、目录以及子目录、新建页面、分点、插入图片、下标、公式、表格、分栏、分块等。</p>
+<p>通过beamer能够简单有效的将我们平时的积累以很快的速度转化为PPT，提升效率，并且风格也比较适合做学术或者部门内部的汇报。</p>
+<h1 id="6-git的使用"><a href="#6-git的使用" class="headerlink" title="6 git的使用"></a>6 git的使用</h1><p>git管理也是vscode的基础功能之一了，当该文件夹是git clone下来的，那么此时在工具栏上的源代码管理（git）就会提示，你目前的修改，你可以设置自动时间上传，但是也可以手动上传，也就是push。</p>
+<h2 id="6-1-github账户验证"><a href="#6-1-github账户验证" class="headerlink" title="6.1 github账户验证"></a>6.1 github账户验证</h2><p>首先你需要将你的电脑跟你的比如说github账户进行验证，流程如下：</p>
+<ol>
+<li><p>首先你先安装git，windows在git的官网安装就好了，如果是mac基本是自带git，如果没有git，也可以通过brew安装。</p>
+</li>
+<li><p>配置git账户，设置user.name和user.email，输入以下命令</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;account name&quot;     # 设置用户名</span><br><span class="line">git config --global user.email &quot;account email&quot;     # 设置邮箱地址</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>设置完毕之后，就可以生成SSH KEY了，输入以下命令</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C example@mail.com</span><br></pre></td></tr></table></figure>
+<p>这里输入你自己的邮箱即可  </p>
+<ol start="4">
+<li><p>然后输入以下两条命令查看并复制你的密钥</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">vim id_rsa.pub</span><br></pre></td></tr></table></figure></li>
+<li><p>将公钥id_rsa.pub中的内容添加到github，用户-&gt;settings-&gt;SSH and GPG keys 中的按键new SSH key，将id_rsa.pub中的内容复制进去即可</p>
+</li>
+<li><p>添加完成后，在终端输入<code>ssh -T git@github.com</code>进行验证，此时会让你输入刚刚在生成ssh密钥时输入的密码，输入后回车会看到欢迎的语句，此时说明配对成功。</p>
+</li>
+</ol>
+<p>这个流程中，你唯一需要注意的就是你的路径，其余都是傻瓜式操作。</p>
+<h2 id="6-2-流程展示"><a href="#6-2-流程展示" class="headerlink" title="6.2 流程展示"></a>6.2 流程展示</h2><p>假设你与github的某个仓库链接，也就是你git clone的某个仓库，一般来说的流程如下。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231101194733.png"></p>
+<p>此时就是有待处理的部分。此时点击git管理，界面应该与下图类似</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231101194855.png"></p>
+<p>首先将鼠标放在更改上会出现<code>+</code>号，此时点击加号，然后输入你的修改信息点击提交即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011950617.png"></p>
+<p>此时你的修改可能还并没有push到远程仓库，此时查看左下角的图标是否显示你还未push到云上，如下图。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011954845.png"></p>
+<p>点击之后会出现下图，点击确认后你就可以查看你的云端是否有修改了，一般来说这里就结束了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011954859.png"></p>
+<h1 id="7-SSH远程连接服务器"><a href="#7-SSH远程连接服务器" class="headerlink" title="7 SSH远程连接服务器"></a>7 SSH远程连接服务器</h1><p>在扩展中搜索remote，安装这个remote-ssh即可，这时工具栏上就会多出远程连接工具，点击远程连接工具</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012006995.png"></p>
+<p>界面如下，点击如下图中的加号</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012007311.png"></p>
+<p>这时会弹出ssh连接命令，此时输入你的需要连接的账号回车会提示你输入密码，此时输入密码即可进入你所要ssh连接的服务器中。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012008499.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012010522.png"></p>
+<p>还有一个进阶操作，你可以将你的公钥添加到服务器的authorized_keys文件中，这样你登录时就不再需要输入密码了。具体操作如下：</p>
+<ul>
+<li>将本地之前生成的<code>id_rsa.pub</code>中的内容全部复制，一般在.ssh文件夹中，可以通过vim打开复制后输入<code>:q</code>回车退出，</li>
+<li>然后再在服务器的.ssh文件夹中找到authorized_keys文件，使用vim工具打开，按i键进入插入编辑模式，复制刚刚的内容进去，保存退出<code>:wq</code>回车就完成了。</li>
+</ul>
+<h1 id="8-cnblogs博客园扩展"><a href="#8-cnblogs博客园扩展" class="headerlink" title="8 cnblogs博客园扩展"></a>8 cnblogs博客园扩展</h1><p>直接在扩展中搜索cnblogs就可以了，这个扩展主要是为了解决在cnblogs上写博客时的图片问题，这个官方插件提供了在博客园上使用的图床，安装后在markdown文件的右上角会出现多两个图标，主要使用上传剪切板图片这个功能，一般我们需要使用的时候都是直接剪切屏幕中的图片，这时复制后点击如下图的图标。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012019990.png"></p>
+<p>会出现以下界面，你可以选择本地图片或者是剪切图片，一般来说我是选择剪贴板图片，这样操作方便。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012020877.png"></p>
+<p>点击之后就会弹出连接，选择markdown连接直接复制到md文件中就可以了，完美解决新手用户没有图床的问题。我一般在学习的时候也会在博客园上写一些博客，这样能将更多有意思的东西放在自己的博客网站上。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>SSH</tag>
+        <tag>markdown</tag>
+        <tag>vscode</tag>
+        <tag>git</tag>
+        <tag>C/C++</tag>
+        <tag>python</tag>
+        <tag>github</tag>
+        <tag>cnblogs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日系胶片调色</title>
+    <url>/2023/12/04/20231204_LrFilmStyle/</url>
+    <content><![CDATA[<p>总结一下摄影中我比较喜欢的一种风格，使用lightroom进行仿日系胶片调色。</p>
+<p>总结重点：</p>
+<ul>
+<li>基础设置：提高曝光，让照片保持微微过曝的状态，提亮暗部，压一下高光</li>
+<li>仿胶片：所以使用曲线让暗部不是纯黑色，带一点灰色，让白点也降低，模拟胶片的感觉</li>
+<li>使用曲线恢复一些对比度，使用颜色曲线和颜色分级对照片进行颜色调整，一般有几个选择，选择让高光部分偏某某色，让暗部偏某某色，可以是黄色、青色、蓝色等等</li>
+<li>使用hsl、颜色分级将画面的一些杂色降低饱和度、亮度等</li>
+<li>根据情况添加暗角，可以适当降低一点清晰度，这样在拍摄人物时会有一种朦胧感</li>
+<li>添加一些颗粒，这样更有质感</li>
+</ul>
+<span id="more"></span>
+
+<p>我的总结主要是按照两步走，重点是要形成自己调色的方法论。</p>
+<p>第一步是分析原有照片的风格，调色的重点和主观感受，然后针对分析进行第二部的针对性调色，重要的不是参数，而是如何分析得到需要进行的操作。</p>
+<p>这篇博客是参考了b站up青山摄影的视频总结而成。</p>
+<h1 id="1-日系胶片风格"><a href="#1-日系胶片风格" class="headerlink" title="1 日系胶片风格"></a>1 日系胶片风格</h1><p>这里首先放上经典日系胶片风格照片：</p>
+<figure class="second">  
+  <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041934070.png"  width = "300" alt="原图">  
+  <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041923679.png"  width = "300" alt="调色后">  
+</figure>
+
+<p>首先进行分析可以得到如下结论：</p>
+<ul>
+<li>对比度不高</li>
+<li>轻微过曝</li>
+<li>胶片质感</li>
+<li>画面中间调偏青色</li>
+<li>肤色调整白皙并且带血色</li>
+<li>人物衣服的白色有一点朦胧感</li>
+</ul>
+<h1 id="2-实战调色"><a href="#2-实战调色" class="headerlink" title="2 实战调色"></a>2 实战调色</h1><h2 id="2-1-基础设置"><a href="#2-1-基础设置" class="headerlink" title="2.1 基础设置"></a>2.1 基础设置</h2><p>目的： 为了保证轻微过曝，并且将原片降低一点对比度模拟胶片感</p>
+<p>措施：</p>
+<ul>
+<li>提高曝光</li>
+<li>降低一点对比度</li>
+<li>增加一点饱和度</li>
+<li>降低一点鲜艳度</li>
+</ul>
+<h2 id="2-2-曲线"><a href="#2-2-曲线" class="headerlink" title="2.2 曲线"></a>2.2 曲线</h2><p>目的：将画面的中间调调整为青色，并且改变照片的影调，让照片有一种灰灰的感觉，模拟胶片，这一步是重点</p>
+<p>措施：</p>
+<ul>
+<li>分颜色调整，使得画面中间调偏青色，那么分别修改红绿蓝曲线，修改如下，<ul>
+<li>中间调蓝色和绿色提高，红色不变，这一步中间调就会变成青色</li>
+<li>高光三条曲线都提高，阴影曲线都降低，增加对比度</li>
+</ul>
+</li>
+</ul>
+<figure class="third">
+    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041954921.png"  width = "200" alt="红色曲线">  
+    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041952314.png"  width = "200" alt="绿色曲线">  
+    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041953288.png"  width = "200" alt="蓝色曲线">  
+</figure>
+
+<ul>
+<li>调整亮度曲线，将最左端，也就是黑点提高，这一步是让照片的黑点不是纯黑而是变成带一点点灰色，来模拟胶片的感觉。</li>
+</ul>
+<center>
+    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041956807.png" width = "200" alt="亮度曲线">
+</center>
+
+<p>经过曲线和基础调整之后照片已经有了雏形，如下：</p>
+<center>
+<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204195528.png"  width = "300" alt="曲线调整后图片">  
+</center>
+
+<h2 id="2-3-进一步调整色调"><a href="#2-3-进一步调整色调" class="headerlink" title="2.3 进一步调整色调"></a>2.3 进一步调整色调</h2><p>调整完曲线之后，分析图片感觉还是有一点点过于亮，进一步调整明暗关系，将白色和高光调低，提升一点阴影，降低一点黑色色阶，这里是一个小trick，这样可以使得整体明亮的图片看起来对比度稍微高一点，得到所谓的通透的感觉。</p>
+<center>
+<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204202005.png"  width = "300">  
+</center>
+
+<p>偏好部分，同样有一个小trick，人物的白色衣服在日光下容易过曝，所以可以见底一些清晰度，让白色衣服有一种朦胧的感觉，不至于刺眼或者过于吸引眼球。同时增加一点饱和度，降低一点鲜艳度，使得图片的风格更加胶片的高宽容度感。</p>
+<center>
+<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042022428.png"  width = "300">  
+</center>
+
+<h2 id="2-4-HSL调色"><a href="#2-4-HSL调色" class="headerlink" title="2.4 HSL调色"></a>2.4 HSL调色</h2><p>进一步调整颜色，调整肤色——HSL调色中的橙色，以及调整背景中其他的颜色的饱和度</p>
+<figure class="third">
+    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042028231.png"  width = "220" alt="红色曲线">  
+    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042028800.png"  width = "220" alt="绿色曲线">  
+    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042027175.png"  width = "220" alt="蓝色曲线">  
+</figure>
+
+<ul>
+<li>调整饱和度和明亮度中的橙色是为了调整肤色，让肤色显的又白又有血色</li>
+<li>调整饱和度和明亮度的蓝色是为了不让背景中的蓝色喧兵夺主</li>
+<li>调整色相中的红色是为了使得人物的嘴唇颜色正常，偏红色</li>
+</ul>
+<h2 id="2-5-颜色校准"><a href="#2-5-颜色校准" class="headerlink" title="2.5 颜色校准"></a>2.5 颜色校准</h2><p>调整颜色校准使得照片整体偏黄一点，人物肤色正常一点，其实这一步我个人感觉意义不明，没啥大作用，就是使得整体照片偏黄偏品红一点。</p>
+<center>
+<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204203936.png"  width = "300">  
+</center>
+
+<h2 id="2-6-颜色分级"><a href="#2-6-颜色分级" class="headerlink" title="2.6 颜色分级"></a>2.6 颜色分级</h2><p>这一步很重要，这一步进一步调整了照片的明暗关系，将最后的影调调整到跟胶片很相似了。</p>
+<center>
+<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204204334.png"  width = "300">  
+</center>
+
+<p>这里就主要调整阴影和高光了，我的理解是中间调在曲线部分已经调整，但是这样为什么不在中间色调一步完成呢。</p>
+<ul>
+<li>阴影部分向右调整，这样使得图片暗部进一步变灰，至于偏色就见仁见智，偏青色、黄色、蓝色、甚至红色都可以，实际中一般是偏青色，偏黄色就是复古</li>
+<li>高光向左移动，这样使得照片更有一种哑光的感觉，其实也就是将白色也带一点灰的感觉，偏色就同样根据审美来调整</li>
+</ul>
+<h2 id="2-7-暗角以及颗粒"><a href="#2-7-暗角以及颗粒" class="headerlink" title="2.7 暗角以及颗粒"></a>2.7 暗角以及颗粒</h2><p>增加一点暗角。数量就是暗角的程度，中点也就是暗角的区域，为0也就是以中心点为基准，羽化调整到100，这样使得暗角的过渡狠顺滑。</p>
+<p>然后增加一点数量的颗粒，大小可以调整小一点，粗糙度看个人审美。</p>
+<center>
+<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042050909.png"  width = "300">  
+</center>
+
+
+
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>摄影博客</category>
+      </categories>
+      <tags>
+        <tag>Lightroom</tag>
+        <tag>摄影</tag>
+        <tag>调色</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>拍摄一些好用的小工具——软件</title>
+    <url>/2023/12/18/20231218_PhotoApps/</url>
+    <content><![CDATA[<p>记录一些拍摄相关的软件或者小程序：</p>
+<ul>
+<li>添加画框小软件</li>
+<li>添加水印软件</li>
+<li>查看星体数据，比如太阳和月亮数据软件</li>
+<li>简易修图软件</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="1-画框小软件"><a href="#1-画框小软件" class="headerlink" title="1 画框小软件"></a>1 画框小软件</h1><p>壹印：一个开源的添加画框的软件，github地址为：<a href="https://github.com/ggchivalrous/yiyin%E3%80%82">https://github.com/ggchivalrous/yiyin。</a></p>
+<p>操作也非常简单，这里不再赘述，主要展示两种可以制作的效果</p>
+<ul>
+<li>圆角渐变颜色画框</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/test.jpg"></p>
+<ul>
+<li>经典白色底相框</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/yinxing.jpg"></p>
+<p>这个软件也有两个小缺憾，一是添加相机的信息处，并没有相机的logo，二是还有如果能够集成进添加水印就更好了。</p>
+<h1 id="2-水印软件"><a href="#2-水印软件" class="headerlink" title="2 水印软件"></a>2 水印软件</h1><p>目前直接使用的Lightroom自带的水印，这样的好处是比较方便，输出图片的时候，直接设置一下水印就好了，这样减少了调整图片的步骤，非常符合提升效率的原则，但是坏处就是选择比较少，并且会有水印的符号。</p>
+<h1 id="3-天气软件"><a href="#3-天气软件" class="headerlink" title="3 天气软件"></a>3 天气软件</h1><p>外拍时，对于天气要求很高，ios自带的天气软件就能看到很多关爱你的信息，比如</p>
+<ul>
+<li>能见度：能见度对于拍照影响很大，能见度很低的情况下，拍摄出来的照片都是灰蒙蒙的，对比度很低</li>
+<li>日升，日落：这一项最重要，尤其要注意日落的时间，抓住拍摄的黄金时间，也即日落前后的总计一小时时间，这一个小时的光线变化是最丰富的，从日落的温暖橘黄到日落后到BLUE HOUR，都是出片的绝佳时机，并且能够捕捉到冷暖对比。</li>
+<li>月亮：对于想要打月亮的时候很重要，选择每个月满月的时候，并且需要提前看好月亮的方位，选择好前景，架设三脚架等待月升</li>
+<li>气温、紫外线、晴雨等基本信息，注意防暑、防晒、防雨等等</li>
+</ul>
+<p>对于想要拍摄银河这些，可能需要更加专业的软件，或者一些微信小程序也有一些星象的相关信息。</p>
+<h1 id="4-修图软件"><a href="#4-修图软件" class="headerlink" title="4 修图软件"></a>4 修图软件</h1><p>醒图，一个手机修图软件。</p>
+<p>这里就不介绍LR和PS了，都是在电脑上使用的。醒图是我目前使用比较良好的一个手机app，免费的功能基本够用了，我一般的流程是在电脑的LR上调色完成之后，在醒图上对模特的面部做一些基本的调整就可以了，简单磨个皮，调整一下脸型就好了。</p>
+<p>如果你想整活，醒图的换表情的功能也很实用，能够改变模特的表情，实测还是比较够用的。对于清晰度不是很高的照片基本够用，清晰度高了的照片使用会有比较明显的割裂感。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>摄影博客</category>
+      </categories>
+      <tags>
+        <tag>摄影</tag>
+        <tag>软件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阴天or夜景街拍调色</title>
+    <url>/2023/12/25/20231225_NightStreetLrStyle/</url>
+    <content><![CDATA[<p>使用场景主要是阴天或者夜景这样光比比较小，需要凸显冷暖等的颜色的时候的调色。调色过程也比较简单。</p>
+<p>主要部分如下：</p>
+<ul>
+<li>基本</li>
+<li>色调曲线</li>
+<li>校准</li>
+<li>HSL</li>
+<li>效果<span id="more"></span></li>
+</ul>
+<h1 id="1-基本调整"><a href="#1-基本调整" class="headerlink" title="1 基本调整"></a>1 基本调整</h1><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312251549960.png"  width = "300" >  
+
+<p>色温-5，色调-5；曝光度+0.8，对比度+10，高光-55，阴影+29，白色色阶+14，黑色色阶-14；清晰度+30，鲜艳度+50.</p>
+<ul>
+<li><p>首先调整色温和色调，色温可以根据不同照片进行调节，主要恢复一下照片原有的色温就可以了。</p>
+</li>
+<li><p>增加曝光度和对比度，因为小光比，阴天或者夜景的对比度会比较低，拉高一点。</p>
+</li>
+<li><p>降低高光、增加阴影、给一点宽容度，然后增加白色色阶、压暗黑色色阶，恢复一点对比度</p>
+</li>
+<li><p>在不是近景拍摄人物肖像的情况下，拉高一点清晰度，大概30，这样增加一下街拍质感</p>
+</li>
+<li><p>增加一下鲜艳度，让颜色鲜艳一点</p>
+</li>
+</ul>
+<h1 id="2-色调曲线"><a href="#2-色调曲线" class="headerlink" title="2 色调曲线"></a>2 色调曲线</h1><ul>
+<li><p>亮度曲线，暗部提高15-20左右，然后恢复中间调和暗调。</p>
+</li>
+<li><p>红色曲线打三个点，阴影拉低一点，为阴影加一点青色</p>
+</li>
+<li><p>绿色曲线打三个点，阴影拉低一点，为阴影加一点品红</p>
+</li>
+</ul>
+<p>总的效果就是给阴影带一点蓝色并且加上一点影调。</p>
+<h1 id="3-校准"><a href="#3-校准" class="headerlink" title="3 校准"></a>3 校准</h1><ul>
+<li>右右左：红原色向右48，饱和度增加20，绿原色向右48，蓝颜色向左20</li>
+</ul>
+<p>这样突出画面的暖色，减弱画面的冷色调，如果冷色调更多，则可以将蓝色饱和度降低一点。</p>
+<p>注意：这里如果想要青橙色调，操作就是吧蓝色向左多一点比如也试8，然后降低一点饱和度，否则饱和度会溢出。</p>
+<h1 id="4-HSL"><a href="#4-HSL" class="headerlink" title="4 HSL"></a>4 HSL</h1><p>这一步主要进一步调整冷暖</p>
+<ul>
+<li>色相：红色-50，黄色-20</li>
+<li>饱和度：橙色+24，黄色-20，蓝色-40</li>
+<li>明亮度：红色-36，黄色+16</li>
+</ul>
+<h1 id="5-效果"><a href="#5-效果" class="headerlink" title="5 效果"></a>5 效果</h1><ul>
+<li>暗角：数量-13，中点37，圆度+4，羽化+100</li>
+<li>颗粒：看感觉来</li>
+</ul>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>摄影博客</category>
+      </categories>
+      <tags>
+        <tag>Lightroom</tag>
+        <tag>摄影</tag>
+        <tag>调色</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VIM简单教程</title>
+    <url>/2024/10/04/20241004_VimTutorial/</url>
+    <content><![CDATA[<p>在Linux环境下难免会遇到使用VIM的情况，于是在这里进行一些总结</p>
+<p>本博客简要总结了一些使用VIM的使用技巧。</p>
+<span id="more"></span>
+
+<p>Vim是一款功能强大的文本编辑器，它提供了许多高效的编辑技巧和快捷键。</p>
+<p>首先是如何进行vim的界面，命令为<code>vim example.c</code>。其中example.c为当前路径下的文件，当然也可以对指定路径下的文件进行vim编辑。</p>
+<p>在进入vim编辑界面后，以下是一些使用Vim的详细技巧：</p>
+<h3 id="1-基本模式与切换"><a href="#1-基本模式与切换" class="headerlink" title="1 基本模式与切换"></a>1 基本模式与切换</h3><p>首先需要了解Vim的三种基本模式：普通模式（Normal mode）、插入模式（Insert mode）和命令模式（Command mode，也叫Ex模式）。</p>
+<ul>
+<li><strong>普通模式</strong>：启动Vim时默认进入的模式，可以进行光标移动、删除、复制、粘贴等操作。</li>
+<li><strong>插入模式</strong>：在普通模式下按<code>i</code>、<code>a</code>、<code>o</code>、<code>O</code>等键进入，用于输入文本。<ul>
+<li><code>i</code>：在当前光标位置前进入插入模式。</li>
+<li><code>a</code>：在当前光标位置后进入插入模式。</li>
+<li><code>o</code>：在当前行下新开一行并进入插入模式。</li>
+<li><code>O</code>：在当前行上新开一行并进入插入模式。</li>
+</ul>
+</li>
+<li><strong>命令模式</strong>：在普通模式下输入<code>:</code>进入，用于执行命令，如保存文件、退出Vim、替换文本等。</li>
+</ul>
+<p>从插入模式或命令模式返回普通模式，可以按下<code>Esc</code>键。</p>
+<h3 id="2-光标移动"><a href="#2-光标移动" class="headerlink" title="2 光标移动"></a>2 光标移动</h3><ul>
+<li><code>h</code>：左移一个字符。</li>
+<li><code>j</code>：下移一行。</li>
+<li><code>k</code>：上移一行。</li>
+<li><code>l</code>：右移一个字符。</li>
+<li><code>w</code>：移至下一个单词的开头。</li>
+<li><code>e</code>：移至当前单词的结尾。</li>
+<li><code>b</code>：移至当前单词的开头。</li>
+<li><code>gg</code>：移至文件开头。</li>
+<li><code>G</code>：移至文件末尾。</li>
+<li><code>(数字)G</code>：移至指定行号。</li>
+<li><code>^</code>：移动到行首第一个非空白字符（汉字空格不被视为空白字符）。</li>
+<li><code>0</code>：移动到行首第一个字符。</li>
+<li><code>$</code>：移动到行尾。</li>
+</ul>
+<h3 id="3-文本编辑"><a href="#3-文本编辑" class="headerlink" title="3 文本编辑"></a>3 文本编辑</h3><ul>
+<li><p><strong>删除</strong>：</p>
+<ul>
+<li><code>x</code>：删除当前光标所在位置的字符。</li>
+<li><code>X</code>：删除当前光标所在位置前一个字符。</li>
+<li><code>dd</code>：删除整行。</li>
+<li><code>ndd</code>：删除n行。</li>
+<li><code>dw</code>：删除一个单词。</li>
+<li><code>d3w</code>：删除三个单词。</li>
+<li><code>d$</code>：删除从当前光标到行尾的内容。</li>
+<li><code>D</code>：等同于<code>d$</code>，删除从当前光标到行尾的内容。</li>
+</ul>
+</li>
+<li><p><strong>复制与粘贴</strong>：</p>
+<ul>
+<li><code>yy</code>：复制当前行。</li>
+<li><code>nyy</code>：复制光标以下n-1行。</li>
+<li><code>p</code>：在当前光标位置粘贴文本。</li>
+<li><code>yw</code>：复制一个单词。</li>
+<li><code>ye</code>：复制从当前光标到单词结尾的内容。</li>
+<li><code>y$</code>：复制从当前光标到行尾的内容。</li>
+</ul>
+</li>
+<li><p><strong>撤销与重做</strong>：</p>
+<ul>
+<li><code>u</code>：撤销上一步操作。</li>
+<li><code>Ctrl+r</code>：重做上一步撤销的操作。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-页面滚动"><a href="#4-页面滚动" class="headerlink" title="4 页面滚动"></a>4 页面滚动</h3><ul>
+<li><code>Ctrl+f</code>：向前翻整页（forward）。</li>
+<li><code>Ctrl+b</code>：向后翻整页（backward）。</li>
+<li><code>Ctrl+d</code>：向下翻半页（down）。</li>
+<li><code>Ctrl+u</code>：向上翻半页（up）。</li>
+<li><code>Ctrl+e</code>：向上滚一行。</li>
+<li><code>Ctrl+y</code>：向下滚一行。</li>
+<li><code>Ctrl+B</code>：向后滚一页（与<code>Ctrl+b</code>不同，注意大小写）。</li>
+<li><code>Ctrl+F</code>：向前滚一页（与<code>Ctrl+f</code>不同，注意大小写）。</li>
+</ul>
+<h3 id="5-命令模式操作"><a href="#5-命令模式操作" class="headerlink" title="5 命令模式操作"></a>5 命令模式操作</h3><ul>
+<li><code>:w</code>：保存文件。</li>
+<li><code>:q</code>：退出Vim。</li>
+<li><code>:wq</code>：保存并退出Vim。</li>
+<li><code>:q!</code>：强制退出Vim。</li>
+<li><code>ZZ</code>：保存并退出，与<code>:wq</code>等效（注意是大写的Z）。</li>
+<li><code>:set number</code>：显示行号。</li>
+<li><code>:set nonumber</code>：隐藏行号。</li>
+<li><code>:syntax on</code>：开启语法高亮。</li>
+<li><code>:syntax off</code>：关闭语法高亮。</li>
+<li><code>:s/old/new/g</code>：替换当前行的第一个<code>old</code>为<code>new</code>。</li>
+<li><code>:s/old/new/gc</code>：替换当前行的第一个<code>old</code>为<code>new</code>，每次替换前询问。</li>
+<li><code>:%s/old/new/g</code>：替换整个文件的<code>old</code>为<code>new</code>。</li>
+<li><code>:args</code>：查看或设置参数列表中的文件。</li>
+<li><code>:argdo %s/old/new/g</code>：在参数列表中的每个文件里执行替换操作。</li>
+</ul>
+<h3 id="6-高级技巧"><a href="#6-高级技巧" class="headerlink" title="6 高级技巧"></a>6 高级技巧</h3><ul>
+<li><p><strong>可视化模式</strong>：按<code>v</code>进入可视化模式，可以选择文本块，然后进行复制、剪切、粘贴等操作。</p>
+</li>
+<li><p><strong>重复命令</strong>：<code>.</code>命令可以重复上一次修改命令。例如，如果上一次操作是删除一个单词，那么<code>.</code>将再次删除一个单词。</p>
+</li>
+<li><p><strong>查找与替换</strong>：</p>
+<ul>
+<li><code>/pattern</code>：从当前光标位置开始向下查找指定模式。</li>
+<li><code>?pattern</code>：从当前光标位置开始向上查找指定模式。</li>
+<li><code>n</code>：在查找模式下，切换到下一个匹配项。</li>
+<li><code>N</code>：在查找模式下，切换到上一个匹配项。</li>
+</ul>
+</li>
+<li><p><strong>多文件操作</strong>：</p>
+<ul>
+<li><code>:sp [filename]</code>：水平分割窗口并打开新文件或当前文件。</li>
+<li><code>:vsp [filename]</code>：垂直分割窗口并打开新文件或当前文件。</li>
+<li><code>Ctrl+w+h/j/k/l</code>：在分割的窗口间切换。</li>
+<li><code>:tabe [filename]</code>：在新的标签页中打开文件。</li>
+<li><code>:tabn</code>和<code>:tabp</code>：在标签页间切换。</li>
+</ul>
+</li>
+<li><p><strong>录制宏</strong>：</p>
+<ul>
+<li>使用<code>q</code>命令开始录制宏，然后执行一系列操作。</li>
+<li>录制完成后，再次按<code>q</code>结束录制。</li>
+<li>使用<code>@</code>命令加上宏的寄存器名称来执行录制的宏。</li>
+</ul>
+</li>
+<li><p><strong>插件使用</strong>：</p>
+<ul>
+<li>Vim支持各种插件，如NERDTree用于目录树管理，MiniBufExplorer用于buffer窗口管理，word_complete.vim用于自动补全等。</li>
+<li>插件的安装和配置通常需要在Vim的配置文件（如<code>.vimrc</code>）中进行。</li>
+</ul>
+</li>
+</ul>
+<p>以上是使用Vim的一些详细技巧，掌握这些技巧可以大大提高文本编辑的效率。不过，Vim的功能非常强大，还有更多高级功能和自定义设置等待我们去探索和学习。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>VIM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SourceInsight4+Samba教程</title>
+    <url>/2024/10/10/20241010_SourceInsight4WithSamba/</url>
+    <content><![CDATA[<p>由于工作需要经常在虚拟机中编译比较大型的C语言的项目，组内推荐使用SourceInsight配合Samba共享文件夹在windows端查看虚拟机ubuntu中的代码，于是进行简单的使用流程记录。</p>
+<p>分为以下几个部分介绍</p>
+<ul>
+<li>SourceInsight的优势、使用方式以及常用的操作</li>
+<li>如何配置Samba共享文件夹</li>
+<li>设置虚拟机的网卡以解决虚拟机的IP地址一直变化导致Samba文件夹失效的问题</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="1-SourceInsight"><a href="#1-SourceInsight" class="headerlink" title="1 SourceInsight"></a>1 SourceInsight</h1><p>SourceInsight是一个看似复古的IDE，但是在看一些大型的项目的时候会比较好用，尤其是查看一些函数的从属关系的reference的时候会很好用。</p>
+<p>这里可以参考这一篇博客讲解的很详细，这里就不再赘述一些界面介绍了，其中介绍的SourceInsight3.5，笔者用的SourceInsight4.0与他的界面和功能几乎没有差距，只是分辨率提升了。在3.5版本对于4k的分辨图标会不够清晰，看着不够好。</p>
+<p><a href="https://www.cnblogs.com/andy-songwei/p/9965714.html">博客园：【工利其器】必会工具之（一）Source Insight篇</a></p>
+<p>该博客主要介绍了SI的简介、创建项目、添加文件、以及其中的界面如何使用的详细介绍，很值得细读。</p>
+<p>笔者这里就再记录一些常用的快捷操作，还有对于SourceInsight的一些稍微进阶的设置。</p>
+<h2 id="1-1-快捷键记录"><a href="#1-1-快捷键记录" class="headerlink" title="1.1 快捷键记录"></a>1.1 快捷键记录</h2><table>
+<thead>
+<tr>
+<th align="left">快捷键</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>SHIFT+F8</code></td>
+<td align="left">高亮选中的单词(不包括注释中的单词)</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+G</code>或<code>F5</code></td>
+<td align="left">跳到指定行</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+鼠标左键</code></td>
+<td align="left">直接跳转至标识定义处调用处</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+F</code></td>
+<td align="left">本文件内查找</td>
+</tr>
+<tr>
+<td align="left"><code>F3</code></td>
+<td align="left">本文件查找结果的上一个</td>
+</tr>
+<tr>
+<td align="left"><code>F4</code></td>
+<td align="left">本文件查找结果的下一个</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+M</code></td>
+<td align="left">创建或查找书签，方便下次找回此位置</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+O</code></td>
+<td align="left">搜索文件，找到回车打开，找不到ESC退出</td>
+</tr>
+<tr>
+<td align="left"><code>ALT</code> + <code>,</code></td>
+<td align="left">后退</td>
+</tr>
+<tr>
+<td align="left"><code>ALT</code> + <code>.</code></td>
+<td align="left">前进</td>
+</tr>
+<tr>
+<td align="left"><code>ALT + F12</code></td>
+<td align="left">可以切换，让字符宽度变得一致，或者是大小不同地显示</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+G</code>或者<code>F7</code></td>
+<td align="left">打开Symbol Window</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+&#39;</code></td>
+<td align="left">智能重命名</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+G</code></td>
+<td align="left">打开Symbol Window</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+G</code></td>
+<td align="left">打开Symbol Window</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+G</code></td>
+<td align="left">打开Symbol Window</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+G</code></td>
+<td align="left">打开Symbol Window</td>
+</tr>
+</tbody></table>
+<h2 id="1-2-SourceInsight进阶设置"><a href="#1-2-SourceInsight进阶设置" class="headerlink" title="1.2 SourceInsight进阶设置"></a>1.2 SourceInsight进阶设置</h2><ol>
+<li>让{ 和 } 不缩进</li>
+</ol>
+<p>Options -&gt; Document Options -&gt; Auto Indenting -&gt; Auto Indent Type 选 Simple。</p>
+<p>还有：让{ 和 } 不缩进： options-&gt;document options-&gt;auto indent 去掉indent Open Brace和Indent Close Brace。 （不好使，括号无法配对对齐！）</p>
+<ol start="2">
+<li>添加文件类型</li>
+</ol>
+<p>用户可以定义自己的类型，Options-&gt;Document Options-&gt;add type，定义文件类型名以及文件名后缀。</p>
+<p>勾选include when adding to projects在添加目录下文件到工程是该类文件就会添加进SI的工程。</p>
+<p>如果需要将所有文件添加进SI的工程，可以定义一种文件类型*.*。</p>
+<ol start="3">
+<li>恢复ctrl+a的全选功能</li>
+</ol>
+<p>Options -&gt; Key Assignments：通过关键词save 找到save all，更改为ctrl+shift+a，通过关键词select找到select all，更改为ctrl +a。</p>
+<ol start="4">
+<li>设置背景色</li>
+</ol>
+<p>Options-&gt;preference-&gt;color-&gt;windows background设置背景色（护眼色：85，90，205）。</p>
+<ol start="5">
+<li>解决TAB键缩进问题</li>
+</ol>
+<p>Options-&gt; Document Options里面的右下角Editing Options栏里，把Expand tabs勾起来，然后确定。OK，现在TAB键的缩进和四个空格的缩进在SIS里面看起来就对齐。</p>
+<p>Linux下TAB是8个空格长度，这样设置可以让TAB和4个空格保持一致！）</p>
+<h1 id="2-Samba共享文件夹设置"><a href="#2-Samba共享文件夹设置" class="headerlink" title="2 Samba共享文件夹设置"></a>2 Samba共享文件夹设置</h1><p>虽然SourceInsight很好用，但是在很多项目都在虚拟机里面编译，这时候该如何看到其中的代码呢。此时就可以设置Samba共享文件夹来在windows上打开虚拟机Linux下的共享文件。</p>
+<p>以下是在Ubuntu上配置Samba共享文件夹给Windows使用的详细配置教程：</p>
+<h2 id="2-1-前提条件"><a href="#2-1-前提条件" class="headerlink" title="2.1 前提条件"></a>2.1 前提条件</h2><ol>
+<li>确保Ubuntu和Windows在同一局域网内，或者通过网线直接连接。</li>
+<li>Ubuntu系统已安装并更新到最新版本。</li>
+</ol>
+<h2 id="2-2-安装Samba"><a href="#2-2-安装Samba" class="headerlink" title="2.2 安装Samba"></a>2.2 安装Samba</h2><ol>
+<li>打开Ubuntu的终端。</li>
+<li>更新软件包列表：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>安装Samba及其相关组件：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install samba samba-common -y</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-3-配置Samba"><a href="#2-3-配置Samba" class="headerlink" title="2.3 配置Samba"></a>2.3 配置Samba</h2><ol>
+<li>创建或选择一个要共享的文件夹，并设置其权限。例如，假设要共享的文件夹路径为<code>/home/ubuntu/shared</code>，则设置权限为：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">chmod</span> 777 /home/ubuntu/shared</span><br></pre></td></tr></table></figure>
+
+<p>或者，使用更安全的权限设置，仅允许特定用户读写：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">chown</span> your_username:your_groupname /home/ubuntu/shared</span><br><span class="line">sudo <span class="built_in">chmod</span> 770 /home/ubuntu/shared</span><br></pre></td></tr></table></figure>
+
+<p>其中，<code>your_username</code>和<code>your_groupname</code>分别替换为你的Ubuntu用户名和组名。</p>
+<ol start="2">
+<li>添加一个Samba用户（如果需要的话）。如果已有一个Ubuntu用户，可以直接为其设置Samba密码：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo smbpasswd -a your_username</span><br></pre></td></tr></table></figure>
+
+<p>按照提示输入并确认Samba密码。</p>
+<ol start="3">
+<li>编辑Samba配置文件<code>/etc/samba/smb.conf</code>。在文件末尾添加一个新的共享配置段，例如：</li>
+</ol>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[shared]</span></span><br><span class="line"><span class="attr">path</span> = /home/ubuntu/shared</span><br><span class="line"><span class="attr">browseable</span> = <span class="literal">yes</span></span><br><span class="line"><span class="attr">public</span> = <span class="literal">yes</span></span><br><span class="line"><span class="attr">writable</span> = <span class="literal">yes</span></span><br><span class="line"><span class="attr">available</span> = <span class="literal">yes</span></span><br></pre></td></tr></table></figure>
+
+<p>如果希望限制访问权限，可以添加<code>valid users</code>选项并指定Samba用户名：</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[shared]</span></span><br><span class="line"><span class="attr">path</span> = /home/ubuntu/shared</span><br><span class="line"><span class="attr">browseable</span> = <span class="literal">yes</span></span><br><span class="line">valid <span class="attr">users</span> = your_username</span><br><span class="line"><span class="attr">writable</span> = <span class="literal">yes</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>保存并关闭配置文件。</li>
+</ol>
+<h2 id="2-4-重启Samba服务"><a href="#2-4-重启Samba服务" class="headerlink" title="2.4 重启Samba服务"></a>2.4 重启Samba服务</h2><ol>
+<li>重启Samba服务以使配置生效：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl restart smbd</span><br><span class="line">sudo systemctl restart nmbd</span><br></pre></td></tr></table></figure>
+
+<p>或者，使用旧的服务管理命令（在某些Ubuntu版本中可能仍有效）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo service smbd restart</span><br><span class="line">sudo service nmbd restart</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-5-在Windows上访问共享文件夹"><a href="#2-5-在Windows上访问共享文件夹" class="headerlink" title="2.5 在Windows上访问共享文件夹"></a>2.5 在Windows上访问共享文件夹</h2><ol>
+<li>打开Windows资源管理器（文件资源管理器）。</li>
+<li>在地址栏中输入Ubuntu的IP地址和共享文件夹名称，格式为：<code>\\ubuntu_ip_address\shared</code>。例如，如果Ubuntu的IP地址是<code>192.168.1.100</code>，则输入：<code>\\192.168.1.100\shared</code>。</li>
+<li>如果设置了Samba用户和密码，将提示输入这些凭据以访问共享文件夹。</li>
+</ol>
+<h2 id="2-6-获取Ubuntu的IP地址"><a href="#2-6-获取Ubuntu的IP地址" class="headerlink" title="2.6 获取Ubuntu的IP地址"></a>2.6 获取Ubuntu的IP地址</h2><p>在Ubuntu终端中输入以下命令以获取IP地址：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
+
+<p>查找与网络连接相对应的条目（例如<code>eth0</code>、<code>wlan0</code>等），并找到<code>inet</code>后面的IP地址，比如为192.168.1.100。</p>
+<p><strong>注意事项</strong></p>
+<ol>
+<li>确保防火墙设置允许Samba通信（通常使用TCP端口137、138、139和445）。</li>
+<li>如果在Windows上遇到访问问题，请检查Samba配置文件中的权限设置和共享名称是否正确。</li>
+<li>对于更复杂的共享需求（如多个共享文件夹、访问控制列表等），可以进一步编辑<code>/etc/samba/smb.conf</code>文件并添加相应的配置段。</li>
+</ol>
+<p>通过以上步骤，应该就可以在Ubuntu上成功配置Samba共享文件夹，并在Windows上访问它。在资源管理器中看到共享文件夹可以通过右键-&gt;映射到磁盘，这样以后在windows上就能够更方便的打开共享文件夹来</p>
+<h1 id="3-虚拟机网卡设置"><a href="#3-虚拟机网卡设置" class="headerlink" title="3 虚拟机网卡设置"></a>3 虚拟机网卡设置</h1><p>在使用以上的Source Insight+Samba的方案进行开发中，笔者经常会遇到一个问题就是虚拟机的ip会经常变化，这是因为在虚拟机中使用的是NAT模式，这样就会经常变化ip地址。需要修改其为自定义模式。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>C/C++</tag>
+        <tag>IDE</tag>
       </tags>
   </entry>
 </search>

@@ -1196,7 +1196,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #06472b;
+  background: #2e0414;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2755,7 +2755,7 @@ body {
   opacity: 0.96;
 }
 body {
-  background: url("/images/background.jpg");
+  background: url("/images/snowPeak.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
