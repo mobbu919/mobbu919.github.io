@@ -469,6 +469,46 @@
       </tags>
   </entry>
   <entry>
+    <title>steam一键切换用户的脚本</title>
+    <url>/2023/08/08/20230808_steamUserChangebat/</url>
+    <content><![CDATA[<p>由于博主经常用很多不同的号玩CSGO，每一次都需要输入账号密码，并且等待令牌，十分麻烦，遂找到了一个脚本切换steam登录信息，其实steam++也可以实现这个功能，但是毕竟很多时候是借其他人的号，有泄露密码风险的还是不好。</p>
+<p>原理就是Steam的默认登录账号是写在注册表的，然后会根据注册表账号去Steam&#x2F;config&#x2F;loginusers.vdf找对应账号信息，所以切换用户的时候把注册表修改到对应的账号就可以了。</p>
+<span id="more"></span>
+
+<p>首先你需要登陆过一次你记录的账户，并且选择记住密码登录。这样你的本地就会保存对应的账号信息，此时就可以使用脚本修改到对应的账号就可以了。</p>
+<h1 id="1-创建脚本并修改"><a href="#1-创建脚本并修改" class="headerlink" title="1 创建脚本并修改"></a>1 创建脚本并修改</h1><p>新建脚本文件ChangeSteamAccount.bat，输入以下代码：</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">taskkill</span> /f /im steam.exe</span><br><span class="line"><span class="built_in">taskkill</span> /f /im SteamService.exe</span><br><span class="line"><span class="built_in">echo</span> 请输入你要登录的账号(<span class="number">1</span>.妹妹<span class="number">1</span>；<span class="number">2</span>.妹妹<span class="number">2</span>；<span class="number">3</span>.妹妹<span class="number">3</span>)：</span><br><span class="line"><span class="built_in">set</span> /p area=</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">1</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account1 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">2</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account2 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">3</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account3 /f)</span><br><span class="line"><span class="built_in">start</span> D:\Steam\Steam.exe</span><br></pre></td></tr></table></figure>
+
+<p>接下来你需要对上述代码中的对应部分进行修改</p>
+<ol>
+<li>在上述代码中的第四行，也就是以下这一行代码进行修改，将括号中的文字修改为你想要提示的语句，比如我这里有三个妹妹的号，我就可以标记为妹妹1，妹妹2，妹妹3.</li>
+</ol>
+<p><code>echo 请输入你要登录的账号(1.妹妹1；2.妹妹2；3.妹妹3)：</code></p>
+<ol start="2">
+<li><p>在上述代码的第5，6，7行，修改if判断语句中的Account1，Account2，Account3为你想修改的账号的steam登录名，就比如上面的妹妹1的steam名字为meiyangyang，那么就把Account1修改为meiyangyang就可以了。</p>
+</li>
+<li><p>修改第8行，将路径修改为你的steam路径即可，路径可以通过<code>右键steam快捷键-&gt;快捷键方式-&gt;目标</code>找到。</p>
+</li>
+<li><p>如果想添加更多的号，直接类推上述操作即可，比如想添加妹妹4，那么代码如下：</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">taskkill</span> /f /im steam.exe</span><br><span class="line"><span class="built_in">taskkill</span> /f /im SteamService.exe</span><br><span class="line"><span class="built_in">echo</span> 请输入你要登录的账号(<span class="number">1</span>.妹妹<span class="number">1</span>；<span class="number">2</span>.妹妹<span class="number">2</span>；<span class="number">3</span>.妹妹<span class="number">3</span>；妹妹<span class="number">4</span>)：</span><br><span class="line"><span class="built_in">set</span> /p area=</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">1</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account1 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">2</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account2 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">3</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account3 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">4</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account4 /f)</span><br><span class="line"><span class="built_in">start</span> D:\Steam\Steam.exe</span><br></pre></td></tr></table></figure>
+<p>其中修改了第四行，然后添加了一个if判断，记得将if判断中的area判断值修改为4，将Account4修改为你想要的名字。</p>
+</li>
+<li><p>可能会出现乱码情况，此时需要将你文本编辑的编码方式从UTF-8修改为ANSI，直接另存为文件，选择编码方式为ANSI即可解决问题</p>
+</li>
+</ol>
+<h1 id="2-实操演示"><a href="#2-实操演示" class="headerlink" title="2 实操演示"></a>2 实操演示</h1><p>如下图为打开后的界面，由于我此时打开的电脑没有安装steam，所以第一行第二行错误，其实这两行错误不用管，此时只需要输入你想登录的账号的序号就可以，比如我想登录妹妹1的账号，此时只需要输入1，按下回车即可登录。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808105819.png"></p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>steam</tag>
+        <tag>bat脚本</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>markdown的简单用法</title>
     <url>/2023/08/09/20230808_markdownLanguage/</url>
     <content><![CDATA[<p>如果需要经常记录一些东西，那么markdown就是一个绕不开的东西，而习惯用markdown也会养成记录的习惯，本文主要从四个方面介绍markdown的简单用法，分别是1.markdown简介，2.markdown编译器，3.markdown语法。</p>
@@ -675,46 +715,6 @@
       <tags>
         <tag>markdown</tag>
         <tag>vscode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>steam一键切换用户的脚本</title>
-    <url>/2023/08/08/20230808_steamUserChangebat/</url>
-    <content><![CDATA[<p>由于博主经常用很多不同的号玩CSGO，每一次都需要输入账号密码，并且等待令牌，十分麻烦，遂找到了一个脚本切换steam登录信息，其实steam++也可以实现这个功能，但是毕竟很多时候是借其他人的号，有泄露密码风险的还是不好。</p>
-<p>原理就是Steam的默认登录账号是写在注册表的，然后会根据注册表账号去Steam&#x2F;config&#x2F;loginusers.vdf找对应账号信息，所以切换用户的时候把注册表修改到对应的账号就可以了。</p>
-<span id="more"></span>
-
-<p>首先你需要登陆过一次你记录的账户，并且选择记住密码登录。这样你的本地就会保存对应的账号信息，此时就可以使用脚本修改到对应的账号就可以了。</p>
-<h1 id="1-创建脚本并修改"><a href="#1-创建脚本并修改" class="headerlink" title="1 创建脚本并修改"></a>1 创建脚本并修改</h1><p>新建脚本文件ChangeSteamAccount.bat，输入以下代码：</p>
-<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">taskkill</span> /f /im steam.exe</span><br><span class="line"><span class="built_in">taskkill</span> /f /im SteamService.exe</span><br><span class="line"><span class="built_in">echo</span> 请输入你要登录的账号(<span class="number">1</span>.妹妹<span class="number">1</span>；<span class="number">2</span>.妹妹<span class="number">2</span>；<span class="number">3</span>.妹妹<span class="number">3</span>)：</span><br><span class="line"><span class="built_in">set</span> /p area=</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">1</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account1 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">2</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account2 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">3</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account3 /f)</span><br><span class="line"><span class="built_in">start</span> D:\Steam\Steam.exe</span><br></pre></td></tr></table></figure>
-
-<p>接下来你需要对上述代码中的对应部分进行修改</p>
-<ol>
-<li>在上述代码中的第四行，也就是以下这一行代码进行修改，将括号中的文字修改为你想要提示的语句，比如我这里有三个妹妹的号，我就可以标记为妹妹1，妹妹2，妹妹3.</li>
-</ol>
-<p><code>echo 请输入你要登录的账号(1.妹妹1；2.妹妹2；3.妹妹3)：</code></p>
-<ol start="2">
-<li><p>在上述代码的第5，6，7行，修改if判断语句中的Account1，Account2，Account3为你想修改的账号的steam登录名，就比如上面的妹妹1的steam名字为meiyangyang，那么就把Account1修改为meiyangyang就可以了。</p>
-</li>
-<li><p>修改第8行，将路径修改为你的steam路径即可，路径可以通过<code>右键steam快捷键-&gt;快捷键方式-&gt;目标</code>找到。</p>
-</li>
-<li><p>如果想添加更多的号，直接类推上述操作即可，比如想添加妹妹4，那么代码如下：</p>
-<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">taskkill</span> /f /im steam.exe</span><br><span class="line"><span class="built_in">taskkill</span> /f /im SteamService.exe</span><br><span class="line"><span class="built_in">echo</span> 请输入你要登录的账号(<span class="number">1</span>.妹妹<span class="number">1</span>；<span class="number">2</span>.妹妹<span class="number">2</span>；<span class="number">3</span>.妹妹<span class="number">3</span>；妹妹<span class="number">4</span>)：</span><br><span class="line"><span class="built_in">set</span> /p area=</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">1</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account1 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">2</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account2 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">3</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account3 /f)</span><br><span class="line"><span class="keyword">if</span> /i <span class="variable">%area%</span> == <span class="number">4</span> (REG ADD HKEY_CURRENT_USER\SOFTWARE\Valve\Steam /v AutoLoginUser /t REG_SZ /d Account4 /f)</span><br><span class="line"><span class="built_in">start</span> D:\Steam\Steam.exe</span><br></pre></td></tr></table></figure>
-<p>其中修改了第四行，然后添加了一个if判断，记得将if判断中的area判断值修改为4，将Account4修改为你想要的名字。</p>
-</li>
-<li><p>可能会出现乱码情况，此时需要将你文本编辑的编码方式从UTF-8修改为ANSI，直接另存为文件，选择编码方式为ANSI即可解决问题</p>
-</li>
-</ol>
-<h1 id="2-实操演示"><a href="#2-实操演示" class="headerlink" title="2 实操演示"></a>2 实操演示</h1><p>如下图为打开后的界面，由于我此时打开的电脑没有安装steam，所以第一行第二行错误，其实这两行错误不用管，此时只需要输入你想登录的账号的序号就可以，比如我想登录妹妹1的账号，此时只需要输入1，按下回车即可登录。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808105819.png"></p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>steam</tag>
-        <tag>bat脚本</tag>
       </tags>
   </entry>
   <entry>
@@ -1773,6 +1773,52 @@
       </tags>
   </entry>
   <entry>
+    <title>学术PPT制作--beamer</title>
+    <url>/2023/10/04/20231004_Latex&amp;beamer/</url>
+    <content><![CDATA[<p>使用<strong>MAC+VSCODE+LATEX</strong></p>
+<p>最近有了频繁做学术汇报的需求，之前有了解到过beamer制作学术汇报PPT的优势，所以这里填一下坑，分享记录一下如何用beamer制作学术PPT以及使用latex和office制作PPT的优劣和使用场景对比分析。</p>
+<span id="more"></span>
+
+<h1 id="1-配置latex环境"><a href="#1-配置latex环境" class="headerlink" title="1 配置latex环境"></a>1 配置latex环境</h1><ol>
+<li>安装MacTex<br>mac上直接官网下载即可 <a href="https://www.tug.org/mactex/mactex-download.html">MacTex</a></li>
+</ol>
+<p>windows的操作也类似，在官方下载TeXlive即可。</p>
+<ol start="2">
+<li><p>配置vscode<br>然后我们还需要在vscode上进行配置相关的插件，这一步也非常简单，在vscode扩展中搜索LaTex Workshop，安装完成后vscode左侧出现TeX标志代表安装成功。</p>
+</li>
+<li><p>配置系统path<br>此时我们还需要将texlive到路径添加到系统路径中，打开iTerm，输入以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /etc</span><br><span class="line">sudo vi paths  #输入开机密码</span><br></pre></td></tr></table></figure>
+<p>然后在末尾加入我们安装的路径，一般为<code>/usr/local/texlive</code>，也可以终端打开测试看看是否是这个路径，注意的是保存后需要重启电脑才会使路径生效。</p>
+</li>
+<li><p>测试latex<br>新建test.tex文件，其中输入</p>
+</li>
+</ol>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">Hello World<span class="keyword">\LaTeX</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后点击右上角的执行，进行测试，成功则latex环境配置完成。</p>
+<h1 id="2-选择beamer模版"><a href="#2-选择beamer模版" class="headerlink" title="2 选择beamer模版"></a>2 选择beamer模版</h1><p>使用经典的清华大学Beamer模版，我找到了UESTC的修改版本，github上搜索UESTC_beamer即可找到大致的效果图如下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310042002619.png"></p>
+<p>具体的latex写法后续进行更新解析。</p>
+<h1 id="3-latex与office对比"><a href="#3-latex与office对比" class="headerlink" title="3 latex与office对比"></a>3 latex与office对比</h1><ul>
+<li><p>latex&amp;beamer制作PPT适用场景：复用性高，比较严肃的汇报，没有很多动画，分享干货，学术汇报的场景，不适用于快速记录</p>
+</li>
+<li><p>office适用场景：复用性不高、比较轻松的交流和快速的灵感想法记录和交流的场景</p>
+</li>
+</ul>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>vscode</tag>
+        <tag>MacOS</tag>
+        <tag>办公技能</tag>
+        <tag>beamer</tag>
+        <tag>latex</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>实现windows和mac间远程桌面</title>
     <url>/2023/10/04/20231004_Windows2MacRemoteConn/</url>
     <content><![CDATA[<p>实现Windows和mac之间的丝滑远程桌面，主要使用的是cpolar，虽然不是免费的，但是使用的体验还是不错，价格也不算很高，每月12元有带宽还不错的固定公网IP的远程连接。</p>
@@ -1835,52 +1881,6 @@
       <tags>
         <tag>远程桌面</tag>
         <tag>跨平台</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>学术PPT制作--beamer</title>
-    <url>/2023/10/04/20231004_Latex&amp;beamer/</url>
-    <content><![CDATA[<p>使用<strong>MAC+VSCODE+LATEX</strong></p>
-<p>最近有了频繁做学术汇报的需求，之前有了解到过beamer制作学术汇报PPT的优势，所以这里填一下坑，分享记录一下如何用beamer制作学术PPT以及使用latex和office制作PPT的优劣和使用场景对比分析。</p>
-<span id="more"></span>
-
-<h1 id="1-配置latex环境"><a href="#1-配置latex环境" class="headerlink" title="1 配置latex环境"></a>1 配置latex环境</h1><ol>
-<li>安装MacTex<br>mac上直接官网下载即可 <a href="https://www.tug.org/mactex/mactex-download.html">MacTex</a></li>
-</ol>
-<p>windows的操作也类似，在官方下载TeXlive即可。</p>
-<ol start="2">
-<li><p>配置vscode<br>然后我们还需要在vscode上进行配置相关的插件，这一步也非常简单，在vscode扩展中搜索LaTex Workshop，安装完成后vscode左侧出现TeX标志代表安装成功。</p>
-</li>
-<li><p>配置系统path<br>此时我们还需要将texlive到路径添加到系统路径中，打开iTerm，输入以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /etc</span><br><span class="line">sudo vi paths  #输入开机密码</span><br></pre></td></tr></table></figure>
-<p>然后在末尾加入我们安装的路径，一般为<code>/usr/local/texlive</code>，也可以终端打开测试看看是否是这个路径，注意的是保存后需要重启电脑才会使路径生效。</p>
-</li>
-<li><p>测试latex<br>新建test.tex文件，其中输入</p>
-</li>
-</ol>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">Hello World<span class="keyword">\LaTeX</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后点击右上角的执行，进行测试，成功则latex环境配置完成。</p>
-<h1 id="2-选择beamer模版"><a href="#2-选择beamer模版" class="headerlink" title="2 选择beamer模版"></a>2 选择beamer模版</h1><p>使用经典的清华大学Beamer模版，我找到了UESTC的修改版本，github上搜索UESTC_beamer即可找到大致的效果图如下</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202310042002619.png"></p>
-<p>具体的latex写法后续进行更新解析。</p>
-<h1 id="3-latex与office对比"><a href="#3-latex与office对比" class="headerlink" title="3 latex与office对比"></a>3 latex与office对比</h1><ul>
-<li><p>latex&amp;beamer制作PPT适用场景：复用性高，比较严肃的汇报，没有很多动画，分享干货，学术汇报的场景，不适用于快速记录</p>
-</li>
-<li><p>office适用场景：复用性不高、比较轻松的交流和快速的灵感想法记录和交流的场景</p>
-</li>
-</ul>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>vscode</tag>
-        <tag>MacOS</tag>
-        <tag>办公技能</tag>
-        <tag>beamer</tag>
-        <tag>latex</tag>
       </tags>
   </entry>
   <entry>
@@ -2080,6 +2080,345 @@
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>多模态视频片段定位论文阅读</title>
+    <url>/2023/10/07/20231007_paperRead/</url>
+    <content><![CDATA[<p>最近在研究多模态视频片段定位方向，在此博客记录一下论文的阅读和我在阅读中的一些个人的理解和想法，之前已经阅读了大部分了，只是因为秋招的原因耽搁了很久，近两年的论文也拉下了。</p>
+<p>参考了<a href="https://github.com/yawenzeng/Awesome-Cross-Modal-Video-Moment-Retrieval">Awesome-Cross-Modal-Video-Moment-Retrieval</a>整理的论文，后续会添加自己觉得有用的论文。</p>
+<p>主要按照年份进行阅读，其中每个年份还会进行分类阅读。中间有详细阅读的论文会添加自己的理解和解析。</p>
+<p>持续更新～</p>
+<span id="more"></span>
+
+<h1 id="2017-2"><a href="#2017-2" class="headerlink" title="2017:2"></a>2017:2</h1><p><a href="https://www.cnblogs.com/mobbu/p/17746499.html">1[ICCV 2017] [CTRL] TALL Temporal Activity Localization via Language Query</a>⭕<br>2[ICCV 2017] [MCN] Localizing Moments in Video with Natural Language⭕</p>
+<p>1[ICCV 2017] [CTRL] TALL Temporal Activity Localization via Language Query</p>
+<ul>
+<li>动机：开山之作，点出该问题需要解决的两大困难1作为跨模态任务，如何得到适当的文本和视频表示特征，以允许跨模态匹配操作和完成语言查询。2理论上可以生成无限粒度的视频片段，然后逐一比较。但时间消耗过大，那么如何能够从有限粒度的滑动窗口做到准确的具体帧定位。</li>
+<li>方法：特征抽取–使用全局的sentence2vec和C3D。模态交互–加+乘+拼+FC。多任务：对齐分数+回归。</li>
+</ul>
+<p>2[ICCV 2017] [MCN] Localizing Moments in Video with Natural Language</p>
+<ul>
+<li>方法：特征抽取–使用全局的LSTM和VGG。模态交互–无。多任务：模态间的均方差（而不是预测对齐分数），同时使用RGB和 optical flow光流。</li>
+</ul>
+<h1 id="2018-5"><a href="#2018-5" class="headerlink" title="2018:5"></a>2018:5</h1><p><a href="">3[MM 2018] Cross-modal Moment Localization in Videos</a></p>
+<p>4[SIGIR 2018] Attentive Moment Retrieval in Videos</p>
+<p>5[EMNLP 2018] Localizing Moments in Video with Temporal Language</p>
+<p>6[EMNLP 2018] Temporally Grounding Natural Sentence in Video</p>
+<p>7[IJCAI 2018] Multi-modal Circulant Fusion for Video-to-Language and Backward</p>
+<p>[MM 2018] Cross-modal Moment Localization in Videos</p>
+<ul>
+<li>动机：强调时间语态问题，即句子中的“先”“前”往往被忽视，需要更细致的理解。</li>
+<li>方法：尝试结合上下文，用文本给视频加attention。</li>
+</ul>
+<p>[SIGIR 2018] Attentive Moment Retrieval in Videos</p>
+<ul>
+<li>方法：尝试结合上下文，用视频给文本加attention。以上两篇的特征处理由于要加attention就开始局部化。</li>
+</ul>
+<p>[EMNLP 2018] Localizing Moments in Video with Temporal Language</p>
+<ul>
+<li>动机：时序上下文是很重要的，不然无法理解句子中一些词之间的关系。</li>
+<li>方法：延续MCN的思路走算匹配度无模态交互，且同时使用RGB和 optical flow光流。特征抽取–LSTM，视频表示上同时融合了多种上下文。</li>
+</ul>
+<p>[EMNLP 2018] Temporally Grounding Natural Sentence in Video</p>
+<ul>
+<li>动机：捕捉视频和句子之间不断发展的细粒度的交互。</li>
+<li>方法：从每帧&#x2F;逐词。使用两组lstm处理每个时刻文本和视频的交互。</li>
+</ul>
+<p>[IJCAI 2018] Multi-modal Circulant Fusion for Video-to-Language and Backward</p>
+<ul>
+<li>动机：增强视觉和文本表达的融合</li>
+<li>方法：同时使用vector和matrix的融合方式，其中circulant matrix的操作方式是每一行平移一个元素以探索不同模态向量的所有可能交互。</li>
+</ul>
+<p><strong>#年度关键词：上下文。</strong></p>
+<h1 id="2019-16"><a href="#2019-16" class="headerlink" title="2019: 16"></a>2019: 16</h1><p>8[AAAI 2019] Localizing Natural Language in Videos<br>9[AAAI 2019] Multilevel language and vision integration for text-to-clip retrieval<br>10[AAAI 2019] Semantic Proposal for Activity Localization in Videos via Sentence Query<br>11[AAAI 2019] To Find Where You Talk Temporal Sentence Localization in Video with Attention Based Location Regression<br>12[AAAI 2019] Read, Watch, and Move Reinforcement Learning for Temporally Grounding Natural Language Descriptions in Videos⭕<br>13[CVPR 2019] MAN_ Moment Alignment Network for Natural Language Moment Retrieval via Iterative Graph Adjustment⭕<br>14[CVPR Workshop 2019] Tripping through time Efficient Localization of Activities in Videos<br>15[CVPR 2019] Language-Driven Temporal Activity Localization A Semantic Matching Reinforcement Learning Model⭕<br>16[CVPR 2019] Weakly Supervised Video Moment Retrieval From Text Queries⭕<br>17[ICMR 2019] Cross-Modal Video Moment Retrieval with Spatial and Language-Temporal Attention⭕<br>18[MM 2019] Exploiting Temporal Relationships in Video Moment Localization with Natural Language<br>19[NIPS 2019] Semantic Conditioned Dynamic Modulation for Temporal Sentence Grounding in Videos<br>20[SIGIR 2019] Cross-modal interaction networks for query-based moment retrieval in videos<br>21[WACV2019] MAC: Mining Activity Concepts for Language-Based Temporal Localization<br>22[ArXiv 2019] Temporal Localization of Moments in Video Collections with Natural Language<br>23[ArXiv 2019] wMAN Weakly-supervised Moment Alignment Network for Text-based Video Segment Retrieval  </p>
+<p>[AAAI 2019] Localizing Natural Language in Videos</p>
+<ul>
+<li>动机：以前的工作忽略模态间细粒度的交互和上下文信息。</li>
+<li>方法：交叉门控的递归网络来匹配自然句子和视频序列（类似cross-attention），以完成细粒度交互。</li>
+</ul>
+<p>[AAAI 2019] Multilevel language and vision integration for text-to-clip retrieval</p>
+<ul>
+<li>动机：global embedding缺少细粒度，且不同模态之间独立嵌入缺乏交互。</li>
+<li>方法：先融语义再用R-C3D生成候选时刻以加快效率。同时用LSTM对查询语句和视频片段之间的细粒度相似性进行时序融合。</li>
+</ul>
+<p>[AAAI 2019] Semantic Proposal for Activity Localization in Videos via Sentence Query</p>
+<ul>
+<li>动机：滑动窗口数据量多，效率低。</li>
+<li>方法：将句子中的语义信息集成到动作候选生成过程中以得到更好的时刻候选集。</li>
+<li>其他：该任务不同于时序动作定位的地方 （1）某一个动作是各种行动的组合，可能持续很长时间。 （2）句子查询不限于预定义的类列表。 （3）视频通常包含多个不同的活动实例。</li>
+</ul>
+<p>[AAAI 2019] To Find Where You Talk Temporal Sentence Localization in Video with Attention Based Location Regression</p>
+<ul>
+<li>动机：1视频的时间结构和全局上下文没有充分探索2句子处理太粗3候选切分太耗时。</li>
+<li>方法：特征抽取–全局+局部，即用C3D+BiLSTM处理视频，用Glove+BiLSTM处理文本。然后co-attention进行对齐。并且不做切分，直接预测定位点。</li>
+</ul>
+<p>[AAAI 2019] Read, Watch, and Move Reinforcement Learning for Temporally Grounding Natural Language Descriptions in Videos</p>
+<ul>
+<li>动机：候选太耗时。</li>
+<li>方法：首次将强化学习引入到这个领域，处理成顺序决策问题。</li>
+</ul>
+<p>[CVPR 2019] MAN_ Moment Alignment Network for Natural Language Moment Retrieval via Iterative Graph Adjustment</p>
+<ul>
+<li>动机：语义失调和结构失调（候选集之间的处理是独立的）。</li>
+<li>方法：特征抽取–LSTM和I3D。使用迭代图学习候选时刻之间的关系。</li>
+</ul>
+<p>[CVPR Workshop 2019] Tripping through time Efficient Localization of Activities in Videos</p>
+<ul>
+<li>动机：1文本和视频的联合表示以local细粒化。2候选效率低且不符合人类的自然定位方法。</li>
+<li>方法：使用门控注意力建模细粒度的文本和视觉表示+强化学习定位。</li>
+</ul>
+<p>[CVPR 2019] Language-Driven Temporal Activity Localization A Semantic Matching Reinforcement Learning Model</p>
+<ul>
+<li>动机：直接匹配句子与视频内容使强化学习表现不佳，更需要更多的关注句子和图片中目标的细粒度来增强语义。</li>
+<li>方法：在强化学习框架下引入语义特征。</li>
+</ul>
+<p>[CVPR 2019] Weakly Supervised Video Moment Retrieval From Text Queries</p>
+<ul>
+<li>动机：标注句子边界太耗时，且不可扩展在实践中</li>
+<li>方法：弱监督–在训练时不需要对文本描述进行时间边界注释，而只使用视频级别的文本描述。技术上主要使用文本和视频在时序上的注意力对齐。</li>
+</ul>
+<p>[ICMR 2019] Cross-Modal Video Moment Retrieval with Spatial and Language-Temporal Attention</p>
+<ul>
+<li>动机：没有关注空间目标信息和文本的语义对齐，且需要结合视频的时空信息。</li>
+<li>方法：特征抽取–全局+局部，即全局还是用C3D和BiLSTM。然后全局特征分别给局部（词和目标）加attention突出重点。</li>
+</ul>
+<p>[MM 2019] Exploiting Temporal Relationships in Video Moment Localization with Natural Language</p>
+<ul>
+<li>动机：之前对文本的处理是Global，而文本中事件之间的时间依赖和推理没有得到充分考虑。</li>
+<li>方法：树注意网络将文本分为主事件，上下文时间，时间信号。</li>
+</ul>
+<p>[NIPS 2019] Semantic Conditioned Dynamic Modulation for Temporal Sentence Grounding in Videos</p>
+<ul>
+<li>动机：现有的方法主要做语义匹配和对齐，而忽略了句子信息在视频的时间关联和组合中起着重要作用。</li>
+<li>方法：提出语义条件动态调制(SCDM)机制，它依靠句子语义来调节时间卷积运算，从而更好地关联和组合句子相关的视频内容。</li>
+</ul>
+<p>[SIGIR 2019] Cross-modal interaction networks for query-based moment retrieval in videos</p>
+<ul>
+<li>动机：对句子处理的细粒度不够（语境长依赖）。</li>
+<li>方法：对切分的词构建语义树&#x2F;图抽特征。</li>
+</ul>
+<p>[WACV2019] MAC: Mining Activity Concepts for Language-Based Temporal Localization</p>
+<ul>
+<li>动机：联合嵌入的子空间忽略了有关视频和查询中动作的丰富语义线索</li>
+<li>方法：从视频和语言模态中挖掘动作概念，其他部分同TALL。</li>
+</ul>
+<p>[ArXiv 2019] Temporal Localization of Moments in Video Collections with Natural Language</p>
+<ul>
+<li>动机：欧几里德居来来衡量文本视频距离不好（MCN的对比路线），无法大规模应用。</li>
+<li>方法：使用平方差距离更精准的对齐，并应用视频重排序方法以应对大规模视频库。</li>
+</ul>
+<p>[ArXiv 2019] wMAN Weakly-supervised Moment Alignment Network for Text-based Video Segment Retrieval</p>
+<ul>
+<li>动机：自动推断无监督的视觉和语言表示之间的潜在对应关系&#x2F;对齐。</li>
+<li>方法：词条件视觉图以捕捉交互，并应用多实例学习完成无监督下的细粒度对齐。</li>
+</ul>
+<p><strong>#年度关键词：文本和视频的细粒化+强化学习+候选框关系&#x2F;生成+弱监督。</strong></p>
+<h1 id="2020-22"><a href="#2020-22" class="headerlink" title="2020:22"></a>2020:22</h1><p>24[AAAI 2020] Temporally Grounding Language Queries in Videos by Contextual Boundary-aware Prediction<br>25[AAAI 2020] Tree-Structured Policy based Progressive Reinforcement Learning for Temporally Language Grounding in Video<br>26[AAAI 2020] Learning 2D Temporal Adjacent Networks for Moment Localization with Natural Language⭕<br>27[AAAI 2020] Weakly-Supervised Video Moment Retrieval via Semantic Completion Network<br>28[TIP 2020] Moment Retrieval via Cross-Modal Interaction Networks With Query Reconstruction⭕<br>29[MM 2020] Adversarial Video Moment Retrieval by Jointly Modeling Ranking and Localization⭕<br>30[MM 2020] STRONG: Spatio-Temporal Reinforcement Learning for Cross-Modal Video Moment Localization<br>31[MM 2020] Dual Path Interaction Network for video Moment Localization<br>32[MM 2020] Regularized Two-Branch Proposal Networks for Weakly-Supervised Moment Retrieval in Videos<br>33[ECCV 2020] VLANet: Video-Language Alignment Network for Weakly-Supervised Video Moment Retrieval<br>34[WACV2020] Proposal-free Temporal Moment Localization of a Natural-Language Query in Video using Guided Attention<br>35[ECCV 2020] TVR A Large-Scale Dataset for Video-Subtitle Moment Retrieval<br>36[ArXiv 2020] Video Moment Localization using Object Evidence and Reverse Captioning<br>37[ArXiv 2020] Graph Neural Network for Video-Query based Video Moment Retrieval<br>38[ArXiv 2020] Text-based Localization of Moments in a Video Corpus<br>39[ArXiv 2020] Generating Adjacency Matrix for Video-Query based Video Moment Retrieval<br>40[BMVC 2020] Uncovering Hidden Challenges in Query-Based Video Moment Retrieval<br>41[ArXiv 2020] Video Moment Retrieval via Natural Language Queries<br>42[ArXiv 2020] Frame-wise Cross-modal Match for Video Moment Retrieval<br>43[MM 2020] Fine-grained Iterative Attention Network for Temporal Language Localization in Videos<br>44[MM 2020] Jointly Cross- and Self-Modal Graph Attention Network for Query-Based Moment Localization<br>45[CVPR 2020] Dense Regression Network for Video Grounding  </p>
+<p>[AAAI 2020] Temporally Grounding Language Queries in Videos by Contextual Boundary-aware Prediction</p>
+<ul>
+<li>动机：当模型无法定位最佳时刻时，添加的偏移回归可能会失败。</li>
+<li>方法：语言集成的“感知”周围的预测，即每个时间步长都会预测时间锚和边界。</li>
+</ul>
+<p>[AAAI 2020] Tree-Structured Policy based Progressive Reinforcement Learning for Temporally Language Grounding in Video</p>
+<ul>
+<li>动机：现有的方法大多存在效率低下、缺乏可解释性和偏离人类感知机制（从粗到细）问题。</li>
+<li>方法：基于树结构政策的渐进强化学习(TSP-PRL)框架，通过迭代细化过程来顺序地调节时间边界。</li>
+</ul>
+<p>[AAAI 2020] Learning 2D Temporal Adjacent Networks for Moment Localization with Natural Language</p>
+<ul>
+<li>动机：以往模型一般单独考虑时间，忽视了时间的依赖性。（不能在当前时刻对其他时刻进行预测）。</li>
+<li>方法：时间从一维变为二维，即变成二维矩阵，预测每一个位置的score。</li>
+</ul>
+<p>[AAAI 2020] Weakly-Supervised Video Moment Retrieval via Semantic Completion Network</p>
+<ul>
+<li>动机：弱监督的注意力权重通常只对很明显的区域有反应，即候选太相似。</li>
+<li>方法：候选生成–视觉语义词和文本对齐得到分数，并反馈给候选生成的打分。</li>
+</ul>
+<p>[TIP 2020] Moment Retrieval via Cross-Modal Interaction Networks With Query Reconstruction</p>
+<ul>
+<li>sigir19的扩充，增加查询重建任务，整体上联合自然语言查询的句法依赖、视频上下文中的长程语义依赖和足够的跨模态交互一起建模。</li>
+</ul>
+<p>[MM 2020] Adversarial Video Moment Retrieval by Jointly Modeling Ranking and Localization</p>
+<ul>
+<li>动机：强化学习定位不稳定，检索任务候选框效率低。</li>
+<li>方法：用对抗学习联合建模，即用强化学习定位来生成候选，进而在生成候选集上进行检索。</li>
+</ul>
+<p>[MM 2020] STRONG: Spatio-Temporal Reinforcement Learning for Cross-Modal Video Moment Localization</p>
+<ul>
+<li>动机：空间上的场景信息很重要+候选框效率低。</li>
+<li>方法：除了时序上的强化学习，其在空间上也加入强化学习，并以弱监督追踪的方式聚焦场景，去除冗余。</li>
+</ul>
+<p>[MM 2020] Dual Path Interaction Network for video Moment Localization</p>
+<ul>
+<li>动机：很少有研究将候选框层级的对齐信息（算语义匹配分数的技术路线）和帧层级的边界信息（预测边界起止的路线）结合在一起，并考虑它们之间的互补性。</li>
+<li>方法：双路径交互网络(DPIN)，分别做两大任务，同时两者之间通过信息交互相互增强。</li>
+</ul>
+<p>[MM 2020] Regularized Two-Branch Proposal Networks for Weakly-Supervised Moment Retrieval in Videos</p>
+<ul>
+<li>动机：大多数现有的弱监督方法都采用基于多实例的框架来做样本间对抗，但忽略了相似内容之间的样本间对抗。</li>
+<li>方法：同时考虑样本间和样本内的对抗，其中会采用语言感知得到两个分支的视觉表示（被增强的和被印制的），这两者将构成很强的正负样本对。</li>
+</ul>
+<p>[ECCV 2020] VLANet: Video-Language Alignment Network for Weakly-Supervised Video Moment Retrieval</p>
+<ul>
+<li>动机：粗略的查询表示和单向注意机制导致模糊的注意映射。</li>
+<li>方法：修剪候选集+更细粒度的多注意力机制来获得更好的注意力增加定位性能。</li>
+</ul>
+<p>[WACV2020] Proposal-free Temporal Moment Localization of a Natural-Language Query in Video using Guided Attention</p>
+<ul>
+<li>动机：不依赖候选的端对端框架，文本注释主观性。</li>
+<li>方法：使用attention的动态过滤器（利用文本对视频的过滤），软标签分布损失解决文本注释的不确定性。</li>
+</ul>
+<p>[ECCV 2020] TVR A Large-Scale Dataset for Video-Subtitle Moment Retrieval</p>
+<ul>
+<li>动机：视频+字幕才能进一步的理解。</li>
+<li>方法：提出一个新数据集，并设计一个类似多Transformer的模型完成不同模态的理解和融合。</li>
+</ul>
+<p>[ArXiv 2020] Video Moment Localization using Object Evidence and Reverse Captioning</p>
+<ul>
+<li>动机：仅仅有语义概念是不够的，还需要对象和字幕的补充。</li>
+<li>方法：在MAC（视频，视觉语义概念，文本，文本语义概念）的方法上再增加对象和字幕的特征。</li>
+</ul>
+<p>[ArXiv 2020] Graph Neural Network for Video-Query based Video Moment Retrieval</p>
+<ul>
+<li>动机：帧间的特征相似度与视频间的特征相似度之间存在不一致，这会影响特征融合。</li>
+<li>方法：沿时间维度对视频构多个图，然后再做多图特征融合。</li>
+</ul>
+<p>[ArXiv 2020] Text-based Localization of Moments in a Video Corpus</p>
+<ul>
+<li>动机：text-video可能会有一对多+搜索全库是必要的</li>
+<li>方法：层次时刻对齐网络能更好的编码跨模态特征以理解细微的差异，然后做模态内的三元组和模态间的三元组以应对搜索所有的时刻。</li>
+</ul>
+<p>[ArXiv 2020] Generating Adjacency Matrix for Video-Query based Video Moment Retrieval</p>
+<ul>
+<li>动机：现有利用图技术的方法得到的邻接矩阵是固定的。</li>
+<li>方法：使用图抽取模态内和模态间的特征关系。</li>
+</ul>
+<p>[BMVC 2020] Uncovering Hidden Challenges in Query-Based Video Moment Retrieval</p>
+<ul>
+<li>讨论性文章：虽然现有技术已经取得了很好的提高，这篇文章探究了存在的两大问题，1数据集存在偏差，2评价指标不一定可靠。</li>
+</ul>
+<p>[ArXiv 2020] Video Moment Retrieval via Natural Language Queries</p>
+<ul>
+<li>动机：起止时间标记有噪音，需要结合上下文的更好表示。</li>
+<li>方法：多头自我注意+交叉注意力，以捕获视频&#x2F;查询交互和远程查询依存关系。多任务学习中加入moment segmentation任务。</li>
+</ul>
+<p>[ArXiv 2020] Frame-wise Cross-modal Match for Video Moment Retrieval</p>
+<ul>
+<li>动机：以往的方法不能很好地捕获查询和视频帧之间的跨模态交互。</li>
+<li>方法：利用注意力对齐，做帧间的预测和边界预测两个任务。</li>
+</ul>
+<p>[MM 2020] Fine-grained Iterative Attention Network for Temporal Language Localization in Videos</p>
+<ul>
+<li>动机：现有工作只集中在从视频到查询的单向交互上。</li>
+<li>方法：针对句子和视频的cross-attention做双向相互。</li>
+</ul>
+<p>[MM 2020] Jointly Cross- and Self-Modal Graph Attention Network for Query-Based Moment Localization</p>
+<ul>
+<li>动机：视频大部分都无关，只有小部分视频相关，所以应该更加重视两者的融合。</li>
+<li>方法：提出模态间和模态内两种交互模式，以帧和词构图通过消息传递来增强表示。</li>
+</ul>
+<p>[CVPR 2020] Dense Regression Network for Video Grounding</p>
+<ul>
+<li>动机：以往训练的模型都是在正负例样本不平衡的情况下，所以作者尝试利用帧之间的距离作为更密集的监督信号。</li>
+<li>方法：预测起始结束帧，然后认为只要在ground truth中的片段都认为是正例。</li>
+</ul>
+<p><strong>#年度关键词：任务扩展（如对全库搜索moment，增加字幕，标定鲁棒性等等），继续细化和融合，候选框关系。</strong><br>#研究热情高涨，水文趋势开始增加….</p>
+<h1 id="2021-11"><a href="#2021-11" class="headerlink" title="2021:11"></a>2021:11</h1><p>46[CVPR 2021] Multi-Modal Relational Graph for Cross-Modal Video Moment Retrieval⭕<br>47[WACV2021] LoGAN: Latent Graph Co-Attention Network for Weakly-Supervised Video Moment Retrieval<br>48[arxiv2021] A Closer Look at Temporal Sentence Grounding in Videos_ Datasets and Metrics⭕<br>49[CVPR2021] Interventional Video Grounding with Dual Contrastive Learning<br>50[SIGIR2021] Video Corpus Moment Retrieval with Contrastive Learning<br>51[SIGIR2021] Deconfounded Video Moment Retrieval with Causal Intervention<br>52[SIGIR2021] Cross Interaction Network for Natural Language Guided VideoMoment Retrieval<br>53[ACL2021] mTVR: Multilingual Moment Retrieval in Videos<br>53[ICCV2021] Fast Video Moment Retrieval<br>54[MM2021] CONQUER: Contextual Query-aware Ranking for Video Corpus Moment Retrieval  </p>
+<p>[CVPR 2021] Multi-Modal Relational Graph for Cross-Modal Video Moment Retrieval</p>
+<ul>
+<li>动机：基于候选的方法会导致候选之间非常相似难以区别，那么直接理解内容（局部目标）的细微变化会是更好的选择。</li>
+<li>方法：提出多模态关系图模型来捕捉视频中的局部目标之间的时空关系，并且在图预训练的框架下优化特征表达。</li>
+</ul>
+<p>[WACV2021] LoGAN: Latent Graph Co-Attention Network for Weakly-Supervised Video Moment Retrieval</p>
+<ul>
+<li>动机：改善视频与文本之间的 latent alignment，学习上下文的视觉语义表征。</li>
+<li>方法：提出 latent co-attention 模型，通过多级 coattention 机制+在视频上的positional encodings。</li>
+</ul>
+<p>[Arxiv2021] A Closer Look at Temporal Sentence Grounding in Videos_ Datasets and Metrics</p>
+<ul>
+<li>动机：这应该是最近很不错的文章了，详细讨论了现有数据集的偏差问题（即可能模型不需要学什么内容，直接学数据偏差就有不错的结果）。</li>
+<li>方法：然后作者提供了新的datasets和metrics，这个工作其实展现了现有的经典模型还是有比较多的问题，在这种去偏数据集下表现得很不理想。</li>
+</ul>
+<p>[CVPR2021] Interventional Video Grounding with Dual Contrastive Learning</p>
+<ul>
+<li>动机：这篇同样也是探究数据集中的选择偏差，从而使某些text和moment存在虚假关联。</li>
+<li>方法：提出双对比学习+因果推理。双对比学习是VV和QV，即尝试尽可能分离moment之间和moment query之间的语义。因果推理则利用因果干预P(Y|do(X))和事件作为混杂因素来学习表示。</li>
+</ul>
+<p>[SIGIR2021] Video Corpus Moment Retrieval with Contrastive Learning</p>
+<ul>
+<li>动机：一般使用的跨模态交互学习，高效率和高质量检索之间很难同时保持。</li>
+<li>方法：直接引入对比学习来改进视频编码器和文本编码器。其中视频对比学习旨在最大程度地提高查询和候选视频之间的相互信息。帧对比学习的目的是突出视频中帧级查询对应的片段。</li>
+</ul>
+<p>[SIGIR2021] Deconfounded Video Moment Retrieval with Causal Intervention</p>
+<ul>
+<li>动机：现有的模型往往都利用数据集偏差，如何减少这种偏差是很重要的。</li>
+<li>方法：提出一个结构性受因果关系启发的框架。具体来说提出解纠缠的跨模态匹配(DCM)方法来消除位置对预测结果的混杂效应，其先推断视觉内容的核心特征，然后用对基于后门调整的解纠缠多模态输入进行因果干预，迫使模型公平地考虑目标的每个可能的位置。</li>
+</ul>
+<p>[SIGIR2021] Cross Interaction Network for Natural Language Guided Video Moment Retrieval</p>
+<ul>
+<li>动机：现有技术一般只强调文本到视频的单交互，且设计复杂效率低。</li>
+<li>方法：提出结合一种自我注意和交叉交互的多头部注意机制，以捕获视频查询的内部依赖关系以及两个方向的相互关系。</li>
+</ul>
+<p>[ACL2021] mTVR: Multilingual Moment Retrieval in Videos</p>
+<ul>
+<li>动机：短文。提出一个的大规模新数据集，其中有双语数据。</li>
+</ul>
+<p>[ICCV2021] Fast Video Moment Retrieval</p>
+<ul>
+<li>动机：现有模型的跨模态交互模块太耗时，想要提高时间。</li>
+<li>方法：提出细粒度的语义蒸馏框架来转移知识，即用跨模态公共空间替换跨模态交互模块，其中蒸馏过程将语义转移到公共空间。</li>
+</ul>
+<p>[MM2021] CONQUER: Contextual Query-aware Ranking for Video Corpus Moment Retrieval</p>
+<ul>
+<li>动机：目前的单阶段方法无法处理实时的结果，同时计算和存储复杂。</li>
+<li>方法：使用两阶段的步骤，即这两个步骤是先依赖查询进行视频内容的自适应融合，再执行双向注意以结合某个clip内容进行时刻定位学习，以学习聚合剪辑和查询信息的新表示。</li>
+</ul>
+<p>[MM2021] Visual Co-Occurrence Alignment Learning for Weakly-Supervised Video Moment Retrieval</p>
+<p><strong>#年度关键词：数据集问题，更细致的视频理解，对比学习。</strong><br>#注：由于文章众多，暂时只整理顶会中比较角度不一样的文章。</p>
+<h1 id="2022-19"><a href="#2022-19" class="headerlink" title="2022:19"></a>2022:19</h1><p>55[Survey] A Survey on Temporal Sentence Grounding in Videos⭕<br>56[Survey] The Elements of Temporal Sentence Grounding in Videos: A Survey and Future Directions⭕<br>57[Book]Towards temporal sentence grounding in videos<br>57[TIP2022] Video Moment Retrieval With Cross-Modal Neural Architecture Search<br>58[TMM2022] Regularized Two Granularity Loss Function for Weakly Supervised Video Moment Retrieval<br>59[TOMM2022] Moment is Important: Language-Based Video Moment Retrieval via Adversarial Learning<br>60[CVPR2022] UMT: Unified Multi-modal Transformers for Joint Video Moment Retrieval and Highlight Detection<br>61[CVPR2022] AxIoU: An Axiomatically Justified Measure for Video Moment Retrieval<br>62[Arxiv2022] Explore and Match: End-to-End Video Grounding with Transformer<br>63[AAAI2022] Unsupervised Temporal Video Grounding with Deep Semantic Clustering⭕<br>64[AAAI2022] Memory-Guided Semantic Learning Network for Temporal Sentence Grounding<br>65[ICMR2022] Learning Sample Importance for Cross-Scenario Video Temporal Grounding<br>66[SIGIR2022] Point Prompt Tuning for Temporally Language Grounding⭕<br>67[SIGIR2022] Video Moment Retrieval from text Queries via Single Frame Annotation<br>68[SIGIR2022] You Need to Read Again: Multi-granularity Perception Network for Moment Retrieval in Videos<br>69[ECCV2022] Selective Query-Guided Debiasing for Video Corpus Moment Retrieval<br>70[EMNLP2022] Modal-specific Pseudo Query Generation for Video Corpus Moment Retrieval<br>71[MM2022] Interactive Video Corpus Moment Retrieval using Reinforcement Learning<br>72[MM2022] Prompt-based Zero-shot Video Moment Retrieval<br>73[MM2022] Video Moment Retrieval with Hierarchical Contrastive Learning  </p>
+<p>[Survey] A Survey on Temporal Sentence Grounding in Videos<br>[Survey] The Elements of Temporal Sentence Grounding in Videos: A Survey and Future Directions<br>[Book]Towards temporal sentence grounding in videos  </p>
+<p>动机：这几篇综述文章都写的很好，可以详细看看<br>[TIP2022] Video Moment Retrieval With Cross-Modal Neural Architecture Search</p>
+<p>动机：以往的工作都依赖手工or专家设计，不够灵活。<br>方法：使用神经架构搜索来做VMR任务。具体来说，基于有向无环图搜索可重复的单元网络架构，然后，通过查询感知的注意力调节无环图中的边权。<br>[TMM2022] Regularized Two Granularity Loss Function for Weakly Supervised Video Moment Retrieval</p>
+<p>动机：弱监督视频时刻检索。<br>方法：设计双粒度损失函数考虑视频级和实例级关系。具体来说，先生成粗粒度的视频片段，然后利用所有视频内片段（即正例）和文本描述之间的多实例学习。然后将此过程视为噪声标签下的弱监督学习任务来对进一步这些片段进行分类进行精细度定位。<br>[TOMM2022] Moment is Important: Language-Based Video Moment Retrieval via Adversarial Learning</p>
+<p>动机：[29]的扩展论文，对抗性VMR在训练时容易不稳定。<br>方法：因此将多个子任务变为持续学习的形式以优化对抗性VMR的学习。<br>[CVPR2022] UMT: Unified Multi-modal Transformers for Joint Video Moment Retrieval and Highlight Detection</p>
+<p>动机：联合moment retrieval和highlight detection这俩子任务以更好地为应用服务。<br>方法：视频和音频首先通过uni-modal进行融合，如果query不提供将生成query，不然就直接完成编码后预测highlight和offset。<br>[CVPR2022] AxIoU: An Axiomatically Justified Measure for Video Moment Retrieval</p>
+<p>动机：现在评价这个领域的性能，一般只使用R@K，但它的缺点在于1对排名不敏感；2使用二值化的IoU会损失细粒度质量，因此作者们提出了一个新指标AxIoU。<br>方法：AxIoU是平均最大IoU，其满足对最佳片段的冗余不变性和单调性，值得一看。<br>[Arxiv2022] Explore and Match: End-to-End Video Grounding with Transformer</p>
+<p>动机：统一proposal-free（直接预测的探索）和proposal-based（切分再检索的匹配）这俩方案。<br>方法：将该任务定义为一个集合预测问题，先探索再匹配。首先时间定位损失执行proposal-free，然后设置指导损失将每个查询进行匹配。<br>[AAAI2022] Unsupervised Temporal Video Grounding with Deep Semantic Clustering</p>
+<p>动机：无监督TVG。在现实场景中收集数据既昂贵又耗时，这是第一篇做无监督的文章。<br>方法：使用提出深度语义聚类网络（DSCNet）利用整个查询集中的所有语义信息来组合每个视频中可能的活动以进行定位。具体来说，先从整个查询集中提取隐式语义特征，然后将其作为指导在视频中组合活动，最后利用前景注意力分支过滤掉多余的背景活动并细化定位结果。<br>[AAAI2022] Memory-Guided Semantic Learning Network for Temporal Sentence Grounding</p>
+<p>动机：数据分布不平衡，容易忘记训练过程中很少出现的情况，这会影响模型的泛化能力。<br>方法：使用记忆增强网络来学习和记忆。具体来说，跨模态图卷积网络对齐给定的视频查询对，然后利用内存模块将跨模态共享语义特征记录内存中，来减轻遗忘问题。<br>[ICMR2022] Learning Sample Importance for Cross-Scenario Video Temporal Grounding</p>
+<p>动机：针对superficial biases的文章（如[48]中提过的某些时间偏好等等）。<br>方法：提出去偏时间语言定位器 (DebiasTLL) ，其同时训练两个模型，如果这两个模型在判断样本时的预测差异大，则成为有偏样本的可能性更高。因此利用信息差异设计数据重新加权方案来减轻数据偏差。<br>[SIGIR2022] Point Prompt Tuning for Temporally Language Grounding</p>
+<p>动机：基于Prompt learning的新方法。作者认为现有方法都没有能够利用好现有预训练大模型的成果，但其实利用Prompt技巧就能够做得很好。<br>方法：加入Prompt、改装TLG任务以适应大模型，几乎是文本和视频直接作为input输入即可。速度较快，训练只需要训练几层FC，就能轻松利用大模型的语义能力。<br>[SIGIR2022] Video Moment Retrieval from text Queries via Single Frame Annotation</p>
+<p>动机：完全监督很贵，但其实只需要”glance annotation”就够了。<br>方法：只需要在完全监督内的随机帧，即“一瞥”，加上对比学习在clip和query之间进行对比，其中“一瞥”的高斯分布权重分配给所有clip。<br>[SIGIR2022] You Need to Read Again: Multi-granularity Perception Network for Moment Retrieval in Videos</p>
+<p>动机：以前的方法倾向于以粗略的方式执行单模态学习和跨模态交互，而忽略了视频内容、查询上下文及其对齐中包含的细粒度线索。<br>方法：提出多粒度感知网络，在多粒度级别感知模态内和模态间信息。<br>[ECCV2022] Selective Query-Guided Debiasing for Video Corpus Moment Retrieval</p>
+<p>动机：一篇矫正定位偏差的工作。作者们认为现有模型都是在学习查询和片段之间的共现pattern，从而使模型将查询中对象（例如铅笔）与该对象经常出现在视频中的片段（例如用铅笔书写的场景）虚假关联。<br>方法：提出Selective Query-guided Debiasing network (SQuiDNet)，来进行selective debiasing。<br>[EMNLP2022] Modal-specific Pseudo Query Generation for Video Corpus Moment Retrieval</p>
+<p>动机：目前的方法们强依赖于数据集在时序上的昂贵注释，因此提出一个自监督方法来缓解。<br>方法：自监督学习框架即，Modal-specific Pseudo Query Generation（MPGN）。具体来说，MPGN通过字幕的时刻采样来获取时间的时刻，然后用所选时间时刻的视觉和文本信息生成伪查询。<br>[MM2022] Interactive Video Corpus Moment Retrieval using Reinforcement Learning</p>
+<p>动机：目前的方法们对于相似的片段、或候选再很深或隐秘的时候，模型需要长时间的浏览和结果检查，因此文章基于强化学习期望在几轮交互内就达到搜索目标。<br>方法：具体来说，系统根据反馈交互式地规划导航路径，并推荐一个潜在目标，最大限度地提高用户评论的长期奖励。<br>[MM2022] Prompt-based Zero-shot Video Moment Retrieval</p>
+<p>动机：作者们认为由于视频和文本学习过程的分离，全局视觉特征往往被忽略。因此作者提出了一种基于提示的零样本视频时刻检索（PZVMR）方法。<br>方法：这种基于提示学习的方法分为提案提示（PP）和动词提示（VP），以使得模型从预先训练的 CLIP 中提取的任务相关知识，并将这些知识适应这个任务。<br>[MM2022] Video Moment Retrieval with Hierarchical Contrastive Learning</p>
+<p>动机：目前的方法们大多只关注对齐查询和单级剪辑或时刻特征，而忽略了视频本身涉及的不同粒度。<br>方法：提出了一种具有分层对比学习的时间定位网络（HCLNet）。具体来说，作者们引入了一种分层对比学习方法，通过最大化查询和三种不同粒度的视频之间的互信息（MI）来更好地对齐查询和视频，以学习信息表示。<br>#年度关键词：新的任务形态、多范式的结合、更高效、提示学习、去偏和新指标。<br>#新玩法开始变得多样起来。</p>
+<h1 id="2023-x"><a href="#2023-x" class="headerlink" title="2023:x"></a>2023:x</h1><p>74[Survey] Temporal Sentence Grounding in Videos: A Survey and Future Directions<br>75[Survey] A Closer Look at Debiased Temporal Sentence Grounding in Videos: Dataset, Metric, and Approach<br>76[TMM2023] Temporally Language Grounding with Multi-modal Multi-Prompt Tuning<br>77[ACL2023] CONE: An Efficient COarse-to-fiNE Alignment Framework for Long Video Temporal Grounding<br>78[ACL2023] Towards Parameter-Efficient Integration of Pre-Trained Language Models In Temporal Video Grounding<br>79[SIGIR2023] RewardTLG: Learning to Temporally Language Grounding from Flexible Reward  </p>
+<p>[Survey] Temporal Sentence Grounding in Videos: A Survey and Future Directions<br>[Survey] A Closer Look at Debiased Temporal Sentence Grounding in Videos: Dataset, Metric, and Approach  </p>
+<p>动机：综述文章越来越多<br>[TMM2023] Temporally Language Grounding with Multi-modal Multi-Prompt Tuning</p>
+<p>动机：多模态预训练+提示学习。<br>方法：这篇文章讨论了各种提示模版对于这一任务的影响，包括固定prompt和可学习的prompt。<br>[ACL2023] CONE: An Efficient COarse-to-fiNE Alignment Framework for Long Video Temporal Grounding</p>
+<p>动机：对于定位任务来说，长视频的需求更大，但目前探索少，主要是由于长视频的推理速度。<br>方法：为了提速，作者提出一种高效的从粗到细的对齐框架，主要是查询引导的窗口选择策略来加速推理+结合对比学习从粗到细，在Ego4D-NLQ 上的推理时间加快2倍，MAD上的推理时间快15倍。<br>[ACL2023] Towards Parameter-Efficient Integration of Pre-Trained Language Models In Temporal Video Grounding</p>
+<p>动机：基于Pre-Trained Language Models，并评估了大模型中参数高效训练的适用性。<br>方法：做了很多有意义的实验，其中1更大的语言模型肯定是对效果有增益的；2adapter训练而不是全参数对于大模型来说更划算。<br>[SIGIR2023] RewardTLG: Learning to Temporally Language Grounding from Flexible Reward</p>
+<p>动机：大模型之后，reward model也来了。<br>方法：这篇文章收集了人类反馈数据训了一个奖励模型，用于指导强化学习的收敛。<br>#年度关键词： 大模型时代来临之后，这个小方向也有开始往预训练、提示学习、强化学习、reward model转的趋势。</p>
+<h1 id="稍作分类"><a href="#稍作分类" class="headerlink" title="稍作分类"></a>稍作分类</h1><p>两条路：处理成预测任务[1]；处理成匹配任务[2]。大多数文章都follow了[1]，也有少数沿着[2]的路线的文章如[5][22]，也有融合这两条路线的[33]。<br>跨模态视频时刻相关任务主要需要集中解决的问题有两点：一.跨模态 二.高效检索&#x2F;定位</p>
+<p>对于一.</p>
+<p>模态特征的细化：模态间的交互和融合[3-9，37，39，42]，局部对齐[17-19]，模态表征细粒度[20，21，28]，视觉目标间的关系[46]<br>结合其他外部信息，如字幕[35，36]<br>对于二.<br>检索方法主要涉及到候选集的问题</p>
+<p>常规方法会提前切分好，或者修剪候选集[33]<br>生成候选：预测一些可能的边界[10]<br>探讨候选之间的关系：使用图或者矩阵的形式[13，26]<br>正负例样本不平衡问题[45]<br>定位方法可分直接预测和强化学习  </p>
+<p>直接预测起止点：[11，31，34，36，38]，对边界预测的多任务增强如边界感知[24]，moment segmentation[41]。<br>强化学习：[12，14，15，25，29]，主要涉及一些语义概念融合，如何使强化学习更高效。<br>也有融合定位和检索的方法[30]，和其他任务结合的方法[50,60]  </p>
+<p>除了一和二问题的，其他话题</p>
+<p>标注text-video对太耗时，无监督方法[16，23，27，32]，主要会使用注意力对齐，正负样本对抗，多示例学习等等技术。<br>标注鲁棒性[34，40，41，48，49]，解决方案主要有比较分布和标注预测，因果推理，去偏。<br>收集数据集太耗时[62,66]，也是转向于无监督或者少样本学习。<br>搜索全库视频时刻[35，38]，要求对模态内和模态外都有更好的理解和区分能力。  </p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>多模态</tag>
+        <tag>深度学习</tag>
+        <tag>论文阅读</tag>
       </tags>
   </entry>
   <entry>
@@ -2480,1028 +2819,6 @@
       <tags>
         <tag>Latex</tag>
         <tag>Beamer</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>多模态视频片段定位论文阅读</title>
-    <url>/2023/10/07/20231007_paperRead/</url>
-    <content><![CDATA[<p>最近在研究多模态视频片段定位方向，在此博客记录一下论文的阅读和我在阅读中的一些个人的理解和想法，之前已经阅读了大部分了，只是因为秋招的原因耽搁了很久，近两年的论文也拉下了。</p>
-<p>参考了<a href="https://github.com/yawenzeng/Awesome-Cross-Modal-Video-Moment-Retrieval">Awesome-Cross-Modal-Video-Moment-Retrieval</a>整理的论文，后续会添加自己觉得有用的论文。</p>
-<p>主要按照年份进行阅读，其中每个年份还会进行分类阅读。中间有详细阅读的论文会添加自己的理解和解析。</p>
-<p>持续更新～</p>
-<span id="more"></span>
-
-<h1 id="2017-2"><a href="#2017-2" class="headerlink" title="2017:2"></a>2017:2</h1><p><a href="https://www.cnblogs.com/mobbu/p/17746499.html">1[ICCV 2017] [CTRL] TALL Temporal Activity Localization via Language Query</a>⭕<br>2[ICCV 2017] [MCN] Localizing Moments in Video with Natural Language⭕</p>
-<p>1[ICCV 2017] [CTRL] TALL Temporal Activity Localization via Language Query</p>
-<ul>
-<li>动机：开山之作，点出该问题需要解决的两大困难1作为跨模态任务，如何得到适当的文本和视频表示特征，以允许跨模态匹配操作和完成语言查询。2理论上可以生成无限粒度的视频片段，然后逐一比较。但时间消耗过大，那么如何能够从有限粒度的滑动窗口做到准确的具体帧定位。</li>
-<li>方法：特征抽取–使用全局的sentence2vec和C3D。模态交互–加+乘+拼+FC。多任务：对齐分数+回归。</li>
-</ul>
-<p>2[ICCV 2017] [MCN] Localizing Moments in Video with Natural Language</p>
-<ul>
-<li>方法：特征抽取–使用全局的LSTM和VGG。模态交互–无。多任务：模态间的均方差（而不是预测对齐分数），同时使用RGB和 optical flow光流。</li>
-</ul>
-<h1 id="2018-5"><a href="#2018-5" class="headerlink" title="2018:5"></a>2018:5</h1><p><a href="">3[MM 2018] Cross-modal Moment Localization in Videos</a></p>
-<p>4[SIGIR 2018] Attentive Moment Retrieval in Videos</p>
-<p>5[EMNLP 2018] Localizing Moments in Video with Temporal Language</p>
-<p>6[EMNLP 2018] Temporally Grounding Natural Sentence in Video</p>
-<p>7[IJCAI 2018] Multi-modal Circulant Fusion for Video-to-Language and Backward</p>
-<p>[MM 2018] Cross-modal Moment Localization in Videos</p>
-<ul>
-<li>动机：强调时间语态问题，即句子中的“先”“前”往往被忽视，需要更细致的理解。</li>
-<li>方法：尝试结合上下文，用文本给视频加attention。</li>
-</ul>
-<p>[SIGIR 2018] Attentive Moment Retrieval in Videos</p>
-<ul>
-<li>方法：尝试结合上下文，用视频给文本加attention。以上两篇的特征处理由于要加attention就开始局部化。</li>
-</ul>
-<p>[EMNLP 2018] Localizing Moments in Video with Temporal Language</p>
-<ul>
-<li>动机：时序上下文是很重要的，不然无法理解句子中一些词之间的关系。</li>
-<li>方法：延续MCN的思路走算匹配度无模态交互，且同时使用RGB和 optical flow光流。特征抽取–LSTM，视频表示上同时融合了多种上下文。</li>
-</ul>
-<p>[EMNLP 2018] Temporally Grounding Natural Sentence in Video</p>
-<ul>
-<li>动机：捕捉视频和句子之间不断发展的细粒度的交互。</li>
-<li>方法：从每帧&#x2F;逐词。使用两组lstm处理每个时刻文本和视频的交互。</li>
-</ul>
-<p>[IJCAI 2018] Multi-modal Circulant Fusion for Video-to-Language and Backward</p>
-<ul>
-<li>动机：增强视觉和文本表达的融合</li>
-<li>方法：同时使用vector和matrix的融合方式，其中circulant matrix的操作方式是每一行平移一个元素以探索不同模态向量的所有可能交互。</li>
-</ul>
-<p><strong>#年度关键词：上下文。</strong></p>
-<h1 id="2019-16"><a href="#2019-16" class="headerlink" title="2019: 16"></a>2019: 16</h1><p>8[AAAI 2019] Localizing Natural Language in Videos<br>9[AAAI 2019] Multilevel language and vision integration for text-to-clip retrieval<br>10[AAAI 2019] Semantic Proposal for Activity Localization in Videos via Sentence Query<br>11[AAAI 2019] To Find Where You Talk Temporal Sentence Localization in Video with Attention Based Location Regression<br>12[AAAI 2019] Read, Watch, and Move Reinforcement Learning for Temporally Grounding Natural Language Descriptions in Videos⭕<br>13[CVPR 2019] MAN_ Moment Alignment Network for Natural Language Moment Retrieval via Iterative Graph Adjustment⭕<br>14[CVPR Workshop 2019] Tripping through time Efficient Localization of Activities in Videos<br>15[CVPR 2019] Language-Driven Temporal Activity Localization A Semantic Matching Reinforcement Learning Model⭕<br>16[CVPR 2019] Weakly Supervised Video Moment Retrieval From Text Queries⭕<br>17[ICMR 2019] Cross-Modal Video Moment Retrieval with Spatial and Language-Temporal Attention⭕<br>18[MM 2019] Exploiting Temporal Relationships in Video Moment Localization with Natural Language<br>19[NIPS 2019] Semantic Conditioned Dynamic Modulation for Temporal Sentence Grounding in Videos<br>20[SIGIR 2019] Cross-modal interaction networks for query-based moment retrieval in videos<br>21[WACV2019] MAC: Mining Activity Concepts for Language-Based Temporal Localization<br>22[ArXiv 2019] Temporal Localization of Moments in Video Collections with Natural Language<br>23[ArXiv 2019] wMAN Weakly-supervised Moment Alignment Network for Text-based Video Segment Retrieval  </p>
-<p>[AAAI 2019] Localizing Natural Language in Videos</p>
-<ul>
-<li>动机：以前的工作忽略模态间细粒度的交互和上下文信息。</li>
-<li>方法：交叉门控的递归网络来匹配自然句子和视频序列（类似cross-attention），以完成细粒度交互。</li>
-</ul>
-<p>[AAAI 2019] Multilevel language and vision integration for text-to-clip retrieval</p>
-<ul>
-<li>动机：global embedding缺少细粒度，且不同模态之间独立嵌入缺乏交互。</li>
-<li>方法：先融语义再用R-C3D生成候选时刻以加快效率。同时用LSTM对查询语句和视频片段之间的细粒度相似性进行时序融合。</li>
-</ul>
-<p>[AAAI 2019] Semantic Proposal for Activity Localization in Videos via Sentence Query</p>
-<ul>
-<li>动机：滑动窗口数据量多，效率低。</li>
-<li>方法：将句子中的语义信息集成到动作候选生成过程中以得到更好的时刻候选集。</li>
-<li>其他：该任务不同于时序动作定位的地方 （1）某一个动作是各种行动的组合，可能持续很长时间。 （2）句子查询不限于预定义的类列表。 （3）视频通常包含多个不同的活动实例。</li>
-</ul>
-<p>[AAAI 2019] To Find Where You Talk Temporal Sentence Localization in Video with Attention Based Location Regression</p>
-<ul>
-<li>动机：1视频的时间结构和全局上下文没有充分探索2句子处理太粗3候选切分太耗时。</li>
-<li>方法：特征抽取–全局+局部，即用C3D+BiLSTM处理视频，用Glove+BiLSTM处理文本。然后co-attention进行对齐。并且不做切分，直接预测定位点。</li>
-</ul>
-<p>[AAAI 2019] Read, Watch, and Move Reinforcement Learning for Temporally Grounding Natural Language Descriptions in Videos</p>
-<ul>
-<li>动机：候选太耗时。</li>
-<li>方法：首次将强化学习引入到这个领域，处理成顺序决策问题。</li>
-</ul>
-<p>[CVPR 2019] MAN_ Moment Alignment Network for Natural Language Moment Retrieval via Iterative Graph Adjustment</p>
-<ul>
-<li>动机：语义失调和结构失调（候选集之间的处理是独立的）。</li>
-<li>方法：特征抽取–LSTM和I3D。使用迭代图学习候选时刻之间的关系。</li>
-</ul>
-<p>[CVPR Workshop 2019] Tripping through time Efficient Localization of Activities in Videos</p>
-<ul>
-<li>动机：1文本和视频的联合表示以local细粒化。2候选效率低且不符合人类的自然定位方法。</li>
-<li>方法：使用门控注意力建模细粒度的文本和视觉表示+强化学习定位。</li>
-</ul>
-<p>[CVPR 2019] Language-Driven Temporal Activity Localization A Semantic Matching Reinforcement Learning Model</p>
-<ul>
-<li>动机：直接匹配句子与视频内容使强化学习表现不佳，更需要更多的关注句子和图片中目标的细粒度来增强语义。</li>
-<li>方法：在强化学习框架下引入语义特征。</li>
-</ul>
-<p>[CVPR 2019] Weakly Supervised Video Moment Retrieval From Text Queries</p>
-<ul>
-<li>动机：标注句子边界太耗时，且不可扩展在实践中</li>
-<li>方法：弱监督–在训练时不需要对文本描述进行时间边界注释，而只使用视频级别的文本描述。技术上主要使用文本和视频在时序上的注意力对齐。</li>
-</ul>
-<p>[ICMR 2019] Cross-Modal Video Moment Retrieval with Spatial and Language-Temporal Attention</p>
-<ul>
-<li>动机：没有关注空间目标信息和文本的语义对齐，且需要结合视频的时空信息。</li>
-<li>方法：特征抽取–全局+局部，即全局还是用C3D和BiLSTM。然后全局特征分别给局部（词和目标）加attention突出重点。</li>
-</ul>
-<p>[MM 2019] Exploiting Temporal Relationships in Video Moment Localization with Natural Language</p>
-<ul>
-<li>动机：之前对文本的处理是Global，而文本中事件之间的时间依赖和推理没有得到充分考虑。</li>
-<li>方法：树注意网络将文本分为主事件，上下文时间，时间信号。</li>
-</ul>
-<p>[NIPS 2019] Semantic Conditioned Dynamic Modulation for Temporal Sentence Grounding in Videos</p>
-<ul>
-<li>动机：现有的方法主要做语义匹配和对齐，而忽略了句子信息在视频的时间关联和组合中起着重要作用。</li>
-<li>方法：提出语义条件动态调制(SCDM)机制，它依靠句子语义来调节时间卷积运算，从而更好地关联和组合句子相关的视频内容。</li>
-</ul>
-<p>[SIGIR 2019] Cross-modal interaction networks for query-based moment retrieval in videos</p>
-<ul>
-<li>动机：对句子处理的细粒度不够（语境长依赖）。</li>
-<li>方法：对切分的词构建语义树&#x2F;图抽特征。</li>
-</ul>
-<p>[WACV2019] MAC: Mining Activity Concepts for Language-Based Temporal Localization</p>
-<ul>
-<li>动机：联合嵌入的子空间忽略了有关视频和查询中动作的丰富语义线索</li>
-<li>方法：从视频和语言模态中挖掘动作概念，其他部分同TALL。</li>
-</ul>
-<p>[ArXiv 2019] Temporal Localization of Moments in Video Collections with Natural Language</p>
-<ul>
-<li>动机：欧几里德居来来衡量文本视频距离不好（MCN的对比路线），无法大规模应用。</li>
-<li>方法：使用平方差距离更精准的对齐，并应用视频重排序方法以应对大规模视频库。</li>
-</ul>
-<p>[ArXiv 2019] wMAN Weakly-supervised Moment Alignment Network for Text-based Video Segment Retrieval</p>
-<ul>
-<li>动机：自动推断无监督的视觉和语言表示之间的潜在对应关系&#x2F;对齐。</li>
-<li>方法：词条件视觉图以捕捉交互，并应用多实例学习完成无监督下的细粒度对齐。</li>
-</ul>
-<p><strong>#年度关键词：文本和视频的细粒化+强化学习+候选框关系&#x2F;生成+弱监督。</strong></p>
-<h1 id="2020-22"><a href="#2020-22" class="headerlink" title="2020:22"></a>2020:22</h1><p>24[AAAI 2020] Temporally Grounding Language Queries in Videos by Contextual Boundary-aware Prediction<br>25[AAAI 2020] Tree-Structured Policy based Progressive Reinforcement Learning for Temporally Language Grounding in Video<br>26[AAAI 2020] Learning 2D Temporal Adjacent Networks for Moment Localization with Natural Language⭕<br>27[AAAI 2020] Weakly-Supervised Video Moment Retrieval via Semantic Completion Network<br>28[TIP 2020] Moment Retrieval via Cross-Modal Interaction Networks With Query Reconstruction⭕<br>29[MM 2020] Adversarial Video Moment Retrieval by Jointly Modeling Ranking and Localization⭕<br>30[MM 2020] STRONG: Spatio-Temporal Reinforcement Learning for Cross-Modal Video Moment Localization<br>31[MM 2020] Dual Path Interaction Network for video Moment Localization<br>32[MM 2020] Regularized Two-Branch Proposal Networks for Weakly-Supervised Moment Retrieval in Videos<br>33[ECCV 2020] VLANet: Video-Language Alignment Network for Weakly-Supervised Video Moment Retrieval<br>34[WACV2020] Proposal-free Temporal Moment Localization of a Natural-Language Query in Video using Guided Attention<br>35[ECCV 2020] TVR A Large-Scale Dataset for Video-Subtitle Moment Retrieval<br>36[ArXiv 2020] Video Moment Localization using Object Evidence and Reverse Captioning<br>37[ArXiv 2020] Graph Neural Network for Video-Query based Video Moment Retrieval<br>38[ArXiv 2020] Text-based Localization of Moments in a Video Corpus<br>39[ArXiv 2020] Generating Adjacency Matrix for Video-Query based Video Moment Retrieval<br>40[BMVC 2020] Uncovering Hidden Challenges in Query-Based Video Moment Retrieval<br>41[ArXiv 2020] Video Moment Retrieval via Natural Language Queries<br>42[ArXiv 2020] Frame-wise Cross-modal Match for Video Moment Retrieval<br>43[MM 2020] Fine-grained Iterative Attention Network for Temporal Language Localization in Videos<br>44[MM 2020] Jointly Cross- and Self-Modal Graph Attention Network for Query-Based Moment Localization<br>45[CVPR 2020] Dense Regression Network for Video Grounding  </p>
-<p>[AAAI 2020] Temporally Grounding Language Queries in Videos by Contextual Boundary-aware Prediction</p>
-<ul>
-<li>动机：当模型无法定位最佳时刻时，添加的偏移回归可能会失败。</li>
-<li>方法：语言集成的“感知”周围的预测，即每个时间步长都会预测时间锚和边界。</li>
-</ul>
-<p>[AAAI 2020] Tree-Structured Policy based Progressive Reinforcement Learning for Temporally Language Grounding in Video</p>
-<ul>
-<li>动机：现有的方法大多存在效率低下、缺乏可解释性和偏离人类感知机制（从粗到细）问题。</li>
-<li>方法：基于树结构政策的渐进强化学习(TSP-PRL)框架，通过迭代细化过程来顺序地调节时间边界。</li>
-</ul>
-<p>[AAAI 2020] Learning 2D Temporal Adjacent Networks for Moment Localization with Natural Language</p>
-<ul>
-<li>动机：以往模型一般单独考虑时间，忽视了时间的依赖性。（不能在当前时刻对其他时刻进行预测）。</li>
-<li>方法：时间从一维变为二维，即变成二维矩阵，预测每一个位置的score。</li>
-</ul>
-<p>[AAAI 2020] Weakly-Supervised Video Moment Retrieval via Semantic Completion Network</p>
-<ul>
-<li>动机：弱监督的注意力权重通常只对很明显的区域有反应，即候选太相似。</li>
-<li>方法：候选生成–视觉语义词和文本对齐得到分数，并反馈给候选生成的打分。</li>
-</ul>
-<p>[TIP 2020] Moment Retrieval via Cross-Modal Interaction Networks With Query Reconstruction</p>
-<ul>
-<li>sigir19的扩充，增加查询重建任务，整体上联合自然语言查询的句法依赖、视频上下文中的长程语义依赖和足够的跨模态交互一起建模。</li>
-</ul>
-<p>[MM 2020] Adversarial Video Moment Retrieval by Jointly Modeling Ranking and Localization</p>
-<ul>
-<li>动机：强化学习定位不稳定，检索任务候选框效率低。</li>
-<li>方法：用对抗学习联合建模，即用强化学习定位来生成候选，进而在生成候选集上进行检索。</li>
-</ul>
-<p>[MM 2020] STRONG: Spatio-Temporal Reinforcement Learning for Cross-Modal Video Moment Localization</p>
-<ul>
-<li>动机：空间上的场景信息很重要+候选框效率低。</li>
-<li>方法：除了时序上的强化学习，其在空间上也加入强化学习，并以弱监督追踪的方式聚焦场景，去除冗余。</li>
-</ul>
-<p>[MM 2020] Dual Path Interaction Network for video Moment Localization</p>
-<ul>
-<li>动机：很少有研究将候选框层级的对齐信息（算语义匹配分数的技术路线）和帧层级的边界信息（预测边界起止的路线）结合在一起，并考虑它们之间的互补性。</li>
-<li>方法：双路径交互网络(DPIN)，分别做两大任务，同时两者之间通过信息交互相互增强。</li>
-</ul>
-<p>[MM 2020] Regularized Two-Branch Proposal Networks for Weakly-Supervised Moment Retrieval in Videos</p>
-<ul>
-<li>动机：大多数现有的弱监督方法都采用基于多实例的框架来做样本间对抗，但忽略了相似内容之间的样本间对抗。</li>
-<li>方法：同时考虑样本间和样本内的对抗，其中会采用语言感知得到两个分支的视觉表示（被增强的和被印制的），这两者将构成很强的正负样本对。</li>
-</ul>
-<p>[ECCV 2020] VLANet: Video-Language Alignment Network for Weakly-Supervised Video Moment Retrieval</p>
-<ul>
-<li>动机：粗略的查询表示和单向注意机制导致模糊的注意映射。</li>
-<li>方法：修剪候选集+更细粒度的多注意力机制来获得更好的注意力增加定位性能。</li>
-</ul>
-<p>[WACV2020] Proposal-free Temporal Moment Localization of a Natural-Language Query in Video using Guided Attention</p>
-<ul>
-<li>动机：不依赖候选的端对端框架，文本注释主观性。</li>
-<li>方法：使用attention的动态过滤器（利用文本对视频的过滤），软标签分布损失解决文本注释的不确定性。</li>
-</ul>
-<p>[ECCV 2020] TVR A Large-Scale Dataset for Video-Subtitle Moment Retrieval</p>
-<ul>
-<li>动机：视频+字幕才能进一步的理解。</li>
-<li>方法：提出一个新数据集，并设计一个类似多Transformer的模型完成不同模态的理解和融合。</li>
-</ul>
-<p>[ArXiv 2020] Video Moment Localization using Object Evidence and Reverse Captioning</p>
-<ul>
-<li>动机：仅仅有语义概念是不够的，还需要对象和字幕的补充。</li>
-<li>方法：在MAC（视频，视觉语义概念，文本，文本语义概念）的方法上再增加对象和字幕的特征。</li>
-</ul>
-<p>[ArXiv 2020] Graph Neural Network for Video-Query based Video Moment Retrieval</p>
-<ul>
-<li>动机：帧间的特征相似度与视频间的特征相似度之间存在不一致，这会影响特征融合。</li>
-<li>方法：沿时间维度对视频构多个图，然后再做多图特征融合。</li>
-</ul>
-<p>[ArXiv 2020] Text-based Localization of Moments in a Video Corpus</p>
-<ul>
-<li>动机：text-video可能会有一对多+搜索全库是必要的</li>
-<li>方法：层次时刻对齐网络能更好的编码跨模态特征以理解细微的差异，然后做模态内的三元组和模态间的三元组以应对搜索所有的时刻。</li>
-</ul>
-<p>[ArXiv 2020] Generating Adjacency Matrix for Video-Query based Video Moment Retrieval</p>
-<ul>
-<li>动机：现有利用图技术的方法得到的邻接矩阵是固定的。</li>
-<li>方法：使用图抽取模态内和模态间的特征关系。</li>
-</ul>
-<p>[BMVC 2020] Uncovering Hidden Challenges in Query-Based Video Moment Retrieval</p>
-<ul>
-<li>讨论性文章：虽然现有技术已经取得了很好的提高，这篇文章探究了存在的两大问题，1数据集存在偏差，2评价指标不一定可靠。</li>
-</ul>
-<p>[ArXiv 2020] Video Moment Retrieval via Natural Language Queries</p>
-<ul>
-<li>动机：起止时间标记有噪音，需要结合上下文的更好表示。</li>
-<li>方法：多头自我注意+交叉注意力，以捕获视频&#x2F;查询交互和远程查询依存关系。多任务学习中加入moment segmentation任务。</li>
-</ul>
-<p>[ArXiv 2020] Frame-wise Cross-modal Match for Video Moment Retrieval</p>
-<ul>
-<li>动机：以往的方法不能很好地捕获查询和视频帧之间的跨模态交互。</li>
-<li>方法：利用注意力对齐，做帧间的预测和边界预测两个任务。</li>
-</ul>
-<p>[MM 2020] Fine-grained Iterative Attention Network for Temporal Language Localization in Videos</p>
-<ul>
-<li>动机：现有工作只集中在从视频到查询的单向交互上。</li>
-<li>方法：针对句子和视频的cross-attention做双向相互。</li>
-</ul>
-<p>[MM 2020] Jointly Cross- and Self-Modal Graph Attention Network for Query-Based Moment Localization</p>
-<ul>
-<li>动机：视频大部分都无关，只有小部分视频相关，所以应该更加重视两者的融合。</li>
-<li>方法：提出模态间和模态内两种交互模式，以帧和词构图通过消息传递来增强表示。</li>
-</ul>
-<p>[CVPR 2020] Dense Regression Network for Video Grounding</p>
-<ul>
-<li>动机：以往训练的模型都是在正负例样本不平衡的情况下，所以作者尝试利用帧之间的距离作为更密集的监督信号。</li>
-<li>方法：预测起始结束帧，然后认为只要在ground truth中的片段都认为是正例。</li>
-</ul>
-<p><strong>#年度关键词：任务扩展（如对全库搜索moment，增加字幕，标定鲁棒性等等），继续细化和融合，候选框关系。</strong><br>#研究热情高涨，水文趋势开始增加….</p>
-<h1 id="2021-11"><a href="#2021-11" class="headerlink" title="2021:11"></a>2021:11</h1><p>46[CVPR 2021] Multi-Modal Relational Graph for Cross-Modal Video Moment Retrieval⭕<br>47[WACV2021] LoGAN: Latent Graph Co-Attention Network for Weakly-Supervised Video Moment Retrieval<br>48[arxiv2021] A Closer Look at Temporal Sentence Grounding in Videos_ Datasets and Metrics⭕<br>49[CVPR2021] Interventional Video Grounding with Dual Contrastive Learning<br>50[SIGIR2021] Video Corpus Moment Retrieval with Contrastive Learning<br>51[SIGIR2021] Deconfounded Video Moment Retrieval with Causal Intervention<br>52[SIGIR2021] Cross Interaction Network for Natural Language Guided VideoMoment Retrieval<br>53[ACL2021] mTVR: Multilingual Moment Retrieval in Videos<br>53[ICCV2021] Fast Video Moment Retrieval<br>54[MM2021] CONQUER: Contextual Query-aware Ranking for Video Corpus Moment Retrieval  </p>
-<p>[CVPR 2021] Multi-Modal Relational Graph for Cross-Modal Video Moment Retrieval</p>
-<ul>
-<li>动机：基于候选的方法会导致候选之间非常相似难以区别，那么直接理解内容（局部目标）的细微变化会是更好的选择。</li>
-<li>方法：提出多模态关系图模型来捕捉视频中的局部目标之间的时空关系，并且在图预训练的框架下优化特征表达。</li>
-</ul>
-<p>[WACV2021] LoGAN: Latent Graph Co-Attention Network for Weakly-Supervised Video Moment Retrieval</p>
-<ul>
-<li>动机：改善视频与文本之间的 latent alignment，学习上下文的视觉语义表征。</li>
-<li>方法：提出 latent co-attention 模型，通过多级 coattention 机制+在视频上的positional encodings。</li>
-</ul>
-<p>[Arxiv2021] A Closer Look at Temporal Sentence Grounding in Videos_ Datasets and Metrics</p>
-<ul>
-<li>动机：这应该是最近很不错的文章了，详细讨论了现有数据集的偏差问题（即可能模型不需要学什么内容，直接学数据偏差就有不错的结果）。</li>
-<li>方法：然后作者提供了新的datasets和metrics，这个工作其实展现了现有的经典模型还是有比较多的问题，在这种去偏数据集下表现得很不理想。</li>
-</ul>
-<p>[CVPR2021] Interventional Video Grounding with Dual Contrastive Learning</p>
-<ul>
-<li>动机：这篇同样也是探究数据集中的选择偏差，从而使某些text和moment存在虚假关联。</li>
-<li>方法：提出双对比学习+因果推理。双对比学习是VV和QV，即尝试尽可能分离moment之间和moment query之间的语义。因果推理则利用因果干预P(Y|do(X))和事件作为混杂因素来学习表示。</li>
-</ul>
-<p>[SIGIR2021] Video Corpus Moment Retrieval with Contrastive Learning</p>
-<ul>
-<li>动机：一般使用的跨模态交互学习，高效率和高质量检索之间很难同时保持。</li>
-<li>方法：直接引入对比学习来改进视频编码器和文本编码器。其中视频对比学习旨在最大程度地提高查询和候选视频之间的相互信息。帧对比学习的目的是突出视频中帧级查询对应的片段。</li>
-</ul>
-<p>[SIGIR2021] Deconfounded Video Moment Retrieval with Causal Intervention</p>
-<ul>
-<li>动机：现有的模型往往都利用数据集偏差，如何减少这种偏差是很重要的。</li>
-<li>方法：提出一个结构性受因果关系启发的框架。具体来说提出解纠缠的跨模态匹配(DCM)方法来消除位置对预测结果的混杂效应，其先推断视觉内容的核心特征，然后用对基于后门调整的解纠缠多模态输入进行因果干预，迫使模型公平地考虑目标的每个可能的位置。</li>
-</ul>
-<p>[SIGIR2021] Cross Interaction Network for Natural Language Guided Video Moment Retrieval</p>
-<ul>
-<li>动机：现有技术一般只强调文本到视频的单交互，且设计复杂效率低。</li>
-<li>方法：提出结合一种自我注意和交叉交互的多头部注意机制，以捕获视频查询的内部依赖关系以及两个方向的相互关系。</li>
-</ul>
-<p>[ACL2021] mTVR: Multilingual Moment Retrieval in Videos</p>
-<ul>
-<li>动机：短文。提出一个的大规模新数据集，其中有双语数据。</li>
-</ul>
-<p>[ICCV2021] Fast Video Moment Retrieval</p>
-<ul>
-<li>动机：现有模型的跨模态交互模块太耗时，想要提高时间。</li>
-<li>方法：提出细粒度的语义蒸馏框架来转移知识，即用跨模态公共空间替换跨模态交互模块，其中蒸馏过程将语义转移到公共空间。</li>
-</ul>
-<p>[MM2021] CONQUER: Contextual Query-aware Ranking for Video Corpus Moment Retrieval</p>
-<ul>
-<li>动机：目前的单阶段方法无法处理实时的结果，同时计算和存储复杂。</li>
-<li>方法：使用两阶段的步骤，即这两个步骤是先依赖查询进行视频内容的自适应融合，再执行双向注意以结合某个clip内容进行时刻定位学习，以学习聚合剪辑和查询信息的新表示。</li>
-</ul>
-<p>[MM2021] Visual Co-Occurrence Alignment Learning for Weakly-Supervised Video Moment Retrieval</p>
-<p><strong>#年度关键词：数据集问题，更细致的视频理解，对比学习。</strong><br>#注：由于文章众多，暂时只整理顶会中比较角度不一样的文章。</p>
-<h1 id="2022-19"><a href="#2022-19" class="headerlink" title="2022:19"></a>2022:19</h1><p>55[Survey] A Survey on Temporal Sentence Grounding in Videos⭕<br>56[Survey] The Elements of Temporal Sentence Grounding in Videos: A Survey and Future Directions⭕<br>57[Book]Towards temporal sentence grounding in videos<br>57[TIP2022] Video Moment Retrieval With Cross-Modal Neural Architecture Search<br>58[TMM2022] Regularized Two Granularity Loss Function for Weakly Supervised Video Moment Retrieval<br>59[TOMM2022] Moment is Important: Language-Based Video Moment Retrieval via Adversarial Learning<br>60[CVPR2022] UMT: Unified Multi-modal Transformers for Joint Video Moment Retrieval and Highlight Detection<br>61[CVPR2022] AxIoU: An Axiomatically Justified Measure for Video Moment Retrieval<br>62[Arxiv2022] Explore and Match: End-to-End Video Grounding with Transformer<br>63[AAAI2022] Unsupervised Temporal Video Grounding with Deep Semantic Clustering⭕<br>64[AAAI2022] Memory-Guided Semantic Learning Network for Temporal Sentence Grounding<br>65[ICMR2022] Learning Sample Importance for Cross-Scenario Video Temporal Grounding<br>66[SIGIR2022] Point Prompt Tuning for Temporally Language Grounding⭕<br>67[SIGIR2022] Video Moment Retrieval from text Queries via Single Frame Annotation<br>68[SIGIR2022] You Need to Read Again: Multi-granularity Perception Network for Moment Retrieval in Videos<br>69[ECCV2022] Selective Query-Guided Debiasing for Video Corpus Moment Retrieval<br>70[EMNLP2022] Modal-specific Pseudo Query Generation for Video Corpus Moment Retrieval<br>71[MM2022] Interactive Video Corpus Moment Retrieval using Reinforcement Learning<br>72[MM2022] Prompt-based Zero-shot Video Moment Retrieval<br>73[MM2022] Video Moment Retrieval with Hierarchical Contrastive Learning  </p>
-<p>[Survey] A Survey on Temporal Sentence Grounding in Videos<br>[Survey] The Elements of Temporal Sentence Grounding in Videos: A Survey and Future Directions<br>[Book]Towards temporal sentence grounding in videos  </p>
-<p>动机：这几篇综述文章都写的很好，可以详细看看<br>[TIP2022] Video Moment Retrieval With Cross-Modal Neural Architecture Search</p>
-<p>动机：以往的工作都依赖手工or专家设计，不够灵活。<br>方法：使用神经架构搜索来做VMR任务。具体来说，基于有向无环图搜索可重复的单元网络架构，然后，通过查询感知的注意力调节无环图中的边权。<br>[TMM2022] Regularized Two Granularity Loss Function for Weakly Supervised Video Moment Retrieval</p>
-<p>动机：弱监督视频时刻检索。<br>方法：设计双粒度损失函数考虑视频级和实例级关系。具体来说，先生成粗粒度的视频片段，然后利用所有视频内片段（即正例）和文本描述之间的多实例学习。然后将此过程视为噪声标签下的弱监督学习任务来对进一步这些片段进行分类进行精细度定位。<br>[TOMM2022] Moment is Important: Language-Based Video Moment Retrieval via Adversarial Learning</p>
-<p>动机：[29]的扩展论文，对抗性VMR在训练时容易不稳定。<br>方法：因此将多个子任务变为持续学习的形式以优化对抗性VMR的学习。<br>[CVPR2022] UMT: Unified Multi-modal Transformers for Joint Video Moment Retrieval and Highlight Detection</p>
-<p>动机：联合moment retrieval和highlight detection这俩子任务以更好地为应用服务。<br>方法：视频和音频首先通过uni-modal进行融合，如果query不提供将生成query，不然就直接完成编码后预测highlight和offset。<br>[CVPR2022] AxIoU: An Axiomatically Justified Measure for Video Moment Retrieval</p>
-<p>动机：现在评价这个领域的性能，一般只使用R@K，但它的缺点在于1对排名不敏感；2使用二值化的IoU会损失细粒度质量，因此作者们提出了一个新指标AxIoU。<br>方法：AxIoU是平均最大IoU，其满足对最佳片段的冗余不变性和单调性，值得一看。<br>[Arxiv2022] Explore and Match: End-to-End Video Grounding with Transformer</p>
-<p>动机：统一proposal-free（直接预测的探索）和proposal-based（切分再检索的匹配）这俩方案。<br>方法：将该任务定义为一个集合预测问题，先探索再匹配。首先时间定位损失执行proposal-free，然后设置指导损失将每个查询进行匹配。<br>[AAAI2022] Unsupervised Temporal Video Grounding with Deep Semantic Clustering</p>
-<p>动机：无监督TVG。在现实场景中收集数据既昂贵又耗时，这是第一篇做无监督的文章。<br>方法：使用提出深度语义聚类网络（DSCNet）利用整个查询集中的所有语义信息来组合每个视频中可能的活动以进行定位。具体来说，先从整个查询集中提取隐式语义特征，然后将其作为指导在视频中组合活动，最后利用前景注意力分支过滤掉多余的背景活动并细化定位结果。<br>[AAAI2022] Memory-Guided Semantic Learning Network for Temporal Sentence Grounding</p>
-<p>动机：数据分布不平衡，容易忘记训练过程中很少出现的情况，这会影响模型的泛化能力。<br>方法：使用记忆增强网络来学习和记忆。具体来说，跨模态图卷积网络对齐给定的视频查询对，然后利用内存模块将跨模态共享语义特征记录内存中，来减轻遗忘问题。<br>[ICMR2022] Learning Sample Importance for Cross-Scenario Video Temporal Grounding</p>
-<p>动机：针对superficial biases的文章（如[48]中提过的某些时间偏好等等）。<br>方法：提出去偏时间语言定位器 (DebiasTLL) ，其同时训练两个模型，如果这两个模型在判断样本时的预测差异大，则成为有偏样本的可能性更高。因此利用信息差异设计数据重新加权方案来减轻数据偏差。<br>[SIGIR2022] Point Prompt Tuning for Temporally Language Grounding</p>
-<p>动机：基于Prompt learning的新方法。作者认为现有方法都没有能够利用好现有预训练大模型的成果，但其实利用Prompt技巧就能够做得很好。<br>方法：加入Prompt、改装TLG任务以适应大模型，几乎是文本和视频直接作为input输入即可。速度较快，训练只需要训练几层FC，就能轻松利用大模型的语义能力。<br>[SIGIR2022] Video Moment Retrieval from text Queries via Single Frame Annotation</p>
-<p>动机：完全监督很贵，但其实只需要”glance annotation”就够了。<br>方法：只需要在完全监督内的随机帧，即“一瞥”，加上对比学习在clip和query之间进行对比，其中“一瞥”的高斯分布权重分配给所有clip。<br>[SIGIR2022] You Need to Read Again: Multi-granularity Perception Network for Moment Retrieval in Videos</p>
-<p>动机：以前的方法倾向于以粗略的方式执行单模态学习和跨模态交互，而忽略了视频内容、查询上下文及其对齐中包含的细粒度线索。<br>方法：提出多粒度感知网络，在多粒度级别感知模态内和模态间信息。<br>[ECCV2022] Selective Query-Guided Debiasing for Video Corpus Moment Retrieval</p>
-<p>动机：一篇矫正定位偏差的工作。作者们认为现有模型都是在学习查询和片段之间的共现pattern，从而使模型将查询中对象（例如铅笔）与该对象经常出现在视频中的片段（例如用铅笔书写的场景）虚假关联。<br>方法：提出Selective Query-guided Debiasing network (SQuiDNet)，来进行selective debiasing。<br>[EMNLP2022] Modal-specific Pseudo Query Generation for Video Corpus Moment Retrieval</p>
-<p>动机：目前的方法们强依赖于数据集在时序上的昂贵注释，因此提出一个自监督方法来缓解。<br>方法：自监督学习框架即，Modal-specific Pseudo Query Generation（MPGN）。具体来说，MPGN通过字幕的时刻采样来获取时间的时刻，然后用所选时间时刻的视觉和文本信息生成伪查询。<br>[MM2022] Interactive Video Corpus Moment Retrieval using Reinforcement Learning</p>
-<p>动机：目前的方法们对于相似的片段、或候选再很深或隐秘的时候，模型需要长时间的浏览和结果检查，因此文章基于强化学习期望在几轮交互内就达到搜索目标。<br>方法：具体来说，系统根据反馈交互式地规划导航路径，并推荐一个潜在目标，最大限度地提高用户评论的长期奖励。<br>[MM2022] Prompt-based Zero-shot Video Moment Retrieval</p>
-<p>动机：作者们认为由于视频和文本学习过程的分离，全局视觉特征往往被忽略。因此作者提出了一种基于提示的零样本视频时刻检索（PZVMR）方法。<br>方法：这种基于提示学习的方法分为提案提示（PP）和动词提示（VP），以使得模型从预先训练的 CLIP 中提取的任务相关知识，并将这些知识适应这个任务。<br>[MM2022] Video Moment Retrieval with Hierarchical Contrastive Learning</p>
-<p>动机：目前的方法们大多只关注对齐查询和单级剪辑或时刻特征，而忽略了视频本身涉及的不同粒度。<br>方法：提出了一种具有分层对比学习的时间定位网络（HCLNet）。具体来说，作者们引入了一种分层对比学习方法，通过最大化查询和三种不同粒度的视频之间的互信息（MI）来更好地对齐查询和视频，以学习信息表示。<br>#年度关键词：新的任务形态、多范式的结合、更高效、提示学习、去偏和新指标。<br>#新玩法开始变得多样起来。</p>
-<h1 id="2023-x"><a href="#2023-x" class="headerlink" title="2023:x"></a>2023:x</h1><p>74[Survey] Temporal Sentence Grounding in Videos: A Survey and Future Directions<br>75[Survey] A Closer Look at Debiased Temporal Sentence Grounding in Videos: Dataset, Metric, and Approach<br>76[TMM2023] Temporally Language Grounding with Multi-modal Multi-Prompt Tuning<br>77[ACL2023] CONE: An Efficient COarse-to-fiNE Alignment Framework for Long Video Temporal Grounding<br>78[ACL2023] Towards Parameter-Efficient Integration of Pre-Trained Language Models In Temporal Video Grounding<br>79[SIGIR2023] RewardTLG: Learning to Temporally Language Grounding from Flexible Reward  </p>
-<p>[Survey] Temporal Sentence Grounding in Videos: A Survey and Future Directions<br>[Survey] A Closer Look at Debiased Temporal Sentence Grounding in Videos: Dataset, Metric, and Approach  </p>
-<p>动机：综述文章越来越多<br>[TMM2023] Temporally Language Grounding with Multi-modal Multi-Prompt Tuning</p>
-<p>动机：多模态预训练+提示学习。<br>方法：这篇文章讨论了各种提示模版对于这一任务的影响，包括固定prompt和可学习的prompt。<br>[ACL2023] CONE: An Efficient COarse-to-fiNE Alignment Framework for Long Video Temporal Grounding</p>
-<p>动机：对于定位任务来说，长视频的需求更大，但目前探索少，主要是由于长视频的推理速度。<br>方法：为了提速，作者提出一种高效的从粗到细的对齐框架，主要是查询引导的窗口选择策略来加速推理+结合对比学习从粗到细，在Ego4D-NLQ 上的推理时间加快2倍，MAD上的推理时间快15倍。<br>[ACL2023] Towards Parameter-Efficient Integration of Pre-Trained Language Models In Temporal Video Grounding</p>
-<p>动机：基于Pre-Trained Language Models，并评估了大模型中参数高效训练的适用性。<br>方法：做了很多有意义的实验，其中1更大的语言模型肯定是对效果有增益的；2adapter训练而不是全参数对于大模型来说更划算。<br>[SIGIR2023] RewardTLG: Learning to Temporally Language Grounding from Flexible Reward</p>
-<p>动机：大模型之后，reward model也来了。<br>方法：这篇文章收集了人类反馈数据训了一个奖励模型，用于指导强化学习的收敛。<br>#年度关键词： 大模型时代来临之后，这个小方向也有开始往预训练、提示学习、强化学习、reward model转的趋势。</p>
-<h1 id="稍作分类"><a href="#稍作分类" class="headerlink" title="稍作分类"></a>稍作分类</h1><p>两条路：处理成预测任务[1]；处理成匹配任务[2]。大多数文章都follow了[1]，也有少数沿着[2]的路线的文章如[5][22]，也有融合这两条路线的[33]。<br>跨模态视频时刻相关任务主要需要集中解决的问题有两点：一.跨模态 二.高效检索&#x2F;定位</p>
-<p>对于一.</p>
-<p>模态特征的细化：模态间的交互和融合[3-9，37，39，42]，局部对齐[17-19]，模态表征细粒度[20，21，28]，视觉目标间的关系[46]<br>结合其他外部信息，如字幕[35，36]<br>对于二.<br>检索方法主要涉及到候选集的问题</p>
-<p>常规方法会提前切分好，或者修剪候选集[33]<br>生成候选：预测一些可能的边界[10]<br>探讨候选之间的关系：使用图或者矩阵的形式[13，26]<br>正负例样本不平衡问题[45]<br>定位方法可分直接预测和强化学习  </p>
-<p>直接预测起止点：[11，31，34，36，38]，对边界预测的多任务增强如边界感知[24]，moment segmentation[41]。<br>强化学习：[12，14，15，25，29]，主要涉及一些语义概念融合，如何使强化学习更高效。<br>也有融合定位和检索的方法[30]，和其他任务结合的方法[50,60]  </p>
-<p>除了一和二问题的，其他话题</p>
-<p>标注text-video对太耗时，无监督方法[16，23，27，32]，主要会使用注意力对齐，正负样本对抗，多示例学习等等技术。<br>标注鲁棒性[34，40，41，48，49]，解决方案主要有比较分布和标注预测，因果推理，去偏。<br>收集数据集太耗时[62,66]，也是转向于无监督或者少样本学习。<br>搜索全库视频时刻[35，38]，要求对模态内和模态外都有更好的理解和区分能力。  </p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>多模态</tag>
-        <tag>深度学习</tag>
-        <tag>论文阅读</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vscode使用教程</title>
-    <url>/2023/11/01/20231101_vscodeTutorial/</url>
-    <content><![CDATA[<p>vscode是我目前使用最多的平台工具无论是在windows还是macOS，本博客总结我的使用的所有场景，以及简单的搭建过程</p>
-<ul>
-<li>vscode 概要介绍</li>
-<li>C&#x2F;C++ 编程、编译</li>
-<li>python 使用</li>
-<li>markdown 记录</li>
-<li>latex&amp;beamer的学术PPT制作</li>
-<li>git的使用</li>
-<li>SSH远程连接服务器</li>
-<li>博客园的扩展</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="1-vscode概要介绍"><a href="#1-vscode概要介绍" class="headerlink" title="1 vscode概要介绍"></a>1 vscode概要介绍</h1><p>首先是进行下载安装，官方地址为：<a href="https://code.visualstudio.com/">vscode下载</a>，找到对应版本下载安装。</p>
-<p>首先介绍一下vscode的界面和大概使用流程。</p>
-<p>打开vscode，界面如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808193654.png"></p>
-<p>其中1为资源管理器，2为查找，3为源代码管理（git），4为运行和调试，5为扩展。这左侧为统称为工具栏，后续在扩展中下载相应的扩展后，左侧会多出你选择的扩展，所以理论上你可以在vscode上干任何事，甚至你可以在上面编程。</p>
-<h2 id="1-1-设置系统语言"><a href="#1-1-设置系统语言" class="headerlink" title="1.1 设置系统语言"></a>1.1 设置系统语言</h2><p>第一步，你的界面默认应该是英文，你首先可以在工具栏中的扩展中搜索简体中文，安装后重启即可。</p>
-<h2 id="1-2-工作流程"><a href="#1-2-工作流程" class="headerlink" title="1.2 工作流程"></a>1.2 工作流程</h2><p>一般来说，我的工作流程是，如之前的图中所示，你可以在欢迎界面中点击打开文件夹，或者是克隆Git仓库，打开一个工作区进行摸鱼，以markdown为例子的话，如果你想要进行一些记录，你可以创建一个你的文件夹，这个文件夹可以是你git clone下来的，也可以是本地直接创建的，以本地创建为例：</p>
-<p>比如打开markdown文件夹，新建一个markdown.md文件</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808194144.png"></p>
-<p>此时界面如上图，可以看到大致分为三个部分，侧边栏，顶部栏和编辑区。然后进行工作即可。</p>
-<h1 id="2-C-C-编程、编译"><a href="#2-C-C-编程、编译" class="headerlink" title="2 C&#x2F;C++ 编程、编译"></a>2 C&#x2F;C++ 编程、编译</h1><p>这里可以看我的另外一篇博客：<a href="https://moburein.com/2023/08/22/20230822_VscodeDeployC++/">vscode配置C++环境</a>。</p>
-<p>这篇博客主要介绍了三个部分，如下：</p>
-<ul>
-<li>1 下载GCC编译器</li>
-<li>2 安装VSCODE的C&#x2F;C++扩展</li>
-<li>3 使用VSCODE进行运行和调试</li>
-</ul>
-<p>最终实现在vscode上流畅码代码和调试C++(包括断点、查看参数等)程序。</p>
-<h1 id="3-python-使用"><a href="#3-python-使用" class="headerlink" title="3 python 使用"></a>3 python 使用</h1><p>在vscode上使用python很容易，只需要在扩展中搜索python，下载重新加载vscode即可直接新建py文件进行python代码的编写了，只需要注意右下角python的版本，选择你想要的版本就可以了。</p>
-<p>这里也贴上我一些项目里或者学习的时候python的一些记录：<a href="https://moburein.com/2023/11/01/20231101_PythonSimpleTutorial/">python使用总结</a></p>
-<p>里面有介绍python的简要语法和编程思想、一些常用的库，包括机器学习常用的库，还有日志相关，还有简单爬虫等，可能会后续再更新。</p>
-<h1 id="4-markdown-记录"><a href="#4-markdown-记录" class="headerlink" title="4 markdown 记录"></a>4 markdown 记录</h1><p>这里可以看我的另外一篇博客：<a href="https://moburein.com/2023/08/09/20230808_markdownLanguage/">markdown的简单用法</a>。</p>
-<p>这篇博客主要介绍了三个部分，如下：</p>
-<ul>
-<li>1 Markdown简介</li>
-<li>2 Markdown编译器</li>
-<li>3 Markdown语法</li>
-</ul>
-<p>vscode能实现markdown的流畅的编写，一般使用都是左边代码，右边预览，并且在公式和语法比较熟悉之后，使用markdown的记录效率会很高，并且在转化方面优势很大，可以轻松转化为网页、或者PPT中的内容</p>
-<h1 id="5-latex-beamer的学术PPT制作"><a href="#5-latex-beamer的学术PPT制作" class="headerlink" title="5 latex&amp;beamer的学术PPT制作"></a>5 latex&amp;beamer的学术PPT制作</h1><p>这里可以看我的另外一篇博客：<a href="https://moburein.com/2023/10/30/20231030_BeamerTutorial/">Beamer简单教程</a>。</p>
-<p>这篇博客主要UESTC的模版，然后介绍了一下写PPT的一些基本语法，包括封面设置、目录以及子目录、新建页面、分点、插入图片、下标、公式、表格、分栏、分块等。</p>
-<p>通过beamer能够简单有效的将我们平时的积累以很快的速度转化为PPT，提升效率，并且风格也比较适合做学术或者部门内部的汇报。</p>
-<h1 id="6-git的使用"><a href="#6-git的使用" class="headerlink" title="6 git的使用"></a>6 git的使用</h1><p>git管理也是vscode的基础功能之一了，当该文件夹是git clone下来的，那么此时在工具栏上的源代码管理（git）就会提示，你目前的修改，你可以设置自动时间上传，但是也可以手动上传，也就是push。</p>
-<h2 id="6-1-github账户验证"><a href="#6-1-github账户验证" class="headerlink" title="6.1 github账户验证"></a>6.1 github账户验证</h2><p>首先你需要将你的电脑跟你的比如说github账户进行验证，流程如下：</p>
-<ol>
-<li><p>首先你先安装git，windows在git的官网安装就好了，如果是mac基本是自带git，如果没有git，也可以通过brew安装。</p>
-</li>
-<li><p>配置git账户，设置user.name和user.email，输入以下命令</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;account name&quot;     # 设置用户名</span><br><span class="line">git config --global user.email &quot;account email&quot;     # 设置邮箱地址</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>设置完毕之后，就可以生成SSH KEY了，输入以下命令</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C example@mail.com</span><br></pre></td></tr></table></figure>
-<p>这里输入你自己的邮箱即可  </p>
-<ol start="4">
-<li><p>然后输入以下两条命令查看并复制你的密钥</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">vim id_rsa.pub</span><br></pre></td></tr></table></figure></li>
-<li><p>将公钥id_rsa.pub中的内容添加到github，用户-&gt;settings-&gt;SSH and GPG keys 中的按键new SSH key，将id_rsa.pub中的内容复制进去即可</p>
-</li>
-<li><p>添加完成后，在终端输入<code>ssh -T git@github.com</code>进行验证，此时会让你输入刚刚在生成ssh密钥时输入的密码，输入后回车会看到欢迎的语句，此时说明配对成功。</p>
-</li>
-</ol>
-<p>这个流程中，你唯一需要注意的就是你的路径，其余都是傻瓜式操作。</p>
-<h2 id="6-2-流程展示"><a href="#6-2-流程展示" class="headerlink" title="6.2 流程展示"></a>6.2 流程展示</h2><p>假设你与github的某个仓库链接，也就是你git clone的某个仓库，一般来说的流程如下。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231101194733.png"></p>
-<p>此时就是有待处理的部分。此时点击git管理，界面应该与下图类似</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231101194855.png"></p>
-<p>首先将鼠标放在更改上会出现<code>+</code>号，此时点击加号，然后输入你的修改信息点击提交即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011950617.png"></p>
-<p>此时你的修改可能还并没有push到远程仓库，此时查看左下角的图标是否显示你还未push到云上，如下图。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011954845.png"></p>
-<p>点击之后会出现下图，点击确认后你就可以查看你的云端是否有修改了，一般来说这里就结束了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011954859.png"></p>
-<h1 id="7-SSH远程连接服务器"><a href="#7-SSH远程连接服务器" class="headerlink" title="7 SSH远程连接服务器"></a>7 SSH远程连接服务器</h1><p>在扩展中搜索remote，安装这个remote-ssh即可，这时工具栏上就会多出远程连接工具，点击远程连接工具</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012006995.png"></p>
-<p>界面如下，点击如下图中的加号</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012007311.png"></p>
-<p>这时会弹出ssh连接命令，此时输入你的需要连接的账号回车会提示你输入密码，此时输入密码即可进入你所要ssh连接的服务器中。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012008499.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012010522.png"></p>
-<p>还有一个进阶操作，你可以将你的公钥添加到服务器的authorized_keys文件中，这样你登录时就不再需要输入密码了。具体操作如下：</p>
-<ul>
-<li>将本地之前生成的<code>id_rsa.pub</code>中的内容全部复制，一般在.ssh文件夹中，可以通过vim打开复制后输入<code>:q</code>回车退出，</li>
-<li>然后再在服务器的.ssh文件夹中找到authorized_keys文件，使用vim工具打开，按i键进入插入编辑模式，复制刚刚的内容进去，保存退出<code>:wq</code>回车就完成了。</li>
-</ul>
-<h1 id="8-cnblogs博客园扩展"><a href="#8-cnblogs博客园扩展" class="headerlink" title="8 cnblogs博客园扩展"></a>8 cnblogs博客园扩展</h1><p>直接在扩展中搜索cnblogs就可以了，这个扩展主要是为了解决在cnblogs上写博客时的图片问题，这个官方插件提供了在博客园上使用的图床，安装后在markdown文件的右上角会出现多两个图标，主要使用上传剪切板图片这个功能，一般我们需要使用的时候都是直接剪切屏幕中的图片，这时复制后点击如下图的图标。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012019990.png"></p>
-<p>会出现以下界面，你可以选择本地图片或者是剪切图片，一般来说我是选择剪贴板图片，这样操作方便。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012020877.png"></p>
-<p>点击之后就会弹出连接，选择markdown连接直接复制到md文件中就可以了，完美解决新手用户没有图床的问题。我一般在学习的时候也会在博客园上写一些博客，这样能将更多有意思的东西放在自己的博客网站上。</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>SSH</tag>
-        <tag>markdown</tag>
-        <tag>vscode</tag>
-        <tag>git</tag>
-        <tag>C/C++</tag>
-        <tag>python</tag>
-        <tag>github</tag>
-        <tag>cnblogs</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>拍摄一些好用的小工具——软件</title>
-    <url>/2023/12/18/20231218_PhotoApps/</url>
-    <content><![CDATA[<p>记录一些拍摄相关的软件或者小程序：</p>
-<ul>
-<li>添加画框小软件</li>
-<li>添加水印软件</li>
-<li>查看星体数据，比如太阳和月亮数据软件</li>
-<li>简易修图软件</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="1-画框小软件"><a href="#1-画框小软件" class="headerlink" title="1 画框小软件"></a>1 画框小软件</h1><p>壹印：一个开源的添加画框的软件，github地址为：<a href="https://github.com/ggchivalrous/yiyin%E3%80%82">https://github.com/ggchivalrous/yiyin。</a></p>
-<p>操作也非常简单，这里不再赘述，主要展示两种可以制作的效果</p>
-<ul>
-<li>圆角渐变颜色画框</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/test.jpg"></p>
-<ul>
-<li>经典白色底相框</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/yinxing.jpg"></p>
-<p>这个软件也有两个小缺憾，一是添加相机的信息处，并没有相机的logo，二是还有如果能够集成进添加水印就更好了。</p>
-<h1 id="2-水印软件"><a href="#2-水印软件" class="headerlink" title="2 水印软件"></a>2 水印软件</h1><p>目前直接使用的Lightroom自带的水印，这样的好处是比较方便，输出图片的时候，直接设置一下水印就好了，这样减少了调整图片的步骤，非常符合提升效率的原则，但是坏处就是选择比较少，并且会有水印的符号。</p>
-<h1 id="3-天气软件"><a href="#3-天气软件" class="headerlink" title="3 天气软件"></a>3 天气软件</h1><p>外拍时，对于天气要求很高，ios自带的天气软件就能看到很多关爱你的信息，比如</p>
-<ul>
-<li>能见度：能见度对于拍照影响很大，能见度很低的情况下，拍摄出来的照片都是灰蒙蒙的，对比度很低</li>
-<li>日升，日落：这一项最重要，尤其要注意日落的时间，抓住拍摄的黄金时间，也即日落前后的总计一小时时间，这一个小时的光线变化是最丰富的，从日落的温暖橘黄到日落后到BLUE HOUR，都是出片的绝佳时机，并且能够捕捉到冷暖对比。</li>
-<li>月亮：对于想要打月亮的时候很重要，选择每个月满月的时候，并且需要提前看好月亮的方位，选择好前景，架设三脚架等待月升</li>
-<li>气温、紫外线、晴雨等基本信息，注意防暑、防晒、防雨等等</li>
-</ul>
-<p>对于想要拍摄银河这些，可能需要更加专业的软件，或者一些微信小程序也有一些星象的相关信息。</p>
-<h1 id="4-修图软件"><a href="#4-修图软件" class="headerlink" title="4 修图软件"></a>4 修图软件</h1><p>醒图，一个手机修图软件。</p>
-<p>这里就不介绍LR和PS了，都是在电脑上使用的。醒图是我目前使用比较良好的一个手机app，免费的功能基本够用了，我一般的流程是在电脑的LR上调色完成之后，在醒图上对模特的面部做一些基本的调整就可以了，简单磨个皮，调整一下脸型就好了。</p>
-<p>如果你想整活，醒图的换表情的功能也很实用，能够改变模特的表情，实测还是比较够用的。对于清晰度不是很高的照片基本够用，清晰度高了的照片使用会有比较明显的割裂感。</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>摄影博客</category>
-      </categories>
-      <tags>
-        <tag>摄影</tag>
-        <tag>软件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>日系胶片调色</title>
-    <url>/2023/12/04/20231204_LrFilmStyle/</url>
-    <content><![CDATA[<p>总结一下摄影中我比较喜欢的一种风格，使用lightroom进行仿日系胶片调色。</p>
-<p>总结重点：</p>
-<ul>
-<li>基础设置：提高曝光，让照片保持微微过曝的状态，提亮暗部，压一下高光</li>
-<li>仿胶片：所以使用曲线让暗部不是纯黑色，带一点灰色，让白点也降低，模拟胶片的感觉</li>
-<li>使用曲线恢复一些对比度，使用颜色曲线和颜色分级对照片进行颜色调整，一般有几个选择，选择让高光部分偏某某色，让暗部偏某某色，可以是黄色、青色、蓝色等等</li>
-<li>使用hsl、颜色分级将画面的一些杂色降低饱和度、亮度等</li>
-<li>根据情况添加暗角，可以适当降低一点清晰度，这样在拍摄人物时会有一种朦胧感</li>
-<li>添加一些颗粒，这样更有质感</li>
-</ul>
-<span id="more"></span>
-
-<p>我的总结主要是按照两步走，重点是要形成自己调色的方法论。</p>
-<p>第一步是分析原有照片的风格，调色的重点和主观感受，然后针对分析进行第二部的针对性调色，重要的不是参数，而是如何分析得到需要进行的操作。</p>
-<p>这篇博客是参考了b站up青山摄影的视频总结而成。</p>
-<h1 id="1-日系胶片风格"><a href="#1-日系胶片风格" class="headerlink" title="1 日系胶片风格"></a>1 日系胶片风格</h1><p>这里首先放上经典日系胶片风格照片：</p>
-<figure class="second">  
-  <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041934070.png"  width = "300" alt="原图">  
-  <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041923679.png"  width = "300" alt="调色后">  
-</figure>
-
-<p>首先进行分析可以得到如下结论：</p>
-<ul>
-<li>对比度不高</li>
-<li>轻微过曝</li>
-<li>胶片质感</li>
-<li>画面中间调偏青色</li>
-<li>肤色调整白皙并且带血色</li>
-<li>人物衣服的白色有一点朦胧感</li>
-</ul>
-<h1 id="2-实战调色"><a href="#2-实战调色" class="headerlink" title="2 实战调色"></a>2 实战调色</h1><h2 id="2-1-基础设置"><a href="#2-1-基础设置" class="headerlink" title="2.1 基础设置"></a>2.1 基础设置</h2><p>目的： 为了保证轻微过曝，并且将原片降低一点对比度模拟胶片感</p>
-<p>措施：</p>
-<ul>
-<li>提高曝光</li>
-<li>降低一点对比度</li>
-<li>增加一点饱和度</li>
-<li>降低一点鲜艳度</li>
-</ul>
-<h2 id="2-2-曲线"><a href="#2-2-曲线" class="headerlink" title="2.2 曲线"></a>2.2 曲线</h2><p>目的：将画面的中间调调整为青色，并且改变照片的影调，让照片有一种灰灰的感觉，模拟胶片，这一步是重点</p>
-<p>措施：</p>
-<ul>
-<li>分颜色调整，使得画面中间调偏青色，那么分别修改红绿蓝曲线，修改如下，<ul>
-<li>中间调蓝色和绿色提高，红色不变，这一步中间调就会变成青色</li>
-<li>高光三条曲线都提高，阴影曲线都降低，增加对比度</li>
-</ul>
-</li>
-</ul>
-<figure class="third">
-    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041954921.png"  width = "200" alt="红色曲线">  
-    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041952314.png"  width = "200" alt="绿色曲线">  
-    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041953288.png"  width = "200" alt="蓝色曲线">  
-</figure>
-
-<ul>
-<li>调整亮度曲线，将最左端，也就是黑点提高，这一步是让照片的黑点不是纯黑而是变成带一点点灰色，来模拟胶片的感觉。</li>
-</ul>
-<center>
-    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041956807.png" width = "200" alt="亮度曲线">
-</center>
-
-<p>经过曲线和基础调整之后照片已经有了雏形，如下：</p>
-<center>
-<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204195528.png"  width = "300" alt="曲线调整后图片">  
-</center>
-
-<h2 id="2-3-进一步调整色调"><a href="#2-3-进一步调整色调" class="headerlink" title="2.3 进一步调整色调"></a>2.3 进一步调整色调</h2><p>调整完曲线之后，分析图片感觉还是有一点点过于亮，进一步调整明暗关系，将白色和高光调低，提升一点阴影，降低一点黑色色阶，这里是一个小trick，这样可以使得整体明亮的图片看起来对比度稍微高一点，得到所谓的通透的感觉。</p>
-<center>
-<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204202005.png"  width = "300">  
-</center>
-
-<p>偏好部分，同样有一个小trick，人物的白色衣服在日光下容易过曝，所以可以见底一些清晰度，让白色衣服有一种朦胧的感觉，不至于刺眼或者过于吸引眼球。同时增加一点饱和度，降低一点鲜艳度，使得图片的风格更加胶片的高宽容度感。</p>
-<center>
-<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042022428.png"  width = "300">  
-</center>
-
-<h2 id="2-4-HSL调色"><a href="#2-4-HSL调色" class="headerlink" title="2.4 HSL调色"></a>2.4 HSL调色</h2><p>进一步调整颜色，调整肤色——HSL调色中的橙色，以及调整背景中其他的颜色的饱和度</p>
-<figure class="third">
-    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042028231.png"  width = "220" alt="红色曲线">  
-    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042028800.png"  width = "220" alt="绿色曲线">  
-    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042027175.png"  width = "220" alt="蓝色曲线">  
-</figure>
-
-<ul>
-<li>调整饱和度和明亮度中的橙色是为了调整肤色，让肤色显的又白又有血色</li>
-<li>调整饱和度和明亮度的蓝色是为了不让背景中的蓝色喧兵夺主</li>
-<li>调整色相中的红色是为了使得人物的嘴唇颜色正常，偏红色</li>
-</ul>
-<h2 id="2-5-颜色校准"><a href="#2-5-颜色校准" class="headerlink" title="2.5 颜色校准"></a>2.5 颜色校准</h2><p>调整颜色校准使得照片整体偏黄一点，人物肤色正常一点，其实这一步我个人感觉意义不明，没啥大作用，就是使得整体照片偏黄偏品红一点。</p>
-<center>
-<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204203936.png"  width = "300">  
-</center>
-
-<h2 id="2-6-颜色分级"><a href="#2-6-颜色分级" class="headerlink" title="2.6 颜色分级"></a>2.6 颜色分级</h2><p>这一步很重要，这一步进一步调整了照片的明暗关系，将最后的影调调整到跟胶片很相似了。</p>
-<center>
-<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204204334.png"  width = "300">  
-</center>
-
-<p>这里就主要调整阴影和高光了，我的理解是中间调在曲线部分已经调整，但是这样为什么不在中间色调一步完成呢。</p>
-<ul>
-<li>阴影部分向右调整，这样使得图片暗部进一步变灰，至于偏色就见仁见智，偏青色、黄色、蓝色、甚至红色都可以，实际中一般是偏青色，偏黄色就是复古</li>
-<li>高光向左移动，这样使得照片更有一种哑光的感觉，其实也就是将白色也带一点灰的感觉，偏色就同样根据审美来调整</li>
-</ul>
-<h2 id="2-7-暗角以及颗粒"><a href="#2-7-暗角以及颗粒" class="headerlink" title="2.7 暗角以及颗粒"></a>2.7 暗角以及颗粒</h2><p>增加一点暗角。数量就是暗角的程度，中点也就是暗角的区域，为0也就是以中心点为基准，羽化调整到100，这样使得暗角的过渡狠顺滑。</p>
-<p>然后增加一点数量的颗粒，大小可以调整小一点，粗糙度看个人审美。</p>
-<center>
-<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042050909.png"  width = "300">  
-</center>
-
-
-
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>摄影博客</category>
-      </categories>
-      <tags>
-        <tag>摄影</tag>
-        <tag>Lightroom</tag>
-        <tag>调色</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>阴天or夜景街拍调色</title>
-    <url>/2023/12/25/20231225_NightStreetLrStyle/</url>
-    <content><![CDATA[<p>使用场景主要是阴天或者夜景这样光比比较小，需要凸显冷暖等的颜色的时候的调色。调色过程也比较简单。</p>
-<p>主要部分如下：</p>
-<ul>
-<li>基本</li>
-<li>色调曲线</li>
-<li>校准</li>
-<li>HSL</li>
-<li>效果<span id="more"></span></li>
-</ul>
-<h1 id="1-基本调整"><a href="#1-基本调整" class="headerlink" title="1 基本调整"></a>1 基本调整</h1><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312251549960.png"  width = "300" >  
-
-<p>色温-5，色调-5；曝光度+0.8，对比度+10，高光-55，阴影+29，白色色阶+14，黑色色阶-14；清晰度+30，鲜艳度+50.</p>
-<ul>
-<li><p>首先调整色温和色调，色温可以根据不同照片进行调节，主要恢复一下照片原有的色温就可以了。</p>
-</li>
-<li><p>增加曝光度和对比度，因为小光比，阴天或者夜景的对比度会比较低，拉高一点。</p>
-</li>
-<li><p>降低高光、增加阴影、给一点宽容度，然后增加白色色阶、压暗黑色色阶，恢复一点对比度</p>
-</li>
-<li><p>在不是近景拍摄人物肖像的情况下，拉高一点清晰度，大概30，这样增加一下街拍质感</p>
-</li>
-<li><p>增加一下鲜艳度，让颜色鲜艳一点</p>
-</li>
-</ul>
-<h1 id="2-色调曲线"><a href="#2-色调曲线" class="headerlink" title="2 色调曲线"></a>2 色调曲线</h1><ul>
-<li><p>亮度曲线，暗部提高15-20左右，然后恢复中间调和暗调。</p>
-</li>
-<li><p>红色曲线打三个点，阴影拉低一点，为阴影加一点青色</p>
-</li>
-<li><p>绿色曲线打三个点，阴影拉低一点，为阴影加一点品红</p>
-</li>
-</ul>
-<p>总的效果就是给阴影带一点蓝色并且加上一点影调。</p>
-<h1 id="3-校准"><a href="#3-校准" class="headerlink" title="3 校准"></a>3 校准</h1><ul>
-<li>右右左：红原色向右48，饱和度增加20，绿原色向右48，蓝颜色向左20</li>
-</ul>
-<p>这样突出画面的暖色，减弱画面的冷色调，如果冷色调更多，则可以将蓝色饱和度降低一点。</p>
-<p>注意：这里如果想要青橙色调，操作就是吧蓝色向左多一点比如也试8，然后降低一点饱和度，否则饱和度会溢出。</p>
-<h1 id="4-HSL"><a href="#4-HSL" class="headerlink" title="4 HSL"></a>4 HSL</h1><p>这一步主要进一步调整冷暖</p>
-<ul>
-<li>色相：红色-50，黄色-20</li>
-<li>饱和度：橙色+24，黄色-20，蓝色-40</li>
-<li>明亮度：红色-36，黄色+16</li>
-</ul>
-<h1 id="5-效果"><a href="#5-效果" class="headerlink" title="5 效果"></a>5 效果</h1><ul>
-<li>暗角：数量-13，中点37，圆度+4，羽化+100</li>
-<li>颗粒：看感觉来</li>
-</ul>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>摄影博客</category>
-      </categories>
-      <tags>
-        <tag>摄影</tag>
-        <tag>Lightroom</tag>
-        <tag>调色</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VIM简单教程</title>
-    <url>/2024/10/04/20241004_VimTutorial/</url>
-    <content><![CDATA[<p>在Linux环境下难免会遇到使用VIM的情况，于是在这里进行一些总结</p>
-<p>本博客简要总结了一些使用VIM的使用技巧。</p>
-<span id="more"></span>
-
-<p>Vim是一款功能强大的文本编辑器，它提供了许多高效的编辑技巧和快捷键。</p>
-<p>首先是如何进行vim的界面，命令为<code>vim example.c</code>。其中example.c为当前路径下的文件，当然也可以对指定路径下的文件进行vim编辑。</p>
-<p>在进入vim编辑界面后，以下是一些使用Vim的详细技巧：</p>
-<h3 id="1-基本模式与切换"><a href="#1-基本模式与切换" class="headerlink" title="1 基本模式与切换"></a>1 基本模式与切换</h3><p>首先需要了解Vim的三种基本模式：普通模式（Normal mode）、插入模式（Insert mode）和命令模式（Command mode，也叫Ex模式）。</p>
-<ul>
-<li><strong>普通模式</strong>：启动Vim时默认进入的模式，可以进行光标移动、删除、复制、粘贴等操作。</li>
-<li><strong>插入模式</strong>：在普通模式下按<code>i</code>、<code>a</code>、<code>o</code>、<code>O</code>等键进入，用于输入文本。<ul>
-<li><code>i</code>：在当前光标位置前进入插入模式。</li>
-<li><code>a</code>：在当前光标位置后进入插入模式。</li>
-<li><code>o</code>：在当前行下新开一行并进入插入模式。</li>
-<li><code>O</code>：在当前行上新开一行并进入插入模式。</li>
-</ul>
-</li>
-<li><strong>命令模式</strong>：在普通模式下输入<code>:</code>进入，用于执行命令，如保存文件、退出Vim、替换文本等。</li>
-</ul>
-<p>从插入模式或命令模式返回普通模式，可以按下<code>Esc</code>键。</p>
-<h3 id="2-光标移动"><a href="#2-光标移动" class="headerlink" title="2 光标移动"></a>2 光标移动</h3><ul>
-<li><code>h</code>：左移一个字符。</li>
-<li><code>j</code>：下移一行。</li>
-<li><code>k</code>：上移一行。</li>
-<li><code>l</code>：右移一个字符。</li>
-<li><code>w</code>：移至下一个单词的开头。</li>
-<li><code>e</code>：移至当前单词的结尾。</li>
-<li><code>b</code>：移至当前单词的开头。</li>
-<li><code>gg</code>：移至文件开头。</li>
-<li><code>G</code>：移至文件末尾。</li>
-<li><code>(数字)G</code>：移至指定行号。</li>
-<li><code>^</code>：移动到行首第一个非空白字符（汉字空格不被视为空白字符）。</li>
-<li><code>0</code>：移动到行首第一个字符。</li>
-<li><code>$</code>：移动到行尾。</li>
-</ul>
-<h3 id="3-文本编辑"><a href="#3-文本编辑" class="headerlink" title="3 文本编辑"></a>3 文本编辑</h3><ul>
-<li><p><strong>删除</strong>：</p>
-<ul>
-<li><code>x</code>：删除当前光标所在位置的字符。</li>
-<li><code>X</code>：删除当前光标所在位置前一个字符。</li>
-<li><code>dd</code>：删除整行。</li>
-<li><code>ndd</code>：删除n行。</li>
-<li><code>dw</code>：删除一个单词。</li>
-<li><code>d3w</code>：删除三个单词。</li>
-<li><code>d$</code>：删除从当前光标到行尾的内容。</li>
-<li><code>D</code>：等同于<code>d$</code>，删除从当前光标到行尾的内容。</li>
-</ul>
-</li>
-<li><p><strong>复制与粘贴</strong>：</p>
-<ul>
-<li><code>yy</code>：复制当前行。</li>
-<li><code>nyy</code>：复制光标以下n-1行。</li>
-<li><code>p</code>：在当前光标位置粘贴文本。</li>
-<li><code>yw</code>：复制一个单词。</li>
-<li><code>ye</code>：复制从当前光标到单词结尾的内容。</li>
-<li><code>y$</code>：复制从当前光标到行尾的内容。</li>
-</ul>
-</li>
-<li><p><strong>撤销与重做</strong>：</p>
-<ul>
-<li><code>u</code>：撤销上一步操作。</li>
-<li><code>Ctrl+r</code>：重做上一步撤销的操作。</li>
-</ul>
-</li>
-</ul>
-<h3 id="4-页面滚动"><a href="#4-页面滚动" class="headerlink" title="4 页面滚动"></a>4 页面滚动</h3><ul>
-<li><code>Ctrl+f</code>：向前翻整页（forward）。</li>
-<li><code>Ctrl+b</code>：向后翻整页（backward）。</li>
-<li><code>Ctrl+d</code>：向下翻半页（down）。</li>
-<li><code>Ctrl+u</code>：向上翻半页（up）。</li>
-<li><code>Ctrl+e</code>：向上滚一行。</li>
-<li><code>Ctrl+y</code>：向下滚一行。</li>
-<li><code>Ctrl+B</code>：向后滚一页（与<code>Ctrl+b</code>不同，注意大小写）。</li>
-<li><code>Ctrl+F</code>：向前滚一页（与<code>Ctrl+f</code>不同，注意大小写）。</li>
-</ul>
-<h3 id="5-命令模式操作"><a href="#5-命令模式操作" class="headerlink" title="5 命令模式操作"></a>5 命令模式操作</h3><ul>
-<li><code>:w</code>：保存文件。</li>
-<li><code>:q</code>：退出Vim。</li>
-<li><code>:wq</code>：保存并退出Vim。</li>
-<li><code>:q!</code>：强制退出Vim。</li>
-<li><code>ZZ</code>：保存并退出，与<code>:wq</code>等效（注意是大写的Z）。</li>
-<li><code>:set number</code>：显示行号。</li>
-<li><code>:set nonumber</code>：隐藏行号。</li>
-<li><code>:syntax on</code>：开启语法高亮。</li>
-<li><code>:syntax off</code>：关闭语法高亮。</li>
-<li><code>:s/old/new/g</code>：替换当前行的第一个<code>old</code>为<code>new</code>。</li>
-<li><code>:s/old/new/gc</code>：替换当前行的第一个<code>old</code>为<code>new</code>，每次替换前询问。</li>
-<li><code>:%s/old/new/g</code>：替换整个文件的<code>old</code>为<code>new</code>。</li>
-<li><code>:args</code>：查看或设置参数列表中的文件。</li>
-<li><code>:argdo %s/old/new/g</code>：在参数列表中的每个文件里执行替换操作。</li>
-</ul>
-<h3 id="6-高级技巧"><a href="#6-高级技巧" class="headerlink" title="6 高级技巧"></a>6 高级技巧</h3><ul>
-<li><p><strong>可视化模式</strong>：按<code>v</code>进入可视化模式，可以选择文本块，然后进行复制、剪切、粘贴等操作。</p>
-</li>
-<li><p><strong>重复命令</strong>：<code>.</code>命令可以重复上一次修改命令。例如，如果上一次操作是删除一个单词，那么<code>.</code>将再次删除一个单词。</p>
-</li>
-<li><p><strong>查找与替换</strong>：</p>
-<ul>
-<li><code>/pattern</code>：从当前光标位置开始向下查找指定模式。</li>
-<li><code>?pattern</code>：从当前光标位置开始向上查找指定模式。</li>
-<li><code>n</code>：在查找模式下，切换到下一个匹配项。</li>
-<li><code>N</code>：在查找模式下，切换到上一个匹配项。</li>
-</ul>
-</li>
-<li><p><strong>多文件操作</strong>：</p>
-<ul>
-<li><code>:sp [filename]</code>：水平分割窗口并打开新文件或当前文件。</li>
-<li><code>:vsp [filename]</code>：垂直分割窗口并打开新文件或当前文件。</li>
-<li><code>Ctrl+w+h/j/k/l</code>：在分割的窗口间切换。</li>
-<li><code>:tabe [filename]</code>：在新的标签页中打开文件。</li>
-<li><code>:tabn</code>和<code>:tabp</code>：在标签页间切换。</li>
-</ul>
-</li>
-<li><p><strong>录制宏</strong>：</p>
-<ul>
-<li>使用<code>q</code>命令开始录制宏，然后执行一系列操作。</li>
-<li>录制完成后，再次按<code>q</code>结束录制。</li>
-<li>使用<code>@</code>命令加上宏的寄存器名称来执行录制的宏。</li>
-</ul>
-</li>
-<li><p><strong>插件使用</strong>：</p>
-<ul>
-<li>Vim支持各种插件，如NERDTree用于目录树管理，MiniBufExplorer用于buffer窗口管理，word_complete.vim用于自动补全等。</li>
-<li>插件的安装和配置通常需要在Vim的配置文件（如<code>.vimrc</code>）中进行。</li>
-</ul>
-</li>
-</ul>
-<p>以上是使用Vim的一些详细技巧，掌握这些技巧可以大大提高文本编辑的效率。不过，Vim的功能非常强大，还有更多高级功能和自定义设置等待我们去探索和学习。</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>VIM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SourceInsight4+Samba教程</title>
-    <url>/2024/10/10/20241010_SourceInsight4WithSamba/</url>
-    <content><![CDATA[<p>由于工作需要经常在虚拟机中编译比较大型的C语言的项目，组内推荐使用SourceInsight配合Samba共享文件夹在windows端查看虚拟机ubuntu中的代码，于是进行简单的使用流程记录。</p>
-<p>分为以下几个部分介绍</p>
-<ul>
-<li>SourceInsight的优势、使用方式以及常用的操作</li>
-<li>如何配置Samba共享文件夹</li>
-<li>设置虚拟机的网卡以解决虚拟机的IP地址一直变化导致Samba文件夹失效的问题</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="1-SourceInsight"><a href="#1-SourceInsight" class="headerlink" title="1 SourceInsight"></a>1 SourceInsight</h1><p>SourceInsight是一个看似复古的IDE，但是在看一些大型的项目的时候会比较好用，尤其是查看一些函数的从属关系的reference的时候会很好用。</p>
-<p>这里可以参考这一篇博客讲解的很详细，这里就不再赘述一些界面介绍了，其中介绍的SourceInsight3.5，笔者用的SourceInsight4.0与他的界面和功能几乎没有差距，只是分辨率提升了。在3.5版本对于4k的分辨图标会不够清晰，看着不够好。</p>
-<p><a href="https://www.cnblogs.com/andy-songwei/p/9965714.html">博客园：【工利其器】必会工具之（一）Source Insight篇</a></p>
-<p>该博客主要介绍了SI的简介、创建项目、添加文件、以及其中的界面如何使用的详细介绍，很值得细读。</p>
-<p>笔者这里就再记录一些常用的快捷操作，还有对于SourceInsight的一些稍微进阶的设置。</p>
-<h2 id="1-1-快捷键记录"><a href="#1-1-快捷键记录" class="headerlink" title="1.1 快捷键记录"></a>1.1 快捷键记录</h2><table>
-<thead>
-<tr>
-<th align="left">快捷键</th>
-<th align="left">作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>SHIFT+F8</code></td>
-<td align="left">高亮选中的单词(不包括注释中的单词)</td>
-</tr>
-<tr>
-<td align="left"><code>CTRL+G</code>或<code>F5</code></td>
-<td align="left">跳到指定行</td>
-</tr>
-<tr>
-<td align="left"><code>CTRL+鼠标左键</code></td>
-<td align="left">直接跳转至标识定义处调用处</td>
-</tr>
-<tr>
-<td align="left"><code>CTRL+F</code></td>
-<td align="left">本文件内查找</td>
-</tr>
-<tr>
-<td align="left"><code>F3</code></td>
-<td align="left">本文件查找结果的上一个</td>
-</tr>
-<tr>
-<td align="left"><code>F4</code></td>
-<td align="left">本文件查找结果的下一个</td>
-</tr>
-<tr>
-<td align="left"><code>CTRL+M</code></td>
-<td align="left">创建或查找书签，方便下次找回此位置</td>
-</tr>
-<tr>
-<td align="left"><code>CTRL+O</code></td>
-<td align="left">搜索文件，找到回车打开，找不到ESC退出</td>
-</tr>
-<tr>
-<td align="left"><code>ALT</code> + <code>,</code></td>
-<td align="left">后退</td>
-</tr>
-<tr>
-<td align="left"><code>ALT</code> + <code>.</code></td>
-<td align="left">前进</td>
-</tr>
-<tr>
-<td align="left"><code>ALT + F12</code></td>
-<td align="left">可以切换，让字符宽度变得一致，或者是大小不同地显示</td>
-</tr>
-<tr>
-<td align="left"><code>CTRL+G</code>或者<code>F7</code></td>
-<td align="left">打开Symbol Window</td>
-</tr>
-<tr>
-<td align="left"><code>CTRL+&#39;</code></td>
-<td align="left">智能重命名</td>
-</tr>
-<tr>
-<td align="left"><code>CTRL+G</code></td>
-<td align="left">打开Symbol Window</td>
-</tr>
-<tr>
-<td align="left"><code>CTRL+G</code></td>
-<td align="left">打开Symbol Window</td>
-</tr>
-<tr>
-<td align="left"><code>CTRL+G</code></td>
-<td align="left">打开Symbol Window</td>
-</tr>
-<tr>
-<td align="left"><code>CTRL+G</code></td>
-<td align="left">打开Symbol Window</td>
-</tr>
-</tbody></table>
-<h2 id="1-2-SourceInsight进阶设置"><a href="#1-2-SourceInsight进阶设置" class="headerlink" title="1.2 SourceInsight进阶设置"></a>1.2 SourceInsight进阶设置</h2><ol>
-<li>让{ 和 } 不缩进</li>
-</ol>
-<p>Options -&gt; Document Options -&gt; Auto Indenting -&gt; Auto Indent Type 选 Simple。</p>
-<p>还有：让{ 和 } 不缩进： options-&gt;document options-&gt;auto indent 去掉indent Open Brace和Indent Close Brace。 （不好使，括号无法配对对齐！）</p>
-<ol start="2">
-<li>添加文件类型</li>
-</ol>
-<p>用户可以定义自己的类型，Options-&gt;Document Options-&gt;add type，定义文件类型名以及文件名后缀。</p>
-<p>勾选include when adding to projects在添加目录下文件到工程是该类文件就会添加进SI的工程。</p>
-<p>如果需要将所有文件添加进SI的工程，可以定义一种文件类型*.*。</p>
-<ol start="3">
-<li>恢复ctrl+a的全选功能</li>
-</ol>
-<p>Options -&gt; Key Assignments：通过关键词save 找到save all，更改为ctrl+shift+a，通过关键词select找到select all，更改为ctrl +a。</p>
-<ol start="4">
-<li>设置背景色</li>
-</ol>
-<p>Options-&gt;preference-&gt;color-&gt;windows background设置背景色（护眼色：85，90，205）。</p>
-<ol start="5">
-<li>解决TAB键缩进问题</li>
-</ol>
-<p>Options-&gt; Document Options里面的右下角Editing Options栏里，把Expand tabs勾起来，然后确定。OK，现在TAB键的缩进和四个空格的缩进在SIS里面看起来就对齐。</p>
-<p>Linux下TAB是8个空格长度，这样设置可以让TAB和4个空格保持一致！）</p>
-<h1 id="2-Samba共享文件夹设置"><a href="#2-Samba共享文件夹设置" class="headerlink" title="2 Samba共享文件夹设置"></a>2 Samba共享文件夹设置</h1><p>虽然SourceInsight很好用，但是在很多项目都在虚拟机里面编译，这时候该如何看到其中的代码呢。此时就可以设置Samba共享文件夹来在windows上打开虚拟机Linux下的共享文件。</p>
-<p>以下是在Ubuntu上配置Samba共享文件夹给Windows使用的详细配置教程：</p>
-<h2 id="2-1-前提条件"><a href="#2-1-前提条件" class="headerlink" title="2.1 前提条件"></a>2.1 前提条件</h2><ol>
-<li>确保Ubuntu和Windows在同一局域网内，或者通过网线直接连接。</li>
-<li>Ubuntu系统已安装并更新到最新版本。</li>
-</ol>
-<h2 id="2-2-安装Samba"><a href="#2-2-安装Samba" class="headerlink" title="2.2 安装Samba"></a>2.2 安装Samba</h2><ol>
-<li>打开Ubuntu的终端。</li>
-<li>更新软件包列表：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>安装Samba及其相关组件：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install samba samba-common -y</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-3-配置Samba"><a href="#2-3-配置Samba" class="headerlink" title="2.3 配置Samba"></a>2.3 配置Samba</h2><ol>
-<li>创建或选择一个要共享的文件夹，并设置其权限。例如，假设要共享的文件夹路径为<code>/home/ubuntu/shared</code>，则设置权限为：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">chmod</span> 777 /home/ubuntu/shared</span><br></pre></td></tr></table></figure>
-
-<p>或者，使用更安全的权限设置，仅允许特定用户读写：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">chown</span> your_username:your_groupname /home/ubuntu/shared</span><br><span class="line">sudo <span class="built_in">chmod</span> 770 /home/ubuntu/shared</span><br></pre></td></tr></table></figure>
-
-<p>其中，<code>your_username</code>和<code>your_groupname</code>分别替换为你的Ubuntu用户名和组名。</p>
-<ol start="2">
-<li>添加一个Samba用户（如果需要的话）。如果已有一个Ubuntu用户，可以直接为其设置Samba密码：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo smbpasswd -a your_username</span><br></pre></td></tr></table></figure>
-
-<p>按照提示输入并确认Samba密码。</p>
-<ol start="3">
-<li>编辑Samba配置文件<code>/etc/samba/smb.conf</code>。在文件末尾添加一个新的共享配置段，例如：</li>
-</ol>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[shared]</span></span><br><span class="line"><span class="attr">path</span> = /home/ubuntu/shared</span><br><span class="line"><span class="attr">browseable</span> = <span class="literal">yes</span></span><br><span class="line"><span class="attr">public</span> = <span class="literal">yes</span></span><br><span class="line"><span class="attr">writable</span> = <span class="literal">yes</span></span><br><span class="line"><span class="attr">available</span> = <span class="literal">yes</span></span><br></pre></td></tr></table></figure>
-
-<p>如果希望限制访问权限，可以添加<code>valid users</code>选项并指定Samba用户名：</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[shared]</span></span><br><span class="line"><span class="attr">path</span> = /home/ubuntu/shared</span><br><span class="line"><span class="attr">browseable</span> = <span class="literal">yes</span></span><br><span class="line">valid <span class="attr">users</span> = your_username</span><br><span class="line"><span class="attr">writable</span> = <span class="literal">yes</span></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>保存并关闭配置文件。</li>
-</ol>
-<h2 id="2-4-重启Samba服务"><a href="#2-4-重启Samba服务" class="headerlink" title="2.4 重启Samba服务"></a>2.4 重启Samba服务</h2><ol>
-<li>重启Samba服务以使配置生效：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl restart smbd</span><br><span class="line">sudo systemctl restart nmbd</span><br></pre></td></tr></table></figure>
-
-<p>或者，使用旧的服务管理命令（在某些Ubuntu版本中可能仍有效）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo service smbd restart</span><br><span class="line">sudo service nmbd restart</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-5-在Windows上访问共享文件夹"><a href="#2-5-在Windows上访问共享文件夹" class="headerlink" title="2.5 在Windows上访问共享文件夹"></a>2.5 在Windows上访问共享文件夹</h2><ol>
-<li>打开Windows资源管理器（文件资源管理器）。</li>
-<li>在地址栏中输入Ubuntu的IP地址和共享文件夹名称，格式为：<code>\\ubuntu_ip_address\shared</code>。例如，如果Ubuntu的IP地址是<code>192.168.1.100</code>，则输入：<code>\\192.168.1.100\shared</code>。</li>
-<li>如果设置了Samba用户和密码，将提示输入这些凭据以访问共享文件夹。</li>
-</ol>
-<h2 id="2-6-获取Ubuntu的IP地址"><a href="#2-6-获取Ubuntu的IP地址" class="headerlink" title="2.6 获取Ubuntu的IP地址"></a>2.6 获取Ubuntu的IP地址</h2><p>在Ubuntu终端中输入以下命令以获取IP地址：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
-
-<p>查找与网络连接相对应的条目（例如<code>eth0</code>、<code>wlan0</code>等），并找到<code>inet</code>后面的IP地址，比如为192.168.1.100。</p>
-<p><strong>注意事项</strong></p>
-<ol>
-<li>确保防火墙设置允许Samba通信（通常使用TCP端口137、138、139和445）。</li>
-<li>如果在Windows上遇到访问问题，请检查Samba配置文件中的权限设置和共享名称是否正确。</li>
-<li>对于更复杂的共享需求（如多个共享文件夹、访问控制列表等），可以进一步编辑<code>/etc/samba/smb.conf</code>文件并添加相应的配置段。</li>
-</ol>
-<p>通过以上步骤，应该就可以在Ubuntu上成功配置Samba共享文件夹，并在Windows上访问它。在资源管理器中看到共享文件夹可以通过右键-&gt;映射到磁盘，这样以后在windows上就能够更方便的打开共享文件夹来</p>
-<h1 id="3-虚拟机网卡设置"><a href="#3-虚拟机网卡设置" class="headerlink" title="3 虚拟机网卡设置"></a>3 虚拟机网卡设置</h1><p>在使用以上的Source Insight+Samba的方案进行开发中，笔者经常会遇到一个问题就是虚拟机的ip会经常变化，这是因为在虚拟机中使用的是NAT模式，这样就会经常变化ip地址。需要修改其为自定义模式。</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>C/C++</tag>
-        <tag>IDE</tag>
       </tags>
   </entry>
   <entry>
@@ -3955,6 +3272,689 @@
       <tags>
         <tag>vscode</tag>
         <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vscode使用教程</title>
+    <url>/2023/11/01/20231101_vscodeTutorial/</url>
+    <content><![CDATA[<p>vscode是我目前使用最多的平台工具无论是在windows还是macOS，本博客总结我的使用的所有场景，以及简单的搭建过程</p>
+<ul>
+<li>vscode 概要介绍</li>
+<li>C&#x2F;C++ 编程、编译</li>
+<li>python 使用</li>
+<li>markdown 记录</li>
+<li>latex&amp;beamer的学术PPT制作</li>
+<li>git的使用</li>
+<li>SSH远程连接服务器</li>
+<li>博客园的扩展</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="1-vscode概要介绍"><a href="#1-vscode概要介绍" class="headerlink" title="1 vscode概要介绍"></a>1 vscode概要介绍</h1><p>首先是进行下载安装，官方地址为：<a href="https://code.visualstudio.com/">vscode下载</a>，找到对应版本下载安装。</p>
+<p>首先介绍一下vscode的界面和大概使用流程。</p>
+<p>打开vscode，界面如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808193654.png"></p>
+<p>其中1为资源管理器，2为查找，3为源代码管理（git），4为运行和调试，5为扩展。这左侧为统称为工具栏，后续在扩展中下载相应的扩展后，左侧会多出你选择的扩展，所以理论上你可以在vscode上干任何事，甚至你可以在上面编程。</p>
+<h2 id="1-1-设置系统语言"><a href="#1-1-设置系统语言" class="headerlink" title="1.1 设置系统语言"></a>1.1 设置系统语言</h2><p>第一步，你的界面默认应该是英文，你首先可以在工具栏中的扩展中搜索简体中文，安装后重启即可。</p>
+<h2 id="1-2-工作流程"><a href="#1-2-工作流程" class="headerlink" title="1.2 工作流程"></a>1.2 工作流程</h2><p>一般来说，我的工作流程是，如之前的图中所示，你可以在欢迎界面中点击打开文件夹，或者是克隆Git仓库，打开一个工作区进行摸鱼，以markdown为例子的话，如果你想要进行一些记录，你可以创建一个你的文件夹，这个文件夹可以是你git clone下来的，也可以是本地直接创建的，以本地创建为例：</p>
+<p>比如打开markdown文件夹，新建一个markdown.md文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808194144.png"></p>
+<p>此时界面如上图，可以看到大致分为三个部分，侧边栏，顶部栏和编辑区。然后进行工作即可。</p>
+<h1 id="2-C-C-编程、编译"><a href="#2-C-C-编程、编译" class="headerlink" title="2 C&#x2F;C++ 编程、编译"></a>2 C&#x2F;C++ 编程、编译</h1><p>这里可以看我的另外一篇博客：<a href="https://moburein.com/2023/08/22/20230822_VscodeDeployC++/">vscode配置C++环境</a>。</p>
+<p>这篇博客主要介绍了三个部分，如下：</p>
+<ul>
+<li>1 下载GCC编译器</li>
+<li>2 安装VSCODE的C&#x2F;C++扩展</li>
+<li>3 使用VSCODE进行运行和调试</li>
+</ul>
+<p>最终实现在vscode上流畅码代码和调试C++(包括断点、查看参数等)程序。</p>
+<h1 id="3-python-使用"><a href="#3-python-使用" class="headerlink" title="3 python 使用"></a>3 python 使用</h1><p>在vscode上使用python很容易，只需要在扩展中搜索python，下载重新加载vscode即可直接新建py文件进行python代码的编写了，只需要注意右下角python的版本，选择你想要的版本就可以了。</p>
+<p>这里也贴上我一些项目里或者学习的时候python的一些记录：<a href="https://moburein.com/2023/11/01/20231101_PythonSimpleTutorial/">python使用总结</a></p>
+<p>里面有介绍python的简要语法和编程思想、一些常用的库，包括机器学习常用的库，还有日志相关，还有简单爬虫等，可能会后续再更新。</p>
+<h1 id="4-markdown-记录"><a href="#4-markdown-记录" class="headerlink" title="4 markdown 记录"></a>4 markdown 记录</h1><p>这里可以看我的另外一篇博客：<a href="https://moburein.com/2023/08/09/20230808_markdownLanguage/">markdown的简单用法</a>。</p>
+<p>这篇博客主要介绍了三个部分，如下：</p>
+<ul>
+<li>1 Markdown简介</li>
+<li>2 Markdown编译器</li>
+<li>3 Markdown语法</li>
+</ul>
+<p>vscode能实现markdown的流畅的编写，一般使用都是左边代码，右边预览，并且在公式和语法比较熟悉之后，使用markdown的记录效率会很高，并且在转化方面优势很大，可以轻松转化为网页、或者PPT中的内容</p>
+<h1 id="5-latex-beamer的学术PPT制作"><a href="#5-latex-beamer的学术PPT制作" class="headerlink" title="5 latex&amp;beamer的学术PPT制作"></a>5 latex&amp;beamer的学术PPT制作</h1><p>这里可以看我的另外一篇博客：<a href="https://moburein.com/2023/10/30/20231030_BeamerTutorial/">Beamer简单教程</a>。</p>
+<p>这篇博客主要UESTC的模版，然后介绍了一下写PPT的一些基本语法，包括封面设置、目录以及子目录、新建页面、分点、插入图片、下标、公式、表格、分栏、分块等。</p>
+<p>通过beamer能够简单有效的将我们平时的积累以很快的速度转化为PPT，提升效率，并且风格也比较适合做学术或者部门内部的汇报。</p>
+<h1 id="6-git的使用"><a href="#6-git的使用" class="headerlink" title="6 git的使用"></a>6 git的使用</h1><p>git管理也是vscode的基础功能之一了，当该文件夹是git clone下来的，那么此时在工具栏上的源代码管理（git）就会提示，你目前的修改，你可以设置自动时间上传，但是也可以手动上传，也就是push。</p>
+<h2 id="6-1-github账户验证"><a href="#6-1-github账户验证" class="headerlink" title="6.1 github账户验证"></a>6.1 github账户验证</h2><p>首先你需要将你的电脑跟你的比如说github账户进行验证，流程如下：</p>
+<ol>
+<li><p>首先你先安装git，windows在git的官网安装就好了，如果是mac基本是自带git，如果没有git，也可以通过brew安装。</p>
+</li>
+<li><p>配置git账户，设置user.name和user.email，输入以下命令</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;account name&quot;     # 设置用户名</span><br><span class="line">git config --global user.email &quot;account email&quot;     # 设置邮箱地址</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>设置完毕之后，就可以生成SSH KEY了，输入以下命令</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C example@mail.com</span><br></pre></td></tr></table></figure>
+<p>这里输入你自己的邮箱即可  </p>
+<ol start="4">
+<li><p>然后输入以下两条命令查看并复制你的密钥</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">vim id_rsa.pub</span><br></pre></td></tr></table></figure></li>
+<li><p>将公钥id_rsa.pub中的内容添加到github，用户-&gt;settings-&gt;SSH and GPG keys 中的按键new SSH key，将id_rsa.pub中的内容复制进去即可</p>
+</li>
+<li><p>添加完成后，在终端输入<code>ssh -T git@github.com</code>进行验证，此时会让你输入刚刚在生成ssh密钥时输入的密码，输入后回车会看到欢迎的语句，此时说明配对成功。</p>
+</li>
+</ol>
+<p>这个流程中，你唯一需要注意的就是你的路径，其余都是傻瓜式操作。</p>
+<h2 id="6-2-流程展示"><a href="#6-2-流程展示" class="headerlink" title="6.2 流程展示"></a>6.2 流程展示</h2><p>假设你与github的某个仓库链接，也就是你git clone的某个仓库，一般来说的流程如下。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231101194733.png"></p>
+<p>此时就是有待处理的部分。此时点击git管理，界面应该与下图类似</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231101194855.png"></p>
+<p>首先将鼠标放在更改上会出现<code>+</code>号，此时点击加号，然后输入你的修改信息点击提交即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011950617.png"></p>
+<p>此时你的修改可能还并没有push到远程仓库，此时查看左下角的图标是否显示你还未push到云上，如下图。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011954845.png"></p>
+<p>点击之后会出现下图，点击确认后你就可以查看你的云端是否有修改了，一般来说这里就结束了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011954859.png"></p>
+<h1 id="7-SSH远程连接服务器"><a href="#7-SSH远程连接服务器" class="headerlink" title="7 SSH远程连接服务器"></a>7 SSH远程连接服务器</h1><p>在扩展中搜索remote，安装这个remote-ssh即可，这时工具栏上就会多出远程连接工具，点击远程连接工具</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012006995.png"></p>
+<p>界面如下，点击如下图中的加号</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012007311.png"></p>
+<p>这时会弹出ssh连接命令，此时输入你的需要连接的账号回车会提示你输入密码，此时输入密码即可进入你所要ssh连接的服务器中。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012008499.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012010522.png"></p>
+<p>还有一个进阶操作，你可以将你的公钥添加到服务器的authorized_keys文件中，这样你登录时就不再需要输入密码了。具体操作如下：</p>
+<ul>
+<li>将本地之前生成的<code>id_rsa.pub</code>中的内容全部复制，一般在.ssh文件夹中，可以通过vim打开复制后输入<code>:q</code>回车退出，</li>
+<li>然后再在服务器的.ssh文件夹中找到authorized_keys文件，使用vim工具打开，按i键进入插入编辑模式，复制刚刚的内容进去，保存退出<code>:wq</code>回车就完成了。</li>
+</ul>
+<h1 id="8-cnblogs博客园扩展"><a href="#8-cnblogs博客园扩展" class="headerlink" title="8 cnblogs博客园扩展"></a>8 cnblogs博客园扩展</h1><p>直接在扩展中搜索cnblogs就可以了，这个扩展主要是为了解决在cnblogs上写博客时的图片问题，这个官方插件提供了在博客园上使用的图床，安装后在markdown文件的右上角会出现多两个图标，主要使用上传剪切板图片这个功能，一般我们需要使用的时候都是直接剪切屏幕中的图片，这时复制后点击如下图的图标。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012019990.png"></p>
+<p>会出现以下界面，你可以选择本地图片或者是剪切图片，一般来说我是选择剪贴板图片，这样操作方便。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012020877.png"></p>
+<p>点击之后就会弹出连接，选择markdown连接直接复制到md文件中就可以了，完美解决新手用户没有图床的问题。我一般在学习的时候也会在博客园上写一些博客，这样能将更多有意思的东西放在自己的博客网站上。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>SSH</tag>
+        <tag>markdown</tag>
+        <tag>vscode</tag>
+        <tag>git</tag>
+        <tag>C/C++</tag>
+        <tag>python</tag>
+        <tag>github</tag>
+        <tag>cnblogs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日系胶片调色</title>
+    <url>/2023/12/04/20231204_LrFilmStyle/</url>
+    <content><![CDATA[<p>总结一下摄影中我比较喜欢的一种风格，使用lightroom进行仿日系胶片调色。</p>
+<p>总结重点：</p>
+<ul>
+<li>基础设置：提高曝光，让照片保持微微过曝的状态，提亮暗部，压一下高光</li>
+<li>仿胶片：所以使用曲线让暗部不是纯黑色，带一点灰色，让白点也降低，模拟胶片的感觉</li>
+<li>使用曲线恢复一些对比度，使用颜色曲线和颜色分级对照片进行颜色调整，一般有几个选择，选择让高光部分偏某某色，让暗部偏某某色，可以是黄色、青色、蓝色等等</li>
+<li>使用hsl、颜色分级将画面的一些杂色降低饱和度、亮度等</li>
+<li>根据情况添加暗角，可以适当降低一点清晰度，这样在拍摄人物时会有一种朦胧感</li>
+<li>添加一些颗粒，这样更有质感</li>
+</ul>
+<span id="more"></span>
+
+<p>我的总结主要是按照两步走，重点是要形成自己调色的方法论。</p>
+<p>第一步是分析原有照片的风格，调色的重点和主观感受，然后针对分析进行第二部的针对性调色，重要的不是参数，而是如何分析得到需要进行的操作。</p>
+<p>这篇博客是参考了b站up青山摄影的视频总结而成。</p>
+<h1 id="1-日系胶片风格"><a href="#1-日系胶片风格" class="headerlink" title="1 日系胶片风格"></a>1 日系胶片风格</h1><p>这里首先放上经典日系胶片风格照片：</p>
+<figure class="second">  
+  <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041934070.png"  width = "300" alt="原图">  
+  <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041923679.png"  width = "300" alt="调色后">  
+</figure>
+
+<p>首先进行分析可以得到如下结论：</p>
+<ul>
+<li>对比度不高</li>
+<li>轻微过曝</li>
+<li>胶片质感</li>
+<li>画面中间调偏青色</li>
+<li>肤色调整白皙并且带血色</li>
+<li>人物衣服的白色有一点朦胧感</li>
+</ul>
+<h1 id="2-实战调色"><a href="#2-实战调色" class="headerlink" title="2 实战调色"></a>2 实战调色</h1><h2 id="2-1-基础设置"><a href="#2-1-基础设置" class="headerlink" title="2.1 基础设置"></a>2.1 基础设置</h2><p>目的： 为了保证轻微过曝，并且将原片降低一点对比度模拟胶片感</p>
+<p>措施：</p>
+<ul>
+<li>提高曝光</li>
+<li>降低一点对比度</li>
+<li>增加一点饱和度</li>
+<li>降低一点鲜艳度</li>
+</ul>
+<h2 id="2-2-曲线"><a href="#2-2-曲线" class="headerlink" title="2.2 曲线"></a>2.2 曲线</h2><p>目的：将画面的中间调调整为青色，并且改变照片的影调，让照片有一种灰灰的感觉，模拟胶片，这一步是重点</p>
+<p>措施：</p>
+<ul>
+<li>分颜色调整，使得画面中间调偏青色，那么分别修改红绿蓝曲线，修改如下，<ul>
+<li>中间调蓝色和绿色提高，红色不变，这一步中间调就会变成青色</li>
+<li>高光三条曲线都提高，阴影曲线都降低，增加对比度</li>
+</ul>
+</li>
+</ul>
+<figure class="third">
+    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041954921.png"  width = "200" alt="红色曲线">  
+    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041952314.png"  width = "200" alt="绿色曲线">  
+    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041953288.png"  width = "200" alt="蓝色曲线">  
+</figure>
+
+<ul>
+<li>调整亮度曲线，将最左端，也就是黑点提高，这一步是让照片的黑点不是纯黑而是变成带一点点灰色，来模拟胶片的感觉。</li>
+</ul>
+<center>
+    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312041956807.png" width = "200" alt="亮度曲线">
+</center>
+
+<p>经过曲线和基础调整之后照片已经有了雏形，如下：</p>
+<center>
+<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204195528.png"  width = "300" alt="曲线调整后图片">  
+</center>
+
+<h2 id="2-3-进一步调整色调"><a href="#2-3-进一步调整色调" class="headerlink" title="2.3 进一步调整色调"></a>2.3 进一步调整色调</h2><p>调整完曲线之后，分析图片感觉还是有一点点过于亮，进一步调整明暗关系，将白色和高光调低，提升一点阴影，降低一点黑色色阶，这里是一个小trick，这样可以使得整体明亮的图片看起来对比度稍微高一点，得到所谓的通透的感觉。</p>
+<center>
+<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204202005.png"  width = "300">  
+</center>
+
+<p>偏好部分，同样有一个小trick，人物的白色衣服在日光下容易过曝，所以可以见底一些清晰度，让白色衣服有一种朦胧的感觉，不至于刺眼或者过于吸引眼球。同时增加一点饱和度，降低一点鲜艳度，使得图片的风格更加胶片的高宽容度感。</p>
+<center>
+<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042022428.png"  width = "300">  
+</center>
+
+<h2 id="2-4-HSL调色"><a href="#2-4-HSL调色" class="headerlink" title="2.4 HSL调色"></a>2.4 HSL调色</h2><p>进一步调整颜色，调整肤色——HSL调色中的橙色，以及调整背景中其他的颜色的饱和度</p>
+<figure class="third">
+    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042028231.png"  width = "220" alt="红色曲线">  
+    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042028800.png"  width = "220" alt="绿色曲线">  
+    <img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042027175.png"  width = "220" alt="蓝色曲线">  
+</figure>
+
+<ul>
+<li>调整饱和度和明亮度中的橙色是为了调整肤色，让肤色显的又白又有血色</li>
+<li>调整饱和度和明亮度的蓝色是为了不让背景中的蓝色喧兵夺主</li>
+<li>调整色相中的红色是为了使得人物的嘴唇颜色正常，偏红色</li>
+</ul>
+<h2 id="2-5-颜色校准"><a href="#2-5-颜色校准" class="headerlink" title="2.5 颜色校准"></a>2.5 颜色校准</h2><p>调整颜色校准使得照片整体偏黄一点，人物肤色正常一点，其实这一步我个人感觉意义不明，没啥大作用，就是使得整体照片偏黄偏品红一点。</p>
+<center>
+<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204203936.png"  width = "300">  
+</center>
+
+<h2 id="2-6-颜色分级"><a href="#2-6-颜色分级" class="headerlink" title="2.6 颜色分级"></a>2.6 颜色分级</h2><p>这一步很重要，这一步进一步调整了照片的明暗关系，将最后的影调调整到跟胶片很相似了。</p>
+<center>
+<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231204204334.png"  width = "300">  
+</center>
+
+<p>这里就主要调整阴影和高光了，我的理解是中间调在曲线部分已经调整，但是这样为什么不在中间色调一步完成呢。</p>
+<ul>
+<li>阴影部分向右调整，这样使得图片暗部进一步变灰，至于偏色就见仁见智，偏青色、黄色、蓝色、甚至红色都可以，实际中一般是偏青色，偏黄色就是复古</li>
+<li>高光向左移动，这样使得照片更有一种哑光的感觉，其实也就是将白色也带一点灰的感觉，偏色就同样根据审美来调整</li>
+</ul>
+<h2 id="2-7-暗角以及颗粒"><a href="#2-7-暗角以及颗粒" class="headerlink" title="2.7 暗角以及颗粒"></a>2.7 暗角以及颗粒</h2><p>增加一点暗角。数量就是暗角的程度，中点也就是暗角的区域，为0也就是以中心点为基准，羽化调整到100，这样使得暗角的过渡狠顺滑。</p>
+<p>然后增加一点数量的颗粒，大小可以调整小一点，粗糙度看个人审美。</p>
+<center>
+<img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312042050909.png"  width = "300">  
+</center>
+
+
+
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>摄影博客</category>
+      </categories>
+      <tags>
+        <tag>Lightroom</tag>
+        <tag>摄影</tag>
+        <tag>调色</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>拍摄一些好用的小工具——软件</title>
+    <url>/2023/12/18/20231218_PhotoApps/</url>
+    <content><![CDATA[<p>记录一些拍摄相关的软件或者小程序：</p>
+<ul>
+<li>添加画框小软件</li>
+<li>添加水印软件</li>
+<li>查看星体数据，比如太阳和月亮数据软件</li>
+<li>简易修图软件</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="1-画框小软件"><a href="#1-画框小软件" class="headerlink" title="1 画框小软件"></a>1 画框小软件</h1><p>壹印：一个开源的添加画框的软件，github地址为：<a href="https://github.com/ggchivalrous/yiyin%E3%80%82">https://github.com/ggchivalrous/yiyin。</a></p>
+<p>操作也非常简单，这里不再赘述，主要展示两种可以制作的效果</p>
+<ul>
+<li>圆角渐变颜色画框</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/test.jpg"></p>
+<ul>
+<li>经典白色底相框</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/yinxing.jpg"></p>
+<p>这个软件也有两个小缺憾，一是添加相机的信息处，并没有相机的logo，二是还有如果能够集成进添加水印就更好了。</p>
+<h1 id="2-水印软件"><a href="#2-水印软件" class="headerlink" title="2 水印软件"></a>2 水印软件</h1><p>目前直接使用的Lightroom自带的水印，这样的好处是比较方便，输出图片的时候，直接设置一下水印就好了，这样减少了调整图片的步骤，非常符合提升效率的原则，但是坏处就是选择比较少，并且会有水印的符号。</p>
+<h1 id="3-天气软件"><a href="#3-天气软件" class="headerlink" title="3 天气软件"></a>3 天气软件</h1><p>外拍时，对于天气要求很高，ios自带的天气软件就能看到很多关爱你的信息，比如</p>
+<ul>
+<li>能见度：能见度对于拍照影响很大，能见度很低的情况下，拍摄出来的照片都是灰蒙蒙的，对比度很低</li>
+<li>日升，日落：这一项最重要，尤其要注意日落的时间，抓住拍摄的黄金时间，也即日落前后的总计一小时时间，这一个小时的光线变化是最丰富的，从日落的温暖橘黄到日落后到BLUE HOUR，都是出片的绝佳时机，并且能够捕捉到冷暖对比。</li>
+<li>月亮：对于想要打月亮的时候很重要，选择每个月满月的时候，并且需要提前看好月亮的方位，选择好前景，架设三脚架等待月升</li>
+<li>气温、紫外线、晴雨等基本信息，注意防暑、防晒、防雨等等</li>
+</ul>
+<p>对于想要拍摄银河这些，可能需要更加专业的软件，或者一些微信小程序也有一些星象的相关信息。</p>
+<h1 id="4-修图软件"><a href="#4-修图软件" class="headerlink" title="4 修图软件"></a>4 修图软件</h1><p>醒图，一个手机修图软件。</p>
+<p>这里就不介绍LR和PS了，都是在电脑上使用的。醒图是我目前使用比较良好的一个手机app，免费的功能基本够用了，我一般的流程是在电脑的LR上调色完成之后，在醒图上对模特的面部做一些基本的调整就可以了，简单磨个皮，调整一下脸型就好了。</p>
+<p>如果你想整活，醒图的换表情的功能也很实用，能够改变模特的表情，实测还是比较够用的。对于清晰度不是很高的照片基本够用，清晰度高了的照片使用会有比较明显的割裂感。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>摄影博客</category>
+      </categories>
+      <tags>
+        <tag>摄影</tag>
+        <tag>软件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阴天or夜景街拍调色</title>
+    <url>/2023/12/25/20231225_NightStreetLrStyle/</url>
+    <content><![CDATA[<p>使用场景主要是阴天或者夜景这样光比比较小，需要凸显冷暖等的颜色的时候的调色。调色过程也比较简单。</p>
+<p>主要部分如下：</p>
+<ul>
+<li>基本</li>
+<li>色调曲线</li>
+<li>校准</li>
+<li>HSL</li>
+<li>效果<span id="more"></span></li>
+</ul>
+<h1 id="1-基本调整"><a href="#1-基本调整" class="headerlink" title="1 基本调整"></a>1 基本调整</h1><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202312251549960.png"  width = "300" >  
+
+<p>色温-5，色调-5；曝光度+0.8，对比度+10，高光-55，阴影+29，白色色阶+14，黑色色阶-14；清晰度+30，鲜艳度+50.</p>
+<ul>
+<li><p>首先调整色温和色调，色温可以根据不同照片进行调节，主要恢复一下照片原有的色温就可以了。</p>
+</li>
+<li><p>增加曝光度和对比度，因为小光比，阴天或者夜景的对比度会比较低，拉高一点。</p>
+</li>
+<li><p>降低高光、增加阴影、给一点宽容度，然后增加白色色阶、压暗黑色色阶，恢复一点对比度</p>
+</li>
+<li><p>在不是近景拍摄人物肖像的情况下，拉高一点清晰度，大概30，这样增加一下街拍质感</p>
+</li>
+<li><p>增加一下鲜艳度，让颜色鲜艳一点</p>
+</li>
+</ul>
+<h1 id="2-色调曲线"><a href="#2-色调曲线" class="headerlink" title="2 色调曲线"></a>2 色调曲线</h1><ul>
+<li><p>亮度曲线，暗部提高15-20左右，然后恢复中间调和暗调。</p>
+</li>
+<li><p>红色曲线打三个点，阴影拉低一点，为阴影加一点青色</p>
+</li>
+<li><p>绿色曲线打三个点，阴影拉低一点，为阴影加一点品红</p>
+</li>
+</ul>
+<p>总的效果就是给阴影带一点蓝色并且加上一点影调。</p>
+<h1 id="3-校准"><a href="#3-校准" class="headerlink" title="3 校准"></a>3 校准</h1><ul>
+<li>右右左：红原色向右48，饱和度增加20，绿原色向右48，蓝颜色向左20</li>
+</ul>
+<p>这样突出画面的暖色，减弱画面的冷色调，如果冷色调更多，则可以将蓝色饱和度降低一点。</p>
+<p>注意：这里如果想要青橙色调，操作就是吧蓝色向左多一点比如也试8，然后降低一点饱和度，否则饱和度会溢出。</p>
+<h1 id="4-HSL"><a href="#4-HSL" class="headerlink" title="4 HSL"></a>4 HSL</h1><p>这一步主要进一步调整冷暖</p>
+<ul>
+<li>色相：红色-50，黄色-20</li>
+<li>饱和度：橙色+24，黄色-20，蓝色-40</li>
+<li>明亮度：红色-36，黄色+16</li>
+</ul>
+<h1 id="5-效果"><a href="#5-效果" class="headerlink" title="5 效果"></a>5 效果</h1><ul>
+<li>暗角：数量-13，中点37，圆度+4，羽化+100</li>
+<li>颗粒：看感觉来</li>
+</ul>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>摄影博客</category>
+      </categories>
+      <tags>
+        <tag>Lightroom</tag>
+        <tag>摄影</tag>
+        <tag>调色</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VIM简单教程</title>
+    <url>/2024/10/04/20241004_VimTutorial/</url>
+    <content><![CDATA[<p>在Linux环境下难免会遇到使用VIM的情况，于是在这里进行一些总结</p>
+<p>本博客简要总结了一些使用VIM的使用技巧。</p>
+<span id="more"></span>
+
+<p>Vim是一款功能强大的文本编辑器，它提供了许多高效的编辑技巧和快捷键。</p>
+<p>首先是如何进行vim的界面，命令为<code>vim example.c</code>。其中example.c为当前路径下的文件，当然也可以对指定路径下的文件进行vim编辑。</p>
+<p>在进入vim编辑界面后，以下是一些使用Vim的详细技巧：</p>
+<h3 id="1-基本模式与切换"><a href="#1-基本模式与切换" class="headerlink" title="1 基本模式与切换"></a>1 基本模式与切换</h3><p>首先需要了解Vim的三种基本模式：普通模式（Normal mode）、插入模式（Insert mode）和命令模式（Command mode，也叫Ex模式）。</p>
+<ul>
+<li><strong>普通模式</strong>：启动Vim时默认进入的模式，可以进行光标移动、删除、复制、粘贴等操作。</li>
+<li><strong>插入模式</strong>：在普通模式下按<code>i</code>、<code>a</code>、<code>o</code>、<code>O</code>等键进入，用于输入文本。<ul>
+<li><code>i</code>：在当前光标位置前进入插入模式。</li>
+<li><code>a</code>：在当前光标位置后进入插入模式。</li>
+<li><code>o</code>：在当前行下新开一行并进入插入模式。</li>
+<li><code>O</code>：在当前行上新开一行并进入插入模式。</li>
+</ul>
+</li>
+<li><strong>命令模式</strong>：在普通模式下输入<code>:</code>进入，用于执行命令，如保存文件、退出Vim、替换文本等。</li>
+</ul>
+<p>从插入模式或命令模式返回普通模式，可以按下<code>Esc</code>键。</p>
+<h3 id="2-光标移动"><a href="#2-光标移动" class="headerlink" title="2 光标移动"></a>2 光标移动</h3><ul>
+<li><code>h</code>：左移一个字符。</li>
+<li><code>j</code>：下移一行。</li>
+<li><code>k</code>：上移一行。</li>
+<li><code>l</code>：右移一个字符。</li>
+<li><code>w</code>：移至下一个单词的开头。</li>
+<li><code>e</code>：移至当前单词的结尾。</li>
+<li><code>b</code>：移至当前单词的开头。</li>
+<li><code>gg</code>：移至文件开头。</li>
+<li><code>G</code>：移至文件末尾。</li>
+<li><code>(数字)G</code>：移至指定行号。</li>
+<li><code>^</code>：移动到行首第一个非空白字符（汉字空格不被视为空白字符）。</li>
+<li><code>0</code>：移动到行首第一个字符。</li>
+<li><code>$</code>：移动到行尾。</li>
+</ul>
+<h3 id="3-文本编辑"><a href="#3-文本编辑" class="headerlink" title="3 文本编辑"></a>3 文本编辑</h3><ul>
+<li><p><strong>删除</strong>：</p>
+<ul>
+<li><code>x</code>：删除当前光标所在位置的字符。</li>
+<li><code>X</code>：删除当前光标所在位置前一个字符。</li>
+<li><code>dd</code>：删除整行。</li>
+<li><code>ndd</code>：删除n行。</li>
+<li><code>dw</code>：删除一个单词。</li>
+<li><code>d3w</code>：删除三个单词。</li>
+<li><code>d$</code>：删除从当前光标到行尾的内容。</li>
+<li><code>D</code>：等同于<code>d$</code>，删除从当前光标到行尾的内容。</li>
+</ul>
+</li>
+<li><p><strong>复制与粘贴</strong>：</p>
+<ul>
+<li><code>yy</code>：复制当前行。</li>
+<li><code>nyy</code>：复制光标以下n-1行。</li>
+<li><code>p</code>：在当前光标位置粘贴文本。</li>
+<li><code>yw</code>：复制一个单词。</li>
+<li><code>ye</code>：复制从当前光标到单词结尾的内容。</li>
+<li><code>y$</code>：复制从当前光标到行尾的内容。</li>
+</ul>
+</li>
+<li><p><strong>撤销与重做</strong>：</p>
+<ul>
+<li><code>u</code>：撤销上一步操作。</li>
+<li><code>Ctrl+r</code>：重做上一步撤销的操作。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-页面滚动"><a href="#4-页面滚动" class="headerlink" title="4 页面滚动"></a>4 页面滚动</h3><ul>
+<li><code>Ctrl+f</code>：向前翻整页（forward）。</li>
+<li><code>Ctrl+b</code>：向后翻整页（backward）。</li>
+<li><code>Ctrl+d</code>：向下翻半页（down）。</li>
+<li><code>Ctrl+u</code>：向上翻半页（up）。</li>
+<li><code>Ctrl+e</code>：向上滚一行。</li>
+<li><code>Ctrl+y</code>：向下滚一行。</li>
+<li><code>Ctrl+B</code>：向后滚一页（与<code>Ctrl+b</code>不同，注意大小写）。</li>
+<li><code>Ctrl+F</code>：向前滚一页（与<code>Ctrl+f</code>不同，注意大小写）。</li>
+</ul>
+<h3 id="5-命令模式操作"><a href="#5-命令模式操作" class="headerlink" title="5 命令模式操作"></a>5 命令模式操作</h3><ul>
+<li><code>:w</code>：保存文件。</li>
+<li><code>:q</code>：退出Vim。</li>
+<li><code>:wq</code>：保存并退出Vim。</li>
+<li><code>:q!</code>：强制退出Vim。</li>
+<li><code>ZZ</code>：保存并退出，与<code>:wq</code>等效（注意是大写的Z）。</li>
+<li><code>:set number</code>：显示行号。</li>
+<li><code>:set nonumber</code>：隐藏行号。</li>
+<li><code>:syntax on</code>：开启语法高亮。</li>
+<li><code>:syntax off</code>：关闭语法高亮。</li>
+<li><code>:s/old/new/g</code>：替换当前行的第一个<code>old</code>为<code>new</code>。</li>
+<li><code>:s/old/new/gc</code>：替换当前行的第一个<code>old</code>为<code>new</code>，每次替换前询问。</li>
+<li><code>:%s/old/new/g</code>：替换整个文件的<code>old</code>为<code>new</code>。</li>
+<li><code>:args</code>：查看或设置参数列表中的文件。</li>
+<li><code>:argdo %s/old/new/g</code>：在参数列表中的每个文件里执行替换操作。</li>
+</ul>
+<h3 id="6-高级技巧"><a href="#6-高级技巧" class="headerlink" title="6 高级技巧"></a>6 高级技巧</h3><ul>
+<li><p><strong>可视化模式</strong>：按<code>v</code>进入可视化模式，可以选择文本块，然后进行复制、剪切、粘贴等操作。</p>
+</li>
+<li><p><strong>重复命令</strong>：<code>.</code>命令可以重复上一次修改命令。例如，如果上一次操作是删除一个单词，那么<code>.</code>将再次删除一个单词。</p>
+</li>
+<li><p><strong>查找与替换</strong>：</p>
+<ul>
+<li><code>/pattern</code>：从当前光标位置开始向下查找指定模式。</li>
+<li><code>?pattern</code>：从当前光标位置开始向上查找指定模式。</li>
+<li><code>n</code>：在查找模式下，切换到下一个匹配项。</li>
+<li><code>N</code>：在查找模式下，切换到上一个匹配项。</li>
+</ul>
+</li>
+<li><p><strong>多文件操作</strong>：</p>
+<ul>
+<li><code>:sp [filename]</code>：水平分割窗口并打开新文件或当前文件。</li>
+<li><code>:vsp [filename]</code>：垂直分割窗口并打开新文件或当前文件。</li>
+<li><code>Ctrl+w+h/j/k/l</code>：在分割的窗口间切换。</li>
+<li><code>:tabe [filename]</code>：在新的标签页中打开文件。</li>
+<li><code>:tabn</code>和<code>:tabp</code>：在标签页间切换。</li>
+</ul>
+</li>
+<li><p><strong>录制宏</strong>：</p>
+<ul>
+<li>使用<code>q</code>命令开始录制宏，然后执行一系列操作。</li>
+<li>录制完成后，再次按<code>q</code>结束录制。</li>
+<li>使用<code>@</code>命令加上宏的寄存器名称来执行录制的宏。</li>
+</ul>
+</li>
+<li><p><strong>插件使用</strong>：</p>
+<ul>
+<li>Vim支持各种插件，如NERDTree用于目录树管理，MiniBufExplorer用于buffer窗口管理，word_complete.vim用于自动补全等。</li>
+<li>插件的安装和配置通常需要在Vim的配置文件（如<code>.vimrc</code>）中进行。</li>
+</ul>
+</li>
+</ul>
+<p>以上是使用Vim的一些详细技巧，掌握这些技巧可以大大提高文本编辑的效率。不过，Vim的功能非常强大，还有更多高级功能和自定义设置等待我们去探索和学习。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>VIM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SourceInsight4+Samba教程</title>
+    <url>/2024/10/10/20241010_SourceInsight4WithSamba/</url>
+    <content><![CDATA[<p>由于工作需要经常在虚拟机中编译比较大型的C语言的项目，组内推荐使用SourceInsight配合Samba共享文件夹在windows端查看虚拟机ubuntu中的代码，于是进行简单的使用流程记录。</p>
+<p>分为以下几个部分介绍</p>
+<ul>
+<li>SourceInsight的优势、使用方式以及常用的操作</li>
+<li>如何配置Samba共享文件夹</li>
+<li>设置虚拟机的网卡以解决虚拟机的IP地址一直变化导致Samba文件夹失效的问题</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="1-SourceInsight"><a href="#1-SourceInsight" class="headerlink" title="1 SourceInsight"></a>1 SourceInsight</h1><p>SourceInsight是一个看似复古的IDE，但是在看一些大型的项目的时候会比较好用，尤其是查看一些函数的从属关系的reference的时候会很好用。</p>
+<p>这里可以参考这一篇博客讲解的很详细，这里就不再赘述一些界面介绍了，其中介绍的SourceInsight3.5，笔者用的SourceInsight4.0与他的界面和功能几乎没有差距，只是分辨率提升了。在3.5版本对于4k的分辨图标会不够清晰，看着不够好。</p>
+<p><a href="https://www.cnblogs.com/andy-songwei/p/9965714.html">博客园：【工利其器】必会工具之（一）Source Insight篇</a></p>
+<p>该博客主要介绍了SI的简介、创建项目、添加文件、以及其中的界面如何使用的详细介绍，很值得细读。</p>
+<p>笔者这里就再记录一些常用的快捷操作，还有对于SourceInsight的一些稍微进阶的设置。</p>
+<h2 id="1-1-快捷键记录"><a href="#1-1-快捷键记录" class="headerlink" title="1.1 快捷键记录"></a>1.1 快捷键记录</h2><table>
+<thead>
+<tr>
+<th align="left">快捷键</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>SHIFT+F8</code></td>
+<td align="left">高亮选中的单词(不包括注释中的单词)</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+G</code>或<code>F5</code></td>
+<td align="left">跳到指定行</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+鼠标左键</code></td>
+<td align="left">直接跳转至标识定义处调用处</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+F</code></td>
+<td align="left">本文件内查找</td>
+</tr>
+<tr>
+<td align="left"><code>F3</code></td>
+<td align="left">本文件查找结果的上一个</td>
+</tr>
+<tr>
+<td align="left"><code>F4</code></td>
+<td align="left">本文件查找结果的下一个</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+M</code></td>
+<td align="left">创建或查找书签，方便下次找回此位置</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+O</code></td>
+<td align="left">搜索文件，找到回车打开，找不到ESC退出</td>
+</tr>
+<tr>
+<td align="left"><code>ALT</code> + <code>,</code></td>
+<td align="left">后退</td>
+</tr>
+<tr>
+<td align="left"><code>ALT</code> + <code>.</code></td>
+<td align="left">前进</td>
+</tr>
+<tr>
+<td align="left"><code>ALT + F12</code></td>
+<td align="left">可以切换，让字符宽度变得一致，或者是大小不同地显示</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+G</code>或者<code>F7</code></td>
+<td align="left">打开Symbol Window</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+&#39;</code></td>
+<td align="left">智能重命名</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+G</code></td>
+<td align="left">打开Symbol Window</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+G</code></td>
+<td align="left">打开Symbol Window</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+G</code></td>
+<td align="left">打开Symbol Window</td>
+</tr>
+<tr>
+<td align="left"><code>CTRL+G</code></td>
+<td align="left">打开Symbol Window</td>
+</tr>
+</tbody></table>
+<h2 id="1-2-SourceInsight进阶设置"><a href="#1-2-SourceInsight进阶设置" class="headerlink" title="1.2 SourceInsight进阶设置"></a>1.2 SourceInsight进阶设置</h2><ol>
+<li>让{ 和 } 不缩进</li>
+</ol>
+<p>Options -&gt; Document Options -&gt; Auto Indenting -&gt; Auto Indent Type 选 Simple。</p>
+<p>还有：让{ 和 } 不缩进： options-&gt;document options-&gt;auto indent 去掉indent Open Brace和Indent Close Brace。 （不好使，括号无法配对对齐！）</p>
+<ol start="2">
+<li>添加文件类型</li>
+</ol>
+<p>用户可以定义自己的类型，Options-&gt;Document Options-&gt;add type，定义文件类型名以及文件名后缀。</p>
+<p>勾选include when adding to projects在添加目录下文件到工程是该类文件就会添加进SI的工程。</p>
+<p>如果需要将所有文件添加进SI的工程，可以定义一种文件类型*.*。</p>
+<ol start="3">
+<li>恢复ctrl+a的全选功能</li>
+</ol>
+<p>Options -&gt; Key Assignments：通过关键词save 找到save all，更改为ctrl+shift+a，通过关键词select找到select all，更改为ctrl +a。</p>
+<ol start="4">
+<li>设置背景色</li>
+</ol>
+<p>Options-&gt;preference-&gt;color-&gt;windows background设置背景色（护眼色：85，90，205）。</p>
+<ol start="5">
+<li>解决TAB键缩进问题</li>
+</ol>
+<p>Options-&gt; Document Options里面的右下角Editing Options栏里，把Expand tabs勾起来，然后确定。OK，现在TAB键的缩进和四个空格的缩进在SIS里面看起来就对齐。</p>
+<p>Linux下TAB是8个空格长度，这样设置可以让TAB和4个空格保持一致！）</p>
+<h1 id="2-Samba共享文件夹设置"><a href="#2-Samba共享文件夹设置" class="headerlink" title="2 Samba共享文件夹设置"></a>2 Samba共享文件夹设置</h1><p>虽然SourceInsight很好用，但是在很多项目都在虚拟机里面编译，这时候该如何看到其中的代码呢。此时就可以设置Samba共享文件夹来在windows上打开虚拟机Linux下的共享文件。</p>
+<p>以下是在Ubuntu上配置Samba共享文件夹给Windows使用的详细配置教程：</p>
+<h2 id="2-1-前提条件"><a href="#2-1-前提条件" class="headerlink" title="2.1 前提条件"></a>2.1 前提条件</h2><ol>
+<li>确保Ubuntu和Windows在同一局域网内，或者通过网线直接连接。</li>
+<li>Ubuntu系统已安装并更新到最新版本。</li>
+</ol>
+<h2 id="2-2-安装Samba"><a href="#2-2-安装Samba" class="headerlink" title="2.2 安装Samba"></a>2.2 安装Samba</h2><ol>
+<li>打开Ubuntu的终端。</li>
+<li>更新软件包列表：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>安装Samba及其相关组件：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install samba samba-common -y</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-3-配置Samba"><a href="#2-3-配置Samba" class="headerlink" title="2.3 配置Samba"></a>2.3 配置Samba</h2><ol>
+<li>创建或选择一个要共享的文件夹，并设置其权限。例如，假设要共享的文件夹路径为<code>/home/ubuntu/shared</code>，则设置权限为：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">chmod</span> 777 /home/ubuntu/shared</span><br></pre></td></tr></table></figure>
+
+<p>或者，使用更安全的权限设置，仅允许特定用户读写：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">chown</span> your_username:your_groupname /home/ubuntu/shared</span><br><span class="line">sudo <span class="built_in">chmod</span> 770 /home/ubuntu/shared</span><br></pre></td></tr></table></figure>
+
+<p>其中，<code>your_username</code>和<code>your_groupname</code>分别替换为你的Ubuntu用户名和组名。</p>
+<ol start="2">
+<li>添加一个Samba用户（如果需要的话）。如果已有一个Ubuntu用户，可以直接为其设置Samba密码：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo smbpasswd -a your_username</span><br></pre></td></tr></table></figure>
+
+<p>按照提示输入并确认Samba密码。</p>
+<ol start="3">
+<li>编辑Samba配置文件<code>/etc/samba/smb.conf</code>。在文件末尾添加一个新的共享配置段，例如：</li>
+</ol>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[shared]</span></span><br><span class="line"><span class="attr">path</span> = /home/ubuntu/shared</span><br><span class="line"><span class="attr">browseable</span> = <span class="literal">yes</span></span><br><span class="line"><span class="attr">public</span> = <span class="literal">yes</span></span><br><span class="line"><span class="attr">writable</span> = <span class="literal">yes</span></span><br><span class="line"><span class="attr">available</span> = <span class="literal">yes</span></span><br></pre></td></tr></table></figure>
+
+<p>如果希望限制访问权限，可以添加<code>valid users</code>选项并指定Samba用户名：</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[shared]</span></span><br><span class="line"><span class="attr">path</span> = /home/ubuntu/shared</span><br><span class="line"><span class="attr">browseable</span> = <span class="literal">yes</span></span><br><span class="line">valid <span class="attr">users</span> = your_username</span><br><span class="line"><span class="attr">writable</span> = <span class="literal">yes</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>保存并关闭配置文件。</li>
+</ol>
+<h2 id="2-4-重启Samba服务"><a href="#2-4-重启Samba服务" class="headerlink" title="2.4 重启Samba服务"></a>2.4 重启Samba服务</h2><ol>
+<li>重启Samba服务以使配置生效：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl restart smbd</span><br><span class="line">sudo systemctl restart nmbd</span><br></pre></td></tr></table></figure>
+
+<p>或者，使用旧的服务管理命令（在某些Ubuntu版本中可能仍有效）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo service smbd restart</span><br><span class="line">sudo service nmbd restart</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-5-在Windows上访问共享文件夹"><a href="#2-5-在Windows上访问共享文件夹" class="headerlink" title="2.5 在Windows上访问共享文件夹"></a>2.5 在Windows上访问共享文件夹</h2><ol>
+<li>打开Windows资源管理器（文件资源管理器）。</li>
+<li>在地址栏中输入Ubuntu的IP地址和共享文件夹名称，格式为：<code>\\ubuntu_ip_address\shared</code>。例如，如果Ubuntu的IP地址是<code>192.168.1.100</code>，则输入：<code>\\192.168.1.100\shared</code>。</li>
+<li>如果设置了Samba用户和密码，将提示输入这些凭据以访问共享文件夹。</li>
+</ol>
+<h2 id="2-6-获取Ubuntu的IP地址"><a href="#2-6-获取Ubuntu的IP地址" class="headerlink" title="2.6 获取Ubuntu的IP地址"></a>2.6 获取Ubuntu的IP地址</h2><p>在Ubuntu终端中输入以下命令以获取IP地址：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
+
+<p>查找与网络连接相对应的条目（例如<code>eth0</code>、<code>wlan0</code>等），并找到<code>inet</code>后面的IP地址，比如为192.168.1.100。</p>
+<p><strong>注意事项</strong></p>
+<ol>
+<li>确保防火墙设置允许Samba通信（通常使用TCP端口137、138、139和445）。</li>
+<li>如果在Windows上遇到访问问题，请检查Samba配置文件中的权限设置和共享名称是否正确。</li>
+<li>对于更复杂的共享需求（如多个共享文件夹、访问控制列表等），可以进一步编辑<code>/etc/samba/smb.conf</code>文件并添加相应的配置段。</li>
+</ol>
+<p>通过以上步骤，应该就可以在Ubuntu上成功配置Samba共享文件夹，并在Windows上访问它。在资源管理器中看到共享文件夹可以通过右键-&gt;映射到磁盘，这样以后在windows上就能够更方便的打开共享文件夹来</p>
+<h1 id="3-虚拟机网卡设置"><a href="#3-虚拟机网卡设置" class="headerlink" title="3 虚拟机网卡设置"></a>3 虚拟机网卡设置</h1><p>在使用以上的Source Insight+Samba的方案进行开发中，笔者经常会遇到一个问题就是虚拟机的ip会经常变化，这是因为在虚拟机中使用的是NAT模式，这样就会经常变化ip地址。需要修改其为自定义模式。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>C/C++</tag>
+        <tag>IDE</tag>
       </tags>
   </entry>
 </search>
