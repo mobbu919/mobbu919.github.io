@@ -1884,6 +1884,205 @@
       </tags>
   </entry>
   <entry>
+    <title>Linux的操作记录</title>
+    <url>/2023/10/09/20231009_TipsOnLinux/</url>
+    <content><![CDATA[<p>记录一些Linux的操作</p>
+<ul>
+<li>挂载NTFS移动硬盘</li>
+<li>后台运行python程序</li>
+<li>压缩和解压</li>
+<li>查看系统状态</li>
+<li>常用快捷键</li>
+<li>vim</li>
+<li>文件和目录相关</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="1-挂载NTFS移动硬盘"><a href="#1-挂载NTFS移动硬盘" class="headerlink" title="1 挂载NTFS移动硬盘"></a>1 挂载NTFS移动硬盘</h1><ol>
+<li><p>在&#x2F;media下创建挂载的文件夹，比如创建disk</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir disk</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看硬盘的路径，输入以下命令，会显示目前的所有硬盘资源，这时根据你硬盘的容量查找到对应的路径</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsblk</span><br></pre></td></tr></table></figure>
+<p>比如，我这里的路径是sda1</p>
+</li>
+<li><p>使用mount命令进行挂载，这里需要sudo</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo mount /dev/sda1 /media/disk</span><br></pre></td></tr></table></figure>
+<p>此时打开disk就可以看到硬盘中的文件了</p>
+</li>
+<li><p>使用完毕后取消挂载，再拔掉硬盘</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo umount /dev/sda1</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="2-后台运行python程序"><a href="#2-后台运行python程序" class="headerlink" title="2 后台运行python程序"></a>2 后台运行python程序</h1><p>如果想保证一直后台运行程序，可以使用nohup</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nohup python test.py &amp;   # 挂后台运行</span><br><span class="line">tail -f nohup.out  # 动态显示输出的日志 </span><br></pre></td></tr></table></figure>
+
+<p>想要退出的话直接kill掉运行的进程就好了</p>
+<h1 id="3-压缩和解压"><a href="#3-压缩和解压" class="headerlink" title="3 压缩和解压"></a>3 压缩和解压</h1><p>最常使用就这句<code>tar -zxvf test.tar.gz -C /tmp    #解压缩到指定位置</code></p>
+<p>详细的一些命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">zip [选项] 压缩包名 源文件或源目录</span><br><span class="line">unzip -d /tmp/ test.zip # -d：指定解压缩位置/tmp</span><br><span class="line">gzip -r test #将test目录下的文件分别压缩打包</span><br><span class="line">gunzip install.log.gz # 解压</span><br><span class="line">tar -cvf test.cfg.tar test.cfg # -c为打包，-f为指定压缩包的文件名，-v为显示打包过程</span><br></pre></td></tr></table></figure>
+
+<p>我们更经常遇到的是tar和gz一起出现，因为tar用来打包，gz用来压缩</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -zcvf test.tar.gz test/     #压缩</span><br><span class="line">tar -ztvf test.tar.gz           #只查看，不解压</span><br><span class="line">tar -zxvf test.tar.gz -C /tmp    #解压缩到指定位置</span><br><span class="line">tar -zxvf test.tar.gz -C /tmp test/cde #只解压压缩包中的特定文件，到指定位置</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="4-查看系统状态"><a href="#4-查看系统状态" class="headerlink" title="4 查看系统状态"></a>4 查看系统状态</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ps -a  # 查看所有用户的所有进程</span><br><span class="line">ps -au # 按用户名和启动时间的顺序来显示进程</span><br><span class="line">kill -9 pid # 强制杀死进程号为pid的进程</span><br><span class="line">du -h # 查看置顶目录以及子目录下使用的磁盘空间</span><br><span class="line">df -h # 显示文件系统磁盘空间的使用情况</span><br><span class="line">free  # 显示当前内存和交换空间的使用情况</span><br><span class="line">nvidia-smi # 显示显卡情况</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-常用快捷键"><a href="#5-常用快捷键" class="headerlink" title="5 常用快捷键"></a>5 常用快捷键</h1><table>
+<thead>
+<tr>
+<th align="center">快捷键</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>CTRL+C</code></td>
+<td align="center">退出当前进程</td>
+</tr>
+<tr>
+<td align="center"><code>CTRL+L</code></td>
+<td align="center">清除命令行中显示内容</td>
+</tr>
+<tr>
+<td align="center"><code>CTRL+Q</code></td>
+<td align="center">退出</td>
+</tr>
+<tr>
+<td align="center"><code>TAB</code></td>
+<td align="center">自动补全</td>
+</tr>
+</tbody></table>
+<h1 id="6-vim"><a href="#6-vim" class="headerlink" title="6 vim"></a>6 vim</h1><h2 id="6-1-修改文本"><a href="#6-1-修改文本" class="headerlink" title="6.1 修改文本"></a>6.1 修改文本</h2><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">i</td>
+<td align="left">在光标前插入</td>
+</tr>
+<tr>
+<td align="center">I</td>
+<td align="left">在光标当前行开始插入</td>
+</tr>
+<tr>
+<td align="center">a</td>
+<td align="left">在光标后插入</td>
+</tr>
+<tr>
+<td align="center">A</td>
+<td align="left">在光标当前行末尾插入</td>
+</tr>
+<tr>
+<td align="center">o</td>
+<td align="left">在光标当前行的下一行插入新行</td>
+</tr>
+<tr>
+<td align="center">O</td>
+<td align="left">在光标当前行的上一行插入新行</td>
+</tr>
+<tr>
+<td align="center">:wq</td>
+<td align="left">保存并退出</td>
+</tr>
+</tbody></table>
+<h2 id="6-2-定位命令"><a href="#6-2-定位命令" class="headerlink" title="6.2 定位命令"></a>6.2 定位命令</h2><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">:set nu</td>
+<td align="left">显示行号</td>
+</tr>
+<tr>
+<td align="center">:set nonu</td>
+<td align="left">取消行号</td>
+</tr>
+<tr>
+<td align="center">gg</td>
+<td align="left">跳到首行</td>
+</tr>
+<tr>
+<td align="center">G</td>
+<td align="left">跳到末行</td>
+</tr>
+<tr>
+<td align="center">:n</td>
+<td align="left">跳到第n行</td>
+</tr>
+</tbody></table>
+<h2 id="6-3-替换和取消命令"><a href="#6-3-替换和取消命令" class="headerlink" title="6.3 替换和取消命令"></a>6.3 替换和取消命令</h2><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">u</td>
+<td align="left">undo，取消上一步操作</td>
+</tr>
+<tr>
+<td align="center">Ctrl + r</td>
+<td align="left">redo，返回到undo之前</td>
+</tr>
+<tr>
+<td align="center">r</td>
+<td align="left">替换光标所在处的字符</td>
+</tr>
+<tr>
+<td align="center">R</td>
+<td align="left">从光标所在处开始替换，按Esc键结束</td>
+</tr>
+</tbody></table>
+<h2 id="6-4-删除命令"><a href="#6-4-删除命令" class="headerlink" title="6.4 删除命令"></a>6.4 删除命令</h2><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">x</td>
+<td align="left">删除光标所在处字符</td>
+</tr>
+<tr>
+<td align="center">nx</td>
+<td align="left">删除光标所在处后的n个字符</td>
+</tr>
+<tr>
+<td align="center">dd</td>
+<td align="left">删除光标所在行。ndd删除n行</td>
+</tr>
+<tr>
+<td align="center">dG</td>
+<td align="left">删除光标所在行到末尾行的所以内容</td>
+</tr>
+<tr>
+<td align="center">D</td>
+<td align="left">删除光标所在处到行尾的内容</td>
+</tr>
+<tr>
+<td align="center">:5,7d</td>
+<td align="left">删除指定范围的行</td>
+</tr>
+</tbody></table>
+<h1 id="7-文件和目录相关"><a href="#7-文件和目录相关" class="headerlink" title="7 文件和目录相关"></a>7 文件和目录相关</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pwd # 显示当前工作目录目录</span><br><span class="line">touch test.txt # 新建空白文档</span><br><span class="line">mkdir testdir  # 建立空白目录</span><br><span class="line">cp              # 复制</span><br><span class="line">mv dir1 dir2    # 移动文件或目录、文件或目录改名</span><br><span class="line">rm -rf dir1     # r同时删除dir1下的所有文件,f强制删除文件或目录</span><br><span class="line">rmdir dir1      # 删除空目录</span><br><span class="line">cat 1.txt       # 显示文本文件内容</span><br><span class="line">head -[num] 1.txt    # 显示前十行（或者指定前num）内容</span><br><span class="line">tail [-f] [-num]     # 显示后十行，f为滚动显示，num为指定数字</span><br><span class="line">wc 1.txt        # 统计文本的行数、字数、字符数</span><br><span class="line">grep aaa 1.txt       # 在1.txt中查找包含aaa的所有行</span><br></pre></td></tr></table></figure>
+
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>多模态视频片段定位论文阅读</title>
     <url>/2023/10/07/20231007_paperRead/</url>
     <content><![CDATA[<p>最近在研究多模态视频片段定位方向，在此博客记录一下论文的阅读和我在阅读中的一些个人的理解和想法，之前已经阅读了大部分了，只是因为秋招的原因耽搁了很久，近两年的论文也拉下了。</p>
@@ -2220,205 +2419,6 @@
         <tag>多模态</tag>
         <tag>深度学习</tag>
         <tag>论文阅读</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux的操作记录</title>
-    <url>/2023/10/09/20231009_TipsOnLinux/</url>
-    <content><![CDATA[<p>记录一些Linux的操作</p>
-<ul>
-<li>挂载NTFS移动硬盘</li>
-<li>后台运行python程序</li>
-<li>压缩和解压</li>
-<li>查看系统状态</li>
-<li>常用快捷键</li>
-<li>vim</li>
-<li>文件和目录相关</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="1-挂载NTFS移动硬盘"><a href="#1-挂载NTFS移动硬盘" class="headerlink" title="1 挂载NTFS移动硬盘"></a>1 挂载NTFS移动硬盘</h1><ol>
-<li><p>在&#x2F;media下创建挂载的文件夹，比如创建disk</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir disk</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看硬盘的路径，输入以下命令，会显示目前的所有硬盘资源，这时根据你硬盘的容量查找到对应的路径</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsblk</span><br></pre></td></tr></table></figure>
-<p>比如，我这里的路径是sda1</p>
-</li>
-<li><p>使用mount命令进行挂载，这里需要sudo</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo mount /dev/sda1 /media/disk</span><br></pre></td></tr></table></figure>
-<p>此时打开disk就可以看到硬盘中的文件了</p>
-</li>
-<li><p>使用完毕后取消挂载，再拔掉硬盘</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo umount /dev/sda1</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h1 id="2-后台运行python程序"><a href="#2-后台运行python程序" class="headerlink" title="2 后台运行python程序"></a>2 后台运行python程序</h1><p>如果想保证一直后台运行程序，可以使用nohup</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nohup python test.py &amp;   # 挂后台运行</span><br><span class="line">tail -f nohup.out  # 动态显示输出的日志 </span><br></pre></td></tr></table></figure>
-
-<p>想要退出的话直接kill掉运行的进程就好了</p>
-<h1 id="3-压缩和解压"><a href="#3-压缩和解压" class="headerlink" title="3 压缩和解压"></a>3 压缩和解压</h1><p>最常使用就这句<code>tar -zxvf test.tar.gz -C /tmp    #解压缩到指定位置</code></p>
-<p>详细的一些命令如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">zip [选项] 压缩包名 源文件或源目录</span><br><span class="line">unzip -d /tmp/ test.zip # -d：指定解压缩位置/tmp</span><br><span class="line">gzip -r test #将test目录下的文件分别压缩打包</span><br><span class="line">gunzip install.log.gz # 解压</span><br><span class="line">tar -cvf test.cfg.tar test.cfg # -c为打包，-f为指定压缩包的文件名，-v为显示打包过程</span><br></pre></td></tr></table></figure>
-
-<p>我们更经常遇到的是tar和gz一起出现，因为tar用来打包，gz用来压缩</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -zcvf test.tar.gz test/     #压缩</span><br><span class="line">tar -ztvf test.tar.gz           #只查看，不解压</span><br><span class="line">tar -zxvf test.tar.gz -C /tmp    #解压缩到指定位置</span><br><span class="line">tar -zxvf test.tar.gz -C /tmp test/cde #只解压压缩包中的特定文件，到指定位置</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="4-查看系统状态"><a href="#4-查看系统状态" class="headerlink" title="4 查看系统状态"></a>4 查看系统状态</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ps -a  # 查看所有用户的所有进程</span><br><span class="line">ps -au # 按用户名和启动时间的顺序来显示进程</span><br><span class="line">kill -9 pid # 强制杀死进程号为pid的进程</span><br><span class="line">du -h # 查看置顶目录以及子目录下使用的磁盘空间</span><br><span class="line">df -h # 显示文件系统磁盘空间的使用情况</span><br><span class="line">free  # 显示当前内存和交换空间的使用情况</span><br><span class="line">nvidia-smi # 显示显卡情况</span><br></pre></td></tr></table></figure>
-
-<h1 id="5-常用快捷键"><a href="#5-常用快捷键" class="headerlink" title="5 常用快捷键"></a>5 常用快捷键</h1><table>
-<thead>
-<tr>
-<th align="center">快捷键</th>
-<th align="center">作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>CTRL+C</code></td>
-<td align="center">退出当前进程</td>
-</tr>
-<tr>
-<td align="center"><code>CTRL+L</code></td>
-<td align="center">清除命令行中显示内容</td>
-</tr>
-<tr>
-<td align="center"><code>CTRL+Q</code></td>
-<td align="center">退出</td>
-</tr>
-<tr>
-<td align="center"><code>TAB</code></td>
-<td align="center">自动补全</td>
-</tr>
-</tbody></table>
-<h1 id="6-vim"><a href="#6-vim" class="headerlink" title="6 vim"></a>6 vim</h1><h2 id="6-1-修改文本"><a href="#6-1-修改文本" class="headerlink" title="6.1 修改文本"></a>6.1 修改文本</h2><table>
-<thead>
-<tr>
-<th align="center">命令</th>
-<th align="left">作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">i</td>
-<td align="left">在光标前插入</td>
-</tr>
-<tr>
-<td align="center">I</td>
-<td align="left">在光标当前行开始插入</td>
-</tr>
-<tr>
-<td align="center">a</td>
-<td align="left">在光标后插入</td>
-</tr>
-<tr>
-<td align="center">A</td>
-<td align="left">在光标当前行末尾插入</td>
-</tr>
-<tr>
-<td align="center">o</td>
-<td align="left">在光标当前行的下一行插入新行</td>
-</tr>
-<tr>
-<td align="center">O</td>
-<td align="left">在光标当前行的上一行插入新行</td>
-</tr>
-<tr>
-<td align="center">:wq</td>
-<td align="left">保存并退出</td>
-</tr>
-</tbody></table>
-<h2 id="6-2-定位命令"><a href="#6-2-定位命令" class="headerlink" title="6.2 定位命令"></a>6.2 定位命令</h2><table>
-<thead>
-<tr>
-<th align="center">命令</th>
-<th align="left">作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">:set nu</td>
-<td align="left">显示行号</td>
-</tr>
-<tr>
-<td align="center">:set nonu</td>
-<td align="left">取消行号</td>
-</tr>
-<tr>
-<td align="center">gg</td>
-<td align="left">跳到首行</td>
-</tr>
-<tr>
-<td align="center">G</td>
-<td align="left">跳到末行</td>
-</tr>
-<tr>
-<td align="center">:n</td>
-<td align="left">跳到第n行</td>
-</tr>
-</tbody></table>
-<h2 id="6-3-替换和取消命令"><a href="#6-3-替换和取消命令" class="headerlink" title="6.3 替换和取消命令"></a>6.3 替换和取消命令</h2><table>
-<thead>
-<tr>
-<th align="center">命令</th>
-<th align="left">作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">u</td>
-<td align="left">undo，取消上一步操作</td>
-</tr>
-<tr>
-<td align="center">Ctrl + r</td>
-<td align="left">redo，返回到undo之前</td>
-</tr>
-<tr>
-<td align="center">r</td>
-<td align="left">替换光标所在处的字符</td>
-</tr>
-<tr>
-<td align="center">R</td>
-<td align="left">从光标所在处开始替换，按Esc键结束</td>
-</tr>
-</tbody></table>
-<h2 id="6-4-删除命令"><a href="#6-4-删除命令" class="headerlink" title="6.4 删除命令"></a>6.4 删除命令</h2><table>
-<thead>
-<tr>
-<th align="center">命令</th>
-<th align="left">作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">x</td>
-<td align="left">删除光标所在处字符</td>
-</tr>
-<tr>
-<td align="center">nx</td>
-<td align="left">删除光标所在处后的n个字符</td>
-</tr>
-<tr>
-<td align="center">dd</td>
-<td align="left">删除光标所在行。ndd删除n行</td>
-</tr>
-<tr>
-<td align="center">dG</td>
-<td align="left">删除光标所在行到末尾行的所以内容</td>
-</tr>
-<tr>
-<td align="center">D</td>
-<td align="left">删除光标所在处到行尾的内容</td>
-</tr>
-<tr>
-<td align="center">:5,7d</td>
-<td align="left">删除指定范围的行</td>
-</tr>
-</tbody></table>
-<h1 id="7-文件和目录相关"><a href="#7-文件和目录相关" class="headerlink" title="7 文件和目录相关"></a>7 文件和目录相关</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pwd # 显示当前工作目录目录</span><br><span class="line">touch test.txt # 新建空白文档</span><br><span class="line">mkdir testdir  # 建立空白目录</span><br><span class="line">cp              # 复制</span><br><span class="line">mv dir1 dir2    # 移动文件或目录、文件或目录改名</span><br><span class="line">rm -rf dir1     # r同时删除dir1下的所有文件,f强制删除文件或目录</span><br><span class="line">rmdir dir1      # 删除空目录</span><br><span class="line">cat 1.txt       # 显示文本文件内容</span><br><span class="line">head -[num] 1.txt    # 显示前十行（或者指定前num）内容</span><br><span class="line">tail [-f] [-num]     # 显示后十行，f为滚动显示，num为指定数字</span><br><span class="line">wc 1.txt        # 统计文本的行数、字数、字符数</span><br><span class="line">grep aaa 1.txt       # 在1.txt中查找包含aaa的所有行</span><br></pre></td></tr></table></figure>
-
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
