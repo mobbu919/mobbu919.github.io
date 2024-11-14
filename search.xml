@@ -85,215 +85,6 @@
       </tags>
   </entry>
   <entry>
-    <title>markdown的简单用法</title>
-    <url>/2023/08/09/20230808_markdownLanguage/</url>
-    <content><![CDATA[<p>如果需要经常记录一些东西，那么markdown就是一个绕不开的东西，而习惯用markdown也会养成记录的习惯，本文主要从四个方面介绍markdown的简单用法，分别是1.markdown简介，2.markdown编译器，3.markdown语法。</p>
-<p>当你经常用markdown记录时也会有一个烦恼就是如何实现多设备同步查看记录的文件呢，这时你可以选择在一些博客网站创建自己的账号，比如CSDN，博客园等，又或者直接建立一个属于你自己的博客网站了，这里可以看博主的另一篇博客<a href="https://mobbu.space/2023/08/09/20230803_blogWebsite/">如何建立自己的博客网站</a>里面很详细的介绍了如何搭建自己的博客网站。</p>
-<span id="more"></span>
-
-<p>markdown官方中文网站就有在线编辑器和一些基础用法，可以在这里尝试markdown，<a href="https://markdown.com.cn/">markdown官方网站</a></p>
-<h1 id="1-Markdown简介"><a href="#1-Markdown简介" class="headerlink" title="1 Markdown简介"></a>1 Markdown简介</h1><p>Markdown 是一种轻量级的标记语言，可用于在纯文本文档中添加格式化元素。Markdown 由 John Gruber 于 2004 年创建，如今已成为世界上最受欢迎的标记语言之一。</p>
-<h2 id="1-1-Markdown特点"><a href="#1-1-Markdown特点" class="headerlink" title="1.1 Markdown特点"></a>1.1 Markdown特点</h2><ol>
-<li>专注于文字内容；</li>
-<li>纯文本，易读易写，可以方便地纳入版本控制；</li>
-<li>语法简单，没有什么学习成本，能轻松在码字的同时做出美观大方的排版。</li>
-</ol>
-<h2 id="1-2-Markdown的优点"><a href="#1-2-Markdown的优点" class="headerlink" title="1.2 Markdown的优点"></a>1.2 Markdown的优点</h2><ol>
-<li>使用范围广，StackOverflow、CSDN、掘金、简书、GitBook、有道云笔记、V2EX、光谷社区等。主流的代码托管平台，如 GitHub、GitLab、BitBucket、Coding、Gitee 等等，都支持 Markdown 语法，很多开源项目的 README、开发文档、帮助文档、Wiki 等都用 Markdown 写作。</li>
-<li>可移植性强，可以轻松从一个平台移植到另外一个平台。</li>
-<li>可读性强，虽然markdown不是一个所见即所得的记录方式，但是在未编译的情况下可读性也很高，编译之后的格式更加工整美观。</li>
-</ol>
-<h1 id="2-Markdown编译器"><a href="#2-Markdown编译器" class="headerlink" title="2 Markdown编译器"></a>2 Markdown编译器</h1><p>markdown的编译器有很多，你甚至可以直接用记事本来进行编写(仅编写)，但是无法实时预览编译效果。一般使用最多的markdown编译器有Typora、Atom和vscode等。博主使用的是vscode，因为我喜欢这种集成到一起管理的感觉，以后或许会记录我使用到的vscode的一些功能的博客。这里简要介绍一下在vscode中编写markdown的界面和流程</p>
-<h2 id="2-1-vscode界面"><a href="#2-1-vscode界面" class="headerlink" title="2.1 vscode界面"></a>2.1 vscode界面</h2><p>下载安装后，打开vscode，界面如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808193654.png"></p>
-<p>其中1为资源管理器，2为查找，3为源代码管理，4为运行和调试，5为扩展，如果你的界面是英文，你首先可以在扩展中搜索简体中文，安装后重启即可。</p>
-<p>然后可以点击资源管理器打开文件夹或者直接在右侧界面中打开文件夹，一般我们习惯打开文件夹管理。比如我创建D盘markdown文件夹。</p>
-<h2 id="2-2-markdown编辑界面"><a href="#2-2-markdown编辑界面" class="headerlink" title="2.2 markdown编辑界面"></a>2.2 markdown编辑界面</h2><p>比如打开markdown文件夹，新建一个markdown.md文件</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808194144.png"></p>
-<p>此时界面如上图，可以看到大致分为三个部分，侧边栏，顶部栏和编辑区。</p>
-<ul>
-<li><p>侧边栏分为四个部分，打开的编辑区，打开的文件夹(途中为markdown文件夹)，大纲，时间线。</p>
-<ul>
-<li>打开的编辑器：也就是右侧的编辑区域的窗口</li>
-<li>打开的文件夹：文件管理区，创建的文件和文件夹都在这里</li>
-<li>大纲：我们写的md文件的大纲</li>
-<li>时间线：提供我们修改文件的记录，比如昨天修改文件，5分钟前修改文件等等。</li>
-</ul>
-</li>
-<li><p>顶部栏分为两个部分左侧为窗口，右侧有两个按钮，第一个按钮为实时解析预览md文件，第二个为向右拆分窗口，也就是打开两个编辑markdown文件的窗口。</p>
-</li>
-<li><p>编辑区：当我们点击第一个按钮时(带有放大镜的图标)比如这就是一个正常的编辑markdown文档时的状态，左侧编辑markdown文档，右侧查看实时渲染的结果</p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808194754.png"></p>
-<p>并且vscode在编辑区右键可以导出PDF文件</p>
-<h1 id="3-Markdown语法"><a href="#3-Markdown语法" class="headerlink" title="3 Markdown语法"></a>3 Markdown语法</h1><h2 id="3-1-标题"><a href="#3-1-标题" class="headerlink" title="3.1 标题"></a>3.1 标题</h2><p>带有不同数量的<code>#</code>为不同标题</p>
-<table>
-<thead>
-<tr>
-<th align="center">标题</th>
-<th align="center">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">一级标题</td>
-<td align="center"><code>&quot;#&quot;+&quot;空格&quot;+&quot;标题&quot;</code></td>
-</tr>
-<tr>
-<td align="center">二级标题</td>
-<td align="center"><code>&quot;##&quot;+&quot;空格&quot;+&quot;标题&quot;</code></td>
-</tr>
-<tr>
-<td align="center">三级标题</td>
-<td align="center"><code>&quot;###&quot;+&quot;空格&quot;+&quot;标题&quot;</code></td>
-</tr>
-</tbody></table>
-<p>比如<code># 这是一级标题</code>，为了避免标题乱序，这里就不演示了。</p>
-<h2 id="3-2换行"><a href="#3-2换行" class="headerlink" title="3.2换行"></a>3.2换行</h2><p>推荐两种方式进行换行：</p>
-<ul>
-<li>在句子末尾添加两个空格：方便又实用</li>
-<li>在句子末尾添加<code>&lt;br&gt;</code></li>
-</ul>
-<h2 id="3-3-字体"><a href="#3-3-字体" class="headerlink" title="3.3 字体"></a>3.3 字体</h2><table>
-<thead>
-<tr>
-<th align="center">字体</th>
-<th align="center">代码</th>
-<th align="center">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">粗体</td>
-<td align="center"><code>**内容**</code></td>
-<td align="center"><strong>这个是粗体</strong></td>
-</tr>
-<tr>
-<td align="center">斜体</td>
-<td align="center"><code>*内容*</code></td>
-<td align="center"><em>这个是斜体</em></td>
-</tr>
-<tr>
-<td align="center">粗体加斜体</td>
-<td align="center"><code>***内容***</code></td>
-<td align="center"><em><strong>这个是粗体加斜体</strong></em></td>
-</tr>
-<tr>
-<td align="center">删除线</td>
-<td align="center"><code>~~内容~~</code></td>
-<td align="center"><del>这里想用删除线</del></td>
-</tr>
-</tbody></table>
-<p>如果想更改字体颜色，字体类型，或者居中显示，那么可以内嵌HTML来实现</p>
-<h2 id="3-4-无序列表"><a href="#3-4-无序列表" class="headerlink" title="3.4 无序列表"></a>3.4 无序列表</h2><p>无序列表的使用，在符号<code>-</code>后加空格使用。如下：</p>
-<ul>
-<li>无序列表 1</li>
-<li>无序列表 2</li>
-<li>无序列表 3</li>
-</ul>
-<p>如果要控制列表的层级，则需要在符号<code>-</code>前使用空格。如下：</p>
-<ul>
-<li>无序列表 1</li>
-<li>无序列表 2<ul>
-<li>无序列表 2.1</li>
-<li>无序列表 2.2</li>
-</ul>
-</li>
-</ul>
-<h2 id="3-5-有序列表"><a href="#3-5-有序列表" class="headerlink" title="3.5 有序列表"></a>3.5 有序列表</h2><p>有序列表的使用，在数字及符号<code>.</code>后加空格后输入内容，如下：</p>
-<ol>
-<li>有序列表 1</li>
-<li>有序列表 2</li>
-<li>有序列表 3</li>
-</ol>
-<h2 id="3-6-引用"><a href="#3-6-引用" class="headerlink" title="3.6 引用"></a>3.6 引用</h2><p>引用的格式是在符号<code>&gt;</code>后面书写文字。如下：</p>
-<blockquote>
-<p>我没说过这句话。 ——鲁迅</p>
-</blockquote>
-<h2 id="3-7-超链接"><a href="#3-7-超链接" class="headerlink" title="3.7 超链接"></a>3.7 超链接</h2><ul>
-<li>比如想要链接我的博客，则输入<code>[“灵能相谈所”](mobbu.space)</code>的效果如下：<br><a href="mobbu.space">“灵能相谈所”</a><br>其中方框内为链接的名称，括号内为你的网址。</li>
-<li>其实编译器会默认将网址编译为超链接比如<a href="http://www.google.com/">www.google.com</a><br>如果你不想网址变成超链接，那么你可以用 ` ` 将网址包含进来，比如<code>www.google.com</code></li>
-</ul>
-<h2 id="3-8-插入图片"><a href="#3-8-插入图片" class="headerlink" title="3.8 插入图片"></a>3.8 插入图片</h2><ul>
-<li><p>语法：<code>![图片名](图片链接)</code></p>
-</li>
-<li><p>图片名为你想给图片起的别名，也可为空。图片链接可以为本地链接，也可以是网上的图片链接，如果是本地链接，那么当你的md文档上传到网站或者移动到其他位置你的图片都可能失效，此时最好使用网上链接。我也有做过免费的github图床建立的教程-&gt;<a href="https://mobbu.space/2023/08/09/20230803_blogWebsite/">github图床建立</a>中的第5节就是相关教程。</p>
-</li>
-<li><p>示例：比如以下图片插入示例</p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/mob_base_2.jpg"></p>
-<ul>
-<li>如果你想对图片做进一步调整，这时也可以使用html内嵌进行修改，比如想使图片居中显示，指定大小，输入如下代码<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div img align = center&gt;&lt;src = &quot;图片链接&quot; width = 500&gt;&lt;!div&gt;</span><br></pre></td></tr></table></figure>
-其中width就是调整大小，会按照比例缩放大小，大小为像素多少，以下为上述图片的修改效果。</li>
-</ul>
-<div  align = center><img src = "https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/mob_base_2.jpg" width = 500></div>
-
-<p>通过上述修改我们可以获得合适大小，合适位置的图片。</p>
-<h2 id="3-9-分割线"><a href="#3-9-分割线" class="headerlink" title="3.9 分割线"></a>3.9 分割线</h2><ul>
-<li><p>语法：<code>---</code></p>
-</li>
-<li><p>示例：</p>
-</li>
-</ul>
-<p>这是一条分割线</p>
-<hr>
-<h2 id="3-10-表格"><a href="#3-10-表格" class="headerlink" title="3.10 表格"></a>3.10 表格</h2><ul>
-<li>语法：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">|属性1|属性2|属性3|</span><br><span class="line">|--:|:-:|:--|</span><br><span class="line">|属性1的值|属性2的值|属性3的值|</span><br><span class="line">|梨子梨子梨子梨子|梨子梨子梨子梨子|梨子梨子梨子梨子|</span><br></pre></td></tr></table></figure></li>
-<li>示例：比如就是刚刚的语法中显示的</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="right">属性1</th>
-<th align="center">属性2</th>
-<th align="left">属性3</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="right">属性1的值</td>
-<td align="center">属性2的值</td>
-<td align="left">属性3的值</td>
-</tr>
-<tr>
-<td align="right">梨子梨子梨子梨子</td>
-<td align="center">梨子梨子梨子梨子</td>
-<td align="left">梨子梨子梨子梨子</td>
-</tr>
-</tbody></table>
-<p>第一行为属性名字，第二行为靠右显示<code>--:</code>，居中显示<code>:-:</code>，靠右显示<code>:--</code></p>
-<h2 id="3-11-代码"><a href="#3-11-代码" class="headerlink" title="3.11 代码"></a>3.11 代码</h2><ul>
-<li>语法：<ul>
-<li>输入` 代码` 为行中嵌入代码，</li>
-<li>使用：如下代码为单独嵌入，并且可以在第一行输入想高亮的代码比如C语言输入C即可<br>```C<br>代码<br>```</li>
-</ul>
-</li>
-<li>示例<ul>
-<li>行中嵌入：<code>printf(&quot;hello world&quot;);</code></li>
-<li>单独嵌入：<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  std::cout &lt;&lt; <span class="string">&quot;hello world&quot;</span> &lt;&lt; endl;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-<h2 id="3-12-数学公式"><a href="#3-12-数学公式" class="headerlink" title="3.12 数学公式"></a>3.12 数学公式</h2><ul>
-<li>语法：单独嵌入<code>$$数学公式$$</code>或者行内嵌入<code>$数学公式$</code></li>
-<li>示例:<ul>
-<li>单独嵌入:<code>$$H(D_2) = -\left(\frac&#123;2&#125;&#123;4&#125;\log_2 \frac&#123;2&#125;&#123;4&#125; + \frac&#123;2&#125;&#123;4&#125;\log_2 \frac&#123;2&#125;&#123;4&#125;\right) = 1$$</code><br>$$H(D_2) &#x3D; -\left(\frac{2}{4}\log_2 \frac{2}{4} + \frac{2}{4}\log_2 \frac{2}{4}\right) &#x3D; 1$$</li>
-<li>行内嵌入：<code>$H(D_2) = -\left(\frac&#123;2&#125;&#123;4&#125;\log_2 \frac&#123;2&#125;&#123;4&#125; + \frac&#123;2&#125;&#123;4&#125;\log_2 \frac&#123;2&#125;&#123;4&#125;\right) = 1$</code>比如$H(D_2) &#x3D; -\left(\frac{2}{4}\log_2 \frac{2}{4} + \frac{2}{4}\log_2 \frac{2}{4}\right) &#x3D; 1$</li>
-</ul>
-</li>
-<li>数学公式编辑功能十分强大，运用得好在公式编辑方面十分方便。具体还有很多语法，比如各种复杂符号的写法比如累加累乘，矩阵的写法等，可以参考以下博客 <a href="https://blog.csdn.net/m0_37769093/article/details/107732606">markdown公式编辑</a>，总结得非常全面。</li>
-</ul>
-<h1 id="4-总结"><a href="#4-总结" class="headerlink" title="4 总结"></a>4 总结</h1><p>以上就是markdown的一些基本用法，主要还是要养成记录的习惯，如果你有制作网站或者查阅观看论文的需求的话，markdown可以说是十分有用了。</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-        <tag>vscode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>steam一键切换用户的脚本</title>
     <url>/2023/08/08/20230808_steamUserChangebat/</url>
     <content><![CDATA[<p>由于博主经常用很多不同的号玩CSGO，每一次都需要输入账号密码，并且等待令牌，十分麻烦，遂找到了一个脚本切换steam登录信息，其实steam++也可以实现这个功能，但是毕竟很多时候是借其他人的号，有泄露密码风险的还是不好。</p>
@@ -817,6 +608,204 @@
       </tags>
   </entry>
   <entry>
+    <title>解析经典排序算法</title>
+    <url>/2023/08/23/20230821_SortingAlgorithmSummary/</url>
+    <content><![CDATA[<p>总结常用的排序算法，比如快速排序、选择排序、桶排序、堆排序、冒泡排序，分别进行原理分析，复杂度分析，使用场景区分，适用的数据结构，并进行对比总结。</p>
+<span id="more"></span>
+
+<p>首先总结表如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">排序方法</th>
+<th align="center">平均时间复杂度</th>
+<th align="center">最好情况</th>
+<th align="center">最坏情况</th>
+<th align="center">空间复杂度</th>
+<th align="center">是否稳定</th>
+<th align="center">排序方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">冒泡排序</td>
+<td align="center">$O(n^2)$</td>
+<td align="center">$O(n)$</td>
+<td align="center">$O(n^2)$</td>
+<td align="center">$O(1)$</td>
+<td align="center">稳定</td>
+<td align="center">内部排序</td>
+</tr>
+<tr>
+<td align="center">选择排序</td>
+<td align="center">$O(n^2)$</td>
+<td align="center">$O(n^2)$</td>
+<td align="center">$O(n^2)$</td>
+<td align="center">$O(1)$</td>
+<td align="center">不稳定</td>
+<td align="center">内部排序</td>
+</tr>
+<tr>
+<td align="center">插入排序</td>
+<td align="center">$O(n^2)$</td>
+<td align="center">$O(n)$</td>
+<td align="center">$O(n^2)$</td>
+<td align="center">$O(1)$</td>
+<td align="center">稳定</td>
+<td align="center">内部排序</td>
+</tr>
+<tr>
+<td align="center">希尔排序</td>
+<td align="center">$O(n\log n)$</td>
+<td align="center">$O(n\log ^2 n)$</td>
+<td align="center">$O(n\log ^2 n)$</td>
+<td align="center">$O(1)$</td>
+<td align="center">不稳定</td>
+<td align="center">内部排序</td>
+</tr>
+<tr>
+<td align="center">快速排序</td>
+<td align="center">$O(n\log n)$</td>
+<td align="center">$O(n\log n)$</td>
+<td align="center">$O(n^2)$</td>
+<td align="center">$O(\log n)$</td>
+<td align="center">不稳定</td>
+<td align="center">内部排序</td>
+</tr>
+<tr>
+<td align="center">归并排序</td>
+<td align="center">$O(n\log n)$</td>
+<td align="center">$O(n\log n)$</td>
+<td align="center">$O(n\log n)$</td>
+<td align="center">$O(n)$</td>
+<td align="center">稳定</td>
+<td align="center">外部排序</td>
+</tr>
+<tr>
+<td align="center">堆排序</td>
+<td align="center">$O(n\log n)$</td>
+<td align="center">$O(n\log n)$</td>
+<td align="center">$O(n\log n)$</td>
+<td align="center">$O(1)$</td>
+<td align="center">不稳定</td>
+<td align="center">内部排序</td>
+</tr>
+<tr>
+<td align="center">桶排序</td>
+<td align="center">$O(n+k)$</td>
+<td align="center">$O(n+k)$</td>
+<td align="center">$O(n^2)$</td>
+<td align="center">$O(k)$</td>
+<td align="center">稳定</td>
+<td align="center">外部排序</td>
+</tr>
+<tr>
+<td align="center">计数排序</td>
+<td align="center">$O(n+k)$</td>
+<td align="center">$O(n+k)$</td>
+<td align="center">$O(n+k)$</td>
+<td align="center">$O(k)$</td>
+<td align="center">稳定</td>
+<td align="center">外部排序</td>
+</tr>
+</tbody></table>
+<h1 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1 冒泡排序"></a>1 冒泡排序</h1><h2 id="1-1-算法简述"><a href="#1-1-算法简述" class="headerlink" title="1.1 算法简述"></a>1.1 算法简述</h2><p>两两比较，选出较大值，每一轮选出单轮最大值到数组末端，这个过程就像泡泡变大的过程，所以交冒泡算法。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">bubbleSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>() - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="comment">//int flag = 0;</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; nums.<span class="built_in">size</span>() - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[j] &gt; nums[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                <span class="built_in">swap</span>(nums[j], nums[j + <span class="number">1</span>]);</span><br><span class="line">                <span class="comment">//flag = 1;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//if(flag == 0) return;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-优化"><a href="#1-2-优化" class="headerlink" title="1.2 优化"></a>1.2 优化</h2><p>定义一个flag，只要进行交换就置为1.当某一次内层for循环没有交换过flag为0，那么说明已经排序好了</p>
+<h2 id="1-3-最好情况"><a href="#1-3-最好情况" class="headerlink" title="1.3 最好情况"></a>1.3 最好情况</h2><p>数组已经是正序排列时，仅有比较，没有交换</p>
+<h2 id="1-4-最坏情况"><a href="#1-4-最坏情况" class="headerlink" title="1.4 最坏情况"></a>1.4 最坏情况</h2><p>数组是反序排列时，每一轮都需要交换</p>
+<h1 id="2选择排序"><a href="#2选择排序" class="headerlink" title="2选择排序"></a>2选择排序</h1><p>选择排序是一种简单直观的排序算法，无论什么数据进去都是 O(n²) 的时间复杂度。所以用到它的时候，数据规模越小越好。唯一的好处可能就是不占用额外的内存空间了吧。</p>
+<h2 id="2-1-算法简述"><a href="#2-1-算法简述" class="headerlink" title="2.1 算法简述"></a>2.1 算法简述</h2><p>首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置。</p>
+<p>再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。</p>
+<p>重复第二步，直到所有元素均排序完毕。</p>
+<h2 id="2-2-代码"><a href="#2-2-代码" class="headerlink" title="2.2 代码"></a>2.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">selection_sort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="type">int</span> min = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; nums.<span class="built_in">size</span>(); j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[min] &gt; nums[j]) min = j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">swap</span>(nums[min], nums[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="3-插入排序"><a href="#3-插入排序" class="headerlink" title="3 插入排序"></a>3 插入排序</h1><p>插入排序的代码实现虽然没有冒泡排序和选择排序那么简单粗暴，但它的原理应该是最容易理解的了，因为只要打过扑克牌的人都应该能够秒懂。插入排序是一种最简单直观的排序算法，它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。</p>
+<p>插入排序和冒泡排序一样，也有一种优化算法，叫做拆半插入。</p>
+<h2 id="3-1-算法简述"><a href="#3-1-算法简述" class="headerlink" title="3.1 算法简述"></a>3.1 算法简述</h2><p>将第一待排序序列第一个元素看做一个有序序列，把第二个元素到最后一个元素当成是未排序序列。</p>
+<p>从头到尾依次扫描未排序序列，将扫描到的每个元素插入有序序列的适当位置。（如果待插入的元素与有序序列中的某个元素相等，则将待插入元素插入到相等元素的后面。）</p>
+<h2 id="3-2-代码"><a href="#3-2-代码" class="headerlink" title="3.2 代码"></a>3.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">insertion_sort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="type">int</span> num = nums[i];</span><br><span class="line">        <span class="type">int</span> j = i - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; num &lt; nums[j]) &#123;</span><br><span class="line">            <span class="comment">// 当j大于0且有序区间值大于num时，向左移动</span></span><br><span class="line">            nums[j + <span class="number">1</span>] = nums[j];</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//优化，折半查找法</span></span><br><span class="line">        nums[j + <span class="number">1</span>] = num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-3优化"><a href="#3-3优化" class="headerlink" title="3.3优化"></a>3.3优化</h2><p>已排序的序列中，序列元素都是按照顺序排列的，直接比较已排序序列的中位数，这个中间的位置将一排序列分为左右两部分，通过一次比较后，就缩小了比较的范围，重复这样的操作，需要插入的元素就找到了合适的位置了。</p>
+<h1 id="4-希尔排序"><a href="#4-希尔排序" class="headerlink" title="4 希尔排序"></a>4 希尔排序</h1><p>希尔排序，也称递减增量排序算法，是插入排序的一种更高效的改进版本。但希尔排序是非稳定排序算法。</p>
+<p>希尔排序是基于插入排序的以下两点性质而提出改进方法的：</p>
+<p>插入排序在对几乎已经排好序的数据操作时，效率高，即可以达到线性排序的效率；<br>但插入排序一般来说是低效的，因为插入排序每次只能将数据移动一位；<br>希尔排序的基本思想是：先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，待整个序列中的记录”基本有序”时，再对全体记录进行依次直接插入排序。</p>
+<h2 id="4-1-算法简述"><a href="#4-1-算法简述" class="headerlink" title="4.1 算法简述"></a>4.1 算法简述</h2><p>选择一个增量序列 t1，t2，……，tk，其中 ti &gt; tj, tk &#x3D; 1；</p>
+<p>按增量序列个数 k，对序列进行 k 趟排序；</p>
+<p>每趟排序，根据对应的增量 ti，将待排序列分割成若干长度为 m 的子序列，分别对各子表进行直接插入排序。仅增量因子为 1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。</p>
+<h2 id="4-2-代码"><a href="#4-2-代码" class="headerlink" title="4.2 代码"></a>4.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">shell_sort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> h = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">3</span> * h &lt; nums.<span class="built_in">size</span>()) &#123;</span><br><span class="line">        h = <span class="number">3</span> * h + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (h &gt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = h; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = i; j &gt;= h &amp;&amp; nums[j] &lt; nums[j - h]; j -= h) &#123;</span><br><span class="line">                <span class="built_in">swap</span>(nums[j], nums[j - h]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        h = h / <span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-快速排序"><a href="#5-快速排序" class="headerlink" title="5 快速排序"></a>5 快速排序</h1><p>快速排序是由东尼·霍尔所发展的一种排序算法。在平均状况下，排序 n 个项目要 Ο(nlogn) 次比较。在最坏状况下则需要 Ο(n2) 次比较，但这种状况并不常见。事实上，快速排序通常明显比其他 Ο(nlogn) 算法更快，因为它的内部循环（inner loop）可以在大部分的架构上很有效率地被实现出来。</p>
+<p>快速排序使用分治法（Divide and conquer）策略来把一个串行（list）分为两个子串行（sub-lists）。</p>
+<p>快速排序又是一种分而治之思想在排序算法上的典型应用。本质上来看，快速排序应该算是在冒泡排序基础上的递归分治法。</p>
+<p>快速排序的名字起的是简单粗暴，因为一听到这个名字你就知道它存在的意义，就是快，而且效率高！它是处理大数据最快的排序算法之一了。虽然 Worst Case 的时间复杂度达到了 O(n²)，但是人家就是优秀，在大多数情况下都比平均时间复杂度为 O(n logn) 的排序算法表现要更好，可是这是为什么呢，我也不知道。好在我的强迫症又犯了，查了 N 多资料终于在《算法艺术与信息学竞赛》上找到了满意的答案：</p>
+<p>快速排序的最坏运行情况是 O(n²)，比如说顺序数列的快排。但它的平摊期望时间是 O(nlogn)，且 O(nlogn) 记号中隐含的常数因子很小，比复杂度稳定等于 O(nlogn) 的归并排序要小很多。所以，对绝大多数顺序性较弱的随机数列而言，快速排序总是优于归并排序。</p>
+<h2 id="5-1-算法简述"><a href="#5-1-算法简述" class="headerlink" title="5.1 算法简述"></a>5.1 算法简述</h2><ol>
+<li><p>从数列中挑出一个元素，称为 “基准”（pivot）;</p>
+</li>
+<li><p>重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作；</p>
+</li>
+<li><p>递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序；</p>
+</li>
+</ol>
+<h2 id="5-2-代码"><a href="#5-2-代码" class="headerlink" title="5.2 代码"></a>5.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 快速排序</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">Paritition</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> low, <span class="type">int</span> high)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//返回基准pivot的nums的序号</span></span><br><span class="line">    <span class="type">int</span> pivot = nums[low];</span><br><span class="line">    <span class="keyword">while</span> (low &lt; high) &#123;</span><br><span class="line">        <span class="comment">//将nums分为小于基准和大于基准的两侧</span></span><br><span class="line">        <span class="keyword">while</span> (low &lt; high &amp;&amp; nums[high] &gt;= pivot) --high;</span><br><span class="line">        nums[low] = nums[high];</span><br><span class="line">        <span class="keyword">while</span> (low &lt; high &amp;&amp; nums[low] &lt;= pivot) ++low;</span><br><span class="line">        nums[high] = nums[low];</span><br><span class="line">    &#125;</span><br><span class="line">    nums[low] = pivot;</span><br><span class="line">    <span class="keyword">return</span> low;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">QuickSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> low, <span class="type">int</span> high)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (low &lt; high) &#123;</span><br><span class="line">        <span class="type">int</span> pivot = <span class="built_in">Paritition</span>(nums, low, high);</span><br><span class="line">        <span class="built_in">QuickSort</span>(nums, low, pivot - <span class="number">1</span>);<span class="comment">//递归小于基准部分</span></span><br><span class="line">        <span class="built_in">QuickSort</span>(nums, pivot + <span class="number">1</span>, high);<span class="comment">//递归大于基准部分</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">QuickSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">QuickSort</span>(nums, <span class="number">0</span>, nums.<span class="built_in">size</span>() - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="6-归并排序"><a href="#6-归并排序" class="headerlink" title="6 归并排序"></a>6 归并排序</h1><p>归并排序（Merge sort）是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。</p>
+<p>作为一种典型的分而治之思想的算法应用，归并排序的实现由两种方法：</p>
+<p>自上而下的递归（所有递归的方法都可以用迭代重写，所以就有了第 2 种方法）；<br>自下而上的迭代；</p>
+<p>和选择排序一样，归并排序的性能不受输入数据的影响，但表现比选择排序好的多，因为始终都是 O(nlogn) 的时间复杂度。代价是需要额外的内存空间。</p>
+<h2 id="6-1-算法简述"><a href="#6-1-算法简述" class="headerlink" title="6.1 算法简述"></a>6.1 算法简述</h2><ol>
+<li><p>申请空间，使其大小为两个已经排序序列之和，该空间用来存放合并后的序列；</p>
+</li>
+<li><p>设定两个指针，最初位置分别为两个已经排序序列的起始位置；</p>
+</li>
+<li><p>比较两个指针所指向的元素，选择相对小的元素放入到合并空间，并移动指针到下一位置；</p>
+</li>
+<li><p>重复步骤 3 直到某一指针达到序列尾；</p>
+</li>
+<li><p>将另一序列剩下的所有元素直接复制到合并序列尾。</p>
+</li>
+</ol>
+<h2 id="6-2-代码"><a href="#6-2-代码" class="headerlink" title="6.2 代码"></a>6.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 归并排序</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Merge</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> front, <span class="type">int</span> mid, <span class="type">int</span> end)</span> </span>&#123;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">LeftSubArray</span><span class="params">(nums.begin() + front, nums.begin() + mid + <span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">RightSubArray</span><span class="params">(nums.begin() + mid + <span class="number">1</span>, nums.begin() + end + <span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="type">int</span> idxLeft = <span class="number">0</span>, idxRight = <span class="number">0</span>;</span><br><span class="line">    LeftSubArray.<span class="built_in">insert</span>(LeftSubArray.<span class="built_in">end</span>(), numeric_limits&lt;<span class="type">int</span>&gt;::<span class="built_in">max</span>());</span><br><span class="line">    RightSubArray.<span class="built_in">insert</span>(RightSubArray.<span class="built_in">end</span>(), numeric_limits&lt;<span class="type">int</span>&gt;::<span class="built_in">max</span>());</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = front; i &lt;= end; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (LeftSubArray[idxLeft] &lt; RightSubArray[idxRight]) &#123;</span><br><span class="line">            nums[i] = LeftSubArray[idxLeft];</span><br><span class="line">            idxLeft++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            nums[i] = RightSubArray[idxRight];</span><br><span class="line">            idxRight++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">MergeSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> front, <span class="type">int</span> end)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (front &gt;= end) <span class="keyword">return</span>;</span><br><span class="line">    <span class="type">int</span> mid = (front + end) / <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">MergeSort</span>(nums, front, mid);</span><br><span class="line">    <span class="built_in">MergeSort</span>(nums, mid + <span class="number">1</span>, end);</span><br><span class="line">    <span class="built_in">Merge</span>(nums, front, mid, end);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">MergeSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">MergeSort</span>(nums, <span class="number">0</span>, nums.<span class="built_in">size</span>() - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="7-堆排序"><a href="#7-堆排序" class="headerlink" title="7 堆排序"></a>7 堆排序</h1><p>堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。堆排序可以说是一种利用堆的概念来排序的选择排序。分为两种方法：</p>
+<p>大顶堆：每个节点的值都大于或等于其子节点的值，在堆排序算法中用于升序排列；<br>小顶堆：每个节点的值都小于或等于其子节点的值，在堆排序算法中用于降序排列；<br>堆排序的平均时间复杂度为 Ο(nlogn)。</p>
+<h2 id="7-1-算法简述"><a href="#7-1-算法简述" class="headerlink" title="7.1 算法简述"></a>7.1 算法简述</h2><ol>
+<li><p>创建一个堆 H[0……n-1]；</p>
+</li>
+<li><p>把堆首（最大值）和堆尾互换；</p>
+</li>
+<li><p>把堆的尺寸缩小 1，并调用 shift_down(0)，目的是把新的数组顶端数据调整到相应位置；</p>
+</li>
+<li><p>重复步骤 2，直到堆的尺寸为 1。</p>
+</li>
+</ol>
+<h2 id="7-2-代码"><a href="#7-2-代码" class="headerlink" title="7.2 代码"></a>7.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">max_heapify</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> start, <span class="type">int</span> end)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> dad = start;</span><br><span class="line">    <span class="type">int</span> son = dad * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (son &lt;= end) &#123; </span><br><span class="line">        <span class="keyword">if</span> (son + <span class="number">1</span> &lt;= end &amp;&amp; arr[son] &lt; arr[son + <span class="number">1</span>]) </span><br><span class="line">            son++;</span><br><span class="line">        <span class="keyword">if</span> (arr[dad] &gt; arr[son]) </span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123; </span><br><span class="line">            <span class="built_in">swap</span>(arr[dad], arr[son]);</span><br><span class="line">            dad = son;</span><br><span class="line">            son = dad * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">heap_sort</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = len / <span class="number">2</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        <span class="built_in">max_heapify</span>(arr, i, len - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = len - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="built_in">swap</span>(arr[<span class="number">0</span>], arr[i]);</span><br><span class="line">        <span class="built_in">max_heapify</span>(arr, <span class="number">0</span>, i - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="8-计数排序"><a href="#8-计数排序" class="headerlink" title="8 计数排序"></a>8 计数排序</h1><p>计数排序的核心在于将输入的数据值转化为键存储在额外开辟的数组空间中。作为一种线性时间复杂度的排序，计数排序要求输入的数据必须是有确定范围的整数。</p>
+<p>当输入的元素是 n 个 0 到 k 之间的整数时，它的运行时间是 Θ(n + k)。计数排序不是比较排序，排序的速度快于任何比较排序算法。</p>
+<p>由于用来计数的数组C的长度取决于待排序数组中数据的范围（等于待排序数组的最大值与最小值的差加上1），这使得计数排序对于数据范围很大的数组，需要大量时间和内存。</p>
+<p>类似于哈希法</p>
+<h2 id="8-1-算法简述"><a href="#8-1-算法简述" class="headerlink" title="8.1 算法简述"></a>8.1 算法简述</h2><p>（1）找出待排序的数组中最大和最小的元素<br>（2）统计数组中每个值为i的元素出现的次数，存入数组C的第i项<br>（3）对所有的计数累加（从C中的第一个元素开始，每一项和前一项相加）<br>（4）反向填充目标数组：将每个元素i放在新数组的第C(i)项，每放一个元素就将C(i)减去1</p>
+<h2 id="8-2-代码"><a href="#8-2-代码" class="headerlink" title="8.2 代码"></a>8.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="9-桶排序"><a href="#9-桶排序" class="headerlink" title="9 桶排序"></a>9 桶排序</h1><h2 id="9-1-算法简述"><a href="#9-1-算法简述" class="headerlink" title="9.1 算法简述"></a>9.1 算法简述</h2><p>桶排序是计数排序的升级版。它利用了函数的映射关系，高效与否的关键就在于这个映射函数的确定。为了使桶排序更加高效，我们需要做到这两点：</p>
+<p>在额外空间充足的情况下，尽量增大桶的数量<br>使用的映射函数能够将输入的 N 个数据均匀的分配到 K 个桶中<br>同时，对于桶中元素的排序，选择何种比较排序算法对于性能的影响至关重要。</p>
+<h2 id="9-2-代码"><a href="#9-2-代码" class="headerlink" title="9.2 代码"></a>9.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> BUCKET_NUM = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">ListNode</span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">explicit</span> <span class="title">ListNode</span><span class="params">(<span class="type">int</span> i=<span class="number">0</span>)</span>:mData(i),mNext(NULL)&#123;</span>&#125;</span><br><span class="line">        ListNode* mNext;</span><br><span class="line">        <span class="type">int</span> mData;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">ListNode* <span class="title">insert</span><span class="params">(ListNode* head,<span class="type">int</span> val)</span></span>&#123;</span><br><span class="line">        ListNode dummyNode;</span><br><span class="line">        ListNode *newNode = <span class="keyword">new</span> <span class="built_in">ListNode</span>(val);</span><br><span class="line">        ListNode *pre,*curr;</span><br><span class="line">        dummyNode.mNext = head;</span><br><span class="line">        pre = &amp;dummyNode;</span><br><span class="line">        curr = head;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">NULL</span>!=curr &amp;&amp; curr-&gt;mData&lt;=val)&#123;</span><br><span class="line">                pre = curr;</span><br><span class="line">                curr = curr-&gt;mNext;</span><br><span class="line">        &#125;</span><br><span class="line">        newNode-&gt;mNext = curr;</span><br><span class="line">        pre-&gt;mNext = newNode;</span><br><span class="line">        <span class="keyword">return</span> dummyNode.mNext;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function">ListNode* <span class="title">Merge</span><span class="params">(ListNode *head1,ListNode *head2)</span></span>&#123;</span><br><span class="line">        ListNode dummyNode;</span><br><span class="line">        ListNode *dummy = &amp;dummyNode;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">NULL</span>!=head1 &amp;&amp; <span class="literal">NULL</span>!=head2)&#123;</span><br><span class="line">                <span class="keyword">if</span>(head1-&gt;mData &lt;= head2-&gt;mData)&#123;</span><br><span class="line">                        dummy-&gt;mNext = head1;</span><br><span class="line">                        head1 = head1-&gt;mNext;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                        dummy-&gt;mNext = head2;</span><br><span class="line">                        head2 = head2-&gt;mNext;</span><br><span class="line">                &#125;</span><br><span class="line">                dummy = dummy-&gt;mNext;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="literal">NULL</span>!=head1) dummy-&gt;mNext = head1;</span><br><span class="line">        <span class="keyword">if</span>(<span class="literal">NULL</span>!=head2) dummy-&gt;mNext = head2;</span><br><span class="line">       </span><br><span class="line">        <span class="keyword">return</span> dummyNode.mNext;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BucketSort</span><span class="params">(<span class="type">int</span> n,<span class="type">int</span> arr[])</span></span>&#123;</span><br><span class="line">        <span class="function">vector&lt;ListNode*&gt; <span class="title">buckets</span><span class="params">(BUCKET_NUM,(ListNode*)(<span class="number">0</span>))</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">                <span class="type">int</span> index = arr[i]/BUCKET_NUM;</span><br><span class="line">                ListNode *head = buckets.<span class="built_in">at</span>(index);</span><br><span class="line">                buckets.<span class="built_in">at</span>(index) = <span class="built_in">insert</span>(head,arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode *head = buckets.<span class="built_in">at</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;BUCKET_NUM;++i)&#123;</span><br><span class="line">                head = <span class="built_in">Merge</span>(head,buckets.<span class="built_in">at</span>(i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">                arr[i] = head-&gt;mData;</span><br><span class="line">                head = head-&gt;mNext;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="9-3-最好情况"><a href="#9-3-最好情况" class="headerlink" title="9.3 最好情况"></a>9.3 最好情况</h2><p>当输入的数据可以均匀的分配到每一个桶中。</p>
+<h2 id="9-4-最坏情况"><a href="#9-4-最坏情况" class="headerlink" title="9.4 最坏情况"></a>9.4 最坏情况</h2><p>当输入的数据被分配到了同一个桶中。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>C/C++</tag>
+        <tag>排序算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>webserver项目</title>
     <url>/2023/08/15/20230815_C++HighConcurrencyWeberver/</url>
     <content><![CDATA[<p>牛客网经典之webserver项目学习总结记录，其中主要包括了：</p>
@@ -1062,313 +1051,30 @@
       </tags>
   </entry>
   <entry>
-    <title>C++学习路线</title>
-    <url>/2023/08/22/20230819_C++LearningRoute/</url>
-    <content><![CDATA[<p>记录一下打工牛马人的C++的学习路线。</p>
-<p>主要部分有C++基础，C++算法，计算机网络，MySQL数据库，Redis，软件设计模式，操作系统、Linux操作、网络编程，C++经典项目(webserver)，如果有时间还可以多参与几个练手的小项目。</p>
+    <title>vscode配置C++环境</title>
+    <url>/2023/08/22/20230822_VscodeDeployC++/</url>
+    <content><![CDATA[<p>因为目前还是一些简单的项目或者笔试题，所以想要实现vscode大一统的最后一步，在vscode上配置C++环境。</p>
 <span id="more"></span>
 
-<h1 id="1-C-基础"><a href="#1-C-基础" class="headerlink" title="1 C++基础"></a>1 C++基础</h1><p>这部分过一下基础就好了，不用画太多时间。</p>
-<p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1et411b73Z/">黑马程序员C++基础</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17560955.html">C++基础笔记</a></p>
-<p>主要是三部分内容</p>
-<ul>
-<li>C++语法入门：变量与常量、数据类型、运算符、程序流程结构、数组、函数、指针、结构体</li>
-<li>类和对象：封装、继承、多态</li>
-<li>模板与STL</li>
-</ul>
-<h1 id="2-C-算法"><a href="#2-C-算法" class="headerlink" title="2 C++算法"></a>2 C++算法</h1><p>主要在代码随想录上刷题和学习：<a href="https://programmercarl.com/%E5%89%8D%E5%BA%8F/%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC.html#%E9%A2%98%E5%A4%96%E8%AF%9D">代码随想录</a></p>
-<p>有时间可以刷两道三遍，不然理解可能不到位。</p>
-<p>做完如果还有时间，可以去牛客网上刷完剑指offer的题。</p>
-<p>主要包含：</p>
-<table>
-<thead>
-<tr>
-<th align="center">内容</th>
-<th align="center">难度</th>
-<th align="center">内容</th>
-<th align="center">面试&#x2F;笔试较多</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">数组</td>
-<td align="center">简单</td>
-<td align="center">数组相关</td>
-<td align="center">面试多</td>
-</tr>
-<tr>
-<td align="center">链表</td>
-<td align="center">简单</td>
-<td align="center">链表概念、设计、删除等</td>
-<td align="center">面试多</td>
-</tr>
-<tr>
-<td align="center">哈希表</td>
-<td align="center">简单</td>
-<td align="center">快速判断一个元素是否出现集合里</td>
-<td align="center">一般</td>
-</tr>
-<tr>
-<td align="center">字符串</td>
-<td align="center">简单</td>
-<td align="center">针对字符，使用双指针很多</td>
-<td align="center">一般</td>
-</tr>
-<tr>
-<td align="center">双指针法</td>
-<td align="center">简单</td>
-<td align="center">数组，链表，字符串中使用较多</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">栈与队列</td>
-<td align="center">简单</td>
-<td align="center">面试提问较多</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">二叉树</td>
-<td align="center">中等</td>
-<td align="center">二叉树，搜索树，遍历等</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">回溯算法</td>
-<td align="center">中等</td>
-<td align="center">暴力算法，组合</td>
-<td align="center">笔试&#x2F;面试</td>
-</tr>
-<tr>
-<td align="center">贪心算法</td>
-<td align="center">困难</td>
-<td align="center">局部最优推广到全局</td>
-<td align="center">笔试</td>
-</tr>
-<tr>
-<td align="center">动态规划</td>
-<td align="center">困难</td>
-<td align="center">能够定义dp数据，当前状态由前两个状态决定</td>
-<td align="center">笔试</td>
-</tr>
-<tr>
-<td align="center">图论</td>
-<td align="center">中等到困难</td>
-<td align="center">图论相关，主要是搜索</td>
-<td align="center">笔试</td>
-</tr>
-</tbody></table>
-<h1 id="3-计算机网络"><a href="#3-计算机网络" class="headerlink" title="3 计算机网络"></a>3 计算机网络</h1><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1c4411d7jb/">计算机网络(湖科大教书匠)</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17577514.html">计算机网络笔记</a></p>
-<p>此部分比较简单，并且在后序网络编程还会复习一部分，笔记只记录了一些相对重要的部分。</p>
-<h1 id="4-MySQL和Redis"><a href="#4-MySQL和Redis" class="headerlink" title="4 MySQL和Redis"></a>4 MySQL和Redis</h1><h2 id="4-1-MySQL：一般学习这个"><a href="#4-1-MySQL：一般学习这个" class="headerlink" title="4.1 MySQL：一般学习这个"></a>4.1 MySQL：一般学习这个</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1Kr4y1i7ru/">黑马程序员MySQL</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17648671.html">SQL基础增删改查</a></p>
-<h2 id="4-2-Redis：岗位有需要可以一周内突击学习"><a href="#4-2-Redis：岗位有需要可以一周内突击学习" class="headerlink" title="4.2 Redis：岗位有需要可以一周内突击学习"></a>4.2 Redis：岗位有需要可以一周内突击学习</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1cr4y1671t/">黑马程序员Redis</a>  </p>
-<h1 id="5-软件设计模式"><a href="#5-软件设计模式" class="headerlink" title="5 软件设计模式"></a>5 软件设计模式</h1><p>有时间看视频，没时间直接搜索资料记住概念和常见的几种设计模式即可</p>
-<p><strong>视频链接：</strong> 讲的挺好，有时间可以仔细听，对程序编写有好处<br><a href="https://www.bilibili.com/video/BV1Yr4y157Ci/">C++设计模式入门</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17559583.html">一些常用软件设计模式</a></p>
-<p>一般了解策略模式、工厂模式、单例模式(最简单)、观察者模式、适配者模式即可了</p>
-<h1 id="6-C-项目"><a href="#6-C-项目" class="headerlink" title="6 C++项目"></a>6 C++项目</h1><p><a href="https://www.nowcoder.com/study/live/504">牛客网C++项目</a></p>
-<p>这个项目就包含了基础的Linux系统编程、Linux多进程开发、Linux多线程开发、网络编程和实战。所以如果时间不够可以就看着一个项目就好了。包含了<strong>Linux基础</strong>、<strong>操作系统</strong>、<strong>网络编程</strong>和<strong>websever</strong>项目，差的知识后序查漏补缺就好了。</p>
-<p>笔记链接如下：</p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17547122.html">第1章 Linux系统编程入门</a></p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17586114.html">第2章 Linux多进程开发</a></p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17601631.html">第3章 Linux多线程开发</a></p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17609639.html">第4章 Linux网络编程</a></p>
-<p><a href="https://www.cnblogs.com/mobbu/p/17629592.html">第5章 项目实战与总结</a></p>
-<p><a href="https://mobbu.space/2023/08/15/20230815_C++HighConcurrencyWeberver/">webserver项目解析与总结</a></p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>分享博客</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解析经典排序算法</title>
-    <url>/2023/08/23/20230821_SortingAlgorithmSummary/</url>
-    <content><![CDATA[<p>总结常用的排序算法，比如快速排序、选择排序、桶排序、堆排序、冒泡排序，分别进行原理分析，复杂度分析，使用场景区分，适用的数据结构，并进行对比总结。</p>
-<span id="more"></span>
+<h1 id="1-下载GCC编译器"><a href="#1-下载GCC编译器" class="headerlink" title="1 下载GCC编译器"></a>1 下载GCC编译器</h1><p>官方github地址为<a href="https://github.com/niXman/mingw-builds-binaries/releases">mingw-builds-binaries</a>，在其中选择对应系统的版本进行下载即可，比如windows64位，就下载下图对应版本。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822163656.png"></p>
+<p>解压到一个没有中文和空格的路径中，将安装的bin文件夹路径添加到系统变量</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822164757.png"></p>
+<p>完成后，打开cmd，输入<code>gcc -v</code>验证是否成功</p>
+<h1 id="2-安装VSCODE的C-C-扩展"><a href="#2-安装VSCODE的C-C-扩展" class="headerlink" title="2 安装VSCODE的C&#x2F;C++扩展"></a>2 安装VSCODE的C&#x2F;C++扩展</h1><p>直接在扩展中间安装C&#x2F;C++扩展即可</p>
+<p>此时创建我们所要使用的文件夹，此时我出现一个问题，在D盘中创建文件夹无法检测到我安装的编译器，但是我在C盘中创建文件夹就没有这个问题，所幸消耗空间不多，勉强在C盘创建时用了。</p>
+<p>创建文件test.cpp</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">//include如果出错，说明是编译器问题，去C盘创建则没有问题</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;success&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>首先总结表如下：</p>
-<table>
-<thead>
-<tr>
-<th align="center">排序方法</th>
-<th align="center">平均时间复杂度</th>
-<th align="center">最好情况</th>
-<th align="center">最坏情况</th>
-<th align="center">空间复杂度</th>
-<th align="center">是否稳定</th>
-<th align="center">排序方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">冒泡排序</td>
-<td align="center">$O(n^2)$</td>
-<td align="center">$O(n)$</td>
-<td align="center">$O(n^2)$</td>
-<td align="center">$O(1)$</td>
-<td align="center">稳定</td>
-<td align="center">内部排序</td>
-</tr>
-<tr>
-<td align="center">选择排序</td>
-<td align="center">$O(n^2)$</td>
-<td align="center">$O(n^2)$</td>
-<td align="center">$O(n^2)$</td>
-<td align="center">$O(1)$</td>
-<td align="center">不稳定</td>
-<td align="center">内部排序</td>
-</tr>
-<tr>
-<td align="center">插入排序</td>
-<td align="center">$O(n^2)$</td>
-<td align="center">$O(n)$</td>
-<td align="center">$O(n^2)$</td>
-<td align="center">$O(1)$</td>
-<td align="center">稳定</td>
-<td align="center">内部排序</td>
-</tr>
-<tr>
-<td align="center">希尔排序</td>
-<td align="center">$O(n\log n)$</td>
-<td align="center">$O(n\log ^2 n)$</td>
-<td align="center">$O(n\log ^2 n)$</td>
-<td align="center">$O(1)$</td>
-<td align="center">不稳定</td>
-<td align="center">内部排序</td>
-</tr>
-<tr>
-<td align="center">快速排序</td>
-<td align="center">$O(n\log n)$</td>
-<td align="center">$O(n\log n)$</td>
-<td align="center">$O(n^2)$</td>
-<td align="center">$O(\log n)$</td>
-<td align="center">不稳定</td>
-<td align="center">内部排序</td>
-</tr>
-<tr>
-<td align="center">归并排序</td>
-<td align="center">$O(n\log n)$</td>
-<td align="center">$O(n\log n)$</td>
-<td align="center">$O(n\log n)$</td>
-<td align="center">$O(n)$</td>
-<td align="center">稳定</td>
-<td align="center">外部排序</td>
-</tr>
-<tr>
-<td align="center">堆排序</td>
-<td align="center">$O(n\log n)$</td>
-<td align="center">$O(n\log n)$</td>
-<td align="center">$O(n\log n)$</td>
-<td align="center">$O(1)$</td>
-<td align="center">不稳定</td>
-<td align="center">内部排序</td>
-</tr>
-<tr>
-<td align="center">桶排序</td>
-<td align="center">$O(n+k)$</td>
-<td align="center">$O(n+k)$</td>
-<td align="center">$O(n^2)$</td>
-<td align="center">$O(k)$</td>
-<td align="center">稳定</td>
-<td align="center">外部排序</td>
-</tr>
-<tr>
-<td align="center">计数排序</td>
-<td align="center">$O(n+k)$</td>
-<td align="center">$O(n+k)$</td>
-<td align="center">$O(n+k)$</td>
-<td align="center">$O(k)$</td>
-<td align="center">稳定</td>
-<td align="center">外部排序</td>
-</tr>
-</tbody></table>
-<h1 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1 冒泡排序"></a>1 冒泡排序</h1><h2 id="1-1-算法简述"><a href="#1-1-算法简述" class="headerlink" title="1.1 算法简述"></a>1.1 算法简述</h2><p>两两比较，选出较大值，每一轮选出单轮最大值到数组末端，这个过程就像泡泡变大的过程，所以交冒泡算法。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">bubbleSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>() - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="comment">//int flag = 0;</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; nums.<span class="built_in">size</span>() - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[j] &gt; nums[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                <span class="built_in">swap</span>(nums[j], nums[j + <span class="number">1</span>]);</span><br><span class="line">                <span class="comment">//flag = 1;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//if(flag == 0) return;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-2-优化"><a href="#1-2-优化" class="headerlink" title="1.2 优化"></a>1.2 优化</h2><p>定义一个flag，只要进行交换就置为1.当某一次内层for循环没有交换过flag为0，那么说明已经排序好了</p>
-<h2 id="1-3-最好情况"><a href="#1-3-最好情况" class="headerlink" title="1.3 最好情况"></a>1.3 最好情况</h2><p>数组已经是正序排列时，仅有比较，没有交换</p>
-<h2 id="1-4-最坏情况"><a href="#1-4-最坏情况" class="headerlink" title="1.4 最坏情况"></a>1.4 最坏情况</h2><p>数组是反序排列时，每一轮都需要交换</p>
-<h1 id="2选择排序"><a href="#2选择排序" class="headerlink" title="2选择排序"></a>2选择排序</h1><p>选择排序是一种简单直观的排序算法，无论什么数据进去都是 O(n²) 的时间复杂度。所以用到它的时候，数据规模越小越好。唯一的好处可能就是不占用额外的内存空间了吧。</p>
-<h2 id="2-1-算法简述"><a href="#2-1-算法简述" class="headerlink" title="2.1 算法简述"></a>2.1 算法简述</h2><p>首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置。</p>
-<p>再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。</p>
-<p>重复第二步，直到所有元素均排序完毕。</p>
-<h2 id="2-2-代码"><a href="#2-2-代码" class="headerlink" title="2.2 代码"></a>2.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">selection_sort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="type">int</span> min = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; nums.<span class="built_in">size</span>(); j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[min] &gt; nums[j]) min = j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">swap</span>(nums[min], nums[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="3-插入排序"><a href="#3-插入排序" class="headerlink" title="3 插入排序"></a>3 插入排序</h1><p>插入排序的代码实现虽然没有冒泡排序和选择排序那么简单粗暴，但它的原理应该是最容易理解的了，因为只要打过扑克牌的人都应该能够秒懂。插入排序是一种最简单直观的排序算法，它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。</p>
-<p>插入排序和冒泡排序一样，也有一种优化算法，叫做拆半插入。</p>
-<h2 id="3-1-算法简述"><a href="#3-1-算法简述" class="headerlink" title="3.1 算法简述"></a>3.1 算法简述</h2><p>将第一待排序序列第一个元素看做一个有序序列，把第二个元素到最后一个元素当成是未排序序列。</p>
-<p>从头到尾依次扫描未排序序列，将扫描到的每个元素插入有序序列的适当位置。（如果待插入的元素与有序序列中的某个元素相等，则将待插入元素插入到相等元素的后面。）</p>
-<h2 id="3-2-代码"><a href="#3-2-代码" class="headerlink" title="3.2 代码"></a>3.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">insertion_sort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="type">int</span> num = nums[i];</span><br><span class="line">        <span class="type">int</span> j = i - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; num &lt; nums[j]) &#123;</span><br><span class="line">            <span class="comment">// 当j大于0且有序区间值大于num时，向左移动</span></span><br><span class="line">            nums[j + <span class="number">1</span>] = nums[j];</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//优化，折半查找法</span></span><br><span class="line">        nums[j + <span class="number">1</span>] = num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-3优化"><a href="#3-3优化" class="headerlink" title="3.3优化"></a>3.3优化</h2><p>已排序的序列中，序列元素都是按照顺序排列的，直接比较已排序序列的中位数，这个中间的位置将一排序列分为左右两部分，通过一次比较后，就缩小了比较的范围，重复这样的操作，需要插入的元素就找到了合适的位置了。</p>
-<h1 id="4-希尔排序"><a href="#4-希尔排序" class="headerlink" title="4 希尔排序"></a>4 希尔排序</h1><p>希尔排序，也称递减增量排序算法，是插入排序的一种更高效的改进版本。但希尔排序是非稳定排序算法。</p>
-<p>希尔排序是基于插入排序的以下两点性质而提出改进方法的：</p>
-<p>插入排序在对几乎已经排好序的数据操作时，效率高，即可以达到线性排序的效率；<br>但插入排序一般来说是低效的，因为插入排序每次只能将数据移动一位；<br>希尔排序的基本思想是：先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，待整个序列中的记录”基本有序”时，再对全体记录进行依次直接插入排序。</p>
-<h2 id="4-1-算法简述"><a href="#4-1-算法简述" class="headerlink" title="4.1 算法简述"></a>4.1 算法简述</h2><p>选择一个增量序列 t1，t2，……，tk，其中 ti &gt; tj, tk &#x3D; 1；</p>
-<p>按增量序列个数 k，对序列进行 k 趟排序；</p>
-<p>每趟排序，根据对应的增量 ti，将待排序列分割成若干长度为 m 的子序列，分别对各子表进行直接插入排序。仅增量因子为 1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。</p>
-<h2 id="4-2-代码"><a href="#4-2-代码" class="headerlink" title="4.2 代码"></a>4.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">shell_sort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> h = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">3</span> * h &lt; nums.<span class="built_in">size</span>()) &#123;</span><br><span class="line">        h = <span class="number">3</span> * h + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (h &gt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = h; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = i; j &gt;= h &amp;&amp; nums[j] &lt; nums[j - h]; j -= h) &#123;</span><br><span class="line">                <span class="built_in">swap</span>(nums[j], nums[j - h]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        h = h / <span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="5-快速排序"><a href="#5-快速排序" class="headerlink" title="5 快速排序"></a>5 快速排序</h1><p>快速排序是由东尼·霍尔所发展的一种排序算法。在平均状况下，排序 n 个项目要 Ο(nlogn) 次比较。在最坏状况下则需要 Ο(n2) 次比较，但这种状况并不常见。事实上，快速排序通常明显比其他 Ο(nlogn) 算法更快，因为它的内部循环（inner loop）可以在大部分的架构上很有效率地被实现出来。</p>
-<p>快速排序使用分治法（Divide and conquer）策略来把一个串行（list）分为两个子串行（sub-lists）。</p>
-<p>快速排序又是一种分而治之思想在排序算法上的典型应用。本质上来看，快速排序应该算是在冒泡排序基础上的递归分治法。</p>
-<p>快速排序的名字起的是简单粗暴，因为一听到这个名字你就知道它存在的意义，就是快，而且效率高！它是处理大数据最快的排序算法之一了。虽然 Worst Case 的时间复杂度达到了 O(n²)，但是人家就是优秀，在大多数情况下都比平均时间复杂度为 O(n logn) 的排序算法表现要更好，可是这是为什么呢，我也不知道。好在我的强迫症又犯了，查了 N 多资料终于在《算法艺术与信息学竞赛》上找到了满意的答案：</p>
-<p>快速排序的最坏运行情况是 O(n²)，比如说顺序数列的快排。但它的平摊期望时间是 O(nlogn)，且 O(nlogn) 记号中隐含的常数因子很小，比复杂度稳定等于 O(nlogn) 的归并排序要小很多。所以，对绝大多数顺序性较弱的随机数列而言，快速排序总是优于归并排序。</p>
-<h2 id="5-1-算法简述"><a href="#5-1-算法简述" class="headerlink" title="5.1 算法简述"></a>5.1 算法简述</h2><ol>
-<li><p>从数列中挑出一个元素，称为 “基准”（pivot）;</p>
-</li>
-<li><p>重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作；</p>
-</li>
-<li><p>递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序；</p>
-</li>
-</ol>
-<h2 id="5-2-代码"><a href="#5-2-代码" class="headerlink" title="5.2 代码"></a>5.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 快速排序</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">Paritition</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> low, <span class="type">int</span> high)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//返回基准pivot的nums的序号</span></span><br><span class="line">    <span class="type">int</span> pivot = nums[low];</span><br><span class="line">    <span class="keyword">while</span> (low &lt; high) &#123;</span><br><span class="line">        <span class="comment">//将nums分为小于基准和大于基准的两侧</span></span><br><span class="line">        <span class="keyword">while</span> (low &lt; high &amp;&amp; nums[high] &gt;= pivot) --high;</span><br><span class="line">        nums[low] = nums[high];</span><br><span class="line">        <span class="keyword">while</span> (low &lt; high &amp;&amp; nums[low] &lt;= pivot) ++low;</span><br><span class="line">        nums[high] = nums[low];</span><br><span class="line">    &#125;</span><br><span class="line">    nums[low] = pivot;</span><br><span class="line">    <span class="keyword">return</span> low;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">QuickSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> low, <span class="type">int</span> high)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (low &lt; high) &#123;</span><br><span class="line">        <span class="type">int</span> pivot = <span class="built_in">Paritition</span>(nums, low, high);</span><br><span class="line">        <span class="built_in">QuickSort</span>(nums, low, pivot - <span class="number">1</span>);<span class="comment">//递归小于基准部分</span></span><br><span class="line">        <span class="built_in">QuickSort</span>(nums, pivot + <span class="number">1</span>, high);<span class="comment">//递归大于基准部分</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">QuickSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">QuickSort</span>(nums, <span class="number">0</span>, nums.<span class="built_in">size</span>() - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="6-归并排序"><a href="#6-归并排序" class="headerlink" title="6 归并排序"></a>6 归并排序</h1><p>归并排序（Merge sort）是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。</p>
-<p>作为一种典型的分而治之思想的算法应用，归并排序的实现由两种方法：</p>
-<p>自上而下的递归（所有递归的方法都可以用迭代重写，所以就有了第 2 种方法）；<br>自下而上的迭代；</p>
-<p>和选择排序一样，归并排序的性能不受输入数据的影响，但表现比选择排序好的多，因为始终都是 O(nlogn) 的时间复杂度。代价是需要额外的内存空间。</p>
-<h2 id="6-1-算法简述"><a href="#6-1-算法简述" class="headerlink" title="6.1 算法简述"></a>6.1 算法简述</h2><ol>
-<li><p>申请空间，使其大小为两个已经排序序列之和，该空间用来存放合并后的序列；</p>
-</li>
-<li><p>设定两个指针，最初位置分别为两个已经排序序列的起始位置；</p>
-</li>
-<li><p>比较两个指针所指向的元素，选择相对小的元素放入到合并空间，并移动指针到下一位置；</p>
-</li>
-<li><p>重复步骤 3 直到某一指针达到序列尾；</p>
-</li>
-<li><p>将另一序列剩下的所有元素直接复制到合并序列尾。</p>
-</li>
-</ol>
-<h2 id="6-2-代码"><a href="#6-2-代码" class="headerlink" title="6.2 代码"></a>6.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 归并排序</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Merge</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> front, <span class="type">int</span> mid, <span class="type">int</span> end)</span> </span>&#123;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">LeftSubArray</span><span class="params">(nums.begin() + front, nums.begin() + mid + <span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">RightSubArray</span><span class="params">(nums.begin() + mid + <span class="number">1</span>, nums.begin() + end + <span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="type">int</span> idxLeft = <span class="number">0</span>, idxRight = <span class="number">0</span>;</span><br><span class="line">    LeftSubArray.<span class="built_in">insert</span>(LeftSubArray.<span class="built_in">end</span>(), numeric_limits&lt;<span class="type">int</span>&gt;::<span class="built_in">max</span>());</span><br><span class="line">    RightSubArray.<span class="built_in">insert</span>(RightSubArray.<span class="built_in">end</span>(), numeric_limits&lt;<span class="type">int</span>&gt;::<span class="built_in">max</span>());</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = front; i &lt;= end; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (LeftSubArray[idxLeft] &lt; RightSubArray[idxRight]) &#123;</span><br><span class="line">            nums[i] = LeftSubArray[idxLeft];</span><br><span class="line">            idxLeft++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            nums[i] = RightSubArray[idxRight];</span><br><span class="line">            idxRight++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">MergeSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> front, <span class="type">int</span> end)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (front &gt;= end) <span class="keyword">return</span>;</span><br><span class="line">    <span class="type">int</span> mid = (front + end) / <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">MergeSort</span>(nums, front, mid);</span><br><span class="line">    <span class="built_in">MergeSort</span>(nums, mid + <span class="number">1</span>, end);</span><br><span class="line">    <span class="built_in">Merge</span>(nums, front, mid, end);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">MergeSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">MergeSort</span>(nums, <span class="number">0</span>, nums.<span class="built_in">size</span>() - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="7-堆排序"><a href="#7-堆排序" class="headerlink" title="7 堆排序"></a>7 堆排序</h1><p>堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。堆排序可以说是一种利用堆的概念来排序的选择排序。分为两种方法：</p>
-<p>大顶堆：每个节点的值都大于或等于其子节点的值，在堆排序算法中用于升序排列；<br>小顶堆：每个节点的值都小于或等于其子节点的值，在堆排序算法中用于降序排列；<br>堆排序的平均时间复杂度为 Ο(nlogn)。</p>
-<h2 id="7-1-算法简述"><a href="#7-1-算法简述" class="headerlink" title="7.1 算法简述"></a>7.1 算法简述</h2><ol>
-<li><p>创建一个堆 H[0……n-1]；</p>
-</li>
-<li><p>把堆首（最大值）和堆尾互换；</p>
-</li>
-<li><p>把堆的尺寸缩小 1，并调用 shift_down(0)，目的是把新的数组顶端数据调整到相应位置；</p>
-</li>
-<li><p>重复步骤 2，直到堆的尺寸为 1。</p>
-</li>
-</ol>
-<h2 id="7-2-代码"><a href="#7-2-代码" class="headerlink" title="7.2 代码"></a>7.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">max_heapify</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> start, <span class="type">int</span> end)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> dad = start;</span><br><span class="line">    <span class="type">int</span> son = dad * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (son &lt;= end) &#123; </span><br><span class="line">        <span class="keyword">if</span> (son + <span class="number">1</span> &lt;= end &amp;&amp; arr[son] &lt; arr[son + <span class="number">1</span>]) </span><br><span class="line">            son++;</span><br><span class="line">        <span class="keyword">if</span> (arr[dad] &gt; arr[son]) </span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123; </span><br><span class="line">            <span class="built_in">swap</span>(arr[dad], arr[son]);</span><br><span class="line">            dad = son;</span><br><span class="line">            son = dad * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">heap_sort</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = len / <span class="number">2</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        <span class="built_in">max_heapify</span>(arr, i, len - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = len - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="built_in">swap</span>(arr[<span class="number">0</span>], arr[i]);</span><br><span class="line">        <span class="built_in">max_heapify</span>(arr, <span class="number">0</span>, i - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="8-计数排序"><a href="#8-计数排序" class="headerlink" title="8 计数排序"></a>8 计数排序</h1><p>计数排序的核心在于将输入的数据值转化为键存储在额外开辟的数组空间中。作为一种线性时间复杂度的排序，计数排序要求输入的数据必须是有确定范围的整数。</p>
-<p>当输入的元素是 n 个 0 到 k 之间的整数时，它的运行时间是 Θ(n + k)。计数排序不是比较排序，排序的速度快于任何比较排序算法。</p>
-<p>由于用来计数的数组C的长度取决于待排序数组中数据的范围（等于待排序数组的最大值与最小值的差加上1），这使得计数排序对于数据范围很大的数组，需要大量时间和内存。</p>
-<p>类似于哈希法</p>
-<h2 id="8-1-算法简述"><a href="#8-1-算法简述" class="headerlink" title="8.1 算法简述"></a>8.1 算法简述</h2><p>（1）找出待排序的数组中最大和最小的元素<br>（2）统计数组中每个值为i的元素出现的次数，存入数组C的第i项<br>（3）对所有的计数累加（从C中的第一个元素开始，每一项和前一项相加）<br>（4）反向填充目标数组：将每个元素i放在新数组的第C(i)项，每放一个元素就将C(i)减去1</p>
-<h2 id="8-2-代码"><a href="#8-2-代码" class="headerlink" title="8.2 代码"></a>8.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="9-桶排序"><a href="#9-桶排序" class="headerlink" title="9 桶排序"></a>9 桶排序</h1><h2 id="9-1-算法简述"><a href="#9-1-算法简述" class="headerlink" title="9.1 算法简述"></a>9.1 算法简述</h2><p>桶排序是计数排序的升级版。它利用了函数的映射关系，高效与否的关键就在于这个映射函数的确定。为了使桶排序更加高效，我们需要做到这两点：</p>
-<p>在额外空间充足的情况下，尽量增大桶的数量<br>使用的映射函数能够将输入的 N 个数据均匀的分配到 K 个桶中<br>同时，对于桶中元素的排序，选择何种比较排序算法对于性能的影响至关重要。</p>
-<h2 id="9-2-代码"><a href="#9-2-代码" class="headerlink" title="9.2 代码"></a>9.2 代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> BUCKET_NUM = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">ListNode</span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">explicit</span> <span class="title">ListNode</span><span class="params">(<span class="type">int</span> i=<span class="number">0</span>)</span>:mData(i),mNext(NULL)&#123;</span>&#125;</span><br><span class="line">        ListNode* mNext;</span><br><span class="line">        <span class="type">int</span> mData;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">ListNode* <span class="title">insert</span><span class="params">(ListNode* head,<span class="type">int</span> val)</span></span>&#123;</span><br><span class="line">        ListNode dummyNode;</span><br><span class="line">        ListNode *newNode = <span class="keyword">new</span> <span class="built_in">ListNode</span>(val);</span><br><span class="line">        ListNode *pre,*curr;</span><br><span class="line">        dummyNode.mNext = head;</span><br><span class="line">        pre = &amp;dummyNode;</span><br><span class="line">        curr = head;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">NULL</span>!=curr &amp;&amp; curr-&gt;mData&lt;=val)&#123;</span><br><span class="line">                pre = curr;</span><br><span class="line">                curr = curr-&gt;mNext;</span><br><span class="line">        &#125;</span><br><span class="line">        newNode-&gt;mNext = curr;</span><br><span class="line">        pre-&gt;mNext = newNode;</span><br><span class="line">        <span class="keyword">return</span> dummyNode.mNext;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function">ListNode* <span class="title">Merge</span><span class="params">(ListNode *head1,ListNode *head2)</span></span>&#123;</span><br><span class="line">        ListNode dummyNode;</span><br><span class="line">        ListNode *dummy = &amp;dummyNode;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">NULL</span>!=head1 &amp;&amp; <span class="literal">NULL</span>!=head2)&#123;</span><br><span class="line">                <span class="keyword">if</span>(head1-&gt;mData &lt;= head2-&gt;mData)&#123;</span><br><span class="line">                        dummy-&gt;mNext = head1;</span><br><span class="line">                        head1 = head1-&gt;mNext;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                        dummy-&gt;mNext = head2;</span><br><span class="line">                        head2 = head2-&gt;mNext;</span><br><span class="line">                &#125;</span><br><span class="line">                dummy = dummy-&gt;mNext;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="literal">NULL</span>!=head1) dummy-&gt;mNext = head1;</span><br><span class="line">        <span class="keyword">if</span>(<span class="literal">NULL</span>!=head2) dummy-&gt;mNext = head2;</span><br><span class="line">       </span><br><span class="line">        <span class="keyword">return</span> dummyNode.mNext;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BucketSort</span><span class="params">(<span class="type">int</span> n,<span class="type">int</span> arr[])</span></span>&#123;</span><br><span class="line">        <span class="function">vector&lt;ListNode*&gt; <span class="title">buckets</span><span class="params">(BUCKET_NUM,(ListNode*)(<span class="number">0</span>))</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">                <span class="type">int</span> index = arr[i]/BUCKET_NUM;</span><br><span class="line">                ListNode *head = buckets.<span class="built_in">at</span>(index);</span><br><span class="line">                buckets.<span class="built_in">at</span>(index) = <span class="built_in">insert</span>(head,arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode *head = buckets.<span class="built_in">at</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;BUCKET_NUM;++i)&#123;</span><br><span class="line">                head = <span class="built_in">Merge</span>(head,buckets.<span class="built_in">at</span>(i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">                arr[i] = head-&gt;mData;</span><br><span class="line">                head = head-&gt;mNext;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="9-3-最好情况"><a href="#9-3-最好情况" class="headerlink" title="9.3 最好情况"></a>9.3 最好情况</h2><p>当输入的数据可以均匀的分配到每一个桶中。</p>
-<h2 id="9-4-最坏情况"><a href="#9-4-最坏情况" class="headerlink" title="9.4 最坏情况"></a>9.4 最坏情况</h2><p>当输入的数据被分配到了同一个桶中。</p>
+<p>测试是否运行成功</p>
+<h1 id="3-使用VSCODE进行运行和调试"><a href="#3-使用VSCODE进行运行和调试" class="headerlink" title="3 使用VSCODE进行运行和调试"></a>3 使用VSCODE进行运行和调试</h1><h2 id="3-1-运行"><a href="#3-1-运行" class="headerlink" title="3.1 运行"></a>3.1 运行</h2><p>编写一个排序的cpp，如果想直接运行，那么直接打开终端先c++编译一下，运行即可，比如我的文件是SortAlgrithm.cpp，那么打开终端，输入<code>g++ SortAlgrithm.cpp -o SortAlgm.exe</code>，此时该目录下会出现该文件，输入<code>./SortAlgm.exe</code>，直接运行即可</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822185849.png"></p>
+<p>比如我这里就是将<code>&#123; 7,6,3,9,1,8,2,4,5 &#125;</code>进行排序输出。</p>
+<h2 id="3-2-调试"><a href="#3-2-调试" class="headerlink" title="3.2 调试"></a>3.2 调试</h2><p>比如继续调试上述的代码，如上图我在代码中设置断点，我们当然可以通过GDB直接在终端进行调试，但是这样显然比较麻烦，所以我们可以再VSCODE侧边栏打开调试，点击运行和调试按钮即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822190139.png"></p>
+<p>当我们打开之后就会出现以下调试界面</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822190313.png"></p>
+<p>这个界面相信大家都很眼熟了，跟VS的操作界面基本一致，进行代码的调试就好了。</p>
 <p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
 ]]></content>
       <categories>
@@ -1376,7 +1082,7 @@
       </categories>
       <tags>
         <tag>C/C++</tag>
-        <tag>排序算法</tag>
+        <tag>vscode</tag>
       </tags>
   </entry>
   <entry>
@@ -1502,8 +1208,8 @@
         <category>技术博客</category>
       </categories>
       <tags>
-        <tag>C++</tag>
         <tag>软件设计模式</tag>
+        <tag>C++</tag>
         <tag>单例模式</tag>
       </tags>
   </entry>
@@ -1680,99 +1386,6 @@
       </tags>
   </entry>
   <entry>
-    <title>vscode配置C++环境</title>
-    <url>/2023/08/22/20230822_VscodeDeployC++/</url>
-    <content><![CDATA[<p>因为目前还是一些简单的项目或者笔试题，所以想要实现vscode大一统的最后一步，在vscode上配置C++环境。</p>
-<span id="more"></span>
-
-<h1 id="1-下载GCC编译器"><a href="#1-下载GCC编译器" class="headerlink" title="1 下载GCC编译器"></a>1 下载GCC编译器</h1><p>官方github地址为<a href="https://github.com/niXman/mingw-builds-binaries/releases">mingw-builds-binaries</a>，在其中选择对应系统的版本进行下载即可，比如windows64位，就下载下图对应版本。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822163656.png"></p>
-<p>解压到一个没有中文和空格的路径中，将安装的bin文件夹路径添加到系统变量</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822164757.png"></p>
-<p>完成后，打开cmd，输入<code>gcc -v</code>验证是否成功</p>
-<h1 id="2-安装VSCODE的C-C-扩展"><a href="#2-安装VSCODE的C-C-扩展" class="headerlink" title="2 安装VSCODE的C&#x2F;C++扩展"></a>2 安装VSCODE的C&#x2F;C++扩展</h1><p>直接在扩展中间安装C&#x2F;C++扩展即可</p>
-<p>此时创建我们所要使用的文件夹，此时我出现一个问题，在D盘中创建文件夹无法检测到我安装的编译器，但是我在C盘中创建文件夹就没有这个问题，所幸消耗空间不多，勉强在C盘创建时用了。</p>
-<p>创建文件test.cpp</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">//include如果出错，说明是编译器问题，去C盘创建则没有问题</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;success&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>测试是否运行成功</p>
-<h1 id="3-使用VSCODE进行运行和调试"><a href="#3-使用VSCODE进行运行和调试" class="headerlink" title="3 使用VSCODE进行运行和调试"></a>3 使用VSCODE进行运行和调试</h1><h2 id="3-1-运行"><a href="#3-1-运行" class="headerlink" title="3.1 运行"></a>3.1 运行</h2><p>编写一个排序的cpp，如果想直接运行，那么直接打开终端先c++编译一下，运行即可，比如我的文件是SortAlgrithm.cpp，那么打开终端，输入<code>g++ SortAlgrithm.cpp -o SortAlgm.exe</code>，此时该目录下会出现该文件，输入<code>./SortAlgm.exe</code>，直接运行即可</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822185849.png"></p>
-<p>比如我这里就是将<code>&#123; 7,6,3,9,1,8,2,4,5 &#125;</code>进行排序输出。</p>
-<h2 id="3-2-调试"><a href="#3-2-调试" class="headerlink" title="3.2 调试"></a>3.2 调试</h2><p>比如继续调试上述的代码，如上图我在代码中设置断点，我们当然可以通过GDB直接在终端进行调试，但是这样显然比较麻烦，所以我们可以再VSCODE侧边栏打开调试，点击运行和调试按钮即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822190139.png"></p>
-<p>当我们打开之后就会出现以下调试界面</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230822190313.png"></p>
-<p>这个界面相信大家都很眼熟了，跟VS的操作界面基本一致，进行代码的调试就好了。</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>vscode</tag>
-        <tag>C/C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客网站分布管理</title>
-    <url>/2023/10/01/20231001_blogDistributeToMacOS/</url>
-    <content><![CDATA[<p>等到要换电脑的时候，发现我在本地管理github pages需要移植一下，博客记录一下移植过程，方便以后查阅，由于博主心血来潮换了mac，这时候需要在MacOS上继续进行配置了。</p>
-<span id="more"></span>
-<h1 id="1-安装各种环境"><a href="#1-安装各种环境" class="headerlink" title="1 安装各种环境"></a>1 安装各种环境</h1><h2 id="1-1-检查git"><a href="#1-1-检查git" class="headerlink" title="1.1 检查git"></a>1.1 检查git</h2><p>一般mac都会自带git，所以只需要输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
-<p>检查一下版本即可</p>
-<h2 id="1-2-安装nvm"><a href="#1-2-安装nvm" class="headerlink" title="1.2 安装nvm"></a>1.2 安装nvm</h2><p>首先先安装nvm，也就是node.js的管理工具。在nvm的github官方仓库下载最新版本安装即可。</p>
-<p>安装完成后输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">commond -v nvm</span><br></pre></td></tr></table></figure>
-
-<p>出现nvm即安装成功</p>
-<h2 id="1-3-安装node-js"><a href="#1-3-安装node-js" class="headerlink" title="1.3 安装node.js"></a>1.3 安装node.js</h2><p>然后按照以下步骤进行安装</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nvm install stable  # 使用 nvm 安装最新稳定版 Node.js</span><br><span class="line">nvm use stable     # 使用刚刚安装的 Node.js 版本</span><br><span class="line"></span><br><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
-<p>安装的时候可能会遇到出现<strong>http fetch GET 200</strong>的问题，此时只需要多等待几分钟即可。</p>
-<h2 id="1-4-安装hexo"><a href="#1-4-安装hexo" class="headerlink" title="1.4 安装hexo"></a>1.4 安装hexo</h2><p>输入以下命令进行安装hexo</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p>此时就可以将我们之前的博客文件夹迁移到mac当地，在文件夹中打开iTerm终端，输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>本地测试没有问题之后则本地环境调试成功。</p>
-<h1 id="2-连接到github"><a href="#2-连接到github" class="headerlink" title="2 连接到github"></a>2 连接到github</h1><h2 id="2-1-生成ssh密钥"><a href="#2-1-生成ssh密钥" class="headerlink" title="2.1 生成ssh密钥"></a>2.1 生成ssh密钥</h2><p>首先配置git账户，设置user.name和user.email，输入以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;account name&quot;     # 设置用户名</span><br><span class="line">git config --global user.email &quot;account email&quot;     # 设置邮箱地址</span><br></pre></td></tr></table></figure>
-
-<p>设置完毕之后，就可以生成SSH KEY了，输入以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C example@mail.com</span><br></pre></td></tr></table></figure>
-<p>这里输入你自己的邮箱即可<br>然后输入以下两条命令查看并复制你的密钥</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">vim id_rsa.pub</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-2-github添加SSH-key"><a href="#2-2-github添加SSH-key" class="headerlink" title="2.2 github添加SSH key"></a>2.2 github添加SSH key</h2><p>制公钥id_rsa.pub中的内容添加到github，用户-&gt;settings-&gt;SSH and GPG keys 中的按键new SSH key，将id_rsa.pub中的内容复制进去即可</p>
-<p>添加完成后，在终端输入<code>ssh -T git@github.com</code>进行验证，此时会让你输入刚刚在生成ssh密钥时输入的密码，输入后回车会看到欢迎的语句，此时说明配对成功。</p>
-<h1 id="3-测试上传"><a href="#3-测试上传" class="headerlink" title="3 测试上传"></a>3 测试上传</h1><p>此时将本博客放入博文推送的文件中，hexo clean，hexo g hexo d三部曲后，验证是否上传成功即可。</p>
-<p>验证时，发现这台机器还没有git push上传过，此时需要重新申请tokens，在github账户中，配置token的流程如下：  </p>
-<p>打开github-&gt;settings-&gt;developer settings，选择tokens(classic)，新建tokens。  </p>
-<p>此时上传(hexo d)时会要求我们输入账户和密码，账户就是github的账户，而密码就是刚刚申请的token值，具体步骤可以查看我的建立博客的博文–<a href="https://mobbu.space/2023/08/09/20230803_blogWebsite/">建立个人博客网站详细教程</a></p>
-<p>此时就能上传验证成功了。</p>
-<h1 id="4-图床软件picgo移植"><a href="#4-图床软件picgo移植" class="headerlink" title="4 图床软件picgo移植"></a>4 图床软件picgo移植</h1><ol>
-<li>下载软件<br>在picgo的github开源地址下载2.3.1的稳定版，选择下载arm64.pmg格式。</li>
-</ol>
-<p>下载后打开会出现文件已损坏的问题，这是因为没有签名，此时打开终端输入以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo spctl --master-disable #此时要输入密码</span><br><span class="line">xattr -cr /Applications/PicGo.app</span><br></pre></td></tr></table></figure>
-<p>输入上述两条命令后就能顺利打开</p>
-<ol start="2">
-<li>软件配置</li>
-</ol>
-<p>此处按照博客教程中步骤来即可设置好仓库名，地址，主要是设置好github的token，设置好后进行测试，随便上传一张图片，比如下图，验证成功。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231004161235.png"></p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>博客网站</tag>
-        <tag>MacOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>学术PPT制作--beamer</title>
     <url>/2023/10/04/20231004_Latex&amp;beamer/</url>
     <content><![CDATA[<p>使用<strong>MAC+VSCODE+LATEX</strong></p>
@@ -1812,10 +1425,10 @@
       </categories>
       <tags>
         <tag>vscode</tag>
-        <tag>MacOS</tag>
         <tag>办公技能</tag>
         <tag>beamer</tag>
         <tag>latex</tag>
+        <tag>MacOS</tag>
       </tags>
   </entry>
   <entry>
@@ -1881,345 +1494,6 @@
       <tags>
         <tag>远程桌面</tag>
         <tag>跨平台</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>多模态视频片段定位论文阅读</title>
-    <url>/2023/10/07/20231007_paperRead/</url>
-    <content><![CDATA[<p>最近在研究多模态视频片段定位方向，在此博客记录一下论文的阅读和我在阅读中的一些个人的理解和想法，之前已经阅读了大部分了，只是因为秋招的原因耽搁了很久，近两年的论文也拉下了。</p>
-<p>参考了<a href="https://github.com/yawenzeng/Awesome-Cross-Modal-Video-Moment-Retrieval">Awesome-Cross-Modal-Video-Moment-Retrieval</a>整理的论文，后续会添加自己觉得有用的论文。</p>
-<p>主要按照年份进行阅读，其中每个年份还会进行分类阅读。中间有详细阅读的论文会添加自己的理解和解析。</p>
-<p>持续更新～</p>
-<span id="more"></span>
-
-<h1 id="2017-2"><a href="#2017-2" class="headerlink" title="2017:2"></a>2017:2</h1><p><a href="https://www.cnblogs.com/mobbu/p/17746499.html">1[ICCV 2017] [CTRL] TALL Temporal Activity Localization via Language Query</a>⭕<br>2[ICCV 2017] [MCN] Localizing Moments in Video with Natural Language⭕</p>
-<p>1[ICCV 2017] [CTRL] TALL Temporal Activity Localization via Language Query</p>
-<ul>
-<li>动机：开山之作，点出该问题需要解决的两大困难1作为跨模态任务，如何得到适当的文本和视频表示特征，以允许跨模态匹配操作和完成语言查询。2理论上可以生成无限粒度的视频片段，然后逐一比较。但时间消耗过大，那么如何能够从有限粒度的滑动窗口做到准确的具体帧定位。</li>
-<li>方法：特征抽取–使用全局的sentence2vec和C3D。模态交互–加+乘+拼+FC。多任务：对齐分数+回归。</li>
-</ul>
-<p>2[ICCV 2017] [MCN] Localizing Moments in Video with Natural Language</p>
-<ul>
-<li>方法：特征抽取–使用全局的LSTM和VGG。模态交互–无。多任务：模态间的均方差（而不是预测对齐分数），同时使用RGB和 optical flow光流。</li>
-</ul>
-<h1 id="2018-5"><a href="#2018-5" class="headerlink" title="2018:5"></a>2018:5</h1><p><a href="">3[MM 2018] Cross-modal Moment Localization in Videos</a></p>
-<p>4[SIGIR 2018] Attentive Moment Retrieval in Videos</p>
-<p>5[EMNLP 2018] Localizing Moments in Video with Temporal Language</p>
-<p>6[EMNLP 2018] Temporally Grounding Natural Sentence in Video</p>
-<p>7[IJCAI 2018] Multi-modal Circulant Fusion for Video-to-Language and Backward</p>
-<p>[MM 2018] Cross-modal Moment Localization in Videos</p>
-<ul>
-<li>动机：强调时间语态问题，即句子中的“先”“前”往往被忽视，需要更细致的理解。</li>
-<li>方法：尝试结合上下文，用文本给视频加attention。</li>
-</ul>
-<p>[SIGIR 2018] Attentive Moment Retrieval in Videos</p>
-<ul>
-<li>方法：尝试结合上下文，用视频给文本加attention。以上两篇的特征处理由于要加attention就开始局部化。</li>
-</ul>
-<p>[EMNLP 2018] Localizing Moments in Video with Temporal Language</p>
-<ul>
-<li>动机：时序上下文是很重要的，不然无法理解句子中一些词之间的关系。</li>
-<li>方法：延续MCN的思路走算匹配度无模态交互，且同时使用RGB和 optical flow光流。特征抽取–LSTM，视频表示上同时融合了多种上下文。</li>
-</ul>
-<p>[EMNLP 2018] Temporally Grounding Natural Sentence in Video</p>
-<ul>
-<li>动机：捕捉视频和句子之间不断发展的细粒度的交互。</li>
-<li>方法：从每帧&#x2F;逐词。使用两组lstm处理每个时刻文本和视频的交互。</li>
-</ul>
-<p>[IJCAI 2018] Multi-modal Circulant Fusion for Video-to-Language and Backward</p>
-<ul>
-<li>动机：增强视觉和文本表达的融合</li>
-<li>方法：同时使用vector和matrix的融合方式，其中circulant matrix的操作方式是每一行平移一个元素以探索不同模态向量的所有可能交互。</li>
-</ul>
-<p><strong>#年度关键词：上下文。</strong></p>
-<h1 id="2019-16"><a href="#2019-16" class="headerlink" title="2019: 16"></a>2019: 16</h1><p>8[AAAI 2019] Localizing Natural Language in Videos<br>9[AAAI 2019] Multilevel language and vision integration for text-to-clip retrieval<br>10[AAAI 2019] Semantic Proposal for Activity Localization in Videos via Sentence Query<br>11[AAAI 2019] To Find Where You Talk Temporal Sentence Localization in Video with Attention Based Location Regression<br>12[AAAI 2019] Read, Watch, and Move Reinforcement Learning for Temporally Grounding Natural Language Descriptions in Videos⭕<br>13[CVPR 2019] MAN_ Moment Alignment Network for Natural Language Moment Retrieval via Iterative Graph Adjustment⭕<br>14[CVPR Workshop 2019] Tripping through time Efficient Localization of Activities in Videos<br>15[CVPR 2019] Language-Driven Temporal Activity Localization A Semantic Matching Reinforcement Learning Model⭕<br>16[CVPR 2019] Weakly Supervised Video Moment Retrieval From Text Queries⭕<br>17[ICMR 2019] Cross-Modal Video Moment Retrieval with Spatial and Language-Temporal Attention⭕<br>18[MM 2019] Exploiting Temporal Relationships in Video Moment Localization with Natural Language<br>19[NIPS 2019] Semantic Conditioned Dynamic Modulation for Temporal Sentence Grounding in Videos<br>20[SIGIR 2019] Cross-modal interaction networks for query-based moment retrieval in videos<br>21[WACV2019] MAC: Mining Activity Concepts for Language-Based Temporal Localization<br>22[ArXiv 2019] Temporal Localization of Moments in Video Collections with Natural Language<br>23[ArXiv 2019] wMAN Weakly-supervised Moment Alignment Network for Text-based Video Segment Retrieval  </p>
-<p>[AAAI 2019] Localizing Natural Language in Videos</p>
-<ul>
-<li>动机：以前的工作忽略模态间细粒度的交互和上下文信息。</li>
-<li>方法：交叉门控的递归网络来匹配自然句子和视频序列（类似cross-attention），以完成细粒度交互。</li>
-</ul>
-<p>[AAAI 2019] Multilevel language and vision integration for text-to-clip retrieval</p>
-<ul>
-<li>动机：global embedding缺少细粒度，且不同模态之间独立嵌入缺乏交互。</li>
-<li>方法：先融语义再用R-C3D生成候选时刻以加快效率。同时用LSTM对查询语句和视频片段之间的细粒度相似性进行时序融合。</li>
-</ul>
-<p>[AAAI 2019] Semantic Proposal for Activity Localization in Videos via Sentence Query</p>
-<ul>
-<li>动机：滑动窗口数据量多，效率低。</li>
-<li>方法：将句子中的语义信息集成到动作候选生成过程中以得到更好的时刻候选集。</li>
-<li>其他：该任务不同于时序动作定位的地方 （1）某一个动作是各种行动的组合，可能持续很长时间。 （2）句子查询不限于预定义的类列表。 （3）视频通常包含多个不同的活动实例。</li>
-</ul>
-<p>[AAAI 2019] To Find Where You Talk Temporal Sentence Localization in Video with Attention Based Location Regression</p>
-<ul>
-<li>动机：1视频的时间结构和全局上下文没有充分探索2句子处理太粗3候选切分太耗时。</li>
-<li>方法：特征抽取–全局+局部，即用C3D+BiLSTM处理视频，用Glove+BiLSTM处理文本。然后co-attention进行对齐。并且不做切分，直接预测定位点。</li>
-</ul>
-<p>[AAAI 2019] Read, Watch, and Move Reinforcement Learning for Temporally Grounding Natural Language Descriptions in Videos</p>
-<ul>
-<li>动机：候选太耗时。</li>
-<li>方法：首次将强化学习引入到这个领域，处理成顺序决策问题。</li>
-</ul>
-<p>[CVPR 2019] MAN_ Moment Alignment Network for Natural Language Moment Retrieval via Iterative Graph Adjustment</p>
-<ul>
-<li>动机：语义失调和结构失调（候选集之间的处理是独立的）。</li>
-<li>方法：特征抽取–LSTM和I3D。使用迭代图学习候选时刻之间的关系。</li>
-</ul>
-<p>[CVPR Workshop 2019] Tripping through time Efficient Localization of Activities in Videos</p>
-<ul>
-<li>动机：1文本和视频的联合表示以local细粒化。2候选效率低且不符合人类的自然定位方法。</li>
-<li>方法：使用门控注意力建模细粒度的文本和视觉表示+强化学习定位。</li>
-</ul>
-<p>[CVPR 2019] Language-Driven Temporal Activity Localization A Semantic Matching Reinforcement Learning Model</p>
-<ul>
-<li>动机：直接匹配句子与视频内容使强化学习表现不佳，更需要更多的关注句子和图片中目标的细粒度来增强语义。</li>
-<li>方法：在强化学习框架下引入语义特征。</li>
-</ul>
-<p>[CVPR 2019] Weakly Supervised Video Moment Retrieval From Text Queries</p>
-<ul>
-<li>动机：标注句子边界太耗时，且不可扩展在实践中</li>
-<li>方法：弱监督–在训练时不需要对文本描述进行时间边界注释，而只使用视频级别的文本描述。技术上主要使用文本和视频在时序上的注意力对齐。</li>
-</ul>
-<p>[ICMR 2019] Cross-Modal Video Moment Retrieval with Spatial and Language-Temporal Attention</p>
-<ul>
-<li>动机：没有关注空间目标信息和文本的语义对齐，且需要结合视频的时空信息。</li>
-<li>方法：特征抽取–全局+局部，即全局还是用C3D和BiLSTM。然后全局特征分别给局部（词和目标）加attention突出重点。</li>
-</ul>
-<p>[MM 2019] Exploiting Temporal Relationships in Video Moment Localization with Natural Language</p>
-<ul>
-<li>动机：之前对文本的处理是Global，而文本中事件之间的时间依赖和推理没有得到充分考虑。</li>
-<li>方法：树注意网络将文本分为主事件，上下文时间，时间信号。</li>
-</ul>
-<p>[NIPS 2019] Semantic Conditioned Dynamic Modulation for Temporal Sentence Grounding in Videos</p>
-<ul>
-<li>动机：现有的方法主要做语义匹配和对齐，而忽略了句子信息在视频的时间关联和组合中起着重要作用。</li>
-<li>方法：提出语义条件动态调制(SCDM)机制，它依靠句子语义来调节时间卷积运算，从而更好地关联和组合句子相关的视频内容。</li>
-</ul>
-<p>[SIGIR 2019] Cross-modal interaction networks for query-based moment retrieval in videos</p>
-<ul>
-<li>动机：对句子处理的细粒度不够（语境长依赖）。</li>
-<li>方法：对切分的词构建语义树&#x2F;图抽特征。</li>
-</ul>
-<p>[WACV2019] MAC: Mining Activity Concepts for Language-Based Temporal Localization</p>
-<ul>
-<li>动机：联合嵌入的子空间忽略了有关视频和查询中动作的丰富语义线索</li>
-<li>方法：从视频和语言模态中挖掘动作概念，其他部分同TALL。</li>
-</ul>
-<p>[ArXiv 2019] Temporal Localization of Moments in Video Collections with Natural Language</p>
-<ul>
-<li>动机：欧几里德居来来衡量文本视频距离不好（MCN的对比路线），无法大规模应用。</li>
-<li>方法：使用平方差距离更精准的对齐，并应用视频重排序方法以应对大规模视频库。</li>
-</ul>
-<p>[ArXiv 2019] wMAN Weakly-supervised Moment Alignment Network for Text-based Video Segment Retrieval</p>
-<ul>
-<li>动机：自动推断无监督的视觉和语言表示之间的潜在对应关系&#x2F;对齐。</li>
-<li>方法：词条件视觉图以捕捉交互，并应用多实例学习完成无监督下的细粒度对齐。</li>
-</ul>
-<p><strong>#年度关键词：文本和视频的细粒化+强化学习+候选框关系&#x2F;生成+弱监督。</strong></p>
-<h1 id="2020-22"><a href="#2020-22" class="headerlink" title="2020:22"></a>2020:22</h1><p>24[AAAI 2020] Temporally Grounding Language Queries in Videos by Contextual Boundary-aware Prediction<br>25[AAAI 2020] Tree-Structured Policy based Progressive Reinforcement Learning for Temporally Language Grounding in Video<br>26[AAAI 2020] Learning 2D Temporal Adjacent Networks for Moment Localization with Natural Language⭕<br>27[AAAI 2020] Weakly-Supervised Video Moment Retrieval via Semantic Completion Network<br>28[TIP 2020] Moment Retrieval via Cross-Modal Interaction Networks With Query Reconstruction⭕<br>29[MM 2020] Adversarial Video Moment Retrieval by Jointly Modeling Ranking and Localization⭕<br>30[MM 2020] STRONG: Spatio-Temporal Reinforcement Learning for Cross-Modal Video Moment Localization<br>31[MM 2020] Dual Path Interaction Network for video Moment Localization<br>32[MM 2020] Regularized Two-Branch Proposal Networks for Weakly-Supervised Moment Retrieval in Videos<br>33[ECCV 2020] VLANet: Video-Language Alignment Network for Weakly-Supervised Video Moment Retrieval<br>34[WACV2020] Proposal-free Temporal Moment Localization of a Natural-Language Query in Video using Guided Attention<br>35[ECCV 2020] TVR A Large-Scale Dataset for Video-Subtitle Moment Retrieval<br>36[ArXiv 2020] Video Moment Localization using Object Evidence and Reverse Captioning<br>37[ArXiv 2020] Graph Neural Network for Video-Query based Video Moment Retrieval<br>38[ArXiv 2020] Text-based Localization of Moments in a Video Corpus<br>39[ArXiv 2020] Generating Adjacency Matrix for Video-Query based Video Moment Retrieval<br>40[BMVC 2020] Uncovering Hidden Challenges in Query-Based Video Moment Retrieval<br>41[ArXiv 2020] Video Moment Retrieval via Natural Language Queries<br>42[ArXiv 2020] Frame-wise Cross-modal Match for Video Moment Retrieval<br>43[MM 2020] Fine-grained Iterative Attention Network for Temporal Language Localization in Videos<br>44[MM 2020] Jointly Cross- and Self-Modal Graph Attention Network for Query-Based Moment Localization<br>45[CVPR 2020] Dense Regression Network for Video Grounding  </p>
-<p>[AAAI 2020] Temporally Grounding Language Queries in Videos by Contextual Boundary-aware Prediction</p>
-<ul>
-<li>动机：当模型无法定位最佳时刻时，添加的偏移回归可能会失败。</li>
-<li>方法：语言集成的“感知”周围的预测，即每个时间步长都会预测时间锚和边界。</li>
-</ul>
-<p>[AAAI 2020] Tree-Structured Policy based Progressive Reinforcement Learning for Temporally Language Grounding in Video</p>
-<ul>
-<li>动机：现有的方法大多存在效率低下、缺乏可解释性和偏离人类感知机制（从粗到细）问题。</li>
-<li>方法：基于树结构政策的渐进强化学习(TSP-PRL)框架，通过迭代细化过程来顺序地调节时间边界。</li>
-</ul>
-<p>[AAAI 2020] Learning 2D Temporal Adjacent Networks for Moment Localization with Natural Language</p>
-<ul>
-<li>动机：以往模型一般单独考虑时间，忽视了时间的依赖性。（不能在当前时刻对其他时刻进行预测）。</li>
-<li>方法：时间从一维变为二维，即变成二维矩阵，预测每一个位置的score。</li>
-</ul>
-<p>[AAAI 2020] Weakly-Supervised Video Moment Retrieval via Semantic Completion Network</p>
-<ul>
-<li>动机：弱监督的注意力权重通常只对很明显的区域有反应，即候选太相似。</li>
-<li>方法：候选生成–视觉语义词和文本对齐得到分数，并反馈给候选生成的打分。</li>
-</ul>
-<p>[TIP 2020] Moment Retrieval via Cross-Modal Interaction Networks With Query Reconstruction</p>
-<ul>
-<li>sigir19的扩充，增加查询重建任务，整体上联合自然语言查询的句法依赖、视频上下文中的长程语义依赖和足够的跨模态交互一起建模。</li>
-</ul>
-<p>[MM 2020] Adversarial Video Moment Retrieval by Jointly Modeling Ranking and Localization</p>
-<ul>
-<li>动机：强化学习定位不稳定，检索任务候选框效率低。</li>
-<li>方法：用对抗学习联合建模，即用强化学习定位来生成候选，进而在生成候选集上进行检索。</li>
-</ul>
-<p>[MM 2020] STRONG: Spatio-Temporal Reinforcement Learning for Cross-Modal Video Moment Localization</p>
-<ul>
-<li>动机：空间上的场景信息很重要+候选框效率低。</li>
-<li>方法：除了时序上的强化学习，其在空间上也加入强化学习，并以弱监督追踪的方式聚焦场景，去除冗余。</li>
-</ul>
-<p>[MM 2020] Dual Path Interaction Network for video Moment Localization</p>
-<ul>
-<li>动机：很少有研究将候选框层级的对齐信息（算语义匹配分数的技术路线）和帧层级的边界信息（预测边界起止的路线）结合在一起，并考虑它们之间的互补性。</li>
-<li>方法：双路径交互网络(DPIN)，分别做两大任务，同时两者之间通过信息交互相互增强。</li>
-</ul>
-<p>[MM 2020] Regularized Two-Branch Proposal Networks for Weakly-Supervised Moment Retrieval in Videos</p>
-<ul>
-<li>动机：大多数现有的弱监督方法都采用基于多实例的框架来做样本间对抗，但忽略了相似内容之间的样本间对抗。</li>
-<li>方法：同时考虑样本间和样本内的对抗，其中会采用语言感知得到两个分支的视觉表示（被增强的和被印制的），这两者将构成很强的正负样本对。</li>
-</ul>
-<p>[ECCV 2020] VLANet: Video-Language Alignment Network for Weakly-Supervised Video Moment Retrieval</p>
-<ul>
-<li>动机：粗略的查询表示和单向注意机制导致模糊的注意映射。</li>
-<li>方法：修剪候选集+更细粒度的多注意力机制来获得更好的注意力增加定位性能。</li>
-</ul>
-<p>[WACV2020] Proposal-free Temporal Moment Localization of a Natural-Language Query in Video using Guided Attention</p>
-<ul>
-<li>动机：不依赖候选的端对端框架，文本注释主观性。</li>
-<li>方法：使用attention的动态过滤器（利用文本对视频的过滤），软标签分布损失解决文本注释的不确定性。</li>
-</ul>
-<p>[ECCV 2020] TVR A Large-Scale Dataset for Video-Subtitle Moment Retrieval</p>
-<ul>
-<li>动机：视频+字幕才能进一步的理解。</li>
-<li>方法：提出一个新数据集，并设计一个类似多Transformer的模型完成不同模态的理解和融合。</li>
-</ul>
-<p>[ArXiv 2020] Video Moment Localization using Object Evidence and Reverse Captioning</p>
-<ul>
-<li>动机：仅仅有语义概念是不够的，还需要对象和字幕的补充。</li>
-<li>方法：在MAC（视频，视觉语义概念，文本，文本语义概念）的方法上再增加对象和字幕的特征。</li>
-</ul>
-<p>[ArXiv 2020] Graph Neural Network for Video-Query based Video Moment Retrieval</p>
-<ul>
-<li>动机：帧间的特征相似度与视频间的特征相似度之间存在不一致，这会影响特征融合。</li>
-<li>方法：沿时间维度对视频构多个图，然后再做多图特征融合。</li>
-</ul>
-<p>[ArXiv 2020] Text-based Localization of Moments in a Video Corpus</p>
-<ul>
-<li>动机：text-video可能会有一对多+搜索全库是必要的</li>
-<li>方法：层次时刻对齐网络能更好的编码跨模态特征以理解细微的差异，然后做模态内的三元组和模态间的三元组以应对搜索所有的时刻。</li>
-</ul>
-<p>[ArXiv 2020] Generating Adjacency Matrix for Video-Query based Video Moment Retrieval</p>
-<ul>
-<li>动机：现有利用图技术的方法得到的邻接矩阵是固定的。</li>
-<li>方法：使用图抽取模态内和模态间的特征关系。</li>
-</ul>
-<p>[BMVC 2020] Uncovering Hidden Challenges in Query-Based Video Moment Retrieval</p>
-<ul>
-<li>讨论性文章：虽然现有技术已经取得了很好的提高，这篇文章探究了存在的两大问题，1数据集存在偏差，2评价指标不一定可靠。</li>
-</ul>
-<p>[ArXiv 2020] Video Moment Retrieval via Natural Language Queries</p>
-<ul>
-<li>动机：起止时间标记有噪音，需要结合上下文的更好表示。</li>
-<li>方法：多头自我注意+交叉注意力，以捕获视频&#x2F;查询交互和远程查询依存关系。多任务学习中加入moment segmentation任务。</li>
-</ul>
-<p>[ArXiv 2020] Frame-wise Cross-modal Match for Video Moment Retrieval</p>
-<ul>
-<li>动机：以往的方法不能很好地捕获查询和视频帧之间的跨模态交互。</li>
-<li>方法：利用注意力对齐，做帧间的预测和边界预测两个任务。</li>
-</ul>
-<p>[MM 2020] Fine-grained Iterative Attention Network for Temporal Language Localization in Videos</p>
-<ul>
-<li>动机：现有工作只集中在从视频到查询的单向交互上。</li>
-<li>方法：针对句子和视频的cross-attention做双向相互。</li>
-</ul>
-<p>[MM 2020] Jointly Cross- and Self-Modal Graph Attention Network for Query-Based Moment Localization</p>
-<ul>
-<li>动机：视频大部分都无关，只有小部分视频相关，所以应该更加重视两者的融合。</li>
-<li>方法：提出模态间和模态内两种交互模式，以帧和词构图通过消息传递来增强表示。</li>
-</ul>
-<p>[CVPR 2020] Dense Regression Network for Video Grounding</p>
-<ul>
-<li>动机：以往训练的模型都是在正负例样本不平衡的情况下，所以作者尝试利用帧之间的距离作为更密集的监督信号。</li>
-<li>方法：预测起始结束帧，然后认为只要在ground truth中的片段都认为是正例。</li>
-</ul>
-<p><strong>#年度关键词：任务扩展（如对全库搜索moment，增加字幕，标定鲁棒性等等），继续细化和融合，候选框关系。</strong><br>#研究热情高涨，水文趋势开始增加….</p>
-<h1 id="2021-11"><a href="#2021-11" class="headerlink" title="2021:11"></a>2021:11</h1><p>46[CVPR 2021] Multi-Modal Relational Graph for Cross-Modal Video Moment Retrieval⭕<br>47[WACV2021] LoGAN: Latent Graph Co-Attention Network for Weakly-Supervised Video Moment Retrieval<br>48[arxiv2021] A Closer Look at Temporal Sentence Grounding in Videos_ Datasets and Metrics⭕<br>49[CVPR2021] Interventional Video Grounding with Dual Contrastive Learning<br>50[SIGIR2021] Video Corpus Moment Retrieval with Contrastive Learning<br>51[SIGIR2021] Deconfounded Video Moment Retrieval with Causal Intervention<br>52[SIGIR2021] Cross Interaction Network for Natural Language Guided VideoMoment Retrieval<br>53[ACL2021] mTVR: Multilingual Moment Retrieval in Videos<br>53[ICCV2021] Fast Video Moment Retrieval<br>54[MM2021] CONQUER: Contextual Query-aware Ranking for Video Corpus Moment Retrieval  </p>
-<p>[CVPR 2021] Multi-Modal Relational Graph for Cross-Modal Video Moment Retrieval</p>
-<ul>
-<li>动机：基于候选的方法会导致候选之间非常相似难以区别，那么直接理解内容（局部目标）的细微变化会是更好的选择。</li>
-<li>方法：提出多模态关系图模型来捕捉视频中的局部目标之间的时空关系，并且在图预训练的框架下优化特征表达。</li>
-</ul>
-<p>[WACV2021] LoGAN: Latent Graph Co-Attention Network for Weakly-Supervised Video Moment Retrieval</p>
-<ul>
-<li>动机：改善视频与文本之间的 latent alignment，学习上下文的视觉语义表征。</li>
-<li>方法：提出 latent co-attention 模型，通过多级 coattention 机制+在视频上的positional encodings。</li>
-</ul>
-<p>[Arxiv2021] A Closer Look at Temporal Sentence Grounding in Videos_ Datasets and Metrics</p>
-<ul>
-<li>动机：这应该是最近很不错的文章了，详细讨论了现有数据集的偏差问题（即可能模型不需要学什么内容，直接学数据偏差就有不错的结果）。</li>
-<li>方法：然后作者提供了新的datasets和metrics，这个工作其实展现了现有的经典模型还是有比较多的问题，在这种去偏数据集下表现得很不理想。</li>
-</ul>
-<p>[CVPR2021] Interventional Video Grounding with Dual Contrastive Learning</p>
-<ul>
-<li>动机：这篇同样也是探究数据集中的选择偏差，从而使某些text和moment存在虚假关联。</li>
-<li>方法：提出双对比学习+因果推理。双对比学习是VV和QV，即尝试尽可能分离moment之间和moment query之间的语义。因果推理则利用因果干预P(Y|do(X))和事件作为混杂因素来学习表示。</li>
-</ul>
-<p>[SIGIR2021] Video Corpus Moment Retrieval with Contrastive Learning</p>
-<ul>
-<li>动机：一般使用的跨模态交互学习，高效率和高质量检索之间很难同时保持。</li>
-<li>方法：直接引入对比学习来改进视频编码器和文本编码器。其中视频对比学习旨在最大程度地提高查询和候选视频之间的相互信息。帧对比学习的目的是突出视频中帧级查询对应的片段。</li>
-</ul>
-<p>[SIGIR2021] Deconfounded Video Moment Retrieval with Causal Intervention</p>
-<ul>
-<li>动机：现有的模型往往都利用数据集偏差，如何减少这种偏差是很重要的。</li>
-<li>方法：提出一个结构性受因果关系启发的框架。具体来说提出解纠缠的跨模态匹配(DCM)方法来消除位置对预测结果的混杂效应，其先推断视觉内容的核心特征，然后用对基于后门调整的解纠缠多模态输入进行因果干预，迫使模型公平地考虑目标的每个可能的位置。</li>
-</ul>
-<p>[SIGIR2021] Cross Interaction Network for Natural Language Guided Video Moment Retrieval</p>
-<ul>
-<li>动机：现有技术一般只强调文本到视频的单交互，且设计复杂效率低。</li>
-<li>方法：提出结合一种自我注意和交叉交互的多头部注意机制，以捕获视频查询的内部依赖关系以及两个方向的相互关系。</li>
-</ul>
-<p>[ACL2021] mTVR: Multilingual Moment Retrieval in Videos</p>
-<ul>
-<li>动机：短文。提出一个的大规模新数据集，其中有双语数据。</li>
-</ul>
-<p>[ICCV2021] Fast Video Moment Retrieval</p>
-<ul>
-<li>动机：现有模型的跨模态交互模块太耗时，想要提高时间。</li>
-<li>方法：提出细粒度的语义蒸馏框架来转移知识，即用跨模态公共空间替换跨模态交互模块，其中蒸馏过程将语义转移到公共空间。</li>
-</ul>
-<p>[MM2021] CONQUER: Contextual Query-aware Ranking for Video Corpus Moment Retrieval</p>
-<ul>
-<li>动机：目前的单阶段方法无法处理实时的结果，同时计算和存储复杂。</li>
-<li>方法：使用两阶段的步骤，即这两个步骤是先依赖查询进行视频内容的自适应融合，再执行双向注意以结合某个clip内容进行时刻定位学习，以学习聚合剪辑和查询信息的新表示。</li>
-</ul>
-<p>[MM2021] Visual Co-Occurrence Alignment Learning for Weakly-Supervised Video Moment Retrieval</p>
-<p><strong>#年度关键词：数据集问题，更细致的视频理解，对比学习。</strong><br>#注：由于文章众多，暂时只整理顶会中比较角度不一样的文章。</p>
-<h1 id="2022-19"><a href="#2022-19" class="headerlink" title="2022:19"></a>2022:19</h1><p>55[Survey] A Survey on Temporal Sentence Grounding in Videos⭕<br>56[Survey] The Elements of Temporal Sentence Grounding in Videos: A Survey and Future Directions⭕<br>57[Book]Towards temporal sentence grounding in videos<br>57[TIP2022] Video Moment Retrieval With Cross-Modal Neural Architecture Search<br>58[TMM2022] Regularized Two Granularity Loss Function for Weakly Supervised Video Moment Retrieval<br>59[TOMM2022] Moment is Important: Language-Based Video Moment Retrieval via Adversarial Learning<br>60[CVPR2022] UMT: Unified Multi-modal Transformers for Joint Video Moment Retrieval and Highlight Detection<br>61[CVPR2022] AxIoU: An Axiomatically Justified Measure for Video Moment Retrieval<br>62[Arxiv2022] Explore and Match: End-to-End Video Grounding with Transformer<br>63[AAAI2022] Unsupervised Temporal Video Grounding with Deep Semantic Clustering⭕<br>64[AAAI2022] Memory-Guided Semantic Learning Network for Temporal Sentence Grounding<br>65[ICMR2022] Learning Sample Importance for Cross-Scenario Video Temporal Grounding<br>66[SIGIR2022] Point Prompt Tuning for Temporally Language Grounding⭕<br>67[SIGIR2022] Video Moment Retrieval from text Queries via Single Frame Annotation<br>68[SIGIR2022] You Need to Read Again: Multi-granularity Perception Network for Moment Retrieval in Videos<br>69[ECCV2022] Selective Query-Guided Debiasing for Video Corpus Moment Retrieval<br>70[EMNLP2022] Modal-specific Pseudo Query Generation for Video Corpus Moment Retrieval<br>71[MM2022] Interactive Video Corpus Moment Retrieval using Reinforcement Learning<br>72[MM2022] Prompt-based Zero-shot Video Moment Retrieval<br>73[MM2022] Video Moment Retrieval with Hierarchical Contrastive Learning  </p>
-<p>[Survey] A Survey on Temporal Sentence Grounding in Videos<br>[Survey] The Elements of Temporal Sentence Grounding in Videos: A Survey and Future Directions<br>[Book]Towards temporal sentence grounding in videos  </p>
-<p>动机：这几篇综述文章都写的很好，可以详细看看<br>[TIP2022] Video Moment Retrieval With Cross-Modal Neural Architecture Search</p>
-<p>动机：以往的工作都依赖手工or专家设计，不够灵活。<br>方法：使用神经架构搜索来做VMR任务。具体来说，基于有向无环图搜索可重复的单元网络架构，然后，通过查询感知的注意力调节无环图中的边权。<br>[TMM2022] Regularized Two Granularity Loss Function for Weakly Supervised Video Moment Retrieval</p>
-<p>动机：弱监督视频时刻检索。<br>方法：设计双粒度损失函数考虑视频级和实例级关系。具体来说，先生成粗粒度的视频片段，然后利用所有视频内片段（即正例）和文本描述之间的多实例学习。然后将此过程视为噪声标签下的弱监督学习任务来对进一步这些片段进行分类进行精细度定位。<br>[TOMM2022] Moment is Important: Language-Based Video Moment Retrieval via Adversarial Learning</p>
-<p>动机：[29]的扩展论文，对抗性VMR在训练时容易不稳定。<br>方法：因此将多个子任务变为持续学习的形式以优化对抗性VMR的学习。<br>[CVPR2022] UMT: Unified Multi-modal Transformers for Joint Video Moment Retrieval and Highlight Detection</p>
-<p>动机：联合moment retrieval和highlight detection这俩子任务以更好地为应用服务。<br>方法：视频和音频首先通过uni-modal进行融合，如果query不提供将生成query，不然就直接完成编码后预测highlight和offset。<br>[CVPR2022] AxIoU: An Axiomatically Justified Measure for Video Moment Retrieval</p>
-<p>动机：现在评价这个领域的性能，一般只使用R@K，但它的缺点在于1对排名不敏感；2使用二值化的IoU会损失细粒度质量，因此作者们提出了一个新指标AxIoU。<br>方法：AxIoU是平均最大IoU，其满足对最佳片段的冗余不变性和单调性，值得一看。<br>[Arxiv2022] Explore and Match: End-to-End Video Grounding with Transformer</p>
-<p>动机：统一proposal-free（直接预测的探索）和proposal-based（切分再检索的匹配）这俩方案。<br>方法：将该任务定义为一个集合预测问题，先探索再匹配。首先时间定位损失执行proposal-free，然后设置指导损失将每个查询进行匹配。<br>[AAAI2022] Unsupervised Temporal Video Grounding with Deep Semantic Clustering</p>
-<p>动机：无监督TVG。在现实场景中收集数据既昂贵又耗时，这是第一篇做无监督的文章。<br>方法：使用提出深度语义聚类网络（DSCNet）利用整个查询集中的所有语义信息来组合每个视频中可能的活动以进行定位。具体来说，先从整个查询集中提取隐式语义特征，然后将其作为指导在视频中组合活动，最后利用前景注意力分支过滤掉多余的背景活动并细化定位结果。<br>[AAAI2022] Memory-Guided Semantic Learning Network for Temporal Sentence Grounding</p>
-<p>动机：数据分布不平衡，容易忘记训练过程中很少出现的情况，这会影响模型的泛化能力。<br>方法：使用记忆增强网络来学习和记忆。具体来说，跨模态图卷积网络对齐给定的视频查询对，然后利用内存模块将跨模态共享语义特征记录内存中，来减轻遗忘问题。<br>[ICMR2022] Learning Sample Importance for Cross-Scenario Video Temporal Grounding</p>
-<p>动机：针对superficial biases的文章（如[48]中提过的某些时间偏好等等）。<br>方法：提出去偏时间语言定位器 (DebiasTLL) ，其同时训练两个模型，如果这两个模型在判断样本时的预测差异大，则成为有偏样本的可能性更高。因此利用信息差异设计数据重新加权方案来减轻数据偏差。<br>[SIGIR2022] Point Prompt Tuning for Temporally Language Grounding</p>
-<p>动机：基于Prompt learning的新方法。作者认为现有方法都没有能够利用好现有预训练大模型的成果，但其实利用Prompt技巧就能够做得很好。<br>方法：加入Prompt、改装TLG任务以适应大模型，几乎是文本和视频直接作为input输入即可。速度较快，训练只需要训练几层FC，就能轻松利用大模型的语义能力。<br>[SIGIR2022] Video Moment Retrieval from text Queries via Single Frame Annotation</p>
-<p>动机：完全监督很贵，但其实只需要”glance annotation”就够了。<br>方法：只需要在完全监督内的随机帧，即“一瞥”，加上对比学习在clip和query之间进行对比，其中“一瞥”的高斯分布权重分配给所有clip。<br>[SIGIR2022] You Need to Read Again: Multi-granularity Perception Network for Moment Retrieval in Videos</p>
-<p>动机：以前的方法倾向于以粗略的方式执行单模态学习和跨模态交互，而忽略了视频内容、查询上下文及其对齐中包含的细粒度线索。<br>方法：提出多粒度感知网络，在多粒度级别感知模态内和模态间信息。<br>[ECCV2022] Selective Query-Guided Debiasing for Video Corpus Moment Retrieval</p>
-<p>动机：一篇矫正定位偏差的工作。作者们认为现有模型都是在学习查询和片段之间的共现pattern，从而使模型将查询中对象（例如铅笔）与该对象经常出现在视频中的片段（例如用铅笔书写的场景）虚假关联。<br>方法：提出Selective Query-guided Debiasing network (SQuiDNet)，来进行selective debiasing。<br>[EMNLP2022] Modal-specific Pseudo Query Generation for Video Corpus Moment Retrieval</p>
-<p>动机：目前的方法们强依赖于数据集在时序上的昂贵注释，因此提出一个自监督方法来缓解。<br>方法：自监督学习框架即，Modal-specific Pseudo Query Generation（MPGN）。具体来说，MPGN通过字幕的时刻采样来获取时间的时刻，然后用所选时间时刻的视觉和文本信息生成伪查询。<br>[MM2022] Interactive Video Corpus Moment Retrieval using Reinforcement Learning</p>
-<p>动机：目前的方法们对于相似的片段、或候选再很深或隐秘的时候，模型需要长时间的浏览和结果检查，因此文章基于强化学习期望在几轮交互内就达到搜索目标。<br>方法：具体来说，系统根据反馈交互式地规划导航路径，并推荐一个潜在目标，最大限度地提高用户评论的长期奖励。<br>[MM2022] Prompt-based Zero-shot Video Moment Retrieval</p>
-<p>动机：作者们认为由于视频和文本学习过程的分离，全局视觉特征往往被忽略。因此作者提出了一种基于提示的零样本视频时刻检索（PZVMR）方法。<br>方法：这种基于提示学习的方法分为提案提示（PP）和动词提示（VP），以使得模型从预先训练的 CLIP 中提取的任务相关知识，并将这些知识适应这个任务。<br>[MM2022] Video Moment Retrieval with Hierarchical Contrastive Learning</p>
-<p>动机：目前的方法们大多只关注对齐查询和单级剪辑或时刻特征，而忽略了视频本身涉及的不同粒度。<br>方法：提出了一种具有分层对比学习的时间定位网络（HCLNet）。具体来说，作者们引入了一种分层对比学习方法，通过最大化查询和三种不同粒度的视频之间的互信息（MI）来更好地对齐查询和视频，以学习信息表示。<br>#年度关键词：新的任务形态、多范式的结合、更高效、提示学习、去偏和新指标。<br>#新玩法开始变得多样起来。</p>
-<h1 id="2023-x"><a href="#2023-x" class="headerlink" title="2023:x"></a>2023:x</h1><p>74[Survey] Temporal Sentence Grounding in Videos: A Survey and Future Directions<br>75[Survey] A Closer Look at Debiased Temporal Sentence Grounding in Videos: Dataset, Metric, and Approach<br>76[TMM2023] Temporally Language Grounding with Multi-modal Multi-Prompt Tuning<br>77[ACL2023] CONE: An Efficient COarse-to-fiNE Alignment Framework for Long Video Temporal Grounding<br>78[ACL2023] Towards Parameter-Efficient Integration of Pre-Trained Language Models In Temporal Video Grounding<br>79[SIGIR2023] RewardTLG: Learning to Temporally Language Grounding from Flexible Reward  </p>
-<p>[Survey] Temporal Sentence Grounding in Videos: A Survey and Future Directions<br>[Survey] A Closer Look at Debiased Temporal Sentence Grounding in Videos: Dataset, Metric, and Approach  </p>
-<p>动机：综述文章越来越多<br>[TMM2023] Temporally Language Grounding with Multi-modal Multi-Prompt Tuning</p>
-<p>动机：多模态预训练+提示学习。<br>方法：这篇文章讨论了各种提示模版对于这一任务的影响，包括固定prompt和可学习的prompt。<br>[ACL2023] CONE: An Efficient COarse-to-fiNE Alignment Framework for Long Video Temporal Grounding</p>
-<p>动机：对于定位任务来说，长视频的需求更大，但目前探索少，主要是由于长视频的推理速度。<br>方法：为了提速，作者提出一种高效的从粗到细的对齐框架，主要是查询引导的窗口选择策略来加速推理+结合对比学习从粗到细，在Ego4D-NLQ 上的推理时间加快2倍，MAD上的推理时间快15倍。<br>[ACL2023] Towards Parameter-Efficient Integration of Pre-Trained Language Models In Temporal Video Grounding</p>
-<p>动机：基于Pre-Trained Language Models，并评估了大模型中参数高效训练的适用性。<br>方法：做了很多有意义的实验，其中1更大的语言模型肯定是对效果有增益的；2adapter训练而不是全参数对于大模型来说更划算。<br>[SIGIR2023] RewardTLG: Learning to Temporally Language Grounding from Flexible Reward</p>
-<p>动机：大模型之后，reward model也来了。<br>方法：这篇文章收集了人类反馈数据训了一个奖励模型，用于指导强化学习的收敛。<br>#年度关键词： 大模型时代来临之后，这个小方向也有开始往预训练、提示学习、强化学习、reward model转的趋势。</p>
-<h1 id="稍作分类"><a href="#稍作分类" class="headerlink" title="稍作分类"></a>稍作分类</h1><p>两条路：处理成预测任务[1]；处理成匹配任务[2]。大多数文章都follow了[1]，也有少数沿着[2]的路线的文章如[5][22]，也有融合这两条路线的[33]。<br>跨模态视频时刻相关任务主要需要集中解决的问题有两点：一.跨模态 二.高效检索&#x2F;定位</p>
-<p>对于一.</p>
-<p>模态特征的细化：模态间的交互和融合[3-9，37，39，42]，局部对齐[17-19]，模态表征细粒度[20，21，28]，视觉目标间的关系[46]<br>结合其他外部信息，如字幕[35，36]<br>对于二.<br>检索方法主要涉及到候选集的问题</p>
-<p>常规方法会提前切分好，或者修剪候选集[33]<br>生成候选：预测一些可能的边界[10]<br>探讨候选之间的关系：使用图或者矩阵的形式[13，26]<br>正负例样本不平衡问题[45]<br>定位方法可分直接预测和强化学习  </p>
-<p>直接预测起止点：[11，31，34，36，38]，对边界预测的多任务增强如边界感知[24]，moment segmentation[41]。<br>强化学习：[12，14，15，25，29]，主要涉及一些语义概念融合，如何使强化学习更高效。<br>也有融合定位和检索的方法[30]，和其他任务结合的方法[50,60]  </p>
-<p>除了一和二问题的，其他话题</p>
-<p>标注text-video对太耗时，无监督方法[16，23，27，32]，主要会使用注意力对齐，正负样本对抗，多示例学习等等技术。<br>标注鲁棒性[34，40，41，48，49]，解决方案主要有比较分布和标注预测，因果推理，去偏。<br>收集数据集太耗时[62,66]，也是转向于无监督或者少样本学习。<br>搜索全库视频时刻[35，38]，要求对模态内和模态外都有更好的理解和区分能力。  </p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>多模态</tag>
-        <tag>深度学习</tag>
-        <tag>论文阅读</tag>
       </tags>
   </entry>
   <entry>
@@ -2699,6 +1973,345 @@
       </tags>
   </entry>
   <entry>
+    <title>多模态视频片段定位论文阅读</title>
+    <url>/2023/10/07/20231007_paperRead/</url>
+    <content><![CDATA[<p>最近在研究多模态视频片段定位方向，在此博客记录一下论文的阅读和我在阅读中的一些个人的理解和想法，之前已经阅读了大部分了，只是因为秋招的原因耽搁了很久，近两年的论文也拉下了。</p>
+<p>参考了<a href="https://github.com/yawenzeng/Awesome-Cross-Modal-Video-Moment-Retrieval">Awesome-Cross-Modal-Video-Moment-Retrieval</a>整理的论文，后续会添加自己觉得有用的论文。</p>
+<p>主要按照年份进行阅读，其中每个年份还会进行分类阅读。中间有详细阅读的论文会添加自己的理解和解析。</p>
+<p>持续更新～</p>
+<span id="more"></span>
+
+<h1 id="2017-2"><a href="#2017-2" class="headerlink" title="2017:2"></a>2017:2</h1><p><a href="https://www.cnblogs.com/mobbu/p/17746499.html">1[ICCV 2017] [CTRL] TALL Temporal Activity Localization via Language Query</a>⭕<br>2[ICCV 2017] [MCN] Localizing Moments in Video with Natural Language⭕</p>
+<p>1[ICCV 2017] [CTRL] TALL Temporal Activity Localization via Language Query</p>
+<ul>
+<li>动机：开山之作，点出该问题需要解决的两大困难1作为跨模态任务，如何得到适当的文本和视频表示特征，以允许跨模态匹配操作和完成语言查询。2理论上可以生成无限粒度的视频片段，然后逐一比较。但时间消耗过大，那么如何能够从有限粒度的滑动窗口做到准确的具体帧定位。</li>
+<li>方法：特征抽取–使用全局的sentence2vec和C3D。模态交互–加+乘+拼+FC。多任务：对齐分数+回归。</li>
+</ul>
+<p>2[ICCV 2017] [MCN] Localizing Moments in Video with Natural Language</p>
+<ul>
+<li>方法：特征抽取–使用全局的LSTM和VGG。模态交互–无。多任务：模态间的均方差（而不是预测对齐分数），同时使用RGB和 optical flow光流。</li>
+</ul>
+<h1 id="2018-5"><a href="#2018-5" class="headerlink" title="2018:5"></a>2018:5</h1><p><a href="">3[MM 2018] Cross-modal Moment Localization in Videos</a></p>
+<p>4[SIGIR 2018] Attentive Moment Retrieval in Videos</p>
+<p>5[EMNLP 2018] Localizing Moments in Video with Temporal Language</p>
+<p>6[EMNLP 2018] Temporally Grounding Natural Sentence in Video</p>
+<p>7[IJCAI 2018] Multi-modal Circulant Fusion for Video-to-Language and Backward</p>
+<p>[MM 2018] Cross-modal Moment Localization in Videos</p>
+<ul>
+<li>动机：强调时间语态问题，即句子中的“先”“前”往往被忽视，需要更细致的理解。</li>
+<li>方法：尝试结合上下文，用文本给视频加attention。</li>
+</ul>
+<p>[SIGIR 2018] Attentive Moment Retrieval in Videos</p>
+<ul>
+<li>方法：尝试结合上下文，用视频给文本加attention。以上两篇的特征处理由于要加attention就开始局部化。</li>
+</ul>
+<p>[EMNLP 2018] Localizing Moments in Video with Temporal Language</p>
+<ul>
+<li>动机：时序上下文是很重要的，不然无法理解句子中一些词之间的关系。</li>
+<li>方法：延续MCN的思路走算匹配度无模态交互，且同时使用RGB和 optical flow光流。特征抽取–LSTM，视频表示上同时融合了多种上下文。</li>
+</ul>
+<p>[EMNLP 2018] Temporally Grounding Natural Sentence in Video</p>
+<ul>
+<li>动机：捕捉视频和句子之间不断发展的细粒度的交互。</li>
+<li>方法：从每帧&#x2F;逐词。使用两组lstm处理每个时刻文本和视频的交互。</li>
+</ul>
+<p>[IJCAI 2018] Multi-modal Circulant Fusion for Video-to-Language and Backward</p>
+<ul>
+<li>动机：增强视觉和文本表达的融合</li>
+<li>方法：同时使用vector和matrix的融合方式，其中circulant matrix的操作方式是每一行平移一个元素以探索不同模态向量的所有可能交互。</li>
+</ul>
+<p><strong>#年度关键词：上下文。</strong></p>
+<h1 id="2019-16"><a href="#2019-16" class="headerlink" title="2019: 16"></a>2019: 16</h1><p>8[AAAI 2019] Localizing Natural Language in Videos<br>9[AAAI 2019] Multilevel language and vision integration for text-to-clip retrieval<br>10[AAAI 2019] Semantic Proposal for Activity Localization in Videos via Sentence Query<br>11[AAAI 2019] To Find Where You Talk Temporal Sentence Localization in Video with Attention Based Location Regression<br>12[AAAI 2019] Read, Watch, and Move Reinforcement Learning for Temporally Grounding Natural Language Descriptions in Videos⭕<br>13[CVPR 2019] MAN_ Moment Alignment Network for Natural Language Moment Retrieval via Iterative Graph Adjustment⭕<br>14[CVPR Workshop 2019] Tripping through time Efficient Localization of Activities in Videos<br>15[CVPR 2019] Language-Driven Temporal Activity Localization A Semantic Matching Reinforcement Learning Model⭕<br>16[CVPR 2019] Weakly Supervised Video Moment Retrieval From Text Queries⭕<br>17[ICMR 2019] Cross-Modal Video Moment Retrieval with Spatial and Language-Temporal Attention⭕<br>18[MM 2019] Exploiting Temporal Relationships in Video Moment Localization with Natural Language<br>19[NIPS 2019] Semantic Conditioned Dynamic Modulation for Temporal Sentence Grounding in Videos<br>20[SIGIR 2019] Cross-modal interaction networks for query-based moment retrieval in videos<br>21[WACV2019] MAC: Mining Activity Concepts for Language-Based Temporal Localization<br>22[ArXiv 2019] Temporal Localization of Moments in Video Collections with Natural Language<br>23[ArXiv 2019] wMAN Weakly-supervised Moment Alignment Network for Text-based Video Segment Retrieval  </p>
+<p>[AAAI 2019] Localizing Natural Language in Videos</p>
+<ul>
+<li>动机：以前的工作忽略模态间细粒度的交互和上下文信息。</li>
+<li>方法：交叉门控的递归网络来匹配自然句子和视频序列（类似cross-attention），以完成细粒度交互。</li>
+</ul>
+<p>[AAAI 2019] Multilevel language and vision integration for text-to-clip retrieval</p>
+<ul>
+<li>动机：global embedding缺少细粒度，且不同模态之间独立嵌入缺乏交互。</li>
+<li>方法：先融语义再用R-C3D生成候选时刻以加快效率。同时用LSTM对查询语句和视频片段之间的细粒度相似性进行时序融合。</li>
+</ul>
+<p>[AAAI 2019] Semantic Proposal for Activity Localization in Videos via Sentence Query</p>
+<ul>
+<li>动机：滑动窗口数据量多，效率低。</li>
+<li>方法：将句子中的语义信息集成到动作候选生成过程中以得到更好的时刻候选集。</li>
+<li>其他：该任务不同于时序动作定位的地方 （1）某一个动作是各种行动的组合，可能持续很长时间。 （2）句子查询不限于预定义的类列表。 （3）视频通常包含多个不同的活动实例。</li>
+</ul>
+<p>[AAAI 2019] To Find Where You Talk Temporal Sentence Localization in Video with Attention Based Location Regression</p>
+<ul>
+<li>动机：1视频的时间结构和全局上下文没有充分探索2句子处理太粗3候选切分太耗时。</li>
+<li>方法：特征抽取–全局+局部，即用C3D+BiLSTM处理视频，用Glove+BiLSTM处理文本。然后co-attention进行对齐。并且不做切分，直接预测定位点。</li>
+</ul>
+<p>[AAAI 2019] Read, Watch, and Move Reinforcement Learning for Temporally Grounding Natural Language Descriptions in Videos</p>
+<ul>
+<li>动机：候选太耗时。</li>
+<li>方法：首次将强化学习引入到这个领域，处理成顺序决策问题。</li>
+</ul>
+<p>[CVPR 2019] MAN_ Moment Alignment Network for Natural Language Moment Retrieval via Iterative Graph Adjustment</p>
+<ul>
+<li>动机：语义失调和结构失调（候选集之间的处理是独立的）。</li>
+<li>方法：特征抽取–LSTM和I3D。使用迭代图学习候选时刻之间的关系。</li>
+</ul>
+<p>[CVPR Workshop 2019] Tripping through time Efficient Localization of Activities in Videos</p>
+<ul>
+<li>动机：1文本和视频的联合表示以local细粒化。2候选效率低且不符合人类的自然定位方法。</li>
+<li>方法：使用门控注意力建模细粒度的文本和视觉表示+强化学习定位。</li>
+</ul>
+<p>[CVPR 2019] Language-Driven Temporal Activity Localization A Semantic Matching Reinforcement Learning Model</p>
+<ul>
+<li>动机：直接匹配句子与视频内容使强化学习表现不佳，更需要更多的关注句子和图片中目标的细粒度来增强语义。</li>
+<li>方法：在强化学习框架下引入语义特征。</li>
+</ul>
+<p>[CVPR 2019] Weakly Supervised Video Moment Retrieval From Text Queries</p>
+<ul>
+<li>动机：标注句子边界太耗时，且不可扩展在实践中</li>
+<li>方法：弱监督–在训练时不需要对文本描述进行时间边界注释，而只使用视频级别的文本描述。技术上主要使用文本和视频在时序上的注意力对齐。</li>
+</ul>
+<p>[ICMR 2019] Cross-Modal Video Moment Retrieval with Spatial and Language-Temporal Attention</p>
+<ul>
+<li>动机：没有关注空间目标信息和文本的语义对齐，且需要结合视频的时空信息。</li>
+<li>方法：特征抽取–全局+局部，即全局还是用C3D和BiLSTM。然后全局特征分别给局部（词和目标）加attention突出重点。</li>
+</ul>
+<p>[MM 2019] Exploiting Temporal Relationships in Video Moment Localization with Natural Language</p>
+<ul>
+<li>动机：之前对文本的处理是Global，而文本中事件之间的时间依赖和推理没有得到充分考虑。</li>
+<li>方法：树注意网络将文本分为主事件，上下文时间，时间信号。</li>
+</ul>
+<p>[NIPS 2019] Semantic Conditioned Dynamic Modulation for Temporal Sentence Grounding in Videos</p>
+<ul>
+<li>动机：现有的方法主要做语义匹配和对齐，而忽略了句子信息在视频的时间关联和组合中起着重要作用。</li>
+<li>方法：提出语义条件动态调制(SCDM)机制，它依靠句子语义来调节时间卷积运算，从而更好地关联和组合句子相关的视频内容。</li>
+</ul>
+<p>[SIGIR 2019] Cross-modal interaction networks for query-based moment retrieval in videos</p>
+<ul>
+<li>动机：对句子处理的细粒度不够（语境长依赖）。</li>
+<li>方法：对切分的词构建语义树&#x2F;图抽特征。</li>
+</ul>
+<p>[WACV2019] MAC: Mining Activity Concepts for Language-Based Temporal Localization</p>
+<ul>
+<li>动机：联合嵌入的子空间忽略了有关视频和查询中动作的丰富语义线索</li>
+<li>方法：从视频和语言模态中挖掘动作概念，其他部分同TALL。</li>
+</ul>
+<p>[ArXiv 2019] Temporal Localization of Moments in Video Collections with Natural Language</p>
+<ul>
+<li>动机：欧几里德居来来衡量文本视频距离不好（MCN的对比路线），无法大规模应用。</li>
+<li>方法：使用平方差距离更精准的对齐，并应用视频重排序方法以应对大规模视频库。</li>
+</ul>
+<p>[ArXiv 2019] wMAN Weakly-supervised Moment Alignment Network for Text-based Video Segment Retrieval</p>
+<ul>
+<li>动机：自动推断无监督的视觉和语言表示之间的潜在对应关系&#x2F;对齐。</li>
+<li>方法：词条件视觉图以捕捉交互，并应用多实例学习完成无监督下的细粒度对齐。</li>
+</ul>
+<p><strong>#年度关键词：文本和视频的细粒化+强化学习+候选框关系&#x2F;生成+弱监督。</strong></p>
+<h1 id="2020-22"><a href="#2020-22" class="headerlink" title="2020:22"></a>2020:22</h1><p>24[AAAI 2020] Temporally Grounding Language Queries in Videos by Contextual Boundary-aware Prediction<br>25[AAAI 2020] Tree-Structured Policy based Progressive Reinforcement Learning for Temporally Language Grounding in Video<br>26[AAAI 2020] Learning 2D Temporal Adjacent Networks for Moment Localization with Natural Language⭕<br>27[AAAI 2020] Weakly-Supervised Video Moment Retrieval via Semantic Completion Network<br>28[TIP 2020] Moment Retrieval via Cross-Modal Interaction Networks With Query Reconstruction⭕<br>29[MM 2020] Adversarial Video Moment Retrieval by Jointly Modeling Ranking and Localization⭕<br>30[MM 2020] STRONG: Spatio-Temporal Reinforcement Learning for Cross-Modal Video Moment Localization<br>31[MM 2020] Dual Path Interaction Network for video Moment Localization<br>32[MM 2020] Regularized Two-Branch Proposal Networks for Weakly-Supervised Moment Retrieval in Videos<br>33[ECCV 2020] VLANet: Video-Language Alignment Network for Weakly-Supervised Video Moment Retrieval<br>34[WACV2020] Proposal-free Temporal Moment Localization of a Natural-Language Query in Video using Guided Attention<br>35[ECCV 2020] TVR A Large-Scale Dataset for Video-Subtitle Moment Retrieval<br>36[ArXiv 2020] Video Moment Localization using Object Evidence and Reverse Captioning<br>37[ArXiv 2020] Graph Neural Network for Video-Query based Video Moment Retrieval<br>38[ArXiv 2020] Text-based Localization of Moments in a Video Corpus<br>39[ArXiv 2020] Generating Adjacency Matrix for Video-Query based Video Moment Retrieval<br>40[BMVC 2020] Uncovering Hidden Challenges in Query-Based Video Moment Retrieval<br>41[ArXiv 2020] Video Moment Retrieval via Natural Language Queries<br>42[ArXiv 2020] Frame-wise Cross-modal Match for Video Moment Retrieval<br>43[MM 2020] Fine-grained Iterative Attention Network for Temporal Language Localization in Videos<br>44[MM 2020] Jointly Cross- and Self-Modal Graph Attention Network for Query-Based Moment Localization<br>45[CVPR 2020] Dense Regression Network for Video Grounding  </p>
+<p>[AAAI 2020] Temporally Grounding Language Queries in Videos by Contextual Boundary-aware Prediction</p>
+<ul>
+<li>动机：当模型无法定位最佳时刻时，添加的偏移回归可能会失败。</li>
+<li>方法：语言集成的“感知”周围的预测，即每个时间步长都会预测时间锚和边界。</li>
+</ul>
+<p>[AAAI 2020] Tree-Structured Policy based Progressive Reinforcement Learning for Temporally Language Grounding in Video</p>
+<ul>
+<li>动机：现有的方法大多存在效率低下、缺乏可解释性和偏离人类感知机制（从粗到细）问题。</li>
+<li>方法：基于树结构政策的渐进强化学习(TSP-PRL)框架，通过迭代细化过程来顺序地调节时间边界。</li>
+</ul>
+<p>[AAAI 2020] Learning 2D Temporal Adjacent Networks for Moment Localization with Natural Language</p>
+<ul>
+<li>动机：以往模型一般单独考虑时间，忽视了时间的依赖性。（不能在当前时刻对其他时刻进行预测）。</li>
+<li>方法：时间从一维变为二维，即变成二维矩阵，预测每一个位置的score。</li>
+</ul>
+<p>[AAAI 2020] Weakly-Supervised Video Moment Retrieval via Semantic Completion Network</p>
+<ul>
+<li>动机：弱监督的注意力权重通常只对很明显的区域有反应，即候选太相似。</li>
+<li>方法：候选生成–视觉语义词和文本对齐得到分数，并反馈给候选生成的打分。</li>
+</ul>
+<p>[TIP 2020] Moment Retrieval via Cross-Modal Interaction Networks With Query Reconstruction</p>
+<ul>
+<li>sigir19的扩充，增加查询重建任务，整体上联合自然语言查询的句法依赖、视频上下文中的长程语义依赖和足够的跨模态交互一起建模。</li>
+</ul>
+<p>[MM 2020] Adversarial Video Moment Retrieval by Jointly Modeling Ranking and Localization</p>
+<ul>
+<li>动机：强化学习定位不稳定，检索任务候选框效率低。</li>
+<li>方法：用对抗学习联合建模，即用强化学习定位来生成候选，进而在生成候选集上进行检索。</li>
+</ul>
+<p>[MM 2020] STRONG: Spatio-Temporal Reinforcement Learning for Cross-Modal Video Moment Localization</p>
+<ul>
+<li>动机：空间上的场景信息很重要+候选框效率低。</li>
+<li>方法：除了时序上的强化学习，其在空间上也加入强化学习，并以弱监督追踪的方式聚焦场景，去除冗余。</li>
+</ul>
+<p>[MM 2020] Dual Path Interaction Network for video Moment Localization</p>
+<ul>
+<li>动机：很少有研究将候选框层级的对齐信息（算语义匹配分数的技术路线）和帧层级的边界信息（预测边界起止的路线）结合在一起，并考虑它们之间的互补性。</li>
+<li>方法：双路径交互网络(DPIN)，分别做两大任务，同时两者之间通过信息交互相互增强。</li>
+</ul>
+<p>[MM 2020] Regularized Two-Branch Proposal Networks for Weakly-Supervised Moment Retrieval in Videos</p>
+<ul>
+<li>动机：大多数现有的弱监督方法都采用基于多实例的框架来做样本间对抗，但忽略了相似内容之间的样本间对抗。</li>
+<li>方法：同时考虑样本间和样本内的对抗，其中会采用语言感知得到两个分支的视觉表示（被增强的和被印制的），这两者将构成很强的正负样本对。</li>
+</ul>
+<p>[ECCV 2020] VLANet: Video-Language Alignment Network for Weakly-Supervised Video Moment Retrieval</p>
+<ul>
+<li>动机：粗略的查询表示和单向注意机制导致模糊的注意映射。</li>
+<li>方法：修剪候选集+更细粒度的多注意力机制来获得更好的注意力增加定位性能。</li>
+</ul>
+<p>[WACV2020] Proposal-free Temporal Moment Localization of a Natural-Language Query in Video using Guided Attention</p>
+<ul>
+<li>动机：不依赖候选的端对端框架，文本注释主观性。</li>
+<li>方法：使用attention的动态过滤器（利用文本对视频的过滤），软标签分布损失解决文本注释的不确定性。</li>
+</ul>
+<p>[ECCV 2020] TVR A Large-Scale Dataset for Video-Subtitle Moment Retrieval</p>
+<ul>
+<li>动机：视频+字幕才能进一步的理解。</li>
+<li>方法：提出一个新数据集，并设计一个类似多Transformer的模型完成不同模态的理解和融合。</li>
+</ul>
+<p>[ArXiv 2020] Video Moment Localization using Object Evidence and Reverse Captioning</p>
+<ul>
+<li>动机：仅仅有语义概念是不够的，还需要对象和字幕的补充。</li>
+<li>方法：在MAC（视频，视觉语义概念，文本，文本语义概念）的方法上再增加对象和字幕的特征。</li>
+</ul>
+<p>[ArXiv 2020] Graph Neural Network for Video-Query based Video Moment Retrieval</p>
+<ul>
+<li>动机：帧间的特征相似度与视频间的特征相似度之间存在不一致，这会影响特征融合。</li>
+<li>方法：沿时间维度对视频构多个图，然后再做多图特征融合。</li>
+</ul>
+<p>[ArXiv 2020] Text-based Localization of Moments in a Video Corpus</p>
+<ul>
+<li>动机：text-video可能会有一对多+搜索全库是必要的</li>
+<li>方法：层次时刻对齐网络能更好的编码跨模态特征以理解细微的差异，然后做模态内的三元组和模态间的三元组以应对搜索所有的时刻。</li>
+</ul>
+<p>[ArXiv 2020] Generating Adjacency Matrix for Video-Query based Video Moment Retrieval</p>
+<ul>
+<li>动机：现有利用图技术的方法得到的邻接矩阵是固定的。</li>
+<li>方法：使用图抽取模态内和模态间的特征关系。</li>
+</ul>
+<p>[BMVC 2020] Uncovering Hidden Challenges in Query-Based Video Moment Retrieval</p>
+<ul>
+<li>讨论性文章：虽然现有技术已经取得了很好的提高，这篇文章探究了存在的两大问题，1数据集存在偏差，2评价指标不一定可靠。</li>
+</ul>
+<p>[ArXiv 2020] Video Moment Retrieval via Natural Language Queries</p>
+<ul>
+<li>动机：起止时间标记有噪音，需要结合上下文的更好表示。</li>
+<li>方法：多头自我注意+交叉注意力，以捕获视频&#x2F;查询交互和远程查询依存关系。多任务学习中加入moment segmentation任务。</li>
+</ul>
+<p>[ArXiv 2020] Frame-wise Cross-modal Match for Video Moment Retrieval</p>
+<ul>
+<li>动机：以往的方法不能很好地捕获查询和视频帧之间的跨模态交互。</li>
+<li>方法：利用注意力对齐，做帧间的预测和边界预测两个任务。</li>
+</ul>
+<p>[MM 2020] Fine-grained Iterative Attention Network for Temporal Language Localization in Videos</p>
+<ul>
+<li>动机：现有工作只集中在从视频到查询的单向交互上。</li>
+<li>方法：针对句子和视频的cross-attention做双向相互。</li>
+</ul>
+<p>[MM 2020] Jointly Cross- and Self-Modal Graph Attention Network for Query-Based Moment Localization</p>
+<ul>
+<li>动机：视频大部分都无关，只有小部分视频相关，所以应该更加重视两者的融合。</li>
+<li>方法：提出模态间和模态内两种交互模式，以帧和词构图通过消息传递来增强表示。</li>
+</ul>
+<p>[CVPR 2020] Dense Regression Network for Video Grounding</p>
+<ul>
+<li>动机：以往训练的模型都是在正负例样本不平衡的情况下，所以作者尝试利用帧之间的距离作为更密集的监督信号。</li>
+<li>方法：预测起始结束帧，然后认为只要在ground truth中的片段都认为是正例。</li>
+</ul>
+<p><strong>#年度关键词：任务扩展（如对全库搜索moment，增加字幕，标定鲁棒性等等），继续细化和融合，候选框关系。</strong><br>#研究热情高涨，水文趋势开始增加….</p>
+<h1 id="2021-11"><a href="#2021-11" class="headerlink" title="2021:11"></a>2021:11</h1><p>46[CVPR 2021] Multi-Modal Relational Graph for Cross-Modal Video Moment Retrieval⭕<br>47[WACV2021] LoGAN: Latent Graph Co-Attention Network for Weakly-Supervised Video Moment Retrieval<br>48[arxiv2021] A Closer Look at Temporal Sentence Grounding in Videos_ Datasets and Metrics⭕<br>49[CVPR2021] Interventional Video Grounding with Dual Contrastive Learning<br>50[SIGIR2021] Video Corpus Moment Retrieval with Contrastive Learning<br>51[SIGIR2021] Deconfounded Video Moment Retrieval with Causal Intervention<br>52[SIGIR2021] Cross Interaction Network for Natural Language Guided VideoMoment Retrieval<br>53[ACL2021] mTVR: Multilingual Moment Retrieval in Videos<br>53[ICCV2021] Fast Video Moment Retrieval<br>54[MM2021] CONQUER: Contextual Query-aware Ranking for Video Corpus Moment Retrieval  </p>
+<p>[CVPR 2021] Multi-Modal Relational Graph for Cross-Modal Video Moment Retrieval</p>
+<ul>
+<li>动机：基于候选的方法会导致候选之间非常相似难以区别，那么直接理解内容（局部目标）的细微变化会是更好的选择。</li>
+<li>方法：提出多模态关系图模型来捕捉视频中的局部目标之间的时空关系，并且在图预训练的框架下优化特征表达。</li>
+</ul>
+<p>[WACV2021] LoGAN: Latent Graph Co-Attention Network for Weakly-Supervised Video Moment Retrieval</p>
+<ul>
+<li>动机：改善视频与文本之间的 latent alignment，学习上下文的视觉语义表征。</li>
+<li>方法：提出 latent co-attention 模型，通过多级 coattention 机制+在视频上的positional encodings。</li>
+</ul>
+<p>[Arxiv2021] A Closer Look at Temporal Sentence Grounding in Videos_ Datasets and Metrics</p>
+<ul>
+<li>动机：这应该是最近很不错的文章了，详细讨论了现有数据集的偏差问题（即可能模型不需要学什么内容，直接学数据偏差就有不错的结果）。</li>
+<li>方法：然后作者提供了新的datasets和metrics，这个工作其实展现了现有的经典模型还是有比较多的问题，在这种去偏数据集下表现得很不理想。</li>
+</ul>
+<p>[CVPR2021] Interventional Video Grounding with Dual Contrastive Learning</p>
+<ul>
+<li>动机：这篇同样也是探究数据集中的选择偏差，从而使某些text和moment存在虚假关联。</li>
+<li>方法：提出双对比学习+因果推理。双对比学习是VV和QV，即尝试尽可能分离moment之间和moment query之间的语义。因果推理则利用因果干预P(Y|do(X))和事件作为混杂因素来学习表示。</li>
+</ul>
+<p>[SIGIR2021] Video Corpus Moment Retrieval with Contrastive Learning</p>
+<ul>
+<li>动机：一般使用的跨模态交互学习，高效率和高质量检索之间很难同时保持。</li>
+<li>方法：直接引入对比学习来改进视频编码器和文本编码器。其中视频对比学习旨在最大程度地提高查询和候选视频之间的相互信息。帧对比学习的目的是突出视频中帧级查询对应的片段。</li>
+</ul>
+<p>[SIGIR2021] Deconfounded Video Moment Retrieval with Causal Intervention</p>
+<ul>
+<li>动机：现有的模型往往都利用数据集偏差，如何减少这种偏差是很重要的。</li>
+<li>方法：提出一个结构性受因果关系启发的框架。具体来说提出解纠缠的跨模态匹配(DCM)方法来消除位置对预测结果的混杂效应，其先推断视觉内容的核心特征，然后用对基于后门调整的解纠缠多模态输入进行因果干预，迫使模型公平地考虑目标的每个可能的位置。</li>
+</ul>
+<p>[SIGIR2021] Cross Interaction Network for Natural Language Guided Video Moment Retrieval</p>
+<ul>
+<li>动机：现有技术一般只强调文本到视频的单交互，且设计复杂效率低。</li>
+<li>方法：提出结合一种自我注意和交叉交互的多头部注意机制，以捕获视频查询的内部依赖关系以及两个方向的相互关系。</li>
+</ul>
+<p>[ACL2021] mTVR: Multilingual Moment Retrieval in Videos</p>
+<ul>
+<li>动机：短文。提出一个的大规模新数据集，其中有双语数据。</li>
+</ul>
+<p>[ICCV2021] Fast Video Moment Retrieval</p>
+<ul>
+<li>动机：现有模型的跨模态交互模块太耗时，想要提高时间。</li>
+<li>方法：提出细粒度的语义蒸馏框架来转移知识，即用跨模态公共空间替换跨模态交互模块，其中蒸馏过程将语义转移到公共空间。</li>
+</ul>
+<p>[MM2021] CONQUER: Contextual Query-aware Ranking for Video Corpus Moment Retrieval</p>
+<ul>
+<li>动机：目前的单阶段方法无法处理实时的结果，同时计算和存储复杂。</li>
+<li>方法：使用两阶段的步骤，即这两个步骤是先依赖查询进行视频内容的自适应融合，再执行双向注意以结合某个clip内容进行时刻定位学习，以学习聚合剪辑和查询信息的新表示。</li>
+</ul>
+<p>[MM2021] Visual Co-Occurrence Alignment Learning for Weakly-Supervised Video Moment Retrieval</p>
+<p><strong>#年度关键词：数据集问题，更细致的视频理解，对比学习。</strong><br>#注：由于文章众多，暂时只整理顶会中比较角度不一样的文章。</p>
+<h1 id="2022-19"><a href="#2022-19" class="headerlink" title="2022:19"></a>2022:19</h1><p>55[Survey] A Survey on Temporal Sentence Grounding in Videos⭕<br>56[Survey] The Elements of Temporal Sentence Grounding in Videos: A Survey and Future Directions⭕<br>57[Book]Towards temporal sentence grounding in videos<br>57[TIP2022] Video Moment Retrieval With Cross-Modal Neural Architecture Search<br>58[TMM2022] Regularized Two Granularity Loss Function for Weakly Supervised Video Moment Retrieval<br>59[TOMM2022] Moment is Important: Language-Based Video Moment Retrieval via Adversarial Learning<br>60[CVPR2022] UMT: Unified Multi-modal Transformers for Joint Video Moment Retrieval and Highlight Detection<br>61[CVPR2022] AxIoU: An Axiomatically Justified Measure for Video Moment Retrieval<br>62[Arxiv2022] Explore and Match: End-to-End Video Grounding with Transformer<br>63[AAAI2022] Unsupervised Temporal Video Grounding with Deep Semantic Clustering⭕<br>64[AAAI2022] Memory-Guided Semantic Learning Network for Temporal Sentence Grounding<br>65[ICMR2022] Learning Sample Importance for Cross-Scenario Video Temporal Grounding<br>66[SIGIR2022] Point Prompt Tuning for Temporally Language Grounding⭕<br>67[SIGIR2022] Video Moment Retrieval from text Queries via Single Frame Annotation<br>68[SIGIR2022] You Need to Read Again: Multi-granularity Perception Network for Moment Retrieval in Videos<br>69[ECCV2022] Selective Query-Guided Debiasing for Video Corpus Moment Retrieval<br>70[EMNLP2022] Modal-specific Pseudo Query Generation for Video Corpus Moment Retrieval<br>71[MM2022] Interactive Video Corpus Moment Retrieval using Reinforcement Learning<br>72[MM2022] Prompt-based Zero-shot Video Moment Retrieval<br>73[MM2022] Video Moment Retrieval with Hierarchical Contrastive Learning  </p>
+<p>[Survey] A Survey on Temporal Sentence Grounding in Videos<br>[Survey] The Elements of Temporal Sentence Grounding in Videos: A Survey and Future Directions<br>[Book]Towards temporal sentence grounding in videos  </p>
+<p>动机：这几篇综述文章都写的很好，可以详细看看<br>[TIP2022] Video Moment Retrieval With Cross-Modal Neural Architecture Search</p>
+<p>动机：以往的工作都依赖手工or专家设计，不够灵活。<br>方法：使用神经架构搜索来做VMR任务。具体来说，基于有向无环图搜索可重复的单元网络架构，然后，通过查询感知的注意力调节无环图中的边权。<br>[TMM2022] Regularized Two Granularity Loss Function for Weakly Supervised Video Moment Retrieval</p>
+<p>动机：弱监督视频时刻检索。<br>方法：设计双粒度损失函数考虑视频级和实例级关系。具体来说，先生成粗粒度的视频片段，然后利用所有视频内片段（即正例）和文本描述之间的多实例学习。然后将此过程视为噪声标签下的弱监督学习任务来对进一步这些片段进行分类进行精细度定位。<br>[TOMM2022] Moment is Important: Language-Based Video Moment Retrieval via Adversarial Learning</p>
+<p>动机：[29]的扩展论文，对抗性VMR在训练时容易不稳定。<br>方法：因此将多个子任务变为持续学习的形式以优化对抗性VMR的学习。<br>[CVPR2022] UMT: Unified Multi-modal Transformers for Joint Video Moment Retrieval and Highlight Detection</p>
+<p>动机：联合moment retrieval和highlight detection这俩子任务以更好地为应用服务。<br>方法：视频和音频首先通过uni-modal进行融合，如果query不提供将生成query，不然就直接完成编码后预测highlight和offset。<br>[CVPR2022] AxIoU: An Axiomatically Justified Measure for Video Moment Retrieval</p>
+<p>动机：现在评价这个领域的性能，一般只使用R@K，但它的缺点在于1对排名不敏感；2使用二值化的IoU会损失细粒度质量，因此作者们提出了一个新指标AxIoU。<br>方法：AxIoU是平均最大IoU，其满足对最佳片段的冗余不变性和单调性，值得一看。<br>[Arxiv2022] Explore and Match: End-to-End Video Grounding with Transformer</p>
+<p>动机：统一proposal-free（直接预测的探索）和proposal-based（切分再检索的匹配）这俩方案。<br>方法：将该任务定义为一个集合预测问题，先探索再匹配。首先时间定位损失执行proposal-free，然后设置指导损失将每个查询进行匹配。<br>[AAAI2022] Unsupervised Temporal Video Grounding with Deep Semantic Clustering</p>
+<p>动机：无监督TVG。在现实场景中收集数据既昂贵又耗时，这是第一篇做无监督的文章。<br>方法：使用提出深度语义聚类网络（DSCNet）利用整个查询集中的所有语义信息来组合每个视频中可能的活动以进行定位。具体来说，先从整个查询集中提取隐式语义特征，然后将其作为指导在视频中组合活动，最后利用前景注意力分支过滤掉多余的背景活动并细化定位结果。<br>[AAAI2022] Memory-Guided Semantic Learning Network for Temporal Sentence Grounding</p>
+<p>动机：数据分布不平衡，容易忘记训练过程中很少出现的情况，这会影响模型的泛化能力。<br>方法：使用记忆增强网络来学习和记忆。具体来说，跨模态图卷积网络对齐给定的视频查询对，然后利用内存模块将跨模态共享语义特征记录内存中，来减轻遗忘问题。<br>[ICMR2022] Learning Sample Importance for Cross-Scenario Video Temporal Grounding</p>
+<p>动机：针对superficial biases的文章（如[48]中提过的某些时间偏好等等）。<br>方法：提出去偏时间语言定位器 (DebiasTLL) ，其同时训练两个模型，如果这两个模型在判断样本时的预测差异大，则成为有偏样本的可能性更高。因此利用信息差异设计数据重新加权方案来减轻数据偏差。<br>[SIGIR2022] Point Prompt Tuning for Temporally Language Grounding</p>
+<p>动机：基于Prompt learning的新方法。作者认为现有方法都没有能够利用好现有预训练大模型的成果，但其实利用Prompt技巧就能够做得很好。<br>方法：加入Prompt、改装TLG任务以适应大模型，几乎是文本和视频直接作为input输入即可。速度较快，训练只需要训练几层FC，就能轻松利用大模型的语义能力。<br>[SIGIR2022] Video Moment Retrieval from text Queries via Single Frame Annotation</p>
+<p>动机：完全监督很贵，但其实只需要”glance annotation”就够了。<br>方法：只需要在完全监督内的随机帧，即“一瞥”，加上对比学习在clip和query之间进行对比，其中“一瞥”的高斯分布权重分配给所有clip。<br>[SIGIR2022] You Need to Read Again: Multi-granularity Perception Network for Moment Retrieval in Videos</p>
+<p>动机：以前的方法倾向于以粗略的方式执行单模态学习和跨模态交互，而忽略了视频内容、查询上下文及其对齐中包含的细粒度线索。<br>方法：提出多粒度感知网络，在多粒度级别感知模态内和模态间信息。<br>[ECCV2022] Selective Query-Guided Debiasing for Video Corpus Moment Retrieval</p>
+<p>动机：一篇矫正定位偏差的工作。作者们认为现有模型都是在学习查询和片段之间的共现pattern，从而使模型将查询中对象（例如铅笔）与该对象经常出现在视频中的片段（例如用铅笔书写的场景）虚假关联。<br>方法：提出Selective Query-guided Debiasing network (SQuiDNet)，来进行selective debiasing。<br>[EMNLP2022] Modal-specific Pseudo Query Generation for Video Corpus Moment Retrieval</p>
+<p>动机：目前的方法们强依赖于数据集在时序上的昂贵注释，因此提出一个自监督方法来缓解。<br>方法：自监督学习框架即，Modal-specific Pseudo Query Generation（MPGN）。具体来说，MPGN通过字幕的时刻采样来获取时间的时刻，然后用所选时间时刻的视觉和文本信息生成伪查询。<br>[MM2022] Interactive Video Corpus Moment Retrieval using Reinforcement Learning</p>
+<p>动机：目前的方法们对于相似的片段、或候选再很深或隐秘的时候，模型需要长时间的浏览和结果检查，因此文章基于强化学习期望在几轮交互内就达到搜索目标。<br>方法：具体来说，系统根据反馈交互式地规划导航路径，并推荐一个潜在目标，最大限度地提高用户评论的长期奖励。<br>[MM2022] Prompt-based Zero-shot Video Moment Retrieval</p>
+<p>动机：作者们认为由于视频和文本学习过程的分离，全局视觉特征往往被忽略。因此作者提出了一种基于提示的零样本视频时刻检索（PZVMR）方法。<br>方法：这种基于提示学习的方法分为提案提示（PP）和动词提示（VP），以使得模型从预先训练的 CLIP 中提取的任务相关知识，并将这些知识适应这个任务。<br>[MM2022] Video Moment Retrieval with Hierarchical Contrastive Learning</p>
+<p>动机：目前的方法们大多只关注对齐查询和单级剪辑或时刻特征，而忽略了视频本身涉及的不同粒度。<br>方法：提出了一种具有分层对比学习的时间定位网络（HCLNet）。具体来说，作者们引入了一种分层对比学习方法，通过最大化查询和三种不同粒度的视频之间的互信息（MI）来更好地对齐查询和视频，以学习信息表示。<br>#年度关键词：新的任务形态、多范式的结合、更高效、提示学习、去偏和新指标。<br>#新玩法开始变得多样起来。</p>
+<h1 id="2023-x"><a href="#2023-x" class="headerlink" title="2023:x"></a>2023:x</h1><p>74[Survey] Temporal Sentence Grounding in Videos: A Survey and Future Directions<br>75[Survey] A Closer Look at Debiased Temporal Sentence Grounding in Videos: Dataset, Metric, and Approach<br>76[TMM2023] Temporally Language Grounding with Multi-modal Multi-Prompt Tuning<br>77[ACL2023] CONE: An Efficient COarse-to-fiNE Alignment Framework for Long Video Temporal Grounding<br>78[ACL2023] Towards Parameter-Efficient Integration of Pre-Trained Language Models In Temporal Video Grounding<br>79[SIGIR2023] RewardTLG: Learning to Temporally Language Grounding from Flexible Reward  </p>
+<p>[Survey] Temporal Sentence Grounding in Videos: A Survey and Future Directions<br>[Survey] A Closer Look at Debiased Temporal Sentence Grounding in Videos: Dataset, Metric, and Approach  </p>
+<p>动机：综述文章越来越多<br>[TMM2023] Temporally Language Grounding with Multi-modal Multi-Prompt Tuning</p>
+<p>动机：多模态预训练+提示学习。<br>方法：这篇文章讨论了各种提示模版对于这一任务的影响，包括固定prompt和可学习的prompt。<br>[ACL2023] CONE: An Efficient COarse-to-fiNE Alignment Framework for Long Video Temporal Grounding</p>
+<p>动机：对于定位任务来说，长视频的需求更大，但目前探索少，主要是由于长视频的推理速度。<br>方法：为了提速，作者提出一种高效的从粗到细的对齐框架，主要是查询引导的窗口选择策略来加速推理+结合对比学习从粗到细，在Ego4D-NLQ 上的推理时间加快2倍，MAD上的推理时间快15倍。<br>[ACL2023] Towards Parameter-Efficient Integration of Pre-Trained Language Models In Temporal Video Grounding</p>
+<p>动机：基于Pre-Trained Language Models，并评估了大模型中参数高效训练的适用性。<br>方法：做了很多有意义的实验，其中1更大的语言模型肯定是对效果有增益的；2adapter训练而不是全参数对于大模型来说更划算。<br>[SIGIR2023] RewardTLG: Learning to Temporally Language Grounding from Flexible Reward</p>
+<p>动机：大模型之后，reward model也来了。<br>方法：这篇文章收集了人类反馈数据训了一个奖励模型，用于指导强化学习的收敛。<br>#年度关键词： 大模型时代来临之后，这个小方向也有开始往预训练、提示学习、强化学习、reward model转的趋势。</p>
+<h1 id="稍作分类"><a href="#稍作分类" class="headerlink" title="稍作分类"></a>稍作分类</h1><p>两条路：处理成预测任务[1]；处理成匹配任务[2]。大多数文章都follow了[1]，也有少数沿着[2]的路线的文章如[5][22]，也有融合这两条路线的[33]。<br>跨模态视频时刻相关任务主要需要集中解决的问题有两点：一.跨模态 二.高效检索&#x2F;定位</p>
+<p>对于一.</p>
+<p>模态特征的细化：模态间的交互和融合[3-9，37，39，42]，局部对齐[17-19]，模态表征细粒度[20，21，28]，视觉目标间的关系[46]<br>结合其他外部信息，如字幕[35，36]<br>对于二.<br>检索方法主要涉及到候选集的问题</p>
+<p>常规方法会提前切分好，或者修剪候选集[33]<br>生成候选：预测一些可能的边界[10]<br>探讨候选之间的关系：使用图或者矩阵的形式[13，26]<br>正负例样本不平衡问题[45]<br>定位方法可分直接预测和强化学习  </p>
+<p>直接预测起止点：[11，31，34，36，38]，对边界预测的多任务增强如边界感知[24]，moment segmentation[41]。<br>强化学习：[12，14，15，25，29]，主要涉及一些语义概念融合，如何使强化学习更高效。<br>也有融合定位和检索的方法[30]，和其他任务结合的方法[50,60]  </p>
+<p>除了一和二问题的，其他话题</p>
+<p>标注text-video对太耗时，无监督方法[16，23，27，32]，主要会使用注意力对齐，正负样本对抗，多示例学习等等技术。<br>标注鲁棒性[34，40，41，48，49]，解决方案主要有比较分布和标注预测，因果推理，去偏。<br>收集数据集太耗时[62,66]，也是转向于无监督或者少样本学习。<br>搜索全库视频时刻[35，38]，要求对模态内和模态外都有更好的理解和区分能力。  </p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>多模态</tag>
+        <tag>深度学习</tag>
+        <tag>论文阅读</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Beamer简单教程</title>
     <url>/2023/10/30/20231030_BeamerTutorial/</url>
     <content><![CDATA[<p>简要介绍一下Beamer的使用教程，一般使用Beamer时都是在现有的一些模版上进行制作，而Beamer的一些模版主要可以通过Overleaf或者Github得到。</p>
@@ -2819,6 +2432,121 @@
       <tags>
         <tag>Latex</tag>
         <tag>Beamer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vscode使用教程</title>
+    <url>/2023/11/01/20231101_vscodeTutorial/</url>
+    <content><![CDATA[<p>vscode是我目前使用最多的平台工具无论是在windows还是macOS，本博客总结我的使用的所有场景，以及简单的搭建过程</p>
+<ul>
+<li>vscode 概要介绍</li>
+<li>C&#x2F;C++ 编程、编译</li>
+<li>python 使用</li>
+<li>markdown 记录</li>
+<li>latex&amp;beamer的学术PPT制作</li>
+<li>git的使用</li>
+<li>SSH远程连接服务器</li>
+<li>博客园的扩展</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="1-vscode概要介绍"><a href="#1-vscode概要介绍" class="headerlink" title="1 vscode概要介绍"></a>1 vscode概要介绍</h1><p>首先是进行下载安装，官方地址为：<a href="https://code.visualstudio.com/">vscode下载</a>，找到对应版本下载安装。</p>
+<p>首先介绍一下vscode的界面和大概使用流程。</p>
+<p>打开vscode，界面如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808193654.png"></p>
+<p>其中1为资源管理器，2为查找，3为源代码管理（git），4为运行和调试，5为扩展。这左侧为统称为工具栏，后续在扩展中下载相应的扩展后，左侧会多出你选择的扩展，所以理论上你可以在vscode上干任何事，甚至你可以在上面编程。</p>
+<h2 id="1-1-设置系统语言"><a href="#1-1-设置系统语言" class="headerlink" title="1.1 设置系统语言"></a>1.1 设置系统语言</h2><p>第一步，你的界面默认应该是英文，你首先可以在工具栏中的扩展中搜索简体中文，安装后重启即可。</p>
+<h2 id="1-2-工作流程"><a href="#1-2-工作流程" class="headerlink" title="1.2 工作流程"></a>1.2 工作流程</h2><p>一般来说，我的工作流程是，如之前的图中所示，你可以在欢迎界面中点击打开文件夹，或者是克隆Git仓库，打开一个工作区进行摸鱼，以markdown为例子的话，如果你想要进行一些记录，你可以创建一个你的文件夹，这个文件夹可以是你git clone下来的，也可以是本地直接创建的，以本地创建为例：</p>
+<p>比如打开markdown文件夹，新建一个markdown.md文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808194144.png"></p>
+<p>此时界面如上图，可以看到大致分为三个部分，侧边栏，顶部栏和编辑区。然后进行工作即可。</p>
+<h1 id="2-C-C-编程、编译"><a href="#2-C-C-编程、编译" class="headerlink" title="2 C&#x2F;C++ 编程、编译"></a>2 C&#x2F;C++ 编程、编译</h1><p>这里可以看我的另外一篇博客：<a href="https://mobbu.space/2023/08/22/20230822_VscodeDeployC++/">vscode配置C++环境</a>。</p>
+<p>这篇博客主要介绍了三个部分，如下：</p>
+<ul>
+<li>1 下载GCC编译器</li>
+<li>2 安装VSCODE的C&#x2F;C++扩展</li>
+<li>3 使用VSCODE进行运行和调试</li>
+</ul>
+<p>最终实现在vscode上流畅码代码和调试C++(包括断点、查看参数等)程序。</p>
+<h1 id="3-python-使用"><a href="#3-python-使用" class="headerlink" title="3 python 使用"></a>3 python 使用</h1><p>在vscode上使用python很容易，只需要在扩展中搜索python，下载重新加载vscode即可直接新建py文件进行python代码的编写了，只需要注意右下角python的版本，选择你想要的版本就可以了。</p>
+<p>这里也贴上我一些项目里或者学习的时候python的一些记录：<a href="https://mobbu.space/2023/11/01/20231101_PythonSimpleTutorial/">python使用总结</a></p>
+<p>里面有介绍python的简要语法和编程思想、一些常用的库，包括机器学习常用的库，还有日志相关，还有简单爬虫等，可能会后续再更新。</p>
+<h1 id="4-markdown-记录"><a href="#4-markdown-记录" class="headerlink" title="4 markdown 记录"></a>4 markdown 记录</h1><p>这里可以看我的另外一篇博客：<a href="https://mobbu.space/2023/08/09/20230808_markdownLanguage/">markdown的简单用法</a>。</p>
+<p>这篇博客主要介绍了三个部分，如下：</p>
+<ul>
+<li>1 Markdown简介</li>
+<li>2 Markdown编译器</li>
+<li>3 Markdown语法</li>
+</ul>
+<p>vscode能实现markdown的流畅的编写，一般使用都是左边代码，右边预览，并且在公式和语法比较熟悉之后，使用markdown的记录效率会很高，并且在转化方面优势很大，可以轻松转化为网页、或者PPT中的内容</p>
+<h1 id="5-latex-beamer的学术PPT制作"><a href="#5-latex-beamer的学术PPT制作" class="headerlink" title="5 latex&amp;beamer的学术PPT制作"></a>5 latex&amp;beamer的学术PPT制作</h1><p>这里可以看我的另外一篇博客：<a href="https://mobbu.space/2023/10/30/20231030_BeamerTutorial/">Beamer简单教程</a>。</p>
+<p>这篇博客主要UESTC的模版，然后介绍了一下写PPT的一些基本语法，包括封面设置、目录以及子目录、新建页面、分点、插入图片、下标、公式、表格、分栏、分块等。</p>
+<p>通过beamer能够简单有效的将我们平时的积累以很快的速度转化为PPT，提升效率，并且风格也比较适合做学术或者部门内部的汇报。</p>
+<h1 id="6-git的使用"><a href="#6-git的使用" class="headerlink" title="6 git的使用"></a>6 git的使用</h1><p>git管理也是vscode的基础功能之一了，当该文件夹是git clone下来的，那么此时在工具栏上的源代码管理（git）就会提示，你目前的修改，你可以设置自动时间上传，但是也可以手动上传，也就是push。</p>
+<h2 id="6-1-github账户验证"><a href="#6-1-github账户验证" class="headerlink" title="6.1 github账户验证"></a>6.1 github账户验证</h2><p>首先你需要将你的电脑跟你的比如说github账户进行验证，流程如下：</p>
+<ol>
+<li><p>首先你先安装git，windows在git的官网安装就好了，如果是mac基本是自带git，如果没有git，也可以通过brew安装。</p>
+</li>
+<li><p>配置git账户，设置user.name和user.email，输入以下命令</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;account name&quot;     # 设置用户名</span><br><span class="line">git config --global user.email &quot;account email&quot;     # 设置邮箱地址</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>设置完毕之后，就可以生成SSH KEY了，输入以下命令</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C example@mail.com</span><br></pre></td></tr></table></figure>
+<p>这里输入你自己的邮箱即可  </p>
+<ol start="4">
+<li><p>然后输入以下两条命令查看并复制你的密钥</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">vim id_rsa.pub</span><br></pre></td></tr></table></figure></li>
+<li><p>将公钥id_rsa.pub中的内容添加到github，用户-&gt;settings-&gt;SSH and GPG keys 中的按键new SSH key，将id_rsa.pub中的内容复制进去即可</p>
+</li>
+<li><p>添加完成后，在终端输入<code>ssh -T git@github.com</code>进行验证，此时会让你输入刚刚在生成ssh密钥时输入的密码，输入后回车会看到欢迎的语句，此时说明配对成功。</p>
+</li>
+</ol>
+<p>这个流程中，你唯一需要注意的就是你的路径，其余都是傻瓜式操作。</p>
+<h2 id="6-2-流程展示"><a href="#6-2-流程展示" class="headerlink" title="6.2 流程展示"></a>6.2 流程展示</h2><p>假设你与github的某个仓库链接，也就是你git clone的某个仓库，一般来说的流程如下。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231101194733.png"></p>
+<p>此时就是有待处理的部分。此时点击git管理，界面应该与下图类似</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231101194855.png"></p>
+<p>首先将鼠标放在更改上会出现<code>+</code>号，此时点击加号，然后输入你的修改信息点击提交即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011950617.png"></p>
+<p>此时你的修改可能还并没有push到远程仓库，此时查看左下角的图标是否显示你还未push到云上，如下图。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011954845.png"></p>
+<p>点击之后会出现下图，点击确认后你就可以查看你的云端是否有修改了，一般来说这里就结束了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011954859.png"></p>
+<h1 id="7-SSH远程连接服务器"><a href="#7-SSH远程连接服务器" class="headerlink" title="7 SSH远程连接服务器"></a>7 SSH远程连接服务器</h1><p>在扩展中搜索remote，安装这个remote-ssh即可，这时工具栏上就会多出远程连接工具，点击远程连接工具</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012006995.png"></p>
+<p>界面如下，点击如下图中的加号</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012007311.png"></p>
+<p>这时会弹出ssh连接命令，此时输入你的需要连接的账号回车会提示你输入密码，此时输入密码即可进入你所要ssh连接的服务器中。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012008499.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012010522.png"></p>
+<p>还有一个进阶操作，你可以将你的公钥添加到服务器的authorized_keys文件中，这样你登录时就不再需要输入密码了。具体操作如下：</p>
+<ul>
+<li>将本地之前生成的<code>id_rsa.pub</code>中的内容全部复制，一般在.ssh文件夹中，可以通过vim打开复制后输入<code>:q</code>回车退出，</li>
+<li>然后再在服务器的.ssh文件夹中找到authorized_keys文件，使用vim工具打开，按i键进入插入编辑模式，复制刚刚的内容进去，保存退出<code>:wq</code>回车就完成了。</li>
+</ul>
+<h1 id="8-cnblogs博客园扩展"><a href="#8-cnblogs博客园扩展" class="headerlink" title="8 cnblogs博客园扩展"></a>8 cnblogs博客园扩展</h1><p>直接在扩展中搜索cnblogs就可以了，这个扩展主要是为了解决在cnblogs上写博客时的图片问题，这个官方插件提供了在博客园上使用的图床，安装后在markdown文件的右上角会出现多两个图标，主要使用上传剪切板图片这个功能，一般我们需要使用的时候都是直接剪切屏幕中的图片，这时复制后点击如下图的图标。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012019990.png"></p>
+<p>会出现以下界面，你可以选择本地图片或者是剪切图片，一般来说我是选择剪贴板图片，这样操作方便。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012020877.png"></p>
+<p>点击之后就会弹出连接，选择markdown连接直接复制到md文件中就可以了，完美解决新手用户没有图床的问题。我一般在学习的时候也会在博客园上写一些博客，这样能将更多有意思的东西放在自己的博客网站上。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>SSH</tag>
+        <tag>git</tag>
+        <tag>C/C++</tag>
+        <tag>vscode</tag>
+        <tag>markdown</tag>
+        <tag>python</tag>
+        <tag>github</tag>
+        <tag>cnblogs</tag>
       </tags>
   </entry>
   <entry>
@@ -3399,6 +3127,51 @@
       </tags>
   </entry>
   <entry>
+    <title>拍摄一些好用的小工具——软件</title>
+    <url>/2023/12/18/20231218_PhotoApps/</url>
+    <content><![CDATA[<p>记录一些拍摄相关的软件或者小程序：</p>
+<ul>
+<li>添加画框小软件</li>
+<li>添加水印软件</li>
+<li>查看星体数据，比如太阳和月亮数据软件</li>
+<li>简易修图软件</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="1-画框小软件"><a href="#1-画框小软件" class="headerlink" title="1 画框小软件"></a>1 画框小软件</h1><p>壹印：一个开源的添加画框的软件，github地址为：<a href="https://github.com/ggchivalrous/yiyin%E3%80%82">https://github.com/ggchivalrous/yiyin。</a></p>
+<p>操作也非常简单，这里不再赘述，主要展示两种可以制作的效果</p>
+<ul>
+<li>圆角渐变颜色画框</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/test.jpg"></p>
+<ul>
+<li>经典白色底相框</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/yinxing.jpg"></p>
+<p>这个软件也有两个小缺憾，一是添加相机的信息处，并没有相机的logo，二是还有如果能够集成进添加水印就更好了。</p>
+<h1 id="2-水印软件"><a href="#2-水印软件" class="headerlink" title="2 水印软件"></a>2 水印软件</h1><p>目前直接使用的Lightroom自带的水印，这样的好处是比较方便，输出图片的时候，直接设置一下水印就好了，这样减少了调整图片的步骤，非常符合提升效率的原则，但是坏处就是选择比较少，并且会有水印的符号。</p>
+<h1 id="3-天气软件"><a href="#3-天气软件" class="headerlink" title="3 天气软件"></a>3 天气软件</h1><p>外拍时，对于天气要求很高，ios自带的天气软件就能看到很多关爱你的信息，比如</p>
+<ul>
+<li>能见度：能见度对于拍照影响很大，能见度很低的情况下，拍摄出来的照片都是灰蒙蒙的，对比度很低</li>
+<li>日升，日落：这一项最重要，尤其要注意日落的时间，抓住拍摄的黄金时间，也即日落前后的总计一小时时间，这一个小时的光线变化是最丰富的，从日落的温暖橘黄到日落后到BLUE HOUR，都是出片的绝佳时机，并且能够捕捉到冷暖对比。</li>
+<li>月亮：对于想要打月亮的时候很重要，选择每个月满月的时候，并且需要提前看好月亮的方位，选择好前景，架设三脚架等待月升</li>
+<li>气温、紫外线、晴雨等基本信息，注意防暑、防晒、防雨等等</li>
+</ul>
+<p>对于想要拍摄银河这些，可能需要更加专业的软件，或者一些微信小程序也有一些星象的相关信息。</p>
+<h1 id="4-修图软件"><a href="#4-修图软件" class="headerlink" title="4 修图软件"></a>4 修图软件</h1><p>醒图，一个手机修图软件。</p>
+<p>这里就不介绍LR和PS了，都是在电脑上使用的。醒图是我目前使用比较良好的一个手机app，免费的功能基本够用了，我一般的流程是在电脑的LR上调色完成之后，在醒图上对模特的面部做一些基本的调整就可以了，简单磨个皮，调整一下脸型就好了。</p>
+<p>如果你想整活，醒图的换表情的功能也很实用，能够改变模特的表情，实测还是比较够用的。对于清晰度不是很高的照片基本够用，清晰度高了的照片使用会有比较明显的割裂感。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>摄影博客</category>
+      </categories>
+      <tags>
+        <tag>摄影</tag>
+        <tag>软件</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>阴天or夜景街拍调色</title>
     <url>/2023/12/25/20231225_NightStreetLrStyle/</url>
     <content><![CDATA[<p>使用场景主要是阴天或者夜景这样光比比较小，需要凸显冷暖等的颜色的时候的调色。调色过程也比较简单。</p>
@@ -3458,166 +3231,6 @@
         <tag>Lightroom</tag>
         <tag>摄影</tag>
         <tag>调色</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vscode使用教程</title>
-    <url>/2023/11/01/20231101_vscodeTutorial/</url>
-    <content><![CDATA[<p>vscode是我目前使用最多的平台工具无论是在windows还是macOS，本博客总结我的使用的所有场景，以及简单的搭建过程</p>
-<ul>
-<li>vscode 概要介绍</li>
-<li>C&#x2F;C++ 编程、编译</li>
-<li>python 使用</li>
-<li>markdown 记录</li>
-<li>latex&amp;beamer的学术PPT制作</li>
-<li>git的使用</li>
-<li>SSH远程连接服务器</li>
-<li>博客园的扩展</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="1-vscode概要介绍"><a href="#1-vscode概要介绍" class="headerlink" title="1 vscode概要介绍"></a>1 vscode概要介绍</h1><p>首先是进行下载安装，官方地址为：<a href="https://code.visualstudio.com/">vscode下载</a>，找到对应版本下载安装。</p>
-<p>首先介绍一下vscode的界面和大概使用流程。</p>
-<p>打开vscode，界面如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808193654.png"></p>
-<p>其中1为资源管理器，2为查找，3为源代码管理（git），4为运行和调试，5为扩展。这左侧为统称为工具栏，后续在扩展中下载相应的扩展后，左侧会多出你选择的扩展，所以理论上你可以在vscode上干任何事，甚至你可以在上面编程。</p>
-<h2 id="1-1-设置系统语言"><a href="#1-1-设置系统语言" class="headerlink" title="1.1 设置系统语言"></a>1.1 设置系统语言</h2><p>第一步，你的界面默认应该是英文，你首先可以在工具栏中的扩展中搜索简体中文，安装后重启即可。</p>
-<h2 id="1-2-工作流程"><a href="#1-2-工作流程" class="headerlink" title="1.2 工作流程"></a>1.2 工作流程</h2><p>一般来说，我的工作流程是，如之前的图中所示，你可以在欢迎界面中点击打开文件夹，或者是克隆Git仓库，打开一个工作区进行摸鱼，以markdown为例子的话，如果你想要进行一些记录，你可以创建一个你的文件夹，这个文件夹可以是你git clone下来的，也可以是本地直接创建的，以本地创建为例：</p>
-<p>比如打开markdown文件夹，新建一个markdown.md文件</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808194144.png"></p>
-<p>此时界面如上图，可以看到大致分为三个部分，侧边栏，顶部栏和编辑区。然后进行工作即可。</p>
-<h1 id="2-C-C-编程、编译"><a href="#2-C-C-编程、编译" class="headerlink" title="2 C&#x2F;C++ 编程、编译"></a>2 C&#x2F;C++ 编程、编译</h1><p>这里可以看我的另外一篇博客：<a href="https://mobbu.space/2023/08/22/20230822_VscodeDeployC++/">vscode配置C++环境</a>。</p>
-<p>这篇博客主要介绍了三个部分，如下：</p>
-<ul>
-<li>1 下载GCC编译器</li>
-<li>2 安装VSCODE的C&#x2F;C++扩展</li>
-<li>3 使用VSCODE进行运行和调试</li>
-</ul>
-<p>最终实现在vscode上流畅码代码和调试C++(包括断点、查看参数等)程序。</p>
-<h1 id="3-python-使用"><a href="#3-python-使用" class="headerlink" title="3 python 使用"></a>3 python 使用</h1><p>在vscode上使用python很容易，只需要在扩展中搜索python，下载重新加载vscode即可直接新建py文件进行python代码的编写了，只需要注意右下角python的版本，选择你想要的版本就可以了。</p>
-<p>这里也贴上我一些项目里或者学习的时候python的一些记录：<a href="https://mobbu.space/2023/11/01/20231101_PythonSimpleTutorial/">python使用总结</a></p>
-<p>里面有介绍python的简要语法和编程思想、一些常用的库，包括机器学习常用的库，还有日志相关，还有简单爬虫等，可能会后续再更新。</p>
-<h1 id="4-markdown-记录"><a href="#4-markdown-记录" class="headerlink" title="4 markdown 记录"></a>4 markdown 记录</h1><p>这里可以看我的另外一篇博客：<a href="https://mobbu.space/2023/08/09/20230808_markdownLanguage/">markdown的简单用法</a>。</p>
-<p>这篇博客主要介绍了三个部分，如下：</p>
-<ul>
-<li>1 Markdown简介</li>
-<li>2 Markdown编译器</li>
-<li>3 Markdown语法</li>
-</ul>
-<p>vscode能实现markdown的流畅的编写，一般使用都是左边代码，右边预览，并且在公式和语法比较熟悉之后，使用markdown的记录效率会很高，并且在转化方面优势很大，可以轻松转化为网页、或者PPT中的内容</p>
-<h1 id="5-latex-beamer的学术PPT制作"><a href="#5-latex-beamer的学术PPT制作" class="headerlink" title="5 latex&amp;beamer的学术PPT制作"></a>5 latex&amp;beamer的学术PPT制作</h1><p>这里可以看我的另外一篇博客：<a href="https://mobbu.space/2023/10/30/20231030_BeamerTutorial/">Beamer简单教程</a>。</p>
-<p>这篇博客主要UESTC的模版，然后介绍了一下写PPT的一些基本语法，包括封面设置、目录以及子目录、新建页面、分点、插入图片、下标、公式、表格、分栏、分块等。</p>
-<p>通过beamer能够简单有效的将我们平时的积累以很快的速度转化为PPT，提升效率，并且风格也比较适合做学术或者部门内部的汇报。</p>
-<h1 id="6-git的使用"><a href="#6-git的使用" class="headerlink" title="6 git的使用"></a>6 git的使用</h1><p>git管理也是vscode的基础功能之一了，当该文件夹是git clone下来的，那么此时在工具栏上的源代码管理（git）就会提示，你目前的修改，你可以设置自动时间上传，但是也可以手动上传，也就是push。</p>
-<h2 id="6-1-github账户验证"><a href="#6-1-github账户验证" class="headerlink" title="6.1 github账户验证"></a>6.1 github账户验证</h2><p>首先你需要将你的电脑跟你的比如说github账户进行验证，流程如下：</p>
-<ol>
-<li><p>首先你先安装git，windows在git的官网安装就好了，如果是mac基本是自带git，如果没有git，也可以通过brew安装。</p>
-</li>
-<li><p>配置git账户，设置user.name和user.email，输入以下命令</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;account name&quot;     # 设置用户名</span><br><span class="line">git config --global user.email &quot;account email&quot;     # 设置邮箱地址</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>设置完毕之后，就可以生成SSH KEY了，输入以下命令</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C example@mail.com</span><br></pre></td></tr></table></figure>
-<p>这里输入你自己的邮箱即可  </p>
-<ol start="4">
-<li><p>然后输入以下两条命令查看并复制你的密钥</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">vim id_rsa.pub</span><br></pre></td></tr></table></figure></li>
-<li><p>将公钥id_rsa.pub中的内容添加到github，用户-&gt;settings-&gt;SSH and GPG keys 中的按键new SSH key，将id_rsa.pub中的内容复制进去即可</p>
-</li>
-<li><p>添加完成后，在终端输入<code>ssh -T git@github.com</code>进行验证，此时会让你输入刚刚在生成ssh密钥时输入的密码，输入后回车会看到欢迎的语句，此时说明配对成功。</p>
-</li>
-</ol>
-<p>这个流程中，你唯一需要注意的就是你的路径，其余都是傻瓜式操作。</p>
-<h2 id="6-2-流程展示"><a href="#6-2-流程展示" class="headerlink" title="6.2 流程展示"></a>6.2 流程展示</h2><p>假设你与github的某个仓库链接，也就是你git clone的某个仓库，一般来说的流程如下。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231101194733.png"></p>
-<p>此时就是有待处理的部分。此时点击git管理，界面应该与下图类似</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231101194855.png"></p>
-<p>首先将鼠标放在更改上会出现<code>+</code>号，此时点击加号，然后输入你的修改信息点击提交即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011950617.png"></p>
-<p>此时你的修改可能还并没有push到远程仓库，此时查看左下角的图标是否显示你还未push到云上，如下图。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011954845.png"></p>
-<p>点击之后会出现下图，点击确认后你就可以查看你的云端是否有修改了，一般来说这里就结束了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311011954859.png"></p>
-<h1 id="7-SSH远程连接服务器"><a href="#7-SSH远程连接服务器" class="headerlink" title="7 SSH远程连接服务器"></a>7 SSH远程连接服务器</h1><p>在扩展中搜索remote，安装这个remote-ssh即可，这时工具栏上就会多出远程连接工具，点击远程连接工具</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012006995.png"></p>
-<p>界面如下，点击如下图中的加号</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012007311.png"></p>
-<p>这时会弹出ssh连接命令，此时输入你的需要连接的账号回车会提示你输入密码，此时输入密码即可进入你所要ssh连接的服务器中。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012008499.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012010522.png"></p>
-<p>还有一个进阶操作，你可以将你的公钥添加到服务器的authorized_keys文件中，这样你登录时就不再需要输入密码了。具体操作如下：</p>
-<ul>
-<li>将本地之前生成的<code>id_rsa.pub</code>中的内容全部复制，一般在.ssh文件夹中，可以通过vim打开复制后输入<code>:q</code>回车退出，</li>
-<li>然后再在服务器的.ssh文件夹中找到authorized_keys文件，使用vim工具打开，按i键进入插入编辑模式，复制刚刚的内容进去，保存退出<code>:wq</code>回车就完成了。</li>
-</ul>
-<h1 id="8-cnblogs博客园扩展"><a href="#8-cnblogs博客园扩展" class="headerlink" title="8 cnblogs博客园扩展"></a>8 cnblogs博客园扩展</h1><p>直接在扩展中搜索cnblogs就可以了，这个扩展主要是为了解决在cnblogs上写博客时的图片问题，这个官方插件提供了在博客园上使用的图床，安装后在markdown文件的右上角会出现多两个图标，主要使用上传剪切板图片这个功能，一般我们需要使用的时候都是直接剪切屏幕中的图片，这时复制后点击如下图的图标。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012019990.png"></p>
-<p>会出现以下界面，你可以选择本地图片或者是剪切图片，一般来说我是选择剪贴板图片，这样操作方便。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/202311012020877.png"></p>
-<p>点击之后就会弹出连接，选择markdown连接直接复制到md文件中就可以了，完美解决新手用户没有图床的问题。我一般在学习的时候也会在博客园上写一些博客，这样能将更多有意思的东西放在自己的博客网站上。</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>技术博客</category>
-      </categories>
-      <tags>
-        <tag>SSH</tag>
-        <tag>markdown</tag>
-        <tag>vscode</tag>
-        <tag>git</tag>
-        <tag>C/C++</tag>
-        <tag>python</tag>
-        <tag>github</tag>
-        <tag>cnblogs</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>拍摄一些好用的小工具——软件</title>
-    <url>/2023/12/18/20231218_PhotoApps/</url>
-    <content><![CDATA[<p>记录一些拍摄相关的软件或者小程序：</p>
-<ul>
-<li>添加画框小软件</li>
-<li>添加水印软件</li>
-<li>查看星体数据，比如太阳和月亮数据软件</li>
-<li>简易修图软件</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="1-画框小软件"><a href="#1-画框小软件" class="headerlink" title="1 画框小软件"></a>1 画框小软件</h1><p>壹印：一个开源的添加画框的软件，github地址为：<a href="https://github.com/ggchivalrous/yiyin%E3%80%82">https://github.com/ggchivalrous/yiyin。</a></p>
-<p>操作也非常简单，这里不再赘述，主要展示两种可以制作的效果</p>
-<ul>
-<li>圆角渐变颜色画框</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/test.jpg"></p>
-<ul>
-<li>经典白色底相框</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/yinxing.jpg"></p>
-<p>这个软件也有两个小缺憾，一是添加相机的信息处，并没有相机的logo，二是还有如果能够集成进添加水印就更好了。</p>
-<h1 id="2-水印软件"><a href="#2-水印软件" class="headerlink" title="2 水印软件"></a>2 水印软件</h1><p>目前直接使用的Lightroom自带的水印，这样的好处是比较方便，输出图片的时候，直接设置一下水印就好了，这样减少了调整图片的步骤，非常符合提升效率的原则，但是坏处就是选择比较少，并且会有水印的符号。</p>
-<h1 id="3-天气软件"><a href="#3-天气软件" class="headerlink" title="3 天气软件"></a>3 天气软件</h1><p>外拍时，对于天气要求很高，ios自带的天气软件就能看到很多关爱你的信息，比如</p>
-<ul>
-<li>能见度：能见度对于拍照影响很大，能见度很低的情况下，拍摄出来的照片都是灰蒙蒙的，对比度很低</li>
-<li>日升，日落：这一项最重要，尤其要注意日落的时间，抓住拍摄的黄金时间，也即日落前后的总计一小时时间，这一个小时的光线变化是最丰富的，从日落的温暖橘黄到日落后到BLUE HOUR，都是出片的绝佳时机，并且能够捕捉到冷暖对比。</li>
-<li>月亮：对于想要打月亮的时候很重要，选择每个月满月的时候，并且需要提前看好月亮的方位，选择好前景，架设三脚架等待月升</li>
-<li>气温、紫外线、晴雨等基本信息，注意防暑、防晒、防雨等等</li>
-</ul>
-<p>对于想要拍摄银河这些，可能需要更加专业的软件，或者一些微信小程序也有一些星象的相关信息。</p>
-<h1 id="4-修图软件"><a href="#4-修图软件" class="headerlink" title="4 修图软件"></a>4 修图软件</h1><p>醒图，一个手机修图软件。</p>
-<p>这里就不介绍LR和PS了，都是在电脑上使用的。醒图是我目前使用比较良好的一个手机app，免费的功能基本够用了，我一般的流程是在电脑的LR上调色完成之后，在醒图上对模特的面部做一些基本的调整就可以了，简单磨个皮，调整一下脸型就好了。</p>
-<p>如果你想整活，醒图的换表情的功能也很实用，能够改变模特的表情，实测还是比较够用的。对于清晰度不是很高的照片基本够用，清晰度高了的照片使用会有比较明显的割裂感。</p>
-<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
-]]></content>
-      <categories>
-        <category>摄影博客</category>
-      </categories>
-      <tags>
-        <tag>摄影</tag>
-        <tag>软件</tag>
       </tags>
   </entry>
   <entry>
@@ -3952,9 +3565,396 @@
         <category>技术博客</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>C/C++</tag>
+        <tag>Linux</tag>
         <tag>IDE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>markdown的简单用法</title>
+    <url>/2023/08/09/20230808_markdownLanguage/</url>
+    <content><![CDATA[<p>如果需要经常记录一些东西，那么markdown就是一个绕不开的东西，而习惯用markdown也会养成记录的习惯，本文主要从四个方面介绍markdown的简单用法，分别是1.markdown简介，2.markdown编译器，3.markdown语法。</p>
+<p>当你经常用markdown记录时也会有一个烦恼就是如何实现多设备同步查看记录的文件呢，这时你可以选择在一些博客网站创建自己的账号，比如CSDN，博客园等，又或者直接建立一个属于你自己的博客网站了，这里可以看博主的另一篇博客<a href="https://mobbu.space/2023/08/09/20230803_blogWebsite/">如何建立自己的博客网站</a>里面很详细的介绍了如何搭建自己的博客网站。</p>
+<span id="more"></span>
+
+<p>markdown官方中文网站就有在线编辑器和一些基础用法，可以在这里尝试markdown，<a href="https://markdown.com.cn/">markdown官方网站</a></p>
+<h1 id="1-Markdown简介"><a href="#1-Markdown简介" class="headerlink" title="1 Markdown简介"></a>1 Markdown简介</h1><p>Markdown 是一种轻量级的标记语言，可用于在纯文本文档中添加格式化元素。Markdown 由 John Gruber 于 2004 年创建，如今已成为世界上最受欢迎的标记语言之一。</p>
+<h2 id="1-1-Markdown特点"><a href="#1-1-Markdown特点" class="headerlink" title="1.1 Markdown特点"></a>1.1 Markdown特点</h2><ol>
+<li>专注于文字内容；</li>
+<li>纯文本，易读易写，可以方便地纳入版本控制；</li>
+<li>语法简单，没有什么学习成本，能轻松在码字的同时做出美观大方的排版。</li>
+</ol>
+<h2 id="1-2-Markdown的优点"><a href="#1-2-Markdown的优点" class="headerlink" title="1.2 Markdown的优点"></a>1.2 Markdown的优点</h2><ol>
+<li>使用范围广，StackOverflow、CSDN、掘金、简书、GitBook、有道云笔记、V2EX、光谷社区等。主流的代码托管平台，如 GitHub、GitLab、BitBucket、Coding、Gitee 等等，都支持 Markdown 语法，很多开源项目的 README、开发文档、帮助文档、Wiki 等都用 Markdown 写作。</li>
+<li>可移植性强，可以轻松从一个平台移植到另外一个平台。</li>
+<li>可读性强，虽然markdown不是一个所见即所得的记录方式，但是在未编译的情况下可读性也很高，编译之后的格式更加工整美观。</li>
+</ol>
+<h1 id="2-Markdown编译器"><a href="#2-Markdown编译器" class="headerlink" title="2 Markdown编译器"></a>2 Markdown编译器</h1><p>markdown的编译器有很多，你甚至可以直接用记事本来进行编写(仅编写)，但是无法实时预览编译效果。一般使用最多的markdown编译器有Typora、Atom和vscode等。博主使用的是vscode，因为我喜欢这种集成到一起管理的感觉，以后或许会记录我使用到的vscode的一些功能的博客。这里简要介绍一下在vscode中编写markdown的界面和流程</p>
+<h2 id="2-1-vscode界面"><a href="#2-1-vscode界面" class="headerlink" title="2.1 vscode界面"></a>2.1 vscode界面</h2><p>下载安装后，打开vscode，界面如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808193654.png"></p>
+<p>其中1为资源管理器，2为查找，3为源代码管理，4为运行和调试，5为扩展，如果你的界面是英文，你首先可以在扩展中搜索简体中文，安装后重启即可。</p>
+<p>然后可以点击资源管理器打开文件夹或者直接在右侧界面中打开文件夹，一般我们习惯打开文件夹管理。比如我创建D盘markdown文件夹。</p>
+<h2 id="2-2-markdown编辑界面"><a href="#2-2-markdown编辑界面" class="headerlink" title="2.2 markdown编辑界面"></a>2.2 markdown编辑界面</h2><p>比如打开markdown文件夹，新建一个markdown.md文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808194144.png"></p>
+<p>此时界面如上图，可以看到大致分为三个部分，侧边栏，顶部栏和编辑区。</p>
+<ul>
+<li><p>侧边栏分为四个部分，打开的编辑区，打开的文件夹(途中为markdown文件夹)，大纲，时间线。</p>
+<ul>
+<li>打开的编辑器：也就是右侧的编辑区域的窗口</li>
+<li>打开的文件夹：文件管理区，创建的文件和文件夹都在这里</li>
+<li>大纲：我们写的md文件的大纲</li>
+<li>时间线：提供我们修改文件的记录，比如昨天修改文件，5分钟前修改文件等等。</li>
+</ul>
+</li>
+<li><p>顶部栏分为两个部分左侧为窗口，右侧有两个按钮，第一个按钮为实时解析预览md文件，第二个为向右拆分窗口，也就是打开两个编辑markdown文件的窗口。</p>
+</li>
+<li><p>编辑区：当我们点击第一个按钮时(带有放大镜的图标)比如这就是一个正常的编辑markdown文档时的状态，左侧编辑markdown文档，右侧查看实时渲染的结果</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20230808194754.png"></p>
+<p>并且vscode在编辑区右键可以导出PDF文件</p>
+<h1 id="3-Markdown语法"><a href="#3-Markdown语法" class="headerlink" title="3 Markdown语法"></a>3 Markdown语法</h1><h2 id="3-1-标题"><a href="#3-1-标题" class="headerlink" title="3.1 标题"></a>3.1 标题</h2><p>带有不同数量的<code>#</code>为不同标题</p>
+<table>
+<thead>
+<tr>
+<th align="center">标题</th>
+<th align="center">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">一级标题</td>
+<td align="center"><code>&quot;#&quot;+&quot;空格&quot;+&quot;标题&quot;</code></td>
+</tr>
+<tr>
+<td align="center">二级标题</td>
+<td align="center"><code>&quot;##&quot;+&quot;空格&quot;+&quot;标题&quot;</code></td>
+</tr>
+<tr>
+<td align="center">三级标题</td>
+<td align="center"><code>&quot;###&quot;+&quot;空格&quot;+&quot;标题&quot;</code></td>
+</tr>
+</tbody></table>
+<p>比如<code># 这是一级标题</code>，为了避免标题乱序，这里就不演示了。</p>
+<h2 id="3-2换行"><a href="#3-2换行" class="headerlink" title="3.2换行"></a>3.2换行</h2><p>推荐两种方式进行换行：</p>
+<ul>
+<li>在句子末尾添加两个空格：方便又实用</li>
+<li>在句子末尾添加<code>&lt;br&gt;</code></li>
+</ul>
+<h2 id="3-3-字体"><a href="#3-3-字体" class="headerlink" title="3.3 字体"></a>3.3 字体</h2><table>
+<thead>
+<tr>
+<th align="center">字体</th>
+<th align="center">代码</th>
+<th align="center">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">粗体</td>
+<td align="center"><code>**内容**</code></td>
+<td align="center"><strong>这个是粗体</strong></td>
+</tr>
+<tr>
+<td align="center">斜体</td>
+<td align="center"><code>*内容*</code></td>
+<td align="center"><em>这个是斜体</em></td>
+</tr>
+<tr>
+<td align="center">粗体加斜体</td>
+<td align="center"><code>***内容***</code></td>
+<td align="center"><em><strong>这个是粗体加斜体</strong></em></td>
+</tr>
+<tr>
+<td align="center">删除线</td>
+<td align="center"><code>~~内容~~</code></td>
+<td align="center"><del>这里想用删除线</del></td>
+</tr>
+</tbody></table>
+<p>如果想更改字体颜色，字体类型，或者居中显示，那么可以内嵌HTML来实现</p>
+<h2 id="3-4-无序列表"><a href="#3-4-无序列表" class="headerlink" title="3.4 无序列表"></a>3.4 无序列表</h2><p>无序列表的使用，在符号<code>-</code>后加空格使用。如下：</p>
+<ul>
+<li>无序列表 1</li>
+<li>无序列表 2</li>
+<li>无序列表 3</li>
+</ul>
+<p>如果要控制列表的层级，则需要在符号<code>-</code>前使用空格。如下：</p>
+<ul>
+<li>无序列表 1</li>
+<li>无序列表 2<ul>
+<li>无序列表 2.1</li>
+<li>无序列表 2.2</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-5-有序列表"><a href="#3-5-有序列表" class="headerlink" title="3.5 有序列表"></a>3.5 有序列表</h2><p>有序列表的使用，在数字及符号<code>.</code>后加空格后输入内容，如下：</p>
+<ol>
+<li>有序列表 1</li>
+<li>有序列表 2</li>
+<li>有序列表 3</li>
+</ol>
+<h2 id="3-6-引用"><a href="#3-6-引用" class="headerlink" title="3.6 引用"></a>3.6 引用</h2><p>引用的格式是在符号<code>&gt;</code>后面书写文字。如下：</p>
+<blockquote>
+<p>我没说过这句话。 ——鲁迅</p>
+</blockquote>
+<h2 id="3-7-超链接"><a href="#3-7-超链接" class="headerlink" title="3.7 超链接"></a>3.7 超链接</h2><ul>
+<li>比如想要链接我的博客，则输入<code>[“灵能相谈所”](mobbu.space)</code>的效果如下：<br><a href="mobbu.space">“灵能相谈所”</a><br>其中方框内为链接的名称，括号内为你的网址。</li>
+<li>其实编译器会默认将网址编译为超链接比如<a href="http://www.google.com/">www.google.com</a><br>如果你不想网址变成超链接，那么你可以用 ` ` 将网址包含进来，比如<code>www.google.com</code></li>
+</ul>
+<h2 id="3-8-插入图片"><a href="#3-8-插入图片" class="headerlink" title="3.8 插入图片"></a>3.8 插入图片</h2><ul>
+<li><p>语法：<code>![图片名](图片链接)</code></p>
+</li>
+<li><p>图片名为你想给图片起的别名，也可为空。图片链接可以为本地链接，也可以是网上的图片链接，如果是本地链接，那么当你的md文档上传到网站或者移动到其他位置你的图片都可能失效，此时最好使用网上链接。我也有做过免费的github图床建立的教程-&gt;<a href="https://mobbu.space/2023/08/09/20230803_blogWebsite/">github图床建立</a>中的第5节就是相关教程。</p>
+</li>
+<li><p>示例：比如以下图片插入示例</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/mob_base_2.jpg"></p>
+<ul>
+<li>如果你想对图片做进一步调整，这时也可以使用html内嵌进行修改，比如想使图片居中显示，指定大小，输入如下代码<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div img align = center&gt;&lt;src = &quot;图片链接&quot; width = 500&gt;&lt;!div&gt;</span><br></pre></td></tr></table></figure>
+其中width就是调整大小，会按照比例缩放大小，大小为像素多少，以下为上述图片的修改效果。</li>
+</ul>
+<div  align = center><img src = "https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/mob_base_2.jpg" width = 500></div>
+
+<p>通过上述修改我们可以获得合适大小，合适位置的图片。</p>
+<h2 id="3-9-分割线"><a href="#3-9-分割线" class="headerlink" title="3.9 分割线"></a>3.9 分割线</h2><ul>
+<li><p>语法：<code>---</code></p>
+</li>
+<li><p>示例：</p>
+</li>
+</ul>
+<p>这是一条分割线</p>
+<hr>
+<h2 id="3-10-表格"><a href="#3-10-表格" class="headerlink" title="3.10 表格"></a>3.10 表格</h2><ul>
+<li>语法：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">|属性1|属性2|属性3|</span><br><span class="line">|--:|:-:|:--|</span><br><span class="line">|属性1的值|属性2的值|属性3的值|</span><br><span class="line">|梨子梨子梨子梨子|梨子梨子梨子梨子|梨子梨子梨子梨子|</span><br></pre></td></tr></table></figure></li>
+<li>示例：比如就是刚刚的语法中显示的</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="right">属性1</th>
+<th align="center">属性2</th>
+<th align="left">属性3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">属性1的值</td>
+<td align="center">属性2的值</td>
+<td align="left">属性3的值</td>
+</tr>
+<tr>
+<td align="right">梨子梨子梨子梨子</td>
+<td align="center">梨子梨子梨子梨子</td>
+<td align="left">梨子梨子梨子梨子</td>
+</tr>
+</tbody></table>
+<p>第一行为属性名字，第二行为靠右显示<code>--:</code>，居中显示<code>:-:</code>，靠右显示<code>:--</code></p>
+<h2 id="3-11-代码"><a href="#3-11-代码" class="headerlink" title="3.11 代码"></a>3.11 代码</h2><ul>
+<li>语法：<ul>
+<li>输入` 代码` 为行中嵌入代码，</li>
+<li>使用：如下代码为单独嵌入，并且可以在第一行输入想高亮的代码比如C语言输入C即可<br>```C<br>代码<br>```</li>
+</ul>
+</li>
+<li>示例<ul>
+<li>行中嵌入：<code>printf(&quot;hello world&quot;);</code></li>
+<li>单独嵌入：<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  std::cout &lt;&lt; <span class="string">&quot;hello world&quot;</span> &lt;&lt; endl;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="3-12-数学公式"><a href="#3-12-数学公式" class="headerlink" title="3.12 数学公式"></a>3.12 数学公式</h2><ul>
+<li>语法：单独嵌入<code>$$数学公式$$</code>或者行内嵌入<code>$数学公式$</code></li>
+<li>示例:<ul>
+<li>单独嵌入:<code>$$H(D_2) = -\left(\frac&#123;2&#125;&#123;4&#125;\log_2 \frac&#123;2&#125;&#123;4&#125; + \frac&#123;2&#125;&#123;4&#125;\log_2 \frac&#123;2&#125;&#123;4&#125;\right) = 1$$</code><br>$$H(D_2) &#x3D; -\left(\frac{2}{4}\log_2 \frac{2}{4} + \frac{2}{4}\log_2 \frac{2}{4}\right) &#x3D; 1$$</li>
+<li>行内嵌入：<code>$H(D_2) = -\left(\frac&#123;2&#125;&#123;4&#125;\log_2 \frac&#123;2&#125;&#123;4&#125; + \frac&#123;2&#125;&#123;4&#125;\log_2 \frac&#123;2&#125;&#123;4&#125;\right) = 1$</code>比如$H(D_2) &#x3D; -\left(\frac{2}{4}\log_2 \frac{2}{4} + \frac{2}{4}\log_2 \frac{2}{4}\right) &#x3D; 1$</li>
+</ul>
+</li>
+<li>数学公式编辑功能十分强大，运用得好在公式编辑方面十分方便。具体还有很多语法，比如各种复杂符号的写法比如累加累乘，矩阵的写法等，可以参考以下博客 <a href="https://blog.csdn.net/m0_37769093/article/details/107732606">markdown公式编辑</a>，总结得非常全面。</li>
+</ul>
+<h1 id="4-总结"><a href="#4-总结" class="headerlink" title="4 总结"></a>4 总结</h1><p>以上就是markdown的一些基本用法，主要还是要养成记录的习惯，如果你有制作网站或者查阅观看论文的需求的话，markdown可以说是十分有用了。</p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>vscode</tag>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++学习路线</title>
+    <url>/2023/08/22/20230819_C++LearningRoute/</url>
+    <content><![CDATA[<p>记录一下打工牛马人的C++的学习路线。</p>
+<p>主要部分有C++基础，C++算法，计算机网络，MySQL数据库，Redis，软件设计模式，操作系统、Linux操作、网络编程，C++经典项目(webserver)，如果有时间还可以多参与几个练手的小项目。</p>
+<span id="more"></span>
+
+<h1 id="1-C-基础"><a href="#1-C-基础" class="headerlink" title="1 C++基础"></a>1 C++基础</h1><p>这部分过一下基础就好了，不用画太多时间。</p>
+<p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1et411b73Z/">黑马程序员C++基础</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17560955.html">C++基础笔记</a></p>
+<p>主要是三部分内容</p>
+<ul>
+<li>C++语法入门：变量与常量、数据类型、运算符、程序流程结构、数组、函数、指针、结构体</li>
+<li>类和对象：封装、继承、多态</li>
+<li>模板与STL</li>
+</ul>
+<h1 id="2-C-算法"><a href="#2-C-算法" class="headerlink" title="2 C++算法"></a>2 C++算法</h1><p>主要在代码随想录上刷题和学习：<a href="https://programmercarl.com/%E5%89%8D%E5%BA%8F/%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC.html#%E9%A2%98%E5%A4%96%E8%AF%9D">代码随想录</a></p>
+<p>有时间可以刷两道三遍，不然理解可能不到位。</p>
+<p>做完如果还有时间，可以去牛客网上刷完剑指offer的题。</p>
+<p>主要包含：</p>
+<table>
+<thead>
+<tr>
+<th align="center">内容</th>
+<th align="center">难度</th>
+<th align="center">内容</th>
+<th align="center">面试&#x2F;笔试较多</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">数组</td>
+<td align="center">简单</td>
+<td align="center">数组相关</td>
+<td align="center">面试多</td>
+</tr>
+<tr>
+<td align="center">链表</td>
+<td align="center">简单</td>
+<td align="center">链表概念、设计、删除等</td>
+<td align="center">面试多</td>
+</tr>
+<tr>
+<td align="center">哈希表</td>
+<td align="center">简单</td>
+<td align="center">快速判断一个元素是否出现集合里</td>
+<td align="center">一般</td>
+</tr>
+<tr>
+<td align="center">字符串</td>
+<td align="center">简单</td>
+<td align="center">针对字符，使用双指针很多</td>
+<td align="center">一般</td>
+</tr>
+<tr>
+<td align="center">双指针法</td>
+<td align="center">简单</td>
+<td align="center">数组，链表，字符串中使用较多</td>
+<td align="center">笔试&#x2F;面试</td>
+</tr>
+<tr>
+<td align="center">栈与队列</td>
+<td align="center">简单</td>
+<td align="center">面试提问较多</td>
+<td align="center">笔试&#x2F;面试</td>
+</tr>
+<tr>
+<td align="center">二叉树</td>
+<td align="center">中等</td>
+<td align="center">二叉树，搜索树，遍历等</td>
+<td align="center">笔试&#x2F;面试</td>
+</tr>
+<tr>
+<td align="center">回溯算法</td>
+<td align="center">中等</td>
+<td align="center">暴力算法，组合</td>
+<td align="center">笔试&#x2F;面试</td>
+</tr>
+<tr>
+<td align="center">贪心算法</td>
+<td align="center">困难</td>
+<td align="center">局部最优推广到全局</td>
+<td align="center">笔试</td>
+</tr>
+<tr>
+<td align="center">动态规划</td>
+<td align="center">困难</td>
+<td align="center">能够定义dp数据，当前状态由前两个状态决定</td>
+<td align="center">笔试</td>
+</tr>
+<tr>
+<td align="center">图论</td>
+<td align="center">中等到困难</td>
+<td align="center">图论相关，主要是搜索</td>
+<td align="center">笔试</td>
+</tr>
+</tbody></table>
+<h1 id="3-计算机网络"><a href="#3-计算机网络" class="headerlink" title="3 计算机网络"></a>3 计算机网络</h1><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1c4411d7jb/">计算机网络(湖科大教书匠)</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17577514.html">计算机网络笔记</a></p>
+<p>此部分比较简单，并且在后序网络编程还会复习一部分，笔记只记录了一些相对重要的部分。</p>
+<h1 id="4-MySQL和Redis"><a href="#4-MySQL和Redis" class="headerlink" title="4 MySQL和Redis"></a>4 MySQL和Redis</h1><h2 id="4-1-MySQL：一般学习这个"><a href="#4-1-MySQL：一般学习这个" class="headerlink" title="4.1 MySQL：一般学习这个"></a>4.1 MySQL：一般学习这个</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1Kr4y1i7ru/">黑马程序员MySQL</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17648671.html">SQL基础增删改查</a></p>
+<h2 id="4-2-Redis：岗位有需要可以一周内突击学习"><a href="#4-2-Redis：岗位有需要可以一周内突击学习" class="headerlink" title="4.2 Redis：岗位有需要可以一周内突击学习"></a>4.2 Redis：岗位有需要可以一周内突击学习</h2><p><strong>视频链接：</strong><br><a href="https://www.bilibili.com/video/BV1cr4y1671t/">黑马程序员Redis</a>  </p>
+<h1 id="5-软件设计模式"><a href="#5-软件设计模式" class="headerlink" title="5 软件设计模式"></a>5 软件设计模式</h1><p>有时间看视频，没时间直接搜索资料记住概念和常见的几种设计模式即可</p>
+<p><strong>视频链接：</strong> 讲的挺好，有时间可以仔细听，对程序编写有好处<br><a href="https://www.bilibili.com/video/BV1Yr4y157Ci/">C++设计模式入门</a><br><strong>我的笔记链接：</strong><a href="https://www.cnblogs.com/mobbu/p/17559583.html">一些常用软件设计模式</a></p>
+<p>一般了解策略模式、工厂模式、单例模式(最简单)、观察者模式、适配者模式即可了</p>
+<h1 id="6-C-项目"><a href="#6-C-项目" class="headerlink" title="6 C++项目"></a>6 C++项目</h1><p><a href="https://www.nowcoder.com/study/live/504">牛客网C++项目</a></p>
+<p>这个项目就包含了基础的Linux系统编程、Linux多进程开发、Linux多线程开发、网络编程和实战。所以如果时间不够可以就看着一个项目就好了。包含了<strong>Linux基础</strong>、<strong>操作系统</strong>、<strong>网络编程</strong>和<strong>websever</strong>项目，差的知识后序查漏补缺就好了。</p>
+<p>笔记链接如下：</p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17547122.html">第1章 Linux系统编程入门</a></p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17586114.html">第2章 Linux多进程开发</a></p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17601631.html">第3章 Linux多线程开发</a></p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17609639.html">第4章 Linux网络编程</a></p>
+<p><a href="https://www.cnblogs.com/mobbu/p/17629592.html">第5章 项目实战与总结</a></p>
+<p><a href="https://mobbu.space/2023/08/15/20230815_C++HighConcurrencyWeberver/">webserver项目解析与总结</a></p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>分享博客</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客网站分布管理</title>
+    <url>/2023/10/01/20231001_blogDistributeToMacOS/</url>
+    <content><![CDATA[<p>等到要换电脑的时候，发现我在本地管理github pages需要移植一下，博客记录一下移植过程，方便以后查阅，由于博主心血来潮换了mac，这时候需要在MacOS上继续进行配置了。</p>
+<span id="more"></span>
+<h1 id="1-安装各种环境"><a href="#1-安装各种环境" class="headerlink" title="1 安装各种环境"></a>1 安装各种环境</h1><h2 id="1-1-检查git"><a href="#1-1-检查git" class="headerlink" title="1.1 检查git"></a>1.1 检查git</h2><p>一般mac都会自带git，所以只需要输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+<p>检查一下版本即可</p>
+<h2 id="1-2-安装nvm"><a href="#1-2-安装nvm" class="headerlink" title="1.2 安装nvm"></a>1.2 安装nvm</h2><p>首先先安装nvm，也就是node.js的管理工具。在nvm的github官方仓库下载最新版本安装即可。</p>
+<p>安装完成后输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">commond -v nvm</span><br></pre></td></tr></table></figure>
+
+<p>出现nvm即安装成功</p>
+<h2 id="1-3-安装node-js"><a href="#1-3-安装node-js" class="headerlink" title="1.3 安装node.js"></a>1.3 安装node.js</h2><p>然后按照以下步骤进行安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nvm install stable  # 使用 nvm 安装最新稳定版 Node.js</span><br><span class="line">nvm use stable     # 使用刚刚安装的 Node.js 版本</span><br><span class="line"></span><br><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
+<p>安装的时候可能会遇到出现<strong>http fetch GET 200</strong>的问题，此时只需要多等待几分钟即可。</p>
+<h2 id="1-4-安装hexo"><a href="#1-4-安装hexo" class="headerlink" title="1.4 安装hexo"></a>1.4 安装hexo</h2><p>输入以下命令进行安装hexo</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>此时就可以将我们之前的博客文件夹迁移到mac当地，在文件夹中打开iTerm终端，输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>本地测试没有问题之后则本地环境调试成功。</p>
+<h1 id="2-连接到github"><a href="#2-连接到github" class="headerlink" title="2 连接到github"></a>2 连接到github</h1><h2 id="2-1-生成ssh密钥"><a href="#2-1-生成ssh密钥" class="headerlink" title="2.1 生成ssh密钥"></a>2.1 生成ssh密钥</h2><p>首先配置git账户，设置user.name和user.email，输入以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;account name&quot;     # 设置用户名</span><br><span class="line">git config --global user.email &quot;account email&quot;     # 设置邮箱地址</span><br></pre></td></tr></table></figure>
+
+<p>设置完毕之后，就可以生成SSH KEY了，输入以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C example@mail.com</span><br></pre></td></tr></table></figure>
+<p>这里输入你自己的邮箱即可<br>然后输入以下两条命令查看并复制你的密钥</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">vim id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-github添加SSH-key"><a href="#2-2-github添加SSH-key" class="headerlink" title="2.2 github添加SSH key"></a>2.2 github添加SSH key</h2><p>制公钥id_rsa.pub中的内容添加到github，用户-&gt;settings-&gt;SSH and GPG keys 中的按键new SSH key，将id_rsa.pub中的内容复制进去即可</p>
+<p>添加完成后，在终端输入<code>ssh -T git@github.com</code>进行验证，此时会让你输入刚刚在生成ssh密钥时输入的密码，输入后回车会看到欢迎的语句，此时说明配对成功。</p>
+<h1 id="3-测试上传"><a href="#3-测试上传" class="headerlink" title="3 测试上传"></a>3 测试上传</h1><p>此时将本博客放入博文推送的文件中，hexo clean，hexo g hexo d三部曲后，验证是否上传成功即可。</p>
+<p>验证时，发现这台机器还没有git push上传过，此时需要重新申请tokens，在github账户中，配置token的流程如下：  </p>
+<p>打开github-&gt;settings-&gt;developer settings，选择tokens(classic)，新建tokens。  </p>
+<p>此时上传(hexo d)时会要求我们输入账户和密码，账户就是github的账户，而密码就是刚刚申请的token值，具体步骤可以查看我的建立博客的博文–<a href="https://mobbu.space/2023/08/09/20230803_blogWebsite/">建立个人博客网站详细教程</a></p>
+<p>此时就能上传验证成功了。</p>
+<h1 id="4-图床软件picgo移植"><a href="#4-图床软件picgo移植" class="headerlink" title="4 图床软件picgo移植"></a>4 图床软件picgo移植</h1><ol>
+<li>下载软件<br>在picgo的github开源地址下载2.3.1的稳定版，选择下载arm64.pmg格式。</li>
+</ol>
+<p>下载后打开会出现文件已损坏的问题，这是因为没有签名，此时打开终端输入以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo spctl --master-disable #此时要输入密码</span><br><span class="line">xattr -cr /Applications/PicGo.app</span><br></pre></td></tr></table></figure>
+<p>输入上述两条命令后就能顺利打开</p>
+<ol start="2">
+<li>软件配置</li>
+</ol>
+<p>此处按照博客教程中步骤来即可设置好仓库名，地址，主要是设置好github的token，设置好后进行测试，随便上传一张图片，比如下图，验证成功。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mobbu919/MyImgTG/img/20231004161235.png"></p>
+<p><strong>感谢看到这里，在记录中收获成长，道阻且长</strong></p>
+]]></content>
+      <categories>
+        <category>技术博客</category>
+      </categories>
+      <tags>
+        <tag>MacOS</tag>
+        <tag>博客网站</tag>
       </tags>
   </entry>
 </search>
